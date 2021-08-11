@@ -1,0 +1,3142 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>쿠팡 셀러 데이터 분석</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="SeongJae Yu 블로그" />
+    <link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
+    <link rel="canonical" href="https://SEONGJAE-YOO.github.io/python-basic" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Big Data" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="쿠팡 셀러 데이터 분석" />
+    <meta property="og:description" content="Python 프로젝트는 여러 절로 구성되어 있습니다. Python 강좌(1) - Python 기본 Python 강좌(2) - Python 제어문 import matplotlib.pyplot as plt from matplotlib import style from matplotlib import font_manager, rc import numpy as np import pandas as pd #seaborn import seaborn as sns COLORS = sns.color_palette() %matplotlib inline print(plt.rcParams["font.family"]) ['sans-serif'] #" />
+    <meta property="og:url" content="https://SEONGJAE-YOO.github.io/python-basic" />
+    <meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-08-11T00:00:00+09:00" />
+    <meta property="article:modified_time" content="2021-08-11T00:00:00+09:00" />
+    <meta property="article:tag" content="Python" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="쿠팡 셀러 데이터 분석" />
+    <meta name="twitter:description" content="Python 프로젝트는 여러 절로 구성되어 있습니다. Python 강좌(1) - Python 기본 Python 강좌(2) - Python 제어문 import matplotlib.pyplot as plt from matplotlib import style from matplotlib import font_manager, rc import numpy as np import pandas as pd #seaborn import seaborn as sns COLORS = sns.color_palette() %matplotlib inline print(plt.rcParams["font.family"]) ['sans-serif'] #" />
+    <meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
+    <meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Big Data" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Python" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Big Data",
+        "logo": "https://SEONGJAE-YOO.github.io/"
+    },
+    "url": "https://SEONGJAE-YOO.github.io/python-basic",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://SEONGJAE-YOO.github.io/python-basic"
+    },
+    "description": "Python 프로젝트는 여러 절로 구성되어 있습니다. Python 강좌(1) - Python 기본 Python 강좌(2) - Python 제어문 import matplotlib.pyplot as plt from matplotlib import style from matplotlib import font_manager, rc import numpy as np import pandas as pd #seaborn import seaborn as sns COLORS = sns.color_palette() %matplotlib inline print(plt.rcParams["font.family"]) ['sans-serif'] #"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="쿠팡 셀러 데이터 분석" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://SEONGJAE-YOO.github.io/">Big Data</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/Big Data/">Big Data</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag별 Posts</a>
+    </li>
+</ul>
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-python post tag-python ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="11 August 2021">11 August 2021</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/python/'>PYTHON</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">쿠팡 셀러 데이터 분석</h1>
+            </header>
+            <!--
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/logo-python.png)">
+            </figure>
+            
+            -->
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <p><span class="table-of-contents-list">Python 프로젝트는 여러 절로 구성되어 있습니다. </span></p>
+<ul class="table-of-contents-list">
+    <li><a href="./python-basic">Python 강좌(1) - Python 기본</a></li>
+    <li><a href="./python-control-statement">Python 강좌(2) - Python 제어문</a></li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">style</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">font_manager</span><span class="p">,</span> <span class="n">rc</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="c1">#seaborn
+</span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="n">COLORS</span> <span class="o">=</span> <span class="n">sns</span><span class="p">.</span><span class="n">color_palette</span><span class="p">()</span>
+
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">plt</span><span class="p">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s">"font.family"</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['sans-serif']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># matplotlib 한글 폰트 출력코드
+# 출처 : 데이터공방( https://kiddwannabe.blog.me)
+</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> 
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">font_manager</span><span class="p">,</span> <span class="n">rc</span>
+<span class="kn">import</span> <span class="nn">platform</span>
+
+<span class="k">try</span> <span class="p">:</span> 
+    <span class="k">if</span> <span class="n">platform</span><span class="p">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s">'Windows'</span><span class="p">:</span>
+    <span class="c1"># 윈도우인 경우
+</span>        <span class="n">font_name</span> <span class="o">=</span> <span class="n">font_manager</span><span class="p">.</span><span class="n">FontProperties</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="s">"c:/Windows/Fonts/malgun.ttf"</span><span class="p">).</span><span class="n">get_name</span><span class="p">()</span>
+        <span class="n">rc</span><span class="p">(</span><span class="s">'font'</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="n">font_name</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>    
+    <span class="c1"># Mac 인 경우
+</span>        <span class="n">rc</span><span class="p">(</span><span class="s">'font'</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">'AppleGothic'</span><span class="p">)</span>
+<span class="k">except</span> <span class="p">:</span> 
+    <span class="k">pass</span>
+<span class="n">matplotlib</span><span class="p">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s">'axes.unicode_minus'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>   
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">plt</span><span class="p">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s">"font.family"</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['Malgun Gothic']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">coupang</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s">'coupangdata.xlsx'</span><span class="p">)</span> 
+<span class="n">coupang</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">coupang</span><span class="p">)</span>
+<span class="n">coupang</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>묶음배송번호</th>
+      <th>주문번호</th>
+      <th>택배사</th>
+      <th>운송장번호</th>
+      <th>분리배송 Y/N</th>
+      <th>분리배송 출고예정일</th>
+      <th>주문시 출고예정일</th>
+      <th>출고일(발송일)</th>
+      <th>주문일</th>
+      <th>등록상품명</th>
+      <th>...</th>
+      <th>최초등록옵션명</th>
+      <th>업체상품코드</th>
+      <th>바코드</th>
+      <th>결제액</th>
+      <th>배송비구분</th>
+      <th>배송비</th>
+      <th>도서산간 추가배송비</th>
+      <th>구매수(수량)</th>
+      <th>옵션판매가(판매단가)</th>
+      <th>구매자</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1863148812</td>
+      <td>5000087866634</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>배송중</td>
+      <td>2020-12-02</td>
+      <td>NaN</td>
+      <td>2020-12-01 09:03:21</td>
+      <td>마음담아 크리스마스 귀여운 산타 루돌프 눈사람 핸드메이드 스티커 9종 모음[무료배송]</td>
+      <td>...</td>
+      <td>001. 파티하는산타[무료배송]</td>
+      <td>11172108||fed78e0d6d</td>
+      <td>NaN</td>
+      <td>3900</td>
+      <td>무료</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3900</td>
+      <td>최정미</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1864045159</td>
+      <td>22000087613050</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>배송중</td>
+      <td>2020-12-04</td>
+      <td>NaN</td>
+      <td>2020-12-01 15:12:35</td>
+      <td>다이얼식 비밀번호식 열쇠[무료배송]</td>
+      <td>...</td>
+      <td>003단-소[무료배송]</td>
+      <td>11568306||7dd580b226</td>
+      <td>NaN</td>
+      <td>5440</td>
+      <td>무료</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>5440</td>
+      <td>조경만</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1864089590</td>
+      <td>32000087295636</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>배송중</td>
+      <td>2020-12-03</td>
+      <td>NaN</td>
+      <td>2020-12-01 15:29:09</td>
+      <td>하오츠 백탕 훠궈소스 마라탕 샹궈 재료 중국식품[무료배송]</td>
+      <td>...</td>
+      <td>하오츠 백탕 훠궈소스 마라탕 샹궈 재료 중국식품[무료배송]</td>
+      <td>9407748||00</td>
+      <td>NaN</td>
+      <td>23160</td>
+      <td>무료</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>5790</td>
+      <td>박순화</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1864204459</td>
+      <td>6000088215603</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>배송중</td>
+      <td>2020-12-03</td>
+      <td>NaN</td>
+      <td>2020-12-01 16:18:17</td>
+      <td>bob 갤럭시핏2 fit2 3D 곡면엣지 풀커버 PET 보호필름[무료배송]</td>
+      <td>...</td>
+      <td>3D풀커버필름_Fit2/블랙[무료배송]</td>
+      <td>11201053||317c53cc4f</td>
+      <td>NaN</td>
+      <td>9680</td>
+      <td>무료</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>4840</td>
+      <td>김승용</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1864399502</td>
+      <td>12000087552145</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>배송중</td>
+      <td>2020-12-02</td>
+      <td>NaN</td>
+      <td>2020-12-01 17:35:39</td>
+      <td>아동 성인 남녀공용 어른 겨울 뜨개실 귀마개[무료배송]</td>
+      <td>...</td>
+      <td>00랜덤컬러[무료배송]</td>
+      <td>11291960||662b48f7d3</td>
+      <td>NaN</td>
+      <td>12560</td>
+      <td>무료</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>6280</td>
+      <td>박현기</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 24 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">coupang</span><span class="p">.</span><span class="n">size</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">coupang</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>72648
+3027
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># dataframe으로 만들고 '노출상품명(옵션명)' 컬럼 string으로 타입변경
+#  https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html 
+# 위 사이트 참고
+</span><span class="n">coupang</span><span class="p">[</span><span class="s">'노출상품명(옵션명)'</span><span class="p">]</span> <span class="o">=</span> <span class="n">coupang</span><span class="p">[</span><span class="s">'노출상품명(옵션명)'</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">"string"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">coupang</span><span class="p">.</span><span class="n">dtypes</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>묶음배송번호         object
+주문번호           object
+택배사            object
+운송장번호          object
+분리배송 Y/N       object
+분리배송 출고예정일     object
+주문시 출고예정일      object
+출고일(발송일)       object
+주문일            object
+등록상품명          object
+등록옵션명          object
+노출상품명(옵션명)     string
+노출상품ID         object
+옵션ID           object
+최초등록옵션명        object
+업체상품코드         object
+바코드            object
+결제액            object
+배송비구분          object
+배송비            object
+도서산간 추가배송비     object
+구매수(수량)        object
+옵션판매가(판매단가)    object
+구매자            object
+dtype: object
+</code></pre></div></div>
+
+<h1 id="노출상품명옵션명-기준-group">노출상품명(옵션명) 기준 group</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">grouped</span> <span class="o">=</span> <span class="n">coupang</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'노출상품명(옵션명)'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">grouped</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x00000192FDACA860&gt;
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">grouped</span><span class="p">.</span><span class="n">count</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>묶음배송번호</th>
+      <th>주문번호</th>
+      <th>택배사</th>
+      <th>운송장번호</th>
+      <th>분리배송 Y/N</th>
+      <th>분리배송 출고예정일</th>
+      <th>주문시 출고예정일</th>
+      <th>출고일(발송일)</th>
+      <th>주문일</th>
+      <th>등록상품명</th>
+      <th>...</th>
+      <th>최초등록옵션명</th>
+      <th>업체상품코드</th>
+      <th>바코드</th>
+      <th>결제액</th>
+      <th>배송비구분</th>
+      <th>배송비</th>
+      <th>도서산간 추가배송비</th>
+      <th>구매수(수량)</th>
+      <th>옵션판매가(판매단가)</th>
+      <th>구매자</th>
+    </tr>
+    <tr>
+      <th>노출상품명(옵션명)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>(사이즈3종) 자세교정 허리 /자가발열 /허리보호대 굽은 [생활플러스] 허리복대 벨트, 00_02사이즈/ XXL</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>(스타몰)도루코 커터날 대형 10개x10팩, 상세페이지 참조</th>
+      <td>3</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>3</td>
+      <td>3</td>
+      <td>...</td>
+      <td>3</td>
+      <td>3</td>
+      <td>0</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>(오팔스토아)주방 스텐 요리 업소용 파스타 ms 뉴 얼음집게 445</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>(큐트캣) 앞치마 어깨끈 요리 주방 H형 투포켓, 상세페이지 참조</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>+코코사라+[GTrend]버핏 패턴 지퍼케이스 전기종모음 추가금X, S20+ G986/핑크</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>화이트우드사각휴지케이스[무료배송], 상세페이지 참조</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>화장실 압축기 주름 변기 뚫어펑 뚫어뻥 (15cm 레드), 상세페이지 참조</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>후드방역모자 모자페이스쉴드 후디방역모자 모자투명막 방역모자 방역후드모자 투명막후드모자[무료배송], 02그레이</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>휴대용 접이식방석 카키 등산 낚시 야외방석, 단품</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>희귀씨앗SY 씨앗10립 메버릭 제라늄 혼합, 상세페이지 참조</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>2101 rows × 23 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_group</span><span class="o">=</span><span class="n">grouped</span><span class="p">.</span><span class="nb">sum</span><span class="p">()</span>
+<span class="n">df_group</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>묶음배송번호</th>
+      <th>주문일</th>
+      <th>등록상품명</th>
+      <th>등록옵션명</th>
+      <th>노출상품ID</th>
+      <th>옵션ID</th>
+      <th>최초등록옵션명</th>
+      <th>업체상품코드</th>
+      <th>바코드</th>
+      <th>배송비구분</th>
+      <th>배송비</th>
+      <th>도서산간 추가배송비</th>
+      <th>구매수(수량)</th>
+      <th>구매자</th>
+    </tr>
+    <tr>
+      <th>노출상품명(옵션명)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>(사이즈3종) 자세교정 허리 /자가발열 /허리보호대 굽은 [생활플러스] 허리복대 벨트, 00_02사이즈/ XXL</th>
+      <td>1909801673</td>
+      <td>2020-12-17 14:22:16</td>
+      <td>[생활플러스] 굽은 허리 자세교정 벨트 /허리보호대 /자가발열 허리복대 (사이즈3종...</td>
+      <td>00_02사이즈/ XXL[무료배송]</td>
+      <td>4545101585</td>
+      <td>72813731763</td>
+      <td>00_02사이즈/ XXL[무료배송]</td>
+      <td>11820400||d41294195d</td>
+      <td>0</td>
+      <td>무료</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>이수정</td>
+    </tr>
+    <tr>
+      <th>(스타몰)도루코 커터날 대형 10개x10팩, 상세페이지 참조</th>
+      <td>188810073920288228142277905990</td>
+      <td>2020-12-10 08:16:422021-01-29 16:59:392021-04-...</td>
+      <td>도루코 커터날 소형 10개x10팩[무료배송][제프파이썬] 도루코 커터날 소형 10개...</td>
+      <td>도루코 커터날 소형 10개x10팩[무료배송][제프파이썬] 도루코 커터날 소형 10...</td>
+      <td>438728853543872885354387288535</td>
+      <td>727510581877275105818772751058187</td>
+      <td>도루코 커터날 소형 10개x10팩[무료배송][제프파이썬] 도루코 커터날 소형 10...</td>
+      <td>9719011||009719011||009719011||00</td>
+      <td>0</td>
+      <td>무료무료무료</td>
+      <td>000</td>
+      <td>000</td>
+      <td>4</td>
+      <td>송진주박정식최미영</td>
+    </tr>
+    <tr>
+      <th>(오팔스토아)주방 스텐 요리 업소용 파스타 ms 뉴 얼음집게 445</th>
+      <td>1916296697</td>
+      <td>2020-12-19 19:23:45</td>
+      <td>주방 스텐 요리 업소용 파스타 ms 뉴 얼음집게 445[무료배송]</td>
+      <td>주방 스텐 요리 업소용 파스타 ms 뉴 얼음집게 445[무료배송]</td>
+      <td>2092582935</td>
+      <td>72331080824</td>
+      <td>주방 스텐 요리 업소용 파스타 ms 뉴 얼음집게 445[무료배송]</td>
+      <td>10758488||00</td>
+      <td>0</td>
+      <td>무료</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>정다운</td>
+    </tr>
+    <tr>
+      <th>(큐트캣) 앞치마 어깨끈 요리 주방 H형 투포켓, 상세페이지 참조</th>
+      <td>2339047465</td>
+      <td>2021-05-16 21:42:34</td>
+      <td>[jepython]@[세일상품](큐트캣) 앞치마 어깨끈 H형 요리 투포켓 주방jff...</td>
+      <td>[jepython]@[세일상품](큐트캣) 앞치마 어깨끈 H형 요리 투포켓 주방jff...</td>
+      <td>5267381501</td>
+      <td>75689000301</td>
+      <td>[jepython]@[세일상품](큐트캣) 앞치마 어깨끈 H형 요리 투포켓 주방jff...</td>
+      <td>13412054||00</td>
+      <td>0</td>
+      <td>무료</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>한지연</td>
+    </tr>
+    <tr>
+      <th>+코코사라+[GTrend]버핏 패턴 지퍼케이스 전기종모음 추가금X, S20+ G986/핑크</th>
+      <td>2116178401</td>
+      <td>2021-03-02 22:18:53</td>
+      <td>[제프파이썬+할인점] @전기종모음 추가금X [GTrend]버핏 지퍼케이스 패턴무료배...</td>
+      <td>[제프파이썬+할인점] @S20+ G986/핑크무료배송상품~!!</td>
+      <td>4733752280</td>
+      <td>74000668148</td>
+      <td>[제프파이썬+할인점] @S20+ G986/핑크무료배송상품~!!</td>
+      <td>9092143||fbd21ef7c2</td>
+      <td>0</td>
+      <td>무료</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>이은정</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>화이트우드사각휴지케이스[무료배송], 상세페이지 참조</th>
+      <td>1995359239</td>
+      <td>2021-01-17 00:35:33</td>
+      <td>화이트우드사각휴지케이스[무료배송]</td>
+      <td>화이트우드사각휴지케이스[무료배송]</td>
+      <td>2360203257</td>
+      <td>72081048147</td>
+      <td>화이트우드사각휴지케이스[무료배송]</td>
+      <td>11190111||00</td>
+      <td>0</td>
+      <td>무료</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>양희중</td>
+    </tr>
+    <tr>
+      <th>화장실 압축기 주름 변기 뚫어펑 뚫어뻥 (15cm 레드), 상세페이지 참조</th>
+      <td>1906632249</td>
+      <td>2020-12-16 15:03:20</td>
+      <td>화장실 압축기 주름 변기 뚫어펑 뚫어뻥 (15cm 레드)[무료배송]</td>
+      <td>화장실 압축기 주름 변기 뚫어펑 뚫어뻥 (15cm 레드)[무료배송]</td>
+      <td>4602750903</td>
+      <td>72979440769</td>
+      <td>화장실 압축기 주름 변기 뚫어펑 뚫어뻥 (15cm 레드)[무료배송]</td>
+      <td>11987532||00</td>
+      <td>0</td>
+      <td>무료</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>김예지</td>
+    </tr>
+    <tr>
+      <th>후드방역모자 모자페이스쉴드 후디방역모자 모자투명막 방역모자 방역후드모자 투명막후드모자[무료배송], 02그레이</th>
+      <td>1910822764</td>
+      <td>2020-12-17 20:26:06</td>
+      <td>후드방역모자 모자페이스쉴드 후디방역모자 모자투명막 방역모자 방역후드모자 투명막후드모...</td>
+      <td>02그레이[무료배송]</td>
+      <td>4550562528</td>
+      <td>72837959103</td>
+      <td>02그레이[무료배송]</td>
+      <td>11826092||a244908d03</td>
+      <td>0</td>
+      <td>무료</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>JIN LIANHONG</td>
+    </tr>
+    <tr>
+      <th>휴대용 접이식방석 카키 등산 낚시 야외방석, 단품</th>
+      <td>2044438968</td>
+      <td>2021-02-04 07:57:40</td>
+      <td>[제프파이썬] 휴대용 접이식방석 카키 등산 낚시 야외방석[무료배송]</td>
+      <td>[제프파이썬] 휴대용 접이식방석 카키 등산 낚시 야외방석[무료배송]</td>
+      <td>4542461867</td>
+      <td>73186959795</td>
+      <td>[제프파이썬] 휴대용 접이식방석 카키 등산 낚시 야외방석[무료배송]</td>
+      <td>12189631||00</td>
+      <td>0</td>
+      <td>무료</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>윤석선</td>
+    </tr>
+    <tr>
+      <th>희귀씨앗SY 씨앗10립 메버릭 제라늄 혼합, 상세페이지 참조</th>
+      <td>2296588774</td>
+      <td>2021-05-03 09:42:44</td>
+      <td>[제프파이썬+할인점] @ [jepython][제프파이썬]제라늄 희귀씨앗SY 메버릭 ...</td>
+      <td>[제프파이썬+할인점] @ [jepython][제프파이썬]제라늄 희귀씨앗SY 메버릭 ...</td>
+      <td>4924415731</td>
+      <td>73784185490</td>
+      <td>[제프파이썬+할인점] @ [jepython][제프파이썬]제라늄 희귀씨앗SY 메버릭 ...</td>
+      <td>12796989||00</td>
+      <td>0</td>
+      <td>무료</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>이영선</td>
+    </tr>
+  </tbody>
+</table>
+<p>2101 rows × 14 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_group</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>묶음배송번호</th>
+      <th>주문일</th>
+      <th>등록상품명</th>
+      <th>등록옵션명</th>
+      <th>노출상품ID</th>
+      <th>옵션ID</th>
+      <th>최초등록옵션명</th>
+      <th>업체상품코드</th>
+      <th>바코드</th>
+      <th>배송비구분</th>
+      <th>배송비</th>
+      <th>도서산간 추가배송비</th>
+      <th>구매수(수량)</th>
+      <th>구매자</th>
+    </tr>
+    <tr>
+      <th>노출상품명(옵션명)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>(사이즈3종) 자세교정 허리 /자가발열 /허리보호대 굽은 [생활플러스] 허리복대 벨트, 00_02사이즈/ XXL</th>
+      <td>1909801673</td>
+      <td>2020-12-17 14:22:16</td>
+      <td>[생활플러스] 굽은 허리 자세교정 벨트 /허리보호대 /자가발열 허리복대 (사이즈3종...</td>
+      <td>00_02사이즈/ XXL[무료배송]</td>
+      <td>4545101585</td>
+      <td>72813731763</td>
+      <td>00_02사이즈/ XXL[무료배송]</td>
+      <td>11820400||d41294195d</td>
+      <td>0</td>
+      <td>무료</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>이수정</td>
+    </tr>
+    <tr>
+      <th>(스타몰)도루코 커터날 대형 10개x10팩, 상세페이지 참조</th>
+      <td>188810073920288228142277905990</td>
+      <td>2020-12-10 08:16:422021-01-29 16:59:392021-04-...</td>
+      <td>도루코 커터날 소형 10개x10팩[무료배송][제프파이썬] 도루코 커터날 소형 10개...</td>
+      <td>도루코 커터날 소형 10개x10팩[무료배송][제프파이썬] 도루코 커터날 소형 10...</td>
+      <td>438728853543872885354387288535</td>
+      <td>727510581877275105818772751058187</td>
+      <td>도루코 커터날 소형 10개x10팩[무료배송][제프파이썬] 도루코 커터날 소형 10...</td>
+      <td>9719011||009719011||009719011||00</td>
+      <td>0</td>
+      <td>무료무료무료</td>
+      <td>000</td>
+      <td>000</td>
+      <td>4</td>
+      <td>송진주박정식최미영</td>
+    </tr>
+    <tr>
+      <th>(오팔스토아)주방 스텐 요리 업소용 파스타 ms 뉴 얼음집게 445</th>
+      <td>1916296697</td>
+      <td>2020-12-19 19:23:45</td>
+      <td>주방 스텐 요리 업소용 파스타 ms 뉴 얼음집게 445[무료배송]</td>
+      <td>주방 스텐 요리 업소용 파스타 ms 뉴 얼음집게 445[무료배송]</td>
+      <td>2092582935</td>
+      <td>72331080824</td>
+      <td>주방 스텐 요리 업소용 파스타 ms 뉴 얼음집게 445[무료배송]</td>
+      <td>10758488||00</td>
+      <td>0</td>
+      <td>무료</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>정다운</td>
+    </tr>
+    <tr>
+      <th>(큐트캣) 앞치마 어깨끈 요리 주방 H형 투포켓, 상세페이지 참조</th>
+      <td>2339047465</td>
+      <td>2021-05-16 21:42:34</td>
+      <td>[jepython]@[세일상품](큐트캣) 앞치마 어깨끈 H형 요리 투포켓 주방jff...</td>
+      <td>[jepython]@[세일상품](큐트캣) 앞치마 어깨끈 H형 요리 투포켓 주방jff...</td>
+      <td>5267381501</td>
+      <td>75689000301</td>
+      <td>[jepython]@[세일상품](큐트캣) 앞치마 어깨끈 H형 요리 투포켓 주방jff...</td>
+      <td>13412054||00</td>
+      <td>0</td>
+      <td>무료</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>한지연</td>
+    </tr>
+    <tr>
+      <th>+코코사라+[GTrend]버핏 패턴 지퍼케이스 전기종모음 추가금X, S20+ G986/핑크</th>
+      <td>2116178401</td>
+      <td>2021-03-02 22:18:53</td>
+      <td>[제프파이썬+할인점] @전기종모음 추가금X [GTrend]버핏 지퍼케이스 패턴무료배...</td>
+      <td>[제프파이썬+할인점] @S20+ G986/핑크무료배송상품~!!</td>
+      <td>4733752280</td>
+      <td>74000668148</td>
+      <td>[제프파이썬+할인점] @S20+ G986/핑크무료배송상품~!!</td>
+      <td>9092143||fbd21ef7c2</td>
+      <td>0</td>
+      <td>무료</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>이은정</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_group</span><span class="p">.</span><span class="n">columns</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Index(['묶음배송번호', '주문일', '등록상품명', '등록옵션명', '노출상품ID', '옵션ID', '최초등록옵션명',
+       '업체상품코드', '바코드', '배송비구분', '배송비', '도서산간 추가배송비', '구매수(수량)', '구매자'],
+      dtype='object')
+</code></pre></div></div>
+
+<h1 id="구매수수량-데이터-변환">구매수(수량) 데이터 변환</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_group</span><span class="p">.</span><span class="n">info</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+Index: 2101 entries, (사이즈3종) 자세교정 허리 /자가발열 /허리보호대 굽은 [생활플러스] 허리복대 벨트, 00_02사이즈/ XXL to 희귀씨앗SY 씨앗10립 메버릭 제라늄 혼합, 상세페이지 참조
+Data columns (total 14 columns):
+ #   Column      Non-Null Count  Dtype 
+---  ------      --------------  ----- 
+ 0   묶음배송번호      2101 non-null   object
+ 1   주문일         2101 non-null   object
+ 2   등록상품명       2101 non-null   object
+ 3   등록옵션명       2101 non-null   object
+ 4   노출상품ID      2101 non-null   object
+ 5   옵션ID        2101 non-null   object
+ 6   최초등록옵션명     2101 non-null   object
+ 7   업체상품코드      2101 non-null   object
+ 8   바코드         2101 non-null   object
+ 9   배송비구분       2101 non-null   object
+ 10  배송비         2101 non-null   object
+ 11  도서산간 추가배송비  2101 non-null   object
+ 12  구매수(수량)     2101 non-null   object
+ 13  구매자         2101 non-null   object
+dtypes: object(14)
+memory usage: 246.2+ KB
+</code></pre></div></div>
+
+<ul>
+  <li>12  구매수(수량)     2101 non-null   object 을 int타입으로 변환하기</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_group</span><span class="p">.</span><span class="n">dtypes</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>묶음배송번호        object
+주문일           object
+등록상품명         object
+등록옵션명         object
+노출상품ID        object
+옵션ID          object
+최초등록옵션명       object
+업체상품코드        object
+바코드           object
+배송비구분         object
+배송비           object
+도서산간 추가배송비    object
+구매수(수량)       object
+구매자           object
+dtype: object
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_group</span><span class="p">[</span><span class="s">'구매수(수량)'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df_group</span><span class="p">[</span><span class="s">'구매수(수량)'</span><span class="p">],</span><span class="n">errors</span> <span class="o">=</span> <span class="s">'coerce'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">df_group</span><span class="p">.</span><span class="n">info</span><span class="p">())</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+Index: 2101 entries, (사이즈3종) 자세교정 허리 /자가발열 /허리보호대 굽은 [생활플러스] 허리복대 벨트, 00_02사이즈/ XXL to 희귀씨앗SY 씨앗10립 메버릭 제라늄 혼합, 상세페이지 참조
+Data columns (total 14 columns):
+ #   Column      Non-Null Count  Dtype  
+---  ------      --------------  -----  
+ 0   묶음배송번호      2101 non-null   object 
+ 1   주문일         2101 non-null   object 
+ 2   등록상품명       2101 non-null   object 
+ 3   등록옵션명       2101 non-null   object 
+ 4   노출상품ID      2101 non-null   object 
+ 5   옵션ID        2101 non-null   object 
+ 6   최초등록옵션명     2101 non-null   object 
+ 7   업체상품코드      2101 non-null   object 
+ 8   바코드         2101 non-null   object 
+ 9   배송비구분       2101 non-null   object 
+ 10  배송비         2101 non-null   object 
+ 11  도서산간 추가배송비  2101 non-null   object 
+ 12  구매수(수량)     2100 non-null   float64
+ 13  구매자         2101 non-null   object 
+dtypes: float64(1), object(13)
+memory usage: 246.2+ KB
+None
+</code></pre></div></div>
+
+<ul>
+  <li>https://stackoverflow.com/questions/48094854/python-convert-object-to-float</li>
+</ul>
+
+<p>12  구매수(수량)     2100 non-null   float64 으로 타입 변경 할 때 위 사이트 참고함</p>
+
+<h1 id="노출상품명옵션명별-구매수수량">노출상품명(옵션명)별 구매수(수량)</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">qua_by_items</span> <span class="o">=</span> <span class="n">df_group</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'노출상품명(옵션명)'</span><span class="p">).</span><span class="nb">sum</span><span class="p">()[</span><span class="s">'구매수(수량)'</span><span class="p">].</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">qua_by_items</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>노출상품명(옵션명)
+레고 저금통(색상랜덤), 센스넷 1                                                                     70.0
+마음담아 크리스마스 귀여운 산타 루돌프 눈사람 핸드메이드 스티커 9종 모음, 023. 루돌프와산타                                  46.0
+크리스마스 모음 스티커 마음담아 9종 핸드메이드 산타 귀여운 루돌프 눈사람, 001. 파티하는산타                                  42.0
+마음담아 크리스마스 귀여운 산타 루돌프 눈사람 핸드메이드 스티커 9종 모음, 001. 파티하는산타                                  38.0
+마음담아 크리스마스 귀여운 산타 루돌프 눈사람 핸드메이드 스티커 9종 모음, 012. 크리스마스리스                                 37.0
+                                                                                        ... 
+내추럴발란스 전연령 LID 감자 오리고기 포뮬라 드라이 반려견 사료 Large Bite, 11.8kg, 1개                             0.0
+[제프파이썬+할인점] @리어스텝 범퍼몰딩 엑스원 올뉴투싼 트렁크 발판 메탈무료배송상품~!!, 상세페이지 참조                             0.0
+[제프파이썬+할인점] @도구 필기 학생 정리 패스트푸드 메모 0.5mm 핑크풋 샤프무료배송상품~!!, 제품선택/감자튀김                       0.0
+[제프파이썬+할인점] @ [jepython][제프파이썬+할인점] @손가락 마디마사지기 친환경 핑거마사지기무료배송상품~!!jff2021, 상세페이지 참조     0.0
+[jepython]@[세일상품][제프파이썬+할인점] @어몽어스 소비 AMONG 용돈기입장 1000 습관 US무료배송상품~!!jff2021, 단품(랜덤)     0.0
+Name: 구매수(수량), Length: 2101, dtype: float64
+</code></pre></div></div>
+
+<h1 id="top-10-판매-제품-확인">Top 10 판매 제품 확인</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">top_selling</span> <span class="o">=</span> <span class="n">df_group</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'노출상품명(옵션명)'</span><span class="p">).</span><span class="nb">sum</span><span class="p">()[</span><span class="s">'구매수(수량)'</span><span class="p">].</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">top_selling</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>노출상품명(옵션명)
+레고 저금통(색상랜덤), 센스넷 1                                                 70.0
+마음담아 크리스마스 귀여운 산타 루돌프 눈사람 핸드메이드 스티커 9종 모음, 023. 루돌프와산타              46.0
+크리스마스 모음 스티커 마음담아 9종 핸드메이드 산타 귀여운 루돌프 눈사람, 001. 파티하는산타              42.0
+마음담아 크리스마스 귀여운 산타 루돌프 눈사람 핸드메이드 스티커 9종 모음, 001. 파티하는산타              38.0
+마음담아 크리스마스 귀여운 산타 루돌프 눈사람 핸드메이드 스티커 9종 모음, 012. 크리스마스리스             37.0
+아파트방음문 문방풍 방문틈막이 월동준비 문틈바람[무료배송], 그레이                               35.0
+bob 갤럭시핏2 fit2 3D 곡면엣지 풀커버 PET 보호필름[무료배송], 단일상품, 3D풀커버필름_Fit2/블랙    32.0
+마음담아 크리스마스 귀여운 산타 루돌프 눈사람 핸드메이드 스티커 9종 모음, 045. 싱글벙글산타              27.0
+[제프파이썬]7cm책철 책철 2600책철 화신책철 50개입 725책철-소무료배송, 상세페이지 참조              21.0
+화분 자동관수 패트병 공용기 장거리 여행 색상랜덤                                         20.0
+Name: 구매수(수량), dtype: float64
+</code></pre></div></div>
+
+<h1 id="top-10-판매-제품-데이터-시각화">Top 10 판매 제품 데이터 시각화</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plot</span> <span class="o">=</span> <span class="n">top_selling</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">'bar'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">plot</span><span class="p">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">'노출상품명(옵션명)'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">'구매수(수량)'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">'노출상품명(옵션명)별 구매수(수량)'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="n">top_selling</span><span class="p">.</span><span class="n">index</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+</code></pre></div></div>
+
+<p><img src="blogmaker/_posts/python/image/output_26_0.png" alt="png" /></p>
+
+<h1 id="노출상품명옵션명-중에-많이-나온-단어-빈도-조회">노출상품명(옵션명) 중에 많이 나온 단어 빈도 조회</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 필요한 모듈 실행
+</span><span class="kn">import</span> <span class="nn">konlpy</span>
+<span class="kn">from</span> <span class="nn">konlpy.tag</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="c1">#wordcloud 사용 
+</span><span class="kn">from</span> <span class="nn">wordcloud</span> <span class="kn">import</span> <span class="n">wordcloud</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span> <span class="c1">#단어에 포함된 각 글자 수 세어준다
+</span><span class="kn">import</span> <span class="nn">nltk</span> <span class="c1">#토큰 데이터를 살펴볼 수 있는 라이브러리
+</span><span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">check_output</span>
+<span class="kn">from</span> <span class="nn">wordcloud</span> <span class="kn">import</span> <span class="n">WordCloud</span><span class="p">,</span><span class="n">STOPWORDS</span><span class="p">,</span><span class="n">ImageColorGenerator</span> <span class="c1">#wordcloud 라이브러리
+</span><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="n">mpl</span>
+
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">okt</span> <span class="o">=</span> <span class="n">Okt</span><span class="p">()</span> <span class="c1"># Konlpy를 사용하여 한글 명사 추출 및 빈도 계산 
+</span>            <span class="c1"># Okt(Twitter) 클래스를 사용하여 한글 명사 단어 빈도 계산 
+</span>            <span class="c1"># 클래스 종류 - Hannanum, Kkma, Komoran, Mecab, Okt(Twitter)
+</span><span class="n">kkma</span> <span class="o">=</span> <span class="n">Kkma</span><span class="p">()</span> <span class="c1">#
+</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">okt</span><span class="p">.</span><span class="n">morphs</span><span class="p">(</span><span class="s">"도움되셨다면, 공감을 꾸욱 눌러주세요~"</span><span class="p">))</span>
+<span class="c1"># morphs는 형태소 단위로 구문 분석을 수행한다 
+# okt 잘 실행되는지 확인했음
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['도움', '되셨다면', ',', '공감', '을', '꾸욱', '눌러주세요', '~']
+</code></pre></div></div>
+
+<h2 id="노출상품명옵션명-컬럼만-데이터-저장">노출상품명(옵션명) 컬럼만 데이터 저장</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data1</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s">'coupangdata.xlsx'</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="s">'L'</span><span class="p">)</span> <span class="c1"># Usecols은 엑셀파일의 특정 행만을 데이터로 출력하고 싶을때 사용하는 파라미터
+</span>
+<span class="k">print</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                                             노출상품명(옵션명)
+0     마음담아 크리스마스 귀여운 산타 루돌프 눈사람 핸드메이드 스티커 9종 모음, 001...
+1                                 다이얼식 비밀번호식 열쇠, 003단-소
+2        현모양처 무료배송 하오츠 백탕 훠궈소스 마라탕 샹궈 재료 중국식품, 상세페이지 참조
+3     bob 갤럭시핏2 fit2 3D 곡면엣지 풀커버 PET 보호필름[무료배송], 단일상...
+4                      아동 성인 남녀공용 어른 겨울 뜨개실 귀마개, 00랜덤컬러
+...                                                 ...
+3022  [제프파이썬+할인점] @P36766 튼튼플러스요거얌얌 이츠웰 가공식품 오렌지125g...
+3023     [제프파이썬+할인점] @그로비타 거북이사료 85g무료배송상품~!!, 상세페이지 참조
+3024              HOME 밥주걱 홀더 받침대 거치대 가정 식당 HOLDER, 화이트
+3025              HOME 밥주걱 홀더 받침대 거치대 가정 식당 HOLDER, 화이트
+3026  [jepython]@[세일상품]영대 은박지 알루미늄 테이프 (48mm7M)jff20...
+
+[3027 rows x 1 columns]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># morphs = 형태소 , noun = 명사 , pos = 형태소 + 품사
+#okt()함수를 이용하여 주요 키워드 추출
+</span>
+<span class="n">data1</span><span class="p">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s">'노출상품명(옵션명)'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0       마음담아 크리스마스 귀여운 산타 루돌프 눈사람 핸드메이드 스티커 9종 모음, 001...
+1                                   다이얼식 비밀번호식 열쇠, 003단-소
+2          현모양처 무료배송 하오츠 백탕 훠궈소스 마라탕 샹궈 재료 중국식품, 상세페이지 참조
+3       bob 갤럭시핏2 fit2 3D 곡면엣지 풀커버 PET 보호필름[무료배송], 단일상...
+4                        아동 성인 남녀공용 어른 겨울 뜨개실 귀마개, 00랜덤컬러
+                              ...                        
+3022    [제프파이썬+할인점] @P36766 튼튼플러스요거얌얌 이츠웰 가공식품 오렌지125g...
+3023       [제프파이썬+할인점] @그로비타 거북이사료 85g무료배송상품~!!, 상세페이지 참조
+3024                HOME 밥주걱 홀더 받침대 거치대 가정 식당 HOLDER, 화이트
+3025                HOME 밥주걱 홀더 받침대 거치대 가정 식당 HOLDER, 화이트
+3026    [jepython]@[세일상품]영대 은박지 알루미늄 테이프 (48mm7M)jff20...
+Name: 노출상품명(옵션명), Length: 3027, dtype: object
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">## 정규식을 이용해 한글,숫자만 추출
+</span><span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="n">k</span> <span class="o">=</span><span class="mi">0</span> 
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data1</span><span class="p">[</span><span class="s">'노출상품명(옵션명)'</span><span class="p">]:</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span><span class="s">'[ㄱ-ㅎ|\d\ㅏ-ㅣ|가-힣]+'</span><span class="p">).</span><span class="n">findall</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">data1</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="s">'노출상품명(옵션명)'</span><span class="p">]</span> <span class="o">=</span> <span class="s">' '</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">text</span><span class="p">).</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">k</span><span class="o">+=</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data2</span> <span class="o">=</span> <span class="n">data1</span><span class="p">.</span><span class="n">loc</span><span class="p">[:</span><span class="s">'노출상품명(옵션명)'</span><span class="p">]</span> <span class="c1">#정규식 처리 결과 ,특수기호와 이모지가 없는 것을 확인할 수 있다.
+</span><span class="n">data2</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>노출상품명(옵션명)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>마음담아 크리스마스 귀여운 산타 루돌프 눈사람 핸드메이드 스티커 9종 모음 001 ...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>다이얼식 비밀번호식 열쇠 003단 소</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>현모양처 무료배송 하오츠 백탕 훠궈소스 마라탕 샹궈 재료 중국식품 상세페이지 참조</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>갤럭시핏2 2 3 곡면엣지 풀커버 보호필름 무료배송 단일상품 3 풀커버필름 2 블랙</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>아동 성인 남녀공용 어른 겨울 뜨개실 귀마개 00랜덤컬러</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>3022</th>
+      <td>제프파이썬 할인점 36766 튼튼플러스요거얌얌 이츠웰 가공식품 오렌지125 무료배송...</td>
+    </tr>
+    <tr>
+      <th>3023</th>
+      <td>제프파이썬 할인점 그로비타 거북이사료 85 무료배송상품 상세페이지 참조</td>
+    </tr>
+    <tr>
+      <th>3024</th>
+      <td>밥주걱 홀더 받침대 거치대 가정 식당 화이트</td>
+    </tr>
+    <tr>
+      <th>3025</th>
+      <td>밥주걱 홀더 받침대 거치대 가정 식당 화이트</td>
+    </tr>
+    <tr>
+      <th>3026</th>
+      <td>세일상품 영대 은박지 알루미늄 테이프 48 7 2021 상세페이지 참조</td>
+    </tr>
+  </tbody>
+</table>
+<p>3027 rows × 1 columns</p>
+</div>
+
+<ul>
+  <li>특수기호가 제거된 것을 확인 할 수 있다</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#https://hwao-story.tistory.com/3
+# 위 사이트 참고했음
+</span><span class="k">def</span> <span class="nf">word_cloud_save</span><span class="p">(</span><span class="n">data2</span><span class="p">):</span>
+    <span class="n">mpl</span><span class="p">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s">'font.size'</span><span class="p">]</span><span class="o">=</span><span class="mi">12</span> 
+    <span class="n">mpl</span><span class="p">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s">'savefig.dpi'</span><span class="p">]</span><span class="o">=</span><span class="mi">100</span>
+    <span class="n">mpl</span><span class="p">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s">'figure.subplot.bottom'</span><span class="p">]</span><span class="o">=</span><span class="p">.</span><span class="mi">1</span>
+    
+    
+    <span class="n">stopwords</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">STOPWORDS</span><span class="p">)</span>
+    
+    <span class="n">wordcloud</span> <span class="o">=</span> <span class="n">WordCloud</span><span class="p">(</span>
+                    <span class="n">font_path</span> <span class="o">=</span> <span class="s">'C:\Windows\Fonts\H2GTRE.TTF'</span><span class="p">,</span>
+                    <span class="n">background_color</span> <span class="o">=</span> <span class="s">'white'</span><span class="p">,</span>
+                    <span class="n">stopwords</span> <span class="o">=</span> <span class="n">stopwords</span><span class="p">,</span>
+                    <span class="n">max_words</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span>
+                    <span class="n">max_font_size</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span>
+                    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+    <span class="p">).</span><span class="n">generate</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">data2</span><span class="p">[</span><span class="s">'노출상품명(옵션명)'</span><span class="p">]))</span>
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">okt</span> <span class="o">=</span> <span class="n">Okt</span><span class="p">()</span>
+<span class="n">data2</span><span class="p">[</span><span class="s">'token_item'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data2</span><span class="p">[</span><span class="s">'노출상품명(옵션명)'</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="n">okt</span><span class="p">.</span><span class="n">morphs</span><span class="p">)</span> <span class="c1"># tokenize
+</span><span class="n">data2</span><span class="p">[</span><span class="s">'tagging'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data2</span><span class="p">[</span><span class="s">'노출상품명(옵션명)'</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="n">okt</span><span class="p">.</span><span class="n">pos</span><span class="p">)</span> <span class="c1">#tokenize + 형태소 
+</span><span class="n">data2</span><span class="p">[</span><span class="s">'Noun'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data2</span><span class="p">[</span><span class="s">'노출상품명(옵션명)'</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="n">okt</span><span class="p">.</span><span class="n">nouns</span><span class="p">)</span><span class="c1"># only 명사
+</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Users\MyCom\anaconda3\envs\text_analysis\lib\site-packages\ipykernel_launcher.py:2: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  
+C:\Users\MyCom\anaconda3\envs\text_analysis\lib\site-packages\ipykernel_launcher.py:3: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  This is separate from the ipykernel package so we can avoid doing imports until
+C:\Users\MyCom\anaconda3\envs\text_analysis\lib\site-packages\ipykernel_launcher.py:4: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  after removing the cwd from sys.path.
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tagging</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data2</span><span class="p">[</span><span class="s">'tagging'</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">i</span><span class="p">]</span> <span class="c1">#리스트로 추출
+</span><span class="n">tagging</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('001', 'Number'),
+ ('파티', 'Noun'),
+ ('하는', 'Verb'),
+ ('산타', 'Noun'),
+ ('다이얼', 'Noun'),
+ ('식', 'Suffix'),
+ ('비밀번호', 'Noun'),
+ ('식', 'Suffix'),
+ ('열쇠', 'Noun'),
+ ('003', 'Number'),
+ ('단', 'Noun'),
+ ('소', 'Noun'),
+ ('현모양처', 'Noun'),
+ ('무료', 'Noun'),
+ ('배송', 'Noun'),
+ ('하오츠', 'Noun'),
+ ('백탕', 'Noun'),
+ ('훠궈', 'Noun'),
+ ('소스', 'Noun'),
+ ('마라', 'Adjective'),
+ ('탕', 'Noun'),
+ ('샹궈', 'Noun'),
+ ('재료', 'Noun'),
+ ('중국', 'Noun'),
+ ('식품', 'Noun'),
+ ('상세', 'Noun'),
+ ('페이지', 'Noun'),
+ ('참조', 'Noun'),
+ ('갤럭시', 'Noun'),
+ ('핏', 'Noun'),
+ ('2', 'Number'),
+ ('2', 'Number'),
+ ('3', 'Number'),
+ ('곡면', 'Noun'),
+ ('엣지', 'Noun'),
+ ('풀', 'Noun'),
+ ('커버', 'Noun'),
+ ('보호', 'Noun'),
+ ('필름', 'Noun'),
+ ('무료', 'Noun'),
+ ('배송', 'Noun'),
+ ('단일', 'Noun'),
+ ('상품', 'Noun'),
+ ('3', 'Number'),
+ ('풀', 'Noun'),
+ ('커버', 'Noun'),
+ ('필름', 'Noun'),
+ ('2', 'Number'),
+ ('블랙', 'Noun'),
+ ('아동', 'Noun'),
+ ('성인', 'Noun'),
+ ('남녀', 'Noun'),
+ ('공용', 'Noun'),
+ ('어른', 'Noun'),
+ ('겨울', 'Noun'),
+ ('뜨', 'Verb'),
+ ('개실', 'Verb'),
+ ('귀마개', 'Noun'),
+ ('00', 'Number'),
+ ('랜덤', 'Noun'),
+ ('컬러', 'Noun'),
+ ('멀티', 'Noun'),
+ ('염료', 'Noun'),
+ ('실크', 'Noun'),
+ ('린넨', 'Noun'),
+ ('울', 'Noun'),
+ ('다', 'Adverb'),
+ ('이론', 'Noun'),
+ ('53', 'Number'),
+ ('면', 'Noun'),
+ ('섬유', 'Noun'),
+ ('염색', 'Noun'),
+ ('1321', 'Number'),
+ ('엘리펀트', 'Noun'),
+ ('그레이', 'Noun'),
+ ('대', 'Modifier'),
+ ('용량', 'Noun'),
+ ('식', 'Noun'),
+ ('자재', 'Noun'),
+ ('반찬', 'Noun'),
+ ('소시지', 'Noun'),
+ ('사조', 'Noun'),
+ ('1', 'Number'),
+ ('무료', 'Noun'),
+ ('배송', 'Noun'),
+ ('상세', 'Noun'),
+ ('페이지', 'Noun'),
+ ('참조', 'Noun'),
+ ('범퍼', 'Noun'),
+ ('케이스', 'Noun'),
+ ('그립', 'Verb'),
+ ('톡', 'Noun'),
+ ('아이폰', 'Noun'),
+ ('글라스', 'Noun'),
+ ('12', 'Number'),
+ ('미러', 'Noun'),
+ ('하트', 'Noun'),
+ ('스마트', 'Noun'),
+ ('톡', 'Noun'),
+ ('무료', 'Noun'),
+ ('배송', 'Noun'),
+ ('단일', 'Noun'),
+ ('상품', 'Noun'),
+ ('실버', 'Noun'),
+ ('갤럭시', 'Noun'),
+ ('핏', 'Noun'),
+ ('2', 'Number'),
+ ('2', 'Number'),
+ ('3', 'Number'),
+ ('곡면', 'Noun'),
+ ('엣지', 'Noun'),
+ ('풀', 'Noun'),
+ ('커버', 'Noun'),
+ ('보호', 'Noun'),
+ ('필름', 'Noun'),
+ ('무료', 'Noun'),
+ ('배송', 'Noun'),
+ ('단일', 'Noun'),
+ ('상품', 'Noun'),
+ ('3', 'Number'),
+ ('풀', 'Noun'),
+ ('커버', 'Noun'),
+ ('필름', 'Noun'),
+ ('2', 'Number'),
+ ('블랙', 'Noun'),
+ ('마향', 'Noun'),
+ ('마라', 'Adjective'),
+ ('탕용', 'Noun'),
+ ('소스', 'Noun'),
+ ('100', 'Number'),
+ ('마라샹궈', 'Noun'),
+ ('산초', 'Noun'),
+ ('기름', 'Noun'),
+ ('마', 'Noun'),
+ ('조', 'Modifier'),
+ ('유', 'Noun'),
+ ('상세', 'Noun'),
+ ('페이지', 'Noun'),
+ ('참조', 'Noun'),
+ ('헤어', 'Noun'),
+ ('쁘띠', 'Noun'),
+ ('명품', 'Noun'),
+ ('머리핀', 'Noun'),
+ ('동백', 'Noun'),
+ ('이', 'Josa'),
+ ('미니', 'Noun'),
+ ('프랑스', 'Noun'),
+ ('핀', 'Noun'),
+ ('집게', 'Noun'),
+ ('핀', 'Noun'),
+ ('2', 'Number'),
+ ('개', 'Noun'),
+ ('1', 'Number'),
+ ('쌍', 'Noun'),
+ ('공효진', 'Noun'),
+ ('동글이', 'Noun'),
+ ('앞머리', 'Noun'),
+ ('00', 'Number'),
+ ('02', 'Number'),
+ ('디자인', 'Noun'),
+ ('에트', 'Noun'),
+ ('로', 'Josa'),
+ ('갤럭시', 'Noun'),
+ ('핏', 'Noun'),
+ ('2', 'Number'),
+ ('2', 'Number'),
+ ('3', 'Number'),
+ ('곡면', 'Noun'),
+ ('엣지', 'Noun'),
+ ('풀', 'Noun'),
+ ('커버', 'Noun'),
+ ('보호', 'Noun'),
+ ('필름', 'Noun'),
+ ('무료', 'Noun'),
+ ('배송', 'Noun'),
+ ('단일', 'Noun'),
+ ('상품', 'Noun'),
+ ('3', 'Number'),
+ ('풀', 'Noun'),
+ ('커버', 'Noun'),
+ ('필름', 'Noun'),
+ ('2', 'Number'),
+ ('블랙', 'Noun'),
+ ('간편한', 'Adjective'),
+ ('시공', 'Noun'),
+ ('주방', 'Noun'),
+ ('욕실', 'Noun'),
+ ('곰팡이', 'Noun'),
+ ('오염', 'Noun'),
+ ('방지', 'Noun'),
+ ('방수', 'Noun'),
+ ('테이프', 'Noun'),
+ ('곰팡이', 'Noun'),
+ ('방수', 'Noun'),
+ ('테이프', 'Noun'),
+ ('오염', 'Noun'),
+ ('방지', 'Noun'),
+ ('욕실', 'Noun'),
+ ('틈새', 'Noun'),
+ ('무료', 'Noun'),
+ ('배송', 'Noun'),
+ ('00', 'Number'),
+ ('단', 'Modifier'),
+ ('품', 'Noun'),
+ ('실버', 'Noun'),
+ ('소품', 'Noun'),
+ ('10', 'Number'),
+ ('집게', 'Noun'),
+ ('형', 'Suffix'),
+ ('걸이', 'Noun'),
+ ('고리', 'Noun'),
+ ('걸이', 'Noun'),
+ ('형', 'Suffix'),
+ ('봉', 'Noun'),
+ ('무료', 'Noun'),
+ ('배송', 'Noun'),
+ ('상세', 'Noun'),
+ ('페이지', 'Noun'),
+ ('참조', 'Noun'),
+ ('상세', 'Noun'),
+ ('페이지', 'Noun'),
+ ('참조', 'Noun'),
+ ('92', 'Number'),
+ ('핑코앤', 'Noun'),
+ ('루리', 'Noun'),
+ ('캐릭터', 'Noun'),
+ ('케이스', 'Noun'),
+ ('920', 'Number'),
+ ('무료', 'Noun'),
+ ('배송', 'Noun'),
+ ('03', 'Number'),
+ ('하트', 'Noun'),
+ ('패턴', 'Noun'),
+ ('스마', 'Noun'),
+ ('토', 'Noun'),
+ ('별', 'Modifier'),
+ ('비트', 'Noun'),
+ ('소켓', 'Noun'),
+ ('무료', 'Noun'),
+ ('배송', 'Noun'),
+ ('073', 'Number'),
+ ('8', 'Number'),
+ ('45', 'Number'),
+ ('설치', 'Noun'),
+ ('가', 'Josa'),
+ ('간단한', 'Adjective'),
+ ('빨래', 'Noun'),
+ ('줄', 'Noun'),
+ ('15', 'Number'),
+ ('갤럭시', 'Noun'),
+ ('핏', 'Noun'),
+ ('2', 'Number'),
+ ('2', 'Number'),
+ ('3', 'Number'),
+ ('곡면', 'Noun'),
+ ('엣지', 'Noun'),
+ ('풀', 'Noun'),
+ ('커버', 'Noun'),
+ ('보호', 'Noun'),
+ ('필름', 'Noun'),
+ ('무료', 'Noun'),
+ ('배송', 'Noun'),
+ ('단일', 'Noun'),
+ ('상품', 'Noun'),
+ ('3', 'Number'),
+ ('풀', 'Noun'),
+ ('커버', 'Noun'),
+ ('필름', 'Noun'),
+ ('2', 'Number'),
+ ('블랙', 'Noun'),
+ ('나비', 'Noun'),
+ ('다이어리', 'Noun'),
+ ('갤럭시', 'Noun'),
+ ('31', 'Number'),
+ ('315', 'Number'),
+ ('무료', 'Noun'),
+ ('배송', 'Noun'),
+ ('단일', 'Noun'),
+ ('상품', 'Noun'),
+ ('01', 'Number'),
+ ('블랙', 'Noun'),
+ ('갤럭시', 'Noun'),
+ ('21', 'Number'),
+ ('쉬움', 'Noun'),
+ ('우레', 'Noun'),
+ ('탄', 'Verb'),
+ ('풀', 'Noun'),
+ ('커버', 'Noun'),
+ ('필름', 'Noun'),
+ ('우레', 'Noun'),
+ ('탄', 'Verb'),
+ ('2', 'Number'),
+ ('매', 'Noun'),
+ ('217', 'Number'),
+ ('무료', 'Noun'),
+ ('배송', 'Noun'),
+ ('단일', 'Noun'),
+ ('상품', 'Noun'),
+ ('00', 'Number'),
+ ('통합', 'Noun'),
+ ('범퍼', 'Noun'),
+ ('케이스', 'Noun'),
+ ('그립', 'Verb'),
+ ('톡', 'Noun'),
+ ('아이폰', 'Noun'),
+ ('글라스', 'Noun'),
+ ('12', 'Number'),
+ ('미러', 'Noun'),
+ ('하트', 'Noun'),
+ ('스마트', 'Noun'),
+ ('톡', 'Noun'),
+ ('무료', 'Noun'),
+ ('배송', 'Noun'),
+ ('단일', 'Noun'),
+ ('상품', 'Noun'),
+ ('실버', 'Noun'),
+ ('갤럭시', 'Noun'),
+ ('31', 'Number'),
+ ('3', 'Number'),
+ ('강화', 'Noun'),
+ ('풀', 'Noun'),
+ ('커버', 'Noun'),
+ ('컬러풀', 'Noun'),
+ ('하드', 'Noun'),
+ ('케이스', 'Noun'),
+ ('001', 'Number'),
+ ('1', 'Number'),
+ ('단일', 'Noun'),
+ ('상품', 'Noun'),
+ ('00', 'Number'),
+ ('레드', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('023', 'Number'),
+ ('루돌프', 'Noun'),
+ ('와', 'Josa'),
+ ('산타', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('034', 'Number'),
+ ('연주회', 'Noun'),
+ ('하는', 'Verb'),
+ ('산타', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('045', 'Number'),
+ ('싱글벙글', 'Noun'),
+ ('산타', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('001', 'Number'),
+ ('파티', 'Noun'),
+ ('하는', 'Verb'),
+ ('산타', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('023', 'Number'),
+ ('루돌프', 'Noun'),
+ ('와', 'Josa'),
+ ('산타', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('034', 'Number'),
+ ('연주회', 'Noun'),
+ ('하는', 'Verb'),
+ ('산타', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('045', 'Number'),
+ ('싱글벙글', 'Noun'),
+ ('산타', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('056', 'Number'),
+ ('크리스마스트리', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('067', 'Number'),
+ ('눈사람', 'Noun'),
+ ('과', 'Josa'),
+ ('산타', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('078', 'Number'),
+ ('산타', 'Noun'),
+ ('마을', 'Noun'),
+ ('양말', 'Noun'),
+ ('미끄럼', 'Noun'),
+ ('방지', 'Noun'),
+ ('융털', 'Noun'),
+ ('양말', 'Noun'),
+ ('수면', 'Noun'),
+ ('양말', 'Noun'),
+ ('방한', 'Noun'),
+ ('양말', 'Noun'),
+ ('검정', 'Noun'),
+ ('갤럭시', 'Noun'),
+ ('핏', 'Noun'),
+ ('2', 'Number'),
+ ('2', 'Number'),
+ ('3', 'Number'),
+ ('곡면', 'Noun'),
+ ('엣지', 'Noun'),
+ ('풀', 'Noun'),
+ ('커버', 'Noun'),
+ ('보호', 'Noun'),
+ ('필름', 'Noun'),
+ ('무료', 'Noun'),
+ ('배송', 'Noun'),
+ ('단일', 'Noun'),
+ ('상품', 'Noun'),
+ ('3', 'Number'),
+ ('풀', 'Noun'),
+ ('커버', 'Noun'),
+ ('필름', 'Noun'),
+ ('2', 'Number'),
+ ('블랙', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('012', 'Number'),
+ ('크리스마스', 'Noun'),
+ ('리스', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('023', 'Number'),
+ ('루돌프', 'Noun'),
+ ('와', 'Josa'),
+ ('산타', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('056', 'Number'),
+ ('크리스마스트리', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('078', 'Number'),
+ ('산타', 'Noun'),
+ ('마을', 'Noun'),
+ ('크리스마스', 'Noun'),
+ ('33', 'Number'),
+ ('인테리어', 'Noun'),
+ ('용', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('사슴', 'Noun'),
+ ('장식', 'Noun'),
+ ('무료', 'Noun'),
+ ('배송', 'Noun'),
+ ('상세', 'Noun'),
+ ('페이지', 'Noun'),
+ ('참조', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('012', 'Number'),
+ ('크리스마스', 'Noun'),
+ ('리스', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('023', 'Number'),
+ ('루돌프', 'Noun'),
+ ('와', 'Josa'),
+ ('산타', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('067', 'Number'),
+ ('눈사람', 'Noun'),
+ ('과', 'Josa'),
+ ('산타', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('034', 'Number'),
+ ('연주회', 'Noun'),
+ ('하는', 'Verb'),
+ ('산타', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('001', 'Number'),
+ ('파티', 'Noun'),
+ ('하는', 'Verb'),
+ ('산타', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('012', 'Number'),
+ ('크리스마스', 'Noun'),
+ ('리스', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('067', 'Number'),
+ ('눈사람', 'Noun'),
+ ('과', 'Josa'),
+ ('산타', 'Noun'),
+ ('꽃양배추', 'Noun'),
+ ('임', 'Noun'),
+ ('모란', 'Noun'),
+ ('화분', 'Noun'),
+ ('월동', 'Noun'),
+ ('가능', 'Noun'),
+ ('겨울', 'Noun'),
+ ('화단', 'Noun'),
+ ('가꾸기', 'Verb'),
+ ('상세', 'Noun'),
+ ('페이지', 'Noun'),
+ ('참조', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('012', 'Number'),
+ ('크리스마스', 'Noun'),
+ ('리스', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('045', 'Number'),
+ ('싱글벙글', 'Noun'),
+ ('산타', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('056', 'Number'),
+ ('크리스마스트리', 'Noun'),
+ ('알뜰', 'Noun'),
+ ('형', 'Suffix'),
+ ('보풀', 'Noun'),
+ ('먼지', 'Noun'),
+ ('제거', 'Noun'),
+ ('용', 'Noun'),
+ ('롤링', 'Noun'),
+ ('기', 'Noun'),
+ ('무료', 'Noun'),
+ ('배송', 'Noun'),
+ ('01', 'Number'),
+ ('리필', 'Noun'),
+ ('2', 'Number'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('001', 'Number'),
+ ('파티', 'Noun'),
+ ('하는', 'Verb'),
+ ('산타', 'Noun'),
+ ('더', 'Noun'),
+ ('예뻐진', 'Adjective'),
+ ('너', 'Noun'),
+ ('종이', 'Noun'),
+ ('정밀', 'Noun'),
+ ('아트', 'Noun'),
+ ('공', 'Modifier'),
+ ('예', 'Modifier'),
+ ('칼', 'Noun'),
+ ('컷터', 'Noun'),
+ ('3', 'Number'),
+ ('프린터', 'Noun'),
+ ('후', 'Noun'),
+ ('가공', 'Noun'),
+ ('갤럭시', 'Noun'),
+ ('핏', 'Noun'),
+ ('2', 'Number'),
+ ('2', 'Number'),
+ ('3', 'Number'),
+ ('곡면', 'Noun'),
+ ('엣지', 'Noun'),
+ ('풀', 'Noun'),
+ ('커버', 'Noun'),
+ ('보호', 'Noun'),
+ ('필름', 'Noun'),
+ ('무료', 'Noun'),
+ ('배송', 'Noun'),
+ ('단일', 'Noun'),
+ ('상품', 'Noun'),
+ ('3', 'Number'),
+ ('풀', 'Noun'),
+ ('커버', 'Noun'),
+ ('필름', 'Noun'),
+ ('2', 'Number'),
+ ('블랙', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('056', 'Number'),
+ ('크리스마스트리', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('067', 'Number'),
+ ('눈사람', 'Noun'),
+ ('과', 'Josa'),
+ ('산타', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('078', 'Number'),
+ ('산타', 'Noun'),
+ ('마을', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('012', 'Number'),
+ ('크리스마스', 'Noun'),
+ ('리스', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('023', 'Number'),
+ ('루돌프', 'Noun'),
+ ('와', 'Josa'),
+ ('산타', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('034', 'Number'),
+ ('연주회', 'Noun'),
+ ('하는', 'Verb'),
+ ('산타', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('045', 'Number'),
+ ('싱글벙글', 'Noun'),
+ ('산타', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ('078', 'Number'),
+ ('산타', 'Noun'),
+ ('마을', 'Noun'),
+ ('마음', 'Noun'),
+ ('담아', 'Verb'),
+ ('크리스마스', 'Noun'),
+ ('귀여운', 'Adjective'),
+ ('산타', 'Noun'),
+ ('루돌프', 'Noun'),
+ ('눈사람', 'Noun'),
+ ('핸드', 'Noun'),
+ ('메이드', 'Noun'),
+ ('스티커', 'Noun'),
+ ('9', 'Number'),
+ ('종', 'Noun'),
+ ('모음', 'Noun'),
+ ...]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tagging</span><span class="p">))</span> <span class="c1">#53633
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>53633
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#빈도수 높은 탑 10단어 추출
+#형태소 분석 및 품사 태깅
+</span><span class="n">tokens</span> <span class="o">=</span> <span class="p">[</span> <span class="n">take2</span> <span class="k">for</span> <span class="n">take1</span> <span class="ow">in</span> <span class="n">data2</span><span class="p">[</span><span class="s">'token_item'</span><span class="p">]</span> <span class="k">for</span> <span class="n">take2</span> <span class="ow">in</span> <span class="n">take1</span><span class="p">]</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">nltk</span><span class="p">.</span><span class="n">Text</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'NMSC'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="n">vocab</span><span class="p">().</span><span class="n">most_common</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="c1">#상위10
+</span><span class="k">print</span><span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="n">vocab</span><span class="p">().</span><span class="n">most_common</span><span class="p">()[:</span><span class="o">-</span><span class="mi">20</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#하위 10
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[('제프', 1888), ('배송', 1876), ('무료', 1863), ('파이썬', 1860), ('상세', 1714), ('페이지', 1714), ('참조', 1714), ('상품', 1578), ('할인점', 1352), ('2021', 570)]
+[('85', 1), ('거북이', 1), ('그로', 1), ('얌얌', 1), ('36766', 1), ('인디', 1), ('발톱깎이', 1), ('개시', 1), ('더펫', 1), ('마루', 1), ('6835', 1), ('색견출', 1), ('플래그', 1), ('먹물', 1), ('대명', 1), ('지속', 1), ('8시간', 1), ('자극', 1), ('쑥갓', 1)]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tokens</span> <span class="o">=</span> <span class="p">[</span> <span class="n">take2</span> <span class="k">for</span> <span class="n">take1</span> <span class="ow">in</span> <span class="n">data2</span><span class="p">[</span><span class="s">'token_item'</span><span class="p">]</span> <span class="k">for</span> <span class="n">take2</span> <span class="ow">in</span> <span class="n">take1</span><span class="p">]</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>53633
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#입력한 키워드와 같이 나온 토큰을 보여줌 fL:연관 검색어
+</span><span class="n">text</span> <span class="o">=</span> <span class="n">nltk</span><span class="p">.</span><span class="n">Text</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'NMSC'</span><span class="p">)</span>
+<span class="n">text</span><span class="p">.</span><span class="n">concordance</span><span class="p">(</span><span class="s">'무료'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Displaying 25 of 1863 matches:
+파티 하는 산타 다이얼 식 비밀번호 식 열쇠 003 단 소 현모양처 무료 배송 하오츠 백탕 훠궈 소스 마라 탕 샹궈 재료 중국 식품 상세 페
+세 페이지 참조 갤럭시 핏 2 2 3 곡면 엣지 풀 커버 보호 필름 무료 배송 단일 상품 3 풀 커버 필름 2 블랙 아동 성인 남녀 공용 어
+색 1321 엘리펀트 그레이 대 용량 식 자재 반찬 소시지 사조 1 무료 배송 상세 페이지 참조 범퍼 케이스 그립 톡 아이폰 글라스 12 미
+참조 범퍼 케이스 그립 톡 아이폰 글라스 12 미러 하트 스마트 톡 무료 배송 단일 상품 실버 갤럭시 핏 2 2 3 곡면 엣지 풀 커버 보호
+단일 상품 실버 갤럭시 핏 2 2 3 곡면 엣지 풀 커버 보호 필름 무료 배송 단일 상품 3 풀 커버 필름 2 블랙 마향 마라 탕용 소스 1
+디자인 에트 로 갤럭시 핏 2 2 3 곡면 엣지 풀 커버 보호 필름 무료 배송 단일 상품 3 풀 커버 필름 2 블랙 간편한 시공 주방 욕실 
+이 오염 방지 방수 테이프 곰팡이 방수 테이프 오염 방지 욕실 틈새 무료 배송 00 단 품 실버 소품 10 집게 형 걸이 고리 걸이 형 봉 
+ 배송 00 단 품 실버 소품 10 집게 형 걸이 고리 걸이 형 봉 무료 배송 상세 페이지 참조 상세 페이지 참조 92 핑코앤 루리 캐릭터 
+이지 참조 상세 페이지 참조 92 핑코앤 루리 캐릭터 케이스 920 무료 배송 03 하트 패턴 스마 토 별 비트 소켓 무료 배송 073 8 
+터 케이스 920 무료 배송 03 하트 패턴 스마 토 별 비트 소켓 무료 배송 073 8 45 설치 가 간단한 빨래 줄 15 갤럭시 핏 2 
+ 빨래 줄 15 갤럭시 핏 2 2 3 곡면 엣지 풀 커버 보호 필름 무료 배송 단일 상품 3 풀 커버 필름 2 블랙 나비 다이어리 갤럭시 3
+ 상품 3 풀 커버 필름 2 블랙 나비 다이어리 갤럭시 31 315 무료 배송 단일 상품 01 블랙 갤럭시 21 쉬움 우레 탄 풀 커버 필름
+랙 갤럭시 21 쉬움 우레 탄 풀 커버 필름 우레 탄 2 매 217 무료 배송 단일 상품 00 통합 범퍼 케이스 그립 톡 아이폰 글라스 12
+통합 범퍼 케이스 그립 톡 아이폰 글라스 12 미러 하트 스마트 톡 무료 배송 단일 상품 실버 갤럭시 31 3 강화 풀 커버 컬러풀 하드 케
+방한 양말 검정 갤럭시 핏 2 2 3 곡면 엣지 풀 커버 보호 필름 무료 배송 단일 상품 3 풀 커버 필름 2 블랙 마음 담아 크리스마스 귀
+음 078 산타 마을 크리스마스 33 인테리어 용 루돌프 사슴 장식 무료 배송 상세 페이지 참조 마음 담아 크리스마스 귀여운 산타 루돌프 눈
+종 모음 056 크리스마스트리 알뜰 형 보풀 먼지 제거 용 롤링 기 무료 배송 01 리필 2 마음 담아 크리스마스 귀여운 산타 루돌프 눈사람
+프린터 후 가공 갤럭시 핏 2 2 3 곡면 엣지 풀 커버 보호 필름 무료 배송 단일 상품 3 풀 커버 필름 2 블랙 마음 담아 크리스마스 귀
+ 산타 해피 바스 그린 콜라겐 바디 워시 200 자스민 베르가 못향 무료 배송 상세 페이지 참조 핸드 레일 부속 형 원형 35 골드 일제 무
+료 배송 상세 페이지 참조 핸드 레일 부속 형 원형 35 골드 일제 무료 배송 상세 페이지 참조 갤럭시 핏 2 2 3 곡면 엣지 풀 커버 보
+세 페이지 참조 갤럭시 핏 2 2 3 곡면 엣지 풀 커버 보호 필름 무료 배송 단일 상품 3 풀 커버 필름 2 블랙 갤럭시 핏 2 2 3 곡
+ 필름 2 블랙 갤럭시 핏 2 2 3 곡면 엣지 풀 커버 보호 필름 무료 배송 단일 상품 3 풀 커버 필름 2 블랙 마음 담아 크리스마스 귀
+스티커 9 종 모음 045 싱글벙글 산타 014 제주 삼다수 500 무료 배송 상세 페이지 참조 우레 탄 튜브 유공 압 호스 공 압 호스 우
+ 튜브 유공 압 호스 공 압 호스 우레 탄 호스 관 에어 호스 튜브 무료 배송 투명 1 마음 담아 크리스마스 귀여운 산타 루돌프 눈사람 핸드
+ 크리스마스트리 갤럭시 핏 2 2 3 곡면 엣지 풀 커버 보호 필름 무료 배송 단일 상품 3 풀 커버 필름 2 블랙 크리스마스 메리 산타모 
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 라이브러리 다시 불러오기 
+</span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">font_manager</span><span class="p">,</span><span class="n">rc</span>
+
+<span class="n">matplotlib</span><span class="p">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s">'axes.unicode_minus'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="c1">#그래프에서 마이너스 기호가 표시되도록 하는 설정
+</span>
+<span class="k">def</span> <span class="nf">showGraph</span><span class="p">(</span><span class="n">wordInfo</span><span class="p">):</span>
+    
+    <span class="n">font_location</span> <span class="o">=</span> <span class="s">"C:\Windows\Fonts\H2GTRE.TTF"</span>
+    <span class="n">font_name</span> <span class="o">=</span> <span class="n">font_manager</span><span class="p">.</span><span class="n">FontProperties</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="n">font_location</span><span class="p">).</span><span class="n">get_name</span><span class="p">()</span>
+    <span class="n">rc</span><span class="p">(</span><span class="s">'font'</span><span class="p">,</span><span class="n">family</span><span class="o">=</span><span class="n">font_name</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'주요 단어'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'빈도수'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+    
+    
+    <span class="n">Sorted_Dict_Values</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">wordInfo</span><span class="p">.</span><span class="n">values</span><span class="p">(),</span><span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">Sorted_Dict_Keys</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">wordInfo</span><span class="p">,</span><span class="n">key</span><span class="o">=</span><span class="n">wordInfo</span><span class="p">.</span><span class="n">get</span><span class="p">,</span><span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="p">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">wordInfo</span><span class="p">)),</span><span class="n">Sorted_Dict_Values</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s">'center'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">wordInfo</span><span class="p">)),</span> <span class="nb">list</span><span class="p">(</span><span class="n">Sorted_Dict_Keys</span><span class="p">),</span> <span class="n">rotation</span><span class="o">=</span><span class="s">'70'</span><span class="p">)</span>
+        
+    <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+    
+  
+<span class="n">noun_text</span> <span class="o">=</span> <span class="p">[</span> <span class="n">take2</span> <span class="k">for</span> <span class="n">take1</span> <span class="ow">in</span> <span class="n">data2</span><span class="p">[</span><span class="s">'Noun'</span><span class="p">]</span> <span class="k">for</span> <span class="n">take2</span> <span class="ow">in</span> <span class="n">take1</span><span class="p">]</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">nltk</span><span class="p">.</span><span class="n">Text</span><span class="p">(</span><span class="n">noun_text</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'NMSC'</span><span class="p">)</span>
+<span class="n">count</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="n">vocab</span><span class="p">())</span>
+<span class="n">wordInfo</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">tags</span><span class="p">,</span> <span class="n">counts</span> <span class="ow">in</span> <span class="n">text</span><span class="p">.</span><span class="n">vocab</span><span class="p">().</span><span class="n">most_common</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tags</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">wordInfo</span><span class="p">[</span><span class="n">tags</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s">"%s : %d"</span> <span class="o">%</span> <span class="p">(</span><span class="n">tags</span><span class="p">,</span> <span class="n">counts</span><span class="p">))</span>
+            
+<span class="n">showGraph</span><span class="p">(</span><span class="n">wordInfo</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>제프 : 1888
+배송 : 1876
+무료 : 1863
+파이썬 : 1860
+상세 : 1714
+페이지 : 1714
+참조 : 1714
+상품 : 1578
+할인점 : 1352
+산타 : 440
+크리스마스 : 348
+루돌프 : 339
+스티커 : 280
+눈사람 : 258
+핸드 : 251
+모음 : 237
+마음 : 235
+메이드 : 230
+블랙 : 211
+세트 : 172
+밴드 : 159
+커버 : 154
+걸이 : 145
+갤럭시 : 143
+케이스 : 142
+필름 : 137
+보호 : 119
+</code></pre></div></div>
+
+<p><img src="./image/output_44_1.png" alt="png" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#'stopwords' is not defined 해결방안 - 밑에 2번줄 실행하기
+</span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">text</span><span class="p">.</span><span class="n">vocab</span><span class="p">().</span><span class="n">most_common</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">wordcloud</span> <span class="o">=</span> <span class="n">WordCloud</span><span class="p">(</span>
+    <span class="n">font_path</span><span class="o">=</span> <span class="s">'C:\Windows\Fonts\H2GTRE.TTF'</span><span class="p">,</span>
+    <span class="n">relative_scaling</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span>
+    <span class="n">stopwords</span> <span class="o">=</span> <span class="n">stopwords</span><span class="p">,</span>
+    <span class="n">background_color</span><span class="o">=</span><span class="s">'white'</span><span class="p">,</span>
+<span class="p">).</span><span class="n">generate_from_frequencies</span><span class="p">(</span> <span class="nb">dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">)</span>
+
+
+<span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">wordcloud</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axis</span><span class="p">(</span><span class="s">"off"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="_posts/python/image/output_45_0.png" alt="output_45_0" /></p>
+
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page -->
+           <!--
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to Big Data</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+                </section>
+            
+            -->
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="SeongJae Yu" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/author/SeongJae Yu">SeongJae Yu</a></h4>
+                                
+                                    <p>Read <a href="/author/SeongJae Yu">more posts</a> by this author.</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/SeongJae Yu">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            var this_page_url = 'https://SEONGJAE-YOO.github.io/python-basic';
+                            var this_page_identifier = '/python-basic';
+                            var this_page_title = '쿠팡 셀러 데이터 분석';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://xxxxxxxx.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                </section>
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/built/images/author-logo.png)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; Big Data &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/python/">Python</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/searchAd">검색광고 데이터 분석</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/python/">
+                                
+                                    See all 1 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/searchAd">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/logo-python.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/searchAd">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Python</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">검색광고 데이터 분석</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>Python 프로젝트는 여러 절로 구성되어 있습니다. 
+
+    Python 강좌(1) - Python 기본
+    Python 강좌(2) - Python 제어문
+
+
+</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="SeongJae Yu" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/SeongJae Yu/">SeongJae Yu</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      29 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/gettysburg-address">
+                <div class="post-card-image" style="background-image: url(/assets/images/bus.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/gettysburg-address">
+                <header class="post-card-header">
+                    
+
+                    <h2 class="post-card-title">Gettysburg Address</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>Fourscore and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.
+
+</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="https://SEONGJAE-YOO.github.io/">
+            
+            <span>Big Data</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">쿠팡 셀러 데이터 분석</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%EC%BF%A0%ED%8C%A1+%EC%85%80%EB%9F%AC+%EB%8D%B0%EC%9D%B4%ED%84%B0+%EB%B6%84%EC%84%9D&amp;url=https://SEONGJAE-YOO.github.io/python-basic"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://SEONGJAE-YOO.github.io/python-basic"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://SEONGJAE-YOO.github.io/">Big Data</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Subscribe to Big Data</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+                <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
