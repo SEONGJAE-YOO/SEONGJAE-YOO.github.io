@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://seongjae-yoo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://seongjae-yoo.github.io/" rel="alternate" type="text/html" /><updated>2021-08-11T18:17:45+09:00</updated><id>https://seongjae-yoo.github.io/feed.xml</id><title type="html">Big Data</title><subtitle>SeongJae Yu 블로그</subtitle><entry><title type="html">검색광고 데이터 분석</title><link href="https://seongjae-yoo.github.io/searchAd" rel="alternate" type="text/html" title="검색광고 데이터 분석" /><published>2021-08-11T00:00:00+09:00</published><updated>2021-08-11T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/searchAd</id><content type="html" xml:base="https://seongjae-yoo.github.io/searchAd">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://seongjae-yoo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://seongjae-yoo.github.io/" rel="alternate" type="text/html" /><updated>2021-08-16T14:45:23+09:00</updated><id>https://seongjae-yoo.github.io/feed.xml</id><title type="html">Big Data</title><subtitle>SeongJae Yu 블로그</subtitle><entry><title type="html">검색광고 데이터 분석</title><link href="https://seongjae-yoo.github.io/searchAd" rel="alternate" type="text/html" title="검색광고 데이터 분석" /><published>2021-08-11T00:00:00+09:00</published><updated>2021-08-11T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/searchAd</id><content type="html" xml:base="https://seongjae-yoo.github.io/searchAd">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./python-basic&quot;&gt;Python 강좌(1) - Python 기본&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./python-control-statement&quot;&gt;Python 강좌(2) - Python 제어문&lt;/a&gt;&lt;/li&gt;
@@ -5331,7 +5331,167 @@ Name: 클릭수, Length: 70, dtype: float64
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;../../../Users/MyCom/Downloads/검색광고%20데이터%20분석/output_162_0.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">Python 프로젝트는 여러 절로 구성되어 있습니다. Python 강좌(1) - Python 기본 Python 강좌(2) - Python 제어문</summary></entry><entry><title type="html">쿠팡 셀러 데이터 분석</title><link href="https://seongjae-yoo.github.io/python-basic" rel="alternate" type="text/html" title="쿠팡 셀러 데이터 분석" /><published>2021-08-11T00:00:00+09:00</published><updated>2021-08-11T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/python-basic</id><content type="html" xml:base="https://seongjae-yoo.github.io/python-basic">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../../../Users/MyCom/Downloads/검색광고%20데이터%20분석/output_162_0.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">Python 프로젝트는 여러 절로 구성되어 있습니다. Python 강좌(1) - Python 기본 Python 강좌(2) - Python 제어문</summary></entry><entry><title type="html">실험용</title><link href="https://seongjae-yoo.github.io/config" rel="alternate" type="text/html" title="실험용" /><published>2021-08-11T00:00:00+09:00</published><updated>2021-08-11T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/config</id><content type="html" xml:base="https://seongjae-yoo.github.io/config">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./python-basic&quot;&gt;Python 강좌(1) - Python 기본&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./python-control-statement&quot;&gt;Python 강좌(2) - Python 제어문&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script src=&quot;https://gist.github.com/.js&quot;&gt;&lt;/script&gt;
+
+&lt;noscript&gt;&lt;pre&gt;# Jekyll configuration
+markdown: kramdown
+# kramdown : markdown의 개조판.
+# markdown에서 불편한 사항을 개선한 형태.
+
+# MyData
+owner:
+  name:           SeongJae Yu
+  avatar:         photo.jpg
+  bio:            &amp;quot;Big Data&amp;quot;
+  email:          yousong4243@naver.com
+  # Social networking links used in footer. Update and remove as you like.
+  twitter:
+  facebook:
+  github:         https://github.com/SEONGJAE-YOO
+  stackexchange:
+  linkedin:
+  instagram:
+  flickr:
+  tumblr:
+  # google plus id, include the &amp;#39;+&amp;#39;, eg +mmistakes
+  google_plus:
+
+highlighter: rouge
+# text highlighter로 rouge이용
+# 2016.02월 이후로 syntax highlighter는 rouge만 지원.
+# Pygments 사용불가.
+
+paginate: 20
+# 작성한 모든 post를 하나의 페이지에 열거할 수 없으니
+# pagination이 필요하고 몇개의 post를 하나의 page에서
+# 보여줄 건지를 설정.
+
+language: &amp;#39;en-uk&amp;#39;
+# 언어 설정
+
+url: https://SEONGJAE-YOO.github.io
+# Google Search Console에서 사용하는 sitemap.xml 생성시
+# 이 url key값이 존재하지 않으면 sitemap.xml이
+# 정상적으로 생성되지 않는다.
+# 또한 disqus(댓글시스템)를 이용하기 위해서도 필요.
+# 자신의 github page url을 입력
+# ( https://your_github_id.github.io 형식 )
+
+baseurl: /
+
+# Website info
+title: Big Data
+# 자신의 blog title.
+
+description: SeongJae Yu 블로그
+# blog home에 표시될 blog에 대한 전반적인 설명.
+
+cover: assets/built/images/author-logo.png
+# blog home에 표시될 blog cover image.
+
+logo:
+logo_dark:
+
+favicon: assets/built/images/favicon.jpg
+# favicon으로 사용할 image
+
+production_url: https://SEONGJAE-YOO.github.io/
+# 최종적으로 blog가 운영될 url
+
+source_url: https://github.com/moon9342/GitHubPageMaker/
+# blogmaker(jekyll source folder)에 대한 github repository
+
+# Social info
+navigation: True
+# Navigation bar link를 보여줄건지 여부
+
+subscribers: True
+# subscriber 기능을 사용할건지의 여부
+# 저는 약간의 수정을 통해 subscriber 기능대신
+# lunr.js를 이용한 검색 기능으로 대체 사용했습니다.
+# 검색기능으로 대체하기 위해서
+# `_includes/subscribe-form.html` 파일의 수정이 필요합니다.
+
+twitter:
+facebook:
+# 만약 twitter와 facebook을 이용하면 username을 입력
+
+# Disqus
+disqus: True
+disqus_shortname: xxxxxxxx
+# disqus는 온라인 댓글 시스템. 댓글 기능을 사용하기 위해
+# disqus를 이용할 것인지 여부와 만약 사용하면
+# disqus shortname을 입력 ( disqus username이 아님 )
+
+
+# Google Analytics
+google_analytics: UA-xxxxxxxx-x # replace with your GA tracking identifier
+# Google Analytics을 사용할 경우 GA tracking identifier를 입력
+
+# Permalinks
+permalink: /:title
+# permalink: /author/:author
+# permalink: /tag/:title
+# 각각의 post에 고정주소를 어떤 방식으로 할당할 것인지를 결정
+# 이 값을 바꾸면 작성한 포스트의 저장위치나 파일이름이 변경된다.
+
+# gems and other configs
+plugins: [jekyll-paginate, jekyll-feed, jekyll-gist]
+
+feed:
+  path: feed.xml
+
+# Travis-CI 설정입니다.
+safe: False
+lsi: False
+
+username: SEONGJAE-YOO
+repo: GitHubPageMaker
+# username : travis-ci와 연동하는 github의 username
+# repo: travis-ci와 연동하는 github의 repository이름
+# https://github.com/&amp;lt;username&amp;gt;/&amp;lt;repository&amp;gt;
+
+branch: master
+# 사용할 branch명
+
+relative_source:
+
+destination: ../[GitHubPage]/
+# compile된 결과가 생성되는 폴더
+# 이 폴더안의 내용이 우리가 운영하는 블로그 내용이 컴파일되서 들어간다.
+# 이 폴더안의 내용을 github repository(https://username.github.io)에 push
+# 만약 Travis-CI를 이용할 예정이면 이 부분을 git submodule로
+# github repository(https://username.github.io)에 연결해야 한다.
+
+
+# exclude는 Jekyll컴파일 시 destination에 포함될 필요가
+# 없는것들을 명시한다. (node_modules와 필요없는 것들은 제외)
+exclude:
+  - README.md
+  - Rakefile
+  - Gemfile
+  - Gemfile.lock
+  - changelog.md
+  - &amp;quot;*.Rmd&amp;quot;
+  - vendor
+  - .travis.yml
+  - node_modules
+  - assets/css
+  - assets/images
+  - _posts/angular
+  - _posts/et-cetera
+  - _posts/typescript
+  #  - _posts/jekyll
+  - _posts/iot
+  - _posts/r
+  - _posts/economy&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/SEONGJAE-YOO/ae839751dd551067753a3e37cb9cb959.js&quot;&gt; &lt;/script&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">Python 프로젝트는 여러 절로 구성되어 있습니다. Python 강좌(1) - Python 기본 Python 강좌(2) - Python 제어문</summary></entry><entry><title type="html">쿠팡 셀러 데이터 분석</title><link href="https://seongjae-yoo.github.io/python-basic" rel="alternate" type="text/html" title="쿠팡 셀러 데이터 분석" /><published>2021-08-11T00:00:00+09:00</published><updated>2021-08-11T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/python-basic</id><content type="html" xml:base="https://seongjae-yoo.github.io/python-basic">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./python-basic&quot;&gt;Python 강좌(1) - Python 기본&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./python-control-statement&quot;&gt;Python 강좌(2) - Python 제어문&lt;/a&gt;&lt;/li&gt;
@@ -6486,7 +6646,7 @@ Name: 구매수(수량), dtype: float64
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;blogmaker/_posts/python/image/output_26_0.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;C:\blogmaker\_posts\python\image\output_26_0.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;노출상품명옵션명-중에-많이-나온-단어-빈도-조회&quot;&gt;노출상품명(옵션명) 중에 많이 나온 단어 빈도 조회&lt;/h1&gt;
 
@@ -7835,7 +7995,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 보호 : 119
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;./image/output_44_1.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;C:\blogmaker\_posts\python\image\output_44_1.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#'stopwords' is not defined 해결방안 - 밑에 2번줄 실행하기
 &lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;nltk.corpus&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stopwords&lt;/span&gt;
@@ -7855,9 +8015,4 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;off&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;_posts/python/image/output_45_0.png&quot; alt=&quot;output_45_0&quot; /&gt;&lt;/p&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">Python 프로젝트는 여러 절로 구성되어 있습니다. Python 강좌(1) - Python 기본 Python 강좌(2) - Python 제어문</summary></entry><entry><title type="html">Gettysburg Address</title><link href="https://seongjae-yoo.github.io/gettysburg-address" rel="alternate" type="text/html" title="Gettysburg Address" /><published>1863-11-19T19:18:00+09:00</published><updated>1863-11-19T19:18:00+09:00</updated><id>https://seongjae-yoo.github.io/gettysburg-address</id><content type="html" xml:base="https://seongjae-yoo.github.io/gettysburg-address">&lt;p&gt;Fourscore and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.&lt;/p&gt;
-
-&lt;p&gt;Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.&lt;/p&gt;
-
-&lt;p&gt;But, in a larger sense, we can not dedicate-we can not consecrate-we can not hallow-this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us-that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion-that we here highly resolve that these dead shall not have died in vain-that this nation, under God, shall have a new birth of freedom-and that government of the people, by the people, for the people shall not perish from the earth.&lt;/p&gt;</content><author><name>abraham</name></author><summary type="html">Fourscore and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;C:/blogmaker/_posts/python/image/output_45_0.png&quot; alt=&quot;output_45_0&quot; /&gt;&lt;/p&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">Python 프로젝트는 여러 절로 구성되어 있습니다. Python 강좌(1) - Python 기본 Python 강좌(2) - Python 제어문</summary></entry></feed>

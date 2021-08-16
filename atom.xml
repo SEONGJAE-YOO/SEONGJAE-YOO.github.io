@@ -46,16 +46,20 @@
     
       
       <item>
-        <title>Gettysburg Address</title>
+        <title>실험용</title>
         
-          <description>&lt;p&gt;Fourscore and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.&lt;/p&gt;
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./python-basic&quot;&gt;Python 강좌(1) - Python 기본&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./python-control-statement&quot;&gt;Python 강좌(2) - Python 제어문&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 </description>
         
-        <pubDate>Thu, 19 Nov 1863 19:18:00 +0900</pubDate>
+        <pubDate>Wed, 11 Aug 2021 00:00:00 +0900</pubDate>
         <link>
-        https://SEONGJAE-YOO.github.io/gettysburg-address</link>
-        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/gettysburg-address</guid>
+        https://SEONGJAE-YOO.github.io/config</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/config</guid>
       </item>
       
     

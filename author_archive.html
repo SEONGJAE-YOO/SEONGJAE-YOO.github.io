@@ -21,6 +21,15 @@
 
     <!-- custom.css -->
     <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- 웹폰트 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
 
 
     <!-- highlight.js -->
@@ -140,7 +149,7 @@ into the {body} of the default.hbs template -->
             
         </div>
         
-            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+            <a class="subscribe-button" href="#subscribe">Search</a>
         
     </div>
 </nav>
@@ -170,7 +179,7 @@ into the {body} of the default.hbs template -->
 <ul class="entry-meta inline-list">
   
     
-  	<li><a href="#python" class="tag"><span class="term alltags">python</span> <span class="count alltags">2</span></a></li>
+  	<li><a href="#python" class="tag"><span class="term alltags">python</span> <span class="count alltags">3</span></a></li>
   
 </ul>
 
@@ -185,6 +194,9 @@ into the {body} of the default.hbs template -->
 
 <!-- <li class="entry-title"><a href="https://SEONGJAE-YOO.github.io/python-basic" target="_blank" title="쿠팡 셀러 데이터 분석">쿠팡 셀러 데이터 분석</a></li> -->
 <li class="entry-title"><a href="/python-basic" target="_blank" title="쿠팡 셀러 데이터 분석">쿠팡 셀러 데이터 분석</a></li>
+
+<!-- <li class="entry-title"><a href="https://SEONGJAE-YOO.github.io/config" target="_blank" title="실험용">실험용</a></li> -->
+<li class="entry-title"><a href="/config" target="_blank" title="실험용">실험용</a></li>
 
 </ul>
 </article><!-- /.hentry -->
@@ -233,24 +245,34 @@ $(function() {
 
     <!-- The big email subscribe modal content -->
     
-        <div id="subscribe" class="subscribe-overlay">
-            <a class="subscribe-overlay-close" href="#"></a>
-            <div class="subscribe-overlay-content">
-                
-                <h1 class="subscribe-overlay-title">Subscribe to Big Data</h1>
-                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
-                <form method="post" action="/subscribe/" class="">
-    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <h1 class="subscribe-overlay-title">Search Big Data</h1>
+            <p class="subscribe-overlay-description">
+                lunr.js를 이용한 posts 검색 </p>
+            <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
 
     <div class="form-group">
-        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
     </div>
-    <button class="" type="submit" disabled><span>Subscribe</span></button>
-    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
-</form>
-
-            </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
         </div>
+    </div>
     
 
     <!-- highlight.js -->
