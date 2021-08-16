@@ -1,14 +1,54 @@
-
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    {% for post in site.posts %}
+    
     <url>
-        <loc>{{ site.url }}{{ post.url }}.html</loc>
+        <loc>https://seongjae-yoo.github.io/searchAd.html</loc>
+        
+        <lastmod>2021-08-11T00:00:00+09:00</lastmod>
+        
 
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
 
     </url>
-    {% endfor %}
+    
+    <url>
+        <loc>https://seongjae-yoo.github.io/python-basic.html</loc>
+        
+        <lastmod>2021-08-11T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://seongjae-yoo.github.io/config.html</loc>
+        
+        <lastmod>2021-08-11T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
 </urlset>
