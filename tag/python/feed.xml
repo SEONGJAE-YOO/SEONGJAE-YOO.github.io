@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
-  <link href="https://seongjae-yoo.github.io/tag/python/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="https://seongjae-yoo.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-08-16T18:44:07+09:00</updated>
-  <id>https://seongjae-yoo.github.io/tag/python/feed.xml</id>
+  <link href="https://seongjae-yoo.github.io/sitemap.xml/tag/python/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://seongjae-yoo.github.io/sitemap.xml/" rel="alternate" type="text/html" />
+  <updated>2021-08-16T18:48:23+09:00</updated>
+  <id>https://seongjae-yoo.github.io/sitemap.xml/tag/python/feed.xml</id>
 
   
   
@@ -33,11 +33,11 @@
   
     <entry>
       <title type="html">검색광고 데이터 분석</title>
-      <link href="https://seongjae-yoo.github.io/searchAd" rel="alternate" type="text/html" title="검색광고 데이터 분석" />
+      <link href="https://seongjae-yoo.github.io/sitemap.xml/searchAd" rel="alternate" type="text/html" title="검색광고 데이터 분석" />
       <published>2021-08-12T00:07:45+09:00</published>
       <updated>2021-08-12T00:07:45+09:00</updated>
-      <id>https://seongjae-yoo.github.io/searchAd</id>
-      <content type="html" xml:base="https://seongjae-yoo.github.io/searchAd">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
+      <id>https://seongjae-yoo.github.io/sitemap.xml/searchAd</id>
+      <content type="html" xml:base="https://seongjae-yoo.github.io/sitemap.xml/searchAd">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./python-basic&quot;&gt;Python 강좌(1) - Python 기본&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./python-control-statement&quot;&gt;Python 강좌(2) - Python 제어문&lt;/a&gt;&lt;/li&gt;
@@ -5400,11 +5400,11 @@ Name: 클릭수, Length: 70, dtype: float64
   
     <entry>
       <title type="html">쿠팡 셀러 데이터 분석</title>
-      <link href="https://seongjae-yoo.github.io/python-basic" rel="alternate" type="text/html" title="쿠팡 셀러 데이터 분석" />
+      <link href="https://seongjae-yoo.github.io/sitemap.xml/python-basic" rel="alternate" type="text/html" title="쿠팡 셀러 데이터 분석" />
       <published>2021-08-11T23:07:45+09:00</published>
       <updated>2021-08-11T23:07:45+09:00</updated>
-      <id>https://seongjae-yoo.github.io/python-basic</id>
-      <content type="html" xml:base="https://seongjae-yoo.github.io/python-basic">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
+      <id>https://seongjae-yoo.github.io/sitemap.xml/python-basic</id>
+      <content type="html" xml:base="https://seongjae-yoo.github.io/sitemap.xml/python-basic">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./python-basic&quot;&gt;Python 강좌(1) - Python 기본&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./python-control-statement&quot;&gt;Python 강좌(2) - Python 제어문&lt;/a&gt;&lt;/li&gt;
@@ -7958,11 +7958,11 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   
     <entry>
       <title type="html">실험용</title>
-      <link href="https://seongjae-yoo.github.io/config" rel="alternate" type="text/html" title="실험용" />
+      <link href="https://seongjae-yoo.github.io/sitemap.xml/config" rel="alternate" type="text/html" title="실험용" />
       <published>2021-08-11T22:07:45+09:00</published>
       <updated>2021-08-11T22:07:45+09:00</updated>
-      <id>https://seongjae-yoo.github.io/config</id>
-      <content type="html" xml:base="https://seongjae-yoo.github.io/config">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
+      <id>https://seongjae-yoo.github.io/sitemap.xml/config</id>
+      <content type="html" xml:base="https://seongjae-yoo.github.io/sitemap.xml/config">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./python-basic&quot;&gt;Python 강좌(1) - Python 기본&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./python-control-statement&quot;&gt;Python 강좌(2) - Python 제어문&lt;/a&gt;&lt;/li&gt;
