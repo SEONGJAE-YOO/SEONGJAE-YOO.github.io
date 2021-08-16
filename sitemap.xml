@@ -1,57 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-    <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-    <url>
-        <loc>https://seongjae-yoo.github.io/sitemap.xml</loc>
-        <lastmod>2021-08-16T08:18:03+00:00</lastmod>
-        <priority>1.00</priority>
-    </url>
-    <url>
-        <loc>https://seongjae-yoo.github.io/about/</loc>
-        <lastmod>2021-08-16T08:18:03+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://seongjae-yoo.github.io/tag/python/</loc>
-        <lastmod>2021-08-16T08:18:03+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://seongjae-yoo.github.io/archive.html</loc>
-        <lastmod>2021-08-16T08:18:03+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://seongjae-yoo.github.io/author_archive.html</loc>
-        <lastmod>2021-08-16T08:18:03+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
     <url>
         <loc>https://seongjae-yoo.github.io/searchAd</loc>
-        <lastmod>2021-08-16T08:18:03+00:00</lastmod>
-        <priority>0.80</priority>
+        
+        <lastmod>2021-08-12T00:07:45+09:00</lastmod>
+        
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
     </url>
-    <url>
-        <loc>https://seongjae-yoo.github.io/author/SeongJae%20Yu/</loc>
-        <lastmod>2021-08-16T08:18:03+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
+    
     <url>
         <loc>https://seongjae-yoo.github.io/python-basic</loc>
-        <lastmod>2021-08-16T08:18:03+00:00</lastmod>
-        <priority>0.80</priority>
+        
+        <lastmod>2021-08-11T23:07:45+09:00</lastmod>
+        
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
     </url>
+    
     <url>
         <loc>https://seongjae-yoo.github.io/config</loc>
-        <lastmod>2021-08-16T08:18:03+00:00</lastmod>
-        <priority>0.80</priority>
+        
+        <lastmod>2021-08-11T22:07:45+09:00</lastmod>
+        
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
     </url>
-
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://seongjae-yoo.github.io/feed.xml</loc>
+        <lastmod></lastmod>
+        <changefreq></changefreq>
+        <priority></priority>
+    </url>
+    
+    
 </urlset>
