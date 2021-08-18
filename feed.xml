@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://seongjae-yoo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://seongjae-yoo.github.io/" rel="alternate" type="text/html" /><updated>2021-08-18T18:36:37+09:00</updated><id>https://seongjae-yoo.github.io/feed.xml</id><title type="html">Big Data</title><subtitle>SeongJae Yu 블로그</subtitle><entry><title type="html">검색광고 데이터 분석</title><link href="https://seongjae-yoo.github.io/searchAd" rel="alternate" type="text/html" title="검색광고 데이터 분석" /><published>2021-08-12T00:07:45+09:00</published><updated>2021-08-12T00:07:45+09:00</updated><id>https://seongjae-yoo.github.io/searchAd</id><content type="html" xml:base="https://seongjae-yoo.github.io/searchAd">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://seongjae-yoo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://seongjae-yoo.github.io/" rel="alternate" type="text/html" /><updated>2021-08-18T20:27:48+09:00</updated><id>https://seongjae-yoo.github.io/feed.xml</id><title type="html">Big Data</title><subtitle>SeongJae Yu 블로그</subtitle><entry><title type="html">검색광고 데이터 분석</title><link href="https://seongjae-yoo.github.io/searchAd" rel="alternate" type="text/html" title="검색광고 데이터 분석" /><published>2021-08-12T00:07:45+09:00</published><updated>2021-08-12T00:07:45+09:00</updated><id>https://seongjae-yoo.github.io/searchAd</id><content type="html" xml:base="https://seongjae-yoo.github.io/searchAd">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./python-basic&quot;&gt;Python 강좌(1) - Python 기본&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./python-control-statement&quot;&gt;Python 강좌(2) - Python 제어문&lt;/a&gt;&lt;/li&gt;
@@ -5331,7 +5331,14 @@ Name: 클릭수, Length: 70, dtype: float64
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;../../../Users/MyCom/Downloads/검색광고%20데이터%20분석/output_162_0.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">Python 프로젝트는 여러 절로 구성되어 있습니다. Python 강좌(1) - Python 기본 Python 강좌(2) - Python 제어문</summary></entry><entry><title type="html">쿠팡 셀러 데이터 분석</title><link href="https://seongjae-yoo.github.io/python-basic" rel="alternate" type="text/html" title="쿠팡 셀러 데이터 분석" /><published>2021-08-11T23:07:45+09:00</published><updated>2021-08-11T23:07:45+09:00</updated><id>https://seongjae-yoo.github.io/python-basic</id><content type="html" xml:base="https://seongjae-yoo.github.io/python-basic">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../../../Users/MyCom/Downloads/검색광고%20데이터%20분석/output_162_0.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">Python 프로젝트는 여러 절로 구성되어 있습니다. Python 강좌(1) - Python 기본 Python 강좌(2) - Python 제어문</summary></entry><entry><title type="html">쿠팡 셀러 데이터 분석 (파이썬)</title><link href="https://seongjae-yoo.github.io/coupangdata" rel="alternate" type="text/html" title="쿠팡 셀러 데이터 분석 (파이썬)" /><published>2021-08-11T23:07:45+09:00</published><updated>2021-08-11T23:07:45+09:00</updated><id>https://seongjae-yoo.github.io/coupangdata</id><content type="html" xml:base="https://seongjae-yoo.github.io/coupangdata">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./python-basic&quot;&gt;Python 강좌(1) - Python 기본&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./python-control-statement&quot;&gt;Python 강좌(2) - Python 제어문&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;coupangdata.html&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;target=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_white&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;coupangdata&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">Python 프로젝트는 여러 절로 구성되어 있습니다. Python 강좌(1) - Python 기본 Python 강좌(2) - Python 제어문</summary></entry><entry><title type="html">쿠팡 셀러 데이터 분석</title><link href="https://seongjae-yoo.github.io/python-basic" rel="alternate" type="text/html" title="쿠팡 셀러 데이터 분석" /><published>2021-08-11T23:07:45+09:00</published><updated>2021-08-11T23:07:45+09:00</updated><id>https://seongjae-yoo.github.io/python-basic</id><content type="html" xml:base="https://seongjae-yoo.github.io/python-basic">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./python-basic&quot;&gt;Python 강좌(1) - Python 기본&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./python-control-statement&quot;&gt;Python 강좌(2) - Python 제어문&lt;/a&gt;&lt;/li&gt;
@@ -7854,5 +7861,18 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imshow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wordcloud&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;off&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.com/SEONGJAE-YOO/GitHubPageMaker/tree/master/_posts/python/image/coupang3.png&quot; alt=&quot;coupang3&quot; /&gt;&lt;/p&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">Python 프로젝트는 여러 절로 구성되어 있습니다. Python 강좌(1) - Python 기본 Python 강좌(2) - Python 제어문</summary></entry></feed>
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;_posts/python/image/coupang3.png&quot; alt=&quot;coupang3.png&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;em&gt;Space&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">Python 프로젝트는 여러 절로 구성되어 있습니다. Python 강좌(1) - Python 기본 Python 강좌(2) - Python 제어문</summary></entry></feed>
