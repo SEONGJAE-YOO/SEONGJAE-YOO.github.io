@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://seongjae-yoo.github.io/tag/python/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://seongjae-yoo.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-08-18T20:56:18+09:00</updated>
+  <updated>2021-08-18T21:01:18+09:00</updated>
   <id>https://seongjae-yoo.github.io/tag/python/feed.xml</id>
 
   
@@ -42,6 +42,8 @@
     &lt;li&gt;&lt;a href=&quot;./python-basic&quot;&gt;Python 강좌(1) - Python 기본&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./python-control-statement&quot;&gt;Python 강좌(2) - Python 제어문&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/&quot; data-lightbox=&quot;&quot; data-title=&quot;&quot;&gt;&lt;img src=&quot;/assets/&quot; alt=&quot;&quot; width=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;패스트캠퍼스-검색광고-데이터-분석&quot;&gt;패스트캠퍼스 검색광고 데이터 분석&lt;/h1&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -5410,6 +5412,8 @@ Name: 클릭수, Length: 70, dtype: float64
     &lt;li&gt;&lt;a href=&quot;./python-control-statement&quot;&gt;Python 강좌(2) - Python 제어문&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;&lt;a href=&quot;/assets/&quot; data-lightbox=&quot;&quot; data-title=&quot;&quot;&gt;&lt;img src=&quot;/assets/&quot; alt=&quot;&quot; width=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
 &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;coupangdata.html&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;target=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_white&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;coupangdata&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
 
@@ -5450,6 +5454,8 @@ Name: 클릭수, Length: 70, dtype: float64
     &lt;li&gt;&lt;a href=&quot;./python-basic&quot;&gt;Python 강좌(1) - Python 기본&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./python-control-statement&quot;&gt;Python 강좌(2) - Python 제어문&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/&quot; data-lightbox=&quot;&quot; data-title=&quot;&quot;&gt;&lt;img src=&quot;/assets/&quot; alt=&quot;&quot; width=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;matplotlib&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;style&lt;/span&gt;
@@ -7969,9 +7975,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;off&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;a href=&quot;/assets/images/coupang3.png&quot; data-lightbox=&quot;group&quot; data-title=&quot;&quot;&gt;&lt;img src=&quot;/assets/images/coupang3.png&quot; alt=&quot;&quot; width=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</content>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
 
       
       
