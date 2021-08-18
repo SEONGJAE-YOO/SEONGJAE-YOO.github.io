@@ -44,24 +44,5 @@
       </item>
       
     
-      
-      <item>
-        <title>실험용</title>
-        
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;./python-basic&quot;&gt;Python 강좌(1) - Python 기본&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./python-control-statement&quot;&gt;Python 강좌(2) - Python 제어문&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        
-        <pubDate>Wed, 11 Aug 2021 22:07:45 +0900</pubDate>
-        <link>
-        https://seongjae-yoo.github.io/config</link>
-        <guid isPermaLink="true">https://seongjae-yoo.github.io/config</guid>
-      </item>
-      
-    
   </channel>
 </rss>
