@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>마케팅 데이터 분석</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- 웹폰트 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="SeongJae Yu 블로그" />
+    <link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
+    <link rel="canonical" href="https://SEONGJAE-YOO.github.io/marketing-Data" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Big Data" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="마케팅 데이터 분석" />
+    <meta property="og:description" content="Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 Domain Knowledge 2 : 광고성과지표 온라인 광고 클릭률(CTR) 광고 클릭률은 클릭수를 광고가 보여진 횟수(노출, Impression)로 나눈 것을 의미하며, 백분율로 나타낸다.예를 들어 방문자에게 배너 광고가 100번 보여지고(100번 노출) 한 번의 클릭이 발생한다면, 그 광고의 클릭률은 1%가 된다. cpm" />
+    <meta property="og:url" content="https://SEONGJAE-YOO.github.io/marketing-Data" />
+    <meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-08-19T00:00:00+09:00" />
+    <meta property="article:modified_time" content="2021-08-19T00:00:00+09:00" />
+    <meta property="article:tag" content="Python" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="마케팅 데이터 분석" />
+    <meta name="twitter:description" content="Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 Domain Knowledge 2 : 광고성과지표 온라인 광고 클릭률(CTR) 광고 클릭률은 클릭수를 광고가 보여진 횟수(노출, Impression)로 나눈 것을 의미하며, 백분율로 나타낸다.예를 들어 방문자에게 배너 광고가 100번 보여지고(100번 노출) 한 번의 클릭이 발생한다면, 그 광고의 클릭률은 1%가 된다. cpm" />
+    <meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
+    <meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Big Data" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Python" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Big Data",
+        "logo": "https://SEONGJAE-YOO.github.io/"
+    },
+    "url": "https://SEONGJAE-YOO.github.io/marketing-Data",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://SEONGJAE-YOO.github.io/marketing-Data"
+    },
+    "description": "Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 Domain Knowledge 2 : 광고성과지표 온라인 광고 클릭률(CTR) 광고 클릭률은 클릭수를 광고가 보여진 횟수(노출, Impression)로 나눈 것을 의미하며, 백분율로 나타낸다.예를 들어 방문자에게 배너 광고가 100번 보여지고(100번 노출) 한 번의 클릭이 발생한다면, 그 광고의 클릭률은 1%가 된다. cpm"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="마케팅 데이터 분석" href="/feed.xml" />
+
+
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://SEONGJAE-YOO.github.io/">Big Data</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/Big Data/">Big Data</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag별 Posts</a>
+    </li>
+</ul>
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-python post tag-python ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="19 August 2021">19 August 2021</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/python/'>PYTHON</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">마케팅 데이터 분석</h1>
+            </header>
+            <!--
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/logo-python.png)">
+            </figure>
+            
+            -->
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <p><span class="table-of-contents-list">Python 프로젝트 </span></p>
+<ul class="table-of-contents-list">
+    <li><a href="blogmaker/_posts/python/2021-08-11-python-basic.md">쿠팡 셀러 데이터 분석</a></li>
+    <li><a href="blogmaker/_posts/python/2021-08-11-searchAd.md">검색광고 데이터 분석</a></li>
+    <li><a href="blogmaker/_posts/python/2021-08-19-customer-Data.md">고객 데이터 분석 프로젝트</a></li>
+</ul>
+
+<h1 id="domain-knowledge-2--광고성과지표">Domain Knowledge 2 : 광고성과지표</h1>
+<p><img src="./img/marketingData/marketing2.png" alt="marketing2" /></p>
+
+<h2 id="온라인-광고-클릭률ctr">온라인 광고 클릭률(CTR)</h2>
+<p>광고 클릭률은 클릭수를 광고가 보여진 횟수(노출, Impression)로 나눈 것을 의미하며, 백분율로 나타낸다.예를 들어 방문자에게 배너 광고가 100번 보여지고(100번 노출) 한 번의 클릭이 발생한다면, 그 광고의 클릭률은 1%가 된다.</p>
+
+<h2 id="cpm">cpm</h2>
+<p>CPM은 1000회 노출당 비용을 의미하는 ‘cost per 1000 impressions’의 약자입니다. CPM 광고를 게재하는 광고주는 광고가 1000회 게재될 때 지급하려는 금액을 설정하고 광고를 게재할 특정 광고 게재위치를 선택하고 광고가 게재될 때마다 비용을 지급합니다.</p>
+
+<h2 id="cpc">cpc</h2>
+<p>광고 클릭에 대해 광고주가 지불하는 평균 금액입니다. 평균 클릭당비용(평균 CPC)은 총 클릭 비용을 총 클릭수로 나누어 계산합니다.</p>
+
+<p>평균 CPC는 광고 클릭 1회에 대해 청구되는 실제 비용인 실제 클릭당비용(실제 CPC)을 기반으로 합니다. 평균 CPC는 광고 클릭 1회당 지불할 의사가 있는 최대 금액인 최대 클릭당비용(최대 CPC)과 다를 수 있습니다.
+다음은 평균 CPC를 계산하는 방법의 예입니다. 광고 클릭이 2회 발생하여 각각 200원, 400원의 비용이 발생했다면 광고 클릭에 따른 총 비용은 600원이 됩니다. 600원(총 비용)을 2(총 클릭수)로 나누면 평균 CPC인 300원이 산출됩니다.</p>
+
+<h2 id="cpa">cpa</h2>
+<p>광고로부터의 전환에 대해 광고주에게 청구되는 평균 금액입니다. 평균 전환당비용(CPA)은 총 전환 비용을 총 전환수로 나눈 값입니다.</p>
+
+<p>가령 특정 광고에서 2개의 전환이 발생해 하나는 2천 원, 다른 하나는 4천 원의 비용이 소요된 경우 전체 전환에 대한 평균 CPA는 3천 원이 됩니다.
+평균 CPA는 실제 CPA(광고로부터의 전환에 대해 청구되는 실제 금액)를 기준으로 합니다. 실제 CPA는 타겟 CPA(타겟 CPA 입찰 사용 시 광고주가 원하는 평균 CPA로 설정한 금액)와 다를 수 있습니다.
+캠페인 그룹 내의 모든 캠페인에 대한 평균 CPA 타겟을 설정하려면 실적 타겟을 사용합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">imp</span><span class="o">=</span><span class="mi">10000</span> <span class="c1">#노출수 
+</span><span class="n">clk</span><span class="o">=</span><span class="mi">100</span> <span class="c1">#클릭수
+</span><span class="n">conv</span><span class="o">=</span><span class="mi">10</span> <span class="c1">#구매수
+</span><span class="n">cost</span><span class="o">=</span><span class="mi">100000</span>  <span class="c1">#광고비용
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ctr
+</span><span class="n">ctr</span> <span class="o">=</span> <span class="n">clk</span><span class="o">/</span><span class="n">imp</span><span class="o">*</span><span class="mi">100</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#ctr 출력
+</span><span class="n">ctr</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.0
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># cpm
+</span><span class="n">cpm</span><span class="o">=</span><span class="n">cost</span><span class="o">/</span><span class="n">imp</span><span class="o">*</span><span class="mi">1000</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#cpm 출력
+</span><span class="n">cpm</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>10000.0
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># cpc
+</span><span class="n">cpc</span><span class="o">=</span><span class="n">cost</span><span class="o">/</span><span class="n">clk</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#cpc 출력
+</span><span class="n">cpc</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1000.0
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># cpa 
+</span><span class="n">cpa</span><span class="o">=</span><span class="n">cost</span><span class="o">/</span><span class="n">conv</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#cpa 출력
+</span><span class="n">cpa</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>10000.0
+</code></pre></div></div>
+
+<h1 id="matplotlib">Matplotlib</h1>
+<h3 id="--시각화-라이브러리">- 시각화 라이브러리</h3>
+
+<h3 id="-데이터-분석과정과-시각화"># 데이터 분석과정과 시각화</h3>
+
+<ul>
+  <li>머신러닝의 과정
+    <ol>
+      <li>데이터 수집</li>
+      <li>데이터 전처리</li>
+      <li>데이터 탐색 ★</li>
+      <li>모델 선택</li>
+      <li>모델 평가 및 적용</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="-시각화의-필요성"># 시각화의 필요성</h3>
+<ol>
+  <li>대량의 데이터 파악 가능</li>
+  <li>데이터의 패턴 파악 가능</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">Series</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># matplotlib 한글 폰트 출력코드
+# 출처 : 데이터공방( https://kiddwannabe.blog.me)
+</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">font_manager</span><span class="p">,</span> <span class="n">rc</span>
+<span class="kn">import</span> <span class="nn">platform</span>
+
+<span class="k">try</span> <span class="p">:</span> 
+    <span class="k">if</span> <span class="n">platform</span><span class="p">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s">'Windows'</span><span class="p">:</span>
+    <span class="c1"># 윈도우인 경우
+</span>        <span class="n">font_name</span> <span class="o">=</span> <span class="n">font_manager</span><span class="p">.</span><span class="n">FontProperties</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="s">"c:/Windows/Fonts/malgun.ttf"</span><span class="p">).</span><span class="n">get_name</span><span class="p">()</span>
+        <span class="n">rc</span><span class="p">(</span><span class="s">'font'</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="n">font_name</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>    
+    <span class="c1"># Mac 인 경우
+</span>        <span class="n">rc</span><span class="p">(</span><span class="s">'font'</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">'AppleGothic'</span><span class="p">)</span>
+<span class="k">except</span> <span class="p">:</span> 
+    <span class="k">pass</span>
+<span class="n">matplotlib</span><span class="p">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s">'axes.unicode_minus'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>   
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">Series</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="p">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s">'naverreport.xls'</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">#skiprows = [행1,행2,..] 를 이용하면 지정한 행을 제외한 나머지 행만 보여준다.
+</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>광고그룹</th>
+      <th>키워드</th>
+      <th>노출수</th>
+      <th>클릭수</th>
+      <th>클릭률(%)</th>
+      <th>평균클릭비용(VAT포함,원)</th>
+      <th>총비용(VAT포함,원)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>올인원 패키지 : 디자인 툴_파워컨텐츠_포토샵</td>
+      <td>-</td>
+      <td>2319456</td>
+      <td>9606.0</td>
+      <td>0.414149</td>
+      <td>261.549448</td>
+      <td>2512444</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>올인원 패키지 : 업무자동화_VBA</td>
+      <td>-</td>
+      <td>767491</td>
+      <td>8058.0</td>
+      <td>1.049915</td>
+      <td>295.974808</td>
+      <td>2384965</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ㅍAOP 전체_중복키워드_디자인(삭제)</td>
+      <td>일러스트</td>
+      <td>1137840</td>
+      <td>324.0</td>
+      <td>0.028475</td>
+      <td>4841.663580</td>
+      <td>1568699</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>올인원 패키지 : 데이터 분석 입문 온라인_파콘</td>
+      <td>-</td>
+      <td>694106</td>
+      <td>1863.6</td>
+      <td>0.268489</td>
+      <td>630.593475</td>
+      <td>1175174</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3. html</td>
+      <td>HTML</td>
+      <td>9626374</td>
+      <td>813.6</td>
+      <td>0.008452</td>
+      <td>1408.435349</td>
+      <td>1145903</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1376</th>
+      <td>올인원 패키지 : 업무자동화_3. 엑셀</td>
+      <td>엑셀셀서식</td>
+      <td>24016</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1377</th>
+      <td>올인원 패키지 : 업무자동화_3. 엑셀</td>
+      <td>MATCH</td>
+      <td>32287</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1378</th>
+      <td>마케팅KPI수립</td>
+      <td>LTV</td>
+      <td>32602</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1379</th>
+      <td>data_camp_rmp_8</td>
+      <td>DECISION</td>
+      <td>60844</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1380</th>
+      <td>4. 웹의 동작</td>
+      <td>REST</td>
+      <td>61193</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>1381 rows × 7 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">((((</span><span class="n">df</span><span class="p">[</span><span class="s">'노출수'</span><span class="p">].</span><span class="n">sort_values</span><span class="p">())</span><span class="o">/</span><span class="mi">1000</span><span class="p">).</span><span class="n">reset_index</span><span class="p">()).</span><span class="n">drop</span><span class="p">(</span><span class="s">'index'</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)).</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">13</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">yticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="mi">4000</span><span class="p">,</span><span class="mi">6000</span><span class="p">,</span><span class="mi">8000</span><span class="p">,</span><span class="mi">10000</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="s">'2,000,000'</span><span class="p">,</span><span class="s">'4,000,000'</span><span class="p">,</span><span class="s">'6,000,000'</span><span class="p">,</span><span class="s">'8,000,000'</span><span class="p">,</span><span class="s">'10,000,000'</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'노출수 plot'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_21_0.png" alt="output_21_0" /></p>
+
+<p><br /><br /><br />
+<img src="./img/marketingData/marketing1.png" alt="marketing1" />
+<br /></p>
+<ul>
+  <li>시각화 라이브러리 matplotlib</li>
+  <li>matplotlib은 pandas의 데이터프레임, 시리즈 자료구조와 함께 사용 가능</li>
+  <li>따라서 데이터 처리와 동시에 시각화도 함께 진행할 수 있음</li>
+  <li>아나콘다(anaconda)를 설치했다면 별도의 설치과정이 필요 없음</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># matplotlib import
+</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># pandas, DataFrame, Series import
+</span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">Series</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># matplotlib 한글 폰트 출력코드
+# 출처 : 데이터공방( https://kiddwannabe.blog.me)
+</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">font_manager</span><span class="p">,</span> <span class="n">rc</span>
+<span class="kn">import</span> <span class="nn">platform</span>
+
+<span class="k">try</span> <span class="p">:</span> 
+    <span class="k">if</span> <span class="n">platform</span><span class="p">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s">'Windows'</span><span class="p">:</span>
+    <span class="c1"># 윈도우인 경우
+</span>        <span class="n">font_name</span> <span class="o">=</span> <span class="n">font_manager</span><span class="p">.</span><span class="n">FontProperties</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="s">"c:/Windows/Fonts/malgun.ttf"</span><span class="p">).</span><span class="n">get_name</span><span class="p">()</span>
+        <span class="n">rc</span><span class="p">(</span><span class="s">'font'</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="n">font_name</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>    
+    <span class="c1"># Mac 인 경우
+</span>        <span class="n">rc</span><span class="p">(</span><span class="s">'font'</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">'AppleGothic'</span><span class="p">)</span>
+<span class="k">except</span> <span class="p">:</span> 
+    <span class="k">pass</span>
+<span class="n">matplotlib</span><span class="p">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s">'axes.unicode_minus'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>   
+</code></pre></div></div>
+
+<h3 id="-데이터프레임-시각화"># 데이터프레임 시각화</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#데이터프레임 변수 생성
+</span><span class="n">dict_data</span><span class="o">=</span><span class="p">{</span><span class="s">"철수"</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span><span class="s">"영희"</span><span class="p">:[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span><span class="s">"민수"</span><span class="p">:[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span><span class="s">"수진"</span><span class="p">:[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]}</span>
+<span class="n">df</span><span class="o">=</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dict_data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>철수</th>
+      <th>영희</th>
+      <th>민수</th>
+      <th>수진</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="-차트-그리기"># 차트 그리기</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 선그래프 
+</span><span class="n">df</span><span class="p">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_30_0.png" alt="output_30_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 막대그래프
+</span><span class="n">df</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">bar</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_31_0.png" alt="output_31_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 가로막대그래프
+</span><span class="n">df</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">barh</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_32_0.png" alt="output_32_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 히스토그램
+</span><span class="n">df</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">hist</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_33_0.png" alt="output_33_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 히스토그램 구간설정
+</span><span class="n">df</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="c1"># 1부터 9미만 범위 안에 하나씩 증가한다
+</span><span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_34_0.png" alt="output_34_0" /></p>
+
+<h3 id="-차트에-옵션-추가하기"># 차트에 옵션 추가하기</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 기본 막대그래프
+</span><span class="n">df</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">bar</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_36_0.png" alt="output_36_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 그래프 크기 설정
+</span><span class="n">df</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span><span class="c1">#x축,y축
+</span><span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_37_0.png" alt="output_37_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 제목설정
+</span><span class="n">df</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'예제'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_38_0.png" alt="output_38_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 제목 폰트 크기 설정
+</span><span class="n">df</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'예제'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_39_0.png" alt="output_39_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># x축 이름 설정
+</span><span class="n">df</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'예제'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'xlabel'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_40_0.png" alt="output_40_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># x축 이름 및 폰트크기 설정
+</span><span class="n">df</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'예제'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'xlabel'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_41_0.png" alt="output_41_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># y축 이름 및 폰트 크기 설정 
+</span><span class="n">df</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'예제'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'xlabel'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'ylabel'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_42_0.png" alt="output_42_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># x축 눈금설정
+# 설정할 눈금의 위치, 눈금의 이름, 폰트사이즈, 각도
+</span><span class="n">df</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'예제'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'xlabel'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'ylabel'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="s">'첫째'</span><span class="p">,</span><span class="s">'둘째'</span><span class="p">,</span><span class="s">'셋째'</span><span class="p">,</span><span class="s">'넷째'</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#rotation으로 정상적인 각도로 출력할 수 있다.
+</span><span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_43_0.png" alt="output_43_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># y축 눈금설정
+</span><span class="n">df</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'예제'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'xlabel'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'ylabel'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="s">'첫째'</span><span class="p">,</span><span class="s">'둘째'</span><span class="p">,</span><span class="s">'셋째'</span><span class="p">,</span><span class="s">'넷째'</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#rotation으로 정상적인 각도로 출력할 수 있다.
+</span><span class="n">plt</span><span class="p">.</span><span class="n">yticks</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="s">'첫째'</span><span class="p">,</span><span class="s">'셋째'</span><span class="p">,</span><span class="s">'다섯째'</span><span class="p">,</span><span class="s">'일곱번째'</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_44_0.png" alt="output_44_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># x축 범위설정
+</span><span class="n">df</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'예제'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'xlabel'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'ylabel'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="s">'첫째'</span><span class="p">,</span><span class="s">'둘째'</span><span class="p">,</span><span class="s">'셋째'</span><span class="p">,</span><span class="s">'넷째'</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#rotation으로 정상적인 각도로 출력할 수 있다.
+</span><span class="n">plt</span><span class="p">.</span><span class="n">yticks</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="s">'첫째'</span><span class="p">,</span><span class="s">'셋째'</span><span class="p">,</span><span class="s">'다섯째'</span><span class="p">,</span><span class="s">'일곱번째'</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span> <span class="c1">#x축 범위 설정
+</span><span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_45_0.png" alt="output_45_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># y축 범위설정
+</span><span class="n">df</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'예제'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'xlabel'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'ylabel'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="s">'첫째'</span><span class="p">,</span><span class="s">'둘째'</span><span class="p">,</span><span class="s">'셋째'</span><span class="p">,</span><span class="s">'넷째'</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#rotation으로 정상적인 각도로 출력할 수 있다.
+</span><span class="n">plt</span><span class="p">.</span><span class="n">yticks</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="s">'첫째'</span><span class="p">,</span><span class="s">'셋째'</span><span class="p">,</span><span class="s">'다섯째'</span><span class="p">,</span><span class="s">'일곱번째'</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span> <span class="c1">#x축 범위 설정
+</span><span class="n">plt</span><span class="p">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span> <span class="c1">#y축 범위 설정
+</span><span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_46_0.png" alt="output_46_0" /></p>
+
+<h3 id="-시리즈-시각화"># 시리즈 시각화</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 데이터프레임 열 = 시리즈
+</span><span class="n">df</span><span class="p">[</span><span class="s">'철수'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    1
+1    2
+2    3
+3    4
+Name: 철수, dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 선그래프
+</span><span class="n">df</span><span class="p">[</span><span class="s">'철수'</span><span class="p">].</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_49_0.png" alt="output_49_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 막대그래프
+</span><span class="n">df</span><span class="p">[</span><span class="s">'철수'</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">bar</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_50_0.png" alt="output_50_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 가로막대그래프
+</span><span class="n">df</span><span class="p">[</span><span class="s">'철수'</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">barh</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_51_0.png" alt="output_51_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 히스토그램(구간설정)
+</span><span class="n">df</span><span class="p">[</span><span class="s">'철수'</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_52_0.png" alt="output_52_0" /></p>
+
+<h3 id="-차트에-옵션-추가하기-1"># 차트에 옵션 추가하기</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'철수'</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">bar</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_54_0.png" alt="output_54_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'철수'</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'예제'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'xlabel'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'ylabel'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="s">'첫째'</span><span class="p">,</span><span class="s">'둘째'</span><span class="p">,</span><span class="s">'셋째'</span><span class="p">,</span><span class="s">'넷째'</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#rotation으로 정상적인 각도로 출력할 수 있다.
+</span><span class="n">plt</span><span class="p">.</span><span class="n">yticks</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="s">'첫째'</span><span class="p">,</span><span class="s">'셋째'</span><span class="p">,</span><span class="s">'다섯째'</span><span class="p">,</span><span class="s">'일곱번째'</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span> <span class="c1">#x축 범위 설정
+</span><span class="n">plt</span><span class="p">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span> <span class="c1">#y축 범위 설정
+</span><span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/marketingData/output_55_0.png" alt="output_55_0" /></p>
+
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page -->
+           <!--
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to Big Data</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+                </section>
+            
+            -->
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="SeongJae Yu" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/author/SeongJae Yu">SeongJae Yu</a></h4>
+                                
+                                    <p>Read <a href="/author/SeongJae Yu">more posts</a> by this author.</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/SeongJae Yu">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            var this_page_url = 'https://SEONGJAE-YOO.github.io/marketing-Data';
+                            var this_page_identifier = '/marketing-Data';
+                            var this_page_title = '마케팅 데이터 분석';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://xxxxxxxx.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                </section>
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/built/images/author-logo.png)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; Big Data &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/python/">Python</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/virtualshoping-data">가상 쇼핑몰 고객 주문 데이터(컬럼,로우) 확인하기</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/keyword-Data">키워드 데이터 분석</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/customer-Data">고객 데이터 분석 프로젝트</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/python/">
+                                
+                                    See all 5 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/virtualshoping-data">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/logo-python.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/virtualshoping-data">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Python</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">가상 쇼핑몰 고객 주문 데이터(컬럼,로우) 확인하기</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>Python 프로젝트 
+
+    쿠팡 셀러 데이터 분석
+    검색광고 데이터 분석
+    고객 데이터 분석 프로젝트
+
+
+</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="SeongJae Yu" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/SeongJae Yu/">SeongJae Yu</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      4 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/keyword-Data">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/logo-python.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/keyword-Data">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Python</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">키워드 데이터 분석</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>Python 프로젝트 
+
+    쿠팡 셀러 데이터 분석
+    검색광고 데이터 분석
+    고객 데이터 분석 프로젝트
+
+
+</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="SeongJae Yu" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/SeongJae Yu/">SeongJae Yu</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      5 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="https://SEONGJAE-YOO.github.io/">
+            
+            <span>Big Data</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">마케팅 데이터 분석</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%EB%A7%88%EC%BC%80%ED%8C%85+%EB%8D%B0%EC%9D%B4%ED%84%B0+%EB%B6%84%EC%84%9D&amp;url=https://SEONGJAE-YOO.github.io/marketing-Data"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://SEONGJAE-YOO.github.io/marketing-Data"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://SEONGJAE-YOO.github.io/">Big Data</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <h1 class="subscribe-overlay-title">Search Big Data</h1>
+            <p class="subscribe-overlay-description">
+                lunr.js를 이용한 posts 검색 </p>
+            <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+        </div>
+    </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>

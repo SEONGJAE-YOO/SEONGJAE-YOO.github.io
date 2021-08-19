@@ -1,0 +1,4866 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>고객 데이터 분석 프로젝트</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- 웹폰트 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="SeongJae Yu 블로그" />
+    <link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
+    <link rel="canonical" href="https://SEONGJAE-YOO.github.io/customer-Data" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Big Data" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="고객 데이터 분석 프로젝트" />
+    <meta property="og:description" content="Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 고객 데이터 분석 데이터 출처 : UCI Machine Learning Repository [링크주소 및 다운로드]https://archive.ics.uci.edu/ml/datasets/bank+marketing Moro, S., Cortez, P., &amp; Rita, P. (2014). A data-driven approach to predict the success of bank telemarketing. Decision Support Systems, 62, 22-31 해외의" />
+    <meta property="og:url" content="https://SEONGJAE-YOO.github.io/customer-Data" />
+    <meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-08-19T00:00:00+09:00" />
+    <meta property="article:modified_time" content="2021-08-19T00:00:00+09:00" />
+    <meta property="article:tag" content="Python" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="고객 데이터 분석 프로젝트" />
+    <meta name="twitter:description" content="Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 고객 데이터 분석 데이터 출처 : UCI Machine Learning Repository [링크주소 및 다운로드]https://archive.ics.uci.edu/ml/datasets/bank+marketing Moro, S., Cortez, P., &amp; Rita, P. (2014). A data-driven approach to predict the success of bank telemarketing. Decision Support Systems, 62, 22-31 해외의" />
+    <meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
+    <meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Big Data" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Python" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Big Data",
+        "logo": "https://SEONGJAE-YOO.github.io/"
+    },
+    "url": "https://SEONGJAE-YOO.github.io/customer-Data",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://SEONGJAE-YOO.github.io/customer-Data"
+    },
+    "description": "Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 고객 데이터 분석 데이터 출처 : UCI Machine Learning Repository [링크주소 및 다운로드]https://archive.ics.uci.edu/ml/datasets/bank+marketing Moro, S., Cortez, P., &amp; Rita, P. (2014). A data-driven approach to predict the success of bank telemarketing. Decision Support Systems, 62, 22-31 해외의"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="고객 데이터 분석 프로젝트" href="/feed.xml" />
+
+
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://SEONGJAE-YOO.github.io/">Big Data</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/Big Data/">Big Data</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag별 Posts</a>
+    </li>
+</ul>
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-python post tag-python ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="19 August 2021">19 August 2021</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/python/'>PYTHON</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">고객 데이터 분석 프로젝트</h1>
+            </header>
+            <!--
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/logo-python.png)">
+            </figure>
+            
+            -->
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <p><span class="table-of-contents-list">Python 프로젝트 </span></p>
+<ul class="table-of-contents-list">
+    <li><a href="blogmaker/_posts/python/2021-08-11-python-basic.md">쿠팡 셀러 데이터 분석</a></li>
+    <li><a href="blogmaker/_posts/python/2021-08-11-searchAd.md">검색광고 데이터 분석</a></li>
+    <li><a href="blogmaker/_posts/python/2021-08-19-customer-Data.md">고객 데이터 분석 프로젝트</a></li>
+</ul>
+
+<h1 id="고객-데이터-분석">고객 데이터 분석</h1>
+<h3 id="데이터-출처--uci-machine-learning-repository">데이터 출처 : UCI Machine Learning Repository</h3>
+
+<p>[링크주소 및 다운로드]https://archive.ics.uci.edu/ml/datasets/bank+marketing
+<br /></p>
+
+<h4 id="moro-s-cortez-p--rita-p-2014-a-data-driven-approach-to-predict-the-success-of-bank-telemarketing-decision-support-systems-62-22-31">Moro, S., Cortez, P., &amp; Rita, P. (2014). A data-driven approach to predict the success of bank telemarketing. Decision Support Systems, 62, 22-31</h4>
+
+<h1><데이터 소개=""></데이터></h1>
+<ul>
+  <li>해외의 은행이 진행한 마케팅 데이터</li>
+  <li>아웃바운드 텔레마케팅으로 마케팅 캠페인을 진행</li>
+</ul>
+
+<h1 id="bank-client-data">bank client data:</h1>
+<p>1 - age (numeric)<br />
+2 - job : type of job (categorical: ‘admin.’,’blue-collar’,’entrepreneur’,’housemaid’,’management’,’retired’,’self-employed’,’services’,’student’,’technician’,’unemployed’,’unknown’)<br />
+3 - marital : marital status (categorical: ‘divorced’,’married’,’single’,’unknown’; note: ‘divorced’ means divorced or widowed)<br />
+4 - education (categorical: ‘basic.4y’,’basic.6y’,’basic.9y’,’high.school’,’illiterate’,’professional.course’,’university.degree’,’unknown’)<br />
+5 - default: has credit in default? (categorical: ‘no’,’yes’,’unknown’)<br />
+6 - housing: has housing loan? (categorical: ‘no’,’yes’,’unknown’)<br />
+7 - loan: has personal loan? (categorical: ‘no’,’yes’,’unknown’)<br /></p>
+
+<h1 id="related-with-the-last-contact-of-the-current-campaign">related with the last contact of the current campaign:</h1>
+<p>8 - contact: contact communication type (categorical: ‘cellular’,’telephone’) <br />
+9 - month: last contact month of year (categorical: ‘jan’, ‘feb’, ‘mar’, …, ‘nov’, ‘dec’)<br />
+10 - day_of_week: last contact day of the week (categorical: ‘mon’,’tue’,’wed’,’thu’,’fri’)<br />
+11 - duration: last contact duration, in seconds (numeric). <br /></p>
+<h1 id="other-attributes">other attributes:</h1>
+<p>12 - campaign: number of contacts performed during this campaign and for this client (numeric, includes last contact)<br />
+13 - pdays: number of days that passed by after the client was last contacted from a previous campaign (numeric; 999 means client was not previously contacted)<br />
+14 - previous: number of contacts performed before this campaign and for this client (numeric)<br />
+15 - poutcome: outcome of the previous marketing campaign (categorical: ‘failure’,’nonexistent’,’success’)<br /></p>
+<h1 id="social-and-economic-context-attributes">social and economic context attributes</h1>
+<p>16 - emp.var.rate: employment variation rate - quarterly indicator (numeric)<br />
+17 - cons.price.idx: consumer price index - monthly indicator (numeric) <br />
+18 - cons.conf.idx: consumer confidence index - monthly indicator (numeric) <br />
+19 - euribor3m: euribor 3 month rate - daily indicator (numeric)<br />
+20 - nr.employed: number of employees - quarterly indicator (numeric)<br /></p>
+
+<h1 id="output-variable">Output variable:</h1>
+<p>21 - y - has the client subscribed a term deposit? (binary: ‘yes’,’no’)<br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">Series</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># matplotlib 한글 폰트 출력코드
+# 출처 : 데이터공방( https://kiddwannabe.blog.me)
+</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">font_manager</span><span class="p">,</span> <span class="n">rc</span>
+<span class="kn">import</span> <span class="nn">platform</span>
+
+<span class="k">try</span> <span class="p">:</span> 
+    <span class="k">if</span> <span class="n">platform</span><span class="p">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s">'Windows'</span><span class="p">:</span>
+    <span class="c1"># 윈도우인 경우
+</span>        <span class="n">font_name</span> <span class="o">=</span> <span class="n">font_manager</span><span class="p">.</span><span class="n">FontProperties</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="s">"c:/Windows/Fonts/malgun.ttf"</span><span class="p">).</span><span class="n">get_name</span><span class="p">()</span>
+        <span class="n">rc</span><span class="p">(</span><span class="s">'font'</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="n">font_name</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>    
+    <span class="c1"># Mac 인 경우
+</span>        <span class="n">rc</span><span class="p">(</span><span class="s">'font'</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">'AppleGothic'</span><span class="p">)</span>
+<span class="k">except</span> <span class="p">:</span> 
+    <span class="k">pass</span>
+<span class="n">matplotlib</span><span class="p">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s">'axes.unicode_minus'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>   
+</code></pre></div></div>
+
+<h1 id="데이터불러오기">데이터불러오기</h1>
+<p>파일명 : bank-additional-full.csv</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#window 방법1 : \\
+#engine='python' - 에러 반환시, 디렉토리 혹은 파일명에 한글이 있을 경우 추가
+</span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'bankadditionalfull.csv'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#head()
+</span><span class="n">df</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age;"job";"marital";"education";"default";"housing";"loan";"contact";"month";"day_of_week";"duration";"campaign";"pdays";"previous";"poutcome";"emp.var.rate";"cons.price.idx";"cons.conf.idx";"euribor3m";"nr.employed";"y"</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>56;"housemaid";"married";"basic.4y";"no";"no";...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>57;"services";"married";"high.school";"unknown...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>37;"services";"married";"high.school";"no";"ye...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>40;"admin.";"married";"basic.6y";"no";"no";"no...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>56;"services";"married";"high.school";"no";"no...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<ul>
+  <li>엑셀로 데이터를 열었을 때의 화면</li>
+  <li>콜론으로 구분된 데이터<br />
+<img src="./img/customerData/customer1.png" alt="customer1" /></li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#window
+#sep = ';'
+</span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'bankadditionalfull.csv'</span><span class="p">,</span>
+                 <span class="n">engine</span><span class="o">=</span><span class="s">'python'</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">';'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>job</th>
+      <th>marital</th>
+      <th>education</th>
+      <th>default</th>
+      <th>housing</th>
+      <th>loan</th>
+      <th>contact</th>
+      <th>month</th>
+      <th>day_of_week</th>
+      <th>...</th>
+      <th>campaign</th>
+      <th>pdays</th>
+      <th>previous</th>
+      <th>poutcome</th>
+      <th>emp.var.rate</th>
+      <th>cons.price.idx</th>
+      <th>cons.conf.idx</th>
+      <th>euribor3m</th>
+      <th>nr.employed</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>56</td>
+      <td>housemaid</td>
+      <td>married</td>
+      <td>basic.4y</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>57</td>
+      <td>services</td>
+      <td>married</td>
+      <td>high.school</td>
+      <td>unknown</td>
+      <td>no</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>37</td>
+      <td>services</td>
+      <td>married</td>
+      <td>high.school</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>40</td>
+      <td>admin.</td>
+      <td>married</td>
+      <td>basic.6y</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>56</td>
+      <td>services</td>
+      <td>married</td>
+      <td>high.school</td>
+      <td>no</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 21 columns</p>
+</div>
+
+<h2 id="-데이터탐색"># 데이터탐색</h2>
+
+<ul>
+  <li>학습목표 :
+    <ol>
+      <li>데이터 탐색과정에서 사용되는 함수를 살펴보고 실전 사례를 통해 사용법을 익힌다.</li>
+    </ol>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#head - 데이터의 첫 5행, default : 5행
+</span><span class="n">df</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>job</th>
+      <th>marital</th>
+      <th>education</th>
+      <th>default</th>
+      <th>housing</th>
+      <th>loan</th>
+      <th>contact</th>
+      <th>month</th>
+      <th>day_of_week</th>
+      <th>...</th>
+      <th>campaign</th>
+      <th>pdays</th>
+      <th>previous</th>
+      <th>poutcome</th>
+      <th>emp.var.rate</th>
+      <th>cons.price.idx</th>
+      <th>cons.conf.idx</th>
+      <th>euribor3m</th>
+      <th>nr.employed</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>56</td>
+      <td>housemaid</td>
+      <td>married</td>
+      <td>basic.4y</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>57</td>
+      <td>services</td>
+      <td>married</td>
+      <td>high.school</td>
+      <td>unknown</td>
+      <td>no</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>37</td>
+      <td>services</td>
+      <td>married</td>
+      <td>high.school</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>40</td>
+      <td>admin.</td>
+      <td>married</td>
+      <td>basic.6y</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>56</td>
+      <td>services</td>
+      <td>married</td>
+      <td>high.school</td>
+      <td>no</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 21 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>job</th>
+      <th>marital</th>
+      <th>education</th>
+      <th>default</th>
+      <th>housing</th>
+      <th>loan</th>
+      <th>contact</th>
+      <th>month</th>
+      <th>day_of_week</th>
+      <th>...</th>
+      <th>campaign</th>
+      <th>pdays</th>
+      <th>previous</th>
+      <th>poutcome</th>
+      <th>emp.var.rate</th>
+      <th>cons.price.idx</th>
+      <th>cons.conf.idx</th>
+      <th>euribor3m</th>
+      <th>nr.employed</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>56</td>
+      <td>housemaid</td>
+      <td>married</td>
+      <td>basic.4y</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>57</td>
+      <td>services</td>
+      <td>married</td>
+      <td>high.school</td>
+      <td>unknown</td>
+      <td>no</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>37</td>
+      <td>services</td>
+      <td>married</td>
+      <td>high.school</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>40</td>
+      <td>admin.</td>
+      <td>married</td>
+      <td>basic.6y</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>56</td>
+      <td>services</td>
+      <td>married</td>
+      <td>high.school</td>
+      <td>no</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>45</td>
+      <td>services</td>
+      <td>married</td>
+      <td>basic.9y</td>
+      <td>unknown</td>
+      <td>no</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>59</td>
+      <td>admin.</td>
+      <td>married</td>
+      <td>professional.course</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>41</td>
+      <td>blue-collar</td>
+      <td>married</td>
+      <td>unknown</td>
+      <td>unknown</td>
+      <td>no</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>24</td>
+      <td>technician</td>
+      <td>single</td>
+      <td>professional.course</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>25</td>
+      <td>services</td>
+      <td>single</td>
+      <td>high.school</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+  </tbody>
+</table>
+<p>10 rows × 21 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#tail - 데이터의 끝 5행, default : 5행
+</span><span class="n">df</span><span class="p">.</span><span class="n">tail</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>job</th>
+      <th>marital</th>
+      <th>education</th>
+      <th>default</th>
+      <th>housing</th>
+      <th>loan</th>
+      <th>contact</th>
+      <th>month</th>
+      <th>day_of_week</th>
+      <th>...</th>
+      <th>campaign</th>
+      <th>pdays</th>
+      <th>previous</th>
+      <th>poutcome</th>
+      <th>emp.var.rate</th>
+      <th>cons.price.idx</th>
+      <th>cons.conf.idx</th>
+      <th>euribor3m</th>
+      <th>nr.employed</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>41183</th>
+      <td>73</td>
+      <td>retired</td>
+      <td>married</td>
+      <td>professional.course</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>cellular</td>
+      <td>nov</td>
+      <td>fri</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>-1.1</td>
+      <td>94.767</td>
+      <td>-50.8</td>
+      <td>1.028</td>
+      <td>4963.6</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>41184</th>
+      <td>46</td>
+      <td>blue-collar</td>
+      <td>married</td>
+      <td>professional.course</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>cellular</td>
+      <td>nov</td>
+      <td>fri</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>-1.1</td>
+      <td>94.767</td>
+      <td>-50.8</td>
+      <td>1.028</td>
+      <td>4963.6</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>41185</th>
+      <td>56</td>
+      <td>retired</td>
+      <td>married</td>
+      <td>university.degree</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>cellular</td>
+      <td>nov</td>
+      <td>fri</td>
+      <td>...</td>
+      <td>2</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>-1.1</td>
+      <td>94.767</td>
+      <td>-50.8</td>
+      <td>1.028</td>
+      <td>4963.6</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>41186</th>
+      <td>44</td>
+      <td>technician</td>
+      <td>married</td>
+      <td>professional.course</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>cellular</td>
+      <td>nov</td>
+      <td>fri</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>-1.1</td>
+      <td>94.767</td>
+      <td>-50.8</td>
+      <td>1.028</td>
+      <td>4963.6</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>41187</th>
+      <td>74</td>
+      <td>retired</td>
+      <td>married</td>
+      <td>professional.course</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>cellular</td>
+      <td>nov</td>
+      <td>fri</td>
+      <td>...</td>
+      <td>3</td>
+      <td>999</td>
+      <td>1</td>
+      <td>failure</td>
+      <td>-1.1</td>
+      <td>94.767</td>
+      <td>-50.8</td>
+      <td>1.028</td>
+      <td>4963.6</td>
+      <td>no</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 21 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>job</th>
+      <th>marital</th>
+      <th>education</th>
+      <th>default</th>
+      <th>housing</th>
+      <th>loan</th>
+      <th>contact</th>
+      <th>month</th>
+      <th>day_of_week</th>
+      <th>...</th>
+      <th>campaign</th>
+      <th>pdays</th>
+      <th>previous</th>
+      <th>poutcome</th>
+      <th>emp.var.rate</th>
+      <th>cons.price.idx</th>
+      <th>cons.conf.idx</th>
+      <th>euribor3m</th>
+      <th>nr.employed</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>41178</th>
+      <td>62</td>
+      <td>retired</td>
+      <td>married</td>
+      <td>university.degree</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>cellular</td>
+      <td>nov</td>
+      <td>thu</td>
+      <td>...</td>
+      <td>2</td>
+      <td>6</td>
+      <td>3</td>
+      <td>success</td>
+      <td>-1.1</td>
+      <td>94.767</td>
+      <td>-50.8</td>
+      <td>1.031</td>
+      <td>4963.6</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>41179</th>
+      <td>64</td>
+      <td>retired</td>
+      <td>divorced</td>
+      <td>professional.course</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>cellular</td>
+      <td>nov</td>
+      <td>fri</td>
+      <td>...</td>
+      <td>3</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>-1.1</td>
+      <td>94.767</td>
+      <td>-50.8</td>
+      <td>1.028</td>
+      <td>4963.6</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>41180</th>
+      <td>36</td>
+      <td>admin.</td>
+      <td>married</td>
+      <td>university.degree</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>cellular</td>
+      <td>nov</td>
+      <td>fri</td>
+      <td>...</td>
+      <td>2</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>-1.1</td>
+      <td>94.767</td>
+      <td>-50.8</td>
+      <td>1.028</td>
+      <td>4963.6</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>41181</th>
+      <td>37</td>
+      <td>admin.</td>
+      <td>married</td>
+      <td>university.degree</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>cellular</td>
+      <td>nov</td>
+      <td>fri</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>-1.1</td>
+      <td>94.767</td>
+      <td>-50.8</td>
+      <td>1.028</td>
+      <td>4963.6</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>41182</th>
+      <td>29</td>
+      <td>unemployed</td>
+      <td>single</td>
+      <td>basic.4y</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>cellular</td>
+      <td>nov</td>
+      <td>fri</td>
+      <td>...</td>
+      <td>1</td>
+      <td>9</td>
+      <td>1</td>
+      <td>success</td>
+      <td>-1.1</td>
+      <td>94.767</td>
+      <td>-50.8</td>
+      <td>1.028</td>
+      <td>4963.6</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>41183</th>
+      <td>73</td>
+      <td>retired</td>
+      <td>married</td>
+      <td>professional.course</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>cellular</td>
+      <td>nov</td>
+      <td>fri</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>-1.1</td>
+      <td>94.767</td>
+      <td>-50.8</td>
+      <td>1.028</td>
+      <td>4963.6</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>41184</th>
+      <td>46</td>
+      <td>blue-collar</td>
+      <td>married</td>
+      <td>professional.course</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>cellular</td>
+      <td>nov</td>
+      <td>fri</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>-1.1</td>
+      <td>94.767</td>
+      <td>-50.8</td>
+      <td>1.028</td>
+      <td>4963.6</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>41185</th>
+      <td>56</td>
+      <td>retired</td>
+      <td>married</td>
+      <td>university.degree</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>cellular</td>
+      <td>nov</td>
+      <td>fri</td>
+      <td>...</td>
+      <td>2</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>-1.1</td>
+      <td>94.767</td>
+      <td>-50.8</td>
+      <td>1.028</td>
+      <td>4963.6</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>41186</th>
+      <td>44</td>
+      <td>technician</td>
+      <td>married</td>
+      <td>professional.course</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>cellular</td>
+      <td>nov</td>
+      <td>fri</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>-1.1</td>
+      <td>94.767</td>
+      <td>-50.8</td>
+      <td>1.028</td>
+      <td>4963.6</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>41187</th>
+      <td>74</td>
+      <td>retired</td>
+      <td>married</td>
+      <td>professional.course</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>cellular</td>
+      <td>nov</td>
+      <td>fri</td>
+      <td>...</td>
+      <td>3</td>
+      <td>999</td>
+      <td>1</td>
+      <td>failure</td>
+      <td>-1.1</td>
+      <td>94.767</td>
+      <td>-50.8</td>
+      <td>1.028</td>
+      <td>4963.6</td>
+      <td>no</td>
+    </tr>
+  </tbody>
+</table>
+<p>10 rows × 21 columns</p>
+</div>
+
+<h1 id="결측치-확인">결측치 확인</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 결측치 확인
+</span><span class="n">df</span><span class="p">.</span><span class="n">isnull</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>job</th>
+      <th>marital</th>
+      <th>education</th>
+      <th>default</th>
+      <th>housing</th>
+      <th>loan</th>
+      <th>contact</th>
+      <th>month</th>
+      <th>day_of_week</th>
+      <th>...</th>
+      <th>campaign</th>
+      <th>pdays</th>
+      <th>previous</th>
+      <th>poutcome</th>
+      <th>emp.var.rate</th>
+      <th>cons.price.idx</th>
+      <th>cons.conf.idx</th>
+      <th>euribor3m</th>
+      <th>nr.employed</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>41183</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>41184</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>41185</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>41186</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>41187</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<p>41188 rows × 21 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 결측치 확인 - 열단위
+</span><span class="n">df</span><span class="p">.</span><span class="n">isnull</span><span class="p">().</span><span class="nb">sum</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>age               0
+job               0
+marital           0
+education         0
+default           0
+housing           0
+loan              0
+contact           0
+month             0
+day_of_week       0
+duration          0
+campaign          0
+pdays             0
+previous          0
+poutcome          0
+emp.var.rate      0
+cons.price.idx    0
+cons.conf.idx     0
+euribor3m         0
+nr.employed       0
+y                 0
+dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#shape - dataframe의 크기(행, 열의 수)
+</span><span class="n">df</span><span class="p">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(41188, 21)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#describe() - 열에 대한 기술통계량
+#데이터의 수, 평균, 표준편차, 최소값, 1사분위수, 2사분위수, 3사분위수, 최대값
+</span><span class="n">df</span><span class="p">.</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>duration</th>
+      <th>campaign</th>
+      <th>pdays</th>
+      <th>previous</th>
+      <th>emp.var.rate</th>
+      <th>cons.price.idx</th>
+      <th>cons.conf.idx</th>
+      <th>euribor3m</th>
+      <th>nr.employed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>41188.00000</td>
+      <td>41188.000000</td>
+      <td>41188.000000</td>
+      <td>41188.000000</td>
+      <td>41188.000000</td>
+      <td>41188.000000</td>
+      <td>41188.000000</td>
+      <td>41188.000000</td>
+      <td>41188.000000</td>
+      <td>41188.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>40.02406</td>
+      <td>258.285010</td>
+      <td>2.567593</td>
+      <td>962.475454</td>
+      <td>0.172963</td>
+      <td>0.081886</td>
+      <td>93.575664</td>
+      <td>-40.502600</td>
+      <td>3.621291</td>
+      <td>5167.035911</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>10.42125</td>
+      <td>259.279249</td>
+      <td>2.770014</td>
+      <td>186.910907</td>
+      <td>0.494901</td>
+      <td>1.570960</td>
+      <td>0.578840</td>
+      <td>4.628198</td>
+      <td>1.734447</td>
+      <td>72.251528</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>17.00000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>-3.400000</td>
+      <td>92.201000</td>
+      <td>-50.800000</td>
+      <td>0.634000</td>
+      <td>4963.600000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>32.00000</td>
+      <td>102.000000</td>
+      <td>1.000000</td>
+      <td>999.000000</td>
+      <td>0.000000</td>
+      <td>-1.800000</td>
+      <td>93.075000</td>
+      <td>-42.700000</td>
+      <td>1.344000</td>
+      <td>5099.100000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>38.00000</td>
+      <td>180.000000</td>
+      <td>2.000000</td>
+      <td>999.000000</td>
+      <td>0.000000</td>
+      <td>1.100000</td>
+      <td>93.749000</td>
+      <td>-41.800000</td>
+      <td>4.857000</td>
+      <td>5191.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>47.00000</td>
+      <td>319.000000</td>
+      <td>3.000000</td>
+      <td>999.000000</td>
+      <td>0.000000</td>
+      <td>1.400000</td>
+      <td>93.994000</td>
+      <td>-36.400000</td>
+      <td>4.961000</td>
+      <td>5228.100000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>98.00000</td>
+      <td>4918.000000</td>
+      <td>56.000000</td>
+      <td>999.000000</td>
+      <td>7.000000</td>
+      <td>1.400000</td>
+      <td>94.767000</td>
+      <td>-26.900000</td>
+      <td>5.045000</td>
+      <td>5228.100000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#columns - 칼럼명 반환
+</span><span class="n">df</span><span class="p">.</span><span class="n">columns</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Index(['age', 'job', 'marital', 'education', 'default', 'housing', 'loan',
+       'contact', 'month', 'day_of_week', 'duration', 'campaign', 'pdays',
+       'previous', 'poutcome', 'emp.var.rate', 'cons.price.idx',
+       'cons.conf.idx', 'euribor3m', 'nr.employed', 'y'],
+      dtype='object')
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#unique() - 열의 고유값
+#education
+</span><span class="n">df</span><span class="p">[</span><span class="s">'education'</span><span class="p">].</span><span class="n">unique</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array(['basic.4y', 'high.school', 'basic.6y', 'basic.9y',
+       'professional.course', 'unknown', 'university.degree',
+       'illiterate'], dtype=object)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#value_counts() - 열의 고유값 빈도
+#education
+</span><span class="n">df</span><span class="p">[</span><span class="s">'education'</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>university.degree      12168
+high.school             9515
+basic.9y                6045
+professional.course     5243
+basic.4y                4176
+basic.6y                2292
+unknown                 1731
+illiterate                18
+Name: education, dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#unique() - 열의 고유값
+#marital
+</span><span class="n">df</span><span class="p">[</span><span class="s">'marital'</span><span class="p">].</span><span class="n">unique</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array(['married', 'single', 'divorced', 'unknown'], dtype=object)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#value_counts() - 열의 고유값 빈도
+#marital
+</span><span class="n">df</span><span class="p">[</span><span class="s">'marital'</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>married     24928
+single      11568
+divorced     4612
+unknown        80
+Name: marital, dtype: int64
+</code></pre></div></div>
+
+<h1 id="데이터-시각화">데이터 시각화</h1>
+<ul>
+  <li>학습목표 :
+    <ol>
+      <li>현업의 데이터를 사용하여 데이터 시각화를 실습한다.</li>
+      <li>데이터를 가공,처리하여 시각화를 진행한다.</li>
+    </ol>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'age'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0        56
+1        57
+2        37
+3        40
+4        56
+         ..
+41183    73
+41184    46
+41185    56
+41186    44
+41187    74
+Name: age, Length: 41188, dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'age'</span><span class="p">].</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#x축이 인덱스 순서
+</span></code></pre></div></div>
+
+<p><img src="./img/customerData/output_30_0.png" alt="output_30_0" /></p>
+
+<ul>
+  <li>age 칼럼 선그래프 그리기(오름차순)
+    <ol>
+      <li>노출수칼럼을 수치 순서대로 오름차순 정렬</li>
+      <li>정렬된 데이터(시리즈)의 형태대로 인덱스 재생성</li>
+    </ol>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#오름차순 정렬
+#age칼럼 
+</span><span class="n">age</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s">'age'</span><span class="p">].</span><span class="n">sort_values</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#age변수출력
+</span><span class="n">age</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>38274    17
+37579    17
+37539    17
+37140    17
+37558    17
+         ..
+40450    92
+38921    94
+27826    95
+38455    98
+38452    98
+Name: age, Length: 41188, dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#reset_index - 인덱스 재생성, 기존 인덱스를 데이터프레임의 열로 반환
+</span><span class="n">age</span><span class="o">=</span><span class="n">age</span><span class="p">.</span><span class="n">reset_index</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#age 변수출력
+</span><span class="n">age</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>index</th>
+      <th>age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>38274</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>37579</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>37539</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>37140</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>37558</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>41183</th>
+      <td>40450</td>
+      <td>92</td>
+    </tr>
+    <tr>
+      <th>41184</th>
+      <td>38921</td>
+      <td>94</td>
+    </tr>
+    <tr>
+      <th>41185</th>
+      <td>27826</td>
+      <td>95</td>
+    </tr>
+    <tr>
+      <th>41186</th>
+      <td>38455</td>
+      <td>98</td>
+    </tr>
+    <tr>
+      <th>41187</th>
+      <td>38452</td>
+      <td>98</td>
+    </tr>
+  </tbody>
+</table>
+<p>41188 rows × 2 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#drop(axis=1) - 삭제(열 기준)
+</span><span class="n">age</span><span class="o">=</span><span class="n">age</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="s">'index'</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#age 변수출력
+</span><span class="n">age</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>41183</th>
+      <td>92</td>
+    </tr>
+    <tr>
+      <th>41184</th>
+      <td>94</td>
+    </tr>
+    <tr>
+      <th>41185</th>
+      <td>95</td>
+    </tr>
+    <tr>
+      <th>41186</th>
+      <td>98</td>
+    </tr>
+    <tr>
+      <th>41187</th>
+      <td>98</td>
+    </tr>
+  </tbody>
+</table>
+<p>41188 rows × 1 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#plotting
+</span><span class="n">age</span><span class="p">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#값의 오름차순별로 정렬한 그래프
+#보통 '나이'를 20대,30대,40..대로 나누어 데이터를 확인함
+</span></code></pre></div></div>
+
+<p><img src="./img/customerData/output_38_0.png" alt="output_38_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#계급간 빈도를 나타내주는 히스토그램
+</span><span class="n">df</span><span class="p">[</span><span class="s">'age'</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">hist</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/customerData/output_39_0.png" alt="output_39_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#히스토그램
+#bins - 계급구간(10,20,30...100)
+#figsize=[15,8]
+#xticks(fontsize=15)
+#yticks(fontsize=15)
+#plt.title('Histogram of df.age',fontsize=20)
+</span>
+<span class="n">df</span><span class="p">[</span><span class="s">'age'</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Histogram of df.age'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/customerData/output_40_0.png" alt="output_40_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#시각화 예제2 : duration(전화통화시간) 선 그래프 시각화
+</span><span class="p">(((</span><span class="n">df</span><span class="p">[</span><span class="s">'duration'</span><span class="p">].</span><span class="n">sort_values</span><span class="p">()).</span><span class="n">reset_index</span><span class="p">()).</span><span class="n">drop</span><span class="p">(</span><span class="s">'index'</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)).</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#1. 선그래프로 데이터의 패턴 분석
+#2. 히스토그램으로 전화통화 시간별 빈도 분석
+</span></code></pre></div></div>
+
+<p><img src="./img/customerData/output_41_0.png" alt="output_41_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#히스토그램의 계급구간을 설정하기 위한 최소값, 최대값 파악
+#describe()
+</span><span class="n">df</span><span class="p">[</span><span class="s">'duration'</span><span class="p">].</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>count    41188.000000
+mean       258.285010
+std        259.279249
+min          0.000000
+25%        102.000000
+50%        180.000000
+75%        319.000000
+max       4918.000000
+Name: duration, dtype: float64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#bins=range(0,5001,100)
+</span><span class="n">df</span><span class="p">[</span><span class="s">'duration'</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5001</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/customerData/output_43_0.png" alt="output_43_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#히스토그램
+#bins - 계급구간(0,100,200...5000)
+#figsize=[15,8]
+#xticks(fontsize=15)
+#yticks(fontsize=15)
+#plt.title('Histogram of df.duration',fontsize=20)
+</span>
+<span class="n">df</span><span class="p">[</span><span class="s">'duration'</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5001</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Histogram of df.duration'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/customerData/output_44_0.png" alt="output_44_0" /></p>
+
+<h1 id="막대그래프-가로막대그래프">막대그래프, 가로막대그래프</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#선그래프
+#marital
+</span><span class="n">df</span><span class="p">[</span><span class="s">'marital'</span><span class="p">].</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#no numeric data to plot
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-36-7df365c79815&gt; in &lt;module&gt;
+      1 #선그래프
+      2 #marital
+----&gt; 3 df['marital'].plot()
+      4 plt.show()
+      5 #no numeric data to plot
+
+
+~\anaconda3\lib\site-packages\pandas\plotting\_core.py in __call__(self, *args, **kwargs)
+    953                     data.columns = label_name
+    954 
+--&gt; 955         return plot_backend.plot(data, kind=kind, **kwargs)
+    956 
+    957     __call__.__doc__ = __doc__
+
+
+~\anaconda3\lib\site-packages\pandas\plotting\_matplotlib\__init__.py in plot(data, kind, **kwargs)
+     59             kwargs["ax"] = getattr(ax, "left_ax", ax)
+     60     plot_obj = PLOT_CLASSES[kind](data, **kwargs)
+---&gt; 61     plot_obj.generate()
+     62     plot_obj.draw()
+     63     return plot_obj.result
+
+
+~\anaconda3\lib\site-packages\pandas\plotting\_matplotlib\core.py in generate(self)
+    276     def generate(self):
+    277         self._args_adjust()
+--&gt; 278         self._compute_plot_data()
+    279         self._setup_subplots()
+    280         self._make_plot()
+
+
+~\anaconda3\lib\site-packages\pandas\plotting\_matplotlib\core.py in _compute_plot_data(self)
+    439         # no non-numeric frames or series allowed
+    440         if is_empty:
+--&gt; 441             raise TypeError("no numeric data to plot")
+    442 
+    443         self.data = numeric_data.apply(self._convert_to_ndarray)
+
+
+TypeError: no numeric data to plot
+</code></pre></div></div>
+
+<ul>
+  <li>숫자데이터가 아니기 때문에 시각화 할 수 없다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#히스토그램
+</span><span class="n">df</span><span class="p">[</span><span class="s">'marital'</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">hist</span><span class="p">()</span>
+<span class="c1">#no numeric data to plot
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-38-414b9b3e32cb&gt; in &lt;module&gt;
+      1 #히스토그램
+----&gt; 2 df['marital'].plot.hist()
+      3 #no numeric data to plot
+
+
+~\anaconda3\lib\site-packages\pandas\plotting\_core.py in hist(self, by, bins, **kwargs)
+   1294             &gt;&gt;&gt; ax = df.plot.hist(bins=12, alpha=0.5)
+   1295         """
+-&gt; 1296         return self(kind="hist", by=by, bins=bins, **kwargs)
+   1297 
+   1298     def kde(self, bw_method=None, ind=None, **kwargs):
+
+
+~\anaconda3\lib\site-packages\pandas\plotting\_core.py in __call__(self, *args, **kwargs)
+    953                     data.columns = label_name
+    954 
+--&gt; 955         return plot_backend.plot(data, kind=kind, **kwargs)
+    956 
+    957     __call__.__doc__ = __doc__
+
+
+~\anaconda3\lib\site-packages\pandas\plotting\_matplotlib\__init__.py in plot(data, kind, **kwargs)
+     59             kwargs["ax"] = getattr(ax, "left_ax", ax)
+     60     plot_obj = PLOT_CLASSES[kind](data, **kwargs)
+---&gt; 61     plot_obj.generate()
+     62     plot_obj.draw()
+     63     return plot_obj.result
+
+
+~\anaconda3\lib\site-packages\pandas\plotting\_matplotlib\core.py in generate(self)
+    276     def generate(self):
+    277         self._args_adjust()
+--&gt; 278         self._compute_plot_data()
+    279         self._setup_subplots()
+    280         self._make_plot()
+
+
+~\anaconda3\lib\site-packages\pandas\plotting\_matplotlib\core.py in _compute_plot_data(self)
+    439         # no non-numeric frames or series allowed
+    440         if is_empty:
+--&gt; 441             raise TypeError("no numeric data to plot")
+    442 
+    443         self.data = numeric_data.apply(self._convert_to_ndarray)
+
+
+TypeError: no numeric data to plot
+</code></pre></div></div>
+
+<ul>
+  <li>숫자데이터가 아니기 때문에 시각화 할 수 없다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#unique()함수를 사용한 age칼럼 고유값 확인 
+</span><span class="n">df</span><span class="p">[</span><span class="s">'age'</span><span class="p">].</span><span class="n">unique</span><span class="p">()</span>
+<span class="c1">#선그래프를 그린 age칼럼 데이터는 수치데이터
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([56, 57, 37, 40, 45, 59, 41, 24, 25, 29, 35, 54, 46, 50, 39, 30, 55,
+       49, 34, 52, 58, 32, 38, 44, 42, 60, 53, 47, 51, 48, 33, 31, 43, 36,
+       28, 27, 26, 22, 23, 20, 21, 61, 19, 18, 70, 66, 76, 67, 73, 88, 95,
+       77, 68, 75, 63, 80, 62, 65, 72, 82, 64, 71, 69, 78, 85, 79, 83, 81,
+       74, 17, 87, 91, 86, 98, 94, 84, 92, 89], dtype=int64)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#unique()함수를 사용한 marital칼럼 고유값 확인 
+</span><span class="n">df</span><span class="p">[</span><span class="s">'marital'</span><span class="p">].</span><span class="n">unique</span><span class="p">()</span>
+<span class="c1">#marital칼럼의 데이터는 문자
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array(['married', 'single', 'divorced', 'unknown'], dtype=object)
+</code></pre></div></div>
+
+<ul>
+  <li>막대그래프를 통한 시각화
+    <ol>
+      <li>value_counts</li>
+      <li>막대그래프 시각화</li>
+    </ol>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#1. value_counts() - 문자데이터는 value_counts() 함수를 사용하여 시각화 할 수 있다.
+#marital
+</span><span class="n">marital</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s">'marital'</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#2. marital변수 막대그래프 시각화
+</span><span class="n">marital</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">bar</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/customerData/output_54_0.png" alt="output_54_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#2-1. 가로막대그래프 시각화
+</span><span class="n">marital</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">barh</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/customerData/output_55_0.png" alt="output_55_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'education'</span><span class="p">].</span><span class="n">unique</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array(['basic.4y', 'high.school', 'basic.6y', 'basic.9y',
+       'professional.course', 'unknown', 'university.degree',
+       'illiterate'], dtype=object)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#education 가로막대그래프 한줄 코드
+#value_counts(),plot.barh()
+</span><span class="n">education</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s">'education'</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">education</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">barh</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/customerData/output_58_0.png" alt="output_58_0" /></p>
+
+<h1 id="데이터-분석">데이터 분석</h1>
+
+<h1 id="분석주제-1-">분석주제 1 :</h1>
+<h3 id="대출이-있는-사람이라면-은행-상품에-잘-가입하지-않을-것이다">대출이 있는 사람이라면 은행 상품에 잘 가입하지 않을 것이다.</h3>
+
+<ul>
+  <li>학습목표 :
+    <ol>
+      <li>가설검증과정 코딩 실습하기</li>
+      <li>groupby활용한 실습 진행하기</li>
+    </ol>
+  </li>
+  <li>분석을 위한 코딩과정 도식화
+    <ol>
+      <li>가입여부에 따라 가입한 그룹과 가입하지 않은 그룹으로 나눈다.</li>
+      <li>나뉜 데이터를 대출여부에 따라 나눈다.</li>
+      <li>가입한 그룹 중 대출이 있는 사람의 비중과, 가입하지 않은 그룹 중 대출이 있는 사람의 비중을 비교한다.</li>
+    </ol>
+  </li>
+</ul>
+
+<p><br /><br /></p>
+
+<p><img src="./img/customerData/customer2.png" alt="customer2" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1. 가입여부에 따라 가입한 그룹과 가입하지 않은 그룹으로 나눈다.
+#가입여부에 대한 칼럼 : 'y'
+#unique()
+</span><span class="n">df</span><span class="p">[</span><span class="s">'y'</span><span class="p">].</span><span class="n">unique</span><span class="p">()</span>
+<span class="c1">#groupby사용 - yes, no그룹으로 나뉘게 됨
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array(['no', 'yes'], dtype=object)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1. 가입여부에 따라 가입한 그룹과 가입하지 않은 그룹으로 나눈다.
+#groupby('y')
+</span><span class="n">grouped</span><span class="o">=</span><span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'y'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1. 가입여부에 따라 가입한 그룹과 가입하지 않은 그룹으로 나눈다.
+#get_group('yes') - y칼럼이 'yes'인 데이터프레임 추출 - 가입한 그룹만 추출
+#get_group('no') - y칼럼이 'no'인 데이터프레임 추출 - 가입하지 않은 그룹만 추출
+</span><span class="n">yes_group</span><span class="o">=</span><span class="n">grouped</span><span class="p">.</span><span class="n">get_group</span><span class="p">(</span><span class="s">'yes'</span><span class="p">)</span>
+<span class="n">no_group</span><span class="o">=</span><span class="n">grouped</span><span class="p">.</span><span class="n">get_group</span><span class="p">(</span><span class="s">'no'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1. 가입여부에 따라 가입한 그룹과 가입하지 않은 그룹으로 나눈다.
+#yes_group 출력
+</span><span class="n">yes_group</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>job</th>
+      <th>marital</th>
+      <th>education</th>
+      <th>default</th>
+      <th>housing</th>
+      <th>loan</th>
+      <th>contact</th>
+      <th>month</th>
+      <th>day_of_week</th>
+      <th>...</th>
+      <th>campaign</th>
+      <th>pdays</th>
+      <th>previous</th>
+      <th>poutcome</th>
+      <th>emp.var.rate</th>
+      <th>cons.price.idx</th>
+      <th>cons.conf.idx</th>
+      <th>euribor3m</th>
+      <th>nr.employed</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>75</th>
+      <td>41</td>
+      <td>blue-collar</td>
+      <td>divorced</td>
+      <td>basic.4y</td>
+      <td>unknown</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>49</td>
+      <td>entrepreneur</td>
+      <td>married</td>
+      <td>university.degree</td>
+      <td>unknown</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>49</td>
+      <td>technician</td>
+      <td>married</td>
+      <td>basic.9y</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>41</td>
+      <td>technician</td>
+      <td>married</td>
+      <td>professional.course</td>
+      <td>unknown</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>45</td>
+      <td>blue-collar</td>
+      <td>married</td>
+      <td>basic.9y</td>
+      <td>unknown</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>yes</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 21 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1-3. 가입여부에 따라 가입한 그룹과 가입하지 않은 그룹으로 나눈다.
+#no_group 출력
+</span><span class="n">no_group</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>job</th>
+      <th>marital</th>
+      <th>education</th>
+      <th>default</th>
+      <th>housing</th>
+      <th>loan</th>
+      <th>contact</th>
+      <th>month</th>
+      <th>day_of_week</th>
+      <th>...</th>
+      <th>campaign</th>
+      <th>pdays</th>
+      <th>previous</th>
+      <th>poutcome</th>
+      <th>emp.var.rate</th>
+      <th>cons.price.idx</th>
+      <th>cons.conf.idx</th>
+      <th>euribor3m</th>
+      <th>nr.employed</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>56</td>
+      <td>housemaid</td>
+      <td>married</td>
+      <td>basic.4y</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>57</td>
+      <td>services</td>
+      <td>married</td>
+      <td>high.school</td>
+      <td>unknown</td>
+      <td>no</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>37</td>
+      <td>services</td>
+      <td>married</td>
+      <td>high.school</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>40</td>
+      <td>admin.</td>
+      <td>married</td>
+      <td>basic.6y</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>56</td>
+      <td>services</td>
+      <td>married</td>
+      <td>high.school</td>
+      <td>no</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>telephone</td>
+      <td>may</td>
+      <td>mon</td>
+      <td>...</td>
+      <td>1</td>
+      <td>999</td>
+      <td>0</td>
+      <td>nonexistent</td>
+      <td>1.1</td>
+      <td>93.994</td>
+      <td>-36.4</td>
+      <td>4.857</td>
+      <td>5191.0</td>
+      <td>no</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 21 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#2. 나뉜 데이터(yes_group,no_group)를 대출여부(loan)에 따라 나눈다.
+#value_counts
+</span><span class="n">yes</span><span class="o">=</span><span class="n">yes_group</span><span class="p">[</span><span class="s">'loan'</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#yes변수 출력
+</span><span class="n">yes</span>
+<span class="c1">#yes_group의 대출여부 빈도 출력
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>no         3850
+yes         683
+unknown     107
+Name: loan, dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#2. 나뉜 데이터(yes_group,no_group)를 대출여부(loan)에 따라 나눈다.
+#value_counts
+</span><span class="n">no</span><span class="o">=</span><span class="n">no_group</span><span class="p">[</span><span class="s">'loan'</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#no변수 출력
+</span><span class="n">no</span>
+<span class="c1">#no_group의 대출여부 빈도 출력
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>no         30100
+yes         5565
+unknown      883
+Name: loan, dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#3. 가입한 그룹 내 대출이 있는 사람의 비중과, 가입하지 않은 그룹 내 대출이 있는 사람의 비중을 비교한다(yes_group).
+#비중 : 시리즈 변수 각각의 value를 시리즈의 총합으로 나눔
+#시리즈는 산술연산자(+,-,*,/,%,**,//)와 함께 사용가능
+#series/series.sum()
+</span><span class="n">yes</span><span class="o">=</span><span class="n">yes</span><span class="o">/</span><span class="n">yes</span><span class="p">.</span><span class="nb">sum</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#yes 출력
+</span><span class="n">yes</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>no         0.829741
+yes        0.147198
+unknown    0.023060
+Name: loan, dtype: float64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#3. 가입한 그룹 내 대출이 있는 사람의 비중과, 가입하지 않은 그룹 내 대출이 있는 사람의 비중을 비교한다(no_group).
+</span><span class="n">no</span><span class="o">=</span><span class="n">no</span><span class="o">/</span><span class="n">no</span><span class="p">.</span><span class="nb">sum</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#no 출력
+</span><span class="n">no</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>no         0.823574
+yes        0.152266
+unknown    0.024160
+Name: loan, dtype: float64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#3. 가입한 그룹 중 대출이 있는 사람의 비중과, 가입하지 않은 그룹 중 대출이 있는 사람의 비중을 비교한다.
+#concat : 시리즈 혹은 데이터프레임 결합(default-행방향 결합)
+</span><span class="n">pd</span><span class="p">.</span><span class="n">concat</span><span class="p">([</span><span class="n">yes</span><span class="p">,</span><span class="n">no</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="c1"># column 합치기
+#칼럼명이 모두 loan
+</span></code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>loan</th>
+      <th>loan</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>no</th>
+      <td>0.829741</td>
+      <td>0.823574</td>
+    </tr>
+    <tr>
+      <th>yes</th>
+      <td>0.147198</td>
+      <td>0.152266</td>
+    </tr>
+    <tr>
+      <th>unknown</th>
+      <td>0.023060</td>
+      <td>0.024160</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#series.name : 시리즈의 이름 설정
+</span><span class="n">yes</span><span class="p">.</span><span class="n">name</span><span class="o">=</span><span class="s">'y_yes'</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#series.name : 시리즈의 이름 설정
+</span><span class="n">no</span><span class="p">.</span><span class="n">name</span><span class="o">=</span><span class="s">'y_no'</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">concat</span><span class="p">([</span><span class="n">yes</span><span class="p">,</span><span class="n">no</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">#=&gt; 가입한 그룹의 대출 비중이 가입하지 않은 그룹보다 0.005 더 적다.
+</span></code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>y_yes</th>
+      <th>y_no</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>no</th>
+      <td>0.829741</td>
+      <td>0.823574</td>
+    </tr>
+    <tr>
+      <th>yes</th>
+      <td>0.147198</td>
+      <td>0.152266</td>
+    </tr>
+    <tr>
+      <th>unknown</th>
+      <td>0.023060</td>
+      <td>0.024160</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h1 id="분석주제-2-">분석주제 2 :</h1>
+<h1 id="같은-상품을-새로운-고객에게-마케팅-하려고한다">같은 상품을 새로운 고객에게 마케팅 하려고한다.</h1>
+<h1 id="연령과-상품가입여부-직업을-함께-고려할때-마케팅-전략을-변화시켜야-할-그룹은">연령과 상품가입여부, 직업을 함께 고려할때 마케팅 전략을 변화시켜야 할 그룹은?</h1>
+
+<ul>
+  <li>학습목표 :
+    <ol>
+      <li>가설검증과정 코딩 실습하기</li>
+      <li>pivot_table활용한 실습 진행하기</li>
+    </ol>
+  </li>
+  <li>분석조건 : 세 개의 칼럼(age, job, y)을 함께 분석해야 함</li>
+  <li>pd.pivot_table(‘데이터프레임 변수’,values=집계 대상 칼럼(수치 데이터), index=행 인덱스가 될 칼럼명, columns=열 인덱스가 될 칼럼명, aggfunc=집계함수-sum,mean,min,max,std,var)</li>
+</ul>
+
+<h1 id="pivot_table-사용예제">pivot_table 사용예제</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#pd.pivot_table('데이터프레임 변수',values=집계 대상 칼럼, index=행 인덱스가 될 칼럼명, columns=열 인덱스가 될 칼럼명, aggfunc=sum)
+</span><span class="n">pd</span><span class="p">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">values</span><span class="o">=</span><span class="s">'age'</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="s">'y'</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="s">'job'</span><span class="p">,</span><span class="n">aggfunc</span><span class="o">=</span><span class="s">'mean'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>job</th>
+      <th>admin.</th>
+      <th>blue-collar</th>
+      <th>entrepreneur</th>
+      <th>housemaid</th>
+      <th>management</th>
+      <th>retired</th>
+      <th>self-employed</th>
+      <th>services</th>
+      <th>student</th>
+      <th>technician</th>
+      <th>unemployed</th>
+      <th>unknown</th>
+    </tr>
+    <tr>
+      <th>y</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>no</th>
+      <td>38.219846</td>
+      <td>39.582057</td>
+      <td>41.703453</td>
+      <td>44.705451</td>
+      <td>42.309707</td>
+      <td>59.926128</td>
+      <td>40.176887</td>
+      <td>38.090236</td>
+      <td>26.396667</td>
+      <td>38.600033</td>
+      <td>39.844828</td>
+      <td>45.375427</td>
+    </tr>
+    <tr>
+      <th>yes</th>
+      <td>37.968935</td>
+      <td>39.200627</td>
+      <td>41.935484</td>
+      <td>52.650943</td>
+      <td>42.783537</td>
+      <td>68.253456</td>
+      <td>38.006711</td>
+      <td>36.077399</td>
+      <td>24.800000</td>
+      <td>37.746575</td>
+      <td>39.062500</td>
+      <td>47.054054</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#values,index,columns파라미터를 일일이 쓰지 않고 순서대로 입력하여 실행 가능
+</span><span class="n">pd</span><span class="p">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="s">'age'</span><span class="p">,</span><span class="s">'y'</span><span class="p">,</span><span class="s">'job'</span><span class="p">,</span><span class="n">aggfunc</span><span class="o">=</span><span class="s">'mean'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>job</th>
+      <th>admin.</th>
+      <th>blue-collar</th>
+      <th>entrepreneur</th>
+      <th>housemaid</th>
+      <th>management</th>
+      <th>retired</th>
+      <th>self-employed</th>
+      <th>services</th>
+      <th>student</th>
+      <th>technician</th>
+      <th>unemployed</th>
+      <th>unknown</th>
+    </tr>
+    <tr>
+      <th>y</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>no</th>
+      <td>38.219846</td>
+      <td>39.582057</td>
+      <td>41.703453</td>
+      <td>44.705451</td>
+      <td>42.309707</td>
+      <td>59.926128</td>
+      <td>40.176887</td>
+      <td>38.090236</td>
+      <td>26.396667</td>
+      <td>38.600033</td>
+      <td>39.844828</td>
+      <td>45.375427</td>
+    </tr>
+    <tr>
+      <th>yes</th>
+      <td>37.968935</td>
+      <td>39.200627</td>
+      <td>41.935484</td>
+      <td>52.650943</td>
+      <td>42.783537</td>
+      <td>68.253456</td>
+      <td>38.006711</td>
+      <td>36.077399</td>
+      <td>24.800000</td>
+      <td>37.746575</td>
+      <td>39.062500</td>
+      <td>47.054054</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#멀티 인덱스(multi-index) - 행 인덱스
+#['y','marital']
+</span><span class="n">pd</span><span class="p">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="s">'age'</span><span class="p">,[</span><span class="s">'y'</span><span class="p">,</span><span class="s">'marital'</span><span class="p">],</span><span class="s">'job'</span><span class="p">,</span><span class="n">aggfunc</span><span class="o">=</span><span class="s">'mean'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>job</th>
+      <th>admin.</th>
+      <th>blue-collar</th>
+      <th>entrepreneur</th>
+      <th>housemaid</th>
+      <th>management</th>
+      <th>retired</th>
+      <th>self-employed</th>
+      <th>services</th>
+      <th>student</th>
+      <th>technician</th>
+      <th>unemployed</th>
+      <th>unknown</th>
+    </tr>
+    <tr>
+      <th>y</th>
+      <th>marital</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="4" valign="top">no</th>
+      <th>divorced</th>
+      <td>43.098432</td>
+      <td>42.903704</td>
+      <td>44.042424</td>
+      <td>48.806897</td>
+      <td>46.123288</td>
+      <td>61.480469</td>
+      <td>42.871795</td>
+      <td>41.991984</td>
+      <td>34.500000</td>
+      <td>42.173484</td>
+      <td>42.140351</td>
+      <td>43.300000</td>
+    </tr>
+    <tr>
+      <th>married</th>
+      <td>40.148663</td>
+      <td>40.857804</td>
+      <td>42.477111</td>
+      <td>44.849218</td>
+      <td>43.634997</td>
+      <td>60.019048</td>
+      <td>42.349148</td>
+      <td>39.992951</td>
+      <td>30.484848</td>
+      <td>40.686245</td>
+      <td>41.636861</td>
+      <td>47.532110</td>
+    </tr>
+    <tr>
+      <th>single</th>
+      <td>33.858265</td>
+      <td>33.409255</td>
+      <td>35.472527</td>
+      <td>38.087379</td>
+      <td>34.070776</td>
+      <td>53.938272</td>
+      <td>33.783537</td>
+      <td>32.159921</td>
+      <td>26.062500</td>
+      <td>33.950697</td>
+      <td>33.536946</td>
+      <td>38.288136</td>
+    </tr>
+    <tr>
+      <th>unknown</th>
+      <td>34.666667</td>
+      <td>42.818182</td>
+      <td>35.500000</td>
+      <td>40.000000</td>
+      <td>51.000000</td>
+      <td>59.750000</td>
+      <td>39.400000</td>
+      <td>40.000000</td>
+      <td>30.000000</td>
+      <td>33.300000</td>
+      <td>47.200000</td>
+      <td>40.166667</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">yes</th>
+      <th>divorced</th>
+      <td>44.878788</td>
+      <td>42.037736</td>
+      <td>44.857143</td>
+      <td>57.000000</td>
+      <td>46.692308</td>
+      <td>72.739130</td>
+      <td>41.875000</td>
+      <td>43.484848</td>
+      <td>35.666667</td>
+      <td>40.738462</td>
+      <td>47.900000</td>
+      <td>76.333333</td>
+    </tr>
+    <tr>
+      <th>married</th>
+      <td>41.386503</td>
+      <td>41.363420</td>
+      <td>43.090909</td>
+      <td>54.256757</td>
+      <td>44.756637</td>
+      <td>67.033435</td>
+      <td>41.036585</td>
+      <td>38.379518</td>
+      <td>31.250000</td>
+      <td>41.398438</td>
+      <td>41.941860</td>
+      <td>58.750000</td>
+    </tr>
+    <tr>
+      <th>single</th>
+      <td>32.404594</td>
+      <td>32.652174</td>
+      <td>35.666667</td>
+      <td>40.875000</td>
+      <td>33.285714</td>
+      <td>67.500000</td>
+      <td>31.921569</td>
+      <td>31.024194</td>
+      <td>24.481061</td>
+      <td>32.078853</td>
+      <td>32.062500</td>
+      <td>30.000000</td>
+    </tr>
+    <tr>
+      <th>unknown</th>
+      <td>42.500000</td>
+      <td>37.000000</td>
+      <td>31.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>66.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>30.000000</td>
+      <td>NaN</td>
+      <td>40.666667</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#멀티 인덱스(multi-index) - 열 인덱스
+#['job','contact']
+</span><span class="n">pd</span><span class="p">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="s">'age'</span><span class="p">,[</span><span class="s">'y'</span><span class="p">,</span><span class="s">'marital'</span><span class="p">],[</span><span class="s">'job'</span><span class="p">,</span><span class="s">'contact'</span><span class="p">],</span><span class="n">aggfunc</span><span class="o">=</span><span class="s">'mean'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>job</th>
+      <th colspan="2" halign="left">admin.</th>
+      <th colspan="2" halign="left">blue-collar</th>
+      <th colspan="2" halign="left">entrepreneur</th>
+      <th colspan="2" halign="left">housemaid</th>
+      <th colspan="2" halign="left">management</th>
+      <th>...</th>
+      <th colspan="2" halign="left">services</th>
+      <th colspan="2" halign="left">student</th>
+      <th colspan="2" halign="left">technician</th>
+      <th colspan="2" halign="left">unemployed</th>
+      <th colspan="2" halign="left">unknown</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>contact</th>
+      <th>cellular</th>
+      <th>telephone</th>
+      <th>cellular</th>
+      <th>telephone</th>
+      <th>cellular</th>
+      <th>telephone</th>
+      <th>cellular</th>
+      <th>telephone</th>
+      <th>cellular</th>
+      <th>telephone</th>
+      <th>...</th>
+      <th>cellular</th>
+      <th>telephone</th>
+      <th>cellular</th>
+      <th>telephone</th>
+      <th>cellular</th>
+      <th>telephone</th>
+      <th>cellular</th>
+      <th>telephone</th>
+      <th>cellular</th>
+      <th>telephone</th>
+    </tr>
+    <tr>
+      <th>y</th>
+      <th>marital</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="4" valign="top">no</th>
+      <th>divorced</th>
+      <td>43.143639</td>
+      <td>43.019185</td>
+      <td>42.906907</td>
+      <td>42.900585</td>
+      <td>43.301887</td>
+      <td>45.372881</td>
+      <td>48.292683</td>
+      <td>49.476190</td>
+      <td>44.786164</td>
+      <td>47.721805</td>
+      <td>...</td>
+      <td>42.028269</td>
+      <td>41.944444</td>
+      <td>36.000000</td>
+      <td>27.000000</td>
+      <td>42.069034</td>
+      <td>42.435644</td>
+      <td>42.253731</td>
+      <td>41.978723</td>
+      <td>46.000000</td>
+      <td>40.600000</td>
+    </tr>
+    <tr>
+      <th>married</th>
+      <td>40.349554</td>
+      <td>39.800357</td>
+      <td>41.182477</td>
+      <td>40.494249</td>
+      <td>42.213628</td>
+      <td>42.802273</td>
+      <td>45.900966</td>
+      <td>43.342561</td>
+      <td>43.740678</td>
+      <td>43.452416</td>
+      <td>...</td>
+      <td>40.483733</td>
+      <td>39.395833</td>
+      <td>32.150000</td>
+      <td>27.923077</td>
+      <td>40.283568</td>
+      <td>41.365495</td>
+      <td>41.452769</td>
+      <td>41.871369</td>
+      <td>48.349057</td>
+      <td>46.758929</td>
+    </tr>
+    <tr>
+      <th>single</th>
+      <td>33.515821</td>
+      <td>34.646707</td>
+      <td>32.872838</td>
+      <td>34.183554</td>
+      <td>36.181034</td>
+      <td>34.227273</td>
+      <td>36.827586</td>
+      <td>39.711111</td>
+      <td>33.747405</td>
+      <td>34.697987</td>
+      <td>...</td>
+      <td>32.360927</td>
+      <td>31.863081</td>
+      <td>25.396509</td>
+      <td>27.742138</td>
+      <td>33.529248</td>
+      <td>35.008741</td>
+      <td>33.252101</td>
+      <td>33.940476</td>
+      <td>39.535714</td>
+      <td>37.161290</td>
+    </tr>
+    <tr>
+      <th>unknown</th>
+      <td>35.000000</td>
+      <td>31.000000</td>
+      <td>43.800000</td>
+      <td>42.000000</td>
+      <td>40.000000</td>
+      <td>31.000000</td>
+      <td>40.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>51.000000</td>
+      <td>...</td>
+      <td>34.500000</td>
+      <td>42.750000</td>
+      <td>30.000000</td>
+      <td>NaN</td>
+      <td>30.285714</td>
+      <td>40.333333</td>
+      <td>46.500000</td>
+      <td>50.000000</td>
+      <td>48.333333</td>
+      <td>32.000000</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">yes</th>
+      <th>divorced</th>
+      <td>45.028302</td>
+      <td>44.269231</td>
+      <td>41.500000</td>
+      <td>43.400000</td>
+      <td>45.333333</td>
+      <td>44.000000</td>
+      <td>59.857143</td>
+      <td>37.000000</td>
+      <td>46.297297</td>
+      <td>54.000000</td>
+      <td>...</td>
+      <td>43.083333</td>
+      <td>44.555556</td>
+      <td>35.666667</td>
+      <td>NaN</td>
+      <td>40.701754</td>
+      <td>41.000000</td>
+      <td>51.000000</td>
+      <td>40.666667</td>
+      <td>76.333333</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>married</th>
+      <td>41.362832</td>
+      <td>41.540230</td>
+      <td>41.682432</td>
+      <td>40.608000</td>
+      <td>44.177419</td>
+      <td>40.500000</td>
+      <td>55.375000</td>
+      <td>50.777778</td>
+      <td>45.401099</td>
+      <td>42.090909</td>
+      <td>...</td>
+      <td>38.634921</td>
+      <td>37.575000</td>
+      <td>30.333333</td>
+      <td>34.000000</td>
+      <td>41.299065</td>
+      <td>41.904762</td>
+      <td>42.746479</td>
+      <td>38.133333</td>
+      <td>58.181818</td>
+      <td>60.000000</td>
+    </tr>
+    <tr>
+      <th>single</th>
+      <td>32.117284</td>
+      <td>34.150000</td>
+      <td>31.934426</td>
+      <td>34.897436</td>
+      <td>35.117647</td>
+      <td>38.000000</td>
+      <td>40.769231</td>
+      <td>41.333333</td>
+      <td>32.763636</td>
+      <td>36.875000</td>
+      <td>...</td>
+      <td>30.846154</td>
+      <td>31.950000</td>
+      <td>24.174468</td>
+      <td>26.965517</td>
+      <td>31.995902</td>
+      <td>32.657143</td>
+      <td>32.355556</td>
+      <td>27.666667</td>
+      <td>31.000000</td>
+      <td>28.000000</td>
+    </tr>
+    <tr>
+      <th>unknown</th>
+      <td>42.500000</td>
+      <td>NaN</td>
+      <td>37.000000</td>
+      <td>NaN</td>
+      <td>31.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>30.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>45.000000</td>
+      <td>32.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 24 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#fill-value - 결측치 대체
+#fill_value=0
+</span><span class="n">pd</span><span class="p">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="s">'age'</span><span class="p">,[</span><span class="s">'y'</span><span class="p">,</span><span class="s">'marital'</span><span class="p">],[</span><span class="s">'job'</span><span class="p">,</span><span class="s">'contact'</span><span class="p">],</span><span class="n">aggfunc</span><span class="o">=</span><span class="s">'mean'</span><span class="p">,</span><span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>job</th>
+      <th colspan="2" halign="left">admin.</th>
+      <th colspan="2" halign="left">blue-collar</th>
+      <th colspan="2" halign="left">entrepreneur</th>
+      <th colspan="2" halign="left">housemaid</th>
+      <th colspan="2" halign="left">management</th>
+      <th>...</th>
+      <th colspan="2" halign="left">services</th>
+      <th colspan="2" halign="left">student</th>
+      <th colspan="2" halign="left">technician</th>
+      <th colspan="2" halign="left">unemployed</th>
+      <th colspan="2" halign="left">unknown</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>contact</th>
+      <th>cellular</th>
+      <th>telephone</th>
+      <th>cellular</th>
+      <th>telephone</th>
+      <th>cellular</th>
+      <th>telephone</th>
+      <th>cellular</th>
+      <th>telephone</th>
+      <th>cellular</th>
+      <th>telephone</th>
+      <th>...</th>
+      <th>cellular</th>
+      <th>telephone</th>
+      <th>cellular</th>
+      <th>telephone</th>
+      <th>cellular</th>
+      <th>telephone</th>
+      <th>cellular</th>
+      <th>telephone</th>
+      <th>cellular</th>
+      <th>telephone</th>
+    </tr>
+    <tr>
+      <th>y</th>
+      <th>marital</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="4" valign="top">no</th>
+      <th>divorced</th>
+      <td>43.143639</td>
+      <td>43.019185</td>
+      <td>42.906907</td>
+      <td>42.900585</td>
+      <td>43.301887</td>
+      <td>45.372881</td>
+      <td>48.292683</td>
+      <td>49.476190</td>
+      <td>44.786164</td>
+      <td>47.721805</td>
+      <td>...</td>
+      <td>42.028269</td>
+      <td>41.944444</td>
+      <td>36.000000</td>
+      <td>27.000000</td>
+      <td>42.069034</td>
+      <td>42.435644</td>
+      <td>42.253731</td>
+      <td>41.978723</td>
+      <td>46.000000</td>
+      <td>40.600000</td>
+    </tr>
+    <tr>
+      <th>married</th>
+      <td>40.349554</td>
+      <td>39.800357</td>
+      <td>41.182477</td>
+      <td>40.494249</td>
+      <td>42.213628</td>
+      <td>42.802273</td>
+      <td>45.900966</td>
+      <td>43.342561</td>
+      <td>43.740678</td>
+      <td>43.452416</td>
+      <td>...</td>
+      <td>40.483733</td>
+      <td>39.395833</td>
+      <td>32.150000</td>
+      <td>27.923077</td>
+      <td>40.283568</td>
+      <td>41.365495</td>
+      <td>41.452769</td>
+      <td>41.871369</td>
+      <td>48.349057</td>
+      <td>46.758929</td>
+    </tr>
+    <tr>
+      <th>single</th>
+      <td>33.515821</td>
+      <td>34.646707</td>
+      <td>32.872838</td>
+      <td>34.183554</td>
+      <td>36.181034</td>
+      <td>34.227273</td>
+      <td>36.827586</td>
+      <td>39.711111</td>
+      <td>33.747405</td>
+      <td>34.697987</td>
+      <td>...</td>
+      <td>32.360927</td>
+      <td>31.863081</td>
+      <td>25.396509</td>
+      <td>27.742138</td>
+      <td>33.529248</td>
+      <td>35.008741</td>
+      <td>33.252101</td>
+      <td>33.940476</td>
+      <td>39.535714</td>
+      <td>37.161290</td>
+    </tr>
+    <tr>
+      <th>unknown</th>
+      <td>35.000000</td>
+      <td>31.000000</td>
+      <td>43.800000</td>
+      <td>42.000000</td>
+      <td>40.000000</td>
+      <td>31.000000</td>
+      <td>40.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>51.000000</td>
+      <td>...</td>
+      <td>34.500000</td>
+      <td>42.750000</td>
+      <td>30.000000</td>
+      <td>0.000000</td>
+      <td>30.285714</td>
+      <td>40.333333</td>
+      <td>46.500000</td>
+      <td>50.000000</td>
+      <td>48.333333</td>
+      <td>32.000000</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">yes</th>
+      <th>divorced</th>
+      <td>45.028302</td>
+      <td>44.269231</td>
+      <td>41.500000</td>
+      <td>43.400000</td>
+      <td>45.333333</td>
+      <td>44.000000</td>
+      <td>59.857143</td>
+      <td>37.000000</td>
+      <td>46.297297</td>
+      <td>54.000000</td>
+      <td>...</td>
+      <td>43.083333</td>
+      <td>44.555556</td>
+      <td>35.666667</td>
+      <td>0.000000</td>
+      <td>40.701754</td>
+      <td>41.000000</td>
+      <td>51.000000</td>
+      <td>40.666667</td>
+      <td>76.333333</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>married</th>
+      <td>41.362832</td>
+      <td>41.540230</td>
+      <td>41.682432</td>
+      <td>40.608000</td>
+      <td>44.177419</td>
+      <td>40.500000</td>
+      <td>55.375000</td>
+      <td>50.777778</td>
+      <td>45.401099</td>
+      <td>42.090909</td>
+      <td>...</td>
+      <td>38.634921</td>
+      <td>37.575000</td>
+      <td>30.333333</td>
+      <td>34.000000</td>
+      <td>41.299065</td>
+      <td>41.904762</td>
+      <td>42.746479</td>
+      <td>38.133333</td>
+      <td>58.181818</td>
+      <td>60.000000</td>
+    </tr>
+    <tr>
+      <th>single</th>
+      <td>32.117284</td>
+      <td>34.150000</td>
+      <td>31.934426</td>
+      <td>34.897436</td>
+      <td>35.117647</td>
+      <td>38.000000</td>
+      <td>40.769231</td>
+      <td>41.333333</td>
+      <td>32.763636</td>
+      <td>36.875000</td>
+      <td>...</td>
+      <td>30.846154</td>
+      <td>31.950000</td>
+      <td>24.174468</td>
+      <td>26.965517</td>
+      <td>31.995902</td>
+      <td>32.657143</td>
+      <td>32.355556</td>
+      <td>27.666667</td>
+      <td>31.000000</td>
+      <td>28.000000</td>
+    </tr>
+    <tr>
+      <th>unknown</th>
+      <td>42.500000</td>
+      <td>0.000000</td>
+      <td>37.000000</td>
+      <td>0.000000</td>
+      <td>31.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>30.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>45.000000</td>
+      <td>32.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 24 columns</p>
+</div>
+
+<h1 id="pivot_table를-사용한-주제2-분석">pivot_table를 사용한 주제2 분석</h1>
+<h4 id="같은-상품을-새로운-고객에게-마케팅-하려고한다-1">같은 상품을 새로운 고객에게 마케팅 하려고한다.</h4>
+<h4 id="연령과-상품가입여부-직업을-함께-고려할때-마케팅-전략을-변화시켜야-할-그룹은-1">연령과 상품가입여부, 직업을 함께 고려할때 마케팅 전략을 변화시켜야 할 그룹은?</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#pivot_table
+</span><span class="n">pivot</span><span class="o">=</span><span class="n">pd</span><span class="p">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">values</span><span class="o">=</span><span class="s">'age'</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="s">'y'</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="s">'job'</span><span class="p">,</span><span class="n">aggfunc</span><span class="o">=</span><span class="s">'mean'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#pivot 변수 출력
+</span><span class="n">pivot</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>job</th>
+      <th>admin.</th>
+      <th>blue-collar</th>
+      <th>entrepreneur</th>
+      <th>housemaid</th>
+      <th>management</th>
+      <th>retired</th>
+      <th>self-employed</th>
+      <th>services</th>
+      <th>student</th>
+      <th>technician</th>
+      <th>unemployed</th>
+      <th>unknown</th>
+    </tr>
+    <tr>
+      <th>y</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>no</th>
+      <td>38.219846</td>
+      <td>39.582057</td>
+      <td>41.703453</td>
+      <td>44.705451</td>
+      <td>42.309707</td>
+      <td>59.926128</td>
+      <td>40.176887</td>
+      <td>38.090236</td>
+      <td>26.396667</td>
+      <td>38.600033</td>
+      <td>39.844828</td>
+      <td>45.375427</td>
+    </tr>
+    <tr>
+      <th>yes</th>
+      <td>37.968935</td>
+      <td>39.200627</td>
+      <td>41.935484</td>
+      <td>52.650943</td>
+      <td>42.783537</td>
+      <td>68.253456</td>
+      <td>38.006711</td>
+      <td>36.077399</td>
+      <td>24.800000</td>
+      <td>37.746575</td>
+      <td>39.062500</td>
+      <td>47.054054</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#yes행과 no행의 차 연산(loc인덱서 사용)
+</span><span class="n">pivot</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'yes'</span><span class="p">]</span><span class="o">-</span><span class="n">pivot</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'no'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>job
+admin.          -0.250911
+blue-collar     -0.381430
+entrepreneur     0.232030
+housemaid        7.945493
+management       0.473829
+retired          8.327329
+self-employed   -2.170175
+services        -2.012836
+student         -1.596667
+technician      -0.853458
+unemployed      -0.782328
+unknown          1.678627
+dtype: float64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#diff행 생성(yes행과 no행의 차)
+</span><span class="n">pivot</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'diff'</span><span class="p">]</span><span class="o">=</span><span class="n">pivot</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'yes'</span><span class="p">]</span><span class="o">-</span><span class="n">pivot</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'no'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#pivot 변수 출력
+</span><span class="n">pivot</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>job</th>
+      <th>admin.</th>
+      <th>blue-collar</th>
+      <th>entrepreneur</th>
+      <th>housemaid</th>
+      <th>management</th>
+      <th>retired</th>
+      <th>self-employed</th>
+      <th>services</th>
+      <th>student</th>
+      <th>technician</th>
+      <th>unemployed</th>
+      <th>unknown</th>
+    </tr>
+    <tr>
+      <th>y</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>no</th>
+      <td>38.219846</td>
+      <td>39.582057</td>
+      <td>41.703453</td>
+      <td>44.705451</td>
+      <td>42.309707</td>
+      <td>59.926128</td>
+      <td>40.176887</td>
+      <td>38.090236</td>
+      <td>26.396667</td>
+      <td>38.600033</td>
+      <td>39.844828</td>
+      <td>45.375427</td>
+    </tr>
+    <tr>
+      <th>yes</th>
+      <td>37.968935</td>
+      <td>39.200627</td>
+      <td>41.935484</td>
+      <td>52.650943</td>
+      <td>42.783537</td>
+      <td>68.253456</td>
+      <td>38.006711</td>
+      <td>36.077399</td>
+      <td>24.800000</td>
+      <td>37.746575</td>
+      <td>39.062500</td>
+      <td>47.054054</td>
+    </tr>
+    <tr>
+      <th>diff</th>
+      <td>-0.250911</td>
+      <td>-0.381430</td>
+      <td>0.232030</td>
+      <td>7.945493</td>
+      <td>0.473829</td>
+      <td>8.327329</td>
+      <td>-2.170175</td>
+      <td>-2.012836</td>
+      <td>-1.596667</td>
+      <td>-0.853458</td>
+      <td>-0.782328</td>
+      <td>1.678627</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#diff 기준으로 내림차순 정렬 
+#sort_values() - default : 열 기준 오름차순 정렬
+#axis=1,ascending=False : 행 기준 내림차순 정렬
+#axis=1 안넣어주면 오류 발생
+</span><span class="n">result</span><span class="o">=</span><span class="n">pivot</span><span class="p">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s">'diff'</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#result 출력
+</span><span class="n">result</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>job</th>
+      <th>retired</th>
+      <th>housemaid</th>
+      <th>unknown</th>
+      <th>management</th>
+      <th>entrepreneur</th>
+      <th>admin.</th>
+      <th>blue-collar</th>
+      <th>unemployed</th>
+      <th>technician</th>
+      <th>student</th>
+      <th>services</th>
+      <th>self-employed</th>
+    </tr>
+    <tr>
+      <th>y</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>no</th>
+      <td>59.926128</td>
+      <td>44.705451</td>
+      <td>45.375427</td>
+      <td>42.309707</td>
+      <td>41.703453</td>
+      <td>38.219846</td>
+      <td>39.582057</td>
+      <td>39.844828</td>
+      <td>38.600033</td>
+      <td>26.396667</td>
+      <td>38.090236</td>
+      <td>40.176887</td>
+    </tr>
+    <tr>
+      <th>yes</th>
+      <td>68.253456</td>
+      <td>52.650943</td>
+      <td>47.054054</td>
+      <td>42.783537</td>
+      <td>41.935484</td>
+      <td>37.968935</td>
+      <td>39.200627</td>
+      <td>39.062500</td>
+      <td>37.746575</td>
+      <td>24.800000</td>
+      <td>36.077399</td>
+      <td>38.006711</td>
+    </tr>
+    <tr>
+      <th>diff</th>
+      <td>8.327329</td>
+      <td>7.945493</td>
+      <td>1.678627</td>
+      <td>0.473829</td>
+      <td>0.232030</td>
+      <td>-0.250911</td>
+      <td>-0.381430</td>
+      <td>-0.782328</td>
+      <td>-0.853458</td>
+      <td>-1.596667</td>
+      <td>-2.012836</td>
+      <td>-2.170175</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#result의 diff행 막대그래프 시각화
+</span><span class="n">result</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'diff'</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">bar</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/customerData/output_95_0.png" alt="output_95_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#result의 diff행 막대그래프 시각화
+#figsize=[15,10]
+#title('주제2 시각화',fontsize=20)
+#x축 눈금 - fontsize=16,rotation=45
+#y축 눈금 - fontsize=16)
+#xlabel - 'job',fontsize=16
+#ylabel - 'diff',fontsize=16
+</span>
+<span class="n">result</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'diff'</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'주제2 시각화'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'job'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'diff'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/customerData/output_96_0.png" alt="output_96_0" /></p>
+
+<ul>
+  <li>결론 - retired , housemaid 경우는 연령을 높여서 더욱 타겟팅 해야한다</li>
+</ul>
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page -->
+           <!--
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to Big Data</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+                </section>
+            
+            -->
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="SeongJae Yu" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/author/SeongJae Yu">SeongJae Yu</a></h4>
+                                
+                                    <p>Read <a href="/author/SeongJae Yu">more posts</a> by this author.</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/SeongJae Yu">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            var this_page_url = 'https://SEONGJAE-YOO.github.io/customer-Data';
+                            var this_page_identifier = '/customer-Data';
+                            var this_page_title = '고객 데이터 분석 프로젝트';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://xxxxxxxx.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                </section>
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/built/images/author-logo.png)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; Big Data &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/python/">Python</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/virtualshoping-data">가상 쇼핑몰 고객 주문 데이터(컬럼,로우) 확인하기</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/marketing-Data">마케팅 데이터 분석</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/keyword-Data">키워드 데이터 분석</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/python/">
+                                
+                                    See all 5 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/keyword-Data">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/logo-python.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/keyword-Data">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Python</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">키워드 데이터 분석</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>Python 프로젝트 
+
+    쿠팡 셀러 데이터 분석
+    검색광고 데이터 분석
+    고객 데이터 분석 프로젝트
+
+
+</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="SeongJae Yu" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/SeongJae Yu/">SeongJae Yu</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      5 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/searchAd">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/logo-python.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/searchAd">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Python</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">검색광고 데이터 분석</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>Python 프로젝트 
+
+    쿠팡 셀러 데이터 분석
+    검색광고 데이터 분석
+    고객 데이터 분석 프로젝트
+
+
+</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="SeongJae Yu" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/SeongJae Yu/">SeongJae Yu</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      29 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="https://SEONGJAE-YOO.github.io/">
+            
+            <span>Big Data</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">고객 데이터 분석 프로젝트</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%EA%B3%A0%EA%B0%9D+%EB%8D%B0%EC%9D%B4%ED%84%B0+%EB%B6%84%EC%84%9D+%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8&amp;url=https://SEONGJAE-YOO.github.io/customer-Data"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://SEONGJAE-YOO.github.io/customer-Data"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://SEONGJAE-YOO.github.io/">Big Data</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <h1 class="subscribe-overlay-title">Search Big Data</h1>
+            <p class="subscribe-overlay-description">
+                lunr.js를 이용한 posts 검색 </p>
+            <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+        </div>
+    </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
