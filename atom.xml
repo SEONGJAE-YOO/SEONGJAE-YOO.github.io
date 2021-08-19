@@ -28,6 +28,46 @@
     
       
       <item>
+        <title>응용-매출,가장 많이 팔린 아이템 확인하기</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/salesitem2-Data</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/salesitem2-Data</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>매출,가장 많이 팔린 아이템 확인하기</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/salesitem-Data</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/salesitem-Data</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>마케팅 데이터 분석</title>
         
           <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트 &lt;/span&gt;&lt;/p&gt;
@@ -63,6 +103,46 @@
         <link>
         https://SEONGJAE-YOO.github.io/keyword-Data</link>
         <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/keyword-Data</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>응용-데이터 기반으로 의사결정 및 kde 밀도 그래프</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/kde-Data</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/kde-Data</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>우수고객 선별하기(가장 소비를 많이 한 고객),고객 코호트 분석</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/goodcustomer-Data</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/goodcustomer-Data</guid>
       </item>
       
     

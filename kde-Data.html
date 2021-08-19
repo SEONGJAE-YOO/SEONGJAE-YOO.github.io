@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>응용-데이터 기반으로 의사결정 및 kde 밀도 그래프</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- 웹폰트 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="SeongJae Yu 블로그" />
+    <link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
+    <link rel="canonical" href="https://SEONGJAE-YOO.github.io/kde-Data" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Big Data" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="응용-데이터 기반으로 의사결정 및 kde 밀도 그래프" />
+    <meta property="og:description" content="Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 학습목표 푸쉬 노티피케이션 타임 의사 결정 하기 Matplotlib - 밀도 그래프 : kde 관찰값을 사용해서 추정되는 연속된 확률 분포를 그린다. 일반적인 과정은 kernel 메서드를 잘 섞어 이 분포를 근사하는 방법이나 이보다 단순한 정규분포이다. 그래서 밀도 그래프는 KDE(Kernel" />
+    <meta property="og:url" content="https://SEONGJAE-YOO.github.io/kde-Data" />
+    <meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-08-19T00:00:00+09:00" />
+    <meta property="article:modified_time" content="2021-08-19T00:00:00+09:00" />
+    <meta property="article:tag" content="Python" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="응용-데이터 기반으로 의사결정 및 kde 밀도 그래프" />
+    <meta name="twitter:description" content="Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 학습목표 푸쉬 노티피케이션 타임 의사 결정 하기 Matplotlib - 밀도 그래프 : kde 관찰값을 사용해서 추정되는 연속된 확률 분포를 그린다. 일반적인 과정은 kernel 메서드를 잘 섞어 이 분포를 근사하는 방법이나 이보다 단순한 정규분포이다. 그래서 밀도 그래프는 KDE(Kernel" />
+    <meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
+    <meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Big Data" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Python" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Big Data",
+        "logo": "https://SEONGJAE-YOO.github.io/"
+    },
+    "url": "https://SEONGJAE-YOO.github.io/kde-Data",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://SEONGJAE-YOO.github.io/kde-Data"
+    },
+    "description": "Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 학습목표 푸쉬 노티피케이션 타임 의사 결정 하기 Matplotlib - 밀도 그래프 : kde 관찰값을 사용해서 추정되는 연속된 확률 분포를 그린다. 일반적인 과정은 kernel 메서드를 잘 섞어 이 분포를 근사하는 방법이나 이보다 단순한 정규분포이다. 그래서 밀도 그래프는 KDE(Kernel"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="응용-데이터 기반으로 의사결정 및 kde 밀도 그래프" href="/feed.xml" />
+
+
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://SEONGJAE-YOO.github.io/">Big Data</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/Big Data/">Big Data</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag별 Posts</a>
+    </li>
+</ul>
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-python post tag-python ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="19 August 2021">19 August 2021</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/python/'>PYTHON</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">응용-데이터 기반으로 의사결정 및 kde 밀도 그래프</h1>
+            </header>
+            <!--
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/logo-python.png)">
+            </figure>
+            
+            -->
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <p><span class="table-of-contents-list">Python 프로젝트 </span></p>
+<ul class="table-of-contents-list">
+    <li><a href="blogmaker/_posts/python/2021-08-11-python-basic.md">쿠팡 셀러 데이터 분석</a></li>
+    <li><a href="blogmaker/_posts/python/2021-08-11-searchAd.md">검색광고 데이터 분석</a></li>
+    <li><a href="blogmaker/_posts/python/2021-08-19-customer-Data.md">고객 데이터 분석 프로젝트</a></li>
+</ul>
+
+<h3 id="학습목표">학습목표</h3>
+<ol>
+  <li>푸쉬 노티피케이션 타임 의사 결정 하기</li>
+</ol>
+
+<ul>
+  <li>Matplotlib - 밀도 그래프 : kde</li>
+</ul>
+
+<p>관찰값을 사용해서 추정되는 연속된 확률 분포를 그린다.</p>
+
+<p>일반적인 과정은 kernel 메서드를 잘 섞어 이 분포를 근사하는 방법이나 이보다 단순한 정규분포이다.</p>
+
+<p>그래서 밀도 그래프는 KDE(Kernel Density Estimate : 커넬 밀도 추정)그래프라고도 알려져 있다.</p>
+
+<p>plot.kde
+plot(kind=’kde’)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="c1"># seaborn
+</span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="c1">#pip install colormap 설치
+</span><span class="n">COLORS</span> <span class="o">=</span> <span class="n">sns</span><span class="p">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s">"RdBu"</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">sns</span><span class="p">.</span><span class="n">palplot</span><span class="p">(</span><span class="n">COLORS</span><span class="p">)</span>
+
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">plot_bar</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">xlabel</span><span class="p">,</span> <span class="n">ylabel</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="o">-</span><span class="mi">0</span><span class="p">],</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">35</span><span class="p">):</span>
+    <span class="n">plot</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">'kde'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'k'</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+    <span class="n">plot</span><span class="p">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">plot</span><span class="p">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">plot</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">plot</span><span class="p">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="n">df</span><span class="p">.</span><span class="n">index</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="n">rotation</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>kind 옵션:</li>
+</ul>
+
+<p>line: 선 그래프</p>
+
+<p>bar: 바 그래프</p>
+
+<p>barh: 수평 바 프래프</p>
+
+<p>hist: 히스토르램</p>
+
+<p>kde: 커널 밀도 그래프</p>
+
+<p>hexbin: 고밀도 산점도 그래프</p>
+
+<p>box: 박스 플롯</p>
+
+<p>area: 면적 그래프</p>
+
+<p>pie: 파이 그래프</p>
+
+<p>scatter: 산점도 그래프</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dtypes</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'UnitPrice'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">float32</span><span class="p">,</span>
+    <span class="s">'CustomerID'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">int32</span><span class="p">,</span>
+    <span class="s">'Quantity'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">int32</span>
+<span class="p">}</span>
+<span class="n">retail</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'./OnlineRetailClean.csv'</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtypes</span><span class="p">)</span>
+<span class="n">retail</span><span class="p">[</span><span class="s">'InvoiceDate'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">retail</span><span class="p">[</span><span class="s">'InvoiceDate'</span><span class="p">],</span> <span class="n">infer_datetime_format</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">retail</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>InvoiceNo</th>
+      <th>StockCode</th>
+      <th>Description</th>
+      <th>Quantity</th>
+      <th>InvoiceDate</th>
+      <th>UnitPrice</th>
+      <th>CustomerID</th>
+      <th>Country</th>
+      <th>CheckoutPrice</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>536365</td>
+      <td>85123A</td>
+      <td>WHITE HANGING HEART T-LIGHT HOLDER</td>
+      <td>6</td>
+      <td>2010-12-01 08:26:00</td>
+      <td>2.55</td>
+      <td>17850</td>
+      <td>United Kingdom</td>
+      <td>15.30</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>536365</td>
+      <td>71053</td>
+      <td>WHITE METAL LANTERN</td>
+      <td>6</td>
+      <td>2010-12-01 08:26:00</td>
+      <td>3.39</td>
+      <td>17850</td>
+      <td>United Kingdom</td>
+      <td>20.34</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>536365</td>
+      <td>84406B</td>
+      <td>CREAM CUPID HEARTS COAT HANGER</td>
+      <td>8</td>
+      <td>2010-12-01 08:26:00</td>
+      <td>2.75</td>
+      <td>17850</td>
+      <td>United Kingdom</td>
+      <td>22.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>536365</td>
+      <td>84029G</td>
+      <td>KNITTED UNION FLAG HOT WATER BOTTLE</td>
+      <td>6</td>
+      <td>2010-12-01 08:26:00</td>
+      <td>3.39</td>
+      <td>17850</td>
+      <td>United Kingdom</td>
+      <td>20.34</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>536365</td>
+      <td>84029E</td>
+      <td>RED WOOLLY HOTTIE WHITE HEART.</td>
+      <td>6</td>
+      <td>2010-12-01 08:26:00</td>
+      <td>3.39</td>
+      <td>17850</td>
+      <td>United Kingdom</td>
+      <td>20.34</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4 id="쿠폰-발송을-할때-push를-언제-보내는게-좋을까">쿠폰 발송을 할때, push를 언제 보내는게 좋을까?</h4>
+<ul>
+  <li>고객에게 쿠폰 발송을 한다고 기획하고, 회의를 한다고 가정해보겠습니다.</li>
+  <li>A: 쿠폰을 언제보내는게 좋을까요?</li>
+  <li>B: 아침에 출퇴근 시간에 보내는게 좋을까요?</li>
+  <li>C: 점심 먹고 졸린데 그때 보내보죠?</li>
+  <li>D: 흠 자기전에 스마트폰 많이 하던데 그때는 어떨까요?</li>
+  <li>A: 그러면 평균 시간을 내볼까요?</li>
+  <li>
+    <p>K: 아 <strong>데이터</strong>를 확인해보는게 맞지 않을까요? 언제 고객이 주로 주문을 하는지?</p>
+  </li>
+  <li>위에서 처럼 실제로 회의를 하다보면 의사결정이 본인/주변의 경험에 의해서 이뤄지는 것을 많이 볼 수 있습니다.</li>
+  <li>주문이 이뤄지는 시간을 고려하지 않고 막무가내로 보낸다면 아무 의미가 없고, 추후 같은 이벤트 발생시에도 판단 근거가 없게 됨</li>
+  <li>현상태에서는 가장 많이 주문이 일어나는 시점에서 하는 것이 가장 직관적인 판단
+    <ul>
+      <li>
+        <ol>
+          <li>데이터로 파악</li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>가설 제시</li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>가설 검증</li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>1-3 반복</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>시간(hour, minute)과 주로 관련되기 때문에 역시 InvoiceDate가 중요한 feature</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">order_by_hour</span> <span class="o">=</span> <span class="n">retail</span><span class="p">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">'InvoiceDate'</span><span class="p">).</span><span class="n">groupby</span><span class="p">(</span><span class="k">lambda</span> <span class="n">date</span><span class="p">:</span> <span class="n">date</span><span class="p">.</span><span class="n">hour</span><span class="p">).</span><span class="n">count</span><span class="p">()</span>
+<span class="n">order_by_hour</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>InvoiceNo</th>
+      <th>StockCode</th>
+      <th>Description</th>
+      <th>Quantity</th>
+      <th>UnitPrice</th>
+      <th>CustomerID</th>
+      <th>Country</th>
+      <th>CheckoutPrice</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>379</td>
+      <td>379</td>
+      <td>379</td>
+      <td>379</td>
+      <td>379</td>
+      <td>379</td>
+      <td>379</td>
+      <td>379</td>
+      <td>379</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8690</td>
+      <td>8690</td>
+      <td>8690</td>
+      <td>8690</td>
+      <td>8690</td>
+      <td>8690</td>
+      <td>8690</td>
+      <td>8690</td>
+      <td>8690</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>21944</td>
+      <td>21944</td>
+      <td>21944</td>
+      <td>21944</td>
+      <td>21944</td>
+      <td>21944</td>
+      <td>21944</td>
+      <td>21944</td>
+      <td>21944</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>37997</td>
+      <td>37997</td>
+      <td>37997</td>
+      <td>37997</td>
+      <td>37997</td>
+      <td>37997</td>
+      <td>37997</td>
+      <td>37997</td>
+      <td>37997</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>49084</td>
+      <td>49084</td>
+      <td>49084</td>
+      <td>49084</td>
+      <td>49084</td>
+      <td>49084</td>
+      <td>49084</td>
+      <td>49084</td>
+      <td>49084</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>72065</td>
+      <td>72065</td>
+      <td>72065</td>
+      <td>72065</td>
+      <td>72065</td>
+      <td>72065</td>
+      <td>72065</td>
+      <td>72065</td>
+      <td>72065</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>64026</td>
+      <td>64026</td>
+      <td>64026</td>
+      <td>64026</td>
+      <td>64026</td>
+      <td>64026</td>
+      <td>64026</td>
+      <td>64026</td>
+      <td>64026</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>54118</td>
+      <td>54118</td>
+      <td>54118</td>
+      <td>54118</td>
+      <td>54118</td>
+      <td>54118</td>
+      <td>54118</td>
+      <td>54118</td>
+      <td>54118</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>45369</td>
+      <td>45369</td>
+      <td>45369</td>
+      <td>45369</td>
+      <td>45369</td>
+      <td>45369</td>
+      <td>45369</td>
+      <td>45369</td>
+      <td>45369</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>24089</td>
+      <td>24089</td>
+      <td>24089</td>
+      <td>24089</td>
+      <td>24089</td>
+      <td>24089</td>
+      <td>24089</td>
+      <td>24089</td>
+      <td>24089</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>13071</td>
+      <td>13071</td>
+      <td>13071</td>
+      <td>13071</td>
+      <td>13071</td>
+      <td>13071</td>
+      <td>13071</td>
+      <td>13071</td>
+      <td>13071</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2928</td>
+      <td>2928</td>
+      <td>2928</td>
+      <td>2928</td>
+      <td>2928</td>
+      <td>2928</td>
+      <td>2928</td>
+      <td>2928</td>
+      <td>2928</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>3321</td>
+      <td>3321</td>
+      <td>3321</td>
+      <td>3321</td>
+      <td>3321</td>
+      <td>3321</td>
+      <td>3321</td>
+      <td>3321</td>
+      <td>3321</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>802</td>
+      <td>802</td>
+      <td>802</td>
+      <td>802</td>
+      <td>802</td>
+      <td>802</td>
+      <td>802</td>
+      <td>802</td>
+      <td>802</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">order_by_hour</span> <span class="o">=</span> <span class="n">retail</span><span class="p">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">'InvoiceDate'</span><span class="p">).</span><span class="n">groupby</span><span class="p">(</span><span class="k">lambda</span> <span class="n">date</span><span class="p">:</span> <span class="n">date</span><span class="p">.</span><span class="n">hour</span><span class="p">).</span><span class="n">count</span><span class="p">()[</span><span class="s">'CustomerID'</span><span class="p">]</span>
+<span class="n">order_by_hour</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>6         1
+7       379
+8      8690
+9     21944
+10    37997
+11    49084
+12    72065
+13    64026
+14    54118
+15    45369
+16    24089
+17    13071
+18     2928
+19     3321
+20      802
+Name: CustomerID, dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plot_bar</span><span class="p">(</span><span class="n">order_by_hour</span><span class="p">,</span> <span class="s">'hour'</span><span class="p">,</span> <span class="s">'# orders'</span><span class="p">,</span> <span class="s">'Order by hour'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ipython-input-2-3b6cb782caa3&gt;:6: UserWarning: FixedFormatter should only be used together with FixedLocator
+  plot.set_xticklabels(labels=df.index, rotation=rotation)
+</code></pre></div></div>
+
+<p><img src="./img/kdeData/output_9_1.png" alt="output_9_1" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">half_an_hour</span><span class="p">(</span><span class="n">date</span><span class="p">):</span>
+    <span class="n">minute</span> <span class="o">=</span> <span class="s">':00'</span>
+    <span class="k">if</span> <span class="n">date</span><span class="p">.</span><span class="n">minute</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">:</span>
+        <span class="n">minute</span> <span class="o">=</span> <span class="s">':30'</span>
+    <span class="n">hour</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">date</span><span class="p">.</span><span class="n">hour</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">date</span><span class="p">.</span><span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">hour</span> <span class="o">=</span> <span class="s">'0'</span> <span class="o">+</span> <span class="n">hour</span>
+    
+    <span class="k">return</span> <span class="n">hour</span> <span class="o">+</span> <span class="n">minute</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">order_by_hour_half</span> <span class="o">=</span> <span class="n">retail</span><span class="p">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">'InvoiceDate'</span><span class="p">).</span><span class="n">groupby</span><span class="p">(</span><span class="n">half_an_hour</span><span class="p">).</span><span class="n">count</span><span class="p">()[</span><span class="s">'CustomerID'</span><span class="p">]</span>
+<span class="n">order_by_hour_half</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>06:00        1
+07:30      379
+08:00     3145
+08:30     5545
+09:00     9364
+09:30    12580
+10:00    16950
+10:30    21047
+11:00    18925
+11:30    30159
+12:00    37174
+12:30    34891
+13:00    31131
+13:30    32895
+14:00    26958
+14:30    27160
+15:00    24227
+15:30    21142
+16:00    14316
+16:30     9773
+17:00     8889
+17:30     4182
+18:00     1715
+18:30     1213
+19:00     1534
+19:30     1787
+20:00      802
+Name: CustomerID, dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">order_by_hour_half</span> <span class="o">/</span> <span class="n">order_by_hour_half</span><span class="p">.</span><span class="nb">sum</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>06:00    0.000003
+07:30    0.000953
+08:00    0.007904
+08:30    0.013936
+09:00    0.023534
+09:30    0.031617
+10:00    0.042600
+10:30    0.052897
+11:00    0.047564
+11:30    0.075798
+12:00    0.093429
+12:30    0.087691
+13:00    0.078241
+13:30    0.082675
+14:00    0.067753
+14:30    0.068261
+15:00    0.060890
+15:30    0.053136
+16:00    0.035980
+16:30    0.024562
+17:00    0.022341
+17:30    0.010511
+18:00    0.004310
+18:30    0.003049
+19:00    0.003855
+19:30    0.004491
+20:00    0.002016
+Name: CustomerID, dtype: float64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plot_bar</span><span class="p">(</span><span class="n">order_by_hour_half</span><span class="p">,</span> <span class="s">'half an hour'</span><span class="p">,</span> <span class="s">'# orders'</span><span class="p">,</span> <span class="s">'order by half an hour'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ipython-input-2-3b6cb782caa3&gt;:6: UserWarning: FixedFormatter should only be used together with FixedLocator
+  plot.set_xticklabels(labels=df.index, rotation=rotation)
+</code></pre></div></div>
+
+<p><img src="./img/kdeData/output_13_1.png" alt="output_13_1" /></p>
+
+<h4 id="개인화된-push-notification">개인화된 push notification</h4>
+<ul>
+  <li>아마존을 필두로, 개인화(personalization)하여 맞춤으로 사용자마다 최적의 솔루션을 찾는것이 트렌드가 됨</li>
+  <li>사용자별로 소비의 패턴이 다를 수 있기 때문에, 가장 많이 구매한 시간대를 찾아서 해당 시간대에 쿠폰을 발송!</li>
+</ul>
+
+<h4 id="사용자별-각-시간별-주문-량-계산하기">사용자별 각 시간별 주문 량 계산하기</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">order_count_by_hour</span> <span class="o">=</span> <span class="n">retail</span><span class="p">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">'InvoiceDate'</span><span class="p">).</span><span class="n">groupby</span><span class="p">([</span><span class="s">'CustomerID'</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">date</span><span class="p">:</span> <span class="n">date</span><span class="p">.</span><span class="n">hour</span><span class="p">]).</span><span class="n">count</span><span class="p">()[</span><span class="s">'StockCode'</span><span class="p">]</span>
+<span class="n">order_count_by_hour</span> <span class="c1">#12346 ID 는 10 시에 1건 , 12347  ID는 8 시에 22건 
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CustomerID    
+12346       10     1
+12347       8     22
+            10    24
+            12    47
+            13    18
+                  ..
+18283       15     1
+            16    56
+            19    87
+18287       9      3
+            10    67
+Name: StockCode, Length: 11205, dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">order_count_by_hour</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">12347</span><span class="p">]</span> <span class="c1">#2시에 가장 많은 주문을 함
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>8     22
+10    24
+12    47
+13    18
+14    60
+15    11
+Name: StockCode, dtype: int64
+</code></pre></div></div>
+
+<h4 id="사용자별-최대-주문-시간-계산하기">사용자별 최대 주문 시간 계산하기</h4>
+<ul>
+  <li>가장 많은 주문량을 보인 시간을 계산</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">order_count_by_hour</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'CustomerID'</span><span class="p">).</span><span class="n">idxmax</span><span class="p">()</span> <span class="c1">#idxmax 함수는 최댓값을 가진 index를 반환한다
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CustomerID
+12346    (12346, 10)
+12347    (12347, 14)
+12348    (12348, 19)
+12349     (12349, 9)
+12350    (12350, 16)
+            ...     
+18280     (18280, 9)
+18281    (18281, 10)
+18282    (18282, 13)
+18283    (18283, 14)
+18287    (18287, 10)
+Name: StockCode, Length: 4338, dtype: object
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">idx</span> <span class="o">=</span> <span class="n">order_count_by_hour</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'CustomerID'</span><span class="p">).</span><span class="n">idxmax</span><span class="p">()</span> <span class="c1">#idxmax 함수는 최댓값을 가진 index를 반환한다
+</span></code></pre></div></div>
+
+<h4 id="해당-시간-indexing">해당 시간 indexing</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span> <span class="o">=</span> <span class="n">order_count_by_hour</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+<span class="n">result</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CustomerID    
+12346       10      1
+12347       14     60
+12348       19     17
+12349       9      73
+12350       16     17
+                 ... 
+18280       9      10
+18281       10      7
+18282       13      7
+18283       14    201
+18287       10     67
+Name: StockCode, Length: 4338, dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span><span class="p">.</span><span class="n">reset_index</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CustomerID</th>
+      <th>level_1</th>
+      <th>StockCode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>12346</td>
+      <td>10</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>12347</td>
+      <td>14</td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>12348</td>
+      <td>19</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>12349</td>
+      <td>9</td>
+      <td>73</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>12350</td>
+      <td>16</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>4333</th>
+      <td>18280</td>
+      <td>9</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>4334</th>
+      <td>18281</td>
+      <td>10</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>4335</th>
+      <td>18282</td>
+      <td>13</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>4336</th>
+      <td>18283</td>
+      <td>14</td>
+      <td>201</td>
+    </tr>
+    <tr>
+      <th>4337</th>
+      <td>18287</td>
+      <td>10</td>
+      <td>67</td>
+    </tr>
+  </tbody>
+</table>
+<p>4338 rows × 3 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span><span class="p">.</span><span class="n">reset_index</span><span class="p">().</span><span class="n">groupby</span><span class="p">(</span><span class="s">'level_1'</span><span class="p">).</span><span class="n">groups</span> <span class="c1">#시간대별로 그룹화하기
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{7: [73, 269, 319, 344, 375, 893, 1667, 2317], 8: [46, 58, 87, 126, 172, 179, 187, 260, 278, 279, 282, 292, 306, 347, 399, 429, 496, 503, 526, 533, 549, 552, 651, 671, 747, 755, 784, 792, 800, 803, 806, 821, 838, 877, 883, 920, 944, 947, 951, 954, 1008, 1093, 1106, 1120, 1138, 1172, 1173, 1217, 1251, 1397, 1422, 1424, 1436, 1472, 1512, 1616, 1621, 1666, 1668, 1678, 1687, 1734, 1759, 1761, 1774, 1791, 1815, 1827, 1846, 1859, 1895, 1900, 1903, 1996, 2018, 2023, 2054, 2085, 2108, 2117, 2167, 2172, 2253, 2380, 2383, 2403, 2404, 2417, 2427, 2462, 2464, 2643, 2749, 2776, 2781, 2896, 2936, 2949, 3021, 3130, ...], 9: [3, 9, 26, 30, 33, 35, 37, 48, 60, 66, 75, 84, 86, 90, 100, 106, 107, 121, 127, 135, 138, 142, 144, 146, 154, 159, 181, 199, 230, 240, 264, 265, 267, 277, 280, 286, 294, 298, 328, 333, 336, 342, 343, 352, 362, 366, 385, 402, 421, 459, 470, 475, 478, 482, 483, 509, 517, 519, 574, 603, 615, 630, 636, 642, 644, 691, 701, 706, 707, 746, 749, 752, 764, 770, 781, 783, 818, 825, 829, 844, 859, 874, 887, 925, 934, 950, 969, 981, 992, 998, 1003, 1004, 1016, 1032, 1038, 1045, 1050, 1053, 1063, 1082, ...], 10: [0, 11, 21, 27, 28, 41, 42, 45, 49, 51, 55, 61, 77, 93, 94, 103, 104, 105, 110, 113, 122, 132, 137, 140, 147, 150, 155, 156, 165, 168, 169, 174, 178, 182, 186, 195, 205, 206, 208, 216, 217, 222, 231, 233, 242, 251, 252, 255, 263, 275, 276, 287, 288, 290, 293, 301, 310, 314, 322, 331, 337, 339, 341, 348, 359, 360, 361, 363, 364, 365, 379, 381, 407, 437, 439, 441, 443, 450, 464, 465, 468, 471, 481, 499, 500, 511, 516, 529, 541, 553, 560, 563, 570, 578, 584, 586, 590, 591, 595, 596, ...], 11: [29, 32, 34, 57, 99, 102, 111, 124, 139, 148, 163, 171, 176, 188, 207, 220, 223, 228, 234, 246, 253, 254, 256, 266, 272, 311, 313, 315, 324, 326, 330, 346, 349, 355, 356, 380, 393, 400, 419, 423, 424, 427, 430, 431, 449, 458, 462, 485, 487, 515, 521, 528, 542, 545, 550, 559, 567, 569, 575, 605, 616, 635, 648, 650, 654, 658, 664, 677, 678, 680, 692, 693, 694, 702, 712, 729, 744, 748, 763, 765, 771, 778, 793, 798, 812, 819, 824, 828, 831, 837, 843, 846, 851, 856, 866, 868, 869, 873, 875, 903, ...], 12: [12, 20, 22, 36, 50, 62, 64, 67, 72, 74, 81, 116, 120, 123, 145, 151, 158, 160, 164, 189, 191, 193, 200, 203, 209, 226, 237, 238, 241, 243, 244, 245, 249, 259, 270, 271, 284, 297, 305, 308, 317, 327, 332, 335, 350, 357, 367, 371, 376, 377, 388, 390, 391, 397, 398, 403, 404, 414, 415, 418, 428, 432, 435, 436, 440, 451, 460, 473, 477, 488, 489, 490, 492, 495, 504, 510, 525, 540, 565, 568, 577, 582, 585, 594, 598, 599, 611, 612, 613, 622, 624, 625, 631, 634, 643, 649, 653, 655, 666, 675, ...], 13: [7, 8, 14, 16, 18, 23, 43, 44, 52, 59, 70, 71, 76, 82, 83, 97, 98, 108, 112, 114, 115, 119, 143, 149, 166, 167, 183, 190, 198, 201, 202, 204, 212, 213, 225, 227, 232, 236, 239, 257, 258, 262, 300, 303, 312, 329, 340, 351, 353, 368, 369, 372, 374, 382, 383, 384, 394, 396, 406, 416, 417, 422, 438, 445, 448, 452, 455, 456, 466, 474, 493, 505, 506, 512, 534, 535, 537, 548, 551, 556, 561, 581, 601, 609, 610, 614, 617, 623, 632, 639, 647, 659, 660, 668, 669, 676, 681, 684, 685, 687, ...], 14: [1, 5, 25, 31, 38, 40, 54, 56, 69, 78, 79, 85, 88, 95, 96, 101, 109, 118, 125, 129, 130, 131, 141, 152, 162, 173, 175, 177, 196, 197, 215, 219, 221, 247, 273, 281, 291, 295, 296, 318, 325, 334, 354, 358, 389, 395, 401, 405, 408, 412, 413, 425, 433, 457, 461, 463, 480, 486, 491, 494, 501, 507, 520, 522, 524, 530, 538, 539, 555, 557, 562, 572, 573, 579, 583, 588, 589, 618, 626, 627, 640, 641, 645, 646, 661, 663, 665, 696, 697, 699, 720, 725, 726, 735, 745, 760, 761, 799, 801, 809, ...], 15: [13, 15, 17, 24, 65, 68, 91, 92, 117, 134, 136, 161, 170, 180, 184, 194, 211, 214, 218, 229, 235, 250, 268, 274, 285, 299, 304, 307, 309, 338, 345, 373, 378, 386, 392, 409, 410, 411, 434, 444, 446, 467, 476, 479, 497, 498, 502, 513, 514, 527, 531, 532, 536, 544, 564, 566, 576, 592, 600, 602, 607, 619, 620, 621, 629, 638, 674, 689, 705, 714, 734, 739, 740, 777, 787, 789, 791, 796, 804, 814, 823, 827, 832, 855, 857, 861, 882, 888, 900, 902, 935, 938, 941, 952, 953, 962, 972, 977, 979, 982, ...], 16: [4, 10, 19, 39, 53, 128, 133, 157, 192, 210, 224, 248, 302, 316, 323, 370, 387, 420, 442, 447, 454, 469, 472, 484, 518, 523, 543, 546, 554, 558, 580, 587, 604, 628, 657, 662, 672, 682, 704, 788, 794, 833, 834, 847, 850, 908, 930, 940, 964, 970, 999, 1029, 1036, 1048, 1067, 1096, 1107, 1115, 1116, 1144, 1174, 1177, 1189, 1219, 1224, 1239, 1270, 1273, 1279, 1288, 1314, 1322, 1331, 1343, 1355, 1359, 1366, 1377, 1380, 1468, 1473, 1477, 1484, 1488, 1490, 1500, 1506, 1526, 1564, 1566, 1574, 1585, 1638, 1676, 1692, 1772, 1799, 1820, 1834, 1848, ...], 17: [6, 63, 89, 153, 185, 261, 283, 289, 321, 426, 508, 547, 571, 593, 652, 670, 703, 719, 722, 754, 836, 845, 907, 936, 1019, 1088, 1140, 1188, 1240, 1296, 1379, 1489, 1540, 1578, 1588, 1590, 1603, 1628, 1640, 1642, 1679, 1739, 1742, 1889, 1906, 1940, 2058, 2156, 2169, 2274, 2279, 2340, 2374, 2408, 2443, 2515, 2566, 2568, 2583, 2594, 2602, 2621, 2644, 2661, 2853, 2856, 2886, 2928, 2948, 2978, 2995, 3004, 3069, 3102, 3141, 3173, 3185, 3226, 3230, 3277, 3323, 3401, 3404, 3425, 3443, 3461, 3462, 3466, 3512, 3543, 3559, 3598, 3639, 3659, 3677, 3690, 3716, 3727, 3736, 3739, ...], 18: [80, 320, 453, 637, 767, 862, 879, 1128, 1326, 1378, 1498, 1519, 1624, 1652, 1758, 1768, 1844, 2879, 3198, 3467, 3511, 3537, 3767, 3802, 3820, 3837, 4072, 4077, 4079, 4273], 19: [2, 47, 667, 1589, 1591, 1639, 1730, 1776, 1928, 2044, 2448, 2548, 2876, 3002, 3047, 3261, 3274, 3479, 3556, 3652, 3685, 3789, 3812, 4324], 20: [1646, 1943, 3804, 3838, 4050, 4110]}
+</code></pre></div></div>
+
+<ul>
+  <li>시간대별로 어떤 고객이 가장많은 주문을 했는지 확인가능</li>
+</ul>
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page -->
+           <!--
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to Big Data</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+                </section>
+            
+            -->
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="SeongJae Yu" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/author/SeongJae Yu">SeongJae Yu</a></h4>
+                                
+                                    <p>Read <a href="/author/SeongJae Yu">more posts</a> by this author.</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/SeongJae Yu">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            var this_page_url = 'https://SEONGJAE-YOO.github.io/kde-Data';
+                            var this_page_identifier = '/kde-Data';
+                            var this_page_title = '응용-데이터 기반으로 의사결정 및 kde 밀도 그래프';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://xxxxxxxx.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                </section>
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/built/images/author-logo.png)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; Big Data &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/python/">Python</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/virtualshoping-data">가상 쇼핑몰 고객 주문 데이터(컬럼,로우) 확인하기</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/salesitem2-Data">응용-매출,가장 많이 팔린 아이템 확인하기</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/salesitem-Data">매출,가장 많이 팔린 아이템 확인하기</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/python/">
+                                
+                                    See all 9 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/keyword-Data">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/logo-python.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/keyword-Data">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Python</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">키워드 데이터 분석</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>Python 프로젝트 
+
+    쿠팡 셀러 데이터 분석
+    검색광고 데이터 분석
+    고객 데이터 분석 프로젝트
+
+
+</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="SeongJae Yu" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/SeongJae Yu/">SeongJae Yu</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      5 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/goodcustomer-Data">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/logo-python.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/goodcustomer-Data">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Python</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">우수고객 선별하기(가장 소비를 많이 한 고객),고객 코호트 분석</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>Python 프로젝트 
+
+    쿠팡 셀러 데이터 분석
+    검색광고 데이터 분석
+    고객 데이터 분석 프로젝트
+
+
+</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="SeongJae Yu" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/SeongJae Yu/">SeongJae Yu</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      6 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="https://SEONGJAE-YOO.github.io/">
+            
+            <span>Big Data</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">응용-데이터 기반으로 의사결정 및 kde 밀도 그래프</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%EC%9D%91%EC%9A%A9-%EB%8D%B0%EC%9D%B4%ED%84%B0+%EA%B8%B0%EB%B0%98%EC%9C%BC%EB%A1%9C+%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95+%EB%B0%8F+kde+%EB%B0%80%EB%8F%84+%EA%B7%B8%EB%9E%98%ED%94%84&amp;url=https://SEONGJAE-YOO.github.io/kde-Data"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://SEONGJAE-YOO.github.io/kde-Data"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://SEONGJAE-YOO.github.io/">Big Data</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <h1 class="subscribe-overlay-title">Search Big Data</h1>
+            <p class="subscribe-overlay-description">
+                lunr.js를 이용한 posts 검색 </p>
+            <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+        </div>
+    </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>

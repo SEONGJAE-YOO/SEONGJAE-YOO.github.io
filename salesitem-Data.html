@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>매출,가장 많이 팔린 아이템 확인하기</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- 웹폰트 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="SeongJae Yu 블로그" />
+    <link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
+    <link rel="canonical" href="https://SEONGJAE-YOO.github.io/salesitem-Data" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Big Data" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="매출,가장 많이 팔린 아이템 확인하기" />
+    <meta property="og:description" content="Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 학습목표 아이템별 지표 확인하기 시간별 지역별 판매 지표 확인하기 import numpy as np import pandas as pd # seaborn import seaborn as sns COLORS = sns.color_palette() %matplotlib inline 데이터 로딩 정제된 데이터 사용(retail.csv) dtypes = { 'UnitPrice':" />
+    <meta property="og:url" content="https://SEONGJAE-YOO.github.io/salesitem-Data" />
+    <meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-08-19T00:00:00+09:00" />
+    <meta property="article:modified_time" content="2021-08-19T00:00:00+09:00" />
+    <meta property="article:tag" content="Python" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="매출,가장 많이 팔린 아이템 확인하기" />
+    <meta name="twitter:description" content="Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 학습목표 아이템별 지표 확인하기 시간별 지역별 판매 지표 확인하기 import numpy as np import pandas as pd # seaborn import seaborn as sns COLORS = sns.color_palette() %matplotlib inline 데이터 로딩 정제된 데이터 사용(retail.csv) dtypes = { 'UnitPrice':" />
+    <meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
+    <meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Big Data" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Python" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Big Data",
+        "logo": "https://SEONGJAE-YOO.github.io/"
+    },
+    "url": "https://SEONGJAE-YOO.github.io/salesitem-Data",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://SEONGJAE-YOO.github.io/salesitem-Data"
+    },
+    "description": "Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 학습목표 아이템별 지표 확인하기 시간별 지역별 판매 지표 확인하기 import numpy as np import pandas as pd # seaborn import seaborn as sns COLORS = sns.color_palette() %matplotlib inline 데이터 로딩 정제된 데이터 사용(retail.csv) dtypes = { 'UnitPrice':"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="매출,가장 많이 팔린 아이템 확인하기" href="/feed.xml" />
+
+
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://SEONGJAE-YOO.github.io/">Big Data</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/Big Data/">Big Data</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag별 Posts</a>
+    </li>
+</ul>
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-python post tag-python ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="19 August 2021">19 August 2021</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/python/'>PYTHON</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">매출,가장 많이 팔린 아이템 확인하기</h1>
+            </header>
+            <!--
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/logo-python.png)">
+            </figure>
+            
+            -->
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <p><span class="table-of-contents-list">Python 프로젝트 </span></p>
+<ul class="table-of-contents-list">
+    <li><a href="blogmaker/_posts/python/2021-08-11-python-basic.md">쿠팡 셀러 데이터 분석</a></li>
+    <li><a href="blogmaker/_posts/python/2021-08-11-searchAd.md">검색광고 데이터 분석</a></li>
+    <li><a href="blogmaker/_posts/python/2021-08-19-customer-Data.md">고객 데이터 분석 프로젝트</a></li>
+</ul>
+
+<h3 id="학습목표">학습목표</h3>
+<ol>
+  <li>아이템별 지표 확인하기</li>
+  <li>시간별 지역별 판매 지표 확인하기</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="c1"># seaborn
+</span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="n">COLORS</span> <span class="o">=</span> <span class="n">sns</span><span class="p">.</span><span class="n">color_palette</span><span class="p">()</span>
+
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</code></pre></div></div>
+
+<h4 id="데이터-로딩">데이터 로딩</h4>
+<ol>
+  <li>정제된 데이터 사용(retail.csv)</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dtypes</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'UnitPrice'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">float32</span><span class="p">,</span>
+    <span class="s">'CustomerID'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">int32</span><span class="p">,</span>
+    <span class="s">'Quantity'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">int32</span>
+<span class="p">}</span>
+<span class="n">retail</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'./OnlineRetailClean.csv'</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtypes</span><span class="p">)</span>
+<span class="n">retail</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>InvoiceNo</th>
+      <th>StockCode</th>
+      <th>Description</th>
+      <th>Quantity</th>
+      <th>InvoiceDate</th>
+      <th>UnitPrice</th>
+      <th>CustomerID</th>
+      <th>Country</th>
+      <th>CheckoutPrice</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>536365</td>
+      <td>85123A</td>
+      <td>WHITE HANGING HEART T-LIGHT HOLDER</td>
+      <td>6</td>
+      <td>12/1/2010 8:26</td>
+      <td>2.55</td>
+      <td>17850</td>
+      <td>United Kingdom</td>
+      <td>15.30</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>536365</td>
+      <td>71053</td>
+      <td>WHITE METAL LANTERN</td>
+      <td>6</td>
+      <td>12/1/2010 8:26</td>
+      <td>3.39</td>
+      <td>17850</td>
+      <td>United Kingdom</td>
+      <td>20.34</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>536365</td>
+      <td>84406B</td>
+      <td>CREAM CUPID HEARTS COAT HANGER</td>
+      <td>8</td>
+      <td>12/1/2010 8:26</td>
+      <td>2.75</td>
+      <td>17850</td>
+      <td>United Kingdom</td>
+      <td>22.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>536365</td>
+      <td>84029G</td>
+      <td>KNITTED UNION FLAG HOT WATER BOTTLE</td>
+      <td>6</td>
+      <td>12/1/2010 8:26</td>
+      <td>3.39</td>
+      <td>17850</td>
+      <td>United Kingdom</td>
+      <td>20.34</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>536365</td>
+      <td>84029E</td>
+      <td>RED WOOLLY HOTTIE WHITE HEART.</td>
+      <td>6</td>
+      <td>12/1/2010 8:26</td>
+      <td>3.39</td>
+      <td>17850</td>
+      <td>United Kingdom</td>
+      <td>20.34</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4 id="날짜-타입-데이터-변환">날짜 타입 데이터 변환</h4>
+<ul>
+  <li>문자열로 로딩하는 것보다 date/datetime 타입으로 로딩하는 것이 분석에 용이</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">retail</span><span class="p">[</span><span class="s">'InvoiceDate'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">retail</span><span class="p">[</span><span class="s">'InvoiceDate'</span><span class="p">],</span> <span class="n">infer_datetime_format</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="c1"># infer_datetime_format=True 날짜시간 포맷 추정해서 파싱하기
+</span><span class="n">retail</span><span class="p">.</span><span class="n">info</span><span class="p">()</span> <span class="c1">#5   InvoiceDate    397884 non-null  datetime64[ns]   바꿔짐
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 397884 entries, 0 to 397883
+Data columns (total 10 columns):
+ #   Column         Non-Null Count   Dtype         
+---  ------         --------------   -----         
+ 0   Unnamed: 0     397884 non-null  int64         
+ 1   InvoiceNo      397884 non-null  int64         
+ 2   StockCode      397884 non-null  object        
+ 3   Description    397884 non-null  object        
+ 4   Quantity       397884 non-null  int32         
+ 5   InvoiceDate    397884 non-null  datetime64[ns]
+ 6   UnitPrice      397884 non-null  float32       
+ 7   CustomerID     397884 non-null  int32         
+ 8   Country        397884 non-null  object        
+ 9   CheckoutPrice  397884 non-null  float64       
+dtypes: datetime64[ns](1), float32(1), float64(1), int32(2), int64(2), object(3)
+memory usage: 25.8+ MB
+</code></pre></div></div>
+
+<h4 id="해당-기간-동안의-매출">해당 기간 동안의 매출</h4>
+<ul>
+  <li>전체 매출</li>
+  <li>국가별 매출</li>
+  <li>월별 매출</li>
+  <li>요일별 매출</li>
+  <li>시간별 매출</li>
+</ul>
+
+<h4 id="전체-매출">전체 매출</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">total_revenue</span> <span class="o">=</span> <span class="n">retail</span><span class="p">[</span><span class="s">'CheckoutPrice'</span><span class="p">].</span><span class="nb">sum</span><span class="p">()</span>
+<span class="n">total_revenue</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>8911407.904
+</code></pre></div></div>
+
+<h4 id="국가별-매출">국가별 매출</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rev_by_countries</span> <span class="o">=</span> <span class="n">retail</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'Country'</span><span class="p">).</span><span class="nb">sum</span><span class="p">()[</span><span class="s">'CheckoutPrice'</span><span class="p">].</span><span class="n">sort_values</span><span class="p">()</span>
+<span class="n">rev_by_countries</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Country
+Saudi Arabia            1.459200e+02
+Bahrain                 5.484000e+02
+Czech Republic          8.267400e+02
+RSA                     1.002310e+03
+Brazil                  1.143600e+03
+European Community      1.300250e+03
+Lithuania               1.661060e+03
+Lebanon                 1.693880e+03
+United Arab Emirates    1.902280e+03
+Unspecified             2.667070e+03
+Malta                   2.725590e+03
+USA                     3.580390e+03
+Canada                  3.666380e+03
+Iceland                 4.310000e+03
+Greece                  4.760520e+03
+Israel                  7.221690e+03
+Poland                  7.334650e+03
+Austria                 1.019868e+04
+Cyprus                  1.359038e+04
+Italy                   1.748324e+04
+Denmark                 1.895534e+04
+Channel Islands         2.045044e+04
+Singapore               2.127929e+04
+Finland                 2.254608e+04
+Portugal                3.343989e+04
+Norway                  3.616544e+04
+Japan                   3.741637e+04
+Sweden                  3.837833e+04
+Belgium                 4.119634e+04
+Switzerland             5.644395e+04
+Spain                   6.157711e+04
+Australia               1.385213e+05
+France                  2.090240e+05
+Germany                 2.288671e+05
+EIRE                    2.655459e+05
+Netherlands             2.854463e+05
+United Kingdom          7.308392e+06
+Name: CheckoutPrice, dtype: float64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plot</span> <span class="o">=</span> <span class="n">rev_by_countries</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">'bar'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plot</span><span class="p">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">'Country'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">'Revenue'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">'Revenue by Country'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="n">rev_by_countries</span><span class="p">.</span><span class="n">index</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Text(0, 0, 'Saudi Arabia'),
+ Text(1, 0, 'Bahrain'),
+ Text(2, 0, 'Czech Republic'),
+ Text(3, 0, 'RSA'),
+ Text(4, 0, 'Brazil'),
+ Text(5, 0, 'European Community'),
+ Text(6, 0, 'Lithuania'),
+ Text(7, 0, 'Lebanon'),
+ Text(8, 0, 'United Arab Emirates'),
+ Text(9, 0, 'Unspecified'),
+ Text(10, 0, 'Malta'),
+ Text(11, 0, 'USA'),
+ Text(12, 0, 'Canada'),
+ Text(13, 0, 'Iceland'),
+ Text(14, 0, 'Greece'),
+ Text(15, 0, 'Israel'),
+ Text(16, 0, 'Poland'),
+ Text(17, 0, 'Austria'),
+ Text(18, 0, 'Cyprus'),
+ Text(19, 0, 'Italy'),
+ Text(20, 0, 'Denmark'),
+ Text(21, 0, 'Channel Islands'),
+ Text(22, 0, 'Singapore'),
+ Text(23, 0, 'Finland'),
+ Text(24, 0, 'Portugal'),
+ Text(25, 0, 'Norway'),
+ Text(26, 0, 'Japan'),
+ Text(27, 0, 'Sweden'),
+ Text(28, 0, 'Belgium'),
+ Text(29, 0, 'Switzerland'),
+ Text(30, 0, 'Spain'),
+ Text(31, 0, 'Australia'),
+ Text(32, 0, 'France'),
+ Text(33, 0, 'Germany'),
+ Text(34, 0, 'EIRE'),
+ Text(35, 0, 'Netherlands'),
+ Text(36, 0, 'United Kingdom')]
+</code></pre></div></div>
+
+<p><img src="./img/salesitem/output_11_1.png" alt="output_11_1" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rev_by_countries</span> <span class="o">/</span> <span class="n">total_revenue</span> <span class="c1">#비율 확인할 수 있다.
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Country
+Saudi Arabia            0.000016
+Bahrain                 0.000062
+Czech Republic          0.000093
+RSA                     0.000112
+Brazil                  0.000128
+European Community      0.000146
+Lithuania               0.000186
+Lebanon                 0.000190
+United Arab Emirates    0.000213
+Unspecified             0.000299
+Malta                   0.000306
+USA                     0.000402
+Canada                  0.000411
+Iceland                 0.000484
+Greece                  0.000534
+Israel                  0.000810
+Poland                  0.000823
+Austria                 0.001144
+Cyprus                  0.001525
+Italy                   0.001962
+Denmark                 0.002127
+Channel Islands         0.002295
+Singapore               0.002388
+Finland                 0.002530
+Portugal                0.003752
+Norway                  0.004058
+Japan                   0.004199
+Sweden                  0.004307
+Belgium                 0.004623
+Switzerland             0.006334
+Spain                   0.006910
+Australia               0.015544
+France                  0.023456
+Germany                 0.025682
+EIRE                    0.029798
+Netherlands             0.032032
+United Kingdom          0.820116
+Name: CheckoutPrice, dtype: float64
+</code></pre></div></div>
+
+<h4 id="그래프-유틸-함수">그래프 유틸 함수</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">plot_bar</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">xlabel</span><span class="p">,</span> <span class="n">ylabel</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">):</span>
+    <span class="n">plot</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">'bar'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+    <span class="n">plot</span><span class="p">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+    <span class="n">plot</span><span class="p">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+    <span class="n">plot</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+    <span class="n">plot</span><span class="p">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="n">df</span><span class="p">.</span><span class="n">index</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="n">rotation</span><span class="p">)</span>
+                   
+<span class="n">plot_bar</span><span class="p">(</span><span class="n">rev_by_countries</span><span class="p">,</span> <span class="s">'Country'</span><span class="p">,</span> <span class="s">'Revenue'</span><span class="p">,</span> <span class="s">'Revenue by Country'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="./img/salesitem/output_14_0.png" alt="output_14_0" /></p>
+
+<h4 id="월별-매출">월별 매출</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">retail</span><span class="p">[</span><span class="s">'InvoiceDate'</span><span class="p">].</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>397883   2011-12-09 12:50:00
+397876   2011-12-09 12:50:00
+397870   2011-12-09 12:50:00
+397871   2011-12-09 12:50:00
+397872   2011-12-09 12:50:00
+                 ...        
+3        2010-12-01 08:26:00
+1        2010-12-01 08:26:00
+5        2010-12-01 08:26:00
+6        2010-12-01 08:26:00
+0        2010-12-01 08:26:00
+Name: InvoiceDate, Length: 397884, dtype: datetime64[ns]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">extract_month</span><span class="p">(</span><span class="n">date</span><span class="p">):</span>
+    <span class="n">month</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">date</span><span class="p">.</span><span class="n">month</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">date</span><span class="p">.</span><span class="n">month</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">month</span> <span class="o">=</span> <span class="s">'0'</span> <span class="o">+</span> <span class="n">month</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">date</span><span class="p">.</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="n">month</span> 
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rev_by_month</span> <span class="o">=</span> <span class="n">retail</span><span class="p">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">'InvoiceDate'</span><span class="p">).</span><span class="n">groupby</span><span class="p">(</span><span class="n">extract_month</span><span class="p">).</span><span class="nb">sum</span><span class="p">()[</span><span class="s">'CheckoutPrice'</span><span class="p">]</span>
+<span class="n">rev_by_month</span>
+
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>201012     572713.890
+201101     569445.040
+201102     447137.350
+201103     595500.760
+201104     469200.361
+201105     678594.560
+201106     661213.690
+201107     600091.011
+201108     645343.900
+201109     952838.382
+201110    1039318.790
+201111    1161817.380
+201112     518192.790
+Name: CheckoutPrice, dtype: float64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plot_bar</span><span class="p">(</span><span class="n">rev_by_month</span><span class="p">,</span> <span class="s">'Month'</span><span class="p">,</span> <span class="s">'Revenue'</span><span class="p">,</span> <span class="s">'Revenue by Month'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="./img/salesitem/output_19_0.png" alt="output_19_0" /></p>
+
+<h4 id="요일별-매출">요일별 매출</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rev_by_dow</span> <span class="o">=</span> <span class="n">retail</span><span class="p">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">'InvoiceDate'</span><span class="p">).</span><span class="n">groupby</span><span class="p">(</span><span class="k">lambda</span> <span class="n">date</span><span class="p">:</span><span class="n">date</span><span class="p">.</span><span class="n">dayofweek</span><span class="p">).</span><span class="nb">sum</span><span class="p">()[</span><span class="s">'CheckoutPrice'</span><span class="p">]</span>
+<span class="n">rev_by_dow</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    1367146.411
+1    1700634.631
+2    1588336.170
+3    1976859.070
+4    1485917.401
+6     792514.221
+Name: CheckoutPrice, dtype: float64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">DAY_OF_WEEK</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="s">'Mon'</span><span class="p">,</span> <span class="s">'Tue'</span><span class="p">,</span> <span class="s">'Wed'</span><span class="p">,</span> <span class="s">'Thur'</span><span class="p">,</span> <span class="s">'Fri'</span><span class="p">,</span> <span class="s">'Sat'</span><span class="p">,</span> <span class="s">'Sun'</span><span class="p">])</span>
+<span class="n">rev_by_dow</span><span class="p">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">DAY_OF_WEEK</span><span class="p">[</span><span class="n">rev_by_dow</span><span class="p">.</span><span class="n">index</span><span class="p">]</span>
+<span class="n">plot_bar</span><span class="p">(</span><span class="n">rev_by_dow</span><span class="p">,</span> <span class="s">'DOW'</span><span class="p">,</span> <span class="s">'Revenue'</span><span class="p">,</span> <span class="s">'Revenue by DOW'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="./img/salesitem/output_22_0.png" alt="output_22_0" /></p>
+
+<h4 id="시간별-매출">시간별 매출</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rev_by_hour</span> <span class="o">=</span> <span class="n">retail</span><span class="p">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">'InvoiceDate'</span><span class="p">).</span><span class="n">groupby</span><span class="p">(</span><span class="k">lambda</span> <span class="n">date</span><span class="p">:</span><span class="n">date</span><span class="p">.</span><span class="n">hour</span><span class="p">).</span><span class="nb">sum</span><span class="p">()[</span><span class="s">'CheckoutPrice'</span><span class="p">]</span>
+<span class="n">plot_bar</span><span class="p">(</span><span class="n">rev_by_hour</span><span class="p">,</span> <span class="s">'hour'</span><span class="p">,</span> <span class="s">'revenue'</span><span class="p">,</span> <span class="s">'revenue by hour'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="./img/salesitem/output_24_0.png" alt="output_24_0" /></p>
+
+<h4 id="매출-데이터로부터-insight">매출 데이터로부터 insight</h4>
+<ul>
+  <li>전체 매출의 82%가 UK에서 발생</li>
+  <li>11년도의 가장 많은 주문이 발생한 달 11월(12월의 전체 데이터가 반영이 되진 않았음)</li>
+  <li>11, 12월의 판매량이 압도(블랙프라이데이, 사이버먼데이, 크리스마스 휴일)</li>
+  <li>일주일중 목요일까지는 성장세를 보이다가, 이후로 하락(토요일에는 주문X)</li>
+  <li>7시를 시작으로 주문이 시작되어 12시까지 증가세, 15시까지 하락을, 15시 이후 부터 급락)</li>
+</ul>
+
+<h4 id="제품별-metrics">제품별 metrics</h4>
+<ul>
+  <li>Top 10 판매 제품</li>
+  <li>Top 10 매출 제품</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">top_selling</span> <span class="o">=</span> <span class="n">retail</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'StockCode'</span><span class="p">).</span><span class="nb">sum</span><span class="p">()[</span><span class="s">'Quantity'</span><span class="p">].</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">top_selling</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>StockCode
+23843    80995
+23166    77916
+84077    54415
+Name: Quantity, dtype: int32
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">top_revenue</span> <span class="o">=</span> <span class="n">retail</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'StockCode'</span><span class="p">).</span><span class="nb">sum</span><span class="p">()[</span><span class="s">'CheckoutPrice'</span><span class="p">].</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">top_revenue</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>StockCode
+23843     168469.60
+22423     142592.95
+85123A    100603.50
+85099B     85220.78
+23166      81416.73
+POST       77803.96
+47566      68844.33
+84879      56580.34
+M          53779.93
+23084      51346.20
+Name: CheckoutPrice, dtype: float64
+</code></pre></div></div>
+
+<h4 id="top-3-아이템의-월별-판매량-추이">top 3 아이템의 월별 판매량 추이</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">retail</span><span class="p">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">'InvoiceDate'</span><span class="p">).</span><span class="n">groupby</span><span class="p">([</span><span class="s">'StockCode'</span><span class="p">,</span> <span class="n">extract_month</span><span class="p">]).</span><span class="nb">sum</span><span class="p">()[[</span><span class="s">'Quantity'</span><span class="p">,</span> <span class="s">'CheckoutPrice'</span><span class="p">]].</span><span class="n">loc</span><span class="p">[</span><span class="n">top_selling</span><span class="p">.</span><span class="n">index</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Quantity</th>
+      <th>CheckoutPrice</th>
+    </tr>
+    <tr>
+      <th>StockCode</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>23843</th>
+      <th>201112</th>
+      <td>80995</td>
+      <td>168469.60</td>
+    </tr>
+    <tr>
+      <th rowspan="9" valign="top">23166</th>
+      <th>201101</th>
+      <td>74215</td>
+      <td>77183.60</td>
+    </tr>
+    <tr>
+      <th>201105</th>
+      <td>792</td>
+      <td>869.04</td>
+    </tr>
+    <tr>
+      <th>201106</th>
+      <td>391</td>
+      <td>458.51</td>
+    </tr>
+    <tr>
+      <th>201107</th>
+      <td>718</td>
+      <td>826.94</td>
+    </tr>
+    <tr>
+      <th>201108</th>
+      <td>405</td>
+      <td>486.09</td>
+    </tr>
+    <tr>
+      <th>201109</th>
+      <td>342</td>
+      <td>397.26</td>
+    </tr>
+    <tr>
+      <th>201110</th>
+      <td>235</td>
+      <td>283.67</td>
+    </tr>
+    <tr>
+      <th>201111</th>
+      <td>631</td>
+      <td>708.11</td>
+    </tr>
+    <tr>
+      <th>201112</th>
+      <td>187</td>
+      <td>203.51</td>
+    </tr>
+    <tr>
+      <th rowspan="13" valign="top">84077</th>
+      <th>201012</th>
+      <td>5139</td>
+      <td>1150.47</td>
+    </tr>
+    <tr>
+      <th>201101</th>
+      <td>1488</td>
+      <td>385.44</td>
+    </tr>
+    <tr>
+      <th>201102</th>
+      <td>3457</td>
+      <td>795.17</td>
+    </tr>
+    <tr>
+      <th>201103</th>
+      <td>3888</td>
+      <td>943.20</td>
+    </tr>
+    <tr>
+      <th>201104</th>
+      <td>10224</td>
+      <td>2281.44</td>
+    </tr>
+    <tr>
+      <th>201105</th>
+      <td>4944</td>
+      <td>1249.44</td>
+    </tr>
+    <tr>
+      <th>201106</th>
+      <td>1920</td>
+      <td>533.76</td>
+    </tr>
+    <tr>
+      <th>201107</th>
+      <td>3600</td>
+      <td>982.56</td>
+    </tr>
+    <tr>
+      <th>201108</th>
+      <td>2256</td>
+      <td>654.24</td>
+    </tr>
+    <tr>
+      <th>201109</th>
+      <td>3462</td>
+      <td>985.70</td>
+    </tr>
+    <tr>
+      <th>201110</th>
+      <td>8174</td>
+      <td>1953.98</td>
+    </tr>
+    <tr>
+      <th>201111</th>
+      <td>4500</td>
+      <td>1294.20</td>
+    </tr>
+    <tr>
+      <th>201112</th>
+      <td>1363</td>
+      <td>376.65</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">monthly_top3</span> <span class="o">=</span> <span class="n">retail</span><span class="p">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">'InvoiceDate'</span><span class="p">).</span><span class="n">groupby</span><span class="p">([</span><span class="s">'StockCode'</span><span class="p">,</span> <span class="n">extract_month</span><span class="p">]).</span><span class="nb">sum</span><span class="p">()[[</span><span class="s">'Quantity'</span><span class="p">,</span> <span class="s">'CheckoutPrice'</span><span class="p">]].</span><span class="n">loc</span><span class="p">[</span><span class="n">top_selling</span><span class="p">.</span><span class="n">index</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plot_bar</span><span class="p">(</span><span class="n">monthly_top3</span><span class="p">[</span><span class="s">'CheckoutPrice'</span><span class="p">],</span> <span class="s">'Product/Month'</span><span class="p">,</span> <span class="s">'Revenue'</span><span class="p">,</span> <span class="s">'Revenue of top 3 items'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="./img/salesitem/output_32_0.png" alt="output_32_0" /></p>
+
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page -->
+           <!--
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to Big Data</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+                </section>
+            
+            -->
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="SeongJae Yu" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/author/SeongJae Yu">SeongJae Yu</a></h4>
+                                
+                                    <p>Read <a href="/author/SeongJae Yu">more posts</a> by this author.</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/SeongJae Yu">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            var this_page_url = 'https://SEONGJAE-YOO.github.io/salesitem-Data';
+                            var this_page_identifier = '/salesitem-Data';
+                            var this_page_title = '매출,가장 많이 팔린 아이템 확인하기';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://xxxxxxxx.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                </section>
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/built/images/author-logo.png)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; Big Data &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/python/">Python</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/virtualshoping-data">가상 쇼핑몰 고객 주문 데이터(컬럼,로우) 확인하기</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/salesitem2-Data">응용-매출,가장 많이 팔린 아이템 확인하기</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/marketing-Data">마케팅 데이터 분석</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/python/">
+                                
+                                    See all 9 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/salesitem2-Data">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/logo-python.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/salesitem2-Data">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Python</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">응용-매출,가장 많이 팔린 아이템 확인하기</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>Python 프로젝트 
+
+    쿠팡 셀러 데이터 분석
+    검색광고 데이터 분석
+    고객 데이터 분석 프로젝트
+
+
+</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="SeongJae Yu" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/SeongJae Yu/">SeongJae Yu</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      9 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/marketing-Data">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/logo-python.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/marketing-Data">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Python</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">마케팅 데이터 분석</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>Python 프로젝트 
+
+    쿠팡 셀러 데이터 분석
+    검색광고 데이터 분석
+    고객 데이터 분석 프로젝트
+
+
+</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="SeongJae Yu" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/SeongJae Yu/">SeongJae Yu</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      4 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="https://SEONGJAE-YOO.github.io/">
+            
+            <span>Big Data</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">매출,가장 많이 팔린 아이템 확인하기</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%EB%A7%A4%EC%B6%9C%2C%EA%B0%80%EC%9E%A5+%EB%A7%8E%EC%9D%B4+%ED%8C%94%EB%A6%B0+%EC%95%84%EC%9D%B4%ED%85%9C+%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0&amp;url=https://SEONGJAE-YOO.github.io/salesitem-Data"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://SEONGJAE-YOO.github.io/salesitem-Data"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://SEONGJAE-YOO.github.io/">Big Data</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <h1 class="subscribe-overlay-title">Search Big Data</h1>
+            <p class="subscribe-overlay-description">
+                lunr.js를 이용한 posts 검색 </p>
+            <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+        </div>
+    </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
