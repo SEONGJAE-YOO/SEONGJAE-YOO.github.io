@@ -211,6 +211,51 @@ into the {body} of the default.hbs template -->
     }
     ,
     
+    "series-slicing": {
+        "title": "Series 데이터 변경 - 슬라이싱하기",
+            "author": "SeongJae Yu",
+            "category": "",
+            "content": "Python 프로젝트     쿠팡 셀러 데이터 분석    검색광고 데이터 분석    고객 데이터 분석 프로젝트학습목표  pandas Series 이해하기import numpy as npimport pandas as pdSeries 값 변경  추가 및 업데이트: 인덱스를 이용  삭제: drop함수 이용s = pd.Series(np.arange(100, 105), ['a', 'b', 'c', 'd', 'e'])sa    100b    101c    102d    103e    104dtype: int32s['a'] = 200sa    200b    101c    102d    103e    104dtype: int32s['k'] = 300sa    200b    101c    102d    103e    104k    300dtype: int64s.drop('k', inplace=True) #inplace=True으로 결과 값 고정시킴sa    200b    101c    102d    103e    104dtype: int64s[['a', 'b']] = [300, 900]sa    300b    900c    102d    103e    104dtype: int64Slicing  리스트, ndarray와 동일하게 적용s1 = pd.Series(np.arange(100, 105))s10    1001    1012    1023    1034    104dtype: int32s1[1:3]1    1012    102dtype: int32s2 = pd.Series(np.arange(100, 105), ['a', 'c', 'b', 'd', 'e'])s2a    100c    101b    102d    103e    104dtype: int32s2[1:3]c    101b    102dtype: int32s2['c':'d'] #문자열로 이루어진 경우 마지막 까지 포함시킴c    101b    102d    103dtype: int32",
+        "url": "/series-slicing"
+    }
+    ,
+    
+    "series-operation": {
+        "title": "Series 데이터 연산하기",
+            "author": "SeongJae Yu",
+            "category": "",
+            "content": "Python 프로젝트     쿠팡 셀러 데이터 분석    검색광고 데이터 분석    고객 데이터 분석 프로젝트학습목표  Series 데이터 연산하기import numpy as npimport pandas as pdindex를 기준으로 연산s1 = pd.Series([1, 2, 3, 4], ['a', 'b', 'c', 'd'])s2 = pd.Series([6, 3, 2, 1], ['d', 'c', 'b', 'a'])s1a    1b    2c    3d    4dtype: int64s2d    6c    3b    2a    1dtype: int64s1 + s2a     2b     4c     6d    10dtype: int64산술연산  Series의 경우에도 스칼라와의 연산은 각 원소별로 스칼라와의 연산이 적용  Series와의 연산은 각 인덱스에 맞는 값끼리 연산이 적용          이때, 인덱스의 pair가 맞지 않으면, 결과는 NaN      s1 ** 2a     1b     4c     9d    16dtype: int64s1 ** s2a       1b       4c      27d    4096dtype: int644 ** 64096index pair가 맞지 않는 경우  해당 index에 대해선 NaN 값 생성s1['k'] = 7s2['e'] = 9s1a    1b    2c    3d    4k    7dtype: int64s2d    6c    3b    2a    1e    9dtype: int64s1 + s2a     2.0b     4.0c     6.0d    10.0e     NaNk     NaNdtype: float64",
+        "url": "/series-operation"
+    }
+    ,
+    
+    "series-index": {
+        "title": "Series 데이터 생성하기(index, value 활용)",
+            "author": "SeongJae Yu",
+            "category": "",
+            "content": "Python 프로젝트     쿠팡 셀러 데이터 분석    검색광고 데이터 분석    고객 데이터 분석 프로젝트학습목표  pandas Series 데이터 생성하기import numpy as npimport pandas as pdSeries  pandas의 기본 객체 중 하나  numpy의 ndarray를 기반으로 인덱싱을 기능을 추가하여 1차원 배열을 나타냄  index를 지정하지 않을 시, 기본적으로 ndarray와 같이 0-based 인덱스 생성, 지정할 경우 명시적으로 지정된 index를 사용      같은 타입의 0개 이상의 데이터를 가질 수 있음    data로만 생성하기  index는 기본적으로 0부터 자동적으로 생성s1 = pd.Series([1, 2, 3])s10    11    22    3dtype: int64s2 = pd.Series(['a', 'b', 'c'])s20    a1    b2    cdtype: objects3 = pd.Series(np.arange(200))s30        01        12        23        34        4      ... 195    195196    196197    197198    198199    199Length: 200, dtype: int32  data, index함께 명시하기s4 = pd.Series([1, 2, 3], [100, 200, 300])s4100    1200    2300    3dtype: int64s5 = pd.Series([1, 2, 3], ['a', 'm', 'k'])s5a    1m    2k    3dtype: int64  data, index, data type 함께 명시하기s6 = pd.Series(np.arange(5), np.arange(100, 105), dtype=np.int16)s6100    0101    1102    2103    3104    4dtype: int16인덱스 활용하기s6.indexInt64Index([100, 101, 102, 103, 104], dtype='int64')s6.valuesarray([0, 1, 2, 3, 4], dtype=int16)  인덱스를 통한 데이터 접근s6[104]4  인덱스를 통한 데이터 업데이트s6[104] = 70s6100     0101     1102     2103     3104    70dtype: int16s6[105] = 90s6[200] = 80 # 인덱스를 통해 값을 넣을 수도 있다.s6100     0101     1102     2103     3104    70105    90200    80dtype: int64  인덱스 재사용하기s7 = pd.Series(np.arange(7), s6.index) #s6 index 그대로 사용한다s7100    0101    1102    2103    3104    4105    5200    6dtype: int32",
+        "url": "/series-index"
+    }
+    ,
+    
+    "series-count": {
+        "title": "Series 데이터 심플 분석(개수, 빈도 등 계산하기)",
+            "author": "SeongJae Yu",
+            "category": "",
+            "content": "Python 프로젝트     쿠팡 셀러 데이터 분석    검색광고 데이터 분석    고객 데이터 분석 프로젝트학습목표  Series 함수 활용하여 데이터 분석하기import numpy as npimport pandas as pdSeries size, shape, unique, count, value_counts 함수  size : 개수 반환  shape : 튜플형태로 shape반환  unique: 유일한 값만 ndarray로 반환  count : NaN을 제외한 개수를 반환  mean: NaN을 제외한 평균  value_counts: NaN을 제외하고 각 값들의 빈도를 반환s = pd.Series([1, 1, 2, 1, 2, 2, 2, 1, 1, 3, 3, 4, 5, 5, 7, np.NaN])s0     1.01     1.02     2.03     1.04     2.05     2.06     2.07     1.08     1.09     3.010    3.011    4.012    5.013    5.014    7.015    NaNdtype: float64len(s)16s.size16s.shape #1차원 이다.(16,)s.unique() #중복된 값 제거!array([ 1.,  2.,  3.,  4.,  5.,  7., nan])s.count() #NaN를 뺀 count 값 15a = np.array([2, 2, 2, 2, np.NaN])a.mean()b = pd.Series(a)b.mean()2.0s.mean()2.6666666666666665s0     1.01     1.02     2.03     1.04     2.05     2.06     2.07     1.08     1.09     3.010    3.011    4.012    5.013    5.014    7.015    NaNdtype: float64s.value_counts()1.0    52.0    43.0    25.0    27.0    14.0    1dtype: int64index를 활용하여 멀티플한 값에 접근s[[5, 7, 8, 10]].value_counts()1.0    23.0    12.0    1dtype: int64head, tail 함수  head : 상위 n개 출력 기본 5개  tail : 하위 n개 출력 기본 5개s.head(n=7)0    1.01    1.02    2.03    1.04    2.05    2.06    2.0dtype: float64s.tail()11    4.012    5.013    5.014    7.015    NaNdtype: float64s0     1.01     1.02     2.03     1.04     2.05     2.06     2.07     1.08     1.09     3.010    3.011    4.012    5.013    5.014    7.015    NaNdtype: float64",
+        "url": "/series-count"
+    }
+    ,
+    
+    "series-boolean": {
+        "title": "Series 데이터 Boolean Selection으로 데이터 선택하기",
+            "author": "SeongJae Yu",
+            "category": "",
+            "content": "Python 프로젝트     쿠팡 셀러 데이터 분석    검색광고 데이터 분석    고객 데이터 분석 프로젝트학습목표  Series boolean selection 활용하기import numpy as npimport pandas as pdBoolean selection  boolean Series가 []와 함께 사용되면 True 값에 해당하는 값만 새로 반환되는 Series객체에 포함됨                              다중조건의 경우, &amp;(and),          (or)를 사용하여 연결 가능                    s = pd.Series(np.arange(10), np.arange(10)+1) # ( 값,주소 )s1     02     13     24     35     46     57     68     79     810    9dtype: int32s &gt; 51     False2     False3     False4     False5     False6     False7      True8      True9      True10     Truedtype: bools[s&gt;5]7     68     79     810    9dtype: int32s[s % 2 == 0]1    03    25    47    69    8dtype: int32s1     02     13     24     35     46     57     68     79     810    9dtype: int32s.index &gt; 5array([False, False, False, False, False,  True,  True,  True,  True,        True])s[s.index &gt; 5]6     57     68     79     810    9dtype: int32(s &gt; 5) &amp; (s &lt; 8)1     False2     False3     False4     False5     False6     False7      True8      True9     False10    Falsedtype: bools[(s &gt; 5) &amp; (s &lt; 8)]7    68    7dtype: int32(s &gt;= 7).sum()3(s[s&gt;=7]).sum() # 7+8+9 = 2424",
+        "url": "/series-boolean"
+    }
+    ,
+    
     "linear-regression": {
         "title": "단순선형회귀분석 실습 - 단순선형회귀 적합 및 해석",
             "author": "SeongJae Yu",

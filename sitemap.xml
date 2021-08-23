@@ -52,6 +52,86 @@
     </url>
     
     <url>
+        <loc>https://SEONGJAE-YOO.github.io/series-slicing.html</loc>
+        
+        <lastmod>2021-08-23T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://SEONGJAE-YOO.github.io/series-operation.html</loc>
+        
+        <lastmod>2021-08-23T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://SEONGJAE-YOO.github.io/series-index.html</loc>
+        
+        <lastmod>2021-08-23T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://SEONGJAE-YOO.github.io/series-count.html</loc>
+        
+        <lastmod>2021-08-23T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://SEONGJAE-YOO.github.io/series-boolean.html</loc>
+        
+        <lastmod>2021-08-23T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
         <loc>https://SEONGJAE-YOO.github.io/linear-regression.html</loc>
         
         <lastmod>2021-08-23T00:00:00+09:00</lastmod>
