@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>기사 텍스트 정제 - gensim을 이용한 토픽모델링 분석</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- 웹폰트 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="SeongJae Yu 블로그" />
+    <link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
+    <link rel="canonical" href="https://SEONGJAE-YOO.github.io/gensim-news" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Big Data" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="기사 텍스트 정제 - gensim을 이용한 토픽모델링 분석" />
+    <meta property="og:description" content="Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 gensim으로 네이버 기사 토픽 모델링 해보기 토픽 모델링을 적용하기 위해 텍스트를 처리합니다. 토픽 모델링 라이브러리인 gensim을 사용해봅니다. 토픽 모델링 *토픽(Topic)은 한국어로는 주제라고 합니다. 토픽 모델링(Topic Modeling)이란 기계 학습 및 자연어 처리 분야에서 토픽이라는 문서 집합의 추상적인 주제를" />
+    <meta property="og:url" content="https://SEONGJAE-YOO.github.io/gensim-news" />
+    <meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-08-23T00:00:00+09:00" />
+    <meta property="article:modified_time" content="2021-08-23T00:00:00+09:00" />
+    <meta property="article:tag" content="Python" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="기사 텍스트 정제 - gensim을 이용한 토픽모델링 분석" />
+    <meta name="twitter:description" content="Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 gensim으로 네이버 기사 토픽 모델링 해보기 토픽 모델링을 적용하기 위해 텍스트를 처리합니다. 토픽 모델링 라이브러리인 gensim을 사용해봅니다. 토픽 모델링 *토픽(Topic)은 한국어로는 주제라고 합니다. 토픽 모델링(Topic Modeling)이란 기계 학습 및 자연어 처리 분야에서 토픽이라는 문서 집합의 추상적인 주제를" />
+    <meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
+    <meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Big Data" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Python" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Big Data",
+        "logo": "https://SEONGJAE-YOO.github.io/"
+    },
+    "url": "https://SEONGJAE-YOO.github.io/gensim-news",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://SEONGJAE-YOO.github.io/gensim-news"
+    },
+    "description": "Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 gensim으로 네이버 기사 토픽 모델링 해보기 토픽 모델링을 적용하기 위해 텍스트를 처리합니다. 토픽 모델링 라이브러리인 gensim을 사용해봅니다. 토픽 모델링 *토픽(Topic)은 한국어로는 주제라고 합니다. 토픽 모델링(Topic Modeling)이란 기계 학습 및 자연어 처리 분야에서 토픽이라는 문서 집합의 추상적인 주제를"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="기사 텍스트 정제 - gensim을 이용한 토픽모델링 분석" href="/feed.xml" />
+
+
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://SEONGJAE-YOO.github.io/">Big Data</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/Big Data/">Big Data</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag별 Posts</a>
+    </li>
+</ul>
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-python post tag-python ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="23 August 2021">23 August 2021</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/python/'>PYTHON</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">기사 텍스트 정제 - gensim을 이용한 토픽모델링 분석</h1>
+            </header>
+            <!--
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/logo-python.png)">
+            </figure>
+            
+            -->
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <p><span class="table-of-contents-list">Python 프로젝트 </span></p>
+<ul class="table-of-contents-list">
+    <li><a href="blogmaker/_posts/python/2021-08-11-python-basic.md">쿠팡 셀러 데이터 분석</a></li>
+    <li><a href="blogmaker/_posts/python/2021-08-11-searchAd.md">검색광고 데이터 분석</a></li>
+    <li><a href="blogmaker/_posts/python/2021-08-19-customer-Data.md">고객 데이터 분석 프로젝트</a></li>
+</ul>
+
+<h2 id="gensim으로-네이버-기사-토픽-모델링-해보기">gensim으로 네이버 기사 토픽 모델링 해보기</h2>
+
+<blockquote>
+  <p>토픽 모델링을 적용하기 위해 텍스트를 처리합니다.</p>
+</blockquote>
+
+<blockquote>
+  <p>토픽 모델링 라이브러리인 gensim을 사용해봅니다.</p>
+</blockquote>
+
+<h3 id="토픽-모델링">토픽 모델링</h3>
+
+<p>*토픽(Topic)은 한국어로는 주제라고 합니다. 토픽 모델링(Topic Modeling)이란 기계 학습 및 자연어 처리 분야에서 토픽이라는 문서 집합의 추상적인 주제를 발견하기 위한 통계적 모델 중 하나로, 텍스트 본문의 숨겨진 의미 구조를 발견하기 위해 사용되는 텍스트 마이닝 기법입니다.</p>
+<ol>
+  <li>문서에서 토픽(키워드)을 찾는 과정</li>
+  <li>문장을 구성하는 단어 조합으로부터 k개의 단어 묶음을 찾는 과정</li>
+  <li>베이지안 확률 모델이며 , 토픽 모델링의 결과로 각 단어가 각 토픽에
+속할 확률이 나옴</li>
+  <li>잠재 디리클레 할당 (LDA)
+    <ul>
+      <li>각 문서에 여러 개의 토픽이 포함될 수있다</li>
+      <li>각 토픽에는 여러개의 단어가 포함 될 수 있다</li>
+      <li>문서에 존재하는 모든 단어는 반드시 어떤 토픽에 포함된다</li>
+      <li>사람이 글을 쓰는 과정을 생성 모델로 정의한다.
+*토픽 모델링은 문서의 집합에서 토픽을 찾아내는 프로세스를 말합니다. 이는 검색 엔진, 고객 민원 시스템 등과 같이 문서의 주제를 알아내는 일이 중요한 곳에서 사용됩니다. 잠재 디리클레 할당(Latent Dirichlet Allocation, LDA)은 토픽 모델링의 대표적인 알고리즘입니다. 줄여서 LDA라고 합니다.</li>
+    </ul>
+
+    <p>** LDA 모델 과정</p>
+    <ol>
+      <li>문서들에 사용할 토픽을 고른다 (K개의 토픽)</li>
+      <li>토픽 중 하나의 토픽을 고른다</li>
+      <li>그 토픽에 포함된 단어 중에 하나를 고른다</li>
+      <li>단어를 문서에 추가한다 (글을 쓴다)</li>
+      <li>B번 과정부터 반복한다.</li>
+    </ol>
+  </li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># !pip install gensim
+# !pip install pickle-mixin
+</span></code></pre></div></div>
+
+<ul>
+  <li>gensim 설치</li>
+</ul>
+
+<p>자연어를 벡터로 변환하는데 필요한 대부분의 편의기능을 제공하고 있는 라이브러리
+Word2vec도 포함(Word2vec : word를 vector로 바꿔주는 테크닉)</p>
+
+<h3 id="1-토픽-모델링을-위한-라이브러리-불러오기">1. 토픽 모델링을 위한 라이브러리 불러오기</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm_notebook</span> <span class="c1"># 진행상황을 progress bar 형태로 한눈에 확인할 수 있다
+</span><span class="kn">from</span> <span class="nn">konlpy.tag</span> <span class="kn">import</span> <span class="n">Mecab</span> <span class="c1">#Mecab, Okt 등 형태소 분석기 불러오기
+</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">string</span> <span class="c1"># 특수문자
+</span><span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">warnings</span> <span class="c1"># 경고 알림 제거
+</span><span class="kn">import</span> <span class="nn">pickle</span> <span class="c1">## 리스트나 클래스 같은 텍스트가 아닌 자료형을 파일로 저장하기 위해 pickle 모듈 사용함 
+</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="c1">#gensim 라이브러리 불러오기 
+</span>
+<span class="kn">from</span> <span class="nn">gensim</span> <span class="kn">import</span> <span class="n">corpora</span>
+<span class="kn">from</span> <span class="nn">gensim</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+
+<span class="n">warnings</span><span class="p">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s">"ignore"</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">DeprecationWarning</span><span class="p">)</span> <span class="c1"># 경고 알림이 뜨면 모두 무시합니다.
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Users\MyCom\anaconda3\envs\text_analysis\lib\site-packages\gensim\similarities\__init__.py:15: UserWarning: The gensim.similarities.levenshtein submodule is disabled, because the optional Levenshtein package &lt;https://pypi.org/project/python-Levenshtein/&gt; is unavailable. Install Levenhstein (e.g. `pip install python-Levenshtein`) to suppress this warning.
+  warnings.warn(msg)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># pickle 파일 읽기
+</span><span class="o">%</span><span class="n">time</span> <span class="n">new_df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s">"naver_news_content.pk"</span><span class="p">)</span> <span class="c1">#pickle 파일 읽기 
+</span><span class="n">new_df</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Wall time: 4 ms
+
+
+
+
+
+[['   본문 내용     TV플레이어     // TV플레이어     // flash 오류를 우회하기 위한 함수 추가 function _flash_removeCallback() {}   \t \t[스포츠경향]  안양대학교 대학일자리센터가 디지털 기초 이해도 확보 및 최신 트렌드에 맞는  IT 역량 강화를 위한 ‘코딩학개론’ 프로그램을 진행한다고  16 일 밝혔다.  10 월  11 일까지 3개월간 진행되는 이번 프로그램은 ‘코드잇’과 연계한 것으로,   IT  실무에서 많이 쓰이는 파이썬 기초, 머신 러닝, 웹퍼블리싱 등으로 교육과정을 구성하고, 학생들이 원하는 과목을 신청하여 자유롭게 수강하도록 개설된 것이 특징이다. 코드잇은 국내에서 유일하게 외주 제작 없이 대기업·아이비리그 출신 개발자들이 콘텐츠를 직접 기획, 제작해 유기적으로 연결된 강의를 제작하는 기업. 최근 글로벌 서비스를 개시해 국내뿐만 아니라 해외에도 높은 수준의 코딩 강의를 제공하고 있으며 높은 고객만족도와 향후 성장 가능성을 인정받아  2021 년 중소벤처기업부의 ‘아기 유니콘 기업’으로 선정되기도 했다.  이번 프로그램은 전공자, 비전공자 관계없이 코딩에 관심 있는 재학생 누구나 신청할 수 있으며 수강률  80 %이상, 기말평가  60 점 이상 달성 시 수료증이 발급된다. 김현태 대학일자리센터 팀장은 “4차 산업시대에 빠르게 변하는 트렌드에 맞춰 전공자들의 실질적인  IT 역량 강화와 비전공자들의 디지털 기초 이해도 확보가 기대된다”고 말했다. 앞서 안양대는 지난해 ‘대학일자리센터’ 개소식을 갖고 폭넓은 진로탐색지원, 맞춤형 진로 선택 지원, 구직활동 지원, 취업경쟁력 강화를 목표로 재학생 뿐만 아니라 지역 청년들의 진로와 취·창업을 위해 다양한 프로그램 운영에 박차를 가하고 있다.    // 본문 내용   ',
+  '   본문 내용     TV플레이어     // TV플레이어     // flash 오류를 우회하기 위한 함수 추가 function _flash_removeCallback() {}   \t \t안양대학교 대학일자리센터는 최근 디지털 기초 이해도 확보와 최신 트렌드에 맞는  IT 역량 강화를 위해 \'코딩학개론\' 프로그램을 실시한다고  16 일 밝혔다.  이번 교육은 \'코드잇\'과 연계해 오는  10 월  11 일까지 3개월간  IT  실무에서 많이 쓰이는 파이썬 기초, 머신 러닝, 웹퍼블리싱 등으로 교육과정을 구성하고 학생들이 원하는 과목을 신청해 자유롭게 수강하도록 개설됐다. \'코드잇\'은 국내에서 유일하게 외주 제작 없이 대기업·아이비리그 출신 개발자들이 콘텐츠를 직접 기획·제작해 유기적으로 연결된 강의를 제작하는 기업이다.  최근 글로벌 서비스를 개시해 국내뿐만 아니라 해외에도 높은 수준의 코딩 강의를 제공하고 있다. 높은 고객만족도와 향후 성장 가능성을 인정받아 올해 중소벤처기업부의 \'아기 유니콘 기업\'으로도 선정됐다. 이번 프로그램은 (비)전공자 관계없이 코딩에 관심 있는 재학생 누구나 신청할 수 있다. 수강률  80 %이상, 기말평가  60 점 이상 달성 시 수료증이 발급된다. 김현태 대학일자리센터 팀장은 "이번 교육을 통해 4차 산업시대에 빠르게 변하는 트렌드에 맞춰 전공자들의 실질적인  IT 역량 강화와 비전공자들의 디지털 기초 이해도 확보가 기대된다"고 말했다. 한편 안양대는 지난해 \'대학일자리센터\' 개소식을 갖고 폭넓은 진로탐색지원, 맞춤형 진로 선택 지원, 구직활동 지원, 취업경쟁력 강화를 목표로 재학생 뿐만 아니라 지역 청년의 진로와 취·창업을 위한 다양한 프로그램을 운영하고 있다. article_split    // 본문 내용   ',
+  '   본문 내용     TV플레이어     // TV플레이어     // flash 오류를 우회하기 위한 함수 추가 function _flash_removeCallback() {}    [디지털데일리 이종현기자] 안랩은 지난  15 일 디지털 직무 교육 사회공헌 프로그램 ‘안랩샘’의  12 기 수료식을 온라인으로 실시한다고  16 일 밝혔다.     안랩샘  12 기에서는 ▲파이썬·인공지능( AI ) 교육 강사 ▲아두이노 ·AI  교육 강사 ▲증강현실/가상현실( AR / VR ) 실감 콘텐츠 기획자 과정 ▲프로젝트 매니저 과정 ▲소셜벤처 창업 과정 ▲소셜미디어 마케터 과정 ▲웹퍼블리셔 과정 ▲ PBL ( Problem / Project   Based   Learning ) 퍼실리테이터 과정 ▲ PR/ 커뮤니케이터 과정 등 9개 교육과정에서  110 명의 수료생을 배출했다.      안랩은 안랩샘  12 기 수료생 중 희망자를 선발해 온라인 러닝코스 개설 지원, 자체 교육 프로그램(안랩샘, 맘잡고 등) 강사/보조강사 우대 채용, 공부방 창업자 교육용품 지원 등 수료 이후 경력개발을 위한 후속 지원 프로그램을 이어 나갈 예정이다.     안랩샘  12 기 파이썬 ·AI  교육 강사 과정을 수료한 김미영 수료생은 “오랜 경력단절로 사회 재진출을 주저하다가 안랩샘을 알게 돼 교육에 성실히 참여했다”며 “안랩샘의 직무 교육으로 이번에 소프트웨어( SW ) 교육강사로 채용돼 경력을 이어갈 수 있게 됐다”고 말했다.     강석균 안랩 대표는 인사말에서 ”일상 생활이 디지털로 재편되고 있는 만큼 안랩샘 교육과정에서 배운 디지털 역량으로 안랩샘 수료생 모두가 ‘디지털 트랜스포메이션’ 시대에 활약하길 기대한다”고 말했다. \t  // 본문 내용   ']]
+</code></pre></div></div>
+
+<h3 id="2-텍스트-전처리-함수-만들기">2. 텍스트 전처리 함수 만들기</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     -stopwords-ko.txt 텍스트파일 ANSI 형식으로 인코딩 해주기
+     - 참고 자료 : https://m.blog.naver.com/tipsware/221727268968
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">read_documents</span><span class="p">(</span><span class="n">input_file_name</span><span class="p">):</span>
+    <span class="s">"""문서들을 주어진 이름의 파일로부터 읽어들여 돌려준다."""</span>
+    
+    <span class="n">corpus</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">input_file_name</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">temp_corpus</span> <span class="o">=</span> <span class="n">pickle</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        
+    <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">temp_corpus</span><span class="p">:</span>
+        <span class="n">corpus</span> <span class="o">+=</span> <span class="n">page</span>
+    
+    <span class="k">return</span> <span class="n">corpus</span>
+
+<span class="k">def</span> <span class="nf">text_cleaning</span><span class="p">(</span><span class="n">docs</span><span class="p">):</span>
+    <span class="c1"># 한국어를 제외한 글자를 제거하는 함수.
+</span>    <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span><span class="p">:</span>
+        <span class="n">doc</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">sub</span><span class="p">(</span><span class="s">"[^ㄱ-ㅎㅏ-ㅣ가-힣 ]"</span><span class="p">,</span> <span class="s">""</span><span class="p">,</span> <span class="n">doc</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">docs</span>
+
+<span class="k">def</span> <span class="nf">define_stopwords</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    
+    <span class="n">SW</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="c1"># 불용어를 추가하는 방법 1.
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">string</span><span class="p">.</span><span class="n">punctuation</span><span class="p">:</span>
+        <span class="n">SW</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+    <span class="c1"># 불용어를 추가하는 방법 2.
+</span>    <span class="c1"># stopwords-ko.txt에 직접 추가
+</span>    
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">SW</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">SW</span>
+
+
+<span class="k">def</span> <span class="nf">text_tokenizing</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">):</span>
+    
+    <span class="n">mecab</span> <span class="o">=</span> <span class="n">Mecab</span><span class="p">(</span><span class="n">dicpath</span><span class="o">=</span><span class="s">'C:\mecab\mecab-ko-dic'</span><span class="p">)</span>
+    <span class="n">token_corpus</span> <span class="o">=</span> <span class="p">[]</span>
+    
+
+    <span class="k">if</span> <span class="n">tokenizer</span> <span class="o">==</span> <span class="s">"noun"</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">tqdm_notebook</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">corpus</span><span class="p">)),</span> <span class="n">desc</span><span class="o">=</span><span class="s">"Preprocessing"</span><span class="p">):</span>
+            <span class="n">token_text</span> <span class="o">=</span> <span class="n">mecab</span><span class="p">.</span><span class="n">nouns</span><span class="p">(</span><span class="n">corpus</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+            <span class="n">token_text</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">token_text</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">SW</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
+                
+            <span class="n">token_corpus</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">token_text</span><span class="p">)</span>
+            
+    <span class="k">elif</span> <span class="n">tokenized</span> <span class="o">==</span> <span class="s">"morph"</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">tqdm_notebook</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">corpus</span><span class="p">)),</span> <span class="n">desc</span><span class="o">=</span><span class="s">"Preprocessing"</span><span class="p">):</span>
+            <span class="n">token_text</span> <span class="o">=</span> <span class="n">mecab</span><span class="p">.</span><span class="n">morphs</span><span class="p">(</span><span class="n">corpus</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+            <span class="n">token_text</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">token_text</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">SW</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="n">token_corpus</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">token_text</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">tokenizer</span> <span class="o">==</span> <span class="s">"word"</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">tqdm_notebook</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">corpus</span><span class="p">)),</span> <span class="n">desc</span><span class="o">=</span><span class="s">"Preprocessing"</span><span class="p">):</span>
+            <span class="n">token_text</span> <span class="o">=</span> <span class="n">corpus</span><span class="p">[</span><span class="n">n</span><span class="p">].</span><span class="n">split</span><span class="p">()</span>
+            <span class="n">token_text</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">token_text</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">SW</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="n">token_corpus</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">token_text</span><span class="p">)</span>
+        
+
+    <span class="k">return</span> <span class="n">token_corpus</span>
+
+
+<span class="n">input_file_name</span> <span class="o">=</span> <span class="s">"naver_news_content.pk"</span>
+<span class="n">documents</span> <span class="o">=</span> <span class="n">read_documents</span><span class="p">(</span><span class="n">input_file_name</span><span class="p">)</span>
+<span class="n">SW</span> <span class="o">=</span> <span class="n">define_stopwords</span><span class="p">(</span><span class="s">"stopwords-ko.txt"</span><span class="p">)</span>
+<span class="n">cleaned_text</span> <span class="o">=</span> <span class="n">text_cleaning</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
+<span class="n">tokenized_text</span> <span class="o">=</span> <span class="n">text_tokenizing</span><span class="p">(</span><span class="n">cleaned_text</span><span class="p">,</span> <span class="n">tokenizer</span><span class="o">=</span><span class="s">"noun"</span><span class="p">)</span> <span class="c1">#tokenizer= "noun" or "word"
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Preprocessing:   0%|          | 0/3 [00:00&lt;?, ?it/s]
+</code></pre></div></div>
+
+<p>문서 읽기의 과정은 앞서 단어 임베딩의 경우와 다르지 않다. 다음 과정은 문서-단어 행렬을 만드는 과정이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['본문', '내용', '플레이어', '플레이어', '오류', '우회', '함수', '추가', '스포츠', '경향', '안양', '대학교', '대학', '일자리', '센터', '디지털', '기초', '이해', '확보', '최신', '트렌드', '역량', '강화', '코딩', '학개', '프로그램', '진행', '개월', '진행', '이번', '프로그램', '코드', '연계', '실무', '파이썬', '기초', '머신', '러닝', '퍼블리싱', '교육', '과정', '구성', '학생', '과목', '신청', '자유', '수강', '개설', '특징', '코드', '국내', '유일', '외주', '제작', '기업', '아이비리그', '출신', '개발자', '콘텐츠', '기획', '제작', '유기', '연결', '강의', '제작', '기업', '최근', '글로벌', '서비스', '개시', '국내', '해외', '수준', '코딩', '강의', '제공', '고객', '만족도', '향후', '성장', '가능', '중소', '벤처', '기업', '아기', '유니콘', '기업', '선정', '이번', '프로그램', '전공', '전공', '코딩', '관심', '재학', '누구', '신청', '수강', '이상', '기말', '평가', '이상', '달성', '수료증', '발급', '김현태', '대학', '일자리', '센터', '팀장', '산업', '시대', '트렌드', '전공', '실질', '역량', '강화', '전공', '디지털', '기초', '이해', '확보', '기대', '양대', '지난해', '대학', '일자리', '센터', '개소식', '진로', '탐색', '지원', '맞춤', '진로', '선택', '지원', '구직', '활동', '지원', '취업', '경쟁력', '강화', '목표', '재학', '지역', '청년', '진로', '창업', '프로그램', '운영', '박차', '본문', '내용']
+</code></pre></div></div>
+
+<h3 id="3-토픽-모델링에-사용할-함수들-확인하기">3. 토픽 모델링에 사용할 함수들 확인하기</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 문서-단어 행렬 만들기
+# 어휘(vocabulary) 학습
+#from gensim import corpora
+</span><span class="n">dictionary</span> <span class="o">=</span> <span class="n">corpora</span><span class="p">.</span><span class="n">Dictionary</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">)</span>
+<span class="c1"># 문서-단어 행렬(document-term matrix) 생성
+</span><span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span><span class="n">dictionary</span><span class="p">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">tokenized_text</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Dictionary(171 unique tokens: ['가능', '강의', '강화', '개발자', '개설']...)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">corpus</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[(0, 1), (1, 2), (2, 3), (3, 1), (4, 1)]
+</code></pre></div></div>
+
+<h3 id="4tf-idf단어-빈도-역-문서-빈도-term-frequency-inverse-document-frequency">4.TF-IDF(단어 빈도-역 문서 빈도, Term Frequency-Inverse Document Frequency)</h3>
+
+<p>TF-IDF(Term Frequency-Inverse Document Frequency)는 단어의 빈도와 역 문서 빈도(문서의 빈도에 특정 식을 취함)를 사용하여 DTM 내의 각 단어들마다 중요한 정도를 가중치로 주는 방법입니다. 사용 방법은 우선 DTM을 만든 후, TF-IDF 가중치를 부여합니다.</p>
+
+<p>TF-IDF는 주로 문서의 유사도를 구하는 작업, 검색 시스템에서 검색 결과의 중요도를 정하는 작업, 문서 내에서 특정 단어의 중요도를 구하는 작업 등에 쓰일 수 있습니다.</p>
+
+<p>TF-IDF는 TF와 IDF를 곱한 값을 의미하는데 이를 식으로 표현해보겠습니다. 문서를 d, 단어를 t, 문서의 총 개수를 n이라고 표현할 때 TF, DF, IDF는 각각 다음과 같이 정의할 수 있습니다.</p>
+
+<p>(1) tf(d,t) : 특정 문서 d에서의 특정 단어 t의 등장 횟수.
+생소한 글자때문에 어려워보일 수 있지만, 잘 생각해보면 TF는 이미 앞에서 구한 적이 있습니다. TF는 앞에서 배운 DTM의 예제에서 각 단어들이 가진 값들입니다. DTM이 각 문서에서의 각 단어의 등장 빈도를 나타내는 값이었기 때문입니다.</p>
+
+<p>(2) df(t) : 특정 단어 t가 등장한 문서의 수.
+여기서 특정 단어가 각 문서, 또는 문서들에서 몇 번 등장했는지는 관심가지지 않으며 오직 특정 단어 t가 등장한 문서의 수에만 관심을 가집니다. 앞서 배운 DTM에서 바나나는 문서2와 문서3에서 등장했습니다. 이 경우, 바나나의 df는 2입니다. 문서3에서 바나나가 두 번 등장했지만, 그것은 중요한 게 아닙니다. 심지어 바나나란 단어가 문서2에서 100번 등장했고, 문서3에서 200번 등장했다고 하더라도 바나나의 df는 2가 됩니다.</p>
+
+<p>(3) idf(d, t) : df(t)에 반비례하는 수.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># TFIDF 문서-단어 행렬 생성
+# TF-IDF로 corpus를 변환
+# corpus(말뭉치) = &gt; nltk 패키지의 서브패키지에서는 다앙한 연구용 말뭉치를 제공한다 
+</span><span class="n">tfidf</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">TfidfModel</span><span class="p">(</span><span class="n">corpus</span><span class="p">)</span>
+<span class="n">corpus_tfidf</span> <span class="o">=</span> <span class="n">tfidf</span><span class="p">[</span><span class="n">corpus</span><span class="p">]</span>
+<span class="n">corpus_tfidf</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[(0, 0.06084982941388938),
+ (1, 0.12169965882777876),
+ (2, 0.18254948824166817),
+ (3, 0.06084982941388938),
+ (5, 0.06084982941388938)]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># LDA모델 생성
+</span><span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">ldamodel</span><span class="p">.</span><span class="n">LdaModel</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span> <span class="n">num_topics</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">id2word</span><span class="o">=</span><span class="n">dictionary</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">model</span><span class="p">.</span><span class="n">show_topic</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[('과정', 0.036929026),
+ ('안랩', 0.03349875),
+ ('교육', 0.032891143),
+ ('강사', 0.019402198),
+ ('지원', 0.018727802),
+ ('디지털', 0.018118385),
+ ('프로그램', 0.015849968),
+ ('경력', 0.012340712),
+ ('수료생', 0.012300622),
+ ('파이썬', 0.0103326235)]
+</code></pre></div></div>
+
+<h3 id="4-토픽-모델링을-추가하여-코드-완성하기">4. 토픽 모델링을 추가하여 코드 완성하기</h3>
+
+<ul>
+  <li>LDA 모델의 주요 입력값은 dictionary와 corpus이다</li>
+  <li>빈도수 기반으로 BoW의 행렬 또는 TF-IDF 행렬로 corpus를 나타냄</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 토픽 개수, 키워드 개수를 정해주는 변수를 추가.
+</span><span class="n">NUM_TOPICS</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">NUM_TOPIC_WORDS</span> <span class="o">=</span> <span class="mi">30</span>
+
+
+<span class="k">def</span> <span class="nf">build_doc_term_mat</span><span class="p">(</span><span class="n">documents</span><span class="p">):</span>
+    <span class="c1"># 문서-단어 행렬 만들어주는 함수.
+</span>    <span class="k">print</span><span class="p">(</span><span class="s">"Building document-term matrix."</span><span class="p">)</span>
+    <span class="n">dictionary</span> <span class="o">=</span> <span class="n">corpora</span><span class="p">.</span><span class="n">Dictionary</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span> <span class="c1">#dictionary를 이용하여  corpus 생성함
+</span>    <span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span><span class="n">dictionary</span><span class="p">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">document</span><span class="p">)</span> <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">documents</span><span class="p">]</span>
+        
+    <span class="k">return</span> <span class="n">corpus</span><span class="p">,</span> <span class="n">dictionary</span>
+
+
+<span class="k">def</span> <span class="nf">print_topic_words</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+
+    <span class="c1"># 토픽 모델링 결과를 출력해 주는 함수.
+</span>    <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Printing topic words.</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">topic_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="n">num_topics</span><span class="p">):</span>
+        <span class="n">topic_word_probs</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">show_topic</span><span class="p">(</span><span class="n">topic_id</span><span class="p">,</span> <span class="n">NUM_TOPIC_WORDS</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Topic ID: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">topic_id</span><span class="p">))</span>
+        
+        <span class="k">for</span> <span class="n">topic_word</span><span class="p">,</span> <span class="n">prob</span> <span class="ow">in</span> <span class="n">topic_word_probs</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\t</span><span class="s">{}</span><span class="se">\t</span><span class="s">{}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">topic_word</span><span class="p">,</span> <span class="n">prob</span><span class="p">))</span>
+            
+        <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+
+<span class="c1"># document-term matrix를 만들고,
+</span><span class="n">corpus</span><span class="p">,</span> <span class="n">dictionary</span> <span class="o">=</span> <span class="n">build_doc_term_mat</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">)</span>
+<span class="c1"># LDA를 실행.
+</span><span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">ldamodel</span><span class="p">.</span><span class="n">LdaModel</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span> <span class="n">num_topics</span><span class="o">=</span><span class="n">NUM_TOPICS</span><span class="p">,</span> <span class="n">id2word</span><span class="o">=</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="s">"auto"</span><span class="p">,</span> <span class="n">eta</span><span class="o">=</span><span class="s">"auto"</span><span class="p">)</span>
+<span class="c1"># 결과를 출력.
+</span><span class="n">print_topic_words</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Building document-term matrix.
+
+Printing topic words.
+
+Topic ID: 0
+	교육	0.020134063437581062
+	과정	0.01933959499001503
+	지원	0.01856546476483345
+	프로그램	0.01719101145863533
+	전공	0.016903992742300034
+	강화	0.015583008527755737
+	센터	0.01377133745700121
+	코딩	0.013474454171955585
+	일자리	0.013459446839988232
+	디지털	0.013236879371106625
+	기업	0.013011089526116848
+	대학	0.012913161888718605
+	기초	0.012707662768661976
+	내용	0.011979364790022373
+	진로	0.011881052516400814
+	제작	0.011384266428649426
+	플레이어	0.011376134119927883
+	본문	0.011355482041835785
+	안랩	0.010759378783404827
+	이번	0.010608116164803505
+	코드	0.010289400815963745
+	신청	0.01004485972225666
+	국내	0.009928843937814236
+	역량	0.009752754122018814
+	재학	0.009469701908528805
+	강의	0.009315531700849533
+	확보	0.009268994443118572
+	수강	0.009232008829712868
+	이해	0.00896440725773573
+	이상	0.008546862751245499
+
+
+Topic ID: 1
+	안랩	0.03611671179533005
+	교육	0.035984765738248825
+	과정	0.028996383771300316
+	프로그램	0.019850241020321846
+	디지털	0.01963992789387703
+	강사	0.01785849593579769
+	지원	0.016276324167847633
+	플레이어	0.012492415495216846
+	기업	0.012299888767302036
+	수료생	0.012250230647623539
+	본문	0.010270711034536362
+	제작	0.01019159983843565
+	이번	0.010007740929722786
+	진로	0.00999428890645504
+	내용	0.009981066919863224
+	경력	0.009714951738715172
+	센터	0.009554658085107803
+	역량	0.00923772994428873
+	코딩	0.008980067446827888
+	대학	0.00897340290248394
+	기초	0.008057481609284878
+	파이썬	0.00794822908937931
+	전공	0.007943570613861084
+	강화	0.007534967735409737
+	일자리	0.007462440058588982
+	코드	0.007358819246292114
+	직무	0.007350211963057518
+	개설	0.0072939093224704266
+	시대	0.007264475338160992
+	오류	0.007243797183036804
+
+
+Topic ID: 2
+	교육	0.019978761672973633
+	기업	0.019293813034892082
+	프로그램	0.016017606481909752
+	디지털	0.015322954393923283
+	전공	0.014733160845935345
+	안랩	0.014050689525902271
+	기초	0.013909869827330112
+	이번	0.013884689658880234
+	일자리	0.013789125718176365
+	지원	0.013388378545641899
+	과정	0.01308402605354786
+	제작	0.012753716669976711
+	본문	0.012687018141150475
+	대학	0.012517648749053478
+	진로	0.01242670789361
+	내용	0.012329492717981339
+	코딩	0.011859092861413956
+	강화	0.011237404309213161
+	재학	0.010989995673298836
+	센터	0.010790950618684292
+	역량	0.010305172763764858
+	트렌드	0.010141834616661072
+	강의	0.009979970753192902
+	플레이어	0.009863385930657387
+	이상	0.008951065130531788
+	수강	0.008901397697627544
+	파이썬	0.008846205659210682
+	이해	0.008645805530250072
+	국내	0.008613510057330132
+	확보	0.008279277011752129
+</code></pre></div></div>
+
+<h3 id="5-pyldavis를-통한-토픽-모델링-결과-시각화하기">5. pyLDAvis를 통한 토픽 모델링 결과 시각화하기</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> -LDA 시각화를 위해서는 pyLDAvis의 설치가 필요합니다. 윈도우의 명령 프롬프트나 MAC/UNIX의 터미널에서 아래의 명령을 수행하여 pyLDAvis를 설치하시기 바랍니다.
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">pyLDAvis</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Collecting pyLDAvis
+  Downloading pyLDAvis-3.3.1.tar.gz (1.7 MB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+    Preparing wheel metadata: started
+    Preparing wheel metadata: finished with status 'done'
+Requirement already satisfied: joblib in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from pyLDAvis) (1.0.1)
+Requirement already satisfied: future in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from pyLDAvis) (0.18.2)
+Requirement already satisfied: scipy in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from pyLDAvis) (1.5.0)
+Requirement already satisfied: numexpr in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from pyLDAvis) (2.7.3)
+Collecting funcy
+  Downloading funcy-1.16-py2.py3-none-any.whl (32 kB)
+Requirement already satisfied: setuptools in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from pyLDAvis) (52.0.0.post20210125)
+Requirement already satisfied: gensim in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from pyLDAvis) (4.0.1)
+Collecting pyLDAvis
+  Downloading pyLDAvis-3.3.0.tar.gz (1.7 MB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+    Preparing wheel metadata: started
+    Preparing wheel metadata: finished with status 'done'
+  Downloading pyLDAvis-3.2.2.tar.gz (1.7 MB)
+Requirement already satisfied: wheel&gt;=0.23.0 in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from pyLDAvis) (0.36.2)
+Requirement already satisfied: numpy&gt;=1.9.2 in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from pyLDAvis) (1.17.0)
+Requirement already satisfied: jinja2&gt;=2.7.2 in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from pyLDAvis) (3.0.1)
+Requirement already satisfied: pandas&gt;=0.17.0 in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from pyLDAvis) (1.0.5)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from jinja2&gt;=2.7.2-&gt;pyLDAvis) (2.0.1)
+Requirement already satisfied: pytz&gt;=2017.2 in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from pandas&gt;=0.17.0-&gt;pyLDAvis) (2021.1)
+Requirement already satisfied: python-dateutil&gt;=2.6.1 in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from pandas&gt;=0.17.0-&gt;pyLDAvis) (2.8.2)
+Requirement already satisfied: six&gt;=1.5 in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from python-dateutil&gt;=2.6.1-&gt;pandas&gt;=0.17.0-&gt;pyLDAvis) (1.16.0)
+Building wheels for collected packages: pyLDAvis
+  Building wheel for pyLDAvis (setup.py): started
+  Building wheel for pyLDAvis (setup.py): finished with status 'done'
+  Created wheel for pyLDAvis: filename=pyLDAvis-3.2.2-py2.py3-none-any.whl size=135593 sha256=262e5ce09089c4b45730aaa1d68d2998f5fc6e1fabfb7326d9e778caa1cb1e74
+  Stored in directory: c:\users\mycom\appdata\local\pip\cache\wheels\eb\d1\ac\e8728b60e7d714da9ff6a52cb8659099c3be9e0dc19f522881
+Successfully built pyLDAvis
+Installing collected packages: funcy, pyLDAvis
+Successfully installed funcy-1.16 pyLDAvis-3.2.2
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># pyLDAvis 불러오기
+</span><span class="kn">import</span> <span class="nn">pyLDAvis</span>
+<span class="kn">import</span> <span class="nn">pyLDAvis.gensim</span>
+
+<span class="c1"># pyLDAvis를 jupyter notebook에서 실행할 수 있게 활성화.
+</span><span class="n">pyLDAvis</span><span class="p">.</span><span class="n">enable_notebook</span><span class="p">()</span>
+
+<span class="c1"># pyLDAvis 실행.
+</span><span class="n">data</span> <span class="o">=</span> <span class="n">pyLDAvis</span><span class="p">.</span><span class="n">gensim</span><span class="p">.</span><span class="n">prepare</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">corpus</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">)</span>
+<span class="n">data</span>
+
+<span class="c1"># pyLDAvis 실행결과 깃허브에서 안보여집니다.
+# 밑에 링크를 통해 실행결과 확인 가능합니다
+#https://nbviewer.jupyter.org/github/SEONGJAE-YOO/MachineLearning-dataAnalysis/blob/main/KakaoTalk%20conversation%20analysis%20using%20Text%20Mining/%EA%B8%B0%EC%82%AC%20%ED%85%8D%EC%8A%A4%ED%8A%B8%20%EC%A0%95%EC%A0%9C%20-%20gensim%EC%9D%84%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%ED%86%A0%ED%94%BD%EB%AA%A8%EB%8D%B8%EB%A7%81%20%EB%B6%84%EC%84%9D.ipynb
+</span>
+</code></pre></div></div>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bmabey/pyLDAvis@3.2.2/pyLDAvis/js/ldavis.v1.0.0.css" />
+
+<div id="ldavis_el790823086663956482515321040"></div>
+<script type="text/javascript">
+
+var ldavis_el790823086663956482515321040_data = {"mdsDat": {"x": [0.015053808997266957, -0.006987892444131134, -0.008065916553135828], "y": [7.936214161430072e-05, -0.001702031446132472, 0.0016226693045181598], "topics": [1, 2, 3], "cluster": [1, 1, 1], "Freq": [67.46945863336208, 27.50104844395038, 5.029492922687542]}, "tinfo": {"Term": ["\uad50\uc721", "\uc548\ub7a9", "\uacfc\uc815", "\ub514\uc9c0\ud138", "\ud504\ub85c\uadf8\ub7a8", "\uac15\uc0ac", "\ud50c\ub808\uc774\uc5b4", "\uc9c0\uc6d0", "\uae30\uc5c5", "\uae30\ucd08", "\ub0b4\uc6a9", "\uc218\ub8cc\uc0dd", "\ubcf8\ubb38", "\ucf54\ub529", "\uac15\ud654", "\uc9c4\ub85c", "\uc774\ubc88", "\uc5ed\ub7c9", "\uc77c\uc790\ub9ac", "\ud30c\uc774\uc36c", "\uc81c\uc791", "\uc7ac\ud559", "\uc6b0\ud68c", "\uacbd\ub825", "\uc804\uacf5", "\uc13c\ud130", "\uc218\uac15", "\ub300\ud559", "\ud2b8\ub80c\ub4dc", "\uae30\ub300", "\ub300\ud559", "\uc5f0\uacb0", "\ub9cc\uc871\ub3c4", "\uae30\ub9d0", "\uc13c\ud130", "\uc77c\uc790\ub9ac", "\ubaa9\ud45c", "\ubc15\ucc28", "\uc11c\ube44\uc2a4", "\ucf54\ub4dc", "\uc218\ub8cc\uc99d", "\uba38\uc2e0", "\uc774\uc0c1", "\uad6d\ub0b4", "\ud2b9\uc9d5", "\uc218\uac15", "\uc774\ud574", "\uac15\ud654", "\ud655\ubcf4", "\uc9c0\ub09c\ud574", "\uac1c\uc2dc", "\uae30\uc5c5", "\uc7ac\ud559", "\uc9c4\ub85c", "\uacfc\ubaa9", "\ud559\uac1c", "\uc81c\uacf5", "\uc9c4\ud589", "\uc591\ub300", "\uc804\uacf5", "\ub9de\ucda4", "\ucd5c\uadfc", "\uc2e0\uccad", "\uc548\uc591", "\ud504\ub85c\uadf8\ub7a8", "\uae30\ucd08", "\uc9c0\uc6d0", "\uc774\ubc88", "\uac15\uc758", "\ucf54\ub529", "\ud2b8\ub80c\ub4dc", "\ubcf8\ubb38", "\uc81c\uc791", "\ub514\uc9c0\ud138", "\uad50\uc721", "\ub0b4\uc6a9", "\uc5ed\ub7c9", "\uacfc\uc815", "\ud50c\ub808\uc774\uc5b4", "\uc548\ub7a9", "\uc628\ub77c\uc778", "\uc218\ub8cc", "\uacfc\uc815", "\uacbd\ub825", "\ucc44\uc6a9", "\uac15\uc0ac", "\uc0ac\ud68c", "\uc218\ub8cc\uc0dd", "\uc18c\uc15c", "\ud6c4\uc18d", "\uc9c4\ucd9c", "\uc774\uc885\ud604", "\ubbf8\ub514\uc5b4", "\uc2e4\uc2dc", "\ud504\ub85c\uc81d\ud2b8", "\ubaa8\ub450", "\uac00\uc0c1\ud604\uc2e4", "\ud76c\ub9dd", "\ubc30\ucd9c", "\uc774\ud6c4", "\ud65c\uc57d", "\uc778\uc0ac\ub9d0", "\uc6a9\ud488", "\uc778\uacf5\uc9c0\ub2a5", "\ud37c\ube14\ub9ac\uc154", "\ub2c8\ucf00", "\ucc38\uc5ec", "\uc7ac\ud3b8", "\uad50\uc721", "\ub0b4\uc6a9", "\ud50c\ub808\uc774\uc5b4", "\uc81c\uc791", "\ub514\uc9c0\ud138", "\ud30c\uc774\uc36c", "\uc9c0\uc6d0", "\uc2dc\ub300", "\ud504\ub85c\uadf8\ub7a8", "\uc5ed\ub7c9", "\ubcf8\ubb38", "\ucf54\ub529", "\ucc3d\uc5c5", "\uc774\ubc88", "\ub7ec\ub2dd", "\uae30\ucd08", "\uc804\uacf5", "\uae30\ud68d", "\uae30\uc5c5", "\uac15\uc758", "\uc9c4\ub85c", "\uac15\ud654", "\uc13c\ud130", "\ud2b8\ub80c\ub4dc", "\uc77c\uc790\ub9ac", "\ub300\ud559", "\uc2e0\uccad", "\uc774\ud574", "\uad50\uc721", "\uac15\uc0ac", "\uc218\ub8cc\uc0dd", "\ub370\uc77c\ub9ac", "\uc218\ub8cc", "\uc0dd\ud65c", "\uc548\ub7a9", "\ucc44\uc6a9", "\ucc3d\uc5c5\uc790", "\uc608\uc815", "\uc18c\ud504\ud2b8\uc6e8\uc5b4", "\ub2e8\uc808", "\uc778\uc0ac\ub9d0", "\uc774\ud130", "\uc18c\uc15c", "\uc218\ub8cc\uc2dd", "\ub514\uc9c0\ud138", "\uc0ac\ud68c", "\uc9c1\ubb34", "\uac1c\ubc1c", "\ud2b8\ub79c\uc2a4", "\uacf5\ud5cc", "\ud3ec\uba54\uc774\uc158", "\uae40\ubbf8\uc601", "\uc790\uccb4", "\uacfc\uc815", "\ub9e4\ub2c8\uc800", "\ud65c\uc57d", "\uacbd\ub825", "\uc6b0\ud68c", "\ud50c\ub808\uc774\uc5b4", "\ud30c\uc774\uc36c", "\ud504\ub85c\uadf8\ub7a8", "\uae30\ucd08", "\uc7ac\ud559", "\ub0b4\uc6a9", "\uc5ed\ub7c9", "\ubcf8\ubb38", "\ucf54\ub529", "\uae30\uc5c5", "\uc9c0\uc6d0", "\uac15\ud654", "\uc9c4\ub85c", "\uc774\ubc88", "\uc77c\uc790\ub9ac", "\uae30\ub300", "\uae30\ud68d", "\uc81c\uc791", "\uc13c\ud130", "\uc804\uacf5", "\uc218\uac15", "\ub300\ud559", "\ud2b8\ub80c\ub4dc", "\uad6d\ub0b4"], "Freq": [8.0, 6.0, 7.0, 6.0, 8.0, 3.0, 4.0, 7.0, 7.0, 5.0, 4.0, 2.0, 5.0, 5.0, 5.0, 5.0, 5.0, 4.0, 5.0, 3.0, 5.0, 3.0, 2.0, 2.0, 6.0, 6.0, 4.0, 6.0, 3.0, 2.0, 5.130479188574008, 2.0694000957147956, 2.1073282731316434, 2.0223750745515434, 4.7702609910846885, 4.556513468072479, 1.9446015444846645, 1.3013411912528998, 1.939052077452431, 3.2839860950022177, 1.9218766703586536, 1.9279618310699151, 3.320574407663934, 3.1610284916023432, 1.239443419084667, 3.0703403019431796, 3.2950040374510743, 4.279423775705685, 3.1276086606225997, 1.847194693951308, 1.9002286484228943, 5.587182781814239, 2.8853319110736075, 4.261127797764096, 1.8488279781581487, 1.8420277651727357, 1.741929134473507, 1.7486556422862365, 1.1886197790501694, 5.155131466978082, 1.8913010743506373, 2.422425032672358, 3.0225311474218732, 2.4811674948054474, 5.7692042915794, 3.7127217980588405, 5.248044263712383, 3.7330675084453224, 2.8455095387435763, 3.5505606094821096, 2.7610932949576266, 3.4280174925856524, 3.4307398197622567, 3.8270934494606066, 4.675098084725007, 3.028248763137035, 2.781069638737277, 3.3511102084836573, 2.723306082186634, 3.6166386109157735, 0.871396239897948, 0.7599372722979828, 3.4068692430389507, 1.035352494611834, 0.7238600732391113, 1.636144410828452, 0.7279119635263963, 1.122784041812806, 0.6967707461217981, 0.5132771516810828, 0.4823786181848982, 0.48698989802243087, 0.47596434369477786, 0.748039877885609, 0.4896021341333281, 0.4633318152308175, 0.4938117775284122, 0.45996231279850325, 0.47645153920872646, 0.4733085569884075, 0.4565449475478199, 0.43995279894344247, 0.477496068113661, 0.4693823779937603, 0.47792166452306173, 0.44896517344953596, 0.45673819796065046, 0.47446857350520655, 3.2663019712733057, 1.6096258963683958, 1.4430953873744188, 1.6417134039576482, 1.8815141201620411, 1.0840569675054414, 2.1792925875302287, 0.9401533488755767, 2.2045897433888455, 1.2721230032198578, 1.4669511755905964, 1.4231471013729282, 0.8923984217521209, 1.392375078786872, 0.8382224519476419, 1.2779623812919652, 1.5220772623205778, 0.8234825315870624, 1.521714578673031, 1.0197781162842217, 1.1428804855122079, 1.1274903619006564, 1.1446052604395491, 0.9604872789697029, 1.0798619456873293, 1.0558392658777451, 0.9172829749855602, 0.9177367579115066, 0.8084647575132783, 0.32886507289353506, 0.23651549533551325, 0.09971496017559106, 0.13446809697240544, 0.09650049359082537, 0.5519746892203905, 0.13519273258783338, 0.09528783380766057, 0.09399703124504241, 0.09363904309674341, 0.09538376527223742, 0.09164985445816615, 0.09432974128529743, 0.13246271781008098, 0.09295337963879982, 0.46828417980033304, 0.12929301018935185, 0.1365928368539938, 0.08937927451686282, 0.08920873085155943, 0.08997611989517915, 0.08854532675239342, 0.08880404087637421, 0.08773968629073359, 0.5324818835767371, 0.08802298911981173, 0.08617168629331488, 0.16412175150931596, 0.1858311547544499, 0.2976437473924304, 0.19584343731270296, 0.36445086221291906, 0.25514090672628537, 0.2017663905013869, 0.23851194359602876, 0.21269198572696812, 0.23741972041854462, 0.23709908537535523, 0.2900378989379683, 0.29398487704455245, 0.24263223342520218, 0.24080519027057815, 0.22932236944511483, 0.23102162236262722, 0.15338169968587742, 0.15017424203106938, 0.2002052061921908, 0.20057982357520301, 0.20715524442539923, 0.17332652386155387, 0.1911680109834858, 0.1636088148260068, 0.16053264665053965], "Total": [8.0, 6.0, 7.0, 6.0, 8.0, 3.0, 4.0, 7.0, 7.0, 5.0, 4.0, 2.0, 5.0, 5.0, 5.0, 5.0, 5.0, 4.0, 5.0, 3.0, 5.0, 3.0, 2.0, 2.0, 6.0, 6.0, 4.0, 6.0, 3.0, 2.0, 6.377486465435239, 2.587160495510809, 2.658242334067499, 2.5774272517578085, 6.115446075099441, 5.867397036122436, 2.505054003556868, 1.6804351748940762, 2.5076618004598474, 4.26913804600335, 2.501199982531061, 2.51418892744323, 4.338322113678906, 4.148696094075113, 1.6288539829806539, 4.0439031061656365, 4.34359911583331, 5.649546371031543, 4.132228269016084, 2.441450508198348, 2.512678233719841, 7.398935259425239, 3.821422454874482, 5.644813473546882, 2.450903785975396, 2.4460033986955674, 2.317824398701492, 2.3314121929806597, 1.5851683819190565, 6.884363973724059, 2.52793723499599, 3.2563509883695105, 4.092103327332848, 3.3512567200533714, 8.338244897181164, 5.245825086077091, 7.721321728287164, 5.35476495667731, 4.009736980089359, 5.2108067962303934, 3.885189388753336, 5.132388388594793, 5.272658429912096, 6.176891749422981, 8.749864813511591, 4.8763866031014595, 4.265884627684103, 7.290461335099345, 4.464045216953483, 6.7033350294629575, 1.746070037171859, 1.5907970630859347, 7.290461335099345, 2.2619413866099594, 1.6437376915611503, 3.7674926021393276, 1.7063167979952774, 2.7502905999433023, 1.7220418762580518, 1.285138561634564, 1.208141762585985, 1.2274144599122085, 1.2036461356099708, 1.9015011812703915, 1.2470526728194447, 1.1915927112017535, 1.2716932118466588, 1.1880566263189045, 1.2333026723331737, 1.2279398557920853, 1.1867997946280269, 1.1505798846502784, 1.2548528065173745, 1.236475347132225, 1.2680137201550155, 1.1950419739083287, 1.21775863573971, 1.269379528475544, 8.749864813511591, 4.8763866031014595, 4.464045216953483, 5.272658429912096, 6.176891749422981, 3.2950945497413455, 7.721321728287164, 2.8569215489835527, 8.338244897181164, 4.265884627684103, 5.132388388594793, 5.2108067962303934, 2.8225797247599016, 5.35476495667731, 2.777725979213481, 5.245825086077091, 6.884363973724059, 2.7871944068228656, 7.398935259425239, 4.009736980089359, 5.644813473546882, 5.649546371031543, 6.115446075099441, 3.885189388753336, 5.867397036122436, 6.377486465435239, 4.092103327332848, 4.34359911583331, 8.749864813511591, 3.7674926021393276, 2.7502905999433023, 1.1603056179297946, 1.5907970630859347, 1.1487376736585422, 6.7033350294629575, 1.6437376915611503, 1.1615870932191836, 1.1624097078348419, 1.162551630569523, 1.1868726000417902, 1.1505798846502784, 1.1856897784912728, 1.7220418762580518, 1.2107463100357811, 6.176891749422981, 1.7063167979952774, 1.803854848710526, 1.1867056159742064, 1.1972838043798637, 1.2078634315583068, 1.1933293059683745, 1.199585150900407, 1.1919674926478576, 7.290461335099345, 1.207923765453484, 1.1867997946280269, 2.2619413866099594, 2.564128110843968, 4.464045216953483, 3.2950945497413455, 8.338244897181164, 5.245825086077091, 3.821422454874482, 4.8763866031014595, 4.265884627684103, 5.132388388594793, 5.2108067962303934, 7.398935259425239, 7.721321728287164, 5.649546371031543, 5.644813473546882, 5.35476495667731, 5.867397036122436, 2.7910384476672023, 2.7871944068228656, 5.272658429912096, 6.115446075099441, 6.884363973724059, 4.0439031061656365, 6.377486465435239, 3.885189388753336, 4.148696094075113], "Category": ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3"], "logprob": [30.0, 29.0, 28.0, 27.0, 26.0, 25.0, 24.0, 23.0, 22.0, 21.0, 20.0, 19.0, 18.0, 17.0, 16.0, 15.0, 14.0, 13.0, 12.0, 11.0, 10.0, 9.0, 8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0, -4.0716, -4.9796, -4.9614, -5.0026, -4.1444, -4.1903, -5.0418, -5.4434, -5.0446, -4.5178, -5.0535, -5.0504, -4.5067, -4.5559, -5.4922, -4.585, -4.5144, -4.253, -4.5666, -5.0932, -5.0648, -3.9863, -4.6472, -4.2573, -5.0923, -5.096, -5.1518, -5.148, -5.534, -4.0668, -5.0696, -4.8221, -4.6007, -4.7981, -3.9543, -4.3951, -4.049, -4.3896, -4.6611, -4.4397, -4.6912, -4.4748, -4.474, -4.3647, -4.1646, -4.5988, -4.684, -4.4975, -4.705, -3.5238, -4.947, -5.0839, -3.5836, -4.7746, -5.1325, -4.317, -5.1269, -4.6936, -5.1707, -5.4763, -5.5384, -5.5289, -5.5518, -5.0997, -5.5235, -5.5787, -5.515, -5.586, -5.5508, -5.5574, -5.5934, -5.6305, -5.5486, -5.5657, -5.5477, -5.6102, -5.593, -5.5549, -3.6257, -4.3334, -4.4426, -4.3136, -4.1773, -4.7287, -4.0304, -4.8711, -4.0188, -4.5687, -4.4262, -4.4565, -4.9232, -4.4784, -4.9858, -4.5641, -4.3893, -5.0036, -4.3895, -4.7898, -4.6758, -4.6894, -4.6743, -4.8497, -4.7325, -4.755, -4.8957, -4.8952, -3.3231, -4.2226, -4.5522, -5.4159, -5.1169, -5.4487, -3.7047, -5.1115, -5.4613, -5.475, -5.4788, -5.4603, -5.5002, -5.4714, -5.1319, -5.4861, -3.8691, -5.1561, -5.1012, -5.5253, -5.5272, -5.5187, -5.5347, -5.5318, -5.5438, -3.7407, -5.5406, -5.5619, -4.9176, -4.7934, -4.3223, -4.7409, -4.1198, -4.4764, -4.7111, -4.5438, -4.6584, -4.5484, -4.5497, -4.3482, -4.3347, -4.5267, -4.5342, -4.5831, -4.5757, -4.9853, -5.0064, -4.7189, -4.717, -4.6848, -4.863, -4.7651, -4.9207, -4.9397], "loglift": [30.0, 29.0, 28.0, 27.0, 26.0, 25.0, 24.0, 23.0, 22.0, 21.0, 20.0, 19.0, 18.0, 17.0, 16.0, 15.0, 14.0, 13.0, 12.0, 11.0, 10.0, 9.0, 8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0, 0.1759, 0.1702, 0.1613, 0.151, 0.1451, 0.1406, 0.1402, 0.1378, 0.1363, 0.1311, 0.13, 0.128, 0.1261, 0.1216, 0.1203, 0.1181, 0.1172, 0.1157, 0.1149, 0.1146, 0.1141, 0.1126, 0.1125, 0.1123, 0.1116, 0.1099, 0.1079, 0.1059, 0.1056, 0.1042, 0.1034, 0.0977, 0.0905, 0.0929, 0.0252, 0.0478, 0.0074, 0.0327, 0.0505, 0.0099, 0.052, -0.0101, -0.0363, -0.0852, -0.2333, -0.0829, -0.0343, -0.3838, -0.1007, 0.6739, 0.5959, 0.5522, 0.5302, 0.5095, 0.4708, 0.4569, 0.439, 0.3951, 0.3861, 0.3731, 0.3728, 0.3665, 0.3632, 0.358, 0.356, 0.3463, 0.345, 0.342, 0.3399, 0.3376, 0.3356, 0.3296, 0.3247, 0.3223, 0.3152, 0.312, 0.3103, 0.3069, 0.3056, 0.1825, 0.1617, 0.1242, 0.1022, 0.1792, 0.026, 0.1795, -0.0394, 0.081, 0.0386, -0.0069, 0.1395, -0.056, 0.0928, -0.1212, -0.2182, 0.0717, -0.2906, -0.0782, -0.3062, -0.3206, -0.3848, -0.1065, -0.4016, -0.5075, -0.2045, -0.2636, 0.6082, 0.5513, 0.5364, 0.5357, 0.5192, 0.513, 0.493, 0.4918, 0.4892, 0.4749, 0.4709, 0.4687, 0.4598, 0.4586, 0.4249, 0.423, 0.4104, 0.4098, 0.4092, 0.4038, 0.393, 0.3928, 0.3889, 0.3866, 0.3809, 0.3731, 0.3708, 0.3672, 0.3665, 0.3653, 0.2819, 0.167, -0.1404, -0.0335, 0.0486, -0.0279, -0.0087, -0.0836, -0.1002, -0.2492, -0.2784, -0.1579, -0.1647, -0.1608, -0.2448, 0.0886, 0.0689, -0.2811, -0.4275, -0.5137, -0.1599, -0.5175, -0.1776, -0.2622]}, "token.table": {"Topic": [1, 1, 2, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 1, 2, 1, 2, 3, 1, 2, 3, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 2, 1, 1, 1, 2, 1, 2, 1, 2, 1, 2, 3, 1, 2, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2, 1, 2, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2, 1, 1, 2, 1, 2, 1, 2, 1, 1, 1, 1, 2, 1, 1, 2, 1, 2, 1, 2, 1, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2, 1], "Freq": [0.7863531791192578, 0.530857047699131, 0.530857047699131, 0.7481787496029586, 0.24939291653431953, 0.7080214476175094, 0.17700536190437735, 0.8426689707531775, 0.7959634358113344, 0.3979817179056672, 0.4420981047164668, 0.4420981047164668, 0.8279081673247323, 0.8160255051399546, 0.4080127525699773, 0.41149659289141816, 0.41149659289141816, 0.13716553096380604, 0.5714374000703384, 0.34286244004220306, 0.11428748001406767, 0.7231187659863534, 0.24103958866211778, 0.7165791648881205, 0.35828958244406023, 0.7759675849768398, 0.8109274901894585, 0.2703091633964862, 0.7625111272993781, 0.19062778182484452, 0.7175674560425831, 0.35878372802129155, 0.8336215226150485, 0.6152096304447954, 0.4101397536298636, 0.8367906917357446, 0.842550413553055, 0.7840079359006165, 0.1568015871801233, 0.8618419014329947, 0.6475748907812191, 0.32378744539060955, 0.720013426438235, 0.3600067132191175, 0.7523768523164357, 0.7911588833427554, 0.3955794416713777, 0.8278668146119103, 0.7954851674706374, 0.8392129211595067, 0.7983859817633657, 0.83080896487341, 0.595083949050896, 0.8108309682879309, 0.5845231835273043, 0.1948410611757681, 0.5860576425051216, 0.5860576425051216, 0.8705207663427309, 0.7975557149027217, 0.8176018459812349, 0.16352036919624696, 0.5807059710841479, 0.5807059710841479, 0.8601768503908163, 0.7418575374434605, 0.24728584581448684, 0.6286156941100539, 0.6286156941100539, 0.3635979412577766, 0.3635979412577766, 0.8259368554015639, 0.7996161898162667, 0.7000542246991586, 0.3500271123495793, 0.7331193178729778, 0.24437310595765926, 0.5259002780802381, 0.5259002780802381, 0.44753842480111683, 0.5967178997348225, 0.14917947493370562, 0.5967910449928612, 0.2983955224964306, 0.6308478086027476, 0.7032538996791068, 0.2344179665597023, 0.7730482911556362, 0.860281872441212, 0.5727147128758466, 0.5727147128758466, 0.7969062146622008, 0.7799922287586916, 0.3899961143793458, 0.7469982403265079, 0.18674956008162696, 0.691511584753211, 0.23050386158440364, 0.8147207260956707, 0.8433909258056073, 0.6906714731256814, 0.23022382437522715, 0.8143721333606749, 0.8087504553320164, 0.8691269622742905, 0.8521666369631482, 0.17043332739262965, 0.8389490537016092, 0.7877864559553326, 0.7850479855147388, 0.26168266183824623, 0.7262835055037448, 0.2905134022014979, 0.8628781374121586, 0.568972945977465, 0.37931529731830993, 0.8191851496821398, 0.6475575265413995, 0.2590230106165598, 0.554368329976685, 0.554368329976685, 0.7086150886552901, 0.17715377216382253, 0.8277174343013648, 0.8578491637049576, 0.8211807912103734, 0.7085716596260632, 0.3542858298130316, 0.860891108241082, 0.6083695744971593, 0.6083695744971593, 0.6141844067618218, 0.3070922033809109, 0.7027179650019791, 0.2342393216673264, 0.7676354461834363, 0.19190886154585907, 0.8352238594908186, 0.7721631302412848, 0.25738771008042827, 0.6139285721425388, 0.6069628563942099, 0.30348142819710494, 0.7886349998466494, 0.8379916549426483, 0.7195758908482487, 0.23985863028274956, 0.8018907475167937, 0.6720362035327612, 0.22401206784425373, 0.8176603520120139, 0.40883017600600696, 0.7260005509604444, 0.24200018365348144, 0.8426021006461544, 0.7781262113309423, 0.7781262113309423, 0.8417107213975293], "Term": ["\uac00\uc0c1\ud604\uc2e4", "\uac15\uc0ac", "\uac15\uc0ac", "\uac15\uc758", "\uac15\uc758", "\uac15\ud654", "\uac15\ud654", "\uac1c\ubc1c", "\uac1c\uc2dc", "\uac1c\uc2dc", "\uacbd\ub825", "\uacbd\ub825", "\uacf5\ud5cc", "\uacfc\ubaa9", "\uacfc\ubaa9", "\uacfc\uc815", "\uacfc\uc815", "\uacfc\uc815", "\uad50\uc721", "\uad50\uc721", "\uad50\uc721", "\uad6d\ub0b4", "\uad6d\ub0b4", "\uae30\ub300", "\uae30\ub300", "\uae30\ub9d0", "\uae30\uc5c5", "\uae30\uc5c5", "\uae30\ucd08", "\uae30\ucd08", "\uae30\ud68d", "\uae30\ud68d", "\uae40\ubbf8\uc601", "\ub0b4\uc6a9", "\ub0b4\uc6a9", "\ub2c8\ucf00", "\ub2e8\uc808", "\ub300\ud559", "\ub300\ud559", "\ub370\uc77c\ub9ac", "\ub514\uc9c0\ud138", "\ub514\uc9c0\ud138", "\ub7ec\ub2dd", "\ub7ec\ub2dd", "\ub9cc\uc871\ub3c4", "\ub9de\ucda4", "\ub9de\ucda4", "\ub9e4\ub2c8\uc800", "\uba38\uc2e0", "\ubaa8\ub450", "\ubaa9\ud45c", "\ubbf8\ub514\uc5b4", "\ubc15\ucc28", "\ubc30\ucd9c", "\ubcf8\ubb38", "\ubcf8\ubb38", "\uc0ac\ud68c", "\uc0ac\ud68c", "\uc0dd\ud65c", "\uc11c\ube44\uc2a4", "\uc13c\ud130", "\uc13c\ud130", "\uc18c\uc15c", "\uc18c\uc15c", "\uc18c\ud504\ud2b8\uc6e8\uc5b4", "\uc218\uac15", "\uc218\uac15", "\uc218\ub8cc", "\uc218\ub8cc", "\uc218\ub8cc\uc0dd", "\uc218\ub8cc\uc0dd", "\uc218\ub8cc\uc2dd", "\uc218\ub8cc\uc99d", "\uc2dc\ub300", "\uc2dc\ub300", "\uc2e0\uccad", "\uc2e0\uccad", "\uc2e4\uc2dc", "\uc2e4\uc2dc", "\uc548\ub7a9", "\uc548\ub7a9", "\uc548\ub7a9", "\uc548\uc591", "\uc548\uc591", "\uc591\ub300", "\uc5ed\ub7c9", "\uc5ed\ub7c9", "\uc5f0\uacb0", "\uc608\uc815", "\uc628\ub77c\uc778", "\uc628\ub77c\uc778", "\uc6a9\ud488", "\uc6b0\ud68c", "\uc6b0\ud68c", "\uc774\ubc88", "\uc774\ubc88", "\uc774\uc0c1", "\uc774\uc0c1", "\uc774\uc885\ud604", "\uc774\ud130", "\uc774\ud574", "\uc774\ud574", "\uc774\ud6c4", "\uc778\uacf5\uc9c0\ub2a5", "\uc778\uc0ac\ub9d0", "\uc77c\uc790\ub9ac", "\uc77c\uc790\ub9ac", "\uc790\uccb4", "\uc7ac\ud3b8", "\uc7ac\ud559", "\uc7ac\ud559", "\uc804\uacf5", "\uc804\uacf5", "\uc81c\uacf5", "\uc81c\uc791", "\uc81c\uc791", "\uc9c0\ub09c\ud574", "\uc9c0\uc6d0", "\uc9c0\uc6d0", "\uc9c1\ubb34", "\uc9c1\ubb34", "\uc9c4\ub85c", "\uc9c4\ub85c", "\uc9c4\ucd9c", "\uc9c4\ud589", "\ucc38\uc5ec", "\ucc3d\uc5c5", "\ucc3d\uc5c5", "\ucc3d\uc5c5\uc790", "\ucc44\uc6a9", "\ucc44\uc6a9", "\ucd5c\uadfc", "\ucd5c\uadfc", "\ucf54\ub4dc", "\ucf54\ub4dc", "\ucf54\ub529", "\ucf54\ub529", "\ud2b8\ub79c\uc2a4", "\ud2b8\ub80c\ub4dc", "\ud2b8\ub80c\ub4dc", "\ud2b9\uc9d5", "\ud30c\uc774\uc36c", "\ud30c\uc774\uc36c", "\ud37c\ube14\ub9ac\uc154", "\ud3ec\uba54\uc774\uc158", "\ud504\ub85c\uadf8\ub7a8", "\ud504\ub85c\uadf8\ub7a8", "\ud504\ub85c\uc81d\ud2b8", "\ud50c\ub808\uc774\uc5b4", "\ud50c\ub808\uc774\uc5b4", "\ud559\uac1c", "\ud559\uac1c", "\ud655\ubcf4", "\ud655\ubcf4", "\ud65c\uc57d", "\ud6c4\uc18d", "\ud6c4\uc18d", "\ud76c\ub9dd"]}, "R": 30, "lambda.step": 0.01, "plot.opts": {"xlab": "PC1", "ylab": "PC2"}, "topic.order": [2, 1, 3]};
+
+function LDAvis_load_lib(url, callback){
+var s = document.createElement('script');
+s.src = url;
+s.async = true;
+s.onreadystatechange = s.onload = callback;
+s.onerror = function(){console.warn("failed to load library " + url);};
+document.getElementsByTagName("head")[0].appendChild(s);
+}
+
+if(typeof(LDAvis) !== "undefined"){
+// already loaded: just create the visualization
+!function(LDAvis){
+new LDAvis("#" + "ldavis_el790823086663956482515321040", ldavis_el790823086663956482515321040_data);
+}(LDAvis);
+}else if(typeof define === "function" && define.amd){
+// require.js is available: use it to load d3/LDAvis
+require.config({paths: {d3: "https://d3js.org/d3.v5"}});
+require(["d3"], function(d3){
+window.d3 = d3;
+LDAvis_load_lib("https://cdn.jsdelivr.net/gh/bmabey/pyLDAvis@3.2.2/pyLDAvis/js/ldavis.v3.0.0.js", function(){
+new LDAvis("#" + "ldavis_el790823086663956482515321040", ldavis_el790823086663956482515321040_data);
+});
+});
+}else{
+// require.js not available: dynamically load d3 & LDAvis
+LDAvis_load_lib("https://d3js.org/d3.v5.js", function(){
+LDAvis_load_lib("https://cdn.jsdelivr.net/gh/bmabey/pyLDAvis@3.2.2/pyLDAvis/js/ldavis.v3.0.0.js", function(){
+new LDAvis("#" + "ldavis_el790823086663956482515321040", ldavis_el790823086663956482515321040_data);
+})
+});
+}
+</script>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page -->
+           <!--
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to Big Data</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+                </section>
+            
+            -->
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="SeongJae Yu" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/author/SeongJae Yu">SeongJae Yu</a></h4>
+                                
+                                    <p>Read <a href="/author/SeongJae Yu">more posts</a> by this author.</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/SeongJae Yu">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            var this_page_url = 'https://SEONGJAE-YOO.github.io/gensim-news';
+                            var this_page_identifier = '/gensim-news';
+                            var this_page_title = '기사 텍스트 정제 - gensim을 이용한 토픽모델링 분석';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://xxxxxxxx.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                </section>
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/built/images/author-logo.png)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; Big Data &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/python/">Python</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/nsmc-wordcloud">NSMC 정제 - wordcloud 와 histogram으로 단어 분포 파악하기</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/nsmc-sentiment">NSMC 감성분석 - 감정분석</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/linear-regression">단순선형회귀분석 실습 - 단순선형회귀 적합 및 해석</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/python/">
+                                
+                                    See all 18 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/nsmc-sentiment">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/logo-python.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/nsmc-sentiment">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Python</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">NSMC 감성분석 - 감정분석</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>Python 프로젝트 
+
+    쿠팡 셀러 데이터 분석
+    검색광고 데이터 분석
+    고객 데이터 분석 프로젝트
+
+
+</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="SeongJae Yu" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/SeongJae Yu/">SeongJae Yu</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      4 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/linear-regression">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/logo-python.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/linear-regression">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Python</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">단순선형회귀분석 실습 - 단순선형회귀 적합 및 해석</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>Python 프로젝트 
+
+    쿠팡 셀러 데이터 분석
+    검색광고 데이터 분석
+    고객 데이터 분석 프로젝트
+
+
+</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="SeongJae Yu" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/SeongJae Yu/">SeongJae Yu</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      7 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="https://SEONGJAE-YOO.github.io/">
+            
+            <span>Big Data</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">기사 텍스트 정제 - gensim을 이용한 토픽모델링 분석</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%EA%B8%B0%EC%82%AC+%ED%85%8D%EC%8A%A4%ED%8A%B8+%EC%A0%95%EC%A0%9C+-+gensim%EC%9D%84+%EC%9D%B4%EC%9A%A9%ED%95%9C+%ED%86%A0%ED%94%BD%EB%AA%A8%EB%8D%B8%EB%A7%81+%EB%B6%84%EC%84%9D&amp;url=https://SEONGJAE-YOO.github.io/gensim-news"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://SEONGJAE-YOO.github.io/gensim-news"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://SEONGJAE-YOO.github.io/">Big Data</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <h1 class="subscribe-overlay-title">Search Big Data</h1>
+            <p class="subscribe-overlay-description">
+                lunr.js를 이용한 posts 검색 </p>
+            <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+        </div>
+    </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
