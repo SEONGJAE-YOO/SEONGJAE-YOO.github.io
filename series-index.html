@@ -57,7 +57,7 @@
     <meta property="og:site_name" content="Big Data" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Series 데이터 생성하기(index, value 활용)" />
-    <meta property="og:description" content="Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 학습목표 pandas Series 데이터 생성하기 import numpy as np import pandas as pd Series pandas의 기본 객체 중 하나 numpy의 ndarray를 기반으로 인덱싱을 기능을 추가하여 1차원 배열을 나타냄 index를 지정하지 않을 시, 기본적으로 ndarray와 같이 0-based 인덱스" />
+    <meta property="og:description" content="학습목표 pandas Series 데이터 생성하기 import numpy as np import pandas as pd Series pandas의 기본 객체 중 하나 numpy의 ndarray를 기반으로 인덱싱을 기능을 추가하여 1차원 배열을 나타냄 index를 지정하지 않을 시, 기본적으로 ndarray와 같이 0-based 인덱스 생성, 지정할 경우 명시적으로 지정된 index를 사용 같은 타입의 0개 이상의 데이터를 가질" />
     <meta property="og:url" content="https://SEONGJAE-YOO.github.io/series-index" />
     <meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
@@ -67,7 +67,7 @@
     <meta property="article:tag" content="Python" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Series 데이터 생성하기(index, value 활용)" />
-    <meta name="twitter:description" content="Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 학습목표 pandas Series 데이터 생성하기 import numpy as np import pandas as pd Series pandas의 기본 객체 중 하나 numpy의 ndarray를 기반으로 인덱싱을 기능을 추가하여 1차원 배열을 나타냄 index를 지정하지 않을 시, 기본적으로 ndarray와 같이 0-based 인덱스" />
+    <meta name="twitter:description" content="학습목표 pandas Series 데이터 생성하기 import numpy as np import pandas as pd Series pandas의 기본 객체 중 하나 numpy의 ndarray를 기반으로 인덱싱을 기능을 추가하여 1차원 배열을 나타냄 index를 지정하지 않을 시, 기본적으로 ndarray와 같이 0-based 인덱스 생성, 지정할 경우 명시적으로 지정된 index를 사용 같은 타입의 0개 이상의 데이터를 가질" />
     <meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
     <meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -99,7 +99,7 @@
         "@type": "WebPage",
         "@id": "https://SEONGJAE-YOO.github.io/series-index"
     },
-    "description": "Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 학습목표 pandas Series 데이터 생성하기 import numpy as np import pandas as pd Series pandas의 기본 객체 중 하나 numpy의 ndarray를 기반으로 인덱싱을 기능을 추가하여 1차원 배열을 나타냄 index를 지정하지 않을 시, 기본적으로 ndarray와 같이 0-based 인덱스"
+    "description": "학습목표 pandas Series 데이터 생성하기 import numpy as np import pandas as pd Series pandas의 기본 객체 중 하나 numpy의 ndarray를 기반으로 인덱싱을 기능을 추가하여 1차원 배열을 나타냄 index를 지정하지 않을 시, 기본적으로 ndarray와 같이 0-based 인덱스 생성, 지정할 경우 명시적으로 지정된 index를 사용 같은 타입의 0개 이상의 데이터를 가질"
 }
     </script>
 
@@ -142,6 +142,7 @@ into the {body} of the default.hbs template -->
     <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
     <li class="nav-jekyll" role="menuitem"><a href="/tag/Big Data/">Big Data</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-ProcessMining" role="menuitem"><a href="/tag/ProcessMining/">ProcessMining</a></li>
     <li class="nav-archive" role="menuitem">
         <a href="/archive.html">All Posts</a>
     </li>
@@ -149,6 +150,7 @@ into the {body} of the default.hbs template -->
         <a href="/author_archive.html">Tag별 Posts</a>
     </li>
 </ul>
+
         
     </div>
     <div class="site-nav-right">
@@ -195,12 +197,12 @@ into the {body} of the default.hbs template -->
             -->
             <section class="post-full-content">
                 <div class="kg-card-markdown">
-                    <p><span class="table-of-contents-list">Python 프로젝트 </span></p>
-<ul class="table-of-contents-list">
-    <li><a href="blogmaker/_posts/python/2021-08-11-python-basic.md">쿠팡 셀러 데이터 분석</a></li>
-    <li><a href="blogmaker/_posts/python/2021-08-11-searchAd.md">검색광고 데이터 분석</a></li>
-    <li><a href="blogmaker/_posts/python/2021-08-19-customer-Data.md">고객 데이터 분석 프로젝트</a></li>
-</ul>
+                    <!--<span class="table-of-contents-list">Python 프로젝트 </span>-->
+<!--<ul class="table-of-contents-list">-->
+<!--    <li><a href="blogmaker/_posts/python/2021-08-11-python-basic.md">쿠팡 셀러 데이터 분석</a></li>-->
+<!--    <li><a href="blogmaker/_posts/python/2021-08-11-searchAd.md">검색광고 데이터 분석</a></li>-->
+<!--    <li><a href="blogmaker/_posts/python/2021-08-19-customer-Data.md">고객 데이터 분석 프로젝트</a></li>-->
+<!--</ul>-->
 
 <h2 id="학습목표">학습목표</h2>
 <ol>
@@ -553,6 +555,24 @@ dtype: int32
                                   
                                 
                                   
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
                                     
                                         
                                         
@@ -708,7 +728,7 @@ dtype: int32
                         <footer class="read-next-card-footer">
                             <a href="/tag/python/">
                                 
-                                    See all 30 posts  →
+                                    See all 32 posts  →
                                 
                             </a>
                         </footer>
@@ -741,11 +761,11 @@ dtype: int32
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>Python 프로젝트 
+                        <p>
 
-    쿠팡 셀러 데이터 분석
-    검색광고 데이터 분석
-    고객 데이터 분석 프로젝트
+
+
+
 
 
 </p>
@@ -800,11 +820,11 @@ dtype: int32
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>Python 프로젝트 
+                        <p>
 
-    쿠팡 셀러 데이터 분석
-    검색광고 데이터 분석
-    고객 데이터 분석 프로젝트
+
+
+
 
 
 </p>

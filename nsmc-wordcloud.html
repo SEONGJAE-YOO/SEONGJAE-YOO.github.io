@@ -57,7 +57,7 @@
     <meta property="og:site_name" content="Big Data" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="NSMC 정제 - wordcloud 와 histogram으로 단어 분포 파악하기" />
-    <meta property="og:description" content="Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 NSMC 정제하기 Naver Sentiment Movie Corpus 영화 리뷰 학습을 통한 감정 예측 구현 감정분석을 위해, Naver Movie Corpus(https://github.com/e9t/nsmc/) 를 사용합니다. def read_documents(filename): with open(filename, encoding='utf-8') as f: documents = [line.split('\t') for line in f.read().splitlines()] documents = documents[1:]" />
+    <meta property="og:description" content="NSMC 정제하기 Naver Sentiment Movie Corpus 영화 리뷰 학습을 통한 감정 예측 구현 감정분석을 위해, Naver Movie Corpus(https://github.com/e9t/nsmc/) 를 사용합니다. def read_documents(filename): with open(filename, encoding='utf-8') as f: documents = [line.split('\t') for line in f.read().splitlines()] documents = documents[1:] return documents train_docs = read_documents("ratings_train.txt") test_docs = read_documents("ratings_test.txt") print(len(train_docs)) print(len(test_docs)) 150000 50000 함수" />
     <meta property="og:url" content="https://SEONGJAE-YOO.github.io/nsmc-wordcloud" />
     <meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
@@ -67,7 +67,7 @@
     <meta property="article:tag" content="Python" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="NSMC 정제 - wordcloud 와 histogram으로 단어 분포 파악하기" />
-    <meta name="twitter:description" content="Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 NSMC 정제하기 Naver Sentiment Movie Corpus 영화 리뷰 학습을 통한 감정 예측 구현 감정분석을 위해, Naver Movie Corpus(https://github.com/e9t/nsmc/) 를 사용합니다. def read_documents(filename): with open(filename, encoding='utf-8') as f: documents = [line.split('\t') for line in f.read().splitlines()] documents = documents[1:]" />
+    <meta name="twitter:description" content="NSMC 정제하기 Naver Sentiment Movie Corpus 영화 리뷰 학습을 통한 감정 예측 구현 감정분석을 위해, Naver Movie Corpus(https://github.com/e9t/nsmc/) 를 사용합니다. def read_documents(filename): with open(filename, encoding='utf-8') as f: documents = [line.split('\t') for line in f.read().splitlines()] documents = documents[1:] return documents train_docs = read_documents("ratings_train.txt") test_docs = read_documents("ratings_test.txt") print(len(train_docs)) print(len(test_docs)) 150000 50000 함수" />
     <meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
     <meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -99,7 +99,7 @@
         "@type": "WebPage",
         "@id": "https://SEONGJAE-YOO.github.io/nsmc-wordcloud"
     },
-    "description": "Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 NSMC 정제하기 Naver Sentiment Movie Corpus 영화 리뷰 학습을 통한 감정 예측 구현 감정분석을 위해, Naver Movie Corpus(https://github.com/e9t/nsmc/) 를 사용합니다. def read_documents(filename): with open(filename, encoding='utf-8') as f: documents = [line.split('\t') for line in f.read().splitlines()] documents = documents[1:]"
+    "description": "NSMC 정제하기 Naver Sentiment Movie Corpus 영화 리뷰 학습을 통한 감정 예측 구현 감정분석을 위해, Naver Movie Corpus(https://github.com/e9t/nsmc/) 를 사용합니다. def read_documents(filename): with open(filename, encoding='utf-8') as f: documents = [line.split('\t') for line in f.read().splitlines()] documents = documents[1:] return documents train_docs = read_documents("ratings_train.txt") test_docs = read_documents("ratings_test.txt") print(len(train_docs)) print(len(test_docs)) 150000 50000 함수"
 }
     </script>
 
@@ -142,6 +142,7 @@ into the {body} of the default.hbs template -->
     <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
     <li class="nav-jekyll" role="menuitem"><a href="/tag/Big Data/">Big Data</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-ProcessMining" role="menuitem"><a href="/tag/ProcessMining/">ProcessMining</a></li>
     <li class="nav-archive" role="menuitem">
         <a href="/archive.html">All Posts</a>
     </li>
@@ -149,6 +150,7 @@ into the {body} of the default.hbs template -->
         <a href="/author_archive.html">Tag별 Posts</a>
     </li>
 </ul>
+
         
     </div>
     <div class="site-nav-right">
@@ -195,12 +197,12 @@ into the {body} of the default.hbs template -->
             -->
             <section class="post-full-content">
                 <div class="kg-card-markdown">
-                    <p><span class="table-of-contents-list">Python 프로젝트 </span></p>
-<ul class="table-of-contents-list">
-    <li><a href="blogmaker/_posts/python/2021-08-11-python-basic.md">쿠팡 셀러 데이터 분석</a></li>
-    <li><a href="blogmaker/_posts/python/2021-08-11-searchAd.md">검색광고 데이터 분석</a></li>
-    <li><a href="blogmaker/_posts/python/2021-08-19-customer-Data.md">고객 데이터 분석 프로젝트</a></li>
-</ul>
+                    <!--<span class="table-of-contents-list">Python 프로젝트 </span>-->
+<!--<ul class="table-of-contents-list">-->
+<!--    <li><a href="blogmaker/_posts/python/2021-08-11-python-basic.md">쿠팡 셀러 데이터 분석</a></li>-->
+<!--    <li><a href="blogmaker/_posts/python/2021-08-11-searchAd.md">검색광고 데이터 분석</a></li>-->
+<!--    <li><a href="blogmaker/_posts/python/2021-08-19-customer-Data.md">고객 데이터 분석 프로젝트</a></li>-->
+<!--</ul>-->
 
 <h2 id="nsmc-정제하기">NSMC 정제하기</h2>
 
@@ -592,6 +594,24 @@ into the {body} of the default.hbs template -->
                                 
                                   
                                     
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
                                   
                                 
                                   
@@ -760,7 +780,7 @@ into the {body} of the default.hbs template -->
                         <footer class="read-next-card-footer">
                             <a href="/tag/python/">
                                 
-                                    See all 30 posts  →
+                                    See all 32 posts  →
                                 
                             </a>
                         </footer>
@@ -774,30 +794,30 @@ into the {body} of the default.hbs template -->
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/csv-dataframe">
+            <a class="post-card-image-link" href="/event-log">
                 <div class="post-card-image" style="background-image: url(/assets/built/images/logo-python.png)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/csv-dataframe">
+            <a class="post-card-content-link" href="/event-log">
                 <header class="post-card-header">
                     
                         
                             
-                                <span class="post-card-tags">Python</span>
+                                <span class="post-card-tags">Processmining</span>
                             
                         
                     
 
-                    <h2 class="post-card-title">샘플 csv 데이터로 DataFrame 데이터 생성하기</h2>
+                    <h2 class="post-card-title">이벤트 로그(event log)란?</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>Python 프로젝트 
+                        <p>
 
-    쿠팡 셀러 데이터 분석
-    검색광고 데이터 분석
-    고객 데이터 분석 프로젝트
+
+
+
 
 
 </p>
@@ -818,7 +838,7 @@ into the {body} of the default.hbs template -->
                 <span class="reading-time">
                     
                     
-                      3 min read
+                      2 min read
                     
                 </span>
             </footer>
@@ -852,11 +872,11 @@ into the {body} of the default.hbs template -->
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>Python 프로젝트 
+                        <p>
 
-    쿠팡 셀러 데이터 분석
-    검색광고 데이터 분석
-    고객 데이터 분석 프로젝트
+
+
+
 
 
 </p>
