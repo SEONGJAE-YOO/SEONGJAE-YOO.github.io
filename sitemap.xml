@@ -4,6 +4,38 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://SEONGJAE-YOO.github.io/num-categoricaldata.html</loc>
+        
+        <lastmod>2021-08-25T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://SEONGJAE-YOO.github.io/num-categorical.html</loc>
+        
+        <lastmod>2021-08-25T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
         <loc>https://SEONGJAE-YOO.github.io/dataframe-structure.html</loc>
         
         <lastmod>2021-08-25T00:00:00+09:00</lastmod>
@@ -21,6 +53,22 @@
     
     <url>
         <loc>https://SEONGJAE-YOO.github.io/dataframe-row.html</loc>
+        
+        <lastmod>2021-08-25T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://SEONGJAE-YOO.github.io/dataframe-nan.html</loc>
         
         <lastmod>2021-08-25T00:00:00+09:00</lastmod>
         
@@ -133,6 +181,38 @@
     
     <url>
         <loc>https://SEONGJAE-YOO.github.io/csv-dataframe.html</loc>
+        
+        <lastmod>2021-08-25T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://SEONGJAE-YOO.github.io/catagoricaldata-onehot.html</loc>
+        
+        <lastmod>2021-08-25T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://SEONGJAE-YOO.github.io/process-miningtype.html</loc>
         
         <lastmod>2021-08-25T00:00:00+09:00</lastmod>
         
