@@ -8,6 +8,146 @@
     
       
       <item>
+        <title>DataFrame 구조 이해하기</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Wed, 25 Aug 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/dataframe-structure</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/dataframe-structure</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>DataFrame 원하는 row(데이터)만 선택하기</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Wed, 25 Aug 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/dataframe-row</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/dataframe-row</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>DataFrame 데이터 생성하기</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Wed, 25 Aug 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/dataframe-datacreate</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/dataframe-datacreate</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>DataFrame 데이터 살펴보기</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Wed, 25 Aug 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/dataframe-data</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/dataframe-data</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>DataFrame 원하는 column(컬럼)만 선택하기</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Wed, 25 Aug 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/dataframe-column</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/dataframe-column</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>DataFrame Boolean Selection으로 데이터 선택하기</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Wed, 25 Aug 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/dataframe-booleansele</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/dataframe-booleansele</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>샘플 csv 데이터로 DataFrame 데이터 생성하기</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Wed, 25 Aug 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/csv-dataframe</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/csv-dataframe</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>NSMC 정제 - wordcloud 와 histogram으로 단어 분포 파악하기</title>
         
           <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 프로젝트 &lt;/span&gt;&lt;/p&gt;

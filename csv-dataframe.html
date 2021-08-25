@@ -11,7 +11,7 @@
 
 
 
-    <title>Series 데이터 연산하기</title>
+    <title>샘플 csv 데이터로 DataFrame 데이터 생성하기</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Styles'n'Scripts -->
@@ -50,24 +50,24 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="SeongJae Yu 블로그" />
     <link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
-    <link rel="canonical" href="https://SEONGJAE-YOO.github.io/series-operation" />
+    <link rel="canonical" href="https://SEONGJAE-YOO.github.io/csv-dataframe" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="Big Data" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Series 데이터 연산하기" />
-    <meta property="og:description" content="Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 학습목표 Series 데이터 연산하기 import numpy as np import pandas as pd index를 기준으로 연산 s1 = pd.Series([1, 2, 3, 4], ['a', 'b', 'c', 'd']) s2 = pd.Series([6, 3, 2, 1], ['d', 'c', 'b', 'a']) s1 a" />
-    <meta property="og:url" content="https://SEONGJAE-YOO.github.io/series-operation" />
+    <meta property="og:title" content="샘플 csv 데이터로 DataFrame 데이터 생성하기" />
+    <meta property="og:description" content="Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 학습목표 수치해석 라이브러리인 numpy의 이해 및 사용 데이터 분석 라이브러이인 pandas의 이해 및 사용 csv 데이터로 부터 Dataframe 생성 데이터 분석을 위해, dataframe을 생성하는 가장 일반적인 방법 데이터 소스로부터 추출된 csv(comma separated values) 파일로부터 생성 pandas.read_csv 함수" />
+    <meta property="og:url" content="https://SEONGJAE-YOO.github.io/csv-dataframe" />
     <meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:author" content="https://www.facebook.com/" />
-    <meta property="article:published_time" content="2021-08-23T00:00:00+09:00" />
-    <meta property="article:modified_time" content="2021-08-23T00:00:00+09:00" />
+    <meta property="article:published_time" content="2021-08-25T00:00:00+09:00" />
+    <meta property="article:modified_time" content="2021-08-25T00:00:00+09:00" />
     <meta property="article:tag" content="Python" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Series 데이터 연산하기" />
-    <meta name="twitter:description" content="Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 학습목표 Series 데이터 연산하기 import numpy as np import pandas as pd index를 기준으로 연산 s1 = pd.Series([1, 2, 3, 4], ['a', 'b', 'c', 'd']) s2 = pd.Series([6, 3, 2, 1], ['d', 'c', 'b', 'a']) s1 a" />
+    <meta name="twitter:title" content="샘플 csv 데이터로 DataFrame 데이터 생성하기" />
+    <meta name="twitter:description" content="Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 학습목표 수치해석 라이브러리인 numpy의 이해 및 사용 데이터 분석 라이브러이인 pandas의 이해 및 사용 csv 데이터로 부터 Dataframe 생성 데이터 분석을 위해, dataframe을 생성하는 가장 일반적인 방법 데이터 소스로부터 추출된 csv(comma separated values) 파일로부터 생성 pandas.read_csv 함수" />
     <meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
     <meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -88,7 +88,7 @@
         "name": "Big Data",
         "logo": "https://SEONGJAE-YOO.github.io/"
     },
-    "url": "https://SEONGJAE-YOO.github.io/series-operation",
+    "url": "https://SEONGJAE-YOO.github.io/csv-dataframe",
     "image": {
         "@type": "ImageObject",
         "url": "https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png",
@@ -97,9 +97,9 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://SEONGJAE-YOO.github.io/series-operation"
+        "@id": "https://SEONGJAE-YOO.github.io/csv-dataframe"
     },
-    "description": "Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 학습목표 Series 데이터 연산하기 import numpy as np import pandas as pd index를 기준으로 연산 s1 = pd.Series([1, 2, 3, 4], ['a', 'b', 'c', 'd']) s2 = pd.Series([6, 3, 2, 1], ['d', 'c', 'b', 'a']) s1 a"
+    "description": "Python 프로젝트 쿠팡 셀러 데이터 분석 검색광고 데이터 분석 고객 데이터 분석 프로젝트 학습목표 수치해석 라이브러리인 numpy의 이해 및 사용 데이터 분석 라이브러이인 pandas의 이해 및 사용 csv 데이터로 부터 Dataframe 생성 데이터 분석을 위해, dataframe을 생성하는 가장 일반적인 방법 데이터 소스로부터 추출된 csv(comma separated values) 파일로부터 생성 pandas.read_csv 함수"
 }
     </script>
 
@@ -112,7 +112,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="Series 데이터 연산하기" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="샘플 csv 데이터로 DataFrame 데이터 생성하기" href="/feed.xml" />
 
 
 
@@ -175,7 +175,7 @@ into the {body} of the default.hbs template -->
 
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="23 August 2021">23 August 2021</time>
+                    <time class="post-full-meta-date" datetime="25 August 2021">25 August 2021</time>
                     
                         <span class="date-divider">/</span>
                         
@@ -185,7 +185,7 @@ into the {body} of the default.hbs template -->
                         
                     
                 </section>
-                <h1 class="post-full-title">Series 데이터 연산하기</h1>
+                <h1 class="post-full-title">샘플 csv 데이터로 DataFrame 데이터 생성하기</h1>
             </header>
             <!--
             
@@ -204,125 +204,573 @@ into the {body} of the default.hbs template -->
 
 <h2 id="학습목표">학습목표</h2>
 <ol>
-  <li>Series 데이터 연산하기</li>
+  <li>수치해석 라이브러리인 numpy의 이해 및 사용</li>
+  <li>데이터 분석 라이브러이인 pandas의 이해 및 사용</li>
 </ol>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
-</code></pre></div></div>
-
-<h4 id="index를-기준으로-연산">index를 기준으로 연산</h4>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s1</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'d'</span><span class="p">])</span>
-<span class="n">s2</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s">'d'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'a'</span><span class="p">])</span>
-
-<span class="n">s1</span>
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a    1
-b    2
-c    3
-d    4
-dtype: int64
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s2</span>
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>d    6
-c    3
-b    2
-a    1
-dtype: int64
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span>
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a     2
-b     4
-c     6
-d    10
-dtype: int64
-</code></pre></div></div>
-
-<h4 id="산술연산"><strong>산술연산</strong></h4>
+<h4 id="csv-데이터로-부터-dataframe-생성">csv 데이터로 부터 Dataframe 생성</h4>
 <ul>
-  <li>Series의 경우에도 스칼라와의 연산은 각 원소별로 스칼라와의 연산이 적용</li>
-  <li>Series와의 연산은 각 인덱스에 맞는 값끼리 연산이 적용
-    <ul>
-      <li>이때, 인덱스의 pair가 맞지 않으면, 결과는 NaN</li>
-    </ul>
-  </li>
+  <li>데이터 분석을 위해, dataframe을 생성하는 가장 일반적인 방법</li>
+  <li>데이터 소스로부터 추출된 csv(comma separated values) 파일로부터 생성</li>
+  <li>pandas.read_csv 함수 사용</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s1</span> <span class="o">**</span> <span class="mi">2</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 </code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a     1
-b     4
-c     9
-d    16
-dtype: int64
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1"># data 출처: https://www.kaggle.com/hesh97/titanicdataset-traincsv/data
+</span><span class="n">train_data</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'./train.csv'</span><span class="p">)</span>
+<span class="n">train_data</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s1</span> <span class="o">**</span> <span class="n">s2</span>
-</code></pre></div></div>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a       1
-b       4
-c      27
-d    4096
-dtype: int64
-</code></pre></div></div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">4</span> <span class="o">**</span> <span class="mi">6</span>
-</code></pre></div></div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PassengerId</th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Braund, Mr. Owen Harris</td>
+      <td>male</td>
+      <td>22.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>A/5 21171</td>
+      <td>7.2500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>PC 17599</td>
+      <td>71.2833</td>
+      <td>C85</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Heikkinen, Miss. Laina</td>
+      <td>female</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>STON/O2. 3101282</td>
+      <td>7.9250</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>113803</td>
+      <td>53.1000</td>
+      <td>C123</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Allen, Mr. William Henry</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>373450</td>
+      <td>8.0500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4096
-</code></pre></div></div>
-
-<h4 id="index-pair가-맞지-않는-경우"><strong>index pair가 맞지 않는 경우</strong></h4>
+<h4 id="read_csv-함수-파라미터">read_csv 함수 파라미터</h4>
 <ul>
-  <li>해당 index에 대해선 NaN 값 생성</li>
+  <li>sep - 각 데이터 값을 구별하기 위한 구분자(separator) 설정</li>
+  <li>header - header를 무시할 경우, None 설정</li>
+  <li>index_col - index로 사용할 column 설정</li>
+  <li>usecols - 실제로 dataframe에 로딩할 columns만 설정</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s1</span><span class="p">[</span><span class="s">'k'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="n">s2</span><span class="p">[</span><span class="s">'e'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train_data</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'./train.csv'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">','</span><span class="p">)</span>
+<span class="n">train_data</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s1</span>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PassengerId</th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Braund, Mr. Owen Harris</td>
+      <td>male</td>
+      <td>22.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>A/5 21171</td>
+      <td>7.2500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>PC 17599</td>
+      <td>71.2833</td>
+      <td>C85</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Heikkinen, Miss. Laina</td>
+      <td>female</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>STON/O2. 3101282</td>
+      <td>7.9250</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>113803</td>
+      <td>53.1000</td>
+      <td>C123</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Allen, Mr. William Henry</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>373450</td>
+      <td>8.0500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>886</th>
+      <td>887</td>
+      <td>0</td>
+      <td>2</td>
+      <td>Montvila, Rev. Juozas</td>
+      <td>male</td>
+      <td>27.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>211536</td>
+      <td>13.0000</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>887</th>
+      <td>888</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Graham, Miss. Margaret Edith</td>
+      <td>female</td>
+      <td>19.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>112053</td>
+      <td>30.0000</td>
+      <td>B42</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>888</th>
+      <td>889</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Johnston, Miss. Catherine Helen "Carrie"</td>
+      <td>female</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>2</td>
+      <td>W./C. 6607</td>
+      <td>23.4500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>889</th>
+      <td>890</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Behr, Mr. Karl Howell</td>
+      <td>male</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>111369</td>
+      <td>30.0000</td>
+      <td>C148</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>890</th>
+      <td>891</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Dooley, Mr. Patrick</td>
+      <td>male</td>
+      <td>32.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>370376</td>
+      <td>7.7500</td>
+      <td>NaN</td>
+      <td>Q</td>
+    </tr>
+  </tbody>
+</table>
+<p>891 rows × 12 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train_data</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'./train.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'PassengerId'</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s">'PassengerId'</span><span class="p">,</span> <span class="s">'Survived'</span><span class="p">,</span> <span class="s">'Pclass'</span><span class="p">,</span> <span class="s">'Name'</span><span class="p">])</span>
+<span class="n">train_data</span>
 </code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a    1
-b    2
-c    3
-d    4
-k    7
-dtype: int64
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+    </tr>
+    <tr>
+      <th>PassengerId</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Braund, Mr. Owen Harris</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Heikkinen, Miss. Laina</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Allen, Mr. William Henry</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>887</th>
+      <td>0</td>
+      <td>2</td>
+      <td>Montvila, Rev. Juozas</td>
+    </tr>
+    <tr>
+      <th>888</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Graham, Miss. Margaret Edith</td>
+    </tr>
+    <tr>
+      <th>889</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Johnston, Miss. Catherine Helen "Carrie"</td>
+    </tr>
+    <tr>
+      <th>890</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Behr, Mr. Karl Howell</td>
+    </tr>
+    <tr>
+      <th>891</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Dooley, Mr. Patrick</td>
+    </tr>
+  </tbody>
+</table>
+<p>891 rows × 3 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train_data</span><span class="p">.</span><span class="n">columns</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s2</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Index(['Survived', 'Pclass', 'Name'], dtype='object')
 </code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>d    6
-c    3
-b    2
-a    1
-e    9
-dtype: int64
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train_data</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'./train.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'PassengerId'</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s">'PassengerId'</span><span class="p">,</span><span class="s">'Name'</span><span class="p">,</span><span class="s">'Sex'</span><span class="p">,</span><span class="s">'Age'</span><span class="p">])</span>
+<span class="n">train_data</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+    </tr>
+    <tr>
+      <th>PassengerId</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Braund, Mr. Owen Harris</td>
+      <td>male</td>
+      <td>22.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+      <td>female</td>
+      <td>38.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Heikkinen, Miss. Laina</td>
+      <td>female</td>
+      <td>26.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+      <td>female</td>
+      <td>35.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Allen, Mr. William Henry</td>
+      <td>male</td>
+      <td>35.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>887</th>
+      <td>Montvila, Rev. Juozas</td>
+      <td>male</td>
+      <td>27.0</td>
+    </tr>
+    <tr>
+      <th>888</th>
+      <td>Graham, Miss. Margaret Edith</td>
+      <td>female</td>
+      <td>19.0</td>
+    </tr>
+    <tr>
+      <th>889</th>
+      <td>Johnston, Miss. Catherine Helen "Carrie"</td>
+      <td>female</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>890</th>
+      <td>Behr, Mr. Karl Howell</td>
+      <td>male</td>
+      <td>26.0</td>
+    </tr>
+    <tr>
+      <th>891</th>
+      <td>Dooley, Mr. Patrick</td>
+      <td>male</td>
+      <td>32.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>891 rows × 3 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train_data</span><span class="p">.</span><span class="n">columns</span>
 </code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a     2.0
-b     4.0
-c     6.0
-d    10.0
-e     NaN
-k     NaN
-dtype: float64
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Index(['Name', 'Sex', 'Age'], dtype='object')
 </code></pre></div></div>
 
 
@@ -389,9 +837,9 @@ dtype: float64
                     <div id="disqus_thread"></div>
                     <script>
                         var disqus_config = function () {
-                            var this_page_url = 'https://SEONGJAE-YOO.github.io/series-operation';
-                            var this_page_identifier = '/series-operation';
-                            var this_page_title = 'Series 데이터 연산하기';
+                            var this_page_url = 'https://SEONGJAE-YOO.github.io/csv-dataframe';
+                            var this_page_identifier = '/csv-dataframe';
+                            var this_page_title = '샘플 csv 데이터로 DataFrame 데이터 생성하기';
                         };
                         (function() {
                             var d = document, s = d.createElement('script');
@@ -484,9 +932,6 @@ dtype: float64
                                 
                                   
                                     
-                                        
-                                        
-                                    
                                   
                                 
                                   
@@ -518,6 +963,9 @@ dtype: float64
                                   
                                 
                                   
+                                    
+                                        
+                                        
                                     
                                   
                                 
@@ -673,12 +1121,12 @@ dtype: float64
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/series-slicing">
+            <a class="post-card-image-link" href="/dataframe-booleansele">
                 <div class="post-card-image" style="background-image: url(/assets/built/images/logo-python.png)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/series-slicing">
+            <a class="post-card-content-link" href="/dataframe-booleansele">
                 <header class="post-card-header">
                     
                         
@@ -688,7 +1136,7 @@ dtype: float64
                         
                     
 
-                    <h2 class="post-card-title">Series 데이터 변경 - 슬라이싱하기</h2>
+                    <h2 class="post-card-title">DataFrame Boolean Selection으로 데이터 선택하기</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
@@ -717,7 +1165,7 @@ dtype: float64
                 <span class="reading-time">
                     
                     
-                      1 min read
+                      6 min read
                     
                 </span>
             </footer>
@@ -732,12 +1180,12 @@ dtype: float64
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/series-index">
+            <a class="post-card-image-link" href="/nsmc-wordcloud">
                 <div class="post-card-image" style="background-image: url(/assets/built/images/logo-python.png)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/series-index">
+            <a class="post-card-content-link" href="/nsmc-wordcloud">
                 <header class="post-card-header">
                     
                         
@@ -747,7 +1195,7 @@ dtype: float64
                         
                     
 
-                    <h2 class="post-card-title">Series 데이터 생성하기(index, value 활용)</h2>
+                    <h2 class="post-card-title">NSMC 정제 - wordcloud 와 histogram으로 단어 분포 파악하기</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
@@ -776,7 +1224,7 @@ dtype: float64
                 <span class="reading-time">
                     
                     
-                      1 min read
+                      2 min read
                     
                 </span>
             </footer>
@@ -798,18 +1246,18 @@ dtype: float64
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">Series 데이터 연산하기</div>
+    <div class="floating-header-title">샘플 csv 데이터로 DataFrame 데이터 생성하기</div>
     <div class="floating-header-share">
         <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Series+%EB%8D%B0%EC%9D%B4%ED%84%B0+%EC%97%B0%EC%82%B0%ED%95%98%EA%B8%B0&amp;url=https://SEONGJAE-YOO.github.io/series-operation"
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%EC%83%98%ED%94%8C+csv+%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A1%9C+DataFrame+%EB%8D%B0%EC%9D%B4%ED%84%B0+%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&amp;url=https://SEONGJAE-YOO.github.io/csv-dataframe"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
 
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://SEONGJAE-YOO.github.io/series-operation"
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://SEONGJAE-YOO.github.io/csv-dataframe"
             onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
 

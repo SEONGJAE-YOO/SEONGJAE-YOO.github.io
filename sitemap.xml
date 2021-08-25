@@ -4,6 +4,118 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://SEONGJAE-YOO.github.io/dataframe-structure.html</loc>
+        
+        <lastmod>2021-08-25T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://SEONGJAE-YOO.github.io/dataframe-row.html</loc>
+        
+        <lastmod>2021-08-25T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://SEONGJAE-YOO.github.io/dataframe-datacreate.html</loc>
+        
+        <lastmod>2021-08-25T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://SEONGJAE-YOO.github.io/dataframe-data.html</loc>
+        
+        <lastmod>2021-08-25T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://SEONGJAE-YOO.github.io/dataframe-column.html</loc>
+        
+        <lastmod>2021-08-25T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://SEONGJAE-YOO.github.io/dataframe-booleansele.html</loc>
+        
+        <lastmod>2021-08-25T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://SEONGJAE-YOO.github.io/csv-dataframe.html</loc>
+        
+        <lastmod>2021-08-25T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
         <loc>https://SEONGJAE-YOO.github.io/nsmc-wordcloud.html</loc>
         
         <lastmod>2021-08-23T00:00:00+09:00</lastmod>
