@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://seongjae-yoo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://seongjae-yoo.github.io/" rel="alternate" type="text/html" /><updated>2021-08-27T17:30:44+09:00</updated><id>https://seongjae-yoo.github.io/feed.xml</id><title type="html">Big Data</title><subtitle>SeongJae Yu 블로그</subtitle><entry><title type="html">Concat 함수로 데이터 프레임 병합하기</title><link href="https://seongjae-yoo.github.io/concat-function" rel="alternate" type="text/html" title="Concat 함수로 데이터 프레임 병합하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/concat-function</id><content type="html" xml:base="https://seongjae-yoo.github.io/concat-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://seongjae-yoo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://seongjae-yoo.github.io/" rel="alternate" type="text/html" /><updated>2021-08-27T17:34:47+09:00</updated><id>https://seongjae-yoo.github.io/feed.xml</id><title type="html">Big Data</title><subtitle>SeongJae Yu 블로그</subtitle><entry><title type="html">Concat 함수로 데이터 프레임 병합하기</title><link href="https://seongjae-yoo.github.io/concat-function" rel="alternate" type="text/html" title="Concat 함수로 데이터 프레임 병합하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/concat-function</id><content type="html" xml:base="https://seongjae-yoo.github.io/concat-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -580,12 +580,12 @@
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">transform 함수의 이해 및 활용하기</title><link href="https://seongjae-yoo.github.io/transform-function" rel="alternate" type="text/html" title="transform 함수의 이해 및 활용하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/transform-function</id><content type="html" xml:base="https://seongjae-yoo.github.io/transform-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
+&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">transform 함수의 이해 및 활용하기</title><link href="https://seongjae-yoo.github.io/transform-function" rel="alternate" type="text/html" title="transform 함수의 이해 및 활용하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/transform-function</id><content type="html" xml:base="https://seongjae-yoo.github.io/transform-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -1628,12 +1628,12 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;891 rows × 14 columns&lt;/p&gt;
-&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">stack, unstack 함수의 이해 및 활용하기</title><link href="https://seongjae-yoo.github.io/stack-function" rel="alternate" type="text/html" title="stack, unstack 함수의 이해 및 활용하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/stack-function</id><content type="html" xml:base="https://seongjae-yoo.github.io/stack-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
+&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">stack, unstack 함수의 이해 및 활용하기</title><link href="https://seongjae-yoo.github.io/stack-function" rel="alternate" type="text/html" title="stack, unstack 함수의 이해 및 활용하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/stack-function</id><content type="html" xml:base="https://seongjae-yoo.github.io/stack-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -2328,12 +2328,12 @@
 경기 수요일   100    80
    목요일    50    50
    금요일   100    10&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">pivot, pivot_table 함수의 이해 및 활용하기</title><link href="https://seongjae-yoo.github.io/pivot-function" rel="alternate" type="text/html" title="pivot, pivot_table 함수의 이해 및 활용하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/pivot-function</id><content type="html" xml:base="https://seongjae-yoo.github.io/pivot-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">pivot, pivot_table 함수의 이해 및 활용하기</title><link href="https://seongjae-yoo.github.io/pivot-function" rel="alternate" type="text/html" title="pivot, pivot_table 함수의 이해 및 활용하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/pivot-function</id><content type="html" xml:base="https://seongjae-yoo.github.io/pivot-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -2933,12 +2933,12 @@
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">Merge_join 함수로 데이터 프레임 병합하기</title><link href="https://seongjae-yoo.github.io/merge-join" rel="alternate" type="text/html" title="Merge_join 함수로 데이터 프레임 병합하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/merge-join</id><content type="html" xml:base="https://seongjae-yoo.github.io/merge-join">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
+&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">Merge_join 함수로 데이터 프레임 병합하기</title><link href="https://seongjae-yoo.github.io/merge-join" rel="alternate" type="text/html" title="Merge_join 함수로 데이터 프레임 병합하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/merge-join</id><content type="html" xml:base="https://seongjae-yoo.github.io/merge-join">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -4284,12 +4284,12 @@ Name: quantity, dtype: int64
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">DataFrame group by 이해하기</title><link href="https://seongjae-yoo.github.io/dataframe-groupby" rel="alternate" type="text/html" title="DataFrame group by 이해하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/dataframe-groupby</id><content type="html" xml:base="https://seongjae-yoo.github.io/dataframe-groupby">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
+&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">DataFrame group by 이해하기</title><link href="https://seongjae-yoo.github.io/dataframe-groupby" rel="alternate" type="text/html" title="DataFrame group by 이해하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/dataframe-groupby</id><content type="html" xml:base="https://seongjae-yoo.github.io/dataframe-groupby">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -5668,12 +5668,12 @@ Name: Age, dtype: float64
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">숫자 데이터의 범주형 데이터화</title><link href="https://seongjae-yoo.github.io/num-categoricaldata" rel="alternate" type="text/html" title="숫자 데이터의 범주형 데이터화" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/num-categoricaldata</id><content type="html" xml:base="https://seongjae-yoo.github.io/num-categoricaldata">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
+&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">숫자 데이터의 범주형 데이터화</title><link href="https://seongjae-yoo.github.io/num-categoricaldata" rel="alternate" type="text/html" title="숫자 데이터의 범주형 데이터화" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/num-categoricaldata</id><content type="html" xml:base="https://seongjae-yoo.github.io/num-categoricaldata">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -6091,12 +6091,12 @@ memory usage: 83.7+ KB
 889    20
 890    30
 Name: Age, Length: 891, dtype: int64
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">숫자 데이터와 범주형 데이터의 이해</title><link href="https://seongjae-yoo.github.io/num-categorical" rel="alternate" type="text/html" title="숫자 데이터와 범주형 데이터의 이해" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/num-categorical</id><content type="html" xml:base="https://seongjae-yoo.github.io/num-categorical">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">숫자 데이터와 범주형 데이터의 이해</title><link href="https://seongjae-yoo.github.io/num-categorical" rel="alternate" type="text/html" title="숫자 데이터와 범주형 데이터의 이해" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/num-categorical</id><content type="html" xml:base="https://seongjae-yoo.github.io/num-categorical">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -6273,12 +6273,12 @@ memory usage: 83.7+ KB
       &lt;li&gt;예) Pclass&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">DataFrame 구조 이해하기</title><link href="https://seongjae-yoo.github.io/dataframe-structure" rel="alternate" type="text/html" title="DataFrame 구조 이해하기" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/dataframe-structure</id><content type="html" xml:base="https://seongjae-yoo.github.io/dataframe-structure">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">DataFrame 구조 이해하기</title><link href="https://seongjae-yoo.github.io/dataframe-structure" rel="alternate" type="text/html" title="DataFrame 구조 이해하기" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/dataframe-structure</id><content type="html" xml:base="https://seongjae-yoo.github.io/dataframe-structure">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -6433,12 +6433,12 @@ memory usage: 83.7+ KB
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Index(['PassengerId', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp',
        'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked'],
       dtype='object')
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">DataFrame 원하는 row(데이터)만 선택하기</title><link href="https://seongjae-yoo.github.io/dataframe-row" rel="alternate" type="text/html" title="DataFrame 원하는 row(데이터)만 선택하기" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/dataframe-row</id><content type="html" xml:base="https://seongjae-yoo.github.io/dataframe-row">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">DataFrame 원하는 row(데이터)만 선택하기</title><link href="https://seongjae-yoo.github.io/dataframe-row" rel="alternate" type="text/html" title="DataFrame 원하는 row(데이터)만 선택하기" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/dataframe-row</id><content type="html" xml:base="https://seongjae-yoo.github.io/dataframe-row">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
