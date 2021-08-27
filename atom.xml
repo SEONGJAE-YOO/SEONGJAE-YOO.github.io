@@ -129,9 +129,11 @@ tags: [python]&lt;br /&gt;
 class: post-template
 subclass: ‘post tag-python’
 author: SeongJae Yu
-sitemap :
-changefreq : daily
-priority : 1.0
+sitemap:
+lastmod: 2021-08-27
+priority: 0.7
+changefreq: ‘monthly’
+exclude: ‘yes’
 —
 &lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;

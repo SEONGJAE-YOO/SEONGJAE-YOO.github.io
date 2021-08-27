@@ -1,9 +1,4 @@
----
-        layout: null
-        sitemap:
-        exclude: 'yes'
-        ---
-        <?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     
@@ -761,7 +756,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/404.html</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
@@ -776,7 +771,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/archive</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
@@ -791,7 +786,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/atom.xml</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
@@ -806,7 +801,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/author_archive</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
@@ -821,7 +816,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/feed.xml</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
@@ -836,7 +831,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
@@ -851,7 +846,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/jquery-mousewheel-main/test/</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
@@ -866,7 +861,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/about/</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
@@ -881,7 +876,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/search</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
@@ -896,7 +891,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/sitemap.xml</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
@@ -911,7 +906,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/tag/python/feed.xml</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
@@ -926,7 +921,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/tag/python/</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
@@ -941,7 +936,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/tag/python/page2/</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
@@ -956,7 +951,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/tag/python/page3/</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
@@ -971,7 +966,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/tag/processmining/feed.xml</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
@@ -986,7 +981,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/tag/processmining/</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
@@ -1001,7 +996,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/author/SeongJae%20Yu/feed.xml</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
@@ -1016,7 +1011,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/author/SeongJae%20Yu/</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
@@ -1031,7 +1026,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/author/SeongJae%20Yu/page2/</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
@@ -1046,7 +1041,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/author/SeongJae%20Yu/page3/</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
@@ -1061,7 +1056,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/page2/</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
@@ -1076,7 +1071,7 @@
     <url>
         <loc>https://SEONGJAE-YOO.github.io/page3/</loc>
         
-        <lastmod>2021-08-28T02:23:25+09:00</lastmod>
+        <lastmod>2021-08-28T02:39:55+09:00</lastmod>
         
         
         <changefreq>monthly</changefreq>
