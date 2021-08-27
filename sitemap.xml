@@ -4,6 +4,102 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://SEONGJAE-YOO.github.io/transform-function.html</loc>
+        
+        <lastmod>2021-08-27T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://SEONGJAE-YOO.github.io/stack-function.html</loc>
+        
+        <lastmod>2021-08-27T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://SEONGJAE-YOO.github.io/pivot-function.html</loc>
+        
+        <lastmod>2021-08-27T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://SEONGJAE-YOO.github.io/merge-join.html</loc>
+        
+        <lastmod>2021-08-27T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://SEONGJAE-YOO.github.io/dataframe-groupby.html</loc>
+        
+        <lastmod>2021-08-27T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://SEONGJAE-YOO.github.io/concat-function.html</loc>
+        
+        <lastmod>2021-08-27T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
         <loc>https://SEONGJAE-YOO.github.io/num-categoricaldata.html</loc>
         
         <lastmod>2021-08-25T00:00:00+09:00</lastmod>
