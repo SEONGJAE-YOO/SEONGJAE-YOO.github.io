@@ -1,12 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
+---
+        layout: null
+        ---
+        <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Big Data</title>
         <description>SeongJae Yu 블로그</description>
         <link>https://SEONGJAE-YOO.github.io//</link>
         <atom:link href="https://SEONGJAE-YOO.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sat, 28 Aug 2021 01:20:32 +0900</pubDate>
-        <lastBuildDate>Sat, 28 Aug 2021 01:20:32 +0900</lastBuildDate>
+        <pubDate>Sat, 28 Aug 2021 01:43:38 +0900</pubDate>
+        <lastBuildDate>Sat, 28 Aug 2021 01:43:38 +0900</lastBuildDate>
         <generator>Jekyll v3.9.0</generator>
         
         <item>
