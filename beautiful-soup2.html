@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>beautifulsoup 모듈 - 02.beautifulsoup 모듈 사용하기</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- 웹폰트 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="SeongJae Yu 블로그" />
+    <link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
+    <link rel="canonical" href="https://SEONGJAE-YOO.github.io/beautiful-soup2" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Big Data" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="beautifulsoup 모듈 - 02.beautifulsoup 모듈 사용하기" />
+    <meta property="og:description" content="dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다) 학습목표 beautifulsoup 모듈 사용하기 id, class 속성으로 tag 찾기 CSS를 이용하여 tag 찾기 속성 값으로 tag 찾기 정규표현식으로 tag 찾기 개발자도구를 이용하여 동적으로 로딩되는 데이터 추출하기 import requests from bs4 import BeautifulSoup 다음 뉴스 데이터 추출 뉴스기사에서 제목, 작성자, 작성일 ," />
+    <meta property="og:url" content="https://SEONGJAE-YOO.github.io/beautiful-soup2" />
+    <meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-08-27T00:00:00+09:00" />
+    <meta property="article:modified_time" content="2021-08-27T00:00:00+09:00" />
+    <meta property="article:tag" content="Python" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="beautifulsoup 모듈 - 02.beautifulsoup 모듈 사용하기" />
+    <meta name="twitter:description" content="dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다) 학습목표 beautifulsoup 모듈 사용하기 id, class 속성으로 tag 찾기 CSS를 이용하여 tag 찾기 속성 값으로 tag 찾기 정규표현식으로 tag 찾기 개발자도구를 이용하여 동적으로 로딩되는 데이터 추출하기 import requests from bs4 import BeautifulSoup 다음 뉴스 데이터 추출 뉴스기사에서 제목, 작성자, 작성일 ," />
+    <meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
+    <meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Big Data" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Python" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Big Data",
+        "logo": "https://SEONGJAE-YOO.github.io/"
+    },
+    "url": "https://SEONGJAE-YOO.github.io/beautiful-soup2",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://SEONGJAE-YOO.github.io/beautiful-soup2"
+    },
+    "description": "dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다) 학습목표 beautifulsoup 모듈 사용하기 id, class 속성으로 tag 찾기 CSS를 이용하여 tag 찾기 속성 값으로 tag 찾기 정규표현식으로 tag 찾기 개발자도구를 이용하여 동적으로 로딩되는 데이터 추출하기 import requests from bs4 import BeautifulSoup 다음 뉴스 데이터 추출 뉴스기사에서 제목, 작성자, 작성일 ,"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="beautifulsoup 모듈 - 02.beautifulsoup 모듈 사용하기" href="/feed.xml" />
+
+
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://SEONGJAE-YOO.github.io/">Big Data</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-processmining" role="menuitem"><a href="/tag/processmining/">processmining</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag별 Posts</a>
+    </li>
+</ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-python post tag-python ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="27 August 2021">27 August 2021</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/python/'>PYTHON</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">beautifulsoup 모듈 - 02.beautifulsoup 모듈 사용하기</h1>
+            </header>
+            <!--
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/logo-python.png)">
+            </figure>
+            
+            -->
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <p><span class="table-of-contents-list">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</span>
+<!--<ul class="table-of-contents-list">--></p>
+
+<!--</ul>-->
+
+<h3 id="학습목표">학습목표</h3>
+<ol>
+  <li>beautifulsoup 모듈 사용하기</li>
+  <li>id, class 속성으로 tag 찾기</li>
+  <li>CSS를 이용하여 tag 찾기</li>
+  <li>속성 값으로 tag 찾기</li>
+  <li>정규표현식으로 tag 찾기</li>
+  <li>개발자도구를 이용하여 동적으로 로딩되는 데이터 추출하기</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+</code></pre></div></div>
+
+<h4 id="다음-뉴스-데이터-추출">다음 뉴스 데이터 추출</h4>
+<ul>
+  <li>뉴스기사에서 제목, 작성자, 작성일
+, 댓글 개수 추출</li>
+  <li><a href="https://news.v.daum.net/v/20190728165812603">뉴스링크</a></li>
+  <li>tag를 추출할때는 가장 그 tag를 쉽게 특정할 수 있는 속성을 사용</li>
+  <li>
+    <p>id의 경우 원칙적으로 한 html 문서 내에서 유일</p>
+  </li>
+  <li>id, class 속성으로 tag 찾기</li>
+  <li>타이틀</li>
+  <li>작성자, 작성일</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://news.v.daum.net/v/20190728165812603'</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">resp</span><span class="p">.</span><span class="n">text</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'&lt;!doctype html&gt;\n&lt;html lang="ko"&gt; \n &lt;head data-cloud-area="head"&gt; \n  &lt;meta charset="utf-8"&gt; \n  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt; \n  &lt;style&gt;\n            @import url(\'//t1.daumcdn.net/harmony_static/cloud/page/3e96c93f90d4df7aca693bfb2ba2ea76d2d14d92.css\');\n            @import url(\'//t1.daumcdn.net/harmony_static/cloud/2021/05/03/common.4fa0ea63845693bada8b.css\')\n        &lt;/style&gt; \n  &lt;style&gt;\n            /* 다음 카페 소셜 쉐어 임시 비활성화 */\n            .list_sns li:nth-child(6) {\n                display: none;\n            }\n        &lt;/style&gt; \n  &lt;meta property="mccp:docId" content="NHT9NtZWBe"&gt; \n  &lt;meta property="og:site_name" content="다음뉴스"&gt; \n  &lt;meta property="og:title" content="일론머스크 &amp;quot;테슬라에서 넷플릭스·유튜브 즐길 날 온다&amp;quot;"&gt; \n  &lt;meta property="og:regDate" content="20190728165812"&gt; \n  &lt;meta property="og:type" content="article"&gt; \n  &lt;meta property="og:url" content="https://news.v.daum.net/v/NHT9NtZWBe"&gt; \n  &lt;meta property="og:image" content="https://img1.daumcdn.net/thumb/S1200x630/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg"&gt; \n  &lt;meta property="og:image:width" content="1200"&gt; \n  &lt;meta property="og:image:height" content="630"&gt; \n  &lt;meta property="og:description" content="[아시아경제 이민우 기자] 일론 머스크 테슬라 최고경영자(CEO)가 자사 전기 자동차 모델에 넷플릭스와 유튜브 등 온라인동영상서비스(OTT)를 탑재할 것이라고 예고했다. 단순히 자율 주행 전기차가 단순히 주행을 위한 정보를 알려주는 것을 넘어 각종 영상 콘텐츠를 즐기는 공간으로도 확장하겠다는 전략으로 풀이된다.27일(현지시간) 더버지 등 주요 외신들에 따르"&gt; \n  &lt;meta property="al:android:url" content="daumapps://web?url=https%3A%2F%2Fnews.v.daum.net/v/NHT9NtZWBe"&gt; \n  &lt;meta property="al:android:package" content="net.daum.android.daum"&gt; \n  &lt;meta property="al:android:app_name" content="다음앱"&gt; \n  &lt;meta property="al:ios:url" content="daumapps://web?url=https%3A%2F%2Fnews.v.daum.net/v/NHT9NtZWBe"&gt; \n  &lt;meta property="al:ios:app_store_id" content="365494029"&gt; \n  &lt;meta property="al:ios:app_name" content="다음앱"&gt; \n  &lt;meta property="twitter:card" content="summary_large_image"&gt; \n  &lt;meta property="twitter:app:url:googleplay" content="daumapps://web?url=https%3A%2F%2Fnews.v.daum.net/v/NHT9NtZWBe"&gt; \n  &lt;meta property="twitter:app:id:googleplay" content="net.daum.android.daum"&gt; \n  &lt;meta property="twitter:app:name:googleplay" content="다음앱"&gt; \n  &lt;meta property="twitter:app:country" content="KR"&gt; \n  &lt;meta property="twitter:app:url:iphone" content="daumapps://web?url=https%3A%2F%2Fnews.v.daum.net/v/NHT9NtZWBe"&gt; \n  &lt;meta property="twitter:app:id:iphone" content="365494029"&gt; \n  &lt;meta property="twitter:app:name:iphone" content="다음앱"&gt; \n  &lt;meta property="twitter:app:url:ipad" content="daumapps://web?url=https%3A%2F%2Fnews.v.daum.net/v/NHT9NtZWBe"&gt; \n  &lt;meta property="twitter:app:id:ipad" content="365494029"&gt; \n  &lt;meta property="twitter:app:name:ipad" content="다음앱"&gt; \n  &lt;meta name="referrer" content="always"&gt; \n  &lt;title&gt;일론머스크 "테슬라에서 넷플릭스·유튜브 즐길 날 온다"&lt;/title&gt; \n  &lt;link rel="shortcut icon" href="//m2.daumcdn.net/img-media/2010ci/Daum_favicon.ico"&gt; \n &lt;/head&gt; \n &lt;body class=""&gt;      \n  &lt;div id="kakaoIndex"&gt; &lt;a href="#kakaoBody"&gt;본문 바로가기&lt;/a&gt; &lt;a href="#kakaoGnb"&gt;메뉴 바로가기&lt;/a&gt; \n  &lt;/div&gt; \n  &lt;div id="kakaoWrap" class="newsview_media"&gt; \n   &lt;div id="wrapMinidaum"&gt;&lt;/div&gt; \n   &lt;div id="kakaoHead" role="banner" data-cloud-area="header"&gt; \n    &lt;div class="head_media" data-cloud="pc_header_gnb"&gt; \n     &lt;h1&gt; &lt;a href="https://www.daum.net" class="link_daum"&gt; &lt;img src="//t1.daumcdn.net/media/news/news2016/retina/logo_daum.jpg" width="45" height="19" class="thumb_g" alt="Daum"&gt; &lt;/a&gt; &lt;a href="//news.daum.net" id="kakaoServiceLogo"&gt;&lt;span class="ir_wa"&gt;뉴스&lt;/span&gt;&lt;/a&gt; &lt;/h1&gt; &lt;strong class="screen_out"&gt;관련서비스&lt;/strong&gt; \n     &lt;ul id="kakaoRelServices"&gt; \n      &lt;li&gt;&lt;a href="https://entertain.daum.net/" class="link_services link_services1"&gt;&lt;span class="ir_wa"&gt;연예&lt;/span&gt;&lt;/a&gt;&lt;/li&gt; \n      &lt;li&gt;&lt;a href="https://sports.daum.net/" class="link_services link_services2"&gt;&lt;span class="ir_wa"&gt;스포츠&lt;/span&gt;&lt;/a&gt;&lt;/li&gt; \n     &lt;/ul&gt; \n     &lt;h2 class="screen_out"&gt;검색&lt;/h2&gt; \n     &lt;div class="search_news" id="search_news"&gt; \n      &lt;form id="kakaoSearch" name="kakaoSearch" action="https://search.daum.net/search" method="get"&gt; \n       &lt;fieldset class="fld_inside"&gt; &lt;legend class="screen_out"&gt;검색어 입력폼&lt;/legend&gt; \n        &lt;div class="box_searchbar"&gt; &lt;label for="qVal" class="lab_search"&gt;통합검색&lt;/label&gt; \n         &lt;input type="hidden" name="nil_profile" value="search"&gt; \n         &lt;input type="hidden" name="nil_src" value="media"&gt; \n         &lt;input type="hidden" name="DA" value="23A"&gt; \n         &lt;input type="hidden" name="rtmaxcoll" value="NNS"&gt; \n         &lt;input type="text" class="tf_keyword" id="qVal" name="q" value="" title="검색어 입력" autocomplete="off" spellcheck="false"&gt; &lt;button id="kakaoBtnSearch" class="btn_search" type="submit"&gt;&lt;span class="ir_wa"&gt;검색&lt;/span&gt;&lt;/button&gt; \n        &lt;/div&gt; \n       &lt;/fieldset&gt; \n       &lt;div id="wrap_suggestBox" class="wrap_suggestBox"&gt; \n        &lt;div id="suggestBox" class="suggestBox box_sub"&gt; \n         &lt;div class="baseBox bg" style="display: none"&gt;&lt;/div&gt; \n        &lt;/div&gt; \n       &lt;/div&gt; \n      &lt;/form&gt; \n     &lt;/div&gt; \n    &lt;/div&gt; \n    &lt;div id="kakaoGnb" role="navigation" data-cloud="pc_header_gnb"&gt; \n     &lt;div class="inner_gnb"&gt; \n      &lt;h2 class="screen_out"&gt;뉴스 메인메뉴&lt;/h2&gt; \n      &lt;ul class="gnb_comm" data-category="digital"&gt; \n       &lt;li class="home"&gt;&lt;a href="//news.daum.net/" class="link_gnb link_gnb1"&gt;&lt;span class="ir_wa"&gt;홈&lt;/span&gt;&lt;span class="bar_gnb"&gt;&lt;span class="inner_bar"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt; \n       &lt;li class="society"&gt;&lt;a href="//news.daum.net/society/" class="link_gnb link_gnb2"&gt;&lt;span class="ir_wa"&gt;사회&lt;/span&gt;&lt;span class="bar_gnb"&gt;&lt;span class="inner_bar"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt; \n       &lt;li class="politics"&gt;&lt;a href="//news.daum.net/politics/" class="link_gnb link_gnb3"&gt;&lt;span class="ir_wa"&gt;정치&lt;/span&gt;&lt;span class="bar_gnb"&gt;&lt;span class="inner_bar"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt; \n       &lt;li class="economic"&gt;&lt;a href="//news.daum.net/economic/" class="link_gnb link_gnb4"&gt;&lt;span class="ir_wa"&gt;경제&lt;/span&gt;&lt;span class="bar_gnb"&gt;&lt;span class="inner_bar"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt; \n       &lt;li class="foreign"&gt;&lt;a href="//news.daum.net/foreign/" class="link_gnb link_gnb5"&gt;&lt;span class="ir_wa"&gt;국제&lt;/span&gt;&lt;span class="bar_gnb"&gt;&lt;span class="inner_bar"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt; \n       &lt;li class="culture"&gt;&lt;a href="//news.daum.net/culture/" class="link_gnb link_gnb6"&gt;&lt;span class="ir_wa"&gt;문화&lt;/span&gt;&lt;span class="bar_gnb"&gt;&lt;span class="inner_bar"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt; \n       &lt;li class="digital"&gt;&lt;a href="//news.daum.net/digital/" class="link_gnb link_gnb7"&gt;&lt;span class="ir_wa"&gt;IT&lt;/span&gt;&lt;span class="bar_gnb"&gt;&lt;span class="inner_bar"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt; \n       &lt;li class="popular"&gt;&lt;a href="//news.daum.net/ranking/popular" class="link_gnb link_gnb8"&gt;&lt;span class="ir_wa"&gt;랭킹&lt;/span&gt;&lt;span class="bar_gnb"&gt;&lt;span class="inner_bar"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt; \n       &lt;li class="series editorial"&gt;&lt;a href="//news.daum.net/series" class="link_gnb link_gnb9"&gt;&lt;span class="ir_wa"&gt;연재&lt;/span&gt;&lt;span class="bar_gnb"&gt;&lt;span class="inner_bar"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt; \n       &lt;li class="photo"&gt;&lt;a href="//news.daum.net/photo" class="link_gnb link_gnb10"&gt;&lt;span class="ir_wa"&gt;포토&lt;/span&gt;&lt;span class="bar_gnb"&gt;&lt;span class="inner_bar"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt; \n       &lt;li class="tv"&gt;&lt;a href="//news.daum.net/tv" class="link_gnb link_gnb11"&gt;&lt;span class="ir_wa"&gt;TV&lt;/span&gt;&lt;span class="bar_gnb"&gt;&lt;span class="inner_bar"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt; \n      &lt;/ul&gt; \n      &lt;div class="gnb_etc"&gt; \n       &lt;ul class="gnb_with"&gt; \n        &lt;li&gt;&lt;a href="//news.daum.net/1boon" class="link_gnb link_gnb1"&gt;&lt;span class="ir_wa"&gt;1boon&lt;/span&gt;&lt;/a&gt;&lt;/li&gt; \n        &lt;li&gt;&lt;a href="//gallery.v.daum.net/p/home" class="link_gnb link_gnb2"&gt;&lt;span class="ir_wa"&gt;갤러리&lt;/span&gt;&lt;span class="bar_gnb"&gt;&lt;span class="inner_bar"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt; \n       &lt;/ul&gt;  \n       &lt;div class="gnb_weather"&gt; &lt;strong class="screen_out"&gt;날씨 정보&lt;/strong&gt; \n        &lt;div id="gnb_weather"&gt; \n         &lt;ul class="list_weather" data-nightyn="N"&gt;&lt;/ul&gt; \n        &lt;/div&gt; \n       &lt;/div&gt; \n      &lt;/div&gt; \n     &lt;/div&gt; \n    &lt;/div&gt; \n    &lt;div id="barProgress" class="bar_progress" data-cloud="pc_header_gnb"&gt;&lt;/div&gt;          \n   &lt;/div&gt; \n   &lt;div id="dummyKakaoGnb" style="height:137px; display:none;"&gt;&lt;/div&gt; \n   &lt;hr class="hide"&gt; \n   &lt;div id="kakaoContent" class="cont_view" role="main"&gt; \n    &lt;h2 id="kakaoBody" class="screen_out"&gt;IT&lt;/h2&gt; \n    &lt;div id="cSub" data-cloud-area="title"&gt; \n     &lt;div class="head_view" data-cloud="pc_article_title_and_util"&gt; &lt;em class="info_cp"&gt; &lt;a href="https://www.asiae.co.kr" class="link_cp" target="_blank"&gt; &lt;img src="https://t1.daumcdn.net/media/news/news2016/cp/cp_akn.gif" class="thumb_g" alt="아시아경제"&gt; &lt;/a&gt; &lt;/em&gt; \n      &lt;h3 class="tit_view" data-translation="true"&gt;일론머스크 "테슬라에서 넷플릭스·유튜브 즐길 날 온다"&lt;/h3&gt; &lt;span class="info_view"&gt; &lt;span class="txt_info"&gt;이민우&lt;/span&gt; &lt;span class="txt_info"&gt;입력 &lt;span class="num_date"&gt;2019. 07. 28. 16:58&lt;/span&gt;&lt;/span&gt; &lt;button id="alexCounter" class="emph_g2 link_cmt"&gt;댓글 &lt;span class="alex-count-area"&gt;0&lt;/span&gt;개&lt;/button&gt; &lt;/span&gt; \n      &lt;div class="util_view"&gt; \n       &lt;h4 class="screen_out"&gt;기사 도구 모음&lt;/h4&gt;  \n       &lt;div class="btn_util util_summary"&gt; &lt;button type="button" class="btn_summary" aria-expanded="false"&gt;&lt;span class="ico_newsview"&gt;자동요약&lt;/span&gt;&lt;/button&gt; \n        &lt;div class="wrap_setlayer"&gt; \n         &lt;div class="layer_util layer_summary"&gt; \n          &lt;p&gt;일론 머스크 테슬라 최고경영자(CEO)가 자사 전기 자동차 모델에 넷플릭스와 유튜브 등 온라인동영상서비스(OTT)를 탑재할 것이라고 예고했다.&lt;/p&gt;\n          &lt;p&gt;단순히 자율 주행 전기차가 단순히 주행을 위한 정보를 알려주는 것을 넘어 각종 영상 콘텐츠를 즐기는 공간으로도 확장하겠다는 전략으로 풀이된다.&lt;/p&gt;\n          &lt;p&gt;테슬라 측은 규제당국이 자율주행에 대해 완전히 승인하면 차량이 움직일 때에도 승객이 동영상을 즐길 수 있을 것이라고 설명했다.&lt;/p&gt; &lt;span class="info_summary"&gt;&lt;span class="ico_newsview"&gt;&lt;/span&gt;기사 제목과 주요 문장을 기반으로 자동요약한 결과입니다. 전체 맥락을 이해하기 위해서는 본문 보기를 권장합니다.&lt;/span&gt; \n         &lt;/div&gt; \n        &lt;/div&gt; \n       &lt;/div&gt;  \n       &lt;div class="btn_util tts_btn"&gt; &lt;button type="button" class="btn_set btn_tts" aria-expanded="false"&gt; &lt;span class="ico_newsview ico_speak"&gt;음성 기사 듣기&lt;/span&gt; &lt;/button&gt; \n        &lt;div class="wrap_setlayer"&gt; \n         &lt;div class="layer_util layer_set layer_tts"&gt; &lt;strong class="screen_out"&gt;음성 기사 옵션 조절 레이어&lt;/strong&gt; \n          &lt;ul class="list_set list_tts"&gt; \n           &lt;li&gt; &lt;input type="radio" id="ttsGenderMale" name="ttsGender" class="screen_out" value="Male"&gt; &lt;label class="lab_set" for="ttsGenderMale"&gt;&lt;span class="ico_newsview"&gt;&lt;/span&gt;남성&lt;/label&gt; &lt;/li&gt; \n           &lt;li&gt; &lt;input type="radio" id="ttsGenderFemale" name="ttsGender" class="screen_out" value="Female"&gt; &lt;label class="lab_set" for="ttsGenderFemale"&gt;&lt;span class="ico_newsview"&gt;&lt;/span&gt;여성&lt;/label&gt; &lt;/li&gt; \n          &lt;/ul&gt; \n          &lt;ul class="list_set list_tts list_ttsspeed"&gt; \n           &lt;li&gt; &lt;input type="radio" id="ttsSpeedSlow" name="ttsSpeed" class="screen_out" value="slow"&gt; &lt;label class="lab_set" for="ttsSpeedSlow"&gt;&lt;span class="ico_newsview"&gt;&lt;/span&gt;느림&lt;/label&gt; &lt;/li&gt; \n           &lt;li&gt; &lt;input type="radio" id="ttsSpeedNormal" name="ttsSpeed" class="screen_out" value="normal"&gt; &lt;label class="lab_set" for="ttsSpeedNormal"&gt;&lt;span class="ico_newsview"&gt;&lt;/span&gt;보통&lt;/label&gt; &lt;/li&gt; \n           &lt;li&gt; &lt;input type="radio" id="ttsSpeedFast" name="ttsSpeed" class="screen_out" value="fast"&gt; &lt;label class="lab_set" for="ttsSpeedFast"&gt;&lt;span class="ico_newsview"&gt;&lt;/span&gt;빠름&lt;/label&gt; &lt;/li&gt; \n          &lt;/ul&gt; \n         &lt;/div&gt; \n        &lt;/div&gt; \n        &lt;audio style="display:none" preload="none" id="ttsPlayer"&gt;&lt;/audio&gt; \n       &lt;/div&gt;  \n       &lt;div class="btn_util translate_btn"&gt; &lt;button type="button" class="btn_set btn_translate #util #translate #set" aria-expanded="false"&gt;&lt;span class="ico_newsview"&gt;번역 설정&lt;/span&gt;&lt;/button&gt; \n        &lt;div class="wrap_translatelayer"&gt; \n         &lt;div class="layer_util layer_translate"&gt; &lt;strong class="tit_translate"&gt;번역&lt;span class="ico_newsview"&gt;beta&lt;/span&gt; &lt;/strong&gt; \n          &lt;p class="desc_translate txt_newsview"&gt;Translated by &lt;a href="https://kakao.ai/" target="_blank" class="link_kakaoi #util #translate #kakaoi_link"&gt;kakao i&lt;/a&gt;&lt;/p&gt; &lt;strong class="screen_out"&gt;번역할 언어 선택&lt;/strong&gt; \n          &lt;ul class="list_lang"&gt; \n           &lt;li&gt; &lt;button class="btn_lang btn_en #util #translate #lang_en" name="en"&gt; &lt;span class="ico_newsview ico_flag"&gt;&lt;/span&gt; &lt;strong class="ico_newsview tit_lang"&gt;English&lt;/strong&gt; &lt;/button&gt; &lt;/li&gt; \n           &lt;li&gt; &lt;button type="button" class="btn_lang btn_ch #util #translate #lang_cn" name="cn"&gt; &lt;span class="ico_newsview ico_flag"&gt;&lt;/span&gt; &lt;strong class="ico_newsview tit_lang"&gt;简体中文&lt;/strong&gt; &lt;/button&gt; &lt;/li&gt; \n           &lt;li&gt; &lt;button type="button" class="btn_lang btn_jp #util #translate #lang_jp" name="jp"&gt; &lt;span class="ico_newsview ico_flag"&gt;&lt;/span&gt; &lt;strong class="ico_newsview tit_lang"&gt;日本語&lt;/strong&gt; &lt;/button&gt; &lt;/li&gt; \n           &lt;li&gt; &lt;button type="button" class="btn_lang btn_ind #util #translate #lang_id" name="id"&gt; &lt;span class="ico_newsview ico_flag"&gt;&lt;/span&gt; &lt;strong class="ico_newsview tit_lang"&gt;Bahasa Indonesia&lt;/strong&gt; &lt;/button&gt; &lt;/li&gt; \n           &lt;li&gt; &lt;button type="button" class="btn_lang btn_viet #util #translate #lang_vi" name="vi"&gt; &lt;span class="ico_newsview ico_flag"&gt;&lt;/span&gt; &lt;strong class="ico_newsview tit_lang"&gt;tiếng Việt&lt;/strong&gt; &lt;/button&gt; &lt;/li&gt; \n           &lt;li&gt; &lt;button type="button" class="btn_lang btn_ko #util #translate #lang_kr" name="kr"&gt; &lt;span class="ico_newsview ico_flag"&gt;&lt;/span&gt; &lt;strong class="ico_newsview tit_lang"&gt;한국어&lt;/strong&gt; &lt;/button&gt; &lt;/li&gt; \n          &lt;/ul&gt; \n         &lt;/div&gt; \n        &lt;/div&gt; \n       &lt;/div&gt;  \n       &lt;div class="btn_util share_btn"&gt; &lt;button id="rSocialShareButton" class="btn_set btn_share" aria-expanded="false"&gt; &lt;span class="ico_newsview"&gt;공유&lt;/span&gt; &lt;/button&gt; \n        &lt;div id="rSocialShareLayerContainer"&gt;&lt;/div&gt;  \n       &lt;/div&gt;  \n       &lt;div class="btn_util font_btn"&gt; &lt;button type="button" class="btn_set btn_font" aria-expanded="false"&gt; &lt;span class="ico_newsview ico_font"&gt;글씨크기 조절하기&lt;/span&gt; &lt;/button&gt; \n        &lt;div class="wrap_setlayer"&gt; \n         &lt;div class="layer_util layer_set layer_font"&gt; &lt;strong class="screen_out"&gt;글자 크기 조절 레이어&lt;/strong&gt; \n          &lt;ul class="list_set list_font"&gt; \n           &lt;li&gt; &lt;input type="radio" id="inpFont17" name="inpFont" class="screen_out" value="17"&gt; &lt;label class="lab_set lab_size0" for="inpFont17"&gt; &lt;span class="ico_newsview"&gt;&lt;/span&gt; &lt;span aria-hidden="true"&gt;가나다라마바사&lt;/span&gt; &lt;span class="screen_out"&gt;매우 작은 폰트&lt;/span&gt; &lt;/label&gt; &lt;/li&gt; \n           &lt;li&gt; &lt;input type="radio" id="inpFont18" name="inpFont" class="screen_out" value="18"&gt; &lt;label class="lab_set lab_size1" for="inpFont18"&gt; &lt;span class="ico_newsview"&gt;&lt;/span&gt; &lt;span aria-hidden="true"&gt;가나다라마바사&lt;/span&gt; &lt;span class="screen_out"&gt;작은 폰트&lt;/span&gt; &lt;/label&gt; &lt;/li&gt; \n           &lt;li&gt; &lt;input type="radio" id="inpFont19" name="inpFont" class="screen_out" value="19"&gt; &lt;label class="lab_set lab_size2" for="inpFont19"&gt; &lt;span class="ico_newsview"&gt;&lt;/span&gt; &lt;span aria-hidden="true"&gt;가나다라마바사&lt;/span&gt; &lt;span class="screen_out"&gt;보통 폰트&lt;/span&gt; &lt;/label&gt; &lt;/li&gt; \n           &lt;li&gt; &lt;input type="radio" id="inpFont20" name="inpFont" class="screen_out" value="20"&gt; &lt;label class="lab_set lab_size3" for="inpFont20"&gt; &lt;span class="ico_newsview"&gt;&lt;/span&gt; &lt;span aria-hidden="true"&gt;가나다라마바사&lt;/span&gt; &lt;span class="screen_out"&gt;큰 폰트&lt;/span&gt; &lt;/label&gt; &lt;/li&gt; \n           &lt;li&gt; &lt;input type="radio" id="inpFont21" name="inpFont" class="screen_out" value="21"&gt; &lt;label class="lab_set lab_size4" for="inpFont21"&gt; &lt;span class="ico_newsview"&gt;&lt;/span&gt; &lt;span aria-hidden="true"&gt;가나다라마바사&lt;/span&gt; &lt;span class="screen_out"&gt;매우 큰 폰트&lt;/span&gt; &lt;/label&gt; &lt;/li&gt; \n          &lt;/ul&gt; \n         &lt;/div&gt; \n        &lt;/div&gt; \n       &lt;/div&gt;  \n       &lt;div class="btn_util"&gt; &lt;button type="button" class="btn_print"&gt;&lt;span class="ico_newsview"&gt;인쇄하기 새창열림&lt;/span&gt;&lt;/button&gt; \n       &lt;/div&gt; \n      &lt;/div&gt; \n     &lt;/div&gt;               \n    &lt;/div&gt; \n    &lt;div id="cMain"&gt; \n     &lt;div id="mArticle"&gt; \n      &lt;div data-cloud-area="article"&gt;   \n       &lt;div id="translateNotice" class="status_view" style="display:none;" data-cloud="pc_article_body"&gt; &lt;span class="notice_lang notice_lang_en" style="display:none;"&gt;The copyright belongs to the original writer of the content, and there may be errors in machine translation results.&lt;/span&gt; &lt;span class="notice_lang notice_lang_cn" style="display:none;"&gt;版权归内容原作者所有。机器翻译结果可能存在错误。&lt;/span&gt; &lt;span class="notice_lang notice_lang_jp" style="display:none;"&gt;原文の著作権は原著著作者にあり、機械翻訳の結果にエラーが含まれることがあります。&lt;/span&gt; &lt;span class="notice_lang notice_lang_id" style="display:none;"&gt;Hak cipta milik penulis asli dari konten, dan mungkin ditemukan kesalahan dalam hasil terjemahan mesin.&lt;/span&gt; &lt;span class="notice_lang notice_lang_vi" style="display:none;"&gt;Bản quyền thuộc về tác giả gốc của nội dung và có thể có lỗi trong kết quả dịch bằng máy.&lt;/span&gt; \n       &lt;/div&gt;  \n       &lt;div class="news_view" style="font-size:17px" data-cloud="pc_article_body"&gt; &lt;strong class="summary_view" data-translation="true"&gt; "주행 중에도 넷플릭스·유튜브 감상 가능할 것"&lt;br&gt;자율주행 아직까지 안전 우려 남아..실현 시기는 미지수 &lt;/strong&gt; \n        &lt;div id="harmonyContainer" class="article_view" data-translation-body="true"&gt; \n         &lt;section dmcf-sid="NkBWHdyrlY"&gt;\n          &lt;figure class="figure_frm origin_fig" dmcf-pid="N7s2biXYTL" dmcf-ptype="figure"&gt;\n           &lt;p class="link_figure"&gt;&lt;img alt="일론 머스크 테슬라 최고경영자(CEO) [이미지출처=로이터연합뉴스]" class="thumb_g_article" data-org-src="https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg" data-org-width="550" dmcf-mid="NBMY3ZZhN4" dmcf-mtype="image" height="auto" src="https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg" width="658"&gt;&lt;/p&gt;\n           &lt;figcaption class="txt_caption default_figure"&gt;\n            일론 머스크 테슬라 최고경영자(CEO) [이미지출처=로이터연합뉴스]\n           &lt;/figcaption&gt;\n          &lt;/figure&gt;\n          &lt;div dmcf-pid="NU9K9rfDgA" dmcf-ptype="general"&gt;\n           &lt;p&gt;[아시아경제 이민우 기자] 일론 머스크 테슬라 최고경영자(CEO)가 자사 전기 자동차 모델에 넷플릭스와 유튜브 등 온라인동영상서비스(OTT)를 탑재할 것이라고 예고했다. 단순히 자율 주행 전기차가 단순히 주행을 위한 정보를 알려주는 것을 넘어 각종 영상 콘텐츠를 즐기는 공간으로도 확장하겠다는 전략으로 풀이된다.&lt;/p&gt;\n           &lt;br&gt;\n           &lt;p&gt;27일(현지시간) 더버지 등 주요 외신들에 따르면 머스크 CEO는 자신의 트위터를 통해 이 같은 계획을 밝혔다. 그는 "자동차가 정차했을 때 넷플릭스와 유튜브를 감상할 수 있는 기능이 조만간 추가될 것"이라며 "편안한 좌석과 서라운드 사운드 오디오를 통해 영화관과 같은 느낌을 받을 수 있을 것"이라고 강조했다.&lt;/p&gt;\n          &lt;/div&gt;\n          &lt;figure class="figure_frm origin_fig" dmcf-pid="NlqQhf4JmF" dmcf-ptype="figure"&gt;\n           &lt;p class="link_figure"&gt;&lt;img alt="(출처=일론 머스크 트위터 계정 캡쳐)" class="thumb_g_article" data-org-src="https://t1.daumcdn.net/news/201907/28/akn/20190728165813670hwxf.png" data-org-width="550" dmcf-mid="NRhnb5SRpx" dmcf-mtype="image" height="auto" src="https://img3.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813670hwxf.png" width="658"&gt;&lt;/p&gt;\n           &lt;figcaption class="txt_caption default_figure"&gt;\n            (출처=일론 머스크 트위터 계정 캡쳐)\n           &lt;/figcaption&gt;\n          &lt;/figure&gt;\n          &lt;div dmcf-pid="NpkG4d9A6j" dmcf-ptype="general"&gt;\n           &lt;p&gt;테슬라가 이처럼 콘텐츠 방면으로 확장하려 든 것은 이번이 처음이 아니다. 지난달 세계 최대 게임쇼 E3에서는 이미 운전자가 \'폴아웃 쉘터\'라는 게임을 할 수 있을 것이라고 발표한 바 있다. 이후에도 최근 게임업체 아타리사(社)의 자동차 경주 게임 ‘폴포지션’, 슈팅게임 ‘템페스트’, ‘미사일커맨드’ 등 고전 게임을 제공하기도 했다. 운전대로 게임을 조작하는 방식으로, 차가 주차돼 있을 경우에만 즐길 수 있다.&lt;/p&gt;\n           &lt;br&gt;\n           &lt;p&gt;이번 영상 콘텐츠는 주행 중에도 감상할 수 있도록 하는 방안을 고려하고 있다. 테슬라 측은 규제당국이 자율주행에 대해 완전히 승인하면 차량이 움직일 때에도 승객이 동영상을 즐길 수 있을 것이라고 설명했다.&lt;/p&gt;\n           &lt;br&gt;\n           &lt;p&gt;하지만 아직까지 자율주행차의 안전에 대한 우려는 완전히 걷혀지지 않은 상황이다. 지난 2017년 차량공유 서비스 우버의 자율주행 시범차량이 보행자와 충돌한 사고가 발생한 바 있다. 게다가 당시 시험 운전자는 디즈니의 동영상 스트리밍 서비스인 \'훌루\'를 이용하고 있던 것으로 밝혀졌다.&lt;/p&gt;\n          &lt;/div&gt;\n          &lt;p dmcf-pid="NUOWg8Qxyd" dmcf-ptype="general"&gt;이민우 기자 letzwin@asiae.co.kr&lt;/p&gt;\n         &lt;/section&gt; \n         &lt;p data-translation="true"&gt;&amp;lt;ⓒ경제를 보는 눈, 세계를 보는 창 아시아경제 무단전재 배포금지&amp;gt;&lt;/p&gt; \n        &lt;/div&gt; \n       &lt;/div&gt;  \n      &lt;/div&gt; \n      &lt;div class="foot_view" data-cloud-area="addition"&gt; \n       &lt;div class="emotion_wrap" data-cloud="alex_action_emotion"&gt; \n        &lt;div class="emotion_tit"&gt; &lt;strong class="tit_emotion"&gt;이 기사에 대해 어떻게 생각하시나요?&lt;/strong&gt; \n        &lt;/div&gt; \n        &lt;div class="emotion_list"&gt; \n         &lt;div class="alex-action" data-selections="RECOMMEND,LIKE,IMPRESS,ANGRY,SAD" data-client-id="26BXAvKny5WF5Z09lr5k77Y8" data-item-key="20190728165812603" data-action-mode="REACTION" data-on-select-animation-type="EXPAND" data-message-channel="alex-action-reactions"&gt; \n         &lt;/div&gt; \n        &lt;/div&gt; \n       &lt;/div&gt;  \n       &lt;div class="relate_series hide" data-cloud="pc_news_cluster"&gt; &lt;strong class="tit_series"&gt; &lt;em class="tag_series"&gt;연재&lt;/em&gt; &lt;span class="title_series"&gt;&lt;/span&gt; &lt;/strong&gt; \n        &lt;ul class="list_series"&gt;&lt;/ul&gt; &lt;a href="#none" class="link_more"&gt;더보기&lt;/a&gt; \n       &lt;/div&gt;   \n       &lt;div class="cp_view" data-cloud="pc_related_news"&gt; \n        &lt;div class="cp_tit"&gt; \n         &lt;h3 class="tit_cp"&gt;아시아경제 주요 뉴스&lt;/h3&gt; \n         &lt;p class="info_cp"&gt;해당 언론사로 연결됩니다.&lt;/p&gt; \n        &lt;/div&gt; \n        &lt;ul class="list_relate"&gt; \n         &lt;li&gt;&lt;a href="https://www.asiae.co.kr/article/2021050309184631893&amp;amp;access=daum" title="도경완, 장윤정 때문에 주식 다 빼…&amp;quot;300만원 올랐는데&amp;quot;" class="link_txt" target="_blank" data-type="rss"&gt;도경완, 장윤정 때문에 주식 다 빼…"300만원 올랐는데"&lt;/a&gt;&lt;/li&gt; \n         &lt;li&gt;&lt;a href="https://www.asiae.co.kr/article/2021050112025228486&amp;amp;access=daum" title="전지현, 의류 수거함에서 주웠던 그 옷…\'400만원 명품\'" class="link_txt" target="_blank" data-type="rss"&gt;전지현, 의류 수거함에서 주웠던 그 옷…\'400만원 명품\'&lt;/a&gt;&lt;/li&gt; \n         &lt;li&gt;&lt;a href="https://www.asiae.co.kr/article/2021050104550364044&amp;amp;access=daum" title="박나래, \'성희롱 논란\' 눈물의 사과…&amp;quot;많이 반성했다&amp;quot;" class="link_txt" target="_blank" data-type="rss"&gt;박나래, \'성희롱 논란\' 눈물의 사과…"많이 반성했다"&lt;/a&gt;&lt;/li&gt; \n         &lt;li&gt;&lt;a href="https://www.asiae.co.kr/article/2021050309190637368&amp;amp;access=daum" title="공매 입찰금액 실수로 \'0\' 하나 더 붙였다가… 3억 날린 사연" class="link_txt" target="_blank" data-type="rss"&gt;공매 입찰금액 실수로 \'0\' 하나 더 붙였다가… 3억 날린 사연&lt;/a&gt;&lt;/li&gt; \n         &lt;li&gt;&lt;a href="https://www.asiae.co.kr/article/2021050311172336247&amp;amp;access=daum" title="[속수무책 기술유출]美 첨단산업 견제에 궁지 몰린 中…韓 기술 호시탐탐" class="link_txt" target="_blank" data-type="rss"&gt;[속수무책 기술유출]美 첨단산업 견제에 궁지 몰린 中…韓 기술 호시탐탐&lt;/a&gt;&lt;/li&gt; \n         &lt;li&gt;&lt;a href="https://www.asiae.co.kr/article/2021050221051670443&amp;amp;access=daum" title="&amp;quot;90명 한 무대&amp;quot;… MBN \'보이스킹\' 스태프 확진→출연자 전원 검사 \'비상\'" class="link_txt" target="_blank" data-type="rss"&gt;"90명 한 무대"… MBN \'보이스킹\' 스태프 확진→출연자 전원 검사 \'비상\'&lt;/a&gt;&lt;/li&gt; \n         &lt;li&gt;&lt;a href="https://www.asiae.co.kr/article/2021050111335311247&amp;amp;access=daum" title="&amp;quot;니 X이 뭔데&amp;quot;… &amp;quot;도와드릴까요&amp;quot; 묻는 청소원 머리 내리친 남성 징역형" class="link_txt" target="_blank" data-type="rss"&gt;"니 X이 뭔데"… "도와드릴까요" 묻는 청소원 머리 내리친 남성 징역형&lt;/a&gt;&lt;/li&gt; \n         &lt;li&gt;&lt;a href="https://www.asiae.co.kr/article/2021043014243540488&amp;amp;access=daum" title="6년간 수십억원 모바일상품권 몰래 발행한 직원 징역 3년" class="link_txt" target="_blank" data-type="rss"&gt;6년간 수십억원 모바일상품권 몰래 발행한 직원 징역 3년&lt;/a&gt;&lt;/li&gt; \n         &lt;li&gt;&lt;a href="https://www.asiae.co.kr/article/2021050109270368569&amp;amp;access=daum" title="바뀐 \'분묘기지권\' 판례… &amp;quot;남의 땅에 조상묘, 사용료 내라&amp;quot;" class="link_txt" target="_blank" data-type="rss"&gt;바뀐 \'분묘기지권\' 판례… "남의 땅에 조상묘, 사용료 내라"&lt;/a&gt;&lt;/li&gt; \n         &lt;li&gt;&lt;a href="https://www.asiae.co.kr/article/2021042811411792075&amp;amp;access=daum" title="14억 중국의 참담한 현실…\'인구대국\' 자리바꿈 초읽기" class="link_txt" target="_blank" data-type="rss"&gt;14억 중국의 참담한 현실…\'인구대국\' 자리바꿈 초읽기&lt;/a&gt;&lt;/li&gt; \n        &lt;/ul&gt; \n       &lt;/div&gt; \n       &lt;div id="alex-scroll-area" data-cloud="pc_article_bottom_ad"&gt;&lt;/div&gt; \n       &lt;ins class="kakao_ad_area recomm_ad" style="display:block; width: 658px; text-decoration: none; min-width: 658px;" data-ad-unit="DAN-1jezdswwiit7q" data-ad-width="658" data-ad-height="90" data-ad-onfail="cmRenderFailCallBack" data-cloud="pc_article_bottom_ad"&gt; &lt;/ins&gt;  \n       &lt;div class="cmt_news cmt_view" data-cloud="pc_comment"&gt; \n        &lt;div id="newsviewNotice" class="news_notice"&gt;&lt;/div&gt;  \n        &lt;div id="alex-area" class="alex-area" data-base-url="//comment.daum.net" data-post-id="@20190728165812603" data-client-id="26BXAvKny5WF5Z09lr5k77Y8" data-kakao-appkey="9076ba452fea1a434141d6b6a2c11a3c" data-initial-limit="3" data-page-limit="10" data-sort="P" data-use-my="true" data-max-length="300" data-use-reply="true" data-use-official="true" data-use-emoticon="true" data-use-social-share="true" data-use-attachment="false" data-is-mobile="false" data-show-mask-alert="true" data-use-live-comment-mode="notify" data-use-fold="true" data-use-skin="newsView" data-use-safebot="true"&gt; \n        &lt;/div&gt;    \n       &lt;/div&gt; \n      &lt;/div&gt; \n     &lt;/div&gt; \n     &lt;div id="mAside" data-cloud-area="aside"&gt; \n      &lt;ins style="display:block;width:250px;height:250px;" class="kakao_ad_area aside_g aside_ad" data-ad-unit="05d24" data-ad-type="D" data-ad-width="250" data-ad-height="250" data-cloud="pc_aside_top_ad"&gt; &lt;/ins&gt; \n      &lt;div class="aside_g aside_popular hide" data-cloud="pc_popular_news"&gt; \n       &lt;h3 class="txt_newsview"&gt;많이본 뉴스&lt;/h3&gt; \n       &lt;ul class="tab_aside tab_media"&gt; \n        &lt;li class="on"&gt; &lt;a href="#none" class="link_tab link_tab2"&gt;뉴스&lt;/a&gt; &lt;/li&gt; \n        &lt;li class=""&gt; &lt;a href="#none" class="link_tab link_tab3"&gt;연예&lt;/a&gt; &lt;/li&gt; \n        &lt;li class=""&gt; &lt;a href="#none" class="link_tab link_tab4"&gt;스포츠&lt;/a&gt; &lt;/li&gt; \n       &lt;/ul&gt; \n      &lt;/div&gt;  \n      &lt;div class="aside_g aside_phototv hide" data-cloud="pc_news_photo_tv"&gt; \n       &lt;h3 class="txt_newsview"&gt;포토&amp;amp;TV&lt;/h3&gt; \n       &lt;div class="cont_aside"&gt; \n        &lt;ul class="list_phototv"&gt;&lt;/ul&gt; \n       &lt;/div&gt; \n      &lt;/div&gt;  \n      &lt;ins style="display:block;width:250px;height:250px;" class="kakao_ad_area aside_g aside_ad" data-ad-unit="0QH44" data-ad-type="D" data-ad-width="250" data-ad-height="250" data-cloud="pc_aside_bottom_ad"&gt; &lt;/ins&gt; \n     &lt;/div&gt; \n    &lt;/div&gt; \n    &lt;div id="cEtc"&gt; \n     &lt;div class="realtime_view"&gt; \n      &lt;div class="inner_realtime"&gt; \n       &lt;div data-cloud-area="etc"&gt; \n        &lt;div class="realtime_news" data-cloud="pc_realtime_news"&gt; \n         &lt;h3 class="txt_newsview"&gt;이 시각 추천뉴스&lt;/h3&gt; \n         &lt;ul class="list_realtime"&gt; \n          &lt;li class="item_main item_realtime_news"&gt;&lt;/li&gt; \n          &lt;li class="item_main item_realtime_news"&gt;&lt;/li&gt; \n          &lt;li class="item_realtime_news"&gt;&lt;/li&gt; \n          &lt;li class="item_realtime_news"&gt;&lt;/li&gt; \n          &lt;li class="item_realtime_news"&gt;&lt;/li&gt; \n          &lt;li class="item_realtime_news"&gt;&lt;/li&gt; \n          &lt;li class="item_realtime_news"&gt;&lt;/li&gt; \n          &lt;li class="item_realtime_news"&gt;&lt;/li&gt; \n          &lt;li class="item_realtime_news"&gt;&lt;/li&gt; \n          &lt;li class="item_realtime_news"&gt;&lt;/li&gt; \n          &lt;li class="item_realtime_news"&gt;&lt;/li&gt; \n          &lt;li class="item_realtime_news"&gt;&lt;/li&gt; \n         &lt;/ul&gt; \n        &lt;/div&gt;  \n       &lt;/div&gt; \n       &lt;div class="realtime_aside" id="realtime_aside" data-cloud-area="etc-aside"&gt; \n        &lt;ins class="kakao_ad_area etc_bottom_ad" style="display: block; width: 100%;" data-ad-unit="DAN-kQxraZPBvpl52CWq" data-ad-width="250" data-ad-height="250" data-ad-onfail="onFailEtcBottomAd" data-cloud="pc_etc_bottom_ad"&gt; &lt;/ins&gt;  \n       &lt;/div&gt; \n      &lt;/div&gt; \n     &lt;/div&gt; \n     &lt;div data-cloud-area="etc-addition"&gt; \n     &lt;/div&gt; \n    &lt;/div&gt; \n   &lt;/div&gt; \n   &lt;hr class="hide"&gt; \n   &lt;div class="footer_comm" id="kakaoFoot" role="contentinfo" data-cloud-area="footer"&gt; \n    &lt;div class="inner_foot" data-cloud="pc_footer"&gt; \n     &lt;div class="direct_link"&gt; \n      &lt;h2 class="tit_direct"&gt;바로가기&lt;/h2&gt; \n      &lt;div class="item_bundle"&gt; &lt;a class="link_txt" href="https://news.daum.net/"&gt;뉴스홈&lt;/a&gt; &lt;a class="link_txt" href="https://news.daum.net/society/"&gt;사회&lt;/a&gt; &lt;a class="link_txt" href="https://news.daum.net/politics/"&gt;정치&lt;/a&gt; &lt;a class="link_txt" href="https://news.daum.net/economic/"&gt;경제&lt;/a&gt; &lt;a class="link_txt" href="https://news.daum.net/foreign/"&gt;국제&lt;/a&gt; &lt;a class="link_txt" href="https://news.daum.net/culture/"&gt;문화&lt;/a&gt; &lt;a class="link_txt" href="https://news.daum.net/digital/"&gt;IT&lt;/a&gt; &lt;a class="link_txt" href="https://news.daum.net/photo/"&gt;포토&lt;/a&gt; &lt;a class="link_txt" href="https://news.daum.net/tv/"&gt;TV&lt;/a&gt; \n      &lt;/div&gt; \n      &lt;div class="item_bundle"&gt; &lt;a class="link_txt" href="https://news.daum.net/cp"&gt;언론사별 뉴스&lt;/a&gt; \n      &lt;/div&gt; \n      &lt;div class="item_bundle"&gt; &lt;a class="link_txt" href="https://news.daum.net/newsbox"&gt;배열이력&lt;/a&gt; \n      &lt;/div&gt; \n      &lt;div class="item_bundle"&gt; &lt;a class="link_txt" href="https://news.daum.net/breakingnews"&gt;전체뉴스&lt;/a&gt; &lt;a class="link_txt" href="https://news.daum.net/ranking/popular"&gt;랭킹&lt;/a&gt; &lt;a class="link_txt" href="https://news.daum.net/series"&gt;연재&lt;/a&gt; &lt;a class="link_txt" href="https://news.daum.net/1boon"&gt;1boon&lt;/a&gt; \n      &lt;/div&gt; &lt;button class="btn_fold" type="button"&gt;&lt;span class="ico_news"&gt;바로가기 링크 더보기/접기&lt;/span&gt;&lt;/button&gt; \n     &lt;/div&gt; \n     &lt;h2 class="screen_out"&gt;서비스 이용정보&lt;/h2&gt; \n     &lt;div class="footer_link"&gt; &lt;a class="link_info" href="https://news.daum.net/info/intro"&gt;다음뉴스 소개&lt;/a&gt; &lt;span class="txt_dot"&gt; ・ &lt;/span&gt; &lt;a class="link_info" href="https://news.daum.net/notice"&gt;공지사항&lt;/a&gt; &lt;span class="txt_dot"&gt; ・ &lt;/span&gt; &lt;a class="link_info" href="https://news.daum.net/info/bbsrule"&gt;게시물 운영원칙&lt;/a&gt; &lt;span class="txt_dot"&gt; ・ &lt;/span&gt; &lt;a class="link_info" href="https://policy.daum.net/info/info"&gt;서비스 약관/정책&lt;/a&gt; &lt;span class="txt_dot"&gt; ・ &lt;/span&gt; &lt;a class="link_info" href="https://with.kakao.com/media"&gt;뉴스제휴&lt;/a&gt; &lt;span class="txt_dot"&gt; ・ &lt;/span&gt; &lt;a class="link_info" href="https://business.kakao.com/"&gt;비즈니스&lt;/a&gt; &lt;span class="txt_dot"&gt; ・ &lt;/span&gt; &lt;a class="link_info" href="https://cs.daum.net/redbell/top.html"&gt;권리침해신고&lt;/a&gt; &lt;span class="txt_dot"&gt; ・ &lt;/span&gt; &lt;a class="link_info" href="https://cs.daum.net/faq/63.html"&gt;다음뉴스 고객센터&lt;/a&gt; \n     &lt;/div&gt; \n     &lt;div class="footer_link"&gt; &lt;a class="link_info" href="https://news.daum.net/info/newscenter24"&gt;24시간 뉴스센터&lt;/a&gt; &lt;span class="txt_dot"&gt; ・ &lt;/span&gt; &lt;a class="link_info" href="https://news.daum.net/info/edit"&gt;서비스원칙&lt;/a&gt; &lt;span class="txt_dot"&gt; ・ &lt;/span&gt; &lt;a class="link_info" href="https://news.daum.net/info/correct"&gt;바로잡습니다&lt;/a&gt; &lt;span class="txt_dot"&gt; ・ &lt;/span&gt; &lt;span class="link_info"&gt;기사배열책임자 : 김희정&lt;/span&gt; &lt;span class="txt_dot"&gt; ・ &lt;/span&gt; &lt;span class="link_info"&gt;청소년보호책임자 : 이준목&lt;/span&gt; \n     &lt;/div&gt; \n     &lt;div class="info_copyright"&gt; &lt;strong class="info_warn"&gt;위 내용에 대한 저작권 및 법적 책임은 자료제공사 또는 &lt;br&gt;글쓴이에 있으며, Kakao의 입장과 다를 수 있습니다.&lt;/strong&gt; &lt;small class="txt_copyright"&gt;Copyright © &lt;strong class="txt_kakao"&gt;&lt;a href="https://www.kakaocorp.com" class="link_kakao"&gt;Kakao Corp.&lt;/a&gt;&lt;/strong&gt; All rights reserved.&lt;/small&gt; \n     &lt;/div&gt; \n    &lt;/div&gt;   \n   &lt;/div&gt; &lt;samp data-cloud-area="util"&gt;           &lt;/samp&gt; \n  &lt;/div&gt;  \n  &lt;script src="//t1.daumcdn.net/harmony_static/cloud/2021/05/03/vendor.39958ce6937d202010c7.js"&gt;&lt;/script&gt;\n  &lt;script src="//t1.daumcdn.net/harmony_static/cloud/2021/05/03/common.4fa0ea63845693bada8b.js"&gt;&lt;/script&gt;\n  &lt;script src="//t1.daumcdn.net/kas/static/ba.min.js"&gt;&lt;/script&gt;\n  &lt;script src="//t1.daumcdn.net/kas/static/na.min.js"&gt;&lt;/script&gt;\n  &lt;script src="//m1.daumcdn.net/svc/original/U03/cssjs/userAgent/userAgent-1.0.12.min.js"&gt;&lt;/script&gt;\n  &lt;script&gt;"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _defineProperties(e,t){for(var a=0;a&lt;t.length;a++){var n=t[a];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&amp;&amp;(n.writable=!0),Object.defineProperty(e,n.key,n)}}function _createClass(e,t,a){return t&amp;&amp;_defineProperties(e.prototype,t),a&amp;&amp;_defineProperties(e,a),e}!(function(){var a="&lt;li&gt;\\n &lt;a href=\\"https://search.daum.net/search?nil_suggest=btn&amp;amp;w=tot&amp;amp;DA=SBC&amp;amp;q=&lt;%= specialRegionName %&gt;%20날씨\\" class=\\"link_cont\\"&gt;\\n &lt;span class=\\"ico_weather ico_weather&lt;%= weatherIconCode %&gt;\\"&gt;&lt;%= specialRegionName %&gt;&lt;/span&gt; \\n &lt;span class=\\"txt_weather\\"&gt;&lt;%= specialRegionName %&gt;\\n &lt;span class=\\"num_heat\\"&gt;&lt;%= temperature %&gt;&lt;/span&gt; \\n &lt;span class=\\"txt_heat\\"&gt;℃&lt;/span&gt;\\n &lt;/span&gt;\\n &lt;/a&gt;\\n &lt;/li&gt;",t=document.querySelector(\'.gnb_weather\'),n=t.querySelector(\'ul\'),e="".concat(Conf.api.hadesRest,"/pc_weather");axios.get(e).then(function(e){var t=e.data.body.data,e=t.isNightIconYn,t=t.weatherData;n.dataset.nightyn=e,n.innerHTML=t.map(function(e){return _.template(a)(e)}).join(\'\');new s(n)}).catch(function(e){t.parentNode.removeChild(t)});var s=(function(){function t(e){_classCallCheck(this,t),this.PAUSE_TIME=4e3,this.TRANSITION_TIME=500,this.list=e,this.frameId=null,this.pause=this.pause.bind(this),this.start=this.start.bind(this),this.moveUp=this.moveUp.bind(this),this.init(),this.start(),this.list.style.marginTop=\'0px\'}return _createClass(t,[{key:"start",value:function(){this.frameId=setInterval(this.moveUp,this.PAUSE_TIME)}},{key:"pause",value:function(){clearInterval(this.frameId)}},{key:"moveUp",value:function(){var e=this.list,t=e.firstElementChild.cloneNode(!0);e.classList.add(\'slidein\'),e.style.marginTop=\'-30px\',setTimeout(function(){e.classList.remove(\'slidein\'),e.style.marginTop=\'0px\',e.removeChild(e.firstElementChild),e.appendChild(t)},this.TRANSITION_TIME)}},{key:"init",value:function(){var t=this,e=this.list;e.addEventListener(\'mouseenter\',this.pause),e.addEventListener(\'mouseleave\',this.start),e.querySelectorAll(\'a\').forEach(function(e){e.addEventListener(\'focus\',t.pause),e.addEventListener(\'blur\',t.start)})}}]),t})()})();&lt;/script&gt;\n  &lt;script&gt;"use strict";!(function(){var e=-1&lt;\'\'.indexOf(\'tv_news\')?\'tv\':\'digital\',t=document.querySelector(\'.gnb_comm\');(t=e&amp;&amp;t.querySelector(".".concat(e)))&amp;&amp;t.setAttribute(\'class\',"".concat(e," on"))})();&lt;/script&gt;\n  &lt;script src="https://t1.daumcdn.net/cssjs/jquery/jquery-1.9.0.min.js"&gt;&lt;/script&gt;\n  &lt;script src="https://search1.daumcdn.net/search/suggest_pc/suggest-1.2.16.min.js"&gt;&lt;/script&gt;\n  &lt;script&gt;"use strict";!(function(){document.getElementById(\'search_news\'),new suggest.Suggest(document.getElementById("search_news"),{inputEl:\'qVal\',suggestBoxEl:\'suggestBox\',autoFocus:\'NORMAL\',suggestLimit:10,isReverse:!1,searchURL:\'https://search.daum.net/search\',APIServer:{host:\'//dapi.kakao.com/suggest/v2/pc.json\',apiType:suggest.Suggest.APITYPE.DAPISUGGEST,appkey:\'d7022f6ca2a04430ce1b97b922da58e8\',queries:{mod:\'json\',code:\'utf_in_out\'}}}).on(\'click-item\',function(){var e=document.getElementById(\'kakaoSearch\');e.querySelector("input[name=\'DA\']").value=\'23B\',e.submit()});var t=document.getElementById(\'qVal\');t.addEventListener?(t.addEventListener(\'focus\',function(e){e&amp;&amp;e.preventDefault(),0&lt;=t.value.length&amp;&amp;t.parentNode.classList.add(\'search_on\')}),t.addEventListener(\'blur\',function(e){e&amp;&amp;e.preventDefault(),0===t.value.length&amp;&amp;t.parentNode.classList.remove(\'search_on\')})):(t.attachEvent(\'onfocus\',function(e){e&amp;&amp;(e.preventDefault?e.preventDefault():e.returnValue=!1),0&lt;=t.value.length&amp;&amp;t.parentNode.setAttribute(\'class\',\'box_searchbar search_on\')}),t.attachEvent(\'onblur\',function(e){e&amp;&amp;(e.preventDefault?e.preventDefault():e.returnValue=!1),0===t.value.length&amp;&amp;t.parentNode.setAttribute(\'class\',\'box_searchbar\')}))})(jQuery);&lt;/script&gt;\n  &lt;script src="//t1.daumcdn.net/daumtop_deco/socialshare/socialshare_nocss_pc-2.4.2.js"&gt;&lt;/script&gt;\n  &lt;script&gt;"use strict";!(function(){var t=document.querySelector(\'.util_summary\'),r=t.querySelector(\'.btn_summary\'),e=t.querySelectorAll(".layer_summary p"),n=!1;function i(){t.classList.remove(\'layer_open\'),r.setAttribute(\'aria-expanded\',!1)}function a(e){if(e.target===r||e.target===r.children[0])return!1;i(),window.removeEventListener(\'click\',a)}e.forEach(function(e){return e.classList.add("desc_news")}),r.addEventListener(\'click\',function(e){(n=!n)?(t.classList.add(\'layer_open\'),r.setAttribute(\'aria-expanded\',!0),window.addEventListener(\'click\',a)):i()}),r.addEventListener(\'blur\',function(e){n=!1,i()})})();&lt;/script&gt;\n  &lt;script&gt;"use strict";function _slicedToArray(e,t){return _arrayWithHoles(e)||_iterableToArrayLimit(e,t)||_unsupportedIterableToArray(e,t)||_nonIterableRest()}function _nonIterableRest(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function _unsupportedIterableToArray(e,t){if(e){if("string"==typeof e)return _arrayLikeToArray(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);return"Object"===n&amp;&amp;e.constructor&amp;&amp;(n=e.constructor.name),"Map"===n||"Set"===n?Array.from(e):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?_arrayLikeToArray(e,t):void 0}}function _arrayLikeToArray(e,t){(null==t||t&gt;e.length)&amp;&amp;(t=e.length);for(var n=0,r=new Array(t);n&lt;t;n++)r[n]=e[n];return r}function _iterableToArrayLimit(e,t){if("undefined"!=typeof Symbol&amp;&amp;Symbol.iterator in Object(e)){var n=[],r=!0,o=!1,a=void 0;try{for(var i,s=e[Symbol.iterator]();!(r=(i=s.next()).done)&amp;&amp;(n.push(i.value),!t||n.length!==t);r=!0);}catch(e){o=!0,a=e}finally{try{r||null==s["return"]||s["return"]()}finally{if(o)throw a}}return n}}function _arrayWithHoles(e){if(Array.isArray(e))return e}!(function(){var t,e,n,r,o,a=\'VIEW_TTS\',i=\'v.daum.net\',s={slow_Male:\'http://k-v1.kakaocdn.net/dn/bTYhQf/btqw7dnmMCv/hUbVhtobk3GbFXFCegkk31/original.m4a\',normal_Male:\'http://k-v1.kakaocdn.net/dn/4CTkI/btqw7QSKJ4L/RBxJg5cqNbQyPSQIjMOUT1/original.m4a\',fast_Male:\'http://k-v1.kakaocdn.net/dn/g8O5D/btqw4ocn8Y7/tD8KH19rXvKQXYWbQ5gdr0/original.m4a\',slow_Female:\'http://k-v1.kakaocdn.net/dn/dZVpXE/btqw8AWdkJO/kiq1mIqCrBEVEX22P6YhSK/original.m4a\',normal_Female:\'http://k-v1.kakaocdn.net/dn/ETPxe/btqw6nRmjWq/Yni5zaUkvyxurIIhtFBLS1/original.m4a\',fast_Female:\'http://k-v1.kakaocdn.net/dn/03ztL/btqw7cIJy8D/D2U1Q1f3wdQOQXXUNJMljk/original.m4a\'},l=document.querySelector(\'.util_view .tts_btn\'),c=l.querySelectorAll(\'.list_tts input\'),u=l.querySelector(\'.btn_tts\'),d=l.querySelector(\'.ico_speak\'),y=l.querySelector(\'.wrap_setlayer\').querySelectorAll(\'.ico_newsview\'),f=l.querySelector(\'#ttsPlayer\');function m(){var e,t,n,r,o=(e=l.querySelector(\'input[name=ttsSpeed]:checked\').value,t=l.querySelector(\'input[name=ttsGender]:checked\').value,"".concat(e,"_").concat(t));f.setAttribute(\'src\',s[o]),n=o,Cookies.set(a,\'\',{expires:-1}),Cookies.set(a,n,{domain:i,expires:new Date(1*new Date+365*864e5)}),r=o,u.className=\'btn_set btn_tts #util #tts #p_\'+r}function p(e){\'playOptions\'==e?(m(),f.load(),f.play(),d.textContent=\'음성 기사 정지\'):\'play\'==e?(f.load(),f.play(),d.textContent=\'음성 기사 정지\'):(f[e](),d.textContent=\'음성 기사 듣기\')}function v(){clearTimeout(n),t.classList.add(\'layer_open\'),e.setAttribute(\'aria-expanded\',!0)}function _(){r||(n=setTimeout(b,100))}function b(){t.classList.remove(\'layer_open\'),e.setAttribute(\'aria-expanded\',!1)}function L(e){e?t.classList.add(\'on\'):t.classList.remove(\'on\')}function h(e,t){document.getElementById("ttsSpeed".concat(e)).checked=!0,document.getElementById("ttsGender".concat(t)).checked=!0}t=(o={layer:l,btn:u,radios:c}).layer,e=o.btn,o=o.radios,r=!(n=0),t.addEventListener(\'mouseover\',function(e){r=!0,v()}),t.addEventListener(\'mouseleave\',function(e){r=!1,_()}),e.addEventListener(\'keydown\',function(e){13===e.keyCode&amp;&amp;((r=!r)?v:b)()}),t.addEventListener(\'blur\',function(e){r=!1,_()}),e.addEventListener(\'click\',function(e){f.paused?(L(!0),p(\'play\')):(L(!1),p(\'pause\'))}),o.forEach(function(e){e.addEventListener(\'change\',function(e){t.classList.add(\'on\'),p(\'playOptions\')}),e.addEventListener(\'blur\',function(e){r=!1,_()}),e.addEventListener(\'focus\',function(e){r=!0,v()})}),y=(o={icons:y,radios:c}).icons,c=o.radios,y.forEach(function(e){e.addEventListener(\'mouseover\',function(e){this.classList.add(\'ico_focused\')}),e.addEventListener(\'mouseleave\',function(e){this.classList.remove(\'ico_focused\')})}),c.forEach(function(e){e.addEventListener(\'focus\',function(e){this.nextElementSibling.querySelector(\'span\').classList.add(\'ico_focused\')}),e.addEventListener(\'blur\',function(e){this.nextElementSibling.querySelector(\'span\').classList.remove(\'ico_focused\')})}),f.addEventListener(\'ended\',function(e){l.classList.remove(\'on\')}),void 0===(o=Cookies.get(a))||o.includes(\'undefined\')?h(\'Normal\',\'Male\'):(c=(y=_slicedToArray(o.split(\'_\'),2))[0],y=y[1],h(c=(o=c).charAt(0).toUpperCase()+o.slice(1),y)),m()})();&lt;/script&gt;\n  &lt;script&gt;"use strict";!(function(){var n=document.createElement(\'DIV\');n.innerHTML="\\n &lt;div id=\\"translatingLayer\\" class=\\"translate_layer\\"&gt;\\n &lt;div class=\\"inner_translate_layer\\"&gt;\\n &lt;div class=\\"layer_body\\"&gt;\\n &lt;strong class=\\"tit_translate\\"&gt;\\n 번역중 &lt;span class=\\"eng_tit\\"&gt;Now in translation&lt;/span&gt;\\n &lt;/strong&gt;\\n &lt;/div&gt;\\n &lt;/div&gt;\\n &lt;/div&gt;\\n\\n &lt;div id=\\"translateErrorLayer\\" class=\\"translate_layer\\"&gt;\\n &lt;div class=\\"inner_translate_layer inner_error_layer\\"&gt;\\n &lt;div class=\\"layer_body\\"&gt;\\n &lt;span class=\\"ico_newsview ico_error\\"&gt;&lt;/span&gt;\\n &lt;strong class=\\"tit_translate\\"&gt;\\n 잠시 후 다시 시도해 주세요 &lt;span class=\\"eng_tit\\"&gt;Please try again in a moment&lt;/span&gt;\\n &lt;/strong&gt;\\n &lt;/div&gt;\\n &lt;/div&gt;\\n &lt;/div&gt;\\n ",document.body.querySelector("#kakaoWrap").appendChild(n)})();&lt;/script&gt;\n  &lt;script&gt;"use strict";function _toConsumableArray(e){return _arrayWithoutHoles(e)||_iterableToArray(e)||_unsupportedIterableToArray(e)||_nonIterableSpread()}function _nonIterableSpread(){throw new TypeError("Invalid attempt to spread non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function _unsupportedIterableToArray(e,t){if(e){if("string"==typeof e)return _arrayLikeToArray(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);return"Object"===n&amp;&amp;e.constructor&amp;&amp;(n=e.constructor.name),"Map"===n||"Set"===n?Array.from(e):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?_arrayLikeToArray(e,t):void 0}}function _iterableToArray(e){if("undefined"!=typeof Symbol&amp;&amp;Symbol.iterator in Object(e))return Array.from(e)}function _arrayWithoutHoles(e){if(Array.isArray(e))return _arrayLikeToArray(e)}function _arrayLikeToArray(e,t){(null==t||t&gt;e.length)&amp;&amp;(t=e.length);for(var n=0,r=new Array(t);n&lt;t;n++)r[n]=e[n];return r}!(function(){var e,t,n,r,a=document.querySelector(\'.translate_btn\'),o=a.querySelector(\'.btn_translate\'),l=a.querySelector(\'.link_kakaoi\'),s=a.querySelectorAll(\'.btn_lang\'),i=document.getElementById(\'translatingLayer\'),c=document.getElementById(\'translateErrorLayer\'),y=document.getElementById(\'kakaoWrap\');function u(){i.style.display=\'none\',c.style.display=\'none\',document.body.style.overflow=\'\'}function d(){clearTimeout(e),t.classList.add(\'layer_open\'),n.setAttribute(\'aria-expanded\',!0)}function f(){t.classList.remove(\'layer_open\'),n.setAttribute(\'aria-expanded\',!1)}function p(){r||(e=setTimeout(f,1))}function m(e){var t=e.currentTarget.name;u(),i.style.display=\'block\',document.body.style.overflow=\'hidden\';try{HarmonyTranslator.translate(\'kr\',t,_,b)}catch(e){console.error(\'번역 에러:\',e)}}function _(e){var t=document.querySelector(\'#translateNotice\'),e=e.targetLang;switch(e){case\'en\':case\'id\':y.classList.add(\'lang_type1\'),y.classList.remove(\'lang_type2\'),y.classList.remove(\'lang_type3\');break;case\'cn\':case\'jp\':y.classList.remove(\'lang_type1\'),y.classList.add(\'lang_type2\'),y.classList.remove(\'lang_type3\');break;case\'vi\':y.classList.remove(\'lang_type1\'),y.classList.remove(\'lang_type2\'),y.classList.add(\'lang_type3\');break;default:y.classList.remove(\'lang_type1\'),y.classList.remove(\'lang_type2\'),y.classList.remove(\'lang_type3\')}\'kr\'==e?(t.querySelectorAll(\'.notice_lang\').forEach(function(e){e.style.display=\'none\'}),t.style.display=\'none\'):(t.querySelectorAll(".notice_lang:not(.notice_lang_".concat(e,")")).forEach(function(e){e.style.display=\'none\'}),t.querySelector(".notice_lang.notice_lang_".concat(e)).style.display=\'block\',t.style.display=\'block\'),setTimeout(function(){u()},500)}function b(e,t){u(),c.style.display=\'block\',document.body.style.overflow=\'hidden\',setTimeout(function(){u()},2e3)}l={layer:a,btn:o,inputs:[l].concat(_toConsumableArray(s))},t=l.layer,n=l.btn,l=l.inputs,r=!1,n.addEventListener(\'click\',function(){((r=!r)?d:p)()}),t.addEventListener(\'mouseover\',function(){r=!0,d()}),t.addEventListener(\'mouseleave\',function(){r=!1,f()}),l.forEach(function(e){e.addEventListener(\'focus\',function(e){r=!0,d()}),e.addEventListener(\'blur\',function(e){r=!1,p()})}),s.forEach(function(e){e.addEventListener(\'click\',m)})})();&lt;/script&gt;\n  &lt;script&gt;"use strict";!(function(){var e,t=(o=\'일론머스크 &amp;quot;테슬라에서 넷플릭스·유튜브 즐길 날 온다&amp;quot;\',(c=document.createElement(\'div\')).innerHTML=o,c.textContent),a=\'20190728165812603\'||\'NHT9NtZWBe\',n="".concat(location.protocol,"//").concat(location.host,"/v/").concat(a),o="http://scrap.cafe.daum.net/_dss_/scrap?folder_id=100000&amp;source_location_code=10&amp;target_location_code=1&amp;data_id=".concat(a),c={shareType:\'sendScrap\',shareData:{requestUrl:n,templateId:7952,installTalk:!0,templateArgs:{\'${EncodingUrl}\':encodeURIComponent(n),\'${webUrl}\':n+\'?f=p\',\'${mobileWebUrl}\':n+\'?f=m\'}}},r=document.querySelector(\'.share_btn\'),i=document.getElementById(\'rSocialShareButton\'),a=document.getElementById(\'rSocialShareLayerContainer\'),d=new socialshareRenewal.Main(i,{moreViewContainer:a,action:\'hover\',link:n,prefix:t,service_name:\'다음뉴스\',cafe:o,kakaoAPI:{appkey:\'53e566aa17534bc816eb1b5d8f7415ee\',kakaoLinkData:c}}),s=!1;function l(){e=setTimeout(function(){s=!1,r.classList.remove(\'layer_open\'),i.setAttribute(\'aria-expanded\',!1),d.close()},100)}function u(){s=!0,m(),r.classList.add(\'layer_open\'),i.setAttribute(\'aria-expanded\',!0),d.open()}function m(){clearTimeout(e)}i.addEventListener(\'mouseenter\',u),i.addEventListener(\'mouseleave\',l),i.addEventListener(\'click\',function(e){(s?l:u)()}),a.addEventListener(\'mouseenter\',m),a.addEventListener(\'mouseleave\',l),a.querySelectorAll(\'a\').forEach(function(e){e.addEventListener(\'focus\',m),e.addEventListener(\'blur\',l)})})();&lt;/script&gt;\n  &lt;script&gt;"use strict";!(function(){var e,t,n,o,i=document.querySelector(\'.news_view\'),s=document.querySelector(\'.font_btn\'),c=s.querySelector(\'.btn_font\'),r=s.querySelector(\'.list_font\'),u=r.querySelectorAll(\'input\'),a=\'GS_font_size\',l=\'v.daum.net\';function d(e){i.style.fontSize="".concat(e,"px"),document.querySelector("#inpFont".concat(e)).checked=!0,r.querySelectorAll(\'label\').forEach(function(e){return e.classList.remove(\'on\')}),r.querySelector("label[for=inpFont".concat(e,"]")).classList.add(\'on\'),e=e,Cookies.set(a,\'\',{expires:-1}),Cookies.set(a,e,{domain:l,expires:new Date(1*new Date+365*864e5)})}function f(){clearTimeout(e),t.classList.add(\'layer_open\'),n.setAttribute(\'aria-expanded\',!0)}function v(){t.classList.remove(\'layer_open\'),n.setAttribute(\'aria-expanded\',!1)}function p(){o&amp;&amp;(e=setTimeout(v,1))}d(Cookies.get(a)||17),u.forEach(function(e){e.addEventListener(\'change\',function(e){d(e.target.value)})}),t=(c={layer:s,btn:c,inputs:u}).layer,n=c.btn,c=c.inputs,o=!1,t.addEventListener(\'mouseover\',function(){o=!0,f()}),t.addEventListener(\'mouseleave\',function(){o=!1,v()}),c.forEach(function(e){e.addEventListener(\'focus\',f),e.addEventListener(\'blur\',p)}),n.addEventListener(\'click\',function(e){((o=!o)?f:v)()}),s={options:s.querySelectorAll(\'.ico_newsview\'),inputs:u},u=s.options,s=s.inputs,u.forEach(function(e){e.addEventListener(\'mouseover\',function(){this.classList.add(\'ico_focused\')}),e.addEventListener(\'mouseleave\',function(){this.classList.remove(\'ico_focused\')})}),s.forEach(function(e){e.addEventListener(\'focus\',function(){this.nextElementSibling.querySelector(\'span\').classList.add(\'ico_focused\')}),e.addEventListener(\'blur\',function(){this.nextElementSibling.querySelector(\'span\').classList.remove(\'ico_focused\')})})})();&lt;/script&gt;\n  &lt;script&gt;"use strict";document.body.querySelector(".btn_print").parentNode.addEventListener("click",function(t){t.preventDefault(),window.open(\'https://news.v.daum.net/v/20190728165812603?s=print_news\',\'newsPrint\',\'width=750,height=550,scrollbars=yes\')});&lt;/script&gt;\n  &lt;script type="text/javascript" src="//comment.daum.net/js/latest/alex.action.min.js"&gt;&lt;/script&gt;\n  &lt;script&gt;"use strict";!(function(){var s="20190728165812603",e="".concat(Conf.api.hadesRest,"/pc_mc2_news?cate=").concat("news","&amp;id=").concat(s),a=\'&lt;li class="on"&gt; &lt;div class="inner_box"&gt;&lt;span class="link_txt"&gt;&lt;%= title %&gt;&lt;/span&gt;&lt;/div&gt; &lt;/li&gt;\',i=\'&lt;li&gt; &lt;div class="inner_box"&gt;&lt;a href="https://news.v.daum.net/v/&lt;%= contentId %&gt;" class="link_txt"&gt;&lt;%= title %&gt;&lt;/a&gt;&lt;/div&gt; &lt;/li&gt;\',c=\'//news.daum.net/series\',r=document.querySelector(\'.relate_series\'),o=r.querySelector(\'.title_series\'),d=r.querySelector(\'.link_more\'),l=r.querySelector(\'.list_series\');function m(e){e&amp;&amp;e.parentNode.removeChild(e)}axios.get(e).then(function(e){var t,n=e.data.body.data.data;_.isEmpty(n)||\'series\'!==n[0].factor.type?m(r):(t=n[0],e=t.contents,n=t._id,t=t.title,e.length&lt;3&amp;&amp;l.classList.add(\'relate_series2\'),o.textContent=t,d.setAttribute(\'href\',c+\'/\'+n),l.innerHTML=e.map(function(e){var t=e.contentId,e=e.title;return t==s?_.template(a)({title:e}):_.template(i)({contentId:t,title:e})}).join(\'\'),(e=r)&amp;&amp;e.classList.remove(\'hide\'))}).catch(function(e){console.error("[클러스터]: 데이터를 가져오는데 실패했습니다. 에러: ",e,"에러 데이터: ",e.response.data),m(r)})})();&lt;/script&gt;\n  &lt;script&gt;"use strict";function cmRenderFailCallBack(e){e.parentElement.removeChild(e)}&lt;/script&gt;\n  &lt;script&gt;"use strict";document.addEventListener(\'DOMContentLoaded\',function(){var t="".concat(Conf.api.hadesRest)+"/service_notice?id="+"3393",n=document.querySelector("#newsviewNotice");axios.get(t).then(function(t){var e=t.data.body.data,t=e.noticeTitle,e=e.noticeUrl;null!==t?n.innerHTML="&lt;strong class=\\"tit_notice\\"&gt;공지&lt;/strong&gt;&lt;span class=\\"txt_notice\\"&gt;&lt;a href=\\"".concat(e,"\\" class=\\"link_txt\\"&gt;").concat(t,"&lt;/a&gt;&lt;/span&gt;"):n.parentNode.removeChild(n)}).catch(function(t){console.log("댓글 공지 오류: "+t),n.parentNode.removeChild(n)})});&lt;/script&gt;\n  &lt;script src="//comment.daum.net/js/latest/alex.single.min.js"&gt;&lt;/script&gt;\n  &lt;script&gt;"use strict";window.excludeCorejs=!1,window.alexConfig={label:{emptyImage:\'//i1.daumcdn.net/img-section/enter2013/liveviewer/pc_emot_co.gif\'},onLoad:function(){window.isLoadComment=!0}};&lt;/script&gt;\n  &lt;script&gt;"use strict";!(function(){var t,n,a=document.querySelector(\'.aside_popular\'),e=document.querySelectorAll(".tab_aside li a"),i={"뉴스":"news","연예":"entertain","스포츠":"sports"},c={news:{el:e[0],korName:"뉴스",moreLink:"https://news.daum.net/ranking/popular/all"},entertain:{el:e[1],korName:"연예",moreLink:"https://entertain.daum.net/ranking/popular"},sports:{el:e[2],korName:"스포츠",moreLink:"https://sports.daum.net/news/ranking"}},r=c["news"].el,l=1;function s(n){var e;r!==n&amp;&amp;((e=r.parentNode.querySelector(".cont_aside"))&amp;&amp;e.parentNode.removeChild(e),r.parentNode.classList.remove("on"),n.parentNode.classList.add("on"),l=1,o(n),r=n)}function o(n){var e=n.innerText,t=i[e],a=c[t].moreLink,s=document.createElement("div"),t=d(t);function o(){var n=document.querySelector(".cont_aside .list_ranking"),e=r.innerText,e=i[e];l=this.classList.contains("btn_prev")?1===l?3:l-1:3===l?1:l+1,n.innerHTML=d(e)}s.classList.add("cont_aside"),s.innerHTML="\\n &lt;strong class=\\"screen_out\\"&gt;".concat(e,"&lt;/strong&gt;\\n &lt;ol class=\\"list_ranking\\"&gt;\\n ").concat(t," \\n &lt;/ol&gt;\\n &lt;div class=\\"util_aside\\"&gt;\\n &lt;button class=\\"btn_slide btn_prev\\"&gt;&lt;span class=\\"ico_newsview\\"&gt;이전&lt;/span&gt;&lt;/button&gt;\\n &lt;button class=\\"btn_slide btn_next\\"&gt;&lt;span class=\\"ico_newsview\\"&gt;다음&lt;/span&gt;&lt;/button&gt;\\n &lt;a href=").concat(a," class=\\"link_all\\"&gt;&lt;span class=\\"txt_newsview\\"&gt;전체 보기&lt;/span&gt;&lt;span class=\\"ico_newsview\\"&gt;&lt;/span&gt;&lt;/a&gt;\\n &lt;/div&gt;\\n "),n.parentNode.appendChild(s),s.querySelector(".btn_prev").addEventListener(\'click\',o),s.querySelector(".btn_next").addEventListener(\'click\',o)}function d(n){return c[n].contents.slice(10*(l-1),10*l).map(function(n){return"\\n &lt;li&gt;\\n &lt;em class=\\"num_newsview num".concat(n.index,"\\"&gt;").concat(n.index,"위&lt;/em&gt;\\n &lt;strong class=\\"tit_g\\"&gt;&lt;a href=\\"").concat(n.pcLink,"\\" class=\\"link_txt @").concat(n.index,"\\"&gt;").concat(n.title,"&lt;/a&gt;&lt;/strong&gt;\\n &lt;/li&gt;\\n ")}).join(\'\')}t=c,n="".concat(Conf.api.hadesRest,"/pc_popular_news?size=30"),axios.get(n).then(function(n){var e=n.data.body.data;Object.keys(e).forEach(function(n){t[n].contents=e[n]}),o(r),a.classList.remove(\'hide\')}).catch(function(n){a.parentNode.removeChild(a)}),e.forEach(function(n){n.addEventListener("mouseover",function(n){return s(n.target)}),n.addEventListener("focus",function(n){return s(n.target)})})})();&lt;/script&gt;\n  &lt;script&gt;"use strict";!(function(){var t="&lt;li&gt;\\n &lt;a class=\\"link_cont\\" href=\\"&lt;%= url %&gt;\\"&gt;\\n &lt;span class=\\"wrap_thumb\\"&gt;\\n &lt;img class=\\"thumb_g\\" src=\\"&lt;%= thumbnail %&gt;\\" alt=\\"\\"/&gt;\\n &lt;span class=\\"ico_phototv\\"&gt;\\n &lt;% if (type == \'photo\') { %&gt;\\n &lt;span class=\\"ico_newsview ico_photo\\"&gt;포토&lt;/span&gt;\\n &lt;% } else { %&gt;\\n &lt;span class=\\"ico_newsview ico_vod\\"&gt;영상&lt;/span&gt;\\n &lt;% } %&gt;\\n &lt;/span&gt;\\n &lt;/span&gt;\\n &lt;strong class=\\"tit_thumb\\"&gt;&lt;%= title %&gt;&lt;/strong&gt;\\n &lt;/a&gt;\\n &lt;/li&gt;",o=document.querySelector(\'.aside_phototv\'),s=o.querySelector(\'.list_phototv\'),n="".concat(Conf.api.hadesRest,"/pc_photo_tv");function a(n){n&amp;&amp;n.parentNode.removeChild(n)}axios.get(n).then(function(n){n=n.data.body.data;_.isEmpty(n)?a(o):(s.innerHTML=n.map(function(n){return _.template(t)(n)}).join(\'\'),(n=o)&amp;&amp;n.classList.remove(\'hide\'))}).catch(function(n){console.error(\'[PC 뉴스 포토&amp;TV]:\',n),a(o)})})();&lt;/script&gt;\n  &lt;script&gt;"use strict";!(function(){var n=\'S570x320\',e="20190728165812603",t=encodeURIComponent(JSON.stringify({itemid:e,category:"news".replace(\'tain\',\'\')})),e={source:e},r="&lt;a href=\\"&lt;%=obj.url%&gt;\\" class=\\"link_cont\\" data-itemid=\\"&lt;%=obj._id%&gt;\\"\\" data-pos=\\"&lt;%=obj.pos%&gt;\\"&gt;\\n &lt;span class=\\"wrap_thumb\\"&gt;&lt;img src=\\"&lt;%=obj.thumbnail%&gt;\\" class=\\"thumb_g\\" alt=\\"\\"&gt;&lt;/span&gt;\\n &lt;strong class=\\"tit_thumb\\"&gt;&lt;%=obj.title%&gt;&lt;/strong&gt;\\n &lt;/a&gt;",o="&lt;strong class=\\"tit_g\\"&gt;\\n &lt;span class=\\"info_news\\"&gt;&lt;%=obj.cp_name%&gt;&lt;/span&gt;\\n &lt;a href=\\"&lt;%=obj.url%&gt;\\" data-itemid=\\"&lt;%=obj._id%&gt;\\" data-pos=\\"&lt;%=obj.pos%&gt;\\" class=\\"link_txt\\"&gt;&lt;%=obj.title%&gt;&lt;/a&gt;\\n &lt;/strong&gt;",m=[];new Toros.Connector({url:\'mediadaum/most_similar\',queryParams:t,map:function(e){var t=e._id,a=e.title,i=e.image,e=e.cp_name,e={_id:t,url:"https://v.daum.net/v/".concat(t),title:a,thumbnail:StringUtil.makeThumbnail(i,n),cp_name:e};if(!(m.length&lt;2&amp;&amp;i))return e;m.push(e)},svc:\'mediadaum_sim\',impLabel:\'toros_mediadaum_sim_imp\',impProps:e,viewLabel:\'toros_mediadaum_sim_vimp\',viewProps:e,clickLabel:\'toros_mediadaum_sim_click\',clickProps:e,customRender:function(e,i,n){var s=e.filter(function(e){return!!e._id});m.length&lt;2||s.length&lt;10?document.querySelector(\'.realtime_news\').remove():document.querySelectorAll(\'.item_realtime_news\').forEach(function(e,t){var a=t&lt;2?{article:m.shift(),template:r}:{article:s.shift(),template:o},t=a.article,a=a.template;t?(e.insertAdjacentHTML(\'beforeend\',_.template(a)(t)),e.classList.remove(\'item_realtime_news\'),e.classList.length||e.removeAttribute(\'class\'),t=e.querySelector(\'a\'),i.observe(t),t.addEventListener(\'click\',n)):e.remove()})}}).render()})();&lt;/script&gt;\n  &lt;script&gt;"use strict";function onFailEtcBottomAd(){var t;null!==(t=document.querySelector(\'.etc_bottom_ad\'))&amp;&amp;void 0!==t&amp;&amp;t.remove()}&lt;/script&gt;\n  &lt;script&gt;"use strict";!(function(){var e=document.querySelector(".direct_link");e.querySelector(".btn_fold").addEventListener(\'click\',function(){e.classList.toggle("direct_open")})})();&lt;/script&gt;\n  &lt;script&gt;\n    window.minidaum_options = JSON.parse(\'{"bgType":"white","enableLogoutRetun":true,"returnUrl":"","disableHotissue":false,"disableLogo":false,"disableTracker":true,"enableTopLink":false}\');\n&lt;/script&gt;\n  &lt;script src="https://go.daum.net/minidaum_pc.daum"&gt;&lt;/script&gt;\n  &lt;script&gt;"use strict";document.querySelectorAll(\'.kakao_ad_area\').forEach(function(a){a.setAttribute(\'data-ad-param-channel\',\'harmony\'),a.setAttribute(\'data-ad-param-cp\',\'90_pc_media_news\')});&lt;/script&gt;\n  &lt;script&gt;"use strict";!(function(){var e,t,i,c=\'&lt;div class="direct_view" style="top:&lt;%= top %&gt;px; width:&lt;%= width %&gt;px; margin-left:&lt;%= left %&gt;px"&gt; &lt;a href="&lt;%= url %&gt;" class="link_view"&gt; &lt;span class="txt_g"&gt;&lt;%= title %&gt;&lt;/span&gt; &lt;span class="ico_view"&gt; &lt;span class="ico_newsview ico_gallery"&gt;갤러리 이동&lt;/span&gt; &lt;/span&gt; &lt;/a&gt; &lt;/div&gt;\';e=\'NHT9NtZWBe\',!(t=\'\')||(i=document.querySelector(\'img[dmcf-mtype="image"]\'))&amp;&amp;!i.querySelector(\'.direct_vod\')&amp;&amp;axios.get("".concat(Conf.api.hadesRest,"/photo_gallery_link_info?docId=").concat(e,"&amp;galleryId=").concat(parseInt(t,10))).then(function(e){var t,a=e.data.body.data;t=i,a=(e=a).title,e=e.pcLink,a&amp;&amp;e&amp;&amp;(e={title:a,url:e,top:t.clientHeight-62,width:a=t.clientWidth,left:a/2*-1},a=document.createElement(\'div\'),t.parentNode.appendChild(a),a.outerHTML=_.template(c)(e))})})();&lt;/script&gt;\n  &lt;script src="//search1.daumcdn.net/search/statics/common/js/g/search_dragselection.min.js"&gt;&lt;/script&gt;\n  &lt;script&gt;"use strict";!(function(){var e=document.querySelector(".head_media"),n=document.getElementById("wrapMinidaum").offsetHeight+e.offsetHeight,o=document.getElementById("barProgress"),d=document.getElementById("mAside"),s=document.getElementById("kakaoWrap"),l=document.getElementById("kakaoGnb"),r=document.getElementById("mArticle"),a=document.querySelector(".cmt_news"),c=document.querySelector(".aside_ad:first-child"),f=document.querySelector(".aside_ad:last-child"),g=document.getElementById(\'realtime_aside\');function t(){var e=window.scrollY||window.pageYOffset,t=document.body.offsetHeight,i=window.innerHeight;n&lt;e?(i=100*e/(t-i),s.classList.add("header_fixed"),o.style.width=parseInt(i,10)+"%"):s.classList.remove("header_fixed")}function i(){var e=window.scrollX||window.pageXOffset,t=cMain.clientWidth,i=r.clientWidth,n=t-i-d.clientWidth,o=getComputedStyle(cMain),s=null;s=g?(t=g.getBoundingClientRect().left)&lt;880?t+e:t:i+n+parseInt(o[\'marginLeft\'],10)-e,r.offsetHeight&lt;d.offsetHeight||(a.style.minHeight=\'250px\',0&lt;(n=(window.scrollY||window.pageYOffset)-cMain.offsetTop-8-c.clientHeight)?(o=r.offsetHeight-a.offsetHeight,(e=d.offsetHeight-f.offsetHeight)+n+8&lt;o?(d.style.position=\'fixed\',d.style.top=l.clientHeight-c.offsetHeight-74+\'px\',d.style.left=s+\'px\'):(d.style.position=\'relative\',d.style.top=o-e+\'px\',d.style.left=\'inherit\')):(d.style.position=\'static\',d.style.top=\'inherit\',d.style.left=\'inherit\'))}\'false\'!=\'true\'&amp;&amp;\'news\'==\'news\'?(window.addEventListener("resize",_.throttle(i,100)),window.addEventListener("scroll",_.throttle(function(){t(),i()},100)),t(),i()):(window.addEventListener("scroll",_.throttle(function(){t()},100)),t())})();&lt;/script&gt;\n  &lt;script type="text/javascript" src="//t1.daumcdn.net/tiara/js/v1/tiara.min.js"&gt;&lt;/script&gt;\n  &lt;script&gt;"use strict";!(function(){if(window.TiaraTracker){var c=!1,s=new Date,m="pc_news",l=null;try{l=Cookies.get(\'DAUMTOP\')||Cookies.get(\'HARMONY_TOROS_IMP\')&amp;&amp;window.atob(Cookies.get(\'HARMONY_TOROS_IMP\'))}catch(e){l=Cookies.get(\'DAUMTOP\')}var u=\'\',g=\'\',y=TiaraTracker.getInstance().setSvcDomain("media.daum.net").setPage("newsview").trackPage("newsview").setSection("digital").setEnableAlwaysImage(!0),f={id:"20190728165812603",type:"article",name:"\\uC77C\\uB860\\uBA38\\uC2A4\\uD06C \\"\\uD14C\\uC2AC\\uB77C\\uC5D0\\uC11C \\uB137\\uD50C\\uB9AD\\uC2A4\\u00B7\\uC720\\uD29C\\uBE0C \\uC990\\uAE38 \\uB0A0 \\uC628\\uB2E4\\"",category_id:"100031",category:"digital",author:"\\uC774\\uBBFC\\uC6B0",author_id:"letzwin@asiae.co.kr",provider:"\\uC544\\uC2DC\\uC544\\uACBD\\uC81C",provider_id:"90",regdate:"2019-07-28 16:58:12",plink:"https://media.daum.net/v/20190728165812603",image:"https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg",harmony_consumer_id:"media",media:"pcweb"},p={contentUniqueKey:"hamny-".concat(f.id),docId:"NHT9NtZWBe",harmony_consumer_id:"media",media:"pcweb",reg_dt:"2019-07-28 16:58:12",reg_timestamp:"1564300692871"},e=function(){c||y.actionKind("ViewContent").pageMeta(f).customProps(p).track()},t=function(){if(!c){c=!0;var e=document.body.scrollHeight,t=window.scrollY,a=e-t,o=window.innerHeight,n=Math.round(t/(e-o)*100),i={},o={duration:(new Date).getTime()-s.getTime(),scroll_percent:n,scroll_height:e,scroll_top:t,scroll_bottom:a,scroll_inner_height:o};try{var d,r=!1;!l||(d=JSON.parse(l)).contents_unique_key===p.contentUniqueKey&amp;&amp;(i={toros_imp_id:d.impression_id,toros_file_hash_key:d.toros_file_hash_key,toros_user_id_type:"uuid",toros_page_meta_id:p.contentUniqueKey,toros_event_meta_id:p.contentUniqueKey,toros_action_type:"dwelltime"},Cookies.remove(\'HARMONY_TOROS_IMP\',{path:\'/\',domain:location.hostname.substring(location.hostname.indexOf(\'.\'))}),Cookies.remove(\'DAUMTOP\',{path:\'/\',domain:\'.daum.net\'}),r=!0),!r&amp;&amp;0&lt;u.length&amp;&amp;(i={toros_imp_id:window.atob(u),toros_file_hash_key:window.atob(g),toros_user_id_type:"uuid",toros_page_meta_id:p.contentUniqueKey,toros_event_meta_id:p.contentUniqueKey,toros_action_type:"dwelltime"})}catch(e){}y.trackUsage().actionKind("UsagePage").pageMeta(f).usage(o).customProps(_.assignIn(p,i)).track()}};"onpagehide"in window?(window.addEventListener("pageshow",e,!1),window.addEventListener("pagehide",t,!1)):(window.addEventListener("load",e,!1),window.addEventListener("unload",t,!1)),document.addEventListener("visibilitychange",function(){(document["hidden"]?t:e)()},!1),document.addEventListener("mousedown",function(e){var t,a,o,n,i,d,r=e.target,c=r.closest("[data-cloud]"),s=r.closest("a")||r.closest("button")||r.closest(\'div.selectionbox\');s&amp;&amp;null!=c&amp;&amp;c.contains(s)&amp;&amp;((i=TiaraTracker.getClickInfo(e))&amp;&amp;(a=(null==(t=i.action)?void 0:t.name)||"",o=(null==t?void 0:t.kind)||"",n=_.assignIn(p,i.customProps),i=r.closest("[data-tiara]"),r=s.querySelector("img"),d=0,Array.from((c||i).querySelectorAll("a, button")).map(function(e,t){e==s&amp;&amp;(d=t)}),e={layer1:m,layer2:c.dataset.cloud,layer3:(null==i?void 0:i.dataset.tiara)||"",click_url:s.href||"",ordnum:d,copy:s.classList.contains(\'selectionbox\')?null==t?void 0:t.name:s.innerText,image:(null==r?void 0:r.src)||"",posX:e.clientX,posY:e.clientY},y.trackEvent(a).pageMeta(f).actionKind(o).customProps(n).click(e).track()))})}})();&lt;/script&gt;\n &lt;/body&gt;\n&lt;/html&gt;'
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://news.v.daum.net/v/20190728165812603'</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">resp</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+<span class="n">title</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'h3'</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s">'tit_view'</span><span class="p">)</span>
+<span class="n">title</span><span class="p">.</span><span class="n">get_text</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'일론머스크 "테슬라에서 넷플릭스·유튜브 즐길 날 온다"'
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://news.v.daum.net/v/20190728165812603'</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">resp</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+<span class="n">soup</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">'span'</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s">'txt_info'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">soup</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">'span'</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s">'txt_info'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="txt_info"&gt;입력 &lt;span class="num_date"&gt;2019. 07. 28. 16:58&lt;/span&gt;&lt;/span&gt;
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://news.v.daum.net/v/20190728165812603'</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">resp</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'span'</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s">'info_view'</span><span class="p">)</span>
+<span class="n">info</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'span'</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s">'txt_info'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="txt_info"&gt;이민우&lt;/span&gt;
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://news.v.daum.net/v/20190728165812603'</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+
+<span class="c1">#&lt;div id="harmonyContainer" class="article_view" data-translation-body="true"&gt; 
+</span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">resp</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+<span class="n">container</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'div'</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s">'harmonyContainer'</span><span class="p">)</span>
+<span class="n">contents</span> <span class="o">=</span> <span class="s">''</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">container</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">'p'</span><span class="p">):</span>
+    <span class="n">contents</span> <span class="o">+=</span> <span class="n">p</span><span class="p">.</span><span class="n">get_text</span><span class="p">().</span><span class="n">strip</span><span class="p">()</span>
+    
+<span class="n">contents</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'[아시아경제 이민우 기자] 일론 머스크 테슬라 최고경영자(CEO)가 자사 전기 자동차 모델에 넷플릭스와 유튜브 등 온라인동영상서비스(OTT)를 탑재할 것이라고 예고했다. 단순히 자율 주행 전기차가 단순히 주행을 위한 정보를 알려주는 것을 넘어 각종 영상 콘텐츠를 즐기는 공간으로도 확장하겠다는 전략으로 풀이된다.27일(현지시간) 더버지 등 주요 외신들에 따르면 머스크 CEO는 자신의 트위터를 통해 이 같은 계획을 밝혔다. 그는 "자동차가 정차했을 때 넷플릭스와 유튜브를 감상할 수 있는 기능이 조만간 추가될 것"이라며 "편안한 좌석과 서라운드 사운드 오디오를 통해 영화관과 같은 느낌을 받을 수 있을 것"이라고 강조했다.테슬라가 이처럼 콘텐츠 방면으로 확장하려 든 것은 이번이 처음이 아니다. 지난달 세계 최대 게임쇼 E3에서는 이미 운전자가 \'폴아웃 쉘터\'라는 게임을 할 수 있을 것이라고 발표한 바 있다. 이후에도 최근 게임업체 아타리사(社)의 자동차 경주 게임 ‘폴포지션’, 슈팅게임 ‘템페스트’, ‘미사일커맨드’ 등 고전 게임을 제공하기도 했다. 운전대로 게임을 조작하는 방식으로, 차가 주차돼 있을 경우에만 즐길 수 있다.이번 영상 콘텐츠는 주행 중에도 감상할 수 있도록 하는 방안을 고려하고 있다. 테슬라 측은 규제당국이 자율주행에 대해 완전히 승인하면 차량이 움직일 때에도 승객이 동영상을 즐길 수 있을 것이라고 설명했다.하지만 아직까지 자율주행차의 안전에 대한 우려는 완전히 걷혀지지 않은 상황이다. 지난 2017년 차량공유 서비스 우버의 자율주행 시범차량이 보행자와 충돌한 사고가 발생한 바 있다. 게다가 당시 시험 운전자는 디즈니의 동영상 스트리밍 서비스인 \'훌루\'를 이용하고 있던 것으로 밝혀졌다.이민우 기자 letzwin@asiae.co.kr&lt;ⓒ경제를 보는 눈, 세계를 보는 창 아시아경제 무단전재 배포금지&gt;'
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://news.v.daum.net/v/20190728165812603'</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+
+<span class="c1">#&lt;div id="harmonyContainer" class="article_view" data-translation-body="true"&gt; 
+</span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">resp</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+<span class="n">container</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'div'</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s">'harmonyContainer'</span><span class="p">)</span>
+<span class="n">container</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="article_view" data-translation-body="true" id="harmonyContainer"&gt;
+&lt;section dmcf-sid="NkBWHdyrlY"&gt;
+&lt;figure class="figure_frm origin_fig" dmcf-pid="N7s2biXYTL" dmcf-ptype="figure"&gt;
+&lt;p class="link_figure"&gt;&lt;img alt="일론 머스크 테슬라 최고경영자(CEO) [이미지출처=로이터연합뉴스]" class="thumb_g_article" data-org-src="https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg" data-org-width="550" dmcf-mid="NBMY3ZZhN4" dmcf-mtype="image" height="auto" src="https://img3.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg" width="658"/&gt;&lt;/p&gt;
+&lt;figcaption class="txt_caption default_figure"&gt;
+            일론 머스크 테슬라 최고경영자(CEO) [이미지출처=로이터연합뉴스]
+           &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;div dmcf-pid="NU9K9rfDgA" dmcf-ptype="general"&gt;
+&lt;p&gt;[아시아경제 이민우 기자] 일론 머스크 테슬라 최고경영자(CEO)가 자사 전기 자동차 모델에 넷플릭스와 유튜브 등 온라인동영상서비스(OTT)를 탑재할 것이라고 예고했다. 단순히 자율 주행 전기차가 단순히 주행을 위한 정보를 알려주는 것을 넘어 각종 영상 콘텐츠를 즐기는 공간으로도 확장하겠다는 전략으로 풀이된다.&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;27일(현지시간) 더버지 등 주요 외신들에 따르면 머스크 CEO는 자신의 트위터를 통해 이 같은 계획을 밝혔다. 그는 "자동차가 정차했을 때 넷플릭스와 유튜브를 감상할 수 있는 기능이 조만간 추가될 것"이라며 "편안한 좌석과 서라운드 사운드 오디오를 통해 영화관과 같은 느낌을 받을 수 있을 것"이라고 강조했다.&lt;/p&gt;
+&lt;/div&gt;
+&lt;figure class="figure_frm origin_fig" dmcf-pid="NlqQhf4JmF" dmcf-ptype="figure"&gt;
+&lt;p class="link_figure"&gt;&lt;img alt="(출처=일론 머스크 트위터 계정 캡쳐)" class="thumb_g_article" data-org-src="https://t1.daumcdn.net/news/201907/28/akn/20190728165813670hwxf.png" data-org-width="550" dmcf-mid="NRhnb5SRpx" dmcf-mtype="image" height="auto" src="https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813670hwxf.png" width="658"/&gt;&lt;/p&gt;
+&lt;figcaption class="txt_caption default_figure"&gt;
+            (출처=일론 머스크 트위터 계정 캡쳐)
+           &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;div dmcf-pid="NpkG4d9A6j" dmcf-ptype="general"&gt;
+&lt;p&gt;테슬라가 이처럼 콘텐츠 방면으로 확장하려 든 것은 이번이 처음이 아니다. 지난달 세계 최대 게임쇼 E3에서는 이미 운전자가 '폴아웃 쉘터'라는 게임을 할 수 있을 것이라고 발표한 바 있다. 이후에도 최근 게임업체 아타리사(社)의 자동차 경주 게임 ‘폴포지션’, 슈팅게임 ‘템페스트’, ‘미사일커맨드’ 등 고전 게임을 제공하기도 했다. 운전대로 게임을 조작하는 방식으로, 차가 주차돼 있을 경우에만 즐길 수 있다.&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;이번 영상 콘텐츠는 주행 중에도 감상할 수 있도록 하는 방안을 고려하고 있다. 테슬라 측은 규제당국이 자율주행에 대해 완전히 승인하면 차량이 움직일 때에도 승객이 동영상을 즐길 수 있을 것이라고 설명했다.&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;하지만 아직까지 자율주행차의 안전에 대한 우려는 완전히 걷혀지지 않은 상황이다. 지난 2017년 차량공유 서비스 우버의 자율주행 시범차량이 보행자와 충돌한 사고가 발생한 바 있다. 게다가 당시 시험 운전자는 디즈니의 동영상 스트리밍 서비스인 '훌루'를 이용하고 있던 것으로 밝혀졌다.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p dmcf-pid="NUOWg8Qxyd" dmcf-ptype="general"&gt;이민우 기자 letzwin@asiae.co.kr&lt;/p&gt;
+&lt;/section&gt;
+&lt;p data-translation="true"&gt;&amp;lt;ⓒ경제를 보는 눈, 세계를 보는 창 아시아경제 무단전재 배포금지&amp;gt;&lt;/p&gt;
+&lt;/div&gt;
+</code></pre></div></div>
+
+<ul>
+  <li>CSS를 이용하여 tag 찾기</li>
+  <li>select, select_one함수 사용</li>
+  <li>css selector 사용법
+    <ul>
+      <li>태그명 찾기 tag</li>
+      <li>자손 태그 찾기 - 자손 관계 (tag tag)</li>
+      <li>자식 태그 찾기 - 다이렉트 자식 관계 (tag &gt; tag)</li>
+      <li>아이디 찾기 #id</li>
+      <li>클래스 찾기 .class</li>
+      <li>속성값 찾기 [name=’test’]
+        <ul>
+          <li>속성값 prefix 찾기 [name ^=’test’]</li>
+          <li>속성값 suffix 찾기 [name $=’test’]</li>
+          <li>속성값 substring 찾기 [name *=’test]</li>
+        </ul>
+      </li>
+      <li>n번째 자식 tag 찾기 :nth-child(n)</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://news.v.daum.net/v/20190728165812603'</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">resp</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+<span class="n">soup</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="s">'h3'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;h3 class="tit_view" data-translation="true"&gt;일론머스크 "테슬라에서 넷플릭스·유튜브 즐길 날 온다"&lt;/h3&gt;,
+ &lt;h3 class="tit_cp"&gt;아시아경제 주요 뉴스&lt;/h3&gt;,
+ &lt;h3 class="txt_newsview"&gt;많이본 뉴스&lt;/h3&gt;,
+ &lt;h3 class="txt_newsview"&gt;포토&amp;amp;TV&lt;/h3&gt;,
+ &lt;h3 class="txt_newsview"&gt;이 시각 추천뉴스&lt;/h3&gt;]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="s">'div#harmonyContainer'</span><span class="p">)</span><span class="c1">#div태그이면서 id가 harmonyContainer 검색
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;div class="article_view" data-translation-body="true" id="harmonyContainer"&gt;
+ &lt;section dmcf-sid="NkBWHdyrlY"&gt;
+ &lt;figure class="figure_frm origin_fig" dmcf-pid="N7s2biXYTL" dmcf-ptype="figure"&gt;
+ &lt;p class="link_figure"&gt;&lt;img alt="일론 머스크 테슬라 최고경영자(CEO) [이미지출처=로이터연합뉴스]" class="thumb_g_article" data-org-src="https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg" data-org-width="550" dmcf-mid="NBMY3ZZhN4" dmcf-mtype="image" height="auto" src="https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg" width="658"/&gt;&lt;/p&gt;
+ &lt;figcaption class="txt_caption default_figure"&gt;
+             일론 머스크 테슬라 최고경영자(CEO) [이미지출처=로이터연합뉴스]
+            &lt;/figcaption&gt;
+ &lt;/figure&gt;
+ &lt;div dmcf-pid="NU9K9rfDgA" dmcf-ptype="general"&gt;
+ &lt;p&gt;[아시아경제 이민우 기자] 일론 머스크 테슬라 최고경영자(CEO)가 자사 전기 자동차 모델에 넷플릭스와 유튜브 등 온라인동영상서비스(OTT)를 탑재할 것이라고 예고했다. 단순히 자율 주행 전기차가 단순히 주행을 위한 정보를 알려주는 것을 넘어 각종 영상 콘텐츠를 즐기는 공간으로도 확장하겠다는 전략으로 풀이된다.&lt;/p&gt;
+ &lt;br/&gt;
+ &lt;p&gt;27일(현지시간) 더버지 등 주요 외신들에 따르면 머스크 CEO는 자신의 트위터를 통해 이 같은 계획을 밝혔다. 그는 "자동차가 정차했을 때 넷플릭스와 유튜브를 감상할 수 있는 기능이 조만간 추가될 것"이라며 "편안한 좌석과 서라운드 사운드 오디오를 통해 영화관과 같은 느낌을 받을 수 있을 것"이라고 강조했다.&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;figure class="figure_frm origin_fig" dmcf-pid="NlqQhf4JmF" dmcf-ptype="figure"&gt;
+ &lt;p class="link_figure"&gt;&lt;img alt="(출처=일론 머스크 트위터 계정 캡쳐)" class="thumb_g_article" data-org-src="https://t1.daumcdn.net/news/201907/28/akn/20190728165813670hwxf.png" data-org-width="550" dmcf-mid="NRhnb5SRpx" dmcf-mtype="image" height="auto" src="https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813670hwxf.png" width="658"/&gt;&lt;/p&gt;
+ &lt;figcaption class="txt_caption default_figure"&gt;
+             (출처=일론 머스크 트위터 계정 캡쳐)
+            &lt;/figcaption&gt;
+ &lt;/figure&gt;
+ &lt;div dmcf-pid="NpkG4d9A6j" dmcf-ptype="general"&gt;
+ &lt;p&gt;테슬라가 이처럼 콘텐츠 방면으로 확장하려 든 것은 이번이 처음이 아니다. 지난달 세계 최대 게임쇼 E3에서는 이미 운전자가 '폴아웃 쉘터'라는 게임을 할 수 있을 것이라고 발표한 바 있다. 이후에도 최근 게임업체 아타리사(社)의 자동차 경주 게임 ‘폴포지션’, 슈팅게임 ‘템페스트’, ‘미사일커맨드’ 등 고전 게임을 제공하기도 했다. 운전대로 게임을 조작하는 방식으로, 차가 주차돼 있을 경우에만 즐길 수 있다.&lt;/p&gt;
+ &lt;br/&gt;
+ &lt;p&gt;이번 영상 콘텐츠는 주행 중에도 감상할 수 있도록 하는 방안을 고려하고 있다. 테슬라 측은 규제당국이 자율주행에 대해 완전히 승인하면 차량이 움직일 때에도 승객이 동영상을 즐길 수 있을 것이라고 설명했다.&lt;/p&gt;
+ &lt;br/&gt;
+ &lt;p&gt;하지만 아직까지 자율주행차의 안전에 대한 우려는 완전히 걷혀지지 않은 상황이다. 지난 2017년 차량공유 서비스 우버의 자율주행 시범차량이 보행자와 충돌한 사고가 발생한 바 있다. 게다가 당시 시험 운전자는 디즈니의 동영상 스트리밍 서비스인 '훌루'를 이용하고 있던 것으로 밝혀졌다.&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;p dmcf-pid="NUOWg8Qxyd" dmcf-ptype="general"&gt;이민우 기자 letzwin@asiae.co.kr&lt;/p&gt;
+ &lt;/section&gt;
+ &lt;p data-translation="true"&gt;&amp;lt;ⓒ경제를 보는 눈, 세계를 보는 창 아시아경제 무단전재 배포금지&amp;gt;&lt;/p&gt;
+ &lt;/div&gt;]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="s">'#harmonyContainer &gt; p'</span><span class="p">)</span> <span class="c1">#id값 검색시 #사용함 / &gt; 은 자식검색
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;p data-translation="true"&gt;&amp;lt;ⓒ경제를 보는 눈, 세계를 보는 창 아시아경제 무단전재 배포금지&amp;gt;&lt;/p&gt;]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="s">'#harmonyContainer  p'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;p class="link_figure"&gt;&lt;img alt="일론 머스크 테슬라 최고경영자(CEO) [이미지출처=로이터연합뉴스]" class="thumb_g_article" data-org-src="https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg" data-org-width="550" dmcf-mid="NBMY3ZZhN4" dmcf-mtype="image" height="auto" src="https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg" width="658"/&gt;&lt;/p&gt;,
+ &lt;p&gt;[아시아경제 이민우 기자] 일론 머스크 테슬라 최고경영자(CEO)가 자사 전기 자동차 모델에 넷플릭스와 유튜브 등 온라인동영상서비스(OTT)를 탑재할 것이라고 예고했다. 단순히 자율 주행 전기차가 단순히 주행을 위한 정보를 알려주는 것을 넘어 각종 영상 콘텐츠를 즐기는 공간으로도 확장하겠다는 전략으로 풀이된다.&lt;/p&gt;,
+ &lt;p&gt;27일(현지시간) 더버지 등 주요 외신들에 따르면 머스크 CEO는 자신의 트위터를 통해 이 같은 계획을 밝혔다. 그는 "자동차가 정차했을 때 넷플릭스와 유튜브를 감상할 수 있는 기능이 조만간 추가될 것"이라며 "편안한 좌석과 서라운드 사운드 오디오를 통해 영화관과 같은 느낌을 받을 수 있을 것"이라고 강조했다.&lt;/p&gt;,
+ &lt;p class="link_figure"&gt;&lt;img alt="(출처=일론 머스크 트위터 계정 캡쳐)" class="thumb_g_article" data-org-src="https://t1.daumcdn.net/news/201907/28/akn/20190728165813670hwxf.png" data-org-width="550" dmcf-mid="NRhnb5SRpx" dmcf-mtype="image" height="auto" src="https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813670hwxf.png" width="658"/&gt;&lt;/p&gt;,
+ &lt;p&gt;테슬라가 이처럼 콘텐츠 방면으로 확장하려 든 것은 이번이 처음이 아니다. 지난달 세계 최대 게임쇼 E3에서는 이미 운전자가 '폴아웃 쉘터'라는 게임을 할 수 있을 것이라고 발표한 바 있다. 이후에도 최근 게임업체 아타리사(社)의 자동차 경주 게임 ‘폴포지션’, 슈팅게임 ‘템페스트’, ‘미사일커맨드’ 등 고전 게임을 제공하기도 했다. 운전대로 게임을 조작하는 방식으로, 차가 주차돼 있을 경우에만 즐길 수 있다.&lt;/p&gt;,
+ &lt;p&gt;이번 영상 콘텐츠는 주행 중에도 감상할 수 있도록 하는 방안을 고려하고 있다. 테슬라 측은 규제당국이 자율주행에 대해 완전히 승인하면 차량이 움직일 때에도 승객이 동영상을 즐길 수 있을 것이라고 설명했다.&lt;/p&gt;,
+ &lt;p&gt;하지만 아직까지 자율주행차의 안전에 대한 우려는 완전히 걷혀지지 않은 상황이다. 지난 2017년 차량공유 서비스 우버의 자율주행 시범차량이 보행자와 충돌한 사고가 발생한 바 있다. 게다가 당시 시험 운전자는 디즈니의 동영상 스트리밍 서비스인 '훌루'를 이용하고 있던 것으로 밝혀졌다.&lt;/p&gt;,
+ &lt;p dmcf-pid="NUOWg8Qxyd" dmcf-ptype="general"&gt;이민우 기자 letzwin@asiae.co.kr&lt;/p&gt;,
+ &lt;p data-translation="true"&gt;&amp;lt;ⓒ경제를 보는 눈, 세계를 보는 창 아시아경제 무단전재 배포금지&amp;gt;&lt;/p&gt;]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="s">'h3.tit_view'</span><span class="p">)</span>
+<span class="n">soup</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="s">'.tit_view'</span><span class="p">)</span> <span class="c1">#태그에 관계없이 가져옴 / 클래스 찾기 .class
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;h3 class="tit_view" data-translation="true"&gt;일론머스크 "테슬라에서 넷플릭스·유튜브 즐길 날 온다"&lt;/h3&gt;]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="s">'h3[class="tit_view"]'</span><span class="p">)</span> 
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;h3 class="tit_view" data-translation="true"&gt;일론머스크 "테슬라에서 넷플릭스·유튜브 즐길 날 온다"&lt;/h3&gt;]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="s">'h3[class^="t"]'</span><span class="p">)</span> <span class="c1"># ^ -&gt; t로 시작하는 클래스 이름 찾는다
+</span><span class="n">soup</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="s">'h3[class^="tx"]'</span><span class="p">)</span> <span class="c1">#tx로 시작하는 클래스 이름 찾는다
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;h3 class="txt_newsview"&gt;많이본 뉴스&lt;/h3&gt;,
+ &lt;h3 class="txt_newsview"&gt;포토&amp;amp;TV&lt;/h3&gt;,
+ &lt;h3 class="txt_newsview"&gt;이 시각 추천뉴스&lt;/h3&gt;]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="s">'h3[class$="view"]'</span><span class="p">)</span> <span class="c1">#$ - &gt; view으로 끝나는 클래스 이름 찾는다
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;h3 class="tit_view" data-translation="true"&gt;일론머스크 "테슬라에서 넷플릭스·유튜브 즐길 날 온다"&lt;/h3&gt;,
+ &lt;h3 class="txt_newsview"&gt;많이본 뉴스&lt;/h3&gt;,
+ &lt;h3 class="txt_newsview"&gt;포토&amp;amp;TV&lt;/h3&gt;,
+ &lt;h3 class="txt_newsview"&gt;이 시각 추천뉴스&lt;/h3&gt;]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="s">'h3[class$="_view"]'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;h3 class="tit_view" data-translation="true"&gt;일론머스크 "테슬라에서 넷플릭스·유튜브 즐길 날 온다"&lt;/h3&gt;]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="s">'h3[class*="view"]'</span><span class="p">)</span> <span class="c1"># * - &gt; view으로 된 모든 클래스 이름 찾는다 
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;h3 class="tit_view" data-translation="true"&gt;일론머스크 "테슬라에서 넷플릭스·유튜브 즐길 날 온다"&lt;/h3&gt;,
+ &lt;h3 class="txt_newsview"&gt;많이본 뉴스&lt;/h3&gt;,
+ &lt;h3 class="txt_newsview"&gt;포토&amp;amp;TV&lt;/h3&gt;,
+ &lt;h3 class="txt_newsview"&gt;이 시각 추천뉴스&lt;/h3&gt;]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="s">'span.txt_info:nth-child(1)'</span><span class="p">)</span> <span class="c1">#n번째 자식 tag 찾기 :nth-child(n)
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;span class="txt_info"&gt;이민우&lt;/span&gt;]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="s">'span.txt_info:nth-child(2)'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;span class="txt_info"&gt;입력 &lt;span class="num_date"&gt;2019. 07. 28. 16:58&lt;/span&gt;&lt;/span&gt;]
+</code></pre></div></div>
+
+<ul>
+  <li>정규표현식으로 tag 찾기</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">re</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span><span class="s">'h\d'</span><span class="p">))</span><span class="c1">#h하고 숫자가 붙는거 찾는다
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;h1&gt; &lt;a class="link_daum" href="https://www.daum.net"&gt; &lt;img alt="Daum" class="thumb_g" height="19" src="//t1.daumcdn.net/media/news/news2016/retina/logo_daum.jpg" width="45"/&gt; &lt;/a&gt; &lt;a href="//news.daum.net" id="kakaoServiceLogo"&gt;&lt;span class="ir_wa"&gt;뉴스&lt;/span&gt;&lt;/a&gt; &lt;/h1&gt;,
+ &lt;h2 class="screen_out"&gt;검색&lt;/h2&gt;,
+ &lt;h2 class="screen_out"&gt;뉴스 메인메뉴&lt;/h2&gt;,
+ &lt;h2 class="screen_out" id="kakaoBody"&gt;IT&lt;/h2&gt;,
+ &lt;h3 class="tit_view" data-translation="true"&gt;일론머스크 "테슬라에서 넷플릭스·유튜브 즐길 날 온다"&lt;/h3&gt;,
+ &lt;h4 class="screen_out"&gt;기사 도구 모음&lt;/h4&gt;,
+ &lt;h3 class="tit_cp"&gt;아시아경제 주요 뉴스&lt;/h3&gt;,
+ &lt;h3 class="txt_newsview"&gt;많이본 뉴스&lt;/h3&gt;,
+ &lt;h3 class="txt_newsview"&gt;포토&amp;amp;TV&lt;/h3&gt;,
+ &lt;h3 class="txt_newsview"&gt;이 시각 추천뉴스&lt;/h3&gt;,
+ &lt;h2 class="tit_direct"&gt;바로가기&lt;/h2&gt;,
+ &lt;h2 class="screen_out"&gt;서비스 이용정보&lt;/h2&gt;]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">'img'</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">'src'</span><span class="p">:</span> <span class="s">'.jpg'</span><span class="p">})</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">'img'</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">'src'</span><span class="p">:</span> <span class="n">re</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span><span class="s">'.+\.jpg'</span><span class="p">)})</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;img alt="Daum" class="thumb_g" height="19" src="//t1.daumcdn.net/media/news/news2016/retina/logo_daum.jpg" width="45"/&gt;,
+ &lt;img alt="일론 머스크 테슬라 최고경영자(CEO) [이미지출처=로이터연합뉴스]" class="thumb_g_article" data-org-src="https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg" data-org-width="550" dmcf-mid="NBMY3ZZhN4" dmcf-mtype="image" height="auto" src="https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg" width="658"/&gt;]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">'img'</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">'src'</span><span class="p">:</span><span class="n">re</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span><span class="s">'.+\.gif'</span><span class="p">)})</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;img alt="아시아경제" class="thumb_g" src="https://t1.daumcdn.net/media/news/news2016/cp/cp_akn.gif"/&gt;]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">'img'</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">'src'</span><span class="p">:</span><span class="n">re</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span><span class="s">'.+\.png'</span><span class="p">)})</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;img alt="(출처=일론 머스크 트위터 계정 캡쳐)" class="thumb_g_article" data-org-src="https://t1.daumcdn.net/news/201907/28/akn/20190728165813670hwxf.png" data-org-width="550" dmcf-mid="NRhnb5SRpx" dmcf-mtype="image" height="auto" src="https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813670hwxf.png" width="658"/&gt;]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">'h3'</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s">'tit_view'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;h3 class="tit_view" data-translation="true"&gt;일론머스크 "테슬라에서 넷플릭스·유튜브 즐길 날 온다"&lt;/h3&gt;]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">'h3'</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="n">re</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span><span class="s">'.+newsview$'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;h3 class="txt_newsview"&gt;많이본 뉴스&lt;/h3&gt;,
+ &lt;h3 class="txt_newsview"&gt;포토&amp;amp;TV&lt;/h3&gt;,
+ &lt;h3 class="txt_newsview"&gt;이 시각 추천뉴스&lt;/h3&gt;]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">soup</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">'h3'</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="n">re</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span><span class="s">'.+view$'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;h3 class="tit_view" data-translation="true"&gt;일론머스크 "테슬라에서 넷플릭스·유튜브 즐길 날 온다"&lt;/h3&gt;,
+ &lt;h3 class="txt_newsview"&gt;많이본 뉴스&lt;/h3&gt;,
+ &lt;h3 class="txt_newsview"&gt;포토&amp;amp;TV&lt;/h3&gt;,
+ &lt;h3 class="txt_newsview"&gt;이 시각 추천뉴스&lt;/h3&gt;]
+</code></pre></div></div>
+
+<ul>
+  <li>댓글 개수 추출</li>
+  <li>댓글의 경우, 최초 로딩시에 전달되지 않음</li>
+  <li>이 경우는 추가적으로 AJAX로 비동기적 호출을 하여 따로 data 전송을 함
+    <ul>
+      <li>개발자 도구의 network 탭에서 확인(XHR: XmlHTTPRequest)</li>
+      <li>비동기적 호출: 사이트의 전체가 아닌 일부분만 업데이트 가능하도록 함</li>
+    </ul>
+  </li>
+</ul>
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page -->
+           <!--
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to Big Data</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+                </section>
+            
+            -->
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="SeongJae Yu" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/author/SeongJae Yu">SeongJae Yu</a></h4>
+                                
+                                    <p>Read <a href="/author/SeongJae Yu">more posts</a> by this author.</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/SeongJae Yu">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            var this_page_url = 'https://SEONGJAE-YOO.github.io/beautiful-soup2';
+                            var this_page_identifier = '/beautiful-soup2';
+                            var this_page_title = 'beautifulsoup 모듈 - 02.beautifulsoup 모듈 사용하기';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://xxxxxxxx.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                </section>
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/built/images/author-logo.png)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; Big Data &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/python/">Python</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/transform-function">transform 함수의 이해 및 활용하기</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/stack-function">stack, unstack 함수의 이해 및 활용하기</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/pivot-function">pivot, pivot_table 함수의 이해 및 활용하기</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/python/">
+                                
+                                    See all 46 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/concat-function">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/logo-python.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/concat-function">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Python</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">Concat 함수로 데이터 프레임 병합하기</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)
+
+
+
+
+</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="SeongJae Yu" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/SeongJae Yu/">SeongJae Yu</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/beautiful-soup">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/logo-python.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/beautiful-soup">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Python</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">beautifulsoup 모듈 - 01.beautifulsoup 모듈 사용하기</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)
+
+
+
+
+</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="SeongJae Yu" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/SeongJae Yu/">SeongJae Yu</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="https://SEONGJAE-YOO.github.io/">
+            
+            <span>Big Data</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">beautifulsoup 모듈 - 02.beautifulsoup 모듈 사용하기</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=beautifulsoup+%EB%AA%A8%EB%93%88+-+02.beautifulsoup+%EB%AA%A8%EB%93%88+%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0&amp;url=https://SEONGJAE-YOO.github.io/beautiful-soup2"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://SEONGJAE-YOO.github.io/beautiful-soup2"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://SEONGJAE-YOO.github.io/">Big Data</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <h1 class="subscribe-overlay-title">Search Big Data</h1>
+            <p class="subscribe-overlay-description">
+                lunr.js를 이용한 posts 검색 </p>
+            <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+        </div>
+    </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>

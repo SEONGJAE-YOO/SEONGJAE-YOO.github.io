@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://seongjae-yoo.github.io/tag/python/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://seongjae-yoo.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-08-27T19:32:17+09:00</updated>
+  <updated>2021-08-27T19:36:57+09:00</updated>
   <id>https://seongjae-yoo.github.io/tag/python/feed.xml</id>
 
   
@@ -5894,6 +5894,404 @@ Name: Age, dtype: float64
     </entry>
   
     <entry>
+      <title type="html">beautifulsoup 모듈 - 02.beautifulsoup 모듈 사용하기</title>
+      <link href="https://seongjae-yoo.github.io/beautiful-soup2" rel="alternate" type="text/html" title="beautifulsoup 모듈 - 02.beautifulsoup 모듈 사용하기" />
+      <published>2021-08-27T00:00:00+09:00</published>
+      <updated>2021-08-27T00:00:00+09:00</updated>
+      <id>https://seongjae-yoo.github.io/beautiful-soup2</id>
+      <content type="html" xml:base="https://seongjae-yoo.github.io/beautiful-soup2">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+&lt;h3 id=&quot;학습목표&quot;&gt;학습목표&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;beautifulsoup 모듈 사용하기&lt;/li&gt;
+  &lt;li&gt;id, class 속성으로 tag 찾기&lt;/li&gt;
+  &lt;li&gt;CSS를 이용하여 tag 찾기&lt;/li&gt;
+  &lt;li&gt;속성 값으로 tag 찾기&lt;/li&gt;
+  &lt;li&gt;정규표현식으로 tag 찾기&lt;/li&gt;
+  &lt;li&gt;개발자도구를 이용하여 동적으로 로딩되는 데이터 추출하기&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;bs4&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;다음-뉴스-데이터-추출&quot;&gt;다음 뉴스 데이터 추출&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;뉴스기사에서 제목, 작성자, 작성일
+, 댓글 개수 추출&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://news.v.daum.net/v/20190728165812603&quot;&gt;뉴스링크&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;tag를 추출할때는 가장 그 tag를 쉽게 특정할 수 있는 속성을 사용&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;id의 경우 원칙적으로 한 html 문서 내에서 유일&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;id, class 속성으로 tag 찾기&lt;/li&gt;
+  &lt;li&gt;타이틀&lt;/li&gt;
+  &lt;li&gt;작성자, 작성일&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://news.v.daum.net/v/20190728165812603'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;resp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;resp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;'&amp;lt;!doctype html&amp;gt;\n&amp;lt;html lang=&quot;ko&quot;&amp;gt; \n &amp;lt;head data-cloud-area=&quot;head&quot;&amp;gt; \n  &amp;lt;meta charset=&quot;utf-8&quot;&amp;gt; \n  &amp;lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&amp;gt; \n  &amp;lt;style&amp;gt;\n            @import url(\'//t1.daumcdn.net/harmony_static/cloud/page/3e96c93f90d4df7aca693bfb2ba2ea76d2d14d92.css\');\n            @import url(\'//t1.daumcdn.net/harmony_static/cloud/2021/05/03/common.4fa0ea63845693bada8b.css\')\n        &amp;lt;/style&amp;gt; \n  &amp;lt;style&amp;gt;\n            /* 다음 카페 소셜 쉐어 임시 비활성화 */\n            .list_sns li:nth-child(6) {\n                display: none;\n            }\n        &amp;lt;/style&amp;gt; \n  &amp;lt;meta property=&quot;mccp:docId&quot; content=&quot;NHT9NtZWBe&quot;&amp;gt; \n  &amp;lt;meta property=&quot;og:site_name&quot; content=&quot;다음뉴스&quot;&amp;gt; \n  &amp;lt;meta property=&quot;og:title&quot; content=&quot;일론머스크 &amp;amp;quot;테슬라에서 넷플릭스·유튜브 즐길 날 온다&amp;amp;quot;&quot;&amp;gt; \n  &amp;lt;meta property=&quot;og:regDate&quot; content=&quot;20190728165812&quot;&amp;gt; \n  &amp;lt;meta property=&quot;og:type&quot; content=&quot;article&quot;&amp;gt; \n  &amp;lt;meta property=&quot;og:url&quot; content=&quot;https://news.v.daum.net/v/NHT9NtZWBe&quot;&amp;gt; \n  &amp;lt;meta property=&quot;og:image&quot; content=&quot;https://img1.daumcdn.net/thumb/S1200x630/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg&quot;&amp;gt; \n  &amp;lt;meta property=&quot;og:image:width&quot; content=&quot;1200&quot;&amp;gt; \n  &amp;lt;meta property=&quot;og:image:height&quot; content=&quot;630&quot;&amp;gt; \n  &amp;lt;meta property=&quot;og:description&quot; content=&quot;[아시아경제 이민우 기자] 일론 머스크 테슬라 최고경영자(CEO)가 자사 전기 자동차 모델에 넷플릭스와 유튜브 등 온라인동영상서비스(OTT)를 탑재할 것이라고 예고했다. 단순히 자율 주행 전기차가 단순히 주행을 위한 정보를 알려주는 것을 넘어 각종 영상 콘텐츠를 즐기는 공간으로도 확장하겠다는 전략으로 풀이된다.27일(현지시간) 더버지 등 주요 외신들에 따르&quot;&amp;gt; \n  &amp;lt;meta property=&quot;al:android:url&quot; content=&quot;daumapps://web?url=https%3A%2F%2Fnews.v.daum.net/v/NHT9NtZWBe&quot;&amp;gt; \n  &amp;lt;meta property=&quot;al:android:package&quot; content=&quot;net.daum.android.daum&quot;&amp;gt; \n  &amp;lt;meta property=&quot;al:android:app_name&quot; content=&quot;다음앱&quot;&amp;gt; \n  &amp;lt;meta property=&quot;al:ios:url&quot; content=&quot;daumapps://web?url=https%3A%2F%2Fnews.v.daum.net/v/NHT9NtZWBe&quot;&amp;gt; \n  &amp;lt;meta property=&quot;al:ios:app_store_id&quot; content=&quot;365494029&quot;&amp;gt; \n  &amp;lt;meta property=&quot;al:ios:app_name&quot; content=&quot;다음앱&quot;&amp;gt; \n  &amp;lt;meta property=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&amp;gt; \n  &amp;lt;meta property=&quot;twitter:app:url:googleplay&quot; content=&quot;daumapps://web?url=https%3A%2F%2Fnews.v.daum.net/v/NHT9NtZWBe&quot;&amp;gt; \n  &amp;lt;meta property=&quot;twitter:app:id:googleplay&quot; content=&quot;net.daum.android.daum&quot;&amp;gt; \n  &amp;lt;meta property=&quot;twitter:app:name:googleplay&quot; content=&quot;다음앱&quot;&amp;gt; \n  &amp;lt;meta property=&quot;twitter:app:country&quot; content=&quot;KR&quot;&amp;gt; \n  &amp;lt;meta property=&quot;twitter:app:url:iphone&quot; content=&quot;daumapps://web?url=https%3A%2F%2Fnews.v.daum.net/v/NHT9NtZWBe&quot;&amp;gt; \n  &amp;lt;meta property=&quot;twitter:app:id:iphone&quot; content=&quot;365494029&quot;&amp;gt; \n  &amp;lt;meta property=&quot;twitter:app:name:iphone&quot; content=&quot;다음앱&quot;&amp;gt; \n  &amp;lt;meta property=&quot;twitter:app:url:ipad&quot; content=&quot;daumapps://web?url=https%3A%2F%2Fnews.v.daum.net/v/NHT9NtZWBe&quot;&amp;gt; \n  &amp;lt;meta property=&quot;twitter:app:id:ipad&quot; content=&quot;365494029&quot;&amp;gt; \n  &amp;lt;meta property=&quot;twitter:app:name:ipad&quot; content=&quot;다음앱&quot;&amp;gt; \n  &amp;lt;meta name=&quot;referrer&quot; content=&quot;always&quot;&amp;gt; \n  &amp;lt;title&amp;gt;일론머스크 &quot;테슬라에서 넷플릭스·유튜브 즐길 날 온다&quot;&amp;lt;/title&amp;gt; \n  &amp;lt;link rel=&quot;shortcut icon&quot; href=&quot;//m2.daumcdn.net/img-media/2010ci/Daum_favicon.ico&quot;&amp;gt; \n &amp;lt;/head&amp;gt; \n &amp;lt;body class=&quot;&quot;&amp;gt;      \n  &amp;lt;div id=&quot;kakaoIndex&quot;&amp;gt; &amp;lt;a href=&quot;#kakaoBody&quot;&amp;gt;본문 바로가기&amp;lt;/a&amp;gt; &amp;lt;a href=&quot;#kakaoGnb&quot;&amp;gt;메뉴 바로가기&amp;lt;/a&amp;gt; \n  &amp;lt;/div&amp;gt; \n  &amp;lt;div id=&quot;kakaoWrap&quot; class=&quot;newsview_media&quot;&amp;gt; \n   &amp;lt;div id=&quot;wrapMinidaum&quot;&amp;gt;&amp;lt;/div&amp;gt; \n   &amp;lt;div id=&quot;kakaoHead&quot; role=&quot;banner&quot; data-cloud-area=&quot;header&quot;&amp;gt; \n    &amp;lt;div class=&quot;head_media&quot; data-cloud=&quot;pc_header_gnb&quot;&amp;gt; \n     &amp;lt;h1&amp;gt; &amp;lt;a href=&quot;https://www.daum.net&quot; class=&quot;link_daum&quot;&amp;gt; &amp;lt;img src=&quot;//t1.daumcdn.net/media/news/news2016/retina/logo_daum.jpg&quot; width=&quot;45&quot; height=&quot;19&quot; class=&quot;thumb_g&quot; alt=&quot;Daum&quot;&amp;gt; &amp;lt;/a&amp;gt; &amp;lt;a href=&quot;//news.daum.net&quot; id=&quot;kakaoServiceLogo&quot;&amp;gt;&amp;lt;span class=&quot;ir_wa&quot;&amp;gt;뉴스&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;/h1&amp;gt; &amp;lt;strong class=&quot;screen_out&quot;&amp;gt;관련서비스&amp;lt;/strong&amp;gt; \n     &amp;lt;ul id=&quot;kakaoRelServices&quot;&amp;gt; \n      &amp;lt;li&amp;gt;&amp;lt;a href=&quot;https://entertain.daum.net/&quot; class=&quot;link_services link_services1&quot;&amp;gt;&amp;lt;span class=&quot;ir_wa&quot;&amp;gt;연예&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n      &amp;lt;li&amp;gt;&amp;lt;a href=&quot;https://sports.daum.net/&quot; class=&quot;link_services link_services2&quot;&amp;gt;&amp;lt;span class=&quot;ir_wa&quot;&amp;gt;스포츠&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n     &amp;lt;/ul&amp;gt; \n     &amp;lt;h2 class=&quot;screen_out&quot;&amp;gt;검색&amp;lt;/h2&amp;gt; \n     &amp;lt;div class=&quot;search_news&quot; id=&quot;search_news&quot;&amp;gt; \n      &amp;lt;form id=&quot;kakaoSearch&quot; name=&quot;kakaoSearch&quot; action=&quot;https://search.daum.net/search&quot; method=&quot;get&quot;&amp;gt; \n       &amp;lt;fieldset class=&quot;fld_inside&quot;&amp;gt; &amp;lt;legend class=&quot;screen_out&quot;&amp;gt;검색어 입력폼&amp;lt;/legend&amp;gt; \n        &amp;lt;div class=&quot;box_searchbar&quot;&amp;gt; &amp;lt;label for=&quot;qVal&quot; class=&quot;lab_search&quot;&amp;gt;통합검색&amp;lt;/label&amp;gt; \n         &amp;lt;input type=&quot;hidden&quot; name=&quot;nil_profile&quot; value=&quot;search&quot;&amp;gt; \n         &amp;lt;input type=&quot;hidden&quot; name=&quot;nil_src&quot; value=&quot;media&quot;&amp;gt; \n         &amp;lt;input type=&quot;hidden&quot; name=&quot;DA&quot; value=&quot;23A&quot;&amp;gt; \n         &amp;lt;input type=&quot;hidden&quot; name=&quot;rtmaxcoll&quot; value=&quot;NNS&quot;&amp;gt; \n         &amp;lt;input type=&quot;text&quot; class=&quot;tf_keyword&quot; id=&quot;qVal&quot; name=&quot;q&quot; value=&quot;&quot; title=&quot;검색어 입력&quot; autocomplete=&quot;off&quot; spellcheck=&quot;false&quot;&amp;gt; &amp;lt;button id=&quot;kakaoBtnSearch&quot; class=&quot;btn_search&quot; type=&quot;submit&quot;&amp;gt;&amp;lt;span class=&quot;ir_wa&quot;&amp;gt;검색&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt; \n        &amp;lt;/div&amp;gt; \n       &amp;lt;/fieldset&amp;gt; \n       &amp;lt;div id=&quot;wrap_suggestBox&quot; class=&quot;wrap_suggestBox&quot;&amp;gt; \n        &amp;lt;div id=&quot;suggestBox&quot; class=&quot;suggestBox box_sub&quot;&amp;gt; \n         &amp;lt;div class=&quot;baseBox bg&quot; style=&quot;display: none&quot;&amp;gt;&amp;lt;/div&amp;gt; \n        &amp;lt;/div&amp;gt; \n       &amp;lt;/div&amp;gt; \n      &amp;lt;/form&amp;gt; \n     &amp;lt;/div&amp;gt; \n    &amp;lt;/div&amp;gt; \n    &amp;lt;div id=&quot;kakaoGnb&quot; role=&quot;navigation&quot; data-cloud=&quot;pc_header_gnb&quot;&amp;gt; \n     &amp;lt;div class=&quot;inner_gnb&quot;&amp;gt; \n      &amp;lt;h2 class=&quot;screen_out&quot;&amp;gt;뉴스 메인메뉴&amp;lt;/h2&amp;gt; \n      &amp;lt;ul class=&quot;gnb_comm&quot; data-category=&quot;digital&quot;&amp;gt; \n       &amp;lt;li class=&quot;home&quot;&amp;gt;&amp;lt;a href=&quot;//news.daum.net/&quot; class=&quot;link_gnb link_gnb1&quot;&amp;gt;&amp;lt;span class=&quot;ir_wa&quot;&amp;gt;홈&amp;lt;/span&amp;gt;&amp;lt;span class=&quot;bar_gnb&quot;&amp;gt;&amp;lt;span class=&quot;inner_bar&quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n       &amp;lt;li class=&quot;society&quot;&amp;gt;&amp;lt;a href=&quot;//news.daum.net/society/&quot; class=&quot;link_gnb link_gnb2&quot;&amp;gt;&amp;lt;span class=&quot;ir_wa&quot;&amp;gt;사회&amp;lt;/span&amp;gt;&amp;lt;span class=&quot;bar_gnb&quot;&amp;gt;&amp;lt;span class=&quot;inner_bar&quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n       &amp;lt;li class=&quot;politics&quot;&amp;gt;&amp;lt;a href=&quot;//news.daum.net/politics/&quot; class=&quot;link_gnb link_gnb3&quot;&amp;gt;&amp;lt;span class=&quot;ir_wa&quot;&amp;gt;정치&amp;lt;/span&amp;gt;&amp;lt;span class=&quot;bar_gnb&quot;&amp;gt;&amp;lt;span class=&quot;inner_bar&quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n       &amp;lt;li class=&quot;economic&quot;&amp;gt;&amp;lt;a href=&quot;//news.daum.net/economic/&quot; class=&quot;link_gnb link_gnb4&quot;&amp;gt;&amp;lt;span class=&quot;ir_wa&quot;&amp;gt;경제&amp;lt;/span&amp;gt;&amp;lt;span class=&quot;bar_gnb&quot;&amp;gt;&amp;lt;span class=&quot;inner_bar&quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n       &amp;lt;li class=&quot;foreign&quot;&amp;gt;&amp;lt;a href=&quot;//news.daum.net/foreign/&quot; class=&quot;link_gnb link_gnb5&quot;&amp;gt;&amp;lt;span class=&quot;ir_wa&quot;&amp;gt;국제&amp;lt;/span&amp;gt;&amp;lt;span class=&quot;bar_gnb&quot;&amp;gt;&amp;lt;span class=&quot;inner_bar&quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n       &amp;lt;li class=&quot;culture&quot;&amp;gt;&amp;lt;a href=&quot;//news.daum.net/culture/&quot; class=&quot;link_gnb link_gnb6&quot;&amp;gt;&amp;lt;span class=&quot;ir_wa&quot;&amp;gt;문화&amp;lt;/span&amp;gt;&amp;lt;span class=&quot;bar_gnb&quot;&amp;gt;&amp;lt;span class=&quot;inner_bar&quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n       &amp;lt;li class=&quot;digital&quot;&amp;gt;&amp;lt;a href=&quot;//news.daum.net/digital/&quot; class=&quot;link_gnb link_gnb7&quot;&amp;gt;&amp;lt;span class=&quot;ir_wa&quot;&amp;gt;IT&amp;lt;/span&amp;gt;&amp;lt;span class=&quot;bar_gnb&quot;&amp;gt;&amp;lt;span class=&quot;inner_bar&quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n       &amp;lt;li class=&quot;popular&quot;&amp;gt;&amp;lt;a href=&quot;//news.daum.net/ranking/popular&quot; class=&quot;link_gnb link_gnb8&quot;&amp;gt;&amp;lt;span class=&quot;ir_wa&quot;&amp;gt;랭킹&amp;lt;/span&amp;gt;&amp;lt;span class=&quot;bar_gnb&quot;&amp;gt;&amp;lt;span class=&quot;inner_bar&quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n       &amp;lt;li class=&quot;series editorial&quot;&amp;gt;&amp;lt;a href=&quot;//news.daum.net/series&quot; class=&quot;link_gnb link_gnb9&quot;&amp;gt;&amp;lt;span class=&quot;ir_wa&quot;&amp;gt;연재&amp;lt;/span&amp;gt;&amp;lt;span class=&quot;bar_gnb&quot;&amp;gt;&amp;lt;span class=&quot;inner_bar&quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n       &amp;lt;li class=&quot;photo&quot;&amp;gt;&amp;lt;a href=&quot;//news.daum.net/photo&quot; class=&quot;link_gnb link_gnb10&quot;&amp;gt;&amp;lt;span class=&quot;ir_wa&quot;&amp;gt;포토&amp;lt;/span&amp;gt;&amp;lt;span class=&quot;bar_gnb&quot;&amp;gt;&amp;lt;span class=&quot;inner_bar&quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n       &amp;lt;li class=&quot;tv&quot;&amp;gt;&amp;lt;a href=&quot;//news.daum.net/tv&quot; class=&quot;link_gnb link_gnb11&quot;&amp;gt;&amp;lt;span class=&quot;ir_wa&quot;&amp;gt;TV&amp;lt;/span&amp;gt;&amp;lt;span class=&quot;bar_gnb&quot;&amp;gt;&amp;lt;span class=&quot;inner_bar&quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n      &amp;lt;/ul&amp;gt; \n      &amp;lt;div class=&quot;gnb_etc&quot;&amp;gt; \n       &amp;lt;ul class=&quot;gnb_with&quot;&amp;gt; \n        &amp;lt;li&amp;gt;&amp;lt;a href=&quot;//news.daum.net/1boon&quot; class=&quot;link_gnb link_gnb1&quot;&amp;gt;&amp;lt;span class=&quot;ir_wa&quot;&amp;gt;1boon&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n        &amp;lt;li&amp;gt;&amp;lt;a href=&quot;//gallery.v.daum.net/p/home&quot; class=&quot;link_gnb link_gnb2&quot;&amp;gt;&amp;lt;span class=&quot;ir_wa&quot;&amp;gt;갤러리&amp;lt;/span&amp;gt;&amp;lt;span class=&quot;bar_gnb&quot;&amp;gt;&amp;lt;span class=&quot;inner_bar&quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n       &amp;lt;/ul&amp;gt;  \n       &amp;lt;div class=&quot;gnb_weather&quot;&amp;gt; &amp;lt;strong class=&quot;screen_out&quot;&amp;gt;날씨 정보&amp;lt;/strong&amp;gt; \n        &amp;lt;div id=&quot;gnb_weather&quot;&amp;gt; \n         &amp;lt;ul class=&quot;list_weather&quot; data-nightyn=&quot;N&quot;&amp;gt;&amp;lt;/ul&amp;gt; \n        &amp;lt;/div&amp;gt; \n       &amp;lt;/div&amp;gt; \n      &amp;lt;/div&amp;gt; \n     &amp;lt;/div&amp;gt; \n    &amp;lt;/div&amp;gt; \n    &amp;lt;div id=&quot;barProgress&quot; class=&quot;bar_progress&quot; data-cloud=&quot;pc_header_gnb&quot;&amp;gt;&amp;lt;/div&amp;gt;          \n   &amp;lt;/div&amp;gt; \n   &amp;lt;div id=&quot;dummyKakaoGnb&quot; style=&quot;height:137px; display:none;&quot;&amp;gt;&amp;lt;/div&amp;gt; \n   &amp;lt;hr class=&quot;hide&quot;&amp;gt; \n   &amp;lt;div id=&quot;kakaoContent&quot; class=&quot;cont_view&quot; role=&quot;main&quot;&amp;gt; \n    &amp;lt;h2 id=&quot;kakaoBody&quot; class=&quot;screen_out&quot;&amp;gt;IT&amp;lt;/h2&amp;gt; \n    &amp;lt;div id=&quot;cSub&quot; data-cloud-area=&quot;title&quot;&amp;gt; \n     &amp;lt;div class=&quot;head_view&quot; data-cloud=&quot;pc_article_title_and_util&quot;&amp;gt; &amp;lt;em class=&quot;info_cp&quot;&amp;gt; &amp;lt;a href=&quot;https://www.asiae.co.kr&quot; class=&quot;link_cp&quot; target=&quot;_blank&quot;&amp;gt; &amp;lt;img src=&quot;https://t1.daumcdn.net/media/news/news2016/cp/cp_akn.gif&quot; class=&quot;thumb_g&quot; alt=&quot;아시아경제&quot;&amp;gt; &amp;lt;/a&amp;gt; &amp;lt;/em&amp;gt; \n      &amp;lt;h3 class=&quot;tit_view&quot; data-translation=&quot;true&quot;&amp;gt;일론머스크 &quot;테슬라에서 넷플릭스·유튜브 즐길 날 온다&quot;&amp;lt;/h3&amp;gt; &amp;lt;span class=&quot;info_view&quot;&amp;gt; &amp;lt;span class=&quot;txt_info&quot;&amp;gt;이민우&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;txt_info&quot;&amp;gt;입력 &amp;lt;span class=&quot;num_date&quot;&amp;gt;2019. 07. 28. 16:58&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;button id=&quot;alexCounter&quot; class=&quot;emph_g2 link_cmt&quot;&amp;gt;댓글 &amp;lt;span class=&quot;alex-count-area&quot;&amp;gt;0&amp;lt;/span&amp;gt;개&amp;lt;/button&amp;gt; &amp;lt;/span&amp;gt; \n      &amp;lt;div class=&quot;util_view&quot;&amp;gt; \n       &amp;lt;h4 class=&quot;screen_out&quot;&amp;gt;기사 도구 모음&amp;lt;/h4&amp;gt;  \n       &amp;lt;div class=&quot;btn_util util_summary&quot;&amp;gt; &amp;lt;button type=&quot;button&quot; class=&quot;btn_summary&quot; aria-expanded=&quot;false&quot;&amp;gt;&amp;lt;span class=&quot;ico_newsview&quot;&amp;gt;자동요약&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt; \n        &amp;lt;div class=&quot;wrap_setlayer&quot;&amp;gt; \n         &amp;lt;div class=&quot;layer_util layer_summary&quot;&amp;gt; \n          &amp;lt;p&amp;gt;일론 머스크 테슬라 최고경영자(CEO)가 자사 전기 자동차 모델에 넷플릭스와 유튜브 등 온라인동영상서비스(OTT)를 탑재할 것이라고 예고했다.&amp;lt;/p&amp;gt;\n          &amp;lt;p&amp;gt;단순히 자율 주행 전기차가 단순히 주행을 위한 정보를 알려주는 것을 넘어 각종 영상 콘텐츠를 즐기는 공간으로도 확장하겠다는 전략으로 풀이된다.&amp;lt;/p&amp;gt;\n          &amp;lt;p&amp;gt;테슬라 측은 규제당국이 자율주행에 대해 완전히 승인하면 차량이 움직일 때에도 승객이 동영상을 즐길 수 있을 것이라고 설명했다.&amp;lt;/p&amp;gt; &amp;lt;span class=&quot;info_summary&quot;&amp;gt;&amp;lt;span class=&quot;ico_newsview&quot;&amp;gt;&amp;lt;/span&amp;gt;기사 제목과 주요 문장을 기반으로 자동요약한 결과입니다. 전체 맥락을 이해하기 위해서는 본문 보기를 권장합니다.&amp;lt;/span&amp;gt; \n         &amp;lt;/div&amp;gt; \n        &amp;lt;/div&amp;gt; \n       &amp;lt;/div&amp;gt;  \n       &amp;lt;div class=&quot;btn_util tts_btn&quot;&amp;gt; &amp;lt;button type=&quot;button&quot; class=&quot;btn_set btn_tts&quot; aria-expanded=&quot;false&quot;&amp;gt; &amp;lt;span class=&quot;ico_newsview ico_speak&quot;&amp;gt;음성 기사 듣기&amp;lt;/span&amp;gt; &amp;lt;/button&amp;gt; \n        &amp;lt;div class=&quot;wrap_setlayer&quot;&amp;gt; \n         &amp;lt;div class=&quot;layer_util layer_set layer_tts&quot;&amp;gt; &amp;lt;strong class=&quot;screen_out&quot;&amp;gt;음성 기사 옵션 조절 레이어&amp;lt;/strong&amp;gt; \n          &amp;lt;ul class=&quot;list_set list_tts&quot;&amp;gt; \n           &amp;lt;li&amp;gt; &amp;lt;input type=&quot;radio&quot; id=&quot;ttsGenderMale&quot; name=&quot;ttsGender&quot; class=&quot;screen_out&quot; value=&quot;Male&quot;&amp;gt; &amp;lt;label class=&quot;lab_set&quot; for=&quot;ttsGenderMale&quot;&amp;gt;&amp;lt;span class=&quot;ico_newsview&quot;&amp;gt;&amp;lt;/span&amp;gt;남성&amp;lt;/label&amp;gt; &amp;lt;/li&amp;gt; \n           &amp;lt;li&amp;gt; &amp;lt;input type=&quot;radio&quot; id=&quot;ttsGenderFemale&quot; name=&quot;ttsGender&quot; class=&quot;screen_out&quot; value=&quot;Female&quot;&amp;gt; &amp;lt;label class=&quot;lab_set&quot; for=&quot;ttsGenderFemale&quot;&amp;gt;&amp;lt;span class=&quot;ico_newsview&quot;&amp;gt;&amp;lt;/span&amp;gt;여성&amp;lt;/label&amp;gt; &amp;lt;/li&amp;gt; \n          &amp;lt;/ul&amp;gt; \n          &amp;lt;ul class=&quot;list_set list_tts list_ttsspeed&quot;&amp;gt; \n           &amp;lt;li&amp;gt; &amp;lt;input type=&quot;radio&quot; id=&quot;ttsSpeedSlow&quot; name=&quot;ttsSpeed&quot; class=&quot;screen_out&quot; value=&quot;slow&quot;&amp;gt; &amp;lt;label class=&quot;lab_set&quot; for=&quot;ttsSpeedSlow&quot;&amp;gt;&amp;lt;span class=&quot;ico_newsview&quot;&amp;gt;&amp;lt;/span&amp;gt;느림&amp;lt;/label&amp;gt; &amp;lt;/li&amp;gt; \n           &amp;lt;li&amp;gt; &amp;lt;input type=&quot;radio&quot; id=&quot;ttsSpeedNormal&quot; name=&quot;ttsSpeed&quot; class=&quot;screen_out&quot; value=&quot;normal&quot;&amp;gt; &amp;lt;label class=&quot;lab_set&quot; for=&quot;ttsSpeedNormal&quot;&amp;gt;&amp;lt;span class=&quot;ico_newsview&quot;&amp;gt;&amp;lt;/span&amp;gt;보통&amp;lt;/label&amp;gt; &amp;lt;/li&amp;gt; \n           &amp;lt;li&amp;gt; &amp;lt;input type=&quot;radio&quot; id=&quot;ttsSpeedFast&quot; name=&quot;ttsSpeed&quot; class=&quot;screen_out&quot; value=&quot;fast&quot;&amp;gt; &amp;lt;label class=&quot;lab_set&quot; for=&quot;ttsSpeedFast&quot;&amp;gt;&amp;lt;span class=&quot;ico_newsview&quot;&amp;gt;&amp;lt;/span&amp;gt;빠름&amp;lt;/label&amp;gt; &amp;lt;/li&amp;gt; \n          &amp;lt;/ul&amp;gt; \n         &amp;lt;/div&amp;gt; \n        &amp;lt;/div&amp;gt; \n        &amp;lt;audio style=&quot;display:none&quot; preload=&quot;none&quot; id=&quot;ttsPlayer&quot;&amp;gt;&amp;lt;/audio&amp;gt; \n       &amp;lt;/div&amp;gt;  \n       &amp;lt;div class=&quot;btn_util translate_btn&quot;&amp;gt; &amp;lt;button type=&quot;button&quot; class=&quot;btn_set btn_translate #util #translate #set&quot; aria-expanded=&quot;false&quot;&amp;gt;&amp;lt;span class=&quot;ico_newsview&quot;&amp;gt;번역 설정&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt; \n        &amp;lt;div class=&quot;wrap_translatelayer&quot;&amp;gt; \n         &amp;lt;div class=&quot;layer_util layer_translate&quot;&amp;gt; &amp;lt;strong class=&quot;tit_translate&quot;&amp;gt;번역&amp;lt;span class=&quot;ico_newsview&quot;&amp;gt;beta&amp;lt;/span&amp;gt; &amp;lt;/strong&amp;gt; \n          &amp;lt;p class=&quot;desc_translate txt_newsview&quot;&amp;gt;Translated by &amp;lt;a href=&quot;https://kakao.ai/&quot; target=&quot;_blank&quot; class=&quot;link_kakaoi #util #translate #kakaoi_link&quot;&amp;gt;kakao i&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;strong class=&quot;screen_out&quot;&amp;gt;번역할 언어 선택&amp;lt;/strong&amp;gt; \n          &amp;lt;ul class=&quot;list_lang&quot;&amp;gt; \n           &amp;lt;li&amp;gt; &amp;lt;button class=&quot;btn_lang btn_en #util #translate #lang_en&quot; name=&quot;en&quot;&amp;gt; &amp;lt;span class=&quot;ico_newsview ico_flag&quot;&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;strong class=&quot;ico_newsview tit_lang&quot;&amp;gt;English&amp;lt;/strong&amp;gt; &amp;lt;/button&amp;gt; &amp;lt;/li&amp;gt; \n           &amp;lt;li&amp;gt; &amp;lt;button type=&quot;button&quot; class=&quot;btn_lang btn_ch #util #translate #lang_cn&quot; name=&quot;cn&quot;&amp;gt; &amp;lt;span class=&quot;ico_newsview ico_flag&quot;&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;strong class=&quot;ico_newsview tit_lang&quot;&amp;gt;简体中文&amp;lt;/strong&amp;gt; &amp;lt;/button&amp;gt; &amp;lt;/li&amp;gt; \n           &amp;lt;li&amp;gt; &amp;lt;button type=&quot;button&quot; class=&quot;btn_lang btn_jp #util #translate #lang_jp&quot; name=&quot;jp&quot;&amp;gt; &amp;lt;span class=&quot;ico_newsview ico_flag&quot;&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;strong class=&quot;ico_newsview tit_lang&quot;&amp;gt;日本語&amp;lt;/strong&amp;gt; &amp;lt;/button&amp;gt; &amp;lt;/li&amp;gt; \n           &amp;lt;li&amp;gt; &amp;lt;button type=&quot;button&quot; class=&quot;btn_lang btn_ind #util #translate #lang_id&quot; name=&quot;id&quot;&amp;gt; &amp;lt;span class=&quot;ico_newsview ico_flag&quot;&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;strong class=&quot;ico_newsview tit_lang&quot;&amp;gt;Bahasa Indonesia&amp;lt;/strong&amp;gt; &amp;lt;/button&amp;gt; &amp;lt;/li&amp;gt; \n           &amp;lt;li&amp;gt; &amp;lt;button type=&quot;button&quot; class=&quot;btn_lang btn_viet #util #translate #lang_vi&quot; name=&quot;vi&quot;&amp;gt; &amp;lt;span class=&quot;ico_newsview ico_flag&quot;&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;strong class=&quot;ico_newsview tit_lang&quot;&amp;gt;tiếng Việt&amp;lt;/strong&amp;gt; &amp;lt;/button&amp;gt; &amp;lt;/li&amp;gt; \n           &amp;lt;li&amp;gt; &amp;lt;button type=&quot;button&quot; class=&quot;btn_lang btn_ko #util #translate #lang_kr&quot; name=&quot;kr&quot;&amp;gt; &amp;lt;span class=&quot;ico_newsview ico_flag&quot;&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;strong class=&quot;ico_newsview tit_lang&quot;&amp;gt;한국어&amp;lt;/strong&amp;gt; &amp;lt;/button&amp;gt; &amp;lt;/li&amp;gt; \n          &amp;lt;/ul&amp;gt; \n         &amp;lt;/div&amp;gt; \n        &amp;lt;/div&amp;gt; \n       &amp;lt;/div&amp;gt;  \n       &amp;lt;div class=&quot;btn_util share_btn&quot;&amp;gt; &amp;lt;button id=&quot;rSocialShareButton&quot; class=&quot;btn_set btn_share&quot; aria-expanded=&quot;false&quot;&amp;gt; &amp;lt;span class=&quot;ico_newsview&quot;&amp;gt;공유&amp;lt;/span&amp;gt; &amp;lt;/button&amp;gt; \n        &amp;lt;div id=&quot;rSocialShareLayerContainer&quot;&amp;gt;&amp;lt;/div&amp;gt;  \n       &amp;lt;/div&amp;gt;  \n       &amp;lt;div class=&quot;btn_util font_btn&quot;&amp;gt; &amp;lt;button type=&quot;button&quot; class=&quot;btn_set btn_font&quot; aria-expanded=&quot;false&quot;&amp;gt; &amp;lt;span class=&quot;ico_newsview ico_font&quot;&amp;gt;글씨크기 조절하기&amp;lt;/span&amp;gt; &amp;lt;/button&amp;gt; \n        &amp;lt;div class=&quot;wrap_setlayer&quot;&amp;gt; \n         &amp;lt;div class=&quot;layer_util layer_set layer_font&quot;&amp;gt; &amp;lt;strong class=&quot;screen_out&quot;&amp;gt;글자 크기 조절 레이어&amp;lt;/strong&amp;gt; \n          &amp;lt;ul class=&quot;list_set list_font&quot;&amp;gt; \n           &amp;lt;li&amp;gt; &amp;lt;input type=&quot;radio&quot; id=&quot;inpFont17&quot; name=&quot;inpFont&quot; class=&quot;screen_out&quot; value=&quot;17&quot;&amp;gt; &amp;lt;label class=&quot;lab_set lab_size0&quot; for=&quot;inpFont17&quot;&amp;gt; &amp;lt;span class=&quot;ico_newsview&quot;&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;span aria-hidden=&quot;true&quot;&amp;gt;가나다라마바사&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;screen_out&quot;&amp;gt;매우 작은 폰트&amp;lt;/span&amp;gt; &amp;lt;/label&amp;gt; &amp;lt;/li&amp;gt; \n           &amp;lt;li&amp;gt; &amp;lt;input type=&quot;radio&quot; id=&quot;inpFont18&quot; name=&quot;inpFont&quot; class=&quot;screen_out&quot; value=&quot;18&quot;&amp;gt; &amp;lt;label class=&quot;lab_set lab_size1&quot; for=&quot;inpFont18&quot;&amp;gt; &amp;lt;span class=&quot;ico_newsview&quot;&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;span aria-hidden=&quot;true&quot;&amp;gt;가나다라마바사&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;screen_out&quot;&amp;gt;작은 폰트&amp;lt;/span&amp;gt; &amp;lt;/label&amp;gt; &amp;lt;/li&amp;gt; \n           &amp;lt;li&amp;gt; &amp;lt;input type=&quot;radio&quot; id=&quot;inpFont19&quot; name=&quot;inpFont&quot; class=&quot;screen_out&quot; value=&quot;19&quot;&amp;gt; &amp;lt;label class=&quot;lab_set lab_size2&quot; for=&quot;inpFont19&quot;&amp;gt; &amp;lt;span class=&quot;ico_newsview&quot;&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;span aria-hidden=&quot;true&quot;&amp;gt;가나다라마바사&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;screen_out&quot;&amp;gt;보통 폰트&amp;lt;/span&amp;gt; &amp;lt;/label&amp;gt; &amp;lt;/li&amp;gt; \n           &amp;lt;li&amp;gt; &amp;lt;input type=&quot;radio&quot; id=&quot;inpFont20&quot; name=&quot;inpFont&quot; class=&quot;screen_out&quot; value=&quot;20&quot;&amp;gt; &amp;lt;label class=&quot;lab_set lab_size3&quot; for=&quot;inpFont20&quot;&amp;gt; &amp;lt;span class=&quot;ico_newsview&quot;&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;span aria-hidden=&quot;true&quot;&amp;gt;가나다라마바사&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;screen_out&quot;&amp;gt;큰 폰트&amp;lt;/span&amp;gt; &amp;lt;/label&amp;gt; &amp;lt;/li&amp;gt; \n           &amp;lt;li&amp;gt; &amp;lt;input type=&quot;radio&quot; id=&quot;inpFont21&quot; name=&quot;inpFont&quot; class=&quot;screen_out&quot; value=&quot;21&quot;&amp;gt; &amp;lt;label class=&quot;lab_set lab_size4&quot; for=&quot;inpFont21&quot;&amp;gt; &amp;lt;span class=&quot;ico_newsview&quot;&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;span aria-hidden=&quot;true&quot;&amp;gt;가나다라마바사&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;screen_out&quot;&amp;gt;매우 큰 폰트&amp;lt;/span&amp;gt; &amp;lt;/label&amp;gt; &amp;lt;/li&amp;gt; \n          &amp;lt;/ul&amp;gt; \n         &amp;lt;/div&amp;gt; \n        &amp;lt;/div&amp;gt; \n       &amp;lt;/div&amp;gt;  \n       &amp;lt;div class=&quot;btn_util&quot;&amp;gt; &amp;lt;button type=&quot;button&quot; class=&quot;btn_print&quot;&amp;gt;&amp;lt;span class=&quot;ico_newsview&quot;&amp;gt;인쇄하기 새창열림&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt; \n       &amp;lt;/div&amp;gt; \n      &amp;lt;/div&amp;gt; \n     &amp;lt;/div&amp;gt;               \n    &amp;lt;/div&amp;gt; \n    &amp;lt;div id=&quot;cMain&quot;&amp;gt; \n     &amp;lt;div id=&quot;mArticle&quot;&amp;gt; \n      &amp;lt;div data-cloud-area=&quot;article&quot;&amp;gt;   \n       &amp;lt;div id=&quot;translateNotice&quot; class=&quot;status_view&quot; style=&quot;display:none;&quot; data-cloud=&quot;pc_article_body&quot;&amp;gt; &amp;lt;span class=&quot;notice_lang notice_lang_en&quot; style=&quot;display:none;&quot;&amp;gt;The copyright belongs to the original writer of the content, and there may be errors in machine translation results.&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;notice_lang notice_lang_cn&quot; style=&quot;display:none;&quot;&amp;gt;版权归内容原作者所有。机器翻译结果可能存在错误。&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;notice_lang notice_lang_jp&quot; style=&quot;display:none;&quot;&amp;gt;原文の著作権は原著著作者にあり、機械翻訳の結果にエラーが含まれることがあります。&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;notice_lang notice_lang_id&quot; style=&quot;display:none;&quot;&amp;gt;Hak cipta milik penulis asli dari konten, dan mungkin ditemukan kesalahan dalam hasil terjemahan mesin.&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;notice_lang notice_lang_vi&quot; style=&quot;display:none;&quot;&amp;gt;Bản quyền thuộc về tác giả gốc của nội dung và có thể có lỗi trong kết quả dịch bằng máy.&amp;lt;/span&amp;gt; \n       &amp;lt;/div&amp;gt;  \n       &amp;lt;div class=&quot;news_view&quot; style=&quot;font-size:17px&quot; data-cloud=&quot;pc_article_body&quot;&amp;gt; &amp;lt;strong class=&quot;summary_view&quot; data-translation=&quot;true&quot;&amp;gt; &quot;주행 중에도 넷플릭스·유튜브 감상 가능할 것&quot;&amp;lt;br&amp;gt;자율주행 아직까지 안전 우려 남아..실현 시기는 미지수 &amp;lt;/strong&amp;gt; \n        &amp;lt;div id=&quot;harmonyContainer&quot; class=&quot;article_view&quot; data-translation-body=&quot;true&quot;&amp;gt; \n         &amp;lt;section dmcf-sid=&quot;NkBWHdyrlY&quot;&amp;gt;\n          &amp;lt;figure class=&quot;figure_frm origin_fig&quot; dmcf-pid=&quot;N7s2biXYTL&quot; dmcf-ptype=&quot;figure&quot;&amp;gt;\n           &amp;lt;p class=&quot;link_figure&quot;&amp;gt;&amp;lt;img alt=&quot;일론 머스크 테슬라 최고경영자(CEO) [이미지출처=로이터연합뉴스]&quot; class=&quot;thumb_g_article&quot; data-org-src=&quot;https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg&quot; data-org-width=&quot;550&quot; dmcf-mid=&quot;NBMY3ZZhN4&quot; dmcf-mtype=&quot;image&quot; height=&quot;auto&quot; src=&quot;https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg&quot; width=&quot;658&quot;&amp;gt;&amp;lt;/p&amp;gt;\n           &amp;lt;figcaption class=&quot;txt_caption default_figure&quot;&amp;gt;\n            일론 머스크 테슬라 최고경영자(CEO) [이미지출처=로이터연합뉴스]\n           &amp;lt;/figcaption&amp;gt;\n          &amp;lt;/figure&amp;gt;\n          &amp;lt;div dmcf-pid=&quot;NU9K9rfDgA&quot; dmcf-ptype=&quot;general&quot;&amp;gt;\n           &amp;lt;p&amp;gt;[아시아경제 이민우 기자] 일론 머스크 테슬라 최고경영자(CEO)가 자사 전기 자동차 모델에 넷플릭스와 유튜브 등 온라인동영상서비스(OTT)를 탑재할 것이라고 예고했다. 단순히 자율 주행 전기차가 단순히 주행을 위한 정보를 알려주는 것을 넘어 각종 영상 콘텐츠를 즐기는 공간으로도 확장하겠다는 전략으로 풀이된다.&amp;lt;/p&amp;gt;\n           &amp;lt;br&amp;gt;\n           &amp;lt;p&amp;gt;27일(현지시간) 더버지 등 주요 외신들에 따르면 머스크 CEO는 자신의 트위터를 통해 이 같은 계획을 밝혔다. 그는 &quot;자동차가 정차했을 때 넷플릭스와 유튜브를 감상할 수 있는 기능이 조만간 추가될 것&quot;이라며 &quot;편안한 좌석과 서라운드 사운드 오디오를 통해 영화관과 같은 느낌을 받을 수 있을 것&quot;이라고 강조했다.&amp;lt;/p&amp;gt;\n          &amp;lt;/div&amp;gt;\n          &amp;lt;figure class=&quot;figure_frm origin_fig&quot; dmcf-pid=&quot;NlqQhf4JmF&quot; dmcf-ptype=&quot;figure&quot;&amp;gt;\n           &amp;lt;p class=&quot;link_figure&quot;&amp;gt;&amp;lt;img alt=&quot;(출처=일론 머스크 트위터 계정 캡쳐)&quot; class=&quot;thumb_g_article&quot; data-org-src=&quot;https://t1.daumcdn.net/news/201907/28/akn/20190728165813670hwxf.png&quot; data-org-width=&quot;550&quot; dmcf-mid=&quot;NRhnb5SRpx&quot; dmcf-mtype=&quot;image&quot; height=&quot;auto&quot; src=&quot;https://img3.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813670hwxf.png&quot; width=&quot;658&quot;&amp;gt;&amp;lt;/p&amp;gt;\n           &amp;lt;figcaption class=&quot;txt_caption default_figure&quot;&amp;gt;\n            (출처=일론 머스크 트위터 계정 캡쳐)\n           &amp;lt;/figcaption&amp;gt;\n          &amp;lt;/figure&amp;gt;\n          &amp;lt;div dmcf-pid=&quot;NpkG4d9A6j&quot; dmcf-ptype=&quot;general&quot;&amp;gt;\n           &amp;lt;p&amp;gt;테슬라가 이처럼 콘텐츠 방면으로 확장하려 든 것은 이번이 처음이 아니다. 지난달 세계 최대 게임쇼 E3에서는 이미 운전자가 \'폴아웃 쉘터\'라는 게임을 할 수 있을 것이라고 발표한 바 있다. 이후에도 최근 게임업체 아타리사(社)의 자동차 경주 게임 ‘폴포지션’, 슈팅게임 ‘템페스트’, ‘미사일커맨드’ 등 고전 게임을 제공하기도 했다. 운전대로 게임을 조작하는 방식으로, 차가 주차돼 있을 경우에만 즐길 수 있다.&amp;lt;/p&amp;gt;\n           &amp;lt;br&amp;gt;\n           &amp;lt;p&amp;gt;이번 영상 콘텐츠는 주행 중에도 감상할 수 있도록 하는 방안을 고려하고 있다. 테슬라 측은 규제당국이 자율주행에 대해 완전히 승인하면 차량이 움직일 때에도 승객이 동영상을 즐길 수 있을 것이라고 설명했다.&amp;lt;/p&amp;gt;\n           &amp;lt;br&amp;gt;\n           &amp;lt;p&amp;gt;하지만 아직까지 자율주행차의 안전에 대한 우려는 완전히 걷혀지지 않은 상황이다. 지난 2017년 차량공유 서비스 우버의 자율주행 시범차량이 보행자와 충돌한 사고가 발생한 바 있다. 게다가 당시 시험 운전자는 디즈니의 동영상 스트리밍 서비스인 \'훌루\'를 이용하고 있던 것으로 밝혀졌다.&amp;lt;/p&amp;gt;\n          &amp;lt;/div&amp;gt;\n          &amp;lt;p dmcf-pid=&quot;NUOWg8Qxyd&quot; dmcf-ptype=&quot;general&quot;&amp;gt;이민우 기자 letzwin@asiae.co.kr&amp;lt;/p&amp;gt;\n         &amp;lt;/section&amp;gt; \n         &amp;lt;p data-translation=&quot;true&quot;&amp;gt;&amp;amp;lt;ⓒ경제를 보는 눈, 세계를 보는 창 아시아경제 무단전재 배포금지&amp;amp;gt;&amp;lt;/p&amp;gt; \n        &amp;lt;/div&amp;gt; \n       &amp;lt;/div&amp;gt;  \n      &amp;lt;/div&amp;gt; \n      &amp;lt;div class=&quot;foot_view&quot; data-cloud-area=&quot;addition&quot;&amp;gt; \n       &amp;lt;div class=&quot;emotion_wrap&quot; data-cloud=&quot;alex_action_emotion&quot;&amp;gt; \n        &amp;lt;div class=&quot;emotion_tit&quot;&amp;gt; &amp;lt;strong class=&quot;tit_emotion&quot;&amp;gt;이 기사에 대해 어떻게 생각하시나요?&amp;lt;/strong&amp;gt; \n        &amp;lt;/div&amp;gt; \n        &amp;lt;div class=&quot;emotion_list&quot;&amp;gt; \n         &amp;lt;div class=&quot;alex-action&quot; data-selections=&quot;RECOMMEND,LIKE,IMPRESS,ANGRY,SAD&quot; data-client-id=&quot;26BXAvKny5WF5Z09lr5k77Y8&quot; data-item-key=&quot;20190728165812603&quot; data-action-mode=&quot;REACTION&quot; data-on-select-animation-type=&quot;EXPAND&quot; data-message-channel=&quot;alex-action-reactions&quot;&amp;gt; \n         &amp;lt;/div&amp;gt; \n        &amp;lt;/div&amp;gt; \n       &amp;lt;/div&amp;gt;  \n       &amp;lt;div class=&quot;relate_series hide&quot; data-cloud=&quot;pc_news_cluster&quot;&amp;gt; &amp;lt;strong class=&quot;tit_series&quot;&amp;gt; &amp;lt;em class=&quot;tag_series&quot;&amp;gt;연재&amp;lt;/em&amp;gt; &amp;lt;span class=&quot;title_series&quot;&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;/strong&amp;gt; \n        &amp;lt;ul class=&quot;list_series&quot;&amp;gt;&amp;lt;/ul&amp;gt; &amp;lt;a href=&quot;#none&quot; class=&quot;link_more&quot;&amp;gt;더보기&amp;lt;/a&amp;gt; \n       &amp;lt;/div&amp;gt;   \n       &amp;lt;div class=&quot;cp_view&quot; data-cloud=&quot;pc_related_news&quot;&amp;gt; \n        &amp;lt;div class=&quot;cp_tit&quot;&amp;gt; \n         &amp;lt;h3 class=&quot;tit_cp&quot;&amp;gt;아시아경제 주요 뉴스&amp;lt;/h3&amp;gt; \n         &amp;lt;p class=&quot;info_cp&quot;&amp;gt;해당 언론사로 연결됩니다.&amp;lt;/p&amp;gt; \n        &amp;lt;/div&amp;gt; \n        &amp;lt;ul class=&quot;list_relate&quot;&amp;gt; \n         &amp;lt;li&amp;gt;&amp;lt;a href=&quot;https://www.asiae.co.kr/article/2021050309184631893&amp;amp;amp;access=daum&quot; title=&quot;도경완, 장윤정 때문에 주식 다 빼…&amp;amp;quot;300만원 올랐는데&amp;amp;quot;&quot; class=&quot;link_txt&quot; target=&quot;_blank&quot; data-type=&quot;rss&quot;&amp;gt;도경완, 장윤정 때문에 주식 다 빼…&quot;300만원 올랐는데&quot;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n         &amp;lt;li&amp;gt;&amp;lt;a href=&quot;https://www.asiae.co.kr/article/2021050112025228486&amp;amp;amp;access=daum&quot; title=&quot;전지현, 의류 수거함에서 주웠던 그 옷…\'400만원 명품\'&quot; class=&quot;link_txt&quot; target=&quot;_blank&quot; data-type=&quot;rss&quot;&amp;gt;전지현, 의류 수거함에서 주웠던 그 옷…\'400만원 명품\'&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n         &amp;lt;li&amp;gt;&amp;lt;a href=&quot;https://www.asiae.co.kr/article/2021050104550364044&amp;amp;amp;access=daum&quot; title=&quot;박나래, \'성희롱 논란\' 눈물의 사과…&amp;amp;quot;많이 반성했다&amp;amp;quot;&quot; class=&quot;link_txt&quot; target=&quot;_blank&quot; data-type=&quot;rss&quot;&amp;gt;박나래, \'성희롱 논란\' 눈물의 사과…&quot;많이 반성했다&quot;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n         &amp;lt;li&amp;gt;&amp;lt;a href=&quot;https://www.asiae.co.kr/article/2021050309190637368&amp;amp;amp;access=daum&quot; title=&quot;공매 입찰금액 실수로 \'0\' 하나 더 붙였다가… 3억 날린 사연&quot; class=&quot;link_txt&quot; target=&quot;_blank&quot; data-type=&quot;rss&quot;&amp;gt;공매 입찰금액 실수로 \'0\' 하나 더 붙였다가… 3억 날린 사연&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n         &amp;lt;li&amp;gt;&amp;lt;a href=&quot;https://www.asiae.co.kr/article/2021050311172336247&amp;amp;amp;access=daum&quot; title=&quot;[속수무책 기술유출]美 첨단산업 견제에 궁지 몰린 中…韓 기술 호시탐탐&quot; class=&quot;link_txt&quot; target=&quot;_blank&quot; data-type=&quot;rss&quot;&amp;gt;[속수무책 기술유출]美 첨단산업 견제에 궁지 몰린 中…韓 기술 호시탐탐&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n         &amp;lt;li&amp;gt;&amp;lt;a href=&quot;https://www.asiae.co.kr/article/2021050221051670443&amp;amp;amp;access=daum&quot; title=&quot;&amp;amp;quot;90명 한 무대&amp;amp;quot;… MBN \'보이스킹\' 스태프 확진→출연자 전원 검사 \'비상\'&quot; class=&quot;link_txt&quot; target=&quot;_blank&quot; data-type=&quot;rss&quot;&amp;gt;&quot;90명 한 무대&quot;… MBN \'보이스킹\' 스태프 확진→출연자 전원 검사 \'비상\'&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n         &amp;lt;li&amp;gt;&amp;lt;a href=&quot;https://www.asiae.co.kr/article/2021050111335311247&amp;amp;amp;access=daum&quot; title=&quot;&amp;amp;quot;니 X이 뭔데&amp;amp;quot;… &amp;amp;quot;도와드릴까요&amp;amp;quot; 묻는 청소원 머리 내리친 남성 징역형&quot; class=&quot;link_txt&quot; target=&quot;_blank&quot; data-type=&quot;rss&quot;&amp;gt;&quot;니 X이 뭔데&quot;… &quot;도와드릴까요&quot; 묻는 청소원 머리 내리친 남성 징역형&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n         &amp;lt;li&amp;gt;&amp;lt;a href=&quot;https://www.asiae.co.kr/article/2021043014243540488&amp;amp;amp;access=daum&quot; title=&quot;6년간 수십억원 모바일상품권 몰래 발행한 직원 징역 3년&quot; class=&quot;link_txt&quot; target=&quot;_blank&quot; data-type=&quot;rss&quot;&amp;gt;6년간 수십억원 모바일상품권 몰래 발행한 직원 징역 3년&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n         &amp;lt;li&amp;gt;&amp;lt;a href=&quot;https://www.asiae.co.kr/article/2021050109270368569&amp;amp;amp;access=daum&quot; title=&quot;바뀐 \'분묘기지권\' 판례… &amp;amp;quot;남의 땅에 조상묘, 사용료 내라&amp;amp;quot;&quot; class=&quot;link_txt&quot; target=&quot;_blank&quot; data-type=&quot;rss&quot;&amp;gt;바뀐 \'분묘기지권\' 판례… &quot;남의 땅에 조상묘, 사용료 내라&quot;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n         &amp;lt;li&amp;gt;&amp;lt;a href=&quot;https://www.asiae.co.kr/article/2021042811411792075&amp;amp;amp;access=daum&quot; title=&quot;14억 중국의 참담한 현실…\'인구대국\' 자리바꿈 초읽기&quot; class=&quot;link_txt&quot; target=&quot;_blank&quot; data-type=&quot;rss&quot;&amp;gt;14억 중국의 참담한 현실…\'인구대국\' 자리바꿈 초읽기&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; \n        &amp;lt;/ul&amp;gt; \n       &amp;lt;/div&amp;gt; \n       &amp;lt;div id=&quot;alex-scroll-area&quot; data-cloud=&quot;pc_article_bottom_ad&quot;&amp;gt;&amp;lt;/div&amp;gt; \n       &amp;lt;ins class=&quot;kakao_ad_area recomm_ad&quot; style=&quot;display:block; width: 658px; text-decoration: none; min-width: 658px;&quot; data-ad-unit=&quot;DAN-1jezdswwiit7q&quot; data-ad-width=&quot;658&quot; data-ad-height=&quot;90&quot; data-ad-onfail=&quot;cmRenderFailCallBack&quot; data-cloud=&quot;pc_article_bottom_ad&quot;&amp;gt; &amp;lt;/ins&amp;gt;  \n       &amp;lt;div class=&quot;cmt_news cmt_view&quot; data-cloud=&quot;pc_comment&quot;&amp;gt; \n        &amp;lt;div id=&quot;newsviewNotice&quot; class=&quot;news_notice&quot;&amp;gt;&amp;lt;/div&amp;gt;  \n        &amp;lt;div id=&quot;alex-area&quot; class=&quot;alex-area&quot; data-base-url=&quot;//comment.daum.net&quot; data-post-id=&quot;@20190728165812603&quot; data-client-id=&quot;26BXAvKny5WF5Z09lr5k77Y8&quot; data-kakao-appkey=&quot;9076ba452fea1a434141d6b6a2c11a3c&quot; data-initial-limit=&quot;3&quot; data-page-limit=&quot;10&quot; data-sort=&quot;P&quot; data-use-my=&quot;true&quot; data-max-length=&quot;300&quot; data-use-reply=&quot;true&quot; data-use-official=&quot;true&quot; data-use-emoticon=&quot;true&quot; data-use-social-share=&quot;true&quot; data-use-attachment=&quot;false&quot; data-is-mobile=&quot;false&quot; data-show-mask-alert=&quot;true&quot; data-use-live-comment-mode=&quot;notify&quot; data-use-fold=&quot;true&quot; data-use-skin=&quot;newsView&quot; data-use-safebot=&quot;true&quot;&amp;gt; \n        &amp;lt;/div&amp;gt;    \n       &amp;lt;/div&amp;gt; \n      &amp;lt;/div&amp;gt; \n     &amp;lt;/div&amp;gt; \n     &amp;lt;div id=&quot;mAside&quot; data-cloud-area=&quot;aside&quot;&amp;gt; \n      &amp;lt;ins style=&quot;display:block;width:250px;height:250px;&quot; class=&quot;kakao_ad_area aside_g aside_ad&quot; data-ad-unit=&quot;05d24&quot; data-ad-type=&quot;D&quot; data-ad-width=&quot;250&quot; data-ad-height=&quot;250&quot; data-cloud=&quot;pc_aside_top_ad&quot;&amp;gt; &amp;lt;/ins&amp;gt; \n      &amp;lt;div class=&quot;aside_g aside_popular hide&quot; data-cloud=&quot;pc_popular_news&quot;&amp;gt; \n       &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;많이본 뉴스&amp;lt;/h3&amp;gt; \n       &amp;lt;ul class=&quot;tab_aside tab_media&quot;&amp;gt; \n        &amp;lt;li class=&quot;on&quot;&amp;gt; &amp;lt;a href=&quot;#none&quot; class=&quot;link_tab link_tab2&quot;&amp;gt;뉴스&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt; \n        &amp;lt;li class=&quot;&quot;&amp;gt; &amp;lt;a href=&quot;#none&quot; class=&quot;link_tab link_tab3&quot;&amp;gt;연예&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt; \n        &amp;lt;li class=&quot;&quot;&amp;gt; &amp;lt;a href=&quot;#none&quot; class=&quot;link_tab link_tab4&quot;&amp;gt;스포츠&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt; \n       &amp;lt;/ul&amp;gt; \n      &amp;lt;/div&amp;gt;  \n      &amp;lt;div class=&quot;aside_g aside_phototv hide&quot; data-cloud=&quot;pc_news_photo_tv&quot;&amp;gt; \n       &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;포토&amp;amp;amp;TV&amp;lt;/h3&amp;gt; \n       &amp;lt;div class=&quot;cont_aside&quot;&amp;gt; \n        &amp;lt;ul class=&quot;list_phototv&quot;&amp;gt;&amp;lt;/ul&amp;gt; \n       &amp;lt;/div&amp;gt; \n      &amp;lt;/div&amp;gt;  \n      &amp;lt;ins style=&quot;display:block;width:250px;height:250px;&quot; class=&quot;kakao_ad_area aside_g aside_ad&quot; data-ad-unit=&quot;0QH44&quot; data-ad-type=&quot;D&quot; data-ad-width=&quot;250&quot; data-ad-height=&quot;250&quot; data-cloud=&quot;pc_aside_bottom_ad&quot;&amp;gt; &amp;lt;/ins&amp;gt; \n     &amp;lt;/div&amp;gt; \n    &amp;lt;/div&amp;gt; \n    &amp;lt;div id=&quot;cEtc&quot;&amp;gt; \n     &amp;lt;div class=&quot;realtime_view&quot;&amp;gt; \n      &amp;lt;div class=&quot;inner_realtime&quot;&amp;gt; \n       &amp;lt;div data-cloud-area=&quot;etc&quot;&amp;gt; \n        &amp;lt;div class=&quot;realtime_news&quot; data-cloud=&quot;pc_realtime_news&quot;&amp;gt; \n         &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;이 시각 추천뉴스&amp;lt;/h3&amp;gt; \n         &amp;lt;ul class=&quot;list_realtime&quot;&amp;gt; \n          &amp;lt;li class=&quot;item_main item_realtime_news&quot;&amp;gt;&amp;lt;/li&amp;gt; \n          &amp;lt;li class=&quot;item_main item_realtime_news&quot;&amp;gt;&amp;lt;/li&amp;gt; \n          &amp;lt;li class=&quot;item_realtime_news&quot;&amp;gt;&amp;lt;/li&amp;gt; \n          &amp;lt;li class=&quot;item_realtime_news&quot;&amp;gt;&amp;lt;/li&amp;gt; \n          &amp;lt;li class=&quot;item_realtime_news&quot;&amp;gt;&amp;lt;/li&amp;gt; \n          &amp;lt;li class=&quot;item_realtime_news&quot;&amp;gt;&amp;lt;/li&amp;gt; \n          &amp;lt;li class=&quot;item_realtime_news&quot;&amp;gt;&amp;lt;/li&amp;gt; \n          &amp;lt;li class=&quot;item_realtime_news&quot;&amp;gt;&amp;lt;/li&amp;gt; \n          &amp;lt;li class=&quot;item_realtime_news&quot;&amp;gt;&amp;lt;/li&amp;gt; \n          &amp;lt;li class=&quot;item_realtime_news&quot;&amp;gt;&amp;lt;/li&amp;gt; \n          &amp;lt;li class=&quot;item_realtime_news&quot;&amp;gt;&amp;lt;/li&amp;gt; \n          &amp;lt;li class=&quot;item_realtime_news&quot;&amp;gt;&amp;lt;/li&amp;gt; \n         &amp;lt;/ul&amp;gt; \n        &amp;lt;/div&amp;gt;  \n       &amp;lt;/div&amp;gt; \n       &amp;lt;div class=&quot;realtime_aside&quot; id=&quot;realtime_aside&quot; data-cloud-area=&quot;etc-aside&quot;&amp;gt; \n        &amp;lt;ins class=&quot;kakao_ad_area etc_bottom_ad&quot; style=&quot;display: block; width: 100%;&quot; data-ad-unit=&quot;DAN-kQxraZPBvpl52CWq&quot; data-ad-width=&quot;250&quot; data-ad-height=&quot;250&quot; data-ad-onfail=&quot;onFailEtcBottomAd&quot; data-cloud=&quot;pc_etc_bottom_ad&quot;&amp;gt; &amp;lt;/ins&amp;gt;  \n       &amp;lt;/div&amp;gt; \n      &amp;lt;/div&amp;gt; \n     &amp;lt;/div&amp;gt; \n     &amp;lt;div data-cloud-area=&quot;etc-addition&quot;&amp;gt; \n     &amp;lt;/div&amp;gt; \n    &amp;lt;/div&amp;gt; \n   &amp;lt;/div&amp;gt; \n   &amp;lt;hr class=&quot;hide&quot;&amp;gt; \n   &amp;lt;div class=&quot;footer_comm&quot; id=&quot;kakaoFoot&quot; role=&quot;contentinfo&quot; data-cloud-area=&quot;footer&quot;&amp;gt; \n    &amp;lt;div class=&quot;inner_foot&quot; data-cloud=&quot;pc_footer&quot;&amp;gt; \n     &amp;lt;div class=&quot;direct_link&quot;&amp;gt; \n      &amp;lt;h2 class=&quot;tit_direct&quot;&amp;gt;바로가기&amp;lt;/h2&amp;gt; \n      &amp;lt;div class=&quot;item_bundle&quot;&amp;gt; &amp;lt;a class=&quot;link_txt&quot; href=&quot;https://news.daum.net/&quot;&amp;gt;뉴스홈&amp;lt;/a&amp;gt; &amp;lt;a class=&quot;link_txt&quot; href=&quot;https://news.daum.net/society/&quot;&amp;gt;사회&amp;lt;/a&amp;gt; &amp;lt;a class=&quot;link_txt&quot; href=&quot;https://news.daum.net/politics/&quot;&amp;gt;정치&amp;lt;/a&amp;gt; &amp;lt;a class=&quot;link_txt&quot; href=&quot;https://news.daum.net/economic/&quot;&amp;gt;경제&amp;lt;/a&amp;gt; &amp;lt;a class=&quot;link_txt&quot; href=&quot;https://news.daum.net/foreign/&quot;&amp;gt;국제&amp;lt;/a&amp;gt; &amp;lt;a class=&quot;link_txt&quot; href=&quot;https://news.daum.net/culture/&quot;&amp;gt;문화&amp;lt;/a&amp;gt; &amp;lt;a class=&quot;link_txt&quot; href=&quot;https://news.daum.net/digital/&quot;&amp;gt;IT&amp;lt;/a&amp;gt; &amp;lt;a class=&quot;link_txt&quot; href=&quot;https://news.daum.net/photo/&quot;&amp;gt;포토&amp;lt;/a&amp;gt; &amp;lt;a class=&quot;link_txt&quot; href=&quot;https://news.daum.net/tv/&quot;&amp;gt;TV&amp;lt;/a&amp;gt; \n      &amp;lt;/div&amp;gt; \n      &amp;lt;div class=&quot;item_bundle&quot;&amp;gt; &amp;lt;a class=&quot;link_txt&quot; href=&quot;https://news.daum.net/cp&quot;&amp;gt;언론사별 뉴스&amp;lt;/a&amp;gt; \n      &amp;lt;/div&amp;gt; \n      &amp;lt;div class=&quot;item_bundle&quot;&amp;gt; &amp;lt;a class=&quot;link_txt&quot; href=&quot;https://news.daum.net/newsbox&quot;&amp;gt;배열이력&amp;lt;/a&amp;gt; \n      &amp;lt;/div&amp;gt; \n      &amp;lt;div class=&quot;item_bundle&quot;&amp;gt; &amp;lt;a class=&quot;link_txt&quot; href=&quot;https://news.daum.net/breakingnews&quot;&amp;gt;전체뉴스&amp;lt;/a&amp;gt; &amp;lt;a class=&quot;link_txt&quot; href=&quot;https://news.daum.net/ranking/popular&quot;&amp;gt;랭킹&amp;lt;/a&amp;gt; &amp;lt;a class=&quot;link_txt&quot; href=&quot;https://news.daum.net/series&quot;&amp;gt;연재&amp;lt;/a&amp;gt; &amp;lt;a class=&quot;link_txt&quot; href=&quot;https://news.daum.net/1boon&quot;&amp;gt;1boon&amp;lt;/a&amp;gt; \n      &amp;lt;/div&amp;gt; &amp;lt;button class=&quot;btn_fold&quot; type=&quot;button&quot;&amp;gt;&amp;lt;span class=&quot;ico_news&quot;&amp;gt;바로가기 링크 더보기/접기&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt; \n     &amp;lt;/div&amp;gt; \n     &amp;lt;h2 class=&quot;screen_out&quot;&amp;gt;서비스 이용정보&amp;lt;/h2&amp;gt; \n     &amp;lt;div class=&quot;footer_link&quot;&amp;gt; &amp;lt;a class=&quot;link_info&quot; href=&quot;https://news.daum.net/info/intro&quot;&amp;gt;다음뉴스 소개&amp;lt;/a&amp;gt; &amp;lt;span class=&quot;txt_dot&quot;&amp;gt; ・ &amp;lt;/span&amp;gt; &amp;lt;a class=&quot;link_info&quot; href=&quot;https://news.daum.net/notice&quot;&amp;gt;공지사항&amp;lt;/a&amp;gt; &amp;lt;span class=&quot;txt_dot&quot;&amp;gt; ・ &amp;lt;/span&amp;gt; &amp;lt;a class=&quot;link_info&quot; href=&quot;https://news.daum.net/info/bbsrule&quot;&amp;gt;게시물 운영원칙&amp;lt;/a&amp;gt; &amp;lt;span class=&quot;txt_dot&quot;&amp;gt; ・ &amp;lt;/span&amp;gt; &amp;lt;a class=&quot;link_info&quot; href=&quot;https://policy.daum.net/info/info&quot;&amp;gt;서비스 약관/정책&amp;lt;/a&amp;gt; &amp;lt;span class=&quot;txt_dot&quot;&amp;gt; ・ &amp;lt;/span&amp;gt; &amp;lt;a class=&quot;link_info&quot; href=&quot;https://with.kakao.com/media&quot;&amp;gt;뉴스제휴&amp;lt;/a&amp;gt; &amp;lt;span class=&quot;txt_dot&quot;&amp;gt; ・ &amp;lt;/span&amp;gt; &amp;lt;a class=&quot;link_info&quot; href=&quot;https://business.kakao.com/&quot;&amp;gt;비즈니스&amp;lt;/a&amp;gt; &amp;lt;span class=&quot;txt_dot&quot;&amp;gt; ・ &amp;lt;/span&amp;gt; &amp;lt;a class=&quot;link_info&quot; href=&quot;https://cs.daum.net/redbell/top.html&quot;&amp;gt;권리침해신고&amp;lt;/a&amp;gt; &amp;lt;span class=&quot;txt_dot&quot;&amp;gt; ・ &amp;lt;/span&amp;gt; &amp;lt;a class=&quot;link_info&quot; href=&quot;https://cs.daum.net/faq/63.html&quot;&amp;gt;다음뉴스 고객센터&amp;lt;/a&amp;gt; \n     &amp;lt;/div&amp;gt; \n     &amp;lt;div class=&quot;footer_link&quot;&amp;gt; &amp;lt;a class=&quot;link_info&quot; href=&quot;https://news.daum.net/info/newscenter24&quot;&amp;gt;24시간 뉴스센터&amp;lt;/a&amp;gt; &amp;lt;span class=&quot;txt_dot&quot;&amp;gt; ・ &amp;lt;/span&amp;gt; &amp;lt;a class=&quot;link_info&quot; href=&quot;https://news.daum.net/info/edit&quot;&amp;gt;서비스원칙&amp;lt;/a&amp;gt; &amp;lt;span class=&quot;txt_dot&quot;&amp;gt; ・ &amp;lt;/span&amp;gt; &amp;lt;a class=&quot;link_info&quot; href=&quot;https://news.daum.net/info/correct&quot;&amp;gt;바로잡습니다&amp;lt;/a&amp;gt; &amp;lt;span class=&quot;txt_dot&quot;&amp;gt; ・ &amp;lt;/span&amp;gt; &amp;lt;span class=&quot;link_info&quot;&amp;gt;기사배열책임자 : 김희정&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;txt_dot&quot;&amp;gt; ・ &amp;lt;/span&amp;gt; &amp;lt;span class=&quot;link_info&quot;&amp;gt;청소년보호책임자 : 이준목&amp;lt;/span&amp;gt; \n     &amp;lt;/div&amp;gt; \n     &amp;lt;div class=&quot;info_copyright&quot;&amp;gt; &amp;lt;strong class=&quot;info_warn&quot;&amp;gt;위 내용에 대한 저작권 및 법적 책임은 자료제공사 또는 &amp;lt;br&amp;gt;글쓴이에 있으며, Kakao의 입장과 다를 수 있습니다.&amp;lt;/strong&amp;gt; &amp;lt;small class=&quot;txt_copyright&quot;&amp;gt;Copyright © &amp;lt;strong class=&quot;txt_kakao&quot;&amp;gt;&amp;lt;a href=&quot;https://www.kakaocorp.com&quot; class=&quot;link_kakao&quot;&amp;gt;Kakao Corp.&amp;lt;/a&amp;gt;&amp;lt;/strong&amp;gt; All rights reserved.&amp;lt;/small&amp;gt; \n     &amp;lt;/div&amp;gt; \n    &amp;lt;/div&amp;gt;   \n   &amp;lt;/div&amp;gt; &amp;lt;samp data-cloud-area=&quot;util&quot;&amp;gt;           &amp;lt;/samp&amp;gt; \n  &amp;lt;/div&amp;gt;  \n  &amp;lt;script src=&quot;//t1.daumcdn.net/harmony_static/cloud/2021/05/03/vendor.39958ce6937d202010c7.js&quot;&amp;gt;&amp;lt;/script&amp;gt;\n  &amp;lt;script src=&quot;//t1.daumcdn.net/harmony_static/cloud/2021/05/03/common.4fa0ea63845693bada8b.js&quot;&amp;gt;&amp;lt;/script&amp;gt;\n  &amp;lt;script src=&quot;//t1.daumcdn.net/kas/static/ba.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;\n  &amp;lt;script src=&quot;//t1.daumcdn.net/kas/static/na.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;\n  &amp;lt;script src=&quot;//m1.daumcdn.net/svc/original/U03/cssjs/userAgent/userAgent-1.0.12.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError(&quot;Cannot call a class as a function&quot;)}function _defineProperties(e,t){for(var a=0;a&amp;lt;t.length;a++){var n=t[a];n.enumerable=n.enumerable||!1,n.configurable=!0,&quot;value&quot;in n&amp;amp;&amp;amp;(n.writable=!0),Object.defineProperty(e,n.key,n)}}function _createClass(e,t,a){return t&amp;amp;&amp;amp;_defineProperties(e.prototype,t),a&amp;amp;&amp;amp;_defineProperties(e,a),e}!(function(){var a=&quot;&amp;lt;li&amp;gt;\\n &amp;lt;a href=\\&quot;https://search.daum.net/search?nil_suggest=btn&amp;amp;amp;w=tot&amp;amp;amp;DA=SBC&amp;amp;amp;q=&amp;lt;%= specialRegionName %&amp;gt;%20날씨\\&quot; class=\\&quot;link_cont\\&quot;&amp;gt;\\n &amp;lt;span class=\\&quot;ico_weather ico_weather&amp;lt;%= weatherIconCode %&amp;gt;\\&quot;&amp;gt;&amp;lt;%= specialRegionName %&amp;gt;&amp;lt;/span&amp;gt; \\n &amp;lt;span class=\\&quot;txt_weather\\&quot;&amp;gt;&amp;lt;%= specialRegionName %&amp;gt;\\n &amp;lt;span class=\\&quot;num_heat\\&quot;&amp;gt;&amp;lt;%= temperature %&amp;gt;&amp;lt;/span&amp;gt; \\n &amp;lt;span class=\\&quot;txt_heat\\&quot;&amp;gt;℃&amp;lt;/span&amp;gt;\\n &amp;lt;/span&amp;gt;\\n &amp;lt;/a&amp;gt;\\n &amp;lt;/li&amp;gt;&quot;,t=document.querySelector(\'.gnb_weather\'),n=t.querySelector(\'ul\'),e=&quot;&quot;.concat(Conf.api.hadesRest,&quot;/pc_weather&quot;);axios.get(e).then(function(e){var t=e.data.body.data,e=t.isNightIconYn,t=t.weatherData;n.dataset.nightyn=e,n.innerHTML=t.map(function(e){return _.template(a)(e)}).join(\'\');new s(n)}).catch(function(e){t.parentNode.removeChild(t)});var s=(function(){function t(e){_classCallCheck(this,t),this.PAUSE_TIME=4e3,this.TRANSITION_TIME=500,this.list=e,this.frameId=null,this.pause=this.pause.bind(this),this.start=this.start.bind(this),this.moveUp=this.moveUp.bind(this),this.init(),this.start(),this.list.style.marginTop=\'0px\'}return _createClass(t,[{key:&quot;start&quot;,value:function(){this.frameId=setInterval(this.moveUp,this.PAUSE_TIME)}},{key:&quot;pause&quot;,value:function(){clearInterval(this.frameId)}},{key:&quot;moveUp&quot;,value:function(){var e=this.list,t=e.firstElementChild.cloneNode(!0);e.classList.add(\'slidein\'),e.style.marginTop=\'-30px\',setTimeout(function(){e.classList.remove(\'slidein\'),e.style.marginTop=\'0px\',e.removeChild(e.firstElementChild),e.appendChild(t)},this.TRANSITION_TIME)}},{key:&quot;init&quot;,value:function(){var t=this,e=this.list;e.addEventListener(\'mouseenter\',this.pause),e.addEventListener(\'mouseleave\',this.start),e.querySelectorAll(\'a\').forEach(function(e){e.addEventListener(\'focus\',t.pause),e.addEventListener(\'blur\',t.start)})}}]),t})()})();&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;!(function(){var e=-1&amp;lt;\'\'.indexOf(\'tv_news\')?\'tv\':\'digital\',t=document.querySelector(\'.gnb_comm\');(t=e&amp;amp;&amp;amp;t.querySelector(&quot;.&quot;.concat(e)))&amp;amp;&amp;amp;t.setAttribute(\'class\',&quot;&quot;.concat(e,&quot; on&quot;))})();&amp;lt;/script&amp;gt;\n  &amp;lt;script src=&quot;https://t1.daumcdn.net/cssjs/jquery/jquery-1.9.0.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;\n  &amp;lt;script src=&quot;https://search1.daumcdn.net/search/suggest_pc/suggest-1.2.16.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;!(function(){document.getElementById(\'search_news\'),new suggest.Suggest(document.getElementById(&quot;search_news&quot;),{inputEl:\'qVal\',suggestBoxEl:\'suggestBox\',autoFocus:\'NORMAL\',suggestLimit:10,isReverse:!1,searchURL:\'https://search.daum.net/search\',APIServer:{host:\'//dapi.kakao.com/suggest/v2/pc.json\',apiType:suggest.Suggest.APITYPE.DAPISUGGEST,appkey:\'d7022f6ca2a04430ce1b97b922da58e8\',queries:{mod:\'json\',code:\'utf_in_out\'}}}).on(\'click-item\',function(){var e=document.getElementById(\'kakaoSearch\');e.querySelector(&quot;input[name=\'DA\']&quot;).value=\'23B\',e.submit()});var t=document.getElementById(\'qVal\');t.addEventListener?(t.addEventListener(\'focus\',function(e){e&amp;amp;&amp;amp;e.preventDefault(),0&amp;lt;=t.value.length&amp;amp;&amp;amp;t.parentNode.classList.add(\'search_on\')}),t.addEventListener(\'blur\',function(e){e&amp;amp;&amp;amp;e.preventDefault(),0===t.value.length&amp;amp;&amp;amp;t.parentNode.classList.remove(\'search_on\')})):(t.attachEvent(\'onfocus\',function(e){e&amp;amp;&amp;amp;(e.preventDefault?e.preventDefault():e.returnValue=!1),0&amp;lt;=t.value.length&amp;amp;&amp;amp;t.parentNode.setAttribute(\'class\',\'box_searchbar search_on\')}),t.attachEvent(\'onblur\',function(e){e&amp;amp;&amp;amp;(e.preventDefault?e.preventDefault():e.returnValue=!1),0===t.value.length&amp;amp;&amp;amp;t.parentNode.setAttribute(\'class\',\'box_searchbar\')}))})(jQuery);&amp;lt;/script&amp;gt;\n  &amp;lt;script src=&quot;//t1.daumcdn.net/daumtop_deco/socialshare/socialshare_nocss_pc-2.4.2.js&quot;&amp;gt;&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;!(function(){var t=document.querySelector(\'.util_summary\'),r=t.querySelector(\'.btn_summary\'),e=t.querySelectorAll(&quot;.layer_summary p&quot;),n=!1;function i(){t.classList.remove(\'layer_open\'),r.setAttribute(\'aria-expanded\',!1)}function a(e){if(e.target===r||e.target===r.children[0])return!1;i(),window.removeEventListener(\'click\',a)}e.forEach(function(e){return e.classList.add(&quot;desc_news&quot;)}),r.addEventListener(\'click\',function(e){(n=!n)?(t.classList.add(\'layer_open\'),r.setAttribute(\'aria-expanded\',!0),window.addEventListener(\'click\',a)):i()}),r.addEventListener(\'blur\',function(e){n=!1,i()})})();&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;function _slicedToArray(e,t){return _arrayWithHoles(e)||_iterableToArrayLimit(e,t)||_unsupportedIterableToArray(e,t)||_nonIterableRest()}function _nonIterableRest(){throw new TypeError(&quot;Invalid attempt to destructure non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.&quot;)}function _unsupportedIterableToArray(e,t){if(e){if(&quot;string&quot;==typeof e)return _arrayLikeToArray(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);return&quot;Object&quot;===n&amp;amp;&amp;amp;e.constructor&amp;amp;&amp;amp;(n=e.constructor.name),&quot;Map&quot;===n||&quot;Set&quot;===n?Array.from(e):&quot;Arguments&quot;===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?_arrayLikeToArray(e,t):void 0}}function _arrayLikeToArray(e,t){(null==t||t&amp;gt;e.length)&amp;amp;&amp;amp;(t=e.length);for(var n=0,r=new Array(t);n&amp;lt;t;n++)r[n]=e[n];return r}function _iterableToArrayLimit(e,t){if(&quot;undefined&quot;!=typeof Symbol&amp;amp;&amp;amp;Symbol.iterator in Object(e)){var n=[],r=!0,o=!1,a=void 0;try{for(var i,s=e[Symbol.iterator]();!(r=(i=s.next()).done)&amp;amp;&amp;amp;(n.push(i.value),!t||n.length!==t);r=!0);}catch(e){o=!0,a=e}finally{try{r||null==s[&quot;return&quot;]||s[&quot;return&quot;]()}finally{if(o)throw a}}return n}}function _arrayWithHoles(e){if(Array.isArray(e))return e}!(function(){var t,e,n,r,o,a=\'VIEW_TTS\',i=\'v.daum.net\',s={slow_Male:\'http://k-v1.kakaocdn.net/dn/bTYhQf/btqw7dnmMCv/hUbVhtobk3GbFXFCegkk31/original.m4a\',normal_Male:\'http://k-v1.kakaocdn.net/dn/4CTkI/btqw7QSKJ4L/RBxJg5cqNbQyPSQIjMOUT1/original.m4a\',fast_Male:\'http://k-v1.kakaocdn.net/dn/g8O5D/btqw4ocn8Y7/tD8KH19rXvKQXYWbQ5gdr0/original.m4a\',slow_Female:\'http://k-v1.kakaocdn.net/dn/dZVpXE/btqw8AWdkJO/kiq1mIqCrBEVEX22P6YhSK/original.m4a\',normal_Female:\'http://k-v1.kakaocdn.net/dn/ETPxe/btqw6nRmjWq/Yni5zaUkvyxurIIhtFBLS1/original.m4a\',fast_Female:\'http://k-v1.kakaocdn.net/dn/03ztL/btqw7cIJy8D/D2U1Q1f3wdQOQXXUNJMljk/original.m4a\'},l=document.querySelector(\'.util_view .tts_btn\'),c=l.querySelectorAll(\'.list_tts input\'),u=l.querySelector(\'.btn_tts\'),d=l.querySelector(\'.ico_speak\'),y=l.querySelector(\'.wrap_setlayer\').querySelectorAll(\'.ico_newsview\'),f=l.querySelector(\'#ttsPlayer\');function m(){var e,t,n,r,o=(e=l.querySelector(\'input[name=ttsSpeed]:checked\').value,t=l.querySelector(\'input[name=ttsGender]:checked\').value,&quot;&quot;.concat(e,&quot;_&quot;).concat(t));f.setAttribute(\'src\',s[o]),n=o,Cookies.set(a,\'\',{expires:-1}),Cookies.set(a,n,{domain:i,expires:new Date(1*new Date+365*864e5)}),r=o,u.className=\'btn_set btn_tts #util #tts #p_\'+r}function p(e){\'playOptions\'==e?(m(),f.load(),f.play(),d.textContent=\'음성 기사 정지\'):\'play\'==e?(f.load(),f.play(),d.textContent=\'음성 기사 정지\'):(f[e](),d.textContent=\'음성 기사 듣기\')}function v(){clearTimeout(n),t.classList.add(\'layer_open\'),e.setAttribute(\'aria-expanded\',!0)}function _(){r||(n=setTimeout(b,100))}function b(){t.classList.remove(\'layer_open\'),e.setAttribute(\'aria-expanded\',!1)}function L(e){e?t.classList.add(\'on\'):t.classList.remove(\'on\')}function h(e,t){document.getElementById(&quot;ttsSpeed&quot;.concat(e)).checked=!0,document.getElementById(&quot;ttsGender&quot;.concat(t)).checked=!0}t=(o={layer:l,btn:u,radios:c}).layer,e=o.btn,o=o.radios,r=!(n=0),t.addEventListener(\'mouseover\',function(e){r=!0,v()}),t.addEventListener(\'mouseleave\',function(e){r=!1,_()}),e.addEventListener(\'keydown\',function(e){13===e.keyCode&amp;amp;&amp;amp;((r=!r)?v:b)()}),t.addEventListener(\'blur\',function(e){r=!1,_()}),e.addEventListener(\'click\',function(e){f.paused?(L(!0),p(\'play\')):(L(!1),p(\'pause\'))}),o.forEach(function(e){e.addEventListener(\'change\',function(e){t.classList.add(\'on\'),p(\'playOptions\')}),e.addEventListener(\'blur\',function(e){r=!1,_()}),e.addEventListener(\'focus\',function(e){r=!0,v()})}),y=(o={icons:y,radios:c}).icons,c=o.radios,y.forEach(function(e){e.addEventListener(\'mouseover\',function(e){this.classList.add(\'ico_focused\')}),e.addEventListener(\'mouseleave\',function(e){this.classList.remove(\'ico_focused\')})}),c.forEach(function(e){e.addEventListener(\'focus\',function(e){this.nextElementSibling.querySelector(\'span\').classList.add(\'ico_focused\')}),e.addEventListener(\'blur\',function(e){this.nextElementSibling.querySelector(\'span\').classList.remove(\'ico_focused\')})}),f.addEventListener(\'ended\',function(e){l.classList.remove(\'on\')}),void 0===(o=Cookies.get(a))||o.includes(\'undefined\')?h(\'Normal\',\'Male\'):(c=(y=_slicedToArray(o.split(\'_\'),2))[0],y=y[1],h(c=(o=c).charAt(0).toUpperCase()+o.slice(1),y)),m()})();&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;!(function(){var n=document.createElement(\'DIV\');n.innerHTML=&quot;\\n &amp;lt;div id=\\&quot;translatingLayer\\&quot; class=\\&quot;translate_layer\\&quot;&amp;gt;\\n &amp;lt;div class=\\&quot;inner_translate_layer\\&quot;&amp;gt;\\n &amp;lt;div class=\\&quot;layer_body\\&quot;&amp;gt;\\n &amp;lt;strong class=\\&quot;tit_translate\\&quot;&amp;gt;\\n 번역중 &amp;lt;span class=\\&quot;eng_tit\\&quot;&amp;gt;Now in translation&amp;lt;/span&amp;gt;\\n &amp;lt;/strong&amp;gt;\\n &amp;lt;/div&amp;gt;\\n &amp;lt;/div&amp;gt;\\n &amp;lt;/div&amp;gt;\\n\\n &amp;lt;div id=\\&quot;translateErrorLayer\\&quot; class=\\&quot;translate_layer\\&quot;&amp;gt;\\n &amp;lt;div class=\\&quot;inner_translate_layer inner_error_layer\\&quot;&amp;gt;\\n &amp;lt;div class=\\&quot;layer_body\\&quot;&amp;gt;\\n &amp;lt;span class=\\&quot;ico_newsview ico_error\\&quot;&amp;gt;&amp;lt;/span&amp;gt;\\n &amp;lt;strong class=\\&quot;tit_translate\\&quot;&amp;gt;\\n 잠시 후 다시 시도해 주세요 &amp;lt;span class=\\&quot;eng_tit\\&quot;&amp;gt;Please try again in a moment&amp;lt;/span&amp;gt;\\n &amp;lt;/strong&amp;gt;\\n &amp;lt;/div&amp;gt;\\n &amp;lt;/div&amp;gt;\\n &amp;lt;/div&amp;gt;\\n &quot;,document.body.querySelector(&quot;#kakaoWrap&quot;).appendChild(n)})();&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;function _toConsumableArray(e){return _arrayWithoutHoles(e)||_iterableToArray(e)||_unsupportedIterableToArray(e)||_nonIterableSpread()}function _nonIterableSpread(){throw new TypeError(&quot;Invalid attempt to spread non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.&quot;)}function _unsupportedIterableToArray(e,t){if(e){if(&quot;string&quot;==typeof e)return _arrayLikeToArray(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);return&quot;Object&quot;===n&amp;amp;&amp;amp;e.constructor&amp;amp;&amp;amp;(n=e.constructor.name),&quot;Map&quot;===n||&quot;Set&quot;===n?Array.from(e):&quot;Arguments&quot;===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?_arrayLikeToArray(e,t):void 0}}function _iterableToArray(e){if(&quot;undefined&quot;!=typeof Symbol&amp;amp;&amp;amp;Symbol.iterator in Object(e))return Array.from(e)}function _arrayWithoutHoles(e){if(Array.isArray(e))return _arrayLikeToArray(e)}function _arrayLikeToArray(e,t){(null==t||t&amp;gt;e.length)&amp;amp;&amp;amp;(t=e.length);for(var n=0,r=new Array(t);n&amp;lt;t;n++)r[n]=e[n];return r}!(function(){var e,t,n,r,a=document.querySelector(\'.translate_btn\'),o=a.querySelector(\'.btn_translate\'),l=a.querySelector(\'.link_kakaoi\'),s=a.querySelectorAll(\'.btn_lang\'),i=document.getElementById(\'translatingLayer\'),c=document.getElementById(\'translateErrorLayer\'),y=document.getElementById(\'kakaoWrap\');function u(){i.style.display=\'none\',c.style.display=\'none\',document.body.style.overflow=\'\'}function d(){clearTimeout(e),t.classList.add(\'layer_open\'),n.setAttribute(\'aria-expanded\',!0)}function f(){t.classList.remove(\'layer_open\'),n.setAttribute(\'aria-expanded\',!1)}function p(){r||(e=setTimeout(f,1))}function m(e){var t=e.currentTarget.name;u(),i.style.display=\'block\',document.body.style.overflow=\'hidden\';try{HarmonyTranslator.translate(\'kr\',t,_,b)}catch(e){console.error(\'번역 에러:\',e)}}function _(e){var t=document.querySelector(\'#translateNotice\'),e=e.targetLang;switch(e){case\'en\':case\'id\':y.classList.add(\'lang_type1\'),y.classList.remove(\'lang_type2\'),y.classList.remove(\'lang_type3\');break;case\'cn\':case\'jp\':y.classList.remove(\'lang_type1\'),y.classList.add(\'lang_type2\'),y.classList.remove(\'lang_type3\');break;case\'vi\':y.classList.remove(\'lang_type1\'),y.classList.remove(\'lang_type2\'),y.classList.add(\'lang_type3\');break;default:y.classList.remove(\'lang_type1\'),y.classList.remove(\'lang_type2\'),y.classList.remove(\'lang_type3\')}\'kr\'==e?(t.querySelectorAll(\'.notice_lang\').forEach(function(e){e.style.display=\'none\'}),t.style.display=\'none\'):(t.querySelectorAll(&quot;.notice_lang:not(.notice_lang_&quot;.concat(e,&quot;)&quot;)).forEach(function(e){e.style.display=\'none\'}),t.querySelector(&quot;.notice_lang.notice_lang_&quot;.concat(e)).style.display=\'block\',t.style.display=\'block\'),setTimeout(function(){u()},500)}function b(e,t){u(),c.style.display=\'block\',document.body.style.overflow=\'hidden\',setTimeout(function(){u()},2e3)}l={layer:a,btn:o,inputs:[l].concat(_toConsumableArray(s))},t=l.layer,n=l.btn,l=l.inputs,r=!1,n.addEventListener(\'click\',function(){((r=!r)?d:p)()}),t.addEventListener(\'mouseover\',function(){r=!0,d()}),t.addEventListener(\'mouseleave\',function(){r=!1,f()}),l.forEach(function(e){e.addEventListener(\'focus\',function(e){r=!0,d()}),e.addEventListener(\'blur\',function(e){r=!1,p()})}),s.forEach(function(e){e.addEventListener(\'click\',m)})})();&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;!(function(){var e,t=(o=\'일론머스크 &amp;amp;quot;테슬라에서 넷플릭스·유튜브 즐길 날 온다&amp;amp;quot;\',(c=document.createElement(\'div\')).innerHTML=o,c.textContent),a=\'20190728165812603\'||\'NHT9NtZWBe\',n=&quot;&quot;.concat(location.protocol,&quot;//&quot;).concat(location.host,&quot;/v/&quot;).concat(a),o=&quot;http://scrap.cafe.daum.net/_dss_/scrap?folder_id=100000&amp;amp;source_location_code=10&amp;amp;target_location_code=1&amp;amp;data_id=&quot;.concat(a),c={shareType:\'sendScrap\',shareData:{requestUrl:n,templateId:7952,installTalk:!0,templateArgs:{\'${EncodingUrl}\':encodeURIComponent(n),\'${webUrl}\':n+\'?f=p\',\'${mobileWebUrl}\':n+\'?f=m\'}}},r=document.querySelector(\'.share_btn\'),i=document.getElementById(\'rSocialShareButton\'),a=document.getElementById(\'rSocialShareLayerContainer\'),d=new socialshareRenewal.Main(i,{moreViewContainer:a,action:\'hover\',link:n,prefix:t,service_name:\'다음뉴스\',cafe:o,kakaoAPI:{appkey:\'53e566aa17534bc816eb1b5d8f7415ee\',kakaoLinkData:c}}),s=!1;function l(){e=setTimeout(function(){s=!1,r.classList.remove(\'layer_open\'),i.setAttribute(\'aria-expanded\',!1),d.close()},100)}function u(){s=!0,m(),r.classList.add(\'layer_open\'),i.setAttribute(\'aria-expanded\',!0),d.open()}function m(){clearTimeout(e)}i.addEventListener(\'mouseenter\',u),i.addEventListener(\'mouseleave\',l),i.addEventListener(\'click\',function(e){(s?l:u)()}),a.addEventListener(\'mouseenter\',m),a.addEventListener(\'mouseleave\',l),a.querySelectorAll(\'a\').forEach(function(e){e.addEventListener(\'focus\',m),e.addEventListener(\'blur\',l)})})();&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;!(function(){var e,t,n,o,i=document.querySelector(\'.news_view\'),s=document.querySelector(\'.font_btn\'),c=s.querySelector(\'.btn_font\'),r=s.querySelector(\'.list_font\'),u=r.querySelectorAll(\'input\'),a=\'GS_font_size\',l=\'v.daum.net\';function d(e){i.style.fontSize=&quot;&quot;.concat(e,&quot;px&quot;),document.querySelector(&quot;#inpFont&quot;.concat(e)).checked=!0,r.querySelectorAll(\'label\').forEach(function(e){return e.classList.remove(\'on\')}),r.querySelector(&quot;label[for=inpFont&quot;.concat(e,&quot;]&quot;)).classList.add(\'on\'),e=e,Cookies.set(a,\'\',{expires:-1}),Cookies.set(a,e,{domain:l,expires:new Date(1*new Date+365*864e5)})}function f(){clearTimeout(e),t.classList.add(\'layer_open\'),n.setAttribute(\'aria-expanded\',!0)}function v(){t.classList.remove(\'layer_open\'),n.setAttribute(\'aria-expanded\',!1)}function p(){o&amp;amp;&amp;amp;(e=setTimeout(v,1))}d(Cookies.get(a)||17),u.forEach(function(e){e.addEventListener(\'change\',function(e){d(e.target.value)})}),t=(c={layer:s,btn:c,inputs:u}).layer,n=c.btn,c=c.inputs,o=!1,t.addEventListener(\'mouseover\',function(){o=!0,f()}),t.addEventListener(\'mouseleave\',function(){o=!1,v()}),c.forEach(function(e){e.addEventListener(\'focus\',f),e.addEventListener(\'blur\',p)}),n.addEventListener(\'click\',function(e){((o=!o)?f:v)()}),s={options:s.querySelectorAll(\'.ico_newsview\'),inputs:u},u=s.options,s=s.inputs,u.forEach(function(e){e.addEventListener(\'mouseover\',function(){this.classList.add(\'ico_focused\')}),e.addEventListener(\'mouseleave\',function(){this.classList.remove(\'ico_focused\')})}),s.forEach(function(e){e.addEventListener(\'focus\',function(){this.nextElementSibling.querySelector(\'span\').classList.add(\'ico_focused\')}),e.addEventListener(\'blur\',function(){this.nextElementSibling.querySelector(\'span\').classList.remove(\'ico_focused\')})})})();&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;document.body.querySelector(&quot;.btn_print&quot;).parentNode.addEventListener(&quot;click&quot;,function(t){t.preventDefault(),window.open(\'https://news.v.daum.net/v/20190728165812603?s=print_news\',\'newsPrint\',\'width=750,height=550,scrollbars=yes\')});&amp;lt;/script&amp;gt;\n  &amp;lt;script type=&quot;text/javascript&quot; src=&quot;//comment.daum.net/js/latest/alex.action.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;!(function(){var s=&quot;20190728165812603&quot;,e=&quot;&quot;.concat(Conf.api.hadesRest,&quot;/pc_mc2_news?cate=&quot;).concat(&quot;news&quot;,&quot;&amp;amp;id=&quot;).concat(s),a=\'&amp;lt;li class=&quot;on&quot;&amp;gt; &amp;lt;div class=&quot;inner_box&quot;&amp;gt;&amp;lt;span class=&quot;link_txt&quot;&amp;gt;&amp;lt;%= title %&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/li&amp;gt;\',i=\'&amp;lt;li&amp;gt; &amp;lt;div class=&quot;inner_box&quot;&amp;gt;&amp;lt;a href=&quot;https://news.v.daum.net/v/&amp;lt;%= contentId %&amp;gt;&quot; class=&quot;link_txt&quot;&amp;gt;&amp;lt;%= title %&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/li&amp;gt;\',c=\'//news.daum.net/series\',r=document.querySelector(\'.relate_series\'),o=r.querySelector(\'.title_series\'),d=r.querySelector(\'.link_more\'),l=r.querySelector(\'.list_series\');function m(e){e&amp;amp;&amp;amp;e.parentNode.removeChild(e)}axios.get(e).then(function(e){var t,n=e.data.body.data.data;_.isEmpty(n)||\'series\'!==n[0].factor.type?m(r):(t=n[0],e=t.contents,n=t._id,t=t.title,e.length&amp;lt;3&amp;amp;&amp;amp;l.classList.add(\'relate_series2\'),o.textContent=t,d.setAttribute(\'href\',c+\'/\'+n),l.innerHTML=e.map(function(e){var t=e.contentId,e=e.title;return t==s?_.template(a)({title:e}):_.template(i)({contentId:t,title:e})}).join(\'\'),(e=r)&amp;amp;&amp;amp;e.classList.remove(\'hide\'))}).catch(function(e){console.error(&quot;[클러스터]: 데이터를 가져오는데 실패했습니다. 에러: &quot;,e,&quot;에러 데이터: &quot;,e.response.data),m(r)})})();&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;function cmRenderFailCallBack(e){e.parentElement.removeChild(e)}&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;document.addEventListener(\'DOMContentLoaded\',function(){var t=&quot;&quot;.concat(Conf.api.hadesRest)+&quot;/service_notice?id=&quot;+&quot;3393&quot;,n=document.querySelector(&quot;#newsviewNotice&quot;);axios.get(t).then(function(t){var e=t.data.body.data,t=e.noticeTitle,e=e.noticeUrl;null!==t?n.innerHTML=&quot;&amp;lt;strong class=\\&quot;tit_notice\\&quot;&amp;gt;공지&amp;lt;/strong&amp;gt;&amp;lt;span class=\\&quot;txt_notice\\&quot;&amp;gt;&amp;lt;a href=\\&quot;&quot;.concat(e,&quot;\\&quot; class=\\&quot;link_txt\\&quot;&amp;gt;&quot;).concat(t,&quot;&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&quot;):n.parentNode.removeChild(n)}).catch(function(t){console.log(&quot;댓글 공지 오류: &quot;+t),n.parentNode.removeChild(n)})});&amp;lt;/script&amp;gt;\n  &amp;lt;script src=&quot;//comment.daum.net/js/latest/alex.single.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;window.excludeCorejs=!1,window.alexConfig={label:{emptyImage:\'//i1.daumcdn.net/img-section/enter2013/liveviewer/pc_emot_co.gif\'},onLoad:function(){window.isLoadComment=!0}};&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;!(function(){var t,n,a=document.querySelector(\'.aside_popular\'),e=document.querySelectorAll(&quot;.tab_aside li a&quot;),i={&quot;뉴스&quot;:&quot;news&quot;,&quot;연예&quot;:&quot;entertain&quot;,&quot;스포츠&quot;:&quot;sports&quot;},c={news:{el:e[0],korName:&quot;뉴스&quot;,moreLink:&quot;https://news.daum.net/ranking/popular/all&quot;},entertain:{el:e[1],korName:&quot;연예&quot;,moreLink:&quot;https://entertain.daum.net/ranking/popular&quot;},sports:{el:e[2],korName:&quot;스포츠&quot;,moreLink:&quot;https://sports.daum.net/news/ranking&quot;}},r=c[&quot;news&quot;].el,l=1;function s(n){var e;r!==n&amp;amp;&amp;amp;((e=r.parentNode.querySelector(&quot;.cont_aside&quot;))&amp;amp;&amp;amp;e.parentNode.removeChild(e),r.parentNode.classList.remove(&quot;on&quot;),n.parentNode.classList.add(&quot;on&quot;),l=1,o(n),r=n)}function o(n){var e=n.innerText,t=i[e],a=c[t].moreLink,s=document.createElement(&quot;div&quot;),t=d(t);function o(){var n=document.querySelector(&quot;.cont_aside .list_ranking&quot;),e=r.innerText,e=i[e];l=this.classList.contains(&quot;btn_prev&quot;)?1===l?3:l-1:3===l?1:l+1,n.innerHTML=d(e)}s.classList.add(&quot;cont_aside&quot;),s.innerHTML=&quot;\\n &amp;lt;strong class=\\&quot;screen_out\\&quot;&amp;gt;&quot;.concat(e,&quot;&amp;lt;/strong&amp;gt;\\n &amp;lt;ol class=\\&quot;list_ranking\\&quot;&amp;gt;\\n &quot;).concat(t,&quot; \\n &amp;lt;/ol&amp;gt;\\n &amp;lt;div class=\\&quot;util_aside\\&quot;&amp;gt;\\n &amp;lt;button class=\\&quot;btn_slide btn_prev\\&quot;&amp;gt;&amp;lt;span class=\\&quot;ico_newsview\\&quot;&amp;gt;이전&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;\\n &amp;lt;button class=\\&quot;btn_slide btn_next\\&quot;&amp;gt;&amp;lt;span class=\\&quot;ico_newsview\\&quot;&amp;gt;다음&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;\\n &amp;lt;a href=&quot;).concat(a,&quot; class=\\&quot;link_all\\&quot;&amp;gt;&amp;lt;span class=\\&quot;txt_newsview\\&quot;&amp;gt;전체 보기&amp;lt;/span&amp;gt;&amp;lt;span class=\\&quot;ico_newsview\\&quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;\\n &amp;lt;/div&amp;gt;\\n &quot;),n.parentNode.appendChild(s),s.querySelector(&quot;.btn_prev&quot;).addEventListener(\'click\',o),s.querySelector(&quot;.btn_next&quot;).addEventListener(\'click\',o)}function d(n){return c[n].contents.slice(10*(l-1),10*l).map(function(n){return&quot;\\n &amp;lt;li&amp;gt;\\n &amp;lt;em class=\\&quot;num_newsview num&quot;.concat(n.index,&quot;\\&quot;&amp;gt;&quot;).concat(n.index,&quot;위&amp;lt;/em&amp;gt;\\n &amp;lt;strong class=\\&quot;tit_g\\&quot;&amp;gt;&amp;lt;a href=\\&quot;&quot;).concat(n.pcLink,&quot;\\&quot; class=\\&quot;link_txt @&quot;).concat(n.index,&quot;\\&quot;&amp;gt;&quot;).concat(n.title,&quot;&amp;lt;/a&amp;gt;&amp;lt;/strong&amp;gt;\\n &amp;lt;/li&amp;gt;\\n &quot;)}).join(\'\')}t=c,n=&quot;&quot;.concat(Conf.api.hadesRest,&quot;/pc_popular_news?size=30&quot;),axios.get(n).then(function(n){var e=n.data.body.data;Object.keys(e).forEach(function(n){t[n].contents=e[n]}),o(r),a.classList.remove(\'hide\')}).catch(function(n){a.parentNode.removeChild(a)}),e.forEach(function(n){n.addEventListener(&quot;mouseover&quot;,function(n){return s(n.target)}),n.addEventListener(&quot;focus&quot;,function(n){return s(n.target)})})})();&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;!(function(){var t=&quot;&amp;lt;li&amp;gt;\\n &amp;lt;a class=\\&quot;link_cont\\&quot; href=\\&quot;&amp;lt;%= url %&amp;gt;\\&quot;&amp;gt;\\n &amp;lt;span class=\\&quot;wrap_thumb\\&quot;&amp;gt;\\n &amp;lt;img class=\\&quot;thumb_g\\&quot; src=\\&quot;&amp;lt;%= thumbnail %&amp;gt;\\&quot; alt=\\&quot;\\&quot;/&amp;gt;\\n &amp;lt;span class=\\&quot;ico_phototv\\&quot;&amp;gt;\\n &amp;lt;% if (type == \'photo\') { %&amp;gt;\\n &amp;lt;span class=\\&quot;ico_newsview ico_photo\\&quot;&amp;gt;포토&amp;lt;/span&amp;gt;\\n &amp;lt;% } else { %&amp;gt;\\n &amp;lt;span class=\\&quot;ico_newsview ico_vod\\&quot;&amp;gt;영상&amp;lt;/span&amp;gt;\\n &amp;lt;% } %&amp;gt;\\n &amp;lt;/span&amp;gt;\\n &amp;lt;/span&amp;gt;\\n &amp;lt;strong class=\\&quot;tit_thumb\\&quot;&amp;gt;&amp;lt;%= title %&amp;gt;&amp;lt;/strong&amp;gt;\\n &amp;lt;/a&amp;gt;\\n &amp;lt;/li&amp;gt;&quot;,o=document.querySelector(\'.aside_phototv\'),s=o.querySelector(\'.list_phototv\'),n=&quot;&quot;.concat(Conf.api.hadesRest,&quot;/pc_photo_tv&quot;);function a(n){n&amp;amp;&amp;amp;n.parentNode.removeChild(n)}axios.get(n).then(function(n){n=n.data.body.data;_.isEmpty(n)?a(o):(s.innerHTML=n.map(function(n){return _.template(t)(n)}).join(\'\'),(n=o)&amp;amp;&amp;amp;n.classList.remove(\'hide\'))}).catch(function(n){console.error(\'[PC 뉴스 포토&amp;amp;TV]:\',n),a(o)})})();&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;!(function(){var n=\'S570x320\',e=&quot;20190728165812603&quot;,t=encodeURIComponent(JSON.stringify({itemid:e,category:&quot;news&quot;.replace(\'tain\',\'\')})),e={source:e},r=&quot;&amp;lt;a href=\\&quot;&amp;lt;%=obj.url%&amp;gt;\\&quot; class=\\&quot;link_cont\\&quot; data-itemid=\\&quot;&amp;lt;%=obj._id%&amp;gt;\\&quot;\\&quot; data-pos=\\&quot;&amp;lt;%=obj.pos%&amp;gt;\\&quot;&amp;gt;\\n &amp;lt;span class=\\&quot;wrap_thumb\\&quot;&amp;gt;&amp;lt;img src=\\&quot;&amp;lt;%=obj.thumbnail%&amp;gt;\\&quot; class=\\&quot;thumb_g\\&quot; alt=\\&quot;\\&quot;&amp;gt;&amp;lt;/span&amp;gt;\\n &amp;lt;strong class=\\&quot;tit_thumb\\&quot;&amp;gt;&amp;lt;%=obj.title%&amp;gt;&amp;lt;/strong&amp;gt;\\n &amp;lt;/a&amp;gt;&quot;,o=&quot;&amp;lt;strong class=\\&quot;tit_g\\&quot;&amp;gt;\\n &amp;lt;span class=\\&quot;info_news\\&quot;&amp;gt;&amp;lt;%=obj.cp_name%&amp;gt;&amp;lt;/span&amp;gt;\\n &amp;lt;a href=\\&quot;&amp;lt;%=obj.url%&amp;gt;\\&quot; data-itemid=\\&quot;&amp;lt;%=obj._id%&amp;gt;\\&quot; data-pos=\\&quot;&amp;lt;%=obj.pos%&amp;gt;\\&quot; class=\\&quot;link_txt\\&quot;&amp;gt;&amp;lt;%=obj.title%&amp;gt;&amp;lt;/a&amp;gt;\\n &amp;lt;/strong&amp;gt;&quot;,m=[];new Toros.Connector({url:\'mediadaum/most_similar\',queryParams:t,map:function(e){var t=e._id,a=e.title,i=e.image,e=e.cp_name,e={_id:t,url:&quot;https://v.daum.net/v/&quot;.concat(t),title:a,thumbnail:StringUtil.makeThumbnail(i,n),cp_name:e};if(!(m.length&amp;lt;2&amp;amp;&amp;amp;i))return e;m.push(e)},svc:\'mediadaum_sim\',impLabel:\'toros_mediadaum_sim_imp\',impProps:e,viewLabel:\'toros_mediadaum_sim_vimp\',viewProps:e,clickLabel:\'toros_mediadaum_sim_click\',clickProps:e,customRender:function(e,i,n){var s=e.filter(function(e){return!!e._id});m.length&amp;lt;2||s.length&amp;lt;10?document.querySelector(\'.realtime_news\').remove():document.querySelectorAll(\'.item_realtime_news\').forEach(function(e,t){var a=t&amp;lt;2?{article:m.shift(),template:r}:{article:s.shift(),template:o},t=a.article,a=a.template;t?(e.insertAdjacentHTML(\'beforeend\',_.template(a)(t)),e.classList.remove(\'item_realtime_news\'),e.classList.length||e.removeAttribute(\'class\'),t=e.querySelector(\'a\'),i.observe(t),t.addEventListener(\'click\',n)):e.remove()})}}).render()})();&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;function onFailEtcBottomAd(){var t;null!==(t=document.querySelector(\'.etc_bottom_ad\'))&amp;amp;&amp;amp;void 0!==t&amp;amp;&amp;amp;t.remove()}&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;!(function(){var e=document.querySelector(&quot;.direct_link&quot;);e.querySelector(&quot;.btn_fold&quot;).addEventListener(\'click\',function(){e.classList.toggle(&quot;direct_open&quot;)})})();&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;\n    window.minidaum_options = JSON.parse(\'{&quot;bgType&quot;:&quot;white&quot;,&quot;enableLogoutRetun&quot;:true,&quot;returnUrl&quot;:&quot;&quot;,&quot;disableHotissue&quot;:false,&quot;disableLogo&quot;:false,&quot;disableTracker&quot;:true,&quot;enableTopLink&quot;:false}\');\n&amp;lt;/script&amp;gt;\n  &amp;lt;script src=&quot;https://go.daum.net/minidaum_pc.daum&quot;&amp;gt;&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;document.querySelectorAll(\'.kakao_ad_area\').forEach(function(a){a.setAttribute(\'data-ad-param-channel\',\'harmony\'),a.setAttribute(\'data-ad-param-cp\',\'90_pc_media_news\')});&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;!(function(){var e,t,i,c=\'&amp;lt;div class=&quot;direct_view&quot; style=&quot;top:&amp;lt;%= top %&amp;gt;px; width:&amp;lt;%= width %&amp;gt;px; margin-left:&amp;lt;%= left %&amp;gt;px&quot;&amp;gt; &amp;lt;a href=&quot;&amp;lt;%= url %&amp;gt;&quot; class=&quot;link_view&quot;&amp;gt; &amp;lt;span class=&quot;txt_g&quot;&amp;gt;&amp;lt;%= title %&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;ico_view&quot;&amp;gt; &amp;lt;span class=&quot;ico_newsview ico_gallery&quot;&amp;gt;갤러리 이동&amp;lt;/span&amp;gt; &amp;lt;/span&amp;gt; &amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt;\';e=\'NHT9NtZWBe\',!(t=\'\')||(i=document.querySelector(\'img[dmcf-mtype=&quot;image&quot;]\'))&amp;amp;&amp;amp;!i.querySelector(\'.direct_vod\')&amp;amp;&amp;amp;axios.get(&quot;&quot;.concat(Conf.api.hadesRest,&quot;/photo_gallery_link_info?docId=&quot;).concat(e,&quot;&amp;amp;galleryId=&quot;).concat(parseInt(t,10))).then(function(e){var t,a=e.data.body.data;t=i,a=(e=a).title,e=e.pcLink,a&amp;amp;&amp;amp;e&amp;amp;&amp;amp;(e={title:a,url:e,top:t.clientHeight-62,width:a=t.clientWidth,left:a/2*-1},a=document.createElement(\'div\'),t.parentNode.appendChild(a),a.outerHTML=_.template(c)(e))})})();&amp;lt;/script&amp;gt;\n  &amp;lt;script src=&quot;//search1.daumcdn.net/search/statics/common/js/g/search_dragselection.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;!(function(){var e=document.querySelector(&quot;.head_media&quot;),n=document.getElementById(&quot;wrapMinidaum&quot;).offsetHeight+e.offsetHeight,o=document.getElementById(&quot;barProgress&quot;),d=document.getElementById(&quot;mAside&quot;),s=document.getElementById(&quot;kakaoWrap&quot;),l=document.getElementById(&quot;kakaoGnb&quot;),r=document.getElementById(&quot;mArticle&quot;),a=document.querySelector(&quot;.cmt_news&quot;),c=document.querySelector(&quot;.aside_ad:first-child&quot;),f=document.querySelector(&quot;.aside_ad:last-child&quot;),g=document.getElementById(\'realtime_aside\');function t(){var e=window.scrollY||window.pageYOffset,t=document.body.offsetHeight,i=window.innerHeight;n&amp;lt;e?(i=100*e/(t-i),s.classList.add(&quot;header_fixed&quot;),o.style.width=parseInt(i,10)+&quot;%&quot;):s.classList.remove(&quot;header_fixed&quot;)}function i(){var e=window.scrollX||window.pageXOffset,t=cMain.clientWidth,i=r.clientWidth,n=t-i-d.clientWidth,o=getComputedStyle(cMain),s=null;s=g?(t=g.getBoundingClientRect().left)&amp;lt;880?t+e:t:i+n+parseInt(o[\'marginLeft\'],10)-e,r.offsetHeight&amp;lt;d.offsetHeight||(a.style.minHeight=\'250px\',0&amp;lt;(n=(window.scrollY||window.pageYOffset)-cMain.offsetTop-8-c.clientHeight)?(o=r.offsetHeight-a.offsetHeight,(e=d.offsetHeight-f.offsetHeight)+n+8&amp;lt;o?(d.style.position=\'fixed\',d.style.top=l.clientHeight-c.offsetHeight-74+\'px\',d.style.left=s+\'px\'):(d.style.position=\'relative\',d.style.top=o-e+\'px\',d.style.left=\'inherit\')):(d.style.position=\'static\',d.style.top=\'inherit\',d.style.left=\'inherit\'))}\'false\'!=\'true\'&amp;amp;&amp;amp;\'news\'==\'news\'?(window.addEventListener(&quot;resize&quot;,_.throttle(i,100)),window.addEventListener(&quot;scroll&quot;,_.throttle(function(){t(),i()},100)),t(),i()):(window.addEventListener(&quot;scroll&quot;,_.throttle(function(){t()},100)),t())})();&amp;lt;/script&amp;gt;\n  &amp;lt;script type=&quot;text/javascript&quot; src=&quot;//t1.daumcdn.net/tiara/js/v1/tiara.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;\n  &amp;lt;script&amp;gt;&quot;use strict&quot;;!(function(){if(window.TiaraTracker){var c=!1,s=new Date,m=&quot;pc_news&quot;,l=null;try{l=Cookies.get(\'DAUMTOP\')||Cookies.get(\'HARMONY_TOROS_IMP\')&amp;amp;&amp;amp;window.atob(Cookies.get(\'HARMONY_TOROS_IMP\'))}catch(e){l=Cookies.get(\'DAUMTOP\')}var u=\'\',g=\'\',y=TiaraTracker.getInstance().setSvcDomain(&quot;media.daum.net&quot;).setPage(&quot;newsview&quot;).trackPage(&quot;newsview&quot;).setSection(&quot;digital&quot;).setEnableAlwaysImage(!0),f={id:&quot;20190728165812603&quot;,type:&quot;article&quot;,name:&quot;\\uC77C\\uB860\\uBA38\\uC2A4\\uD06C \\&quot;\\uD14C\\uC2AC\\uB77C\\uC5D0\\uC11C \\uB137\\uD50C\\uB9AD\\uC2A4\\u00B7\\uC720\\uD29C\\uBE0C \\uC990\\uAE38 \\uB0A0 \\uC628\\uB2E4\\&quot;&quot;,category_id:&quot;100031&quot;,category:&quot;digital&quot;,author:&quot;\\uC774\\uBBFC\\uC6B0&quot;,author_id:&quot;letzwin@asiae.co.kr&quot;,provider:&quot;\\uC544\\uC2DC\\uC544\\uACBD\\uC81C&quot;,provider_id:&quot;90&quot;,regdate:&quot;2019-07-28 16:58:12&quot;,plink:&quot;https://media.daum.net/v/20190728165812603&quot;,image:&quot;https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg&quot;,harmony_consumer_id:&quot;media&quot;,media:&quot;pcweb&quot;},p={contentUniqueKey:&quot;hamny-&quot;.concat(f.id),docId:&quot;NHT9NtZWBe&quot;,harmony_consumer_id:&quot;media&quot;,media:&quot;pcweb&quot;,reg_dt:&quot;2019-07-28 16:58:12&quot;,reg_timestamp:&quot;1564300692871&quot;},e=function(){c||y.actionKind(&quot;ViewContent&quot;).pageMeta(f).customProps(p).track()},t=function(){if(!c){c=!0;var e=document.body.scrollHeight,t=window.scrollY,a=e-t,o=window.innerHeight,n=Math.round(t/(e-o)*100),i={},o={duration:(new Date).getTime()-s.getTime(),scroll_percent:n,scroll_height:e,scroll_top:t,scroll_bottom:a,scroll_inner_height:o};try{var d,r=!1;!l||(d=JSON.parse(l)).contents_unique_key===p.contentUniqueKey&amp;amp;&amp;amp;(i={toros_imp_id:d.impression_id,toros_file_hash_key:d.toros_file_hash_key,toros_user_id_type:&quot;uuid&quot;,toros_page_meta_id:p.contentUniqueKey,toros_event_meta_id:p.contentUniqueKey,toros_action_type:&quot;dwelltime&quot;},Cookies.remove(\'HARMONY_TOROS_IMP\',{path:\'/\',domain:location.hostname.substring(location.hostname.indexOf(\'.\'))}),Cookies.remove(\'DAUMTOP\',{path:\'/\',domain:\'.daum.net\'}),r=!0),!r&amp;amp;&amp;amp;0&amp;lt;u.length&amp;amp;&amp;amp;(i={toros_imp_id:window.atob(u),toros_file_hash_key:window.atob(g),toros_user_id_type:&quot;uuid&quot;,toros_page_meta_id:p.contentUniqueKey,toros_event_meta_id:p.contentUniqueKey,toros_action_type:&quot;dwelltime&quot;})}catch(e){}y.trackUsage().actionKind(&quot;UsagePage&quot;).pageMeta(f).usage(o).customProps(_.assignIn(p,i)).track()}};&quot;onpagehide&quot;in window?(window.addEventListener(&quot;pageshow&quot;,e,!1),window.addEventListener(&quot;pagehide&quot;,t,!1)):(window.addEventListener(&quot;load&quot;,e,!1),window.addEventListener(&quot;unload&quot;,t,!1)),document.addEventListener(&quot;visibilitychange&quot;,function(){(document[&quot;hidden&quot;]?t:e)()},!1),document.addEventListener(&quot;mousedown&quot;,function(e){var t,a,o,n,i,d,r=e.target,c=r.closest(&quot;[data-cloud]&quot;),s=r.closest(&quot;a&quot;)||r.closest(&quot;button&quot;)||r.closest(\'div.selectionbox\');s&amp;amp;&amp;amp;null!=c&amp;amp;&amp;amp;c.contains(s)&amp;amp;&amp;amp;((i=TiaraTracker.getClickInfo(e))&amp;amp;&amp;amp;(a=(null==(t=i.action)?void 0:t.name)||&quot;&quot;,o=(null==t?void 0:t.kind)||&quot;&quot;,n=_.assignIn(p,i.customProps),i=r.closest(&quot;[data-tiara]&quot;),r=s.querySelector(&quot;img&quot;),d=0,Array.from((c||i).querySelectorAll(&quot;a, button&quot;)).map(function(e,t){e==s&amp;amp;&amp;amp;(d=t)}),e={layer1:m,layer2:c.dataset.cloud,layer3:(null==i?void 0:i.dataset.tiara)||&quot;&quot;,click_url:s.href||&quot;&quot;,ordnum:d,copy:s.classList.contains(\'selectionbox\')?null==t?void 0:t.name:s.innerText,image:(null==r?void 0:r.src)||&quot;&quot;,posX:e.clientX,posY:e.clientY},y.trackEvent(a).pageMeta(f).actionKind(o).customProps(n).click(e).track()))})}})();&amp;lt;/script&amp;gt;\n &amp;lt;/body&amp;gt;\n&amp;lt;/html&amp;gt;'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://news.v.daum.net/v/20190728165812603'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;resp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'h3'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;class_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'tit_view'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;'일론머스크 &quot;테슬라에서 넷플릭스·유튜브 즐길 날 온다&quot;'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://news.v.daum.net/v/20190728165812603'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;resp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'span'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;class_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'txt_info'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'span'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;class_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'txt_info'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;txt_info&quot;&amp;gt;입력 &amp;lt;span class=&quot;num_date&quot;&amp;gt;2019. 07. 28. 16:58&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://news.v.daum.net/v/20190728165812603'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;resp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'span'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;class_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'info_view'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'span'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;class_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'txt_info'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;txt_info&quot;&amp;gt;이민우&amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://news.v.daum.net/v/20190728165812603'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;resp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+
+&lt;span class=&quot;c1&quot;&gt;#&amp;lt;div id=&quot;harmonyContainer&quot; class=&quot;article_view&quot; data-translation-body=&quot;true&quot;&amp;gt; 
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;container&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'div'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'harmonyContainer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;contents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;container&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'p'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;contents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    
+&lt;span class=&quot;n&quot;&gt;contents&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;'[아시아경제 이민우 기자] 일론 머스크 테슬라 최고경영자(CEO)가 자사 전기 자동차 모델에 넷플릭스와 유튜브 등 온라인동영상서비스(OTT)를 탑재할 것이라고 예고했다. 단순히 자율 주행 전기차가 단순히 주행을 위한 정보를 알려주는 것을 넘어 각종 영상 콘텐츠를 즐기는 공간으로도 확장하겠다는 전략으로 풀이된다.27일(현지시간) 더버지 등 주요 외신들에 따르면 머스크 CEO는 자신의 트위터를 통해 이 같은 계획을 밝혔다. 그는 &quot;자동차가 정차했을 때 넷플릭스와 유튜브를 감상할 수 있는 기능이 조만간 추가될 것&quot;이라며 &quot;편안한 좌석과 서라운드 사운드 오디오를 통해 영화관과 같은 느낌을 받을 수 있을 것&quot;이라고 강조했다.테슬라가 이처럼 콘텐츠 방면으로 확장하려 든 것은 이번이 처음이 아니다. 지난달 세계 최대 게임쇼 E3에서는 이미 운전자가 \'폴아웃 쉘터\'라는 게임을 할 수 있을 것이라고 발표한 바 있다. 이후에도 최근 게임업체 아타리사(社)의 자동차 경주 게임 ‘폴포지션’, 슈팅게임 ‘템페스트’, ‘미사일커맨드’ 등 고전 게임을 제공하기도 했다. 운전대로 게임을 조작하는 방식으로, 차가 주차돼 있을 경우에만 즐길 수 있다.이번 영상 콘텐츠는 주행 중에도 감상할 수 있도록 하는 방안을 고려하고 있다. 테슬라 측은 규제당국이 자율주행에 대해 완전히 승인하면 차량이 움직일 때에도 승객이 동영상을 즐길 수 있을 것이라고 설명했다.하지만 아직까지 자율주행차의 안전에 대한 우려는 완전히 걷혀지지 않은 상황이다. 지난 2017년 차량공유 서비스 우버의 자율주행 시범차량이 보행자와 충돌한 사고가 발생한 바 있다. 게다가 당시 시험 운전자는 디즈니의 동영상 스트리밍 서비스인 \'훌루\'를 이용하고 있던 것으로 밝혀졌다.이민우 기자 letzwin@asiae.co.kr&amp;lt;ⓒ경제를 보는 눈, 세계를 보는 창 아시아경제 무단전재 배포금지&amp;gt;'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://news.v.daum.net/v/20190728165812603'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;resp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+
+&lt;span class=&quot;c1&quot;&gt;#&amp;lt;div id=&quot;harmonyContainer&quot; class=&quot;article_view&quot; data-translation-body=&quot;true&quot;&amp;gt; 
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;container&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'div'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'harmonyContainer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;container&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div class=&quot;article_view&quot; data-translation-body=&quot;true&quot; id=&quot;harmonyContainer&quot;&amp;gt;
+&amp;lt;section dmcf-sid=&quot;NkBWHdyrlY&quot;&amp;gt;
+&amp;lt;figure class=&quot;figure_frm origin_fig&quot; dmcf-pid=&quot;N7s2biXYTL&quot; dmcf-ptype=&quot;figure&quot;&amp;gt;
+&amp;lt;p class=&quot;link_figure&quot;&amp;gt;&amp;lt;img alt=&quot;일론 머스크 테슬라 최고경영자(CEO) [이미지출처=로이터연합뉴스]&quot; class=&quot;thumb_g_article&quot; data-org-src=&quot;https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg&quot; data-org-width=&quot;550&quot; dmcf-mid=&quot;NBMY3ZZhN4&quot; dmcf-mtype=&quot;image&quot; height=&quot;auto&quot; src=&quot;https://img3.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg&quot; width=&quot;658&quot;/&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;figcaption class=&quot;txt_caption default_figure&quot;&amp;gt;
+            일론 머스크 테슬라 최고경영자(CEO) [이미지출처=로이터연합뉴스]
+           &amp;lt;/figcaption&amp;gt;
+&amp;lt;/figure&amp;gt;
+&amp;lt;div dmcf-pid=&quot;NU9K9rfDgA&quot; dmcf-ptype=&quot;general&quot;&amp;gt;
+&amp;lt;p&amp;gt;[아시아경제 이민우 기자] 일론 머스크 테슬라 최고경영자(CEO)가 자사 전기 자동차 모델에 넷플릭스와 유튜브 등 온라인동영상서비스(OTT)를 탑재할 것이라고 예고했다. 단순히 자율 주행 전기차가 단순히 주행을 위한 정보를 알려주는 것을 넘어 각종 영상 콘텐츠를 즐기는 공간으로도 확장하겠다는 전략으로 풀이된다.&amp;lt;/p&amp;gt;
+&amp;lt;br/&amp;gt;
+&amp;lt;p&amp;gt;27일(현지시간) 더버지 등 주요 외신들에 따르면 머스크 CEO는 자신의 트위터를 통해 이 같은 계획을 밝혔다. 그는 &quot;자동차가 정차했을 때 넷플릭스와 유튜브를 감상할 수 있는 기능이 조만간 추가될 것&quot;이라며 &quot;편안한 좌석과 서라운드 사운드 오디오를 통해 영화관과 같은 느낌을 받을 수 있을 것&quot;이라고 강조했다.&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;figure class=&quot;figure_frm origin_fig&quot; dmcf-pid=&quot;NlqQhf4JmF&quot; dmcf-ptype=&quot;figure&quot;&amp;gt;
+&amp;lt;p class=&quot;link_figure&quot;&amp;gt;&amp;lt;img alt=&quot;(출처=일론 머스크 트위터 계정 캡쳐)&quot; class=&quot;thumb_g_article&quot; data-org-src=&quot;https://t1.daumcdn.net/news/201907/28/akn/20190728165813670hwxf.png&quot; data-org-width=&quot;550&quot; dmcf-mid=&quot;NRhnb5SRpx&quot; dmcf-mtype=&quot;image&quot; height=&quot;auto&quot; src=&quot;https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813670hwxf.png&quot; width=&quot;658&quot;/&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;figcaption class=&quot;txt_caption default_figure&quot;&amp;gt;
+            (출처=일론 머스크 트위터 계정 캡쳐)
+           &amp;lt;/figcaption&amp;gt;
+&amp;lt;/figure&amp;gt;
+&amp;lt;div dmcf-pid=&quot;NpkG4d9A6j&quot; dmcf-ptype=&quot;general&quot;&amp;gt;
+&amp;lt;p&amp;gt;테슬라가 이처럼 콘텐츠 방면으로 확장하려 든 것은 이번이 처음이 아니다. 지난달 세계 최대 게임쇼 E3에서는 이미 운전자가 '폴아웃 쉘터'라는 게임을 할 수 있을 것이라고 발표한 바 있다. 이후에도 최근 게임업체 아타리사(社)의 자동차 경주 게임 ‘폴포지션’, 슈팅게임 ‘템페스트’, ‘미사일커맨드’ 등 고전 게임을 제공하기도 했다. 운전대로 게임을 조작하는 방식으로, 차가 주차돼 있을 경우에만 즐길 수 있다.&amp;lt;/p&amp;gt;
+&amp;lt;br/&amp;gt;
+&amp;lt;p&amp;gt;이번 영상 콘텐츠는 주행 중에도 감상할 수 있도록 하는 방안을 고려하고 있다. 테슬라 측은 규제당국이 자율주행에 대해 완전히 승인하면 차량이 움직일 때에도 승객이 동영상을 즐길 수 있을 것이라고 설명했다.&amp;lt;/p&amp;gt;
+&amp;lt;br/&amp;gt;
+&amp;lt;p&amp;gt;하지만 아직까지 자율주행차의 안전에 대한 우려는 완전히 걷혀지지 않은 상황이다. 지난 2017년 차량공유 서비스 우버의 자율주행 시범차량이 보행자와 충돌한 사고가 발생한 바 있다. 게다가 당시 시험 운전자는 디즈니의 동영상 스트리밍 서비스인 '훌루'를 이용하고 있던 것으로 밝혀졌다.&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;p dmcf-pid=&quot;NUOWg8Qxyd&quot; dmcf-ptype=&quot;general&quot;&amp;gt;이민우 기자 letzwin@asiae.co.kr&amp;lt;/p&amp;gt;
+&amp;lt;/section&amp;gt;
+&amp;lt;p data-translation=&quot;true&quot;&amp;gt;&amp;amp;lt;ⓒ경제를 보는 눈, 세계를 보는 창 아시아경제 무단전재 배포금지&amp;amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CSS를 이용하여 tag 찾기&lt;/li&gt;
+  &lt;li&gt;select, select_one함수 사용&lt;/li&gt;
+  &lt;li&gt;css selector 사용법
+    &lt;ul&gt;
+      &lt;li&gt;태그명 찾기 tag&lt;/li&gt;
+      &lt;li&gt;자손 태그 찾기 - 자손 관계 (tag tag)&lt;/li&gt;
+      &lt;li&gt;자식 태그 찾기 - 다이렉트 자식 관계 (tag &amp;gt; tag)&lt;/li&gt;
+      &lt;li&gt;아이디 찾기 #id&lt;/li&gt;
+      &lt;li&gt;클래스 찾기 .class&lt;/li&gt;
+      &lt;li&gt;속성값 찾기 [name=’test’]
+        &lt;ul&gt;
+          &lt;li&gt;속성값 prefix 찾기 [name ^=’test’]&lt;/li&gt;
+          &lt;li&gt;속성값 suffix 찾기 [name $=’test’]&lt;/li&gt;
+          &lt;li&gt;속성값 substring 찾기 [name *=’test]&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;n번째 자식 tag 찾기 :nth-child(n)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://news.v.daum.net/v/20190728165812603'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;resp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'h3'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;h3 class=&quot;tit_view&quot; data-translation=&quot;true&quot;&amp;gt;일론머스크 &quot;테슬라에서 넷플릭스·유튜브 즐길 날 온다&quot;&amp;lt;/h3&amp;gt;,
+ &amp;lt;h3 class=&quot;tit_cp&quot;&amp;gt;아시아경제 주요 뉴스&amp;lt;/h3&amp;gt;,
+ &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;많이본 뉴스&amp;lt;/h3&amp;gt;,
+ &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;포토&amp;amp;amp;TV&amp;lt;/h3&amp;gt;,
+ &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;이 시각 추천뉴스&amp;lt;/h3&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'div#harmonyContainer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;#div태그이면서 id가 harmonyContainer 검색
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;div class=&quot;article_view&quot; data-translation-body=&quot;true&quot; id=&quot;harmonyContainer&quot;&amp;gt;
+ &amp;lt;section dmcf-sid=&quot;NkBWHdyrlY&quot;&amp;gt;
+ &amp;lt;figure class=&quot;figure_frm origin_fig&quot; dmcf-pid=&quot;N7s2biXYTL&quot; dmcf-ptype=&quot;figure&quot;&amp;gt;
+ &amp;lt;p class=&quot;link_figure&quot;&amp;gt;&amp;lt;img alt=&quot;일론 머스크 테슬라 최고경영자(CEO) [이미지출처=로이터연합뉴스]&quot; class=&quot;thumb_g_article&quot; data-org-src=&quot;https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg&quot; data-org-width=&quot;550&quot; dmcf-mid=&quot;NBMY3ZZhN4&quot; dmcf-mtype=&quot;image&quot; height=&quot;auto&quot; src=&quot;https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg&quot; width=&quot;658&quot;/&amp;gt;&amp;lt;/p&amp;gt;
+ &amp;lt;figcaption class=&quot;txt_caption default_figure&quot;&amp;gt;
+             일론 머스크 테슬라 최고경영자(CEO) [이미지출처=로이터연합뉴스]
+            &amp;lt;/figcaption&amp;gt;
+ &amp;lt;/figure&amp;gt;
+ &amp;lt;div dmcf-pid=&quot;NU9K9rfDgA&quot; dmcf-ptype=&quot;general&quot;&amp;gt;
+ &amp;lt;p&amp;gt;[아시아경제 이민우 기자] 일론 머스크 테슬라 최고경영자(CEO)가 자사 전기 자동차 모델에 넷플릭스와 유튜브 등 온라인동영상서비스(OTT)를 탑재할 것이라고 예고했다. 단순히 자율 주행 전기차가 단순히 주행을 위한 정보를 알려주는 것을 넘어 각종 영상 콘텐츠를 즐기는 공간으로도 확장하겠다는 전략으로 풀이된다.&amp;lt;/p&amp;gt;
+ &amp;lt;br/&amp;gt;
+ &amp;lt;p&amp;gt;27일(현지시간) 더버지 등 주요 외신들에 따르면 머스크 CEO는 자신의 트위터를 통해 이 같은 계획을 밝혔다. 그는 &quot;자동차가 정차했을 때 넷플릭스와 유튜브를 감상할 수 있는 기능이 조만간 추가될 것&quot;이라며 &quot;편안한 좌석과 서라운드 사운드 오디오를 통해 영화관과 같은 느낌을 받을 수 있을 것&quot;이라고 강조했다.&amp;lt;/p&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;figure class=&quot;figure_frm origin_fig&quot; dmcf-pid=&quot;NlqQhf4JmF&quot; dmcf-ptype=&quot;figure&quot;&amp;gt;
+ &amp;lt;p class=&quot;link_figure&quot;&amp;gt;&amp;lt;img alt=&quot;(출처=일론 머스크 트위터 계정 캡쳐)&quot; class=&quot;thumb_g_article&quot; data-org-src=&quot;https://t1.daumcdn.net/news/201907/28/akn/20190728165813670hwxf.png&quot; data-org-width=&quot;550&quot; dmcf-mid=&quot;NRhnb5SRpx&quot; dmcf-mtype=&quot;image&quot; height=&quot;auto&quot; src=&quot;https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813670hwxf.png&quot; width=&quot;658&quot;/&amp;gt;&amp;lt;/p&amp;gt;
+ &amp;lt;figcaption class=&quot;txt_caption default_figure&quot;&amp;gt;
+             (출처=일론 머스크 트위터 계정 캡쳐)
+            &amp;lt;/figcaption&amp;gt;
+ &amp;lt;/figure&amp;gt;
+ &amp;lt;div dmcf-pid=&quot;NpkG4d9A6j&quot; dmcf-ptype=&quot;general&quot;&amp;gt;
+ &amp;lt;p&amp;gt;테슬라가 이처럼 콘텐츠 방면으로 확장하려 든 것은 이번이 처음이 아니다. 지난달 세계 최대 게임쇼 E3에서는 이미 운전자가 '폴아웃 쉘터'라는 게임을 할 수 있을 것이라고 발표한 바 있다. 이후에도 최근 게임업체 아타리사(社)의 자동차 경주 게임 ‘폴포지션’, 슈팅게임 ‘템페스트’, ‘미사일커맨드’ 등 고전 게임을 제공하기도 했다. 운전대로 게임을 조작하는 방식으로, 차가 주차돼 있을 경우에만 즐길 수 있다.&amp;lt;/p&amp;gt;
+ &amp;lt;br/&amp;gt;
+ &amp;lt;p&amp;gt;이번 영상 콘텐츠는 주행 중에도 감상할 수 있도록 하는 방안을 고려하고 있다. 테슬라 측은 규제당국이 자율주행에 대해 완전히 승인하면 차량이 움직일 때에도 승객이 동영상을 즐길 수 있을 것이라고 설명했다.&amp;lt;/p&amp;gt;
+ &amp;lt;br/&amp;gt;
+ &amp;lt;p&amp;gt;하지만 아직까지 자율주행차의 안전에 대한 우려는 완전히 걷혀지지 않은 상황이다. 지난 2017년 차량공유 서비스 우버의 자율주행 시범차량이 보행자와 충돌한 사고가 발생한 바 있다. 게다가 당시 시험 운전자는 디즈니의 동영상 스트리밍 서비스인 '훌루'를 이용하고 있던 것으로 밝혀졌다.&amp;lt;/p&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;p dmcf-pid=&quot;NUOWg8Qxyd&quot; dmcf-ptype=&quot;general&quot;&amp;gt;이민우 기자 letzwin@asiae.co.kr&amp;lt;/p&amp;gt;
+ &amp;lt;/section&amp;gt;
+ &amp;lt;p data-translation=&quot;true&quot;&amp;gt;&amp;amp;lt;ⓒ경제를 보는 눈, 세계를 보는 창 아시아경제 무단전재 배포금지&amp;amp;gt;&amp;lt;/p&amp;gt;
+ &amp;lt;/div&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'#harmonyContainer &amp;gt; p'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#id값 검색시 #사용함 / &amp;gt; 은 자식검색
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;p data-translation=&quot;true&quot;&amp;gt;&amp;amp;lt;ⓒ경제를 보는 눈, 세계를 보는 창 아시아경제 무단전재 배포금지&amp;amp;gt;&amp;lt;/p&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'#harmonyContainer  p'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;p class=&quot;link_figure&quot;&amp;gt;&amp;lt;img alt=&quot;일론 머스크 테슬라 최고경영자(CEO) [이미지출처=로이터연합뉴스]&quot; class=&quot;thumb_g_article&quot; data-org-src=&quot;https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg&quot; data-org-width=&quot;550&quot; dmcf-mid=&quot;NBMY3ZZhN4&quot; dmcf-mtype=&quot;image&quot; height=&quot;auto&quot; src=&quot;https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg&quot; width=&quot;658&quot;/&amp;gt;&amp;lt;/p&amp;gt;,
+ &amp;lt;p&amp;gt;[아시아경제 이민우 기자] 일론 머스크 테슬라 최고경영자(CEO)가 자사 전기 자동차 모델에 넷플릭스와 유튜브 등 온라인동영상서비스(OTT)를 탑재할 것이라고 예고했다. 단순히 자율 주행 전기차가 단순히 주행을 위한 정보를 알려주는 것을 넘어 각종 영상 콘텐츠를 즐기는 공간으로도 확장하겠다는 전략으로 풀이된다.&amp;lt;/p&amp;gt;,
+ &amp;lt;p&amp;gt;27일(현지시간) 더버지 등 주요 외신들에 따르면 머스크 CEO는 자신의 트위터를 통해 이 같은 계획을 밝혔다. 그는 &quot;자동차가 정차했을 때 넷플릭스와 유튜브를 감상할 수 있는 기능이 조만간 추가될 것&quot;이라며 &quot;편안한 좌석과 서라운드 사운드 오디오를 통해 영화관과 같은 느낌을 받을 수 있을 것&quot;이라고 강조했다.&amp;lt;/p&amp;gt;,
+ &amp;lt;p class=&quot;link_figure&quot;&amp;gt;&amp;lt;img alt=&quot;(출처=일론 머스크 트위터 계정 캡쳐)&quot; class=&quot;thumb_g_article&quot; data-org-src=&quot;https://t1.daumcdn.net/news/201907/28/akn/20190728165813670hwxf.png&quot; data-org-width=&quot;550&quot; dmcf-mid=&quot;NRhnb5SRpx&quot; dmcf-mtype=&quot;image&quot; height=&quot;auto&quot; src=&quot;https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813670hwxf.png&quot; width=&quot;658&quot;/&amp;gt;&amp;lt;/p&amp;gt;,
+ &amp;lt;p&amp;gt;테슬라가 이처럼 콘텐츠 방면으로 확장하려 든 것은 이번이 처음이 아니다. 지난달 세계 최대 게임쇼 E3에서는 이미 운전자가 '폴아웃 쉘터'라는 게임을 할 수 있을 것이라고 발표한 바 있다. 이후에도 최근 게임업체 아타리사(社)의 자동차 경주 게임 ‘폴포지션’, 슈팅게임 ‘템페스트’, ‘미사일커맨드’ 등 고전 게임을 제공하기도 했다. 운전대로 게임을 조작하는 방식으로, 차가 주차돼 있을 경우에만 즐길 수 있다.&amp;lt;/p&amp;gt;,
+ &amp;lt;p&amp;gt;이번 영상 콘텐츠는 주행 중에도 감상할 수 있도록 하는 방안을 고려하고 있다. 테슬라 측은 규제당국이 자율주행에 대해 완전히 승인하면 차량이 움직일 때에도 승객이 동영상을 즐길 수 있을 것이라고 설명했다.&amp;lt;/p&amp;gt;,
+ &amp;lt;p&amp;gt;하지만 아직까지 자율주행차의 안전에 대한 우려는 완전히 걷혀지지 않은 상황이다. 지난 2017년 차량공유 서비스 우버의 자율주행 시범차량이 보행자와 충돌한 사고가 발생한 바 있다. 게다가 당시 시험 운전자는 디즈니의 동영상 스트리밍 서비스인 '훌루'를 이용하고 있던 것으로 밝혀졌다.&amp;lt;/p&amp;gt;,
+ &amp;lt;p dmcf-pid=&quot;NUOWg8Qxyd&quot; dmcf-ptype=&quot;general&quot;&amp;gt;이민우 기자 letzwin@asiae.co.kr&amp;lt;/p&amp;gt;,
+ &amp;lt;p data-translation=&quot;true&quot;&amp;gt;&amp;amp;lt;ⓒ경제를 보는 눈, 세계를 보는 창 아시아경제 무단전재 배포금지&amp;amp;gt;&amp;lt;/p&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'h3.tit_view'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'.tit_view'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#태그에 관계없이 가져옴 / 클래스 찾기 .class
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;h3 class=&quot;tit_view&quot; data-translation=&quot;true&quot;&amp;gt;일론머스크 &quot;테슬라에서 넷플릭스·유튜브 즐길 날 온다&quot;&amp;lt;/h3&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'h3[class=&quot;tit_view&quot;]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;h3 class=&quot;tit_view&quot; data-translation=&quot;true&quot;&amp;gt;일론머스크 &quot;테슬라에서 넷플릭스·유튜브 즐길 날 온다&quot;&amp;lt;/h3&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'h3[class^=&quot;t&quot;]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# ^ -&amp;gt; t로 시작하는 클래스 이름 찾는다
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'h3[class^=&quot;tx&quot;]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#tx로 시작하는 클래스 이름 찾는다
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;많이본 뉴스&amp;lt;/h3&amp;gt;,
+ &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;포토&amp;amp;amp;TV&amp;lt;/h3&amp;gt;,
+ &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;이 시각 추천뉴스&amp;lt;/h3&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'h3[class$=&quot;view&quot;]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#$ - &amp;gt; view으로 끝나는 클래스 이름 찾는다
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;h3 class=&quot;tit_view&quot; data-translation=&quot;true&quot;&amp;gt;일론머스크 &quot;테슬라에서 넷플릭스·유튜브 즐길 날 온다&quot;&amp;lt;/h3&amp;gt;,
+ &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;많이본 뉴스&amp;lt;/h3&amp;gt;,
+ &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;포토&amp;amp;amp;TV&amp;lt;/h3&amp;gt;,
+ &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;이 시각 추천뉴스&amp;lt;/h3&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'h3[class$=&quot;_view&quot;]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;h3 class=&quot;tit_view&quot; data-translation=&quot;true&quot;&amp;gt;일론머스크 &quot;테슬라에서 넷플릭스·유튜브 즐길 날 온다&quot;&amp;lt;/h3&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'h3[class*=&quot;view&quot;]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# * - &amp;gt; view으로 된 모든 클래스 이름 찾는다 
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;h3 class=&quot;tit_view&quot; data-translation=&quot;true&quot;&amp;gt;일론머스크 &quot;테슬라에서 넷플릭스·유튜브 즐길 날 온다&quot;&amp;lt;/h3&amp;gt;,
+ &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;많이본 뉴스&amp;lt;/h3&amp;gt;,
+ &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;포토&amp;amp;amp;TV&amp;lt;/h3&amp;gt;,
+ &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;이 시각 추천뉴스&amp;lt;/h3&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'span.txt_info:nth-child(1)'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#n번째 자식 tag 찾기 :nth-child(n)
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;span class=&quot;txt_info&quot;&amp;gt;이민우&amp;lt;/span&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'span.txt_info:nth-child(2)'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;span class=&quot;txt_info&quot;&amp;gt;입력 &amp;lt;span class=&quot;num_date&quot;&amp;gt;2019. 07. 28. 16:58&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;정규표현식으로 tag 찾기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;re&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;compile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'h\d'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;#h하고 숫자가 붙는거 찾는다
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;h1&amp;gt; &amp;lt;a class=&quot;link_daum&quot; href=&quot;https://www.daum.net&quot;&amp;gt; &amp;lt;img alt=&quot;Daum&quot; class=&quot;thumb_g&quot; height=&quot;19&quot; src=&quot;//t1.daumcdn.net/media/news/news2016/retina/logo_daum.jpg&quot; width=&quot;45&quot;/&amp;gt; &amp;lt;/a&amp;gt; &amp;lt;a href=&quot;//news.daum.net&quot; id=&quot;kakaoServiceLogo&quot;&amp;gt;&amp;lt;span class=&quot;ir_wa&quot;&amp;gt;뉴스&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;/h1&amp;gt;,
+ &amp;lt;h2 class=&quot;screen_out&quot;&amp;gt;검색&amp;lt;/h2&amp;gt;,
+ &amp;lt;h2 class=&quot;screen_out&quot;&amp;gt;뉴스 메인메뉴&amp;lt;/h2&amp;gt;,
+ &amp;lt;h2 class=&quot;screen_out&quot; id=&quot;kakaoBody&quot;&amp;gt;IT&amp;lt;/h2&amp;gt;,
+ &amp;lt;h3 class=&quot;tit_view&quot; data-translation=&quot;true&quot;&amp;gt;일론머스크 &quot;테슬라에서 넷플릭스·유튜브 즐길 날 온다&quot;&amp;lt;/h3&amp;gt;,
+ &amp;lt;h4 class=&quot;screen_out&quot;&amp;gt;기사 도구 모음&amp;lt;/h4&amp;gt;,
+ &amp;lt;h3 class=&quot;tit_cp&quot;&amp;gt;아시아경제 주요 뉴스&amp;lt;/h3&amp;gt;,
+ &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;많이본 뉴스&amp;lt;/h3&amp;gt;,
+ &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;포토&amp;amp;amp;TV&amp;lt;/h3&amp;gt;,
+ &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;이 시각 추천뉴스&amp;lt;/h3&amp;gt;,
+ &amp;lt;h2 class=&quot;tit_direct&quot;&amp;gt;바로가기&amp;lt;/h2&amp;gt;,
+ &amp;lt;h2 class=&quot;screen_out&quot;&amp;gt;서비스 이용정보&amp;lt;/h2&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'img'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;attrs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'src'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'.jpg'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'img'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;attrs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'src'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;compile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'.+\.jpg'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;img alt=&quot;Daum&quot; class=&quot;thumb_g&quot; height=&quot;19&quot; src=&quot;//t1.daumcdn.net/media/news/news2016/retina/logo_daum.jpg&quot; width=&quot;45&quot;/&amp;gt;,
+ &amp;lt;img alt=&quot;일론 머스크 테슬라 최고경영자(CEO) [이미지출처=로이터연합뉴스]&quot; class=&quot;thumb_g_article&quot; data-org-src=&quot;https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg&quot; data-org-width=&quot;550&quot; dmcf-mid=&quot;NBMY3ZZhN4&quot; dmcf-mtype=&quot;image&quot; height=&quot;auto&quot; src=&quot;https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813230vjsq.jpg&quot; width=&quot;658&quot;/&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'img'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;attrs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'src'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;compile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'.+\.gif'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;img alt=&quot;아시아경제&quot; class=&quot;thumb_g&quot; src=&quot;https://t1.daumcdn.net/media/news/news2016/cp/cp_akn.gif&quot;/&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'img'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;attrs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'src'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;compile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'.+\.png'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;img alt=&quot;(출처=일론 머스크 트위터 계정 캡쳐)&quot; class=&quot;thumb_g_article&quot; data-org-src=&quot;https://t1.daumcdn.net/news/201907/28/akn/20190728165813670hwxf.png&quot; data-org-width=&quot;550&quot; dmcf-mid=&quot;NRhnb5SRpx&quot; dmcf-mtype=&quot;image&quot; height=&quot;auto&quot; src=&quot;https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/201907/28/akn/20190728165813670hwxf.png&quot; width=&quot;658&quot;/&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'h3'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;class_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'tit_view'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;h3 class=&quot;tit_view&quot; data-translation=&quot;true&quot;&amp;gt;일론머스크 &quot;테슬라에서 넷플릭스·유튜브 즐길 날 온다&quot;&amp;lt;/h3&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'h3'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;class_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;compile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'.+newsview$'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;많이본 뉴스&amp;lt;/h3&amp;gt;,
+ &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;포토&amp;amp;amp;TV&amp;lt;/h3&amp;gt;,
+ &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;이 시각 추천뉴스&amp;lt;/h3&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'h3'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;class_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;compile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'.+view$'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;h3 class=&quot;tit_view&quot; data-translation=&quot;true&quot;&amp;gt;일론머스크 &quot;테슬라에서 넷플릭스·유튜브 즐길 날 온다&quot;&amp;lt;/h3&amp;gt;,
+ &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;많이본 뉴스&amp;lt;/h3&amp;gt;,
+ &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;포토&amp;amp;amp;TV&amp;lt;/h3&amp;gt;,
+ &amp;lt;h3 class=&quot;txt_newsview&quot;&amp;gt;이 시각 추천뉴스&amp;lt;/h3&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;댓글 개수 추출&lt;/li&gt;
+  &lt;li&gt;댓글의 경우, 최초 로딩시에 전달되지 않음&lt;/li&gt;
+  &lt;li&gt;이 경우는 추가적으로 AJAX로 비동기적 호출을 하여 따로 data 전송을 함
+    &lt;ul&gt;
+      &lt;li&gt;개발자 도구의 network 탭에서 확인(XHR: XmlHTTPRequest)&lt;/li&gt;
+      &lt;li&gt;비동기적 호출: 사이트의 전체가 아닌 일부분만 업데이트 가능하도록 함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>SeongJae Yu</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="python" />
+      
+
+      
+        <summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
       <title type="html">beautifulsoup 모듈 - 01.beautifulsoup 모듈 사용하기</title>
       <link href="https://seongjae-yoo.github.io/beautiful-soup" rel="alternate" type="text/html" title="beautifulsoup 모듈 - 01.beautifulsoup 모듈 사용하기" />
       <published>2021-08-27T00:00:00+09:00</published>
@@ -6302,461 +6700,6 @@ NameError: name 'requests' is not defined
   &lt;li&gt;response 확인하여 원하는 정보 추출&lt;/li&gt;
   &lt;li&gt;json 데이터의 경우, python dictionary로 변경하여 사용가능&lt;/li&gt;
 &lt;/ul&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>SeongJae Yu</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="python" />
-      
-
-      
-        <summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">숫자 데이터의 범주형 데이터화</title>
-      <link href="https://seongjae-yoo.github.io/num-categoricaldata" rel="alternate" type="text/html" title="숫자 데이터의 범주형 데이터화" />
-      <published>2021-08-25T00:00:00+09:00</published>
-      <updated>2021-08-25T00:00:00+09:00</updated>
-      <id>https://seongjae-yoo.github.io/num-categoricaldata</id>
-      <content type="html" xml:base="https://seongjae-yoo.github.io/num-categoricaldata">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-&lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;숫자 데이터의 범주형 데이터 화&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pandas&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# data 출처: https://www.kaggle.com/hesh97/titanicdataset-traincsv/data
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'./train.csv'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div&gt;
-&lt;style scoped=&quot;&quot;&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&quot;text-align: right;&quot;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;PassengerId&lt;/th&gt;
-      &lt;th&gt;Survived&lt;/th&gt;
-      &lt;th&gt;Pclass&lt;/th&gt;
-      &lt;th&gt;Name&lt;/th&gt;
-      &lt;th&gt;Sex&lt;/th&gt;
-      &lt;th&gt;Age&lt;/th&gt;
-      &lt;th&gt;SibSp&lt;/th&gt;
-      &lt;th&gt;Parch&lt;/th&gt;
-      &lt;th&gt;Ticket&lt;/th&gt;
-      &lt;th&gt;Fare&lt;/th&gt;
-      &lt;th&gt;Cabin&lt;/th&gt;
-      &lt;th&gt;Embarked&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;0&lt;/th&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Braund, Mr. Owen Harris&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;22.0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;A/5 21171&lt;/td&gt;
-      &lt;td&gt;7.2500&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;1&lt;/th&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;Cumings, Mrs. John Bradley (Florence Briggs Th...&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;38.0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;PC 17599&lt;/td&gt;
-      &lt;td&gt;71.2833&lt;/td&gt;
-      &lt;td&gt;C85&lt;/td&gt;
-      &lt;td&gt;C&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;2&lt;/th&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Heikkinen, Miss. Laina&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;26.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;STON/O2. 3101282&lt;/td&gt;
-      &lt;td&gt;7.9250&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;3&lt;/th&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;Futrelle, Mrs. Jacques Heath (Lily May Peel)&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;35.0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;113803&lt;/td&gt;
-      &lt;td&gt;53.1000&lt;/td&gt;
-      &lt;td&gt;C123&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;4&lt;/th&gt;
-      &lt;td&gt;5&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Allen, Mr. William Henry&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;35.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;373450&lt;/td&gt;
-      &lt;td&gt;8.0500&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;pclass-변수-변환하기&quot;&gt;Pclass 변수 변환하기&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;astype 사용하여 간단히 타입만 변환&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;class 'pandas.core.frame.DataFrame'&amp;gt;
-RangeIndex: 891 entries, 0 to 890
-Data columns (total 12 columns):
- #   Column       Non-Null Count  Dtype  
----  ------       --------------  -----  
- 0   PassengerId  891 non-null    int64  
- 1   Survived     891 non-null    int64  
- 2   Pclass       891 non-null    int64  
- 3   Name         891 non-null    object 
- 4   Sex          891 non-null    object 
- 5   Age          714 non-null    float64
- 6   SibSp        891 non-null    int64  
- 7   Parch        891 non-null    int64  
- 8   Ticket       891 non-null    object 
- 9   Fare         891 non-null    float64
- 10  Cabin        204 non-null    object 
- 11  Embarked     889 non-null    object 
-dtypes: float64(2), int64(5), object(5)
-memory usage: 83.7+ KB
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Pclass'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Pclass'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;astype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Pclass  object 로 변경됨
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;class 'pandas.core.frame.DataFrame'&amp;gt;
-RangeIndex: 891 entries, 0 to 890
-Data columns (total 12 columns):
- #   Column       Non-Null Count  Dtype  
----  ------       --------------  -----  
- 0   PassengerId  891 non-null    int64  
- 1   Survived     891 non-null    int64  
- 2   Pclass       891 non-null    object 
- 3   Name         891 non-null    object 
- 4   Sex          891 non-null    object 
- 5   Age          714 non-null    float64
- 6   SibSp        891 non-null    int64  
- 7   Parch        891 non-null    int64  
- 8   Ticket       891 non-null    object 
- 9   Fare         891 non-null    float64
- 10  Cabin        204 non-null    object 
- 11  Embarked     889 non-null    object 
-dtypes: float64(2), int64(4), object(6)
-memory usage: 83.7+ KB
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;age-변수-변환하기&quot;&gt;Age 변수 변환하기&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;변환 로직을 함수로 만든 후, apply 함수로 적용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;math&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# 소수점 버리려고 math 사용함
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;age_categorize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;#예를 들어 23 -&amp;gt; 20, 38 -&amp;gt; 30 으로 바뀜
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isnan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;#age 가 NaN이면 -1 반환
-&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;floor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div&gt;
-&lt;style scoped=&quot;&quot;&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&quot;text-align: right;&quot;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;PassengerId&lt;/th&gt;
-      &lt;th&gt;Survived&lt;/th&gt;
-      &lt;th&gt;Pclass&lt;/th&gt;
-      &lt;th&gt;Name&lt;/th&gt;
-      &lt;th&gt;Sex&lt;/th&gt;
-      &lt;th&gt;Age&lt;/th&gt;
-      &lt;th&gt;SibSp&lt;/th&gt;
-      &lt;th&gt;Parch&lt;/th&gt;
-      &lt;th&gt;Ticket&lt;/th&gt;
-      &lt;th&gt;Fare&lt;/th&gt;
-      &lt;th&gt;Cabin&lt;/th&gt;
-      &lt;th&gt;Embarked&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Braund, Mr. Owen Harris&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;22.0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;A/5 21171&lt;/td&gt;
-      &lt;td&gt;7.2500&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;Cumings, Mrs. John Bradley (Florence Briggs Th...&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;38.0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;PC 17599&lt;/td&gt;
-      &lt;td&gt;71.2833&lt;/td&gt;
-      &lt;td&gt;C85&lt;/td&gt;
-      &lt;td&gt;C&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Heikkinen, Miss. Laina&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;26.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;STON/O2. 3101282&lt;/td&gt;
-      &lt;td&gt;7.9250&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;Futrelle, Mrs. Jacques Heath (Lily May Peel)&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;35.0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;113803&lt;/td&gt;
-      &lt;td&gt;53.1000&lt;/td&gt;
-      &lt;td&gt;C123&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;5&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Allen, Mr. William Henry&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;35.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;373450&lt;/td&gt;
-      &lt;td&gt;8.0500&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;...&lt;/td&gt;
-      &lt;td&gt;...&lt;/td&gt;
-      &lt;td&gt;...&lt;/td&gt;
-      &lt;td&gt;...&lt;/td&gt;
-      &lt;td&gt;...&lt;/td&gt;
-      &lt;td&gt;...&lt;/td&gt;
-      &lt;td&gt;...&lt;/td&gt;
-      &lt;td&gt;...&lt;/td&gt;
-      &lt;td&gt;...&lt;/td&gt;
-      &lt;td&gt;...&lt;/td&gt;
-      &lt;td&gt;...&lt;/td&gt;
-      &lt;td&gt;...&lt;/td&gt;
-      &lt;td&gt;...&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;886&lt;/td&gt;
-      &lt;td&gt;887&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;Montvila, Rev. Juozas&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;27.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;211536&lt;/td&gt;
-      &lt;td&gt;13.0000&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;887&lt;/td&gt;
-      &lt;td&gt;888&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;Graham, Miss. Margaret Edith&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;19.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;112053&lt;/td&gt;
-      &lt;td&gt;30.0000&lt;/td&gt;
-      &lt;td&gt;B42&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;888&lt;/td&gt;
-      &lt;td&gt;889&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Johnston, Miss. Catherine Helen &quot;Carrie&quot;&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;W./C. 6607&lt;/td&gt;
-      &lt;td&gt;23.4500&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;889&lt;/td&gt;
-      &lt;td&gt;890&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;Behr, Mr. Karl Howell&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;26.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;111369&lt;/td&gt;
-      &lt;td&gt;30.0000&lt;/td&gt;
-      &lt;td&gt;C148&lt;/td&gt;
-      &lt;td&gt;C&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;890&lt;/td&gt;
-      &lt;td&gt;891&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Dooley, Mr. Patrick&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;32.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;370376&lt;/td&gt;
-      &lt;td&gt;7.7500&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;Q&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;891 rows × 12 columns&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;age_categorize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 바뀐 데이터 확인 가능
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0      20
-1      30
-2      20
-3      30
-4      30
-       ..
-886    20
-887    10
-888    -1
-889    20
-890    30
-Name: Age, Length: 891, dtype: int64
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
 
       
       
