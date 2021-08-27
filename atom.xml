@@ -8,114 +8,6 @@
     
       
       <item>
-        <title>transform 함수의 이해 및 활용하기</title>
-        
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-</description>
-        
-        <pubDate>Fri, 27 Aug 2021 00:00:00 +0900</pubDate>
-        <link>
-        https://SEONGJAE-YOO.github.io/transform-function</link>
-        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/transform-function</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>stack, unstack 함수의 이해 및 활용하기</title>
-        
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-</description>
-        
-        <pubDate>Fri, 27 Aug 2021 00:00:00 +0900</pubDate>
-        <link>
-        https://SEONGJAE-YOO.github.io/stack-function</link>
-        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/stack-function</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>pivot, pivot_table 함수의 이해 및 활용하기</title>
-        
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-</description>
-        
-        <pubDate>Fri, 27 Aug 2021 00:00:00 +0900</pubDate>
-        <link>
-        https://SEONGJAE-YOO.github.io/pivot-function</link>
-        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/pivot-function</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>Merge_join 함수로 데이터 프레임 병합하기</title>
-        
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-</description>
-        
-        <pubDate>Fri, 27 Aug 2021 00:00:00 +0900</pubDate>
-        <link>
-        https://SEONGJAE-YOO.github.io/merge-join</link>
-        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/merge-join</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>DataFrame group by 이해하기</title>
-        
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-</description>
-        
-        <pubDate>Fri, 27 Aug 2021 00:00:00 +0900</pubDate>
-        <link>
-        https://SEONGJAE-YOO.github.io/dataframe-groupby</link>
-        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/dataframe-groupby</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>Concat 함수로 데이터 프레임 병합하기</title>
-        
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-</description>
-        
-        <pubDate>Fri, 27 Aug 2021 00:00:00 +0900</pubDate>
-        <link>
-        https://SEONGJAE-YOO.github.io/concat-function</link>
-        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/concat-function</guid>
-      </item>
-      
-    
-      
-      <item>
         <title>Process</title>
         
           <description>
@@ -214,7 +106,7 @@ exclude: ‘yes’
 
 </description>
         
-        <pubDate>Wed, 25 Aug 2021 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 26 Aug 2021 04:23:00 +0900</pubDate>
         <link>
         https://SEONGJAE-YOO.github.io/num-categoricaldata</link>
         <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/num-categoricaldata</guid>
@@ -232,7 +124,7 @@ exclude: ‘yes’
 
 </description>
         
-        <pubDate>Wed, 25 Aug 2021 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 26 Aug 2021 04:23:00 +0900</pubDate>
         <link>
         https://SEONGJAE-YOO.github.io/num-categorical</link>
         <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/num-categorical</guid>
@@ -250,7 +142,7 @@ exclude: ‘yes’
 
 </description>
         
-        <pubDate>Wed, 25 Aug 2021 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 26 Aug 2021 04:23:00 +0900</pubDate>
         <link>
         https://SEONGJAE-YOO.github.io/dataframe-structure</link>
         <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/dataframe-structure</guid>
@@ -268,7 +160,7 @@ exclude: ‘yes’
 
 </description>
         
-        <pubDate>Wed, 25 Aug 2021 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 26 Aug 2021 04:23:00 +0900</pubDate>
         <link>
         https://SEONGJAE-YOO.github.io/dataframe-row</link>
         <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/dataframe-row</guid>
@@ -286,7 +178,7 @@ exclude: ‘yes’
 
 </description>
         
-        <pubDate>Wed, 25 Aug 2021 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 26 Aug 2021 04:23:00 +0900</pubDate>
         <link>
         https://SEONGJAE-YOO.github.io/dataframe-nan</link>
         <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/dataframe-nan</guid>
@@ -304,7 +196,7 @@ exclude: ‘yes’
 
 </description>
         
-        <pubDate>Wed, 25 Aug 2021 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 26 Aug 2021 04:23:00 +0900</pubDate>
         <link>
         https://SEONGJAE-YOO.github.io/dataframe-datacreate</link>
         <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/dataframe-datacreate</guid>
@@ -322,7 +214,7 @@ exclude: ‘yes’
 
 </description>
         
-        <pubDate>Wed, 25 Aug 2021 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 26 Aug 2021 04:23:00 +0900</pubDate>
         <link>
         https://SEONGJAE-YOO.github.io/dataframe-data</link>
         <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/dataframe-data</guid>
@@ -340,7 +232,7 @@ exclude: ‘yes’
 
 </description>
         
-        <pubDate>Wed, 25 Aug 2021 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 26 Aug 2021 04:23:00 +0900</pubDate>
         <link>
         https://SEONGJAE-YOO.github.io/dataframe-column</link>
         <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/dataframe-column</guid>
@@ -358,7 +250,7 @@ exclude: ‘yes’
 
 </description>
         
-        <pubDate>Wed, 25 Aug 2021 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 26 Aug 2021 04:23:00 +0900</pubDate>
         <link>
         https://SEONGJAE-YOO.github.io/dataframe-colcorrelation</link>
         <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/dataframe-colcorrelation</guid>
@@ -376,7 +268,7 @@ exclude: ‘yes’
 
 </description>
         
-        <pubDate>Wed, 25 Aug 2021 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 26 Aug 2021 04:23:00 +0900</pubDate>
         <link>
         https://SEONGJAE-YOO.github.io/dataframe-coladd</link>
         <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/dataframe-coladd</guid>
@@ -394,7 +286,7 @@ exclude: ‘yes’
 
 </description>
         
-        <pubDate>Wed, 25 Aug 2021 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 26 Aug 2021 04:23:00 +0900</pubDate>
         <link>
         https://SEONGJAE-YOO.github.io/dataframe-booleansele</link>
         <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/dataframe-booleansele</guid>
@@ -655,6 +547,171 @@ exclude: ‘yes’
     
       
       <item>
+        <title>가상 쇼핑몰 고객 주문 데이터(컬럼,로우) 확인하기</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+</description>
+        
+        <pubDate>Fri, 20 Aug 2021 04:23:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/virtualshoping-data</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/virtualshoping-data</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>응용-매출,가장 많이 팔린 아이템 확인하기</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+</description>
+        
+        <pubDate>Fri, 20 Aug 2021 04:23:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/salesitem2-Data</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/salesitem2-Data</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>매출,가장 많이 팔린 아이템 확인하기</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+</description>
+        
+        <pubDate>Fri, 20 Aug 2021 04:23:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/salesitem-Data</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/salesitem-Data</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>데이터 기반으로 의사결정하기-푸쉬 노티피케이션 타임</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+</description>
+        
+        <pubDate>Fri, 20 Aug 2021 04:23:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/pushnotification-Data</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/pushnotification-Data</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>마케팅 데이터 분석</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+</description>
+        
+        <pubDate>Fri, 20 Aug 2021 04:23:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/marketing-Data</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/marketing-Data</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>키워드 데이터 분석</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+</description>
+        
+        <pubDate>Fri, 20 Aug 2021 04:23:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/keyword-Data</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/keyword-Data</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>응용-데이터 기반으로 의사결정 및 kde 밀도 그래프</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+</description>
+        
+        <pubDate>Fri, 20 Aug 2021 04:23:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/kde-Data</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/kde-Data</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>우수고객 선별하기(가장 소비를 많이 한 고객),고객 코호트 분석</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+</description>
+        
+        <pubDate>Fri, 20 Aug 2021 04:23:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/goodcustomer-Data</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/goodcustomer-Data</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>고객 데이터 분석 프로젝트</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+&lt;h1 id=&quot;고객-데이터-분석&quot;&gt;고객 데이터 분석&lt;/h1&gt;
+&lt;h3 id=&quot;데이터-출처--uci-machine-learning-repository&quot;&gt;데이터 출처 : UCI Machine Learning Repository&lt;/h3&gt;
+
+</description>
+        
+        <pubDate>Fri, 20 Aug 2021 04:23:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/customer-Data</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/customer-Data</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>기사 텍스트 정제 - 형태소 추출기 만들기</title>
         
           <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
@@ -722,171 +779,6 @@ exclude: ‘yes’
         <link>
         https://SEONGJAE-YOO.github.io/navernews-crawling</link>
         <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/navernews-crawling</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>가상 쇼핑몰 고객 주문 데이터(컬럼,로우) 확인하기</title>
-        
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-</description>
-        
-        <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
-        <link>
-        https://SEONGJAE-YOO.github.io/virtualshoping-data</link>
-        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/virtualshoping-data</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>응용-매출,가장 많이 팔린 아이템 확인하기</title>
-        
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-</description>
-        
-        <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
-        <link>
-        https://SEONGJAE-YOO.github.io/salesitem2-Data</link>
-        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/salesitem2-Data</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>매출,가장 많이 팔린 아이템 확인하기</title>
-        
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-</description>
-        
-        <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
-        <link>
-        https://SEONGJAE-YOO.github.io/salesitem-Data</link>
-        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/salesitem-Data</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>데이터 기반으로 의사결정하기-푸쉬 노티피케이션 타임</title>
-        
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-</description>
-        
-        <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
-        <link>
-        https://SEONGJAE-YOO.github.io/pushnotification-Data</link>
-        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/pushnotification-Data</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>마케팅 데이터 분석</title>
-        
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-</description>
-        
-        <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
-        <link>
-        https://SEONGJAE-YOO.github.io/marketing-Data</link>
-        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/marketing-Data</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>키워드 데이터 분석</title>
-        
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-</description>
-        
-        <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
-        <link>
-        https://SEONGJAE-YOO.github.io/keyword-Data</link>
-        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/keyword-Data</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>응용-데이터 기반으로 의사결정 및 kde 밀도 그래프</title>
-        
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-</description>
-        
-        <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
-        <link>
-        https://SEONGJAE-YOO.github.io/kde-Data</link>
-        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/kde-Data</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>우수고객 선별하기(가장 소비를 많이 한 고객),고객 코호트 분석</title>
-        
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-</description>
-        
-        <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
-        <link>
-        https://SEONGJAE-YOO.github.io/goodcustomer-Data</link>
-        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/goodcustomer-Data</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>고객 데이터 분석 프로젝트</title>
-        
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-&lt;h1 id=&quot;고객-데이터-분석&quot;&gt;고객 데이터 분석&lt;/h1&gt;
-&lt;h3 id=&quot;데이터-출처--uci-machine-learning-repository&quot;&gt;데이터 출처 : UCI Machine Learning Repository&lt;/h3&gt;
-
-</description>
-        
-        <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
-        <link>
-        https://SEONGJAE-YOO.github.io/customer-Data</link>
-        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/customer-Data</guid>
       </item>
       
     
