@@ -116,6 +116,38 @@
     
       
       <item>
+        <title>Process</title>
+        
+          <description>&lt;h2&gt;````&lt;/h2&gt;
+&lt;p&gt;layout: page
+current: page
+cover:  assets/built/images/logo-python.png
+navigation: True
+title: API의 활용 - 01.requests 모듈 사용하기
+tags: [python]&lt;br /&gt;
+class: post-template
+subclass: ‘post tag-python’
+author: SeongJae Yu
+sitemap :
+changefreq : daily
+priority : 1.0
+—
+&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+</description>
+        
+        <pubDate>Fri, 27 Aug 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/process</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/process</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>beautifulsoup 모듈 - 02.beautifulsoup 모듈 사용하기</title>
         
           <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
@@ -147,24 +179,6 @@
         <link>
         https://SEONGJAE-YOO.github.io/beautiful-soup</link>
         <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/beautiful-soup</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>API의 활용 - 01.requests 모듈 사용하기</title>
-        
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-</description>
-        
-        <pubDate>Fri, 27 Aug 2021 00:00:00 +0900</pubDate>
-        <link>
-        https://SEONGJAE-YOO.github.io/api-requests</link>
-        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/api-requests</guid>
       </item>
       
     
@@ -849,27 +863,6 @@
         <link>
         https://SEONGJAE-YOO.github.io/goodcustomer-Data</link>
         <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/goodcustomer-Data</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>고객 데이터 분석 프로젝트</title>
-        
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-&lt;h1 id=&quot;고객-데이터-분석&quot;&gt;고객 데이터 분석&lt;/h1&gt;
-&lt;h3 id=&quot;데이터-출처--uci-machine-learning-repository&quot;&gt;데이터 출처 : UCI Machine Learning Repository&lt;/h3&gt;
-
-</description>
-        
-        <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
-        <link>
-        https://SEONGJAE-YOO.github.io/customer-Data</link>
-        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/customer-Data</guid>
       </item>
       
     
