@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://seongjae-yoo.github.io/tag/processmining/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://seongjae-yoo.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-08-27T17:34:47+09:00</updated>
+  <updated>2021-08-27T17:43:13+09:00</updated>
   <id>https://seongjae-yoo.github.io/tag/processmining/feed.xml</id>
 
   
@@ -37,12 +37,12 @@
       <published>2021-08-25T00:00:00+09:00</published>
       <updated>2021-08-25T00:00:00+09:00</updated>
       <id>https://seongjae-yoo.github.io/process-mining</id>
-      <content type="html" xml:base="https://seongjae-yoo.github.io/process-mining">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+      <content type="html" xml:base="https://seongjae-yoo.github.io/process-mining">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;프로세스-마이닝-process-mining이란&quot;&gt;프로세스 마이닝 (Process Mining)이란?&lt;/h2&gt;
 
@@ -99,12 +99,12 @@
       <published>2021-08-25T00:00:00+09:00</published>
       <updated>2021-08-25T00:00:00+09:00</updated>
       <id>https://seongjae-yoo.github.io/event-log</id>
-      <content type="html" xml:base="https://seongjae-yoo.github.io/event-log">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+      <content type="html" xml:base="https://seongjae-yoo.github.io/event-log">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;이벤트-로그event-log란&quot;&gt;이벤트 로그(event log)란?&lt;/h2&gt;
 
@@ -167,12 +167,218 @@
       <published>2021-08-25T00:00:00+09:00</published>
       <updated>2021-08-25T00:00:00+09:00</updated>
       <id>https://seongjae-yoo.github.io/process-miningtype</id>
-      <content type="html" xml:base="https://seongjae-yoo.github.io/process-miningtype">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+      <content type="html" xml:base="https://seongjae-yoo.github.io/process-miningtype">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;프로세스-마이닝의-종류-유형&quot;&gt;프로세스 마이닝의 종류 (유형)&lt;/h2&gt;
+
+&lt;p&gt;프로세스 마이닝에는 크게 네 가지 종류가 있다. 프로세스 도출(Process Discovery), 적합도 검사(Conformance Checking), 프로세스 향상(Enhancement)이 바로 그것이다. 이번 포스팅에서는, 이 세 가지 종류에 프로세스 분석 (Process Analysis)를 더하여 네 가지 종류의 프로세스 마이닝에 대해 알아볼 것이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;process-discovery-프로세스-도출&quot;&gt;Process Discovery (프로세스 도출)&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/processmining/20210825_161052_1.png&quot; alt=&quot;20210825_161052_1&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;process-discovery는-event-log로부터-model을-도출하는-것이다&quot;&gt;Process Discovery는 event log로부터 model을 도출하는 것이다.&lt;/h6&gt;
+
+&lt;p&gt;Process Discovery는 프로세스 마이닝에서 가장 중요한 분야로서, 아무런 사전 정보 없이 이벤트 로그로부터 모델을 도출하는 것을 의미한다. 여기서 가장 중요한 것은 아무런 사전 정보 없이이다. 그저 어떤 시스템으로부터 도출되어 저장된 데이터를 이벤트 로그 형태로 가공만 하면, 이로부터 바로 프로세스가 어떻게 흘러갔는지를 이해할 수 있는 것이다. 한 눈에 쉽게 이해할 수 없는 표 혹은 로그 형태로 저장된 데이터를 아래 그림처럼 흐름을 한 눈에 볼 수 있는 형태로 한 번에 바꾸어 준다는 것은 굉장히 놀라운 일이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/processmining/20210825_161052_2.png&quot; alt=&quot;20210825_161052_2&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;process-discovery를-통해-도출된-프로세스-모델의-예시&quot;&gt;Process Discovery를 통해 도출된 프로세스 모델의 예시&lt;/h6&gt;
+
+&lt;p&gt;Process Discovery 방법으로는 Alpha Miner, Heuristic Miner, ILP Miner, Inductive Miner 등이 있다. 이에 대해서는 이후 포스팅에서 다룰 것이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;conformance-checking-적합도-검사&quot;&gt;Conformance Checking (적합도 검사)&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/processmining/20210825_161052_3.png&quot; alt=&quot;20210825_161052_3&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;conformance-checking은-event-log와-model을-비교하여-이들의-적합성을-진단하는-것이다&quot;&gt;Conformance Checking은 event log와 model을 비교하여 이들의 적합성을 진단하는 것이다.&lt;/h6&gt;
+
+&lt;p&gt;Conformance Checking이란 도출된 모델이 실제 이벤트 로그와 잘 맞는지를 확인하는 것을 말한다. 앞서 말한 Process Discovery를 통해 어떤 이벤트 로그를 바탕으로 하여 하나의 모델이 도출되었을 것이다. 이 모델이 추후에 발생된 다른 데이터 또한 잘 설명할 수 있는지를 확인하는 과정이라고 할 수 있다. 쉽게 말하면, 도출된 모델의 성능을 데이터를 이용해 검사해보는 것이다. 여기에서 모델은 앞서 말한 프로세스 모델이 될 수도 있고, 조직의 구성을 나타내는 Orgnaizational Model, 조직 내부의 관계를 나타내는 Social Network Model 등 모든 종류의 모델이 될 수 있다. Conformance Checking 방법으로는 Causual footprint, Token-Based Replay, Synchronous Product Net 등이 있다. 이 또한 추후 포스팅에서 다루도록 하겠다.&lt;/p&gt;
+
+&lt;h3 id=&quot;enhancement-향상&quot;&gt;Enhancement (향상)&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/processmining/20210825_161052_4.png&quot; alt=&quot;20210825_161052_4&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;enhancement는-model을-event-log의-정보를-이용하여-더-나은-모델로-만드는-것을-말한다&quot;&gt;enhancement는 model을 event log의 정보를 이용하여 더 나은 모델로 만드는 것을 말한다.&lt;/h6&gt;
+
+&lt;p&gt;Enhancement는 기존에 존재하는 모델을 새로운 이벤트 로그의 정보를 토대로 하여 더 나은 모델 혹은 확장된 모델로 발전시키는 것을 말한다. 여기에서 더 나은 모델은 성능이 발전된 모델 (Conformance가 더 좋은 것 등)을 말하고 확장된 모델은 병목, 빈도, 소요 시간 등 추가적인 정보를 제공하는 모델을 말한다. Conformance checking은 기존 모델의 문제점을 파악하는 것이었다면, enhancement는 기존 모델을 새로운 모델로 발전시키는 것이라고 할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;process-analysis-프로세스-분석&quot;&gt;Process Analysis (프로세스 분석)&lt;/h3&gt;
+&lt;p&gt;앞서 말한 세 가지 방법을 통해 모델을 도출하고, 이 모델을 진단하여 더 나은 확장된 모델을 만들었다면 이를 분석하여 어떤 방법으로 프로세스를 발전시킬 수 있는지를 알아 보아야 할 것이다. 모델에는 필요 없는 반복되는 activity가 있을 수도 있고, 특정 activity에서 병목 현상이 일어날 수도 있다. 프로세스를 분석하여 문제점을 발견하고, 이를 개선할 수 있는 방법을 제시하는 모든 과정을 Process Analysis라고 한다.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>SeongJae Yu</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="ProcessMining" />
+      
+
+      
+        <summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">프로세스 마이닝(Process Mining)이란?</title>
+      <link href="https://seongjae-yoo.github.io/process-mining" rel="alternate" type="text/html" title="프로세스 마이닝(Process Mining)이란?" />
+      <published>2021-08-25T00:00:00+09:00</published>
+      <updated>2021-08-25T00:00:00+09:00</updated>
+      <id>https://seongjae-yoo.github.io/process-mining</id>
+      <content type="html" xml:base="https://seongjae-yoo.github.io/process-mining">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;프로세스-마이닝-process-mining이란&quot;&gt;프로세스 마이닝 (Process Mining)이란?&lt;/h2&gt;
+
+&lt;p&gt;“프로세스 마이닝 (Process Mining)이 뭐야? 데이터 마이닝 같은거야?”&lt;/p&gt;
+
+&lt;p&gt;내가 프로세스 마이닝을 공부한다고 하면 항상 듣는 질문이다. 이 질문을 항상 들었다는 것이 이 블로그를 시작하게 된 이유이기도 하다. 이 질문을 너무 많이 들었기 때문에 요즘은 아예 대답을 준비해 놓는 편이다.&lt;/p&gt;
+
+&lt;p&gt;“데이터 마이닝의 방법 중 하나라고 생각하면 편해. 하지만 다른 점은 프로세스 그 자체에 좀 더 집중한다는 점이야. 예를 들어서, 공장에서 쇳물이 하나의 철판이 되기까지 굳히기, 펴지기, 자르기 이런 다양한 과정을 거치잖아. 데이터 마이닝이 이런 공정에서 결과적으로 무엇이 일어났는가, 무엇이 일어날 것인가, 왜 일어났는가에 집중한다면, 프로세스 마이닝은 공정 과정(Process) 전체를 분석하고 시각화해서 어떻게 이 공정을 더 효율적으로 개선하고, 발전시킬 수 있는지에 집중하는 학문이야.”&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/processmining/20210825_155633_1.png&quot; alt=&quot;20210825_155633_1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;프로세스 마이닝은 Data Science 중에서도 Process의 분석과 개선에 집중하는 학문이다.
+이렇게 대답하면, 대부분의 사람들이 “아, 공장에서 공정 분석을 할 때 이용할 수 있구나.” 하고 좁은 분야에만 적용할 수 있다고 생각하고 만다. 하지만 프로세스는 어디에나 존재한다. 생산, 제조, 물류 등의 당연히 프로세스가 존재할 것이라고 생각되는 분야 뿐만 아니라, 웹 페이지 안에서 사용자가 물건을 구매하기까지의 과정, 병원에서 환자가 접수할 때부터 퇴원할 때까지의 과정, 회사에서 직원들이 일을 받고 처리하기까지의 과정 모두가 시작 단계와 끝 단계를 가지고 있는 프로세스라고 할 수 있다. 모든 프로세스에 대해서 프로세스 마이닝은 힘을 발휘할 수 있다. 달리 말하면, 앞서 말한 모든 과정들이 프로세스 마이닝으로 사용자가 더 효율적으로 물건을 구매하도록, 짧은 시간 내에 더 많은 환자들을 치료할 수 있도록, 직원들이 더 효율적으로 일을 분배할 수 있도록 개선될 수 있다는 것이다.&lt;/p&gt;
+
+&lt;p&gt;그렇다면 프로세스 마이닝이 해결할 수 있는 문제에는 구체적으로 어떤 것이 있을까? 이는 크게 현재 프로세스에 대한 분석, 문제점 도출 및 개선, 미래 예측으로 나눌 수 있다.
+첫 번째로 프로세스 마이닝을 통해 현재 프로세스에 대한 분석을 할 수 있다. 프로세스 마이닝은 현재의 IT System에 쌓인 real event data를 기반으로 하기 때문에 현재 프로세스가 실제로 어떻게 진행되고 있는지를 정확하게 파악할 수 있게 해 준다. 또한 이를 보기 좋게 시각화해주어 한 눈에 이를 분석할 수 있도록 도와 준다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/processmining/20210825_155633_2.png&quot; alt=&quot;20210825_155633_2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;프로세스 마이닝은 event data로부터 프로세스를 도출하여 이를 시각화하고 insight를 얻는 과정이다.&lt;/p&gt;
+
+&lt;p&gt;두 번째로 현재 프로세스의 문제점 도출 및 개선을 할 수 있다. 프로세스 내에서 시간을 오래 차지하는 병목 활동 (Bottleneck)이 무엇인지, 반복 작업 (Rework)은 없는지, 원래 원하던 프로세스에서 벗어난 프로세스 (Deviation)은 없는지 등의 문제점을 쉽게 분석할 수 있고, 이를 토대로 하여 이들을 개선할 수 있게 해 준다. 뿐만 아니라, 프로세스 마이닝과 데이터 마이닝을 결합하여 이런 문제점이 일어난 원인은 무엇이고, 어떤 factor가 이를 일어나게 했는지까지 분석하여 개선안을 도출할 수 있다.
+세 번째로 프로세스를 기반으로 하여 미래를 예측할 수 있다. 이전의 프로세스 마이닝 결과를 바탕으로 특정 상황에서 어떤 결과가 일어날 것인지, 앞서 언급했던 문제 상황이 일어나지 않게 하려면 어떤 프로세스를 거쳐야하는지 등을 분석할 수 있다.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>SeongJae Yu</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="ProcessMining" />
+      
+
+      
+        <summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">이벤트 로그(event log)란?</title>
+      <link href="https://seongjae-yoo.github.io/event-log" rel="alternate" type="text/html" title="이벤트 로그(event log)란?" />
+      <published>2021-08-25T00:00:00+09:00</published>
+      <updated>2021-08-25T00:00:00+09:00</updated>
+      <id>https://seongjae-yoo.github.io/event-log</id>
+      <content type="html" xml:base="https://seongjae-yoo.github.io/event-log">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;이벤트-로그event-log란&quot;&gt;이벤트 로그(event log)란?&lt;/h2&gt;
+
+&lt;p&gt;이벤트 로그란, 프로세스 마이닝의 가장 기본이 되는 데이터 형태이다. 프로세스 마이닝을 하기 위해서는 이벤트 로그가 반드시 있어야 하기 때문에, 현재 있는 데이터를 프로세스 마이닝에 활용하고 싶다면 이를 이벤트 로그 형태로 바꾸어 주는 것이 필수적이다. 그렇다면, 이벤트 로그란 무엇일까?&lt;/p&gt;
+
+&lt;h2 id=&quot;이벤트-로그의-필수적인-요소&quot;&gt;이벤트 로그의 필수적인 요소&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/processmining/20210825_154912_1.png&quot; alt=&quot;20210825_154912_1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이벤트 로그에는 필수적인 요소가 세 가지 있다. 케이스 아이디 (Case ID), 액티비티 (Activity), 타임스탬프 (Timestamp)가 바로 그것이다.
+예를 들어서, 위의 표처럼 병원에서 환자들의 프로세스가 있다고 하자. 여기에서 환자 5781은 X-ray를 찍고 (make X-ray), CT 촬영을 하고 (CT scan), 병원비를 지불하였고 (handle payment), 환자 5833은 피검사를 한 후 (blood test) 수술을 한다 (surgery). 이렇게 병원 안에서도 수많은 환자들이 각자 다른 일을 하고 병원에서 나갈 것이다. 이러한 각각의 환자 하나하나를 케이스(Case)라고 한다. 각 케이스들은 여러 줄의 데이터를 가질 수 있는데, 이 데이터 한 줄 한 줄, 그러니까 각 프로세스의 과정 하나하나를 이벤트(event)라고 한다. 즉, 이벤트가 모여 하나의 케이스가 되고, 이 케이스들이 모여 이벤트 로그가 되는 것이다.
+각각의 케이스, 위 표의 경우에는 환자 하나하나를 구별해주는 고유한 값 (이 경우에는 5781, 5833 등)을 케이스 아이디 (Case ID)라고 한다. 다음으로, 이 환자들이 하는 X-ray 찍기, CT 촬영 하기, 병원비 지불 등의 행동들을 액티비티(activity)라고 한다. 그리고 환자들이 행동을 한 시각을 기록한 것을 타임스탬프(timestamp)라고 한다. 즉, 위 예시 로그에서는 patient 컬럼이 Case ID, activity 컬럼이 activity, timestamp 컬럼이 timestamp인 것이다. 이벤트 로그에는 이  Case ID, activity, timestamp가 필수적으로 포함되어야 한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;이벤트-로그의-추가적인-요소&quot;&gt;이벤트 로그의 추가적인 요소&lt;/h2&gt;
+&lt;p&gt;위 세 가지의 필수적인 요소 외에도 이벤트 로그에 포함될 수 있는 요소들이 몇 가지 있다. 첫 번째 요소는 리소스(resource)다. 리소스는 보통 해당 작업을 처리한 사람 (위 표의 경우에는 해당 일을 담당한 의사, 직원. doctor 컬럼)이나 부서, 기계 등을 의미한다. 두 번째 요소로는 Transactional information이 있다. 이는 액티비티가 시작되었는지, 종료되었는지, 계획되었는지 등의 정보를 표시하는 것이다. 예를 들어, 하나의 blood test 액티비티가 있더라도 이를 계획한 시각, 시작한 시각, 종료한 시각은 모두 다를 것이다. 이들을 각각 schedule, start, complete 등으로 표시한 컬럼을 transactional information이라고 한다. 나머지 요소는 other data이다. 이들은 각 케이스나 이벤트의 정보를 뜻하는 것으로, 위 표의 경우에는 age, cost 등의 컬럼들이 포함될 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;이벤트-로그의-표시&quot;&gt;이벤트 로그의 표시&lt;/h2&gt;
+&lt;p&gt;이벤트 로그는 주로 이러한 형태로 표시된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/processmining/20210825_154912_2.png&quot; alt=&quot;20210825_154912_2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;여기에서 &amp;lt;&amp;gt;는 케이스 내에서 발생한 액티비티의 패턴을 말한다. 즉, &amp;lt;a,b,c,d&amp;gt;는 케이스 내에서 액티비티 a,b,c,d 순서대로 액티비티가 발생했다는 것이다. 이 하나의 패턴을 트레이스(trace)라고 한다. &amp;lt;&amp;gt; 위에 있는 숫자는 해당 패턴을 보이는 케이스가 일어난 횟수를 의미한다. 즉, 전체 이벤트 로그에서 &amp;lt;a,b,c,d&amp;gt; 패턴을 보인 케이스가 3개, &amp;lt;a,c,b,d&amp;gt; 패턴을 보인 케이스가 2개, &amp;lt;a,e,d&amp;gt; 패턴을 보인 케이스가 1개라는 뜻이다.&lt;/p&gt;
+
+&lt;p&gt;이러한 이벤트 로그 형태의 데이터만 있으면 ProM, PM4Py, Disco 등의 툴을 활용하여 쉽게 프로세스 마이닝을 할 수 있다!!&lt;/p&gt;
+
+&lt;p&gt;References&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Data Sceicne in Action. Coursera. Prof. Wil van der Aalst.&lt;/li&gt;
+&lt;/ol&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>SeongJae Yu</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="ProcessMining" />
+      
+
+      
+        <summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">프로세스 마이닝의 종류(유형)</title>
+      <link href="https://seongjae-yoo.github.io/process-miningtype" rel="alternate" type="text/html" title="프로세스 마이닝의 종류(유형)" />
+      <published>2021-08-25T00:00:00+09:00</published>
+      <updated>2021-08-25T00:00:00+09:00</updated>
+      <id>https://seongjae-yoo.github.io/process-miningtype</id>
+      <content type="html" xml:base="https://seongjae-yoo.github.io/process-miningtype">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;프로세스-마이닝의-종류-유형&quot;&gt;프로세스 마이닝의 종류 (유형)&lt;/h2&gt;
 

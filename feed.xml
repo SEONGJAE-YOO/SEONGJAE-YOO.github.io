@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://seongjae-yoo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://seongjae-yoo.github.io/" rel="alternate" type="text/html" /><updated>2021-08-27T17:34:47+09:00</updated><id>https://seongjae-yoo.github.io/feed.xml</id><title type="html">Big Data</title><subtitle>SeongJae Yu 블로그</subtitle><entry><title type="html">Concat 함수로 데이터 프레임 병합하기</title><link href="https://seongjae-yoo.github.io/concat-function" rel="alternate" type="text/html" title="Concat 함수로 데이터 프레임 병합하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/concat-function</id><content type="html" xml:base="https://seongjae-yoo.github.io/concat-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://seongjae-yoo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://seongjae-yoo.github.io/" rel="alternate" type="text/html" /><updated>2021-08-27T17:43:13+09:00</updated><id>https://seongjae-yoo.github.io/feed.xml</id><title type="html">Big Data</title><subtitle>SeongJae Yu 블로그</subtitle><entry><title type="html">Concat 함수로 데이터 프레임 병합하기</title><link href="https://seongjae-yoo.github.io/concat-function" rel="alternate" type="text/html" title="Concat 함수로 데이터 프레임 병합하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/concat-function</id><content type="html" xml:base="https://seongjae-yoo.github.io/concat-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -580,12 +580,12 @@
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">transform 함수의 이해 및 활용하기</title><link href="https://seongjae-yoo.github.io/transform-function" rel="alternate" type="text/html" title="transform 함수의 이해 및 활용하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/transform-function</id><content type="html" xml:base="https://seongjae-yoo.github.io/transform-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">transform 함수의 이해 및 활용하기</title><link href="https://seongjae-yoo.github.io/transform-function" rel="alternate" type="text/html" title="transform 함수의 이해 및 활용하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/transform-function</id><content type="html" xml:base="https://seongjae-yoo.github.io/transform-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -1628,12 +1628,12 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;891 rows × 14 columns&lt;/p&gt;
-&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">stack, unstack 함수의 이해 및 활용하기</title><link href="https://seongjae-yoo.github.io/stack-function" rel="alternate" type="text/html" title="stack, unstack 함수의 이해 및 활용하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/stack-function</id><content type="html" xml:base="https://seongjae-yoo.github.io/stack-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">stack, unstack 함수의 이해 및 활용하기</title><link href="https://seongjae-yoo.github.io/stack-function" rel="alternate" type="text/html" title="stack, unstack 함수의 이해 및 활용하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/stack-function</id><content type="html" xml:base="https://seongjae-yoo.github.io/stack-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -2328,12 +2328,12 @@
 경기 수요일   100    80
    목요일    50    50
    금요일   100    10&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">pivot, pivot_table 함수의 이해 및 활용하기</title><link href="https://seongjae-yoo.github.io/pivot-function" rel="alternate" type="text/html" title="pivot, pivot_table 함수의 이해 및 활용하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/pivot-function</id><content type="html" xml:base="https://seongjae-yoo.github.io/pivot-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">pivot, pivot_table 함수의 이해 및 활용하기</title><link href="https://seongjae-yoo.github.io/pivot-function" rel="alternate" type="text/html" title="pivot, pivot_table 함수의 이해 및 활용하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/pivot-function</id><content type="html" xml:base="https://seongjae-yoo.github.io/pivot-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -2933,12 +2933,12 @@
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">Merge_join 함수로 데이터 프레임 병합하기</title><link href="https://seongjae-yoo.github.io/merge-join" rel="alternate" type="text/html" title="Merge_join 함수로 데이터 프레임 병합하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/merge-join</id><content type="html" xml:base="https://seongjae-yoo.github.io/merge-join">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">Merge_join 함수로 데이터 프레임 병합하기</title><link href="https://seongjae-yoo.github.io/merge-join" rel="alternate" type="text/html" title="Merge_join 함수로 데이터 프레임 병합하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/merge-join</id><content type="html" xml:base="https://seongjae-yoo.github.io/merge-join">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -4284,12 +4284,12 @@ Name: quantity, dtype: int64
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">DataFrame group by 이해하기</title><link href="https://seongjae-yoo.github.io/dataframe-groupby" rel="alternate" type="text/html" title="DataFrame group by 이해하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/dataframe-groupby</id><content type="html" xml:base="https://seongjae-yoo.github.io/dataframe-groupby">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">DataFrame group by 이해하기</title><link href="https://seongjae-yoo.github.io/dataframe-groupby" rel="alternate" type="text/html" title="DataFrame group by 이해하기" /><published>2021-08-27T00:00:00+09:00</published><updated>2021-08-27T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/dataframe-groupby</id><content type="html" xml:base="https://seongjae-yoo.github.io/dataframe-groupby">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -5668,12 +5668,46 @@ Name: Age, dtype: float64
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">숫자 데이터의 범주형 데이터화</title><link href="https://seongjae-yoo.github.io/num-categoricaldata" rel="alternate" type="text/html" title="숫자 데이터의 범주형 데이터화" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/num-categoricaldata</id><content type="html" xml:base="https://seongjae-yoo.github.io/num-categoricaldata">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">이벤트 로그(event log)란?</title><link href="https://seongjae-yoo.github.io/event-log" rel="alternate" type="text/html" title="이벤트 로그(event log)란?" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/event-log</id><content type="html" xml:base="https://seongjae-yoo.github.io/event-log">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;이벤트-로그event-log란&quot;&gt;이벤트 로그(event log)란?&lt;/h2&gt;
+
+&lt;p&gt;이벤트 로그란, 프로세스 마이닝의 가장 기본이 되는 데이터 형태이다. 프로세스 마이닝을 하기 위해서는 이벤트 로그가 반드시 있어야 하기 때문에, 현재 있는 데이터를 프로세스 마이닝에 활용하고 싶다면 이를 이벤트 로그 형태로 바꾸어 주는 것이 필수적이다. 그렇다면, 이벤트 로그란 무엇일까?&lt;/p&gt;
+
+&lt;h2 id=&quot;이벤트-로그의-필수적인-요소&quot;&gt;이벤트 로그의 필수적인 요소&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/processmining/20210825_154912_1.png&quot; alt=&quot;20210825_154912_1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이벤트 로그에는 필수적인 요소가 세 가지 있다. 케이스 아이디 (Case ID), 액티비티 (Activity), 타임스탬프 (Timestamp)가 바로 그것이다.
+예를 들어서, 위의 표처럼 병원에서 환자들의 프로세스가 있다고 하자. 여기에서 환자 5781은 X-ray를 찍고 (make X-ray), CT 촬영을 하고 (CT scan), 병원비를 지불하였고 (handle payment), 환자 5833은 피검사를 한 후 (blood test) 수술을 한다 (surgery). 이렇게 병원 안에서도 수많은 환자들이 각자 다른 일을 하고 병원에서 나갈 것이다. 이러한 각각의 환자 하나하나를 케이스(Case)라고 한다. 각 케이스들은 여러 줄의 데이터를 가질 수 있는데, 이 데이터 한 줄 한 줄, 그러니까 각 프로세스의 과정 하나하나를 이벤트(event)라고 한다. 즉, 이벤트가 모여 하나의 케이스가 되고, 이 케이스들이 모여 이벤트 로그가 되는 것이다.
+각각의 케이스, 위 표의 경우에는 환자 하나하나를 구별해주는 고유한 값 (이 경우에는 5781, 5833 등)을 케이스 아이디 (Case ID)라고 한다. 다음으로, 이 환자들이 하는 X-ray 찍기, CT 촬영 하기, 병원비 지불 등의 행동들을 액티비티(activity)라고 한다. 그리고 환자들이 행동을 한 시각을 기록한 것을 타임스탬프(timestamp)라고 한다. 즉, 위 예시 로그에서는 patient 컬럼이 Case ID, activity 컬럼이 activity, timestamp 컬럼이 timestamp인 것이다. 이벤트 로그에는 이  Case ID, activity, timestamp가 필수적으로 포함되어야 한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;이벤트-로그의-추가적인-요소&quot;&gt;이벤트 로그의 추가적인 요소&lt;/h2&gt;
+&lt;p&gt;위 세 가지의 필수적인 요소 외에도 이벤트 로그에 포함될 수 있는 요소들이 몇 가지 있다. 첫 번째 요소는 리소스(resource)다. 리소스는 보통 해당 작업을 처리한 사람 (위 표의 경우에는 해당 일을 담당한 의사, 직원. doctor 컬럼)이나 부서, 기계 등을 의미한다. 두 번째 요소로는 Transactional information이 있다. 이는 액티비티가 시작되었는지, 종료되었는지, 계획되었는지 등의 정보를 표시하는 것이다. 예를 들어, 하나의 blood test 액티비티가 있더라도 이를 계획한 시각, 시작한 시각, 종료한 시각은 모두 다를 것이다. 이들을 각각 schedule, start, complete 등으로 표시한 컬럼을 transactional information이라고 한다. 나머지 요소는 other data이다. 이들은 각 케이스나 이벤트의 정보를 뜻하는 것으로, 위 표의 경우에는 age, cost 등의 컬럼들이 포함될 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;이벤트-로그의-표시&quot;&gt;이벤트 로그의 표시&lt;/h2&gt;
+&lt;p&gt;이벤트 로그는 주로 이러한 형태로 표시된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/processmining/20210825_154912_2.png&quot; alt=&quot;20210825_154912_2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;여기에서 &amp;lt;&amp;gt;는 케이스 내에서 발생한 액티비티의 패턴을 말한다. 즉, &amp;lt;a,b,c,d&amp;gt;는 케이스 내에서 액티비티 a,b,c,d 순서대로 액티비티가 발생했다는 것이다. 이 하나의 패턴을 트레이스(trace)라고 한다. &amp;lt;&amp;gt; 위에 있는 숫자는 해당 패턴을 보이는 케이스가 일어난 횟수를 의미한다. 즉, 전체 이벤트 로그에서 &amp;lt;a,b,c,d&amp;gt; 패턴을 보인 케이스가 3개, &amp;lt;a,c,b,d&amp;gt; 패턴을 보인 케이스가 2개, &amp;lt;a,e,d&amp;gt; 패턴을 보인 케이스가 1개라는 뜻이다.&lt;/p&gt;
+
+&lt;p&gt;이러한 이벤트 로그 형태의 데이터만 있으면 ProM, PM4Py, Disco 등의 툴을 활용하여 쉽게 프로세스 마이닝을 할 수 있다!!&lt;/p&gt;
+
+&lt;p&gt;References&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Data Sceicne in Action. Coursera. Prof. Wil van der Aalst.&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>SeongJae Yu</name></author><category term="ProcessMining" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">숫자 데이터의 범주형 데이터화</title><link href="https://seongjae-yoo.github.io/num-categoricaldata" rel="alternate" type="text/html" title="숫자 데이터의 범주형 데이터화" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/num-categoricaldata</id><content type="html" xml:base="https://seongjae-yoo.github.io/num-categoricaldata">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -6091,12 +6125,12 @@ memory usage: 83.7+ KB
 889    20
 890    30
 Name: Age, Length: 891, dtype: int64
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">숫자 데이터와 범주형 데이터의 이해</title><link href="https://seongjae-yoo.github.io/num-categorical" rel="alternate" type="text/html" title="숫자 데이터와 범주형 데이터의 이해" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/num-categorical</id><content type="html" xml:base="https://seongjae-yoo.github.io/num-categorical">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">숫자 데이터와 범주형 데이터의 이해</title><link href="https://seongjae-yoo.github.io/num-categorical" rel="alternate" type="text/html" title="숫자 데이터와 범주형 데이터의 이해" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/num-categorical</id><content type="html" xml:base="https://seongjae-yoo.github.io/num-categorical">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -6273,12 +6307,12 @@ memory usage: 83.7+ KB
       &lt;li&gt;예) Pclass&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">DataFrame 구조 이해하기</title><link href="https://seongjae-yoo.github.io/dataframe-structure" rel="alternate" type="text/html" title="DataFrame 구조 이해하기" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/dataframe-structure</id><content type="html" xml:base="https://seongjae-yoo.github.io/dataframe-structure">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ul&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">DataFrame 구조 이해하기</title><link href="https://seongjae-yoo.github.io/dataframe-structure" rel="alternate" type="text/html" title="DataFrame 구조 이해하기" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/dataframe-structure</id><content type="html" xml:base="https://seongjae-yoo.github.io/dataframe-structure">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -6433,966 +6467,4 @@ memory usage: 83.7+ KB
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Index(['PassengerId', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp',
        'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked'],
       dtype='object')
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry><entry><title type="html">DataFrame 원하는 row(데이터)만 선택하기</title><link href="https://seongjae-yoo.github.io/dataframe-row" rel="alternate" type="text/html" title="DataFrame 원하는 row(데이터)만 선택하기" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>https://seongjae-yoo.github.io/dataframe-row</id><content type="html" xml:base="https://seongjae-yoo.github.io/dataframe-row">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;dataframe row 선택하기&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pandas&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# data 출처: https://www.kaggle.com/hesh97/titanicdataset-traincsv/data
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'./train.csv'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div&gt;
-&lt;style scoped=&quot;&quot;&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&quot;text-align: right;&quot;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;PassengerId&lt;/th&gt;
-      &lt;th&gt;Survived&lt;/th&gt;
-      &lt;th&gt;Pclass&lt;/th&gt;
-      &lt;th&gt;Name&lt;/th&gt;
-      &lt;th&gt;Sex&lt;/th&gt;
-      &lt;th&gt;Age&lt;/th&gt;
-      &lt;th&gt;SibSp&lt;/th&gt;
-      &lt;th&gt;Parch&lt;/th&gt;
-      &lt;th&gt;Ticket&lt;/th&gt;
-      &lt;th&gt;Fare&lt;/th&gt;
-      &lt;th&gt;Cabin&lt;/th&gt;
-      &lt;th&gt;Embarked&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;0&lt;/th&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Braund, Mr. Owen Harris&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;22.0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;A/5 21171&lt;/td&gt;
-      &lt;td&gt;7.2500&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;1&lt;/th&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;Cumings, Mrs. John Bradley (Florence Briggs Th...&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;38.0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;PC 17599&lt;/td&gt;
-      &lt;td&gt;71.2833&lt;/td&gt;
-      &lt;td&gt;C85&lt;/td&gt;
-      &lt;td&gt;C&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;2&lt;/th&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Heikkinen, Miss. Laina&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;26.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;STON/O2. 3101282&lt;/td&gt;
-      &lt;td&gt;7.9250&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;3&lt;/th&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;Futrelle, Mrs. Jacques Heath (Lily May Peel)&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;35.0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;113803&lt;/td&gt;
-      &lt;td&gt;53.1000&lt;/td&gt;
-      &lt;td&gt;C123&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;4&lt;/th&gt;
-      &lt;td&gt;5&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Allen, Mr. William Henry&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;35.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;373450&lt;/td&gt;
-      &lt;td&gt;8.0500&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;dataframe-slicing&quot;&gt;dataframe slicing&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;dataframe의 경우 기본적으로 [] 연산자가 &lt;strong&gt;column 선택&lt;/strong&gt;에 사용&lt;/li&gt;
-  &lt;li&gt;하지만, slicing은 row 레벨로 지원&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div&gt;
-&lt;style scoped=&quot;&quot;&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&quot;text-align: right;&quot;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;PassengerId&lt;/th&gt;
-      &lt;th&gt;Survived&lt;/th&gt;
-      &lt;th&gt;Pclass&lt;/th&gt;
-      &lt;th&gt;Name&lt;/th&gt;
-      &lt;th&gt;Sex&lt;/th&gt;
-      &lt;th&gt;Age&lt;/th&gt;
-      &lt;th&gt;SibSp&lt;/th&gt;
-      &lt;th&gt;Parch&lt;/th&gt;
-      &lt;th&gt;Ticket&lt;/th&gt;
-      &lt;th&gt;Fare&lt;/th&gt;
-      &lt;th&gt;Cabin&lt;/th&gt;
-      &lt;th&gt;Embarked&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;7&lt;/th&gt;
-      &lt;td&gt;8&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Palsson, Master. Gosta Leonard&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;2.0&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;349909&lt;/td&gt;
-      &lt;td&gt;21.0750&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;8&lt;/th&gt;
-      &lt;td&gt;9&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Johnson, Mrs. Oscar W (Elisabeth Vilhelmina Berg)&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;27.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;347742&lt;/td&gt;
-      &lt;td&gt;11.1333&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;9&lt;/th&gt;
-      &lt;td&gt;10&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;Nasser, Mrs. Nicholas (Adele Achem)&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;14.0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;237736&lt;/td&gt;
-      &lt;td&gt;30.0708&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;C&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;row-선택하기&quot;&gt;row 선택하기&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Seires의 경우 []로 row 선택이 가능하나, &lt;strong&gt;DataFrame의 경우는 기본적으로 column을 선택하도록 설계&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;.loc, .iloc&lt;/strong&gt;로 row 선택 가능
-    &lt;ul&gt;
-      &lt;li&gt;loc - 인덱스 자체를 사용&lt;/li&gt;
-      &lt;li&gt;iloc - 0 based index로 사용&lt;/li&gt;
-      &lt;li&gt;이 두 함수는 ,를 사용하여 column 선택도 가능&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;class 'pandas.core.frame.DataFrame'&amp;gt;
-RangeIndex: 891 entries, 0 to 890
-Data columns (total 12 columns):
- #   Column       Non-Null Count  Dtype  
----  ------       --------------  -----  
- 0   PassengerId  891 non-null    int64  
- 1   Survived     891 non-null    int64  
- 2   Pclass       891 non-null    int64  
- 3   Name         891 non-null    object 
- 4   Sex          891 non-null    object 
- 5   Age          714 non-null    float64
- 6   SibSp        891 non-null    int64  
- 7   Parch        891 non-null    int64  
- 8   Ticket       891 non-null    object 
- 9   Fare         891 non-null    float64
- 10  Cabin        204 non-null    object 
- 11  Embarked     889 non-null    object 
-dtypes: float64(2), int64(5), object(5)
-memory usage: 83.7+ KB
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;991&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div&gt;
-&lt;style scoped=&quot;&quot;&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&quot;text-align: right;&quot;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;PassengerId&lt;/th&gt;
-      &lt;th&gt;Survived&lt;/th&gt;
-      &lt;th&gt;Pclass&lt;/th&gt;
-      &lt;th&gt;Name&lt;/th&gt;
-      &lt;th&gt;Sex&lt;/th&gt;
-      &lt;th&gt;Age&lt;/th&gt;
-      &lt;th&gt;SibSp&lt;/th&gt;
-      &lt;th&gt;Parch&lt;/th&gt;
-      &lt;th&gt;Ticket&lt;/th&gt;
-      &lt;th&gt;Fare&lt;/th&gt;
-      &lt;th&gt;Cabin&lt;/th&gt;
-      &lt;th&gt;Embarked&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;100&lt;/th&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Braund, Mr. Owen Harris&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;22.0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;A/5 21171&lt;/td&gt;
-      &lt;td&gt;7.2500&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;101&lt;/th&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;Cumings, Mrs. John Bradley (Florence Briggs Th...&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;38.0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;PC 17599&lt;/td&gt;
-      &lt;td&gt;71.2833&lt;/td&gt;
-      &lt;td&gt;C85&lt;/td&gt;
-      &lt;td&gt;C&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;102&lt;/th&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Heikkinen, Miss. Laina&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;26.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;STON/O2. 3101282&lt;/td&gt;
-      &lt;td&gt;7.9250&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;103&lt;/th&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;Futrelle, Mrs. Jacques Heath (Lily May Peel)&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;35.0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;113803&lt;/td&gt;
-      &lt;td&gt;53.1000&lt;/td&gt;
-      &lt;td&gt;C123&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;104&lt;/th&gt;
-      &lt;td&gt;5&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Allen, Mr. William Henry&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;35.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;373450&lt;/td&gt;
-      &lt;td&gt;8.0500&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div&gt;
-&lt;style scoped=&quot;&quot;&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&quot;text-align: right;&quot;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;PassengerId&lt;/th&gt;
-      &lt;th&gt;Survived&lt;/th&gt;
-      &lt;th&gt;Pclass&lt;/th&gt;
-      &lt;th&gt;Name&lt;/th&gt;
-      &lt;th&gt;Sex&lt;/th&gt;
-      &lt;th&gt;Age&lt;/th&gt;
-      &lt;th&gt;SibSp&lt;/th&gt;
-      &lt;th&gt;Parch&lt;/th&gt;
-      &lt;th&gt;Ticket&lt;/th&gt;
-      &lt;th&gt;Fare&lt;/th&gt;
-      &lt;th&gt;Cabin&lt;/th&gt;
-      &lt;th&gt;Embarked&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;986&lt;/th&gt;
-      &lt;td&gt;887&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;Montvila, Rev. Juozas&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;27.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;211536&lt;/td&gt;
-      &lt;td&gt;13.00&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;987&lt;/th&gt;
-      &lt;td&gt;888&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;Graham, Miss. Margaret Edith&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;19.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;112053&lt;/td&gt;
-      &lt;td&gt;30.00&lt;/td&gt;
-      &lt;td&gt;B42&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;988&lt;/th&gt;
-      &lt;td&gt;889&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Johnston, Miss. Catherine Helen &quot;Carrie&quot;&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;W./C. 6607&lt;/td&gt;
-      &lt;td&gt;23.45&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;989&lt;/th&gt;
-      &lt;td&gt;890&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;Behr, Mr. Karl Howell&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;26.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;111369&lt;/td&gt;
-      &lt;td&gt;30.00&lt;/td&gt;
-      &lt;td&gt;C148&lt;/td&gt;
-      &lt;td&gt;C&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;990&lt;/th&gt;
-      &lt;td&gt;891&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Dooley, Mr. Patrick&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;32.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;370376&lt;/td&gt;
-      &lt;td&gt;7.75&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;Q&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;986&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#index 명시해줌
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;PassengerId                      887
-Survived                           0
-Pclass                             2
-Name           Montvila, Rev. Juozas
-Sex                             male
-Age                             27.0
-SibSp                              0
-Parch                              0
-Ticket                        211536
-Fare                            13.0
-Cabin                            NaN
-Embarked                           S
-Name: 986, dtype: object
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;986&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;110&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;990&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#복수 loc 조회하려면 리스트 형태로 준다
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div&gt;
-&lt;style scoped=&quot;&quot;&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&quot;text-align: right;&quot;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;PassengerId&lt;/th&gt;
-      &lt;th&gt;Survived&lt;/th&gt;
-      &lt;th&gt;Pclass&lt;/th&gt;
-      &lt;th&gt;Name&lt;/th&gt;
-      &lt;th&gt;Sex&lt;/th&gt;
-      &lt;th&gt;Age&lt;/th&gt;
-      &lt;th&gt;SibSp&lt;/th&gt;
-      &lt;th&gt;Parch&lt;/th&gt;
-      &lt;th&gt;Ticket&lt;/th&gt;
-      &lt;th&gt;Fare&lt;/th&gt;
-      &lt;th&gt;Cabin&lt;/th&gt;
-      &lt;th&gt;Embarked&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;986&lt;/th&gt;
-      &lt;td&gt;887&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;Montvila, Rev. Juozas&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;27.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;211536&lt;/td&gt;
-      &lt;td&gt;13.00&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;100&lt;/th&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Braund, Mr. Owen Harris&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;22.0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;A/5 21171&lt;/td&gt;
-      &lt;td&gt;7.25&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;110&lt;/th&gt;
-      &lt;td&gt;11&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Sandstrom, Miss. Marguerite Rut&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;4.0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;PP 9549&lt;/td&gt;
-      &lt;td&gt;16.70&lt;/td&gt;
-      &lt;td&gt;G6&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;990&lt;/th&gt;
-      &lt;td&gt;891&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Dooley, Mr. Patrick&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;32.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;370376&lt;/td&gt;
-      &lt;td&gt;7.75&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;Q&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div&gt;
-&lt;style scoped=&quot;&quot;&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&quot;text-align: right;&quot;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;PassengerId&lt;/th&gt;
-      &lt;th&gt;Survived&lt;/th&gt;
-      &lt;th&gt;Pclass&lt;/th&gt;
-      &lt;th&gt;Name&lt;/th&gt;
-      &lt;th&gt;Sex&lt;/th&gt;
-      &lt;th&gt;Age&lt;/th&gt;
-      &lt;th&gt;SibSp&lt;/th&gt;
-      &lt;th&gt;Parch&lt;/th&gt;
-      &lt;th&gt;Ticket&lt;/th&gt;
-      &lt;th&gt;Fare&lt;/th&gt;
-      &lt;th&gt;Cabin&lt;/th&gt;
-      &lt;th&gt;Embarked&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;100&lt;/th&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Braund, Mr. Owen Harris&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;22.0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;A/5 21171&lt;/td&gt;
-      &lt;td&gt;7.2500&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;101&lt;/th&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;Cumings, Mrs. John Bradley (Florence Briggs Th...&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;38.0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;PC 17599&lt;/td&gt;
-      &lt;td&gt;71.2833&lt;/td&gt;
-      &lt;td&gt;C85&lt;/td&gt;
-      &lt;td&gt;C&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;102&lt;/th&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Heikkinen, Miss. Laina&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;26.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;STON/O2. 3101282&lt;/td&gt;
-      &lt;td&gt;7.9250&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;103&lt;/th&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;Futrelle, Mrs. Jacques Heath (Lily May Peel)&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;35.0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;113803&lt;/td&gt;
-      &lt;td&gt;53.1000&lt;/td&gt;
-      &lt;td&gt;C123&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;104&lt;/th&gt;
-      &lt;td&gt;5&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Allen, Mr. William Henry&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;35.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;373450&lt;/td&gt;
-      &lt;td&gt;8.0500&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 100이 0번째 주소이다
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;PassengerId                          1
-Survived                             0
-Pclass                               3
-Name           Braund, Mr. Owen Harris
-Sex                               male
-Age                               22.0
-SibSp                                1
-Parch                                0
-Ticket                       A/5 21171
-Fare                              7.25
-Cabin                              NaN
-Embarked                             S
-Name: 100, dtype: object
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# loc 는 정확한 주소를 이용하고 iloc 는 순서를 이용할 때 사용한다. /0 based index로 사용 / 
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div&gt;
-&lt;style scoped=&quot;&quot;&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&quot;text-align: right;&quot;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;PassengerId&lt;/th&gt;
-      &lt;th&gt;Survived&lt;/th&gt;
-      &lt;th&gt;Pclass&lt;/th&gt;
-      &lt;th&gt;Name&lt;/th&gt;
-      &lt;th&gt;Sex&lt;/th&gt;
-      &lt;th&gt;Age&lt;/th&gt;
-      &lt;th&gt;SibSp&lt;/th&gt;
-      &lt;th&gt;Parch&lt;/th&gt;
-      &lt;th&gt;Ticket&lt;/th&gt;
-      &lt;th&gt;Fare&lt;/th&gt;
-      &lt;th&gt;Cabin&lt;/th&gt;
-      &lt;th&gt;Embarked&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;100&lt;/th&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Braund, Mr. Owen Harris&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;22.0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;A/5 21171&lt;/td&gt;
-      &lt;td&gt;7.2500&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;200&lt;/th&gt;
-      &lt;td&gt;101&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Petranec, Miss. Matilda&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;28.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;349245&lt;/td&gt;
-      &lt;td&gt;7.8958&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;300&lt;/th&gt;
-      &lt;td&gt;201&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Vande Walle, Mr. Nestor Cyriel&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;28.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;345770&lt;/td&gt;
-      &lt;td&gt;9.5000&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;102&lt;/th&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Heikkinen, Miss. Laina&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;26.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;STON/O2. 3101282&lt;/td&gt;
-      &lt;td&gt;7.9250&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;S&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;row-column-동시에-선택하기&quot;&gt;row, column 동시에 선택하기&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;loc, iloc 속성을 이용할 때, 콤마를 이용하여 둘 다 명시 가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;986&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;110&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;990&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Survived'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Sex'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div&gt;
-&lt;style scoped=&quot;&quot;&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&quot;text-align: right;&quot;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;Survived&lt;/th&gt;
-      &lt;th&gt;Name&lt;/th&gt;
-      &lt;th&gt;Sex&lt;/th&gt;
-      &lt;th&gt;Age&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;986&lt;/th&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;Montvila, Rev. Juozas&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;27.0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;100&lt;/th&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;Braund, Mr. Owen Harris&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;22.0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;110&lt;/th&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;Sandstrom, Miss. Marguerite Rut&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;4.0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;990&lt;/th&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;Dooley, Mr. Patrick&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;32.0&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;101&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;102&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 맨뒤 컬럼값도 0 based index로 사용 ,  0 번째 주소는 PassengerId이다 
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div&gt;
-&lt;style scoped=&quot;&quot;&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&quot;text-align: right;&quot;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;Survived&lt;/th&gt;
-      &lt;th&gt;Sex&lt;/th&gt;
-      &lt;th&gt;Age&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;201&lt;/th&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;200&lt;/th&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;female&lt;/td&gt;
-      &lt;td&gt;28.0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;300&lt;/th&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;28.0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;202&lt;/th&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;male&lt;/td&gt;
-      &lt;td&gt;21.0&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>SeongJae Yu</name></author><category term="python" /><summary type="html">dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)</summary></entry></feed>

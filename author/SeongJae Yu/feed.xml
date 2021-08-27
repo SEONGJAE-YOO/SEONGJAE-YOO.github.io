@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://seongjae-yoo.github.io/author/SeongJae%20Yu/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://seongjae-yoo.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-08-27T17:34:47+09:00</updated>
+  <updated>2021-08-27T17:43:13+09:00</updated>
   <id>https://seongjae-yoo.github.io/author/SeongJae%20Yu/feed.xml</id>
 
   
@@ -37,12 +37,12 @@
       <published>2021-08-27T00:00:00+09:00</published>
       <updated>2021-08-27T00:00:00+09:00</updated>
       <id>https://seongjae-yoo.github.io/stack-function</id>
-      <content type="html" xml:base="https://seongjae-yoo.github.io/stack-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+      <content type="html" xml:base="https://seongjae-yoo.github.io/stack-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -771,12 +771,12 @@
       <published>2021-08-27T00:00:00+09:00</published>
       <updated>2021-08-27T00:00:00+09:00</updated>
       <id>https://seongjae-yoo.github.io/pivot-function</id>
-      <content type="html" xml:base="https://seongjae-yoo.github.io/pivot-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+      <content type="html" xml:base="https://seongjae-yoo.github.io/pivot-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -1410,12 +1410,12 @@
       <published>2021-08-27T00:00:00+09:00</published>
       <updated>2021-08-27T00:00:00+09:00</updated>
       <id>https://seongjae-yoo.github.io/merge-join</id>
-      <content type="html" xml:base="https://seongjae-yoo.github.io/merge-join">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+      <content type="html" xml:base="https://seongjae-yoo.github.io/merge-join">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -2795,12 +2795,12 @@ Name: quantity, dtype: int64
       <published>2021-08-27T00:00:00+09:00</published>
       <updated>2021-08-27T00:00:00+09:00</updated>
       <id>https://seongjae-yoo.github.io/dataframe-groupby</id>
-      <content type="html" xml:base="https://seongjae-yoo.github.io/dataframe-groupby">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+      <content type="html" xml:base="https://seongjae-yoo.github.io/dataframe-groupby">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -4213,12 +4213,12 @@ Name: Age, dtype: float64
       <published>2021-08-27T00:00:00+09:00</published>
       <updated>2021-08-27T00:00:00+09:00</updated>
       <id>https://seongjae-yoo.github.io/concat-function</id>
-      <content type="html" xml:base="https://seongjae-yoo.github.io/concat-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+      <content type="html" xml:base="https://seongjae-yoo.github.io/concat-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -4829,12 +4829,12 @@ Name: Age, dtype: float64
       <published>2021-08-27T00:00:00+09:00</published>
       <updated>2021-08-27T00:00:00+09:00</updated>
       <id>https://seongjae-yoo.github.io/transform-function</id>
-      <content type="html" xml:base="https://seongjae-yoo.github.io/transform-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+      <content type="html" xml:base="https://seongjae-yoo.github.io/transform-function">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -5911,12 +5911,12 @@ Name: Age, dtype: float64
       <published>2021-08-25T00:00:00+09:00</published>
       <updated>2021-08-25T00:00:00+09:00</updated>
       <id>https://seongjae-yoo.github.io/num-categoricaldata</id>
-      <content type="html" xml:base="https://seongjae-yoo.github.io/num-categoricaldata">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+      <content type="html" xml:base="https://seongjae-yoo.github.io/num-categoricaldata">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -6368,12 +6368,12 @@ Name: Age, Length: 891, dtype: int64
       <published>2021-08-25T00:00:00+09:00</published>
       <updated>2021-08-25T00:00:00+09:00</updated>
       <id>https://seongjae-yoo.github.io/num-categorical</id>
-      <content type="html" xml:base="https://seongjae-yoo.github.io/num-categorical">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+      <content type="html" xml:base="https://seongjae-yoo.github.io/num-categorical">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -6584,12 +6584,12 @@ memory usage: 83.7+ KB
       <published>2021-08-25T00:00:00+09:00</published>
       <updated>2021-08-25T00:00:00+09:00</updated>
       <id>https://seongjae-yoo.github.io/dataframe-structure</id>
-      <content type="html" xml:base="https://seongjae-yoo.github.io/dataframe-structure">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+      <content type="html" xml:base="https://seongjae-yoo.github.io/dataframe-structure">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
@@ -6778,12 +6778,12 @@ memory usage: 83.7+ KB
       <published>2021-08-25T00:00:00+09:00</published>
       <updated>2021-08-25T00:00:00+09:00</updated>
       <id>https://seongjae-yoo.github.io/dataframe-row</id>
-      <content type="html" xml:base="https://seongjae-yoo.github.io/dataframe-row">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+      <content type="html" xml:base="https://seongjae-yoo.github.io/dataframe-row">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-python-basic.md&quot;&gt;쿠팡 셀러 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-11-searchAd.md&quot;&gt;검색광고 데이터 분석&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;blogmaker/_posts/python/2021-08-19-customer-Data.md&quot;&gt;고객 데이터 분석 프로젝트&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;학습목표&quot;&gt;학습목표&lt;/h2&gt;
 &lt;ol&gt;
