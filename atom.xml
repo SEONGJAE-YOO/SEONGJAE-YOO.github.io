@@ -118,7 +118,8 @@
       <item>
         <title>Process</title>
         
-          <description>&lt;h2&gt;````&lt;/h2&gt;
+          <description>
+&lt;hr /&gt;
 &lt;p&gt;layout: page
 current: page
 cover:  assets/built/images/logo-python.png
