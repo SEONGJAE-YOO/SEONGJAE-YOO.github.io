@@ -4,7 +4,7 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/selen-crawling</loc>
+    <loc>https://SEONGJAE-YOO.github.io/selen-crawling.xml</loc>
     
     <lastmod>2021-09-02T00:00:00+09:00</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/transform-function</loc>
+    <loc>https://SEONGJAE-YOO.github.io/transform-function.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -36,7 +36,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/stack-function</loc>
+    <loc>https://SEONGJAE-YOO.github.io/stack-function.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -52,7 +52,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/pivot-function</loc>
+    <loc>https://SEONGJAE-YOO.github.io/pivot-function.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -68,7 +68,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/merge-join</loc>
+    <loc>https://SEONGJAE-YOO.github.io/merge-join.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -84,7 +84,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/dataframe-groupby</loc>
+    <loc>https://SEONGJAE-YOO.github.io/dataframe-groupby.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -100,7 +100,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/concat-function</loc>
+    <loc>https://SEONGJAE-YOO.github.io/concat-function.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -116,7 +116,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/process</loc>
+    <loc>https://SEONGJAE-YOO.github.io/process.xml</loc>
     
     <lastmod>2021-08-27T00:00:00+09:00</lastmod>
     
@@ -132,7 +132,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/beautiful-soup2</loc>
+    <loc>https://SEONGJAE-YOO.github.io/beautiful-soup2.xml</loc>
     
     <lastmod>2021-08-27T00:00:00+09:00</lastmod>
     
@@ -148,7 +148,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/beautiful-soup</loc>
+    <loc>https://SEONGJAE-YOO.github.io/beautiful-soup.xml</loc>
     
     <lastmod>2021-08-27T00:00:00+09:00</lastmod>
     
@@ -164,7 +164,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/api-json</loc>
+    <loc>https://SEONGJAE-YOO.github.io/api-json.xml</loc>
     
     <lastmod>2021-08-27T00:00:00+09:00</lastmod>
     
@@ -180,7 +180,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/num-categoricaldata</loc>
+    <loc>https://SEONGJAE-YOO.github.io/num-categoricaldata.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -196,7 +196,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/num-categorical</loc>
+    <loc>https://SEONGJAE-YOO.github.io/num-categorical.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -212,7 +212,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/dataframe-structure</loc>
+    <loc>https://SEONGJAE-YOO.github.io/dataframe-structure.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -228,7 +228,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/dataframe-row</loc>
+    <loc>https://SEONGJAE-YOO.github.io/dataframe-row.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -244,7 +244,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/dataframe-nan</loc>
+    <loc>https://SEONGJAE-YOO.github.io/dataframe-nan.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -260,7 +260,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/dataframe-datacreate</loc>
+    <loc>https://SEONGJAE-YOO.github.io/dataframe-datacreate.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -276,7 +276,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/dataframe-data</loc>
+    <loc>https://SEONGJAE-YOO.github.io/dataframe-data.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -292,7 +292,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/dataframe-column</loc>
+    <loc>https://SEONGJAE-YOO.github.io/dataframe-column.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -308,7 +308,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/dataframe-colcorrelation</loc>
+    <loc>https://SEONGJAE-YOO.github.io/dataframe-colcorrelation.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -324,7 +324,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/dataframe-coladd</loc>
+    <loc>https://SEONGJAE-YOO.github.io/dataframe-coladd.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -340,7 +340,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/dataframe-booleansele</loc>
+    <loc>https://SEONGJAE-YOO.github.io/dataframe-booleansele.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -356,7 +356,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/csv-dataframe</loc>
+    <loc>https://SEONGJAE-YOO.github.io/csv-dataframe.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -372,7 +372,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/catagoricaldata-onehot</loc>
+    <loc>https://SEONGJAE-YOO.github.io/catagoricaldata-onehot.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -388,7 +388,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/process-miningtype</loc>
+    <loc>https://SEONGJAE-YOO.github.io/process-miningtype.xml</loc>
     
     <lastmod>2021-08-25T00:00:00+09:00</lastmod>
     
@@ -404,7 +404,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/process-mining</loc>
+    <loc>https://SEONGJAE-YOO.github.io/process-mining.xml</loc>
     
     <lastmod>2021-08-25T00:00:00+09:00</lastmod>
     
@@ -420,7 +420,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/event-log</loc>
+    <loc>https://SEONGJAE-YOO.github.io/event-log.xml</loc>
     
     <lastmod>2021-08-25T00:00:00+09:00</lastmod>
     
@@ -436,7 +436,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/nsmc-wordcloud</loc>
+    <loc>https://SEONGJAE-YOO.github.io/nsmc-wordcloud.xml</loc>
     
     <lastmod>2021-08-19T00:00:00+09:00</lastmod>
     
@@ -452,7 +452,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/nsmc-sentiment</loc>
+    <loc>https://SEONGJAE-YOO.github.io/nsmc-sentiment.xml</loc>
     
     <lastmod>2021-08-19T00:00:00+09:00</lastmod>
     
@@ -468,7 +468,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/gensim-news</loc>
+    <loc>https://SEONGJAE-YOO.github.io/gensim-news.xml</loc>
     
     <lastmod>2021-08-19T00:00:00+09:00</lastmod>
     
@@ -484,7 +484,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/series-slicing</loc>
+    <loc>https://SEONGJAE-YOO.github.io/series-slicing.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -500,7 +500,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/series-operation</loc>
+    <loc>https://SEONGJAE-YOO.github.io/series-operation.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -516,7 +516,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/series-index</loc>
+    <loc>https://SEONGJAE-YOO.github.io/series-index.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -532,7 +532,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/series-count</loc>
+    <loc>https://SEONGJAE-YOO.github.io/series-count.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -548,7 +548,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/series-boolean</loc>
+    <loc>https://SEONGJAE-YOO.github.io/series-boolean.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -564,7 +564,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/linear-regression</loc>
+    <loc>https://SEONGJAE-YOO.github.io/linear-regression.xml</loc>
     
     <lastmod>2021-08-23T00:00:00+09:00</lastmod>
     
@@ -580,7 +580,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/virtualshoping-data</loc>
+    <loc>https://SEONGJAE-YOO.github.io/virtualshoping-data.xml</loc>
     
     <lastmod>2021-08-19T00:00:00+09:00</lastmod>
     
@@ -596,7 +596,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/salesitem2-Data</loc>
+    <loc>https://SEONGJAE-YOO.github.io/salesitem2-Data.xml</loc>
     
     <lastmod>2021-08-19T00:00:00+09:00</lastmod>
     
@@ -612,7 +612,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/salesitem-Data</loc>
+    <loc>https://SEONGJAE-YOO.github.io/salesitem-Data.xml</loc>
     
     <lastmod>2021-08-19T00:00:00+09:00</lastmod>
     
@@ -628,7 +628,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/pushnotification-Data</loc>
+    <loc>https://SEONGJAE-YOO.github.io/pushnotification-Data.xml</loc>
     
     <lastmod>2021-08-19T00:00:00+09:00</lastmod>
     
@@ -644,7 +644,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/marketing-Data</loc>
+    <loc>https://SEONGJAE-YOO.github.io/marketing-Data.xml</loc>
     
     <lastmod>2021-08-19T00:00:00+09:00</lastmod>
     
@@ -660,7 +660,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/keyword-Data</loc>
+    <loc>https://SEONGJAE-YOO.github.io/keyword-Data.xml</loc>
     
     <lastmod>2021-08-19T00:00:00+09:00</lastmod>
     
@@ -676,7 +676,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/kde-Data</loc>
+    <loc>https://SEONGJAE-YOO.github.io/kde-Data.xml</loc>
     
     <lastmod>2021-08-19T00:00:00+09:00</lastmod>
     
@@ -692,7 +692,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/goodcustomer-Data</loc>
+    <loc>https://SEONGJAE-YOO.github.io/goodcustomer-Data.xml</loc>
     
     <lastmod>2021-08-19T00:00:00+09:00</lastmod>
     
@@ -708,7 +708,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/customer-Data</loc>
+    <loc>https://SEONGJAE-YOO.github.io/customer-Data.xml</loc>
     
     <lastmod>2021-08-19T00:00:00+09:00</lastmod>
     
@@ -724,7 +724,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/newstext-morp</loc>
+    <loc>https://SEONGJAE-YOO.github.io/newstext-morp.xml</loc>
     
     <lastmod>2021-08-19T00:00:00+09:00</lastmod>
     
@@ -740,7 +740,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/newstext-konlpy</loc>
+    <loc>https://SEONGJAE-YOO.github.io/newstext-konlpy.xml</loc>
     
     <lastmod>2021-08-19T00:00:00+09:00</lastmod>
     
@@ -756,7 +756,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/newstext-a1</loc>
+    <loc>https://SEONGJAE-YOO.github.io/newstext-a1.xml</loc>
     
     <lastmod>2021-08-19T00:00:00+09:00</lastmod>
     
@@ -772,7 +772,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/navernews-crawling</loc>
+    <loc>https://SEONGJAE-YOO.github.io/navernews-crawling.xml</loc>
     
     <lastmod>2021-08-19T00:00:00+09:00</lastmod>
     
@@ -788,7 +788,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/searchAd</loc>
+    <loc>https://SEONGJAE-YOO.github.io/searchAd.xml</loc>
     
     <lastmod>2021-08-11T00:00:00+09:00</lastmod>
     
@@ -804,7 +804,7 @@
   </url>
   
   <url>
-    <loc>https://SEONGJAE-YOO.github.io/python-basic</loc>
+    <loc>https://SEONGJAE-YOO.github.io/python-basic.xml</loc>
     
     <lastmod>2021-08-11T00:00:00+09:00</lastmod>
     
