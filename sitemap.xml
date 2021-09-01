@@ -1,268 +1,332 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
 <url>
-<loc>https://seongjae-yoo.github.io/python-basic</loc>
-<lastmod>2021-08-11T23:07:45+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/searchAd</loc>
-<lastmod>2021-08-12T00:07:45+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/about/</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/navernews-crawling</loc>
-<lastmod>2021-08-19T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/tag/processmining/</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/newstext-a1</loc>
-<lastmod>2021-08-19T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/tag/python/</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/newstext-konlpy</loc>
-<lastmod>2021-08-19T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/archive.html</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/newstext-morp</loc>
-<lastmod>2021-08-19T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/author_archive.html</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/customer-Data</loc>
-<lastmod>2021-08-20T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/selen-crawling</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/goodcustomer-Data</loc>
-<lastmod>2021-08-20T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/author/SeongJae%20Yu/</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/kde-Data</loc>
-<lastmod>2021-08-20T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/transform-function</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/keyword-Data</loc>
-<lastmod>2021-08-20T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/stack-function</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/marketing-Data</loc>
-<lastmod>2021-08-20T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/pivot-function</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/pushnotification-Data</loc>
-<lastmod>2021-08-20T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/merge-join</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/salesitem-Data</loc>
-<lastmod>2021-08-20T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/dataframe-groupby</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/salesitem2-Data</loc>
-<lastmod>2021-08-20T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/concat-function</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/virtualshoping-data</loc>
-<lastmod>2021-08-20T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/process</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/linear-regression</loc>
-<lastmod>2021-08-23T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/beautiful-soup2</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/series-boolean</loc>
-<lastmod>2021-08-23T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/beautiful-soup</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/series-count</loc>
-<lastmod>2021-08-23T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/api-json</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/series-index</loc>
-<lastmod>2021-08-23T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/num-categoricaldata</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/series-operation</loc>
-<lastmod>2021-08-23T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/num-categorical</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/series-slicing</loc>
-<lastmod>2021-08-23T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/dataframe-structure</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/gensim-news</loc>
-<lastmod>2021-08-23T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/dataframe-row</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/nsmc-sentiment</loc>
-<lastmod>2021-08-23T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/dataframe-nan</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/nsmc-wordcloud</loc>
-<lastmod>2021-08-23T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/dataframe-datacreate</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/event-log</loc>
-<lastmod>2021-08-25T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/dataframe-data</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/process-mining</loc>
-<lastmod>2021-08-25T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/dataframe-column</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/process-miningtype</loc>
-<lastmod>2021-08-25T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/dataframe-colcorrelation</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/catagoricaldata-onehot</loc>
-<lastmod>2021-08-25T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/page2/</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/csv-dataframe</loc>
-<lastmod>2021-08-25T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/process-mining</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/dataframe-booleansele</loc>
-<lastmod>2021-08-26T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/event-log</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/dataframe-coladd</loc>
-<lastmod>2021-08-26T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/process-miningtype</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/dataframe-colcorrelation</loc>
-<lastmod>2021-08-26T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/tag/python/page2/</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/dataframe-column</loc>
-<lastmod>2021-08-26T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/dataframe-coladd</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/dataframe-data</loc>
-<lastmod>2021-08-26T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/dataframe-booleansele</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/dataframe-datacreate</loc>
-<lastmod>2021-08-26T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/csv-dataframe</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/dataframe-nan</loc>
-<lastmod>2021-08-26T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/catagoricaldata-onehot</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/dataframe-row</loc>
-<lastmod>2021-08-26T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/nsmc-wordcloud</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/dataframe-structure</loc>
-<lastmod>2021-08-26T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/nsmc-sentiment</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/num-categorical</loc>
-<lastmod>2021-08-26T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/gensim-news</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/num-categoricaldata</loc>
-<lastmod>2021-08-26T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/series-slicing</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/api-json</loc>
-<lastmod>2021-08-27T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/series-operation</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/beautiful-soup</loc>
-<lastmod>2021-08-27T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/series-index</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/beautiful-soup2</loc>
-<lastmod>2021-08-27T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/series-count</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/process</loc>
-<lastmod>2021-08-27T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/series-boolean</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/concat-function</loc>
-<lastmod>2021-08-28T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/linear-regression</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/dataframe-groupby</loc>
-<lastmod>2021-08-28T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/virtualshoping-data</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/merge-join</loc>
-<lastmod>2021-08-28T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/salesitem2-Data</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/pivot-function</loc>
-<lastmod>2021-08-28T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/salesitem-Data</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/stack-function</loc>
-<lastmod>2021-08-28T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/pushnotification-Data</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/transform-function</loc>
-<lastmod>2021-08-28T04:23:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/marketing-Data</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/selen-crawling</loc>
-<lastmod>2021-09-02T00:00:00+09:00</lastmod>
+  <loc>https://seongjae-yoo.github.io/keyword-Data</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/archive</loc>
+  <loc>https://seongjae-yoo.github.io/kde-Data</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/author_archive</loc>
+  <loc>https://seongjae-yoo.github.io/goodcustomer-Data</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/</loc>
+  <loc>https://seongjae-yoo.github.io/customer-Data</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/jquery-mousewheel-main/test/</loc>
+  <loc>https://seongjae-yoo.github.io/newstext-morp</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/about/</loc>
+  <loc>https://seongjae-yoo.github.io/newstext-konlpy</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/search</loc>
+  <loc>https://seongjae-yoo.github.io/newstext-a1</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/author/SeongJae%20Yu/</loc>
+  <loc>https://seongjae-yoo.github.io/navernews-crawling</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/author/SeongJae%20Yu/page2/</loc>
+  <loc>https://seongjae-yoo.github.io/searchAd</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/author/SeongJae%20Yu/page3/</loc>
+  <loc>https://seongjae-yoo.github.io/python-basic</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/tag/python/</loc>
+  <loc>https://seongjae-yoo.github.io/author/SeongJae%20Yu/page2/</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/tag/python/page2/</loc>
+  <loc>https://seongjae-yoo.github.io/page3/</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/tag/python/page3/</loc>
+  <loc>https://seongjae-yoo.github.io/tag/python/page3/</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-<loc>https://seongjae-yoo.github.io/tag/processmining/</loc>
+  <loc>https://seongjae-yoo.github.io/author/SeongJae%20Yu/page3/</loc>
+  <lastmod>2021-09-01T18:30:51+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
-<url>
-<loc>https://seongjae-yoo.github.io/page2/</loc>
-</url>
-<url>
-<loc>https://seongjae-yoo.github.io/page3/</loc>
-</url>
-<url>
-<loc>https://seongjae-yoo.github.io/google51ee5a1588dfb67a.html</loc>
-<lastmod>2021-08-28T02:11:41+09:00</lastmod>
-</url>
-<url>
-<loc>https://seongjae-yoo.github.io/jquery-mousewheel-main/test/manual.html</loc>
-<lastmod>2021-05-30T01:16:59+09:00</lastmod>
-</url>
-<url>
-<loc>https://seongjae-yoo.github.io/jquery-mousewheel-main/test/scroll.html</loc>
-<lastmod>2021-05-30T01:16:59+09:00</lastmod>
-</url>
-<url>
-<loc>https://seongjae-yoo.github.io/naverc91c2ed4f734c5de82c432e3ab91595c.html</loc>
-<lastmod>2021-08-27T23:02:46+09:00</lastmod>
-</url>
+
+
 </urlset>
