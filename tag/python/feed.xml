@@ -8,8 +8,8 @@
         <description>SeongJae Yu 블로그</description>
         <link>https://SEONGJAE-YOO.github.io//</link>
         <atom:link href="https://SEONGJAE-YOO.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Thu, 02 Sep 2021 06:08:47 +0900</pubDate>
-        <lastBuildDate>Thu, 02 Sep 2021 06:08:47 +0900</lastBuildDate>
+        <pubDate>Mon, 06 Sep 2021 17:39:25 +0900</pubDate>
+        <lastBuildDate>Mon, 06 Sep 2021 17:39:25 +0900</lastBuildDate>
         <generator>Jekyll v3.9.0</generator>
         
         <item>
@@ -138,7 +138,7 @@
         
         <item>
             <title>transform 함수의 이해 및 활용하기</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -1198,7 +1198,7 @@
         
         <item>
             <title>stack, unstack 함수의 이해 및 활용하기</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -1910,7 +1910,7 @@
         
         <item>
             <title>pivot, pivot_table 함수의 이해 및 활용하기</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -2527,7 +2527,7 @@
         
         <item>
             <title>Merge_join 함수로 데이터 프레임 병합하기</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -3890,7 +3890,7 @@ Name: quantity, dtype: int64
         
         <item>
             <title>DataFrame group by 이해하기</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -5286,7 +5286,7 @@ Name: Age, dtype: float64
         
         <item>
             <title>Concat 함수로 데이터 프레임 병합하기</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -5971,7 +5971,7 @@ Name: Age, dtype: float64
         
         <item>
             <title>beautifulsoup 모듈 - 02.beautifulsoup 모듈 사용하기</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -6348,7 +6348,7 @@ Name: Age, dtype: float64
         
         <item>
             <title>beautifulsoup 모듈 - 01.beautifulsoup 모듈 사용하기</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -6538,7 +6538,7 @@ Name: Age, dtype: float64
         
         <item>
             <title>API의 활용 - 02.Open API 활용하기 json data 추출하기</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -6626,7 +6626,7 @@ NameError: name 'requests' is not defined
         
         <item>
             <title>숫자 데이터의 범주형 데이터화</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -7061,7 +7061,7 @@ Name: Age, Length: 891, dtype: int64
         
         <item>
             <title>숫자 데이터와 범주형 데이터의 이해</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -7254,7 +7254,7 @@ memory usage: 83.7+ KB
         
         <item>
             <title>DataFrame 구조 이해하기</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -7426,7 +7426,7 @@ memory usage: 83.7+ KB
         
         <item>
             <title>DataFrame 원하는 row(데이터)만 선택하기</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -8400,7 +8400,7 @@ Name: 100, dtype: object
         
         <item>
             <title>DataFrame NaN 데이터 처리</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -10722,7 +10722,7 @@ Name: Age, Length: 549, dtype: float64
         
         <item>
             <title>DataFrame 데이터 생성하기</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -10978,7 +10978,7 @@ Name: Age, Length: 549, dtype: float64
         
         <item>
             <title>DataFrame 데이터 살펴보기</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -11493,7 +11493,7 @@ memory usage: 83.7+ KB
         
         <item>
             <title>DataFrame 원하는 column(컬럼)만 선택하기</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -11777,7 +11777,7 @@ Name: Survived, Length: 891, dtype: int64
         
         <item>
             <title>DataFrame column(컬럼)간 상관관계 계산하기</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -12044,7 +12044,7 @@ Name: Survived, Length: 891, dtype: int64
         
         <item>
             <title>DataFrame에 column(컬럼) 추가,삭제하기</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -13075,7 +13075,7 @@ Name: Survived, Length: 891, dtype: int64
         
         <item>
             <title>DataFrame Boolean Selection으로 데이터 선택하기</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -14230,7 +14230,7 @@ Name: Survived, Length: 891, dtype: int64
         
         <item>
             <title>샘플 csv 데이터로 DataFrame 데이터 생성하기</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -14818,7 +14818,7 @@ Name: Survived, Length: 891, dtype: int64
         
         <item>
             <title>범주형 데이터 전처리 하기(one-hot encoding)</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -15782,7 +15782,7 @@ Name: Survived, Length: 891, dtype: int64
         
         <item>
             <title>프로세스 마이닝의 종류(유형)</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -15836,7 +15836,7 @@ Name: Survived, Length: 891, dtype: int64
         
         <item>
             <title>프로세스 마이닝(Process Mining)이란?</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -15876,7 +15876,7 @@ Name: Survived, Length: 891, dtype: int64
         
         <item>
             <title>이벤트 로그(event log)란?</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -15922,7 +15922,7 @@ Name: Survived, Length: 891, dtype: int64
         
         <item>
             <title>NSMC 정제 - wordcloud 와 histogram으로 단어 분포 파악하기</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -16163,7 +16163,7 @@ Name: Survived, Length: 891, dtype: int64
         
         <item>
             <title>NSMC 감성분석 - 감정분석</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
@@ -16514,7 +16514,7 @@ Name: Survived, Length: 891, dtype: int64
         
         <item>
             <title>기사 텍스트 정제 - gensim을 이용한 토픽모델링 분석</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;dataframe이 짤라서 보일때 웹페이지를 축소해서 보시길 바랍니다~^^(50%이면 다 보일것입니다)&lt;/span&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
 
 &lt;!--&lt;/ul&gt;--&gt;
