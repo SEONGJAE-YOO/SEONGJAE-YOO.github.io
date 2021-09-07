@@ -8,6 +8,24 @@
     
       
       <item>
+        <title>R 언어 기본 공부 1</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+</description>
+        
+        <pubDate>Tue, 07 Sep 2021 00:23:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/rbasic</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/rbasic</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>selenium 모듈 - 01.사이트에 로그인하여 데이터 크롤링하기</title>
         
           <description>&lt;h3 id=&quot;학습목표&quot;&gt;학습목표&lt;/h3&gt;
