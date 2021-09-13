@@ -5,8 +5,8 @@
         <description>SeongJae Yu 블로그</description>
         <link>https://SEONGJAE-YOO.github.io//</link>
         <atom:link href="https://SEONGJAE-YOO.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Mon, 13 Sep 2021 17:40:18 +0900</pubDate>
-        <lastBuildDate>Mon, 13 Sep 2021 17:40:18 +0900</lastBuildDate>
+        <pubDate>Mon, 13 Sep 2021 17:47:29 +0900</pubDate>
+        <lastBuildDate>Mon, 13 Sep 2021 17:47:29 +0900</lastBuildDate>
         <generator>Jekyll v3.9.0</generator>
         
         <item>
@@ -27,9 +27,11 @@
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;its-bpmbusiness-process-management-but-upside-down&quot;&gt;it’s BPM(business process management), but upside-down.&lt;/h2&gt;
-&lt;p&gt;process mining -&amp;gt; bottom-up fashion
-you don’t need to have a model of your process to analyze it.
-with process mining, you get a process model from these data.&lt;/p&gt;
+&lt;p&gt;process mining -&amp;gt; bottom-up fashion&lt;/p&gt;
+
+&lt;p&gt;you don’t need to have a model of your process to analyze it.&lt;/p&gt;
+
+&lt;p&gt;with process mining, you get a process model from these data.&lt;/p&gt;
 
 &lt;h2 id=&quot;business-intelligence-vs-process-mining&quot;&gt;business intelligence vs. process mining&lt;/h2&gt;
 &lt;ul&gt;
