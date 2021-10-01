@@ -11,7 +11,7 @@
 
 
 
-    <title>Pandas_Handling_Missing_Data</title>
+    <title>파이썬 판다스 assign 으로 새로운 컬럼 만들기,qcut으로 binning, bucketing 하기</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Styles'n'Scripts -->
@@ -50,20 +50,20 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="SeongJae Yu 블로그" />
     <link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
-    <link rel="canonical" href="https://SEONGJAE-YOO.github.io/Pandas_Handling_Missing_Data" />
+    <link rel="canonical" href="https://SEONGJAE-YOO.github.io/PandasMakeNewColumns" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="Big Data" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Pandas_Handling_Missing_Data" />
+    <meta property="og:title" content="파이썬 판다스 assign 으로 새로운 컬럼 만들기,qcut으로 binning, bucketing 하기" />
     <meta property="og:description" content="SeongJae Yu 블로그" />
-    <meta property="og:url" content="https://SEONGJAE-YOO.github.io/Pandas_Handling_Missing_Data" />
+    <meta property="og:url" content="https://SEONGJAE-YOO.github.io/PandasMakeNewColumns" />
     <meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:tag" content="Python" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Pandas_Handling_Missing_Data" />
+    <meta name="twitter:title" content="파이썬 판다스 assign 으로 새로운 컬럼 만들기,qcut으로 binning, bucketing 하기" />
     <meta name="twitter:description" content="SeongJae Yu 블로그" />
     <meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
     <meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
@@ -85,7 +85,7 @@
         "name": "Big Data",
         "logo": "https://SEONGJAE-YOO.github.io/"
     },
-    "url": "https://SEONGJAE-YOO.github.io/Pandas_Handling_Missing_Data",
+    "url": "https://SEONGJAE-YOO.github.io/PandasMakeNewColumns",
     "image": {
         "@type": "ImageObject",
         "url": "https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png",
@@ -94,7 +94,7 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://SEONGJAE-YOO.github.io/Pandas_Handling_Missing_Data"
+        "@id": "https://SEONGJAE-YOO.github.io/PandasMakeNewColumns"
     },
     "description": "SeongJae Yu 블로그"
 }
@@ -109,7 +109,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="Pandas_Handling_Missing_Data" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="파이썬 판다스 assign 으로 새로운 컬럼 만들기,qcut으로 binning, bucketing 하기" href="/feed.xml" />
 
 
 
@@ -173,7 +173,7 @@ into the {body} of the default.hbs template -->
         <article class="post-full  tag-python post tag-python ">
 
             <header class="post-full-header">
-                <h1 class="post-full-title">Pandas_Handling_Missing_Data</h1>
+                <h1 class="post-full-title">파이썬 판다스 assign 으로 새로운 컬럼 만들기,qcut으로 binning, bucketing 하기</h1>
             </header>
 
             
@@ -187,13 +187,13 @@ into the {body} of the default.hbs template -->
 
 <!--</ul>-->
 
+<h1 id="1pandas-기초---파이썬-판다스-assign-으로-새로운-컬럼-만들기-qcut으로-binning-bucketing-하기">1.Pandas 기초 - 파이썬 판다스 assign 으로 새로운 컬럼 만들기, qcut으로 binning, bucketing 하기</h1>
+
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-                   <span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">5</span><span class="p">]],</span>
-                  <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s">'ABCD'</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s">'A'</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="s">'B'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">)})</span>
 <span class="n">df</span>
 </code></pre></div></div>
 
@@ -217,37 +217,80 @@ into the {body} of the default.hbs template -->
       <th></th>
       <th>A</th>
       <th>B</th>
-      <th>C</th>
-      <th>D</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>NaN</td>
-      <td>2.0</td>
-      <td>NaN</td>
-      <td>0</td>
+      <td>1</td>
+      <td>-2.173554</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>3.0</td>
-      <td>4.0</td>
-      <td>NaN</td>
-      <td>1</td>
+      <td>2</td>
+      <td>0.373508</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>3</td>
+      <td>2.305635</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>-0.250364</td>
+    </tr>
+    <tr>
+      <th>4</th>
       <td>5</td>
+      <td>-1.567004</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>-0.937419</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>-0.107459</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>-1.705911</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>-0.957453</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>0.289418</td>
     </tr>
   </tbody>
 </table>
 </div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">'all'</span><span class="p">)</span>
+<h1 id="assign함수에-대한-키워드-인수-dataframe에-할당-할-열-이름은-키워드-인수로-전달됩니다">assign()함수에 대한 키워드 인수. DataFrame에 할당 할 열 이름은 키워드 인수로 전달됩니다.</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">assign</span><span class="err">?</span>
+</code></pre></div></div>
+
+<h1 id="예제-코드-numpylog">예제 코드: numpy.log()</h1>
+<p>import numpy as np</p>
+
+<p>arr = [1, np.e, np.e<strong>2, np.e</strong>3]</p>
+
+<p>print(np.log(arr))</p>
+
+<p>출력:</p>
+
+<p>[0. 1. 2. 3.]</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">assign</span><span class="p">(</span><span class="n">ln_A</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">A</span><span class="p">)).</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div></div>
 
 <div>
@@ -270,66 +313,46 @@ into the {body} of the default.hbs template -->
       <th></th>
       <th>A</th>
       <th>B</th>
-      <th>D</th>
+      <th>ln_A</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>NaN</td>
-      <td>2.0</td>
-      <td>0</td>
+      <td>1</td>
+      <td>-2.173554</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>3.0</td>
-      <td>4.0</td>
-      <td>1</td>
+      <td>2</td>
+      <td>0.373508</td>
+      <td>0.693147</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>3</td>
+      <td>2.305635</td>
+      <td>1.098612</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>-0.250364</td>
+      <td>1.386294</td>
+    </tr>
+    <tr>
+      <th>4</th>
       <td>5</td>
+      <td>-1.567004</td>
+      <td>1.609438</td>
     </tr>
   </tbody>
 </table>
 </div>
 
-<p><img src="attachment:20210920_164126_1.png" alt="20210920_164126_1.png" /></p>
-
-<p>dropna의 syntax는 다음과 같습니다.</p>
-
-<p>DataFrame.dropna(axis=0/1, how=’any’/’all’, subset=[col1, col2, …], inplace=True/False)
-dropna에 들어갈 수 있는 parameter들은 더 많지만 일단 대표적인 것들만 보겠습니다.</p>
-
-<p>axis = 0/1 or ‘index’/’columns’</p>
-
-<p>0 or ‘index’ -&gt; NaN 값이 포함된 row를 drop (default 값입니다.)</p>
-
-<p>1 or ‘columns’ -&gt; NaN 값이 포함된 column을 drop</p>
-
-<p>how = ‘any’/’all’</p>
-
-<p>any -&gt; row 또는 column에 NaN값이 1개만 있어도 drop (default 값입니다.)</p>
-
-<p>all -&gt; row 또는 column에 있는 모든 값이 NaN이어야 drop</p>
-
-<p>inplace = True/False</p>
-
-<p>True -&gt; dropna가 적용된 DataFrame 자체에 dropna를 적용</p>
-
-<p>False -&gt; dropna가 적용된 DataFrame는 그대로 두고 dropna를 적용한 DataFrame을 return</p>
-
-<p>subset = [col1, col2, …]</p>
-
-<p>subset을 명시하지 않으면 DataFrame 전체(모든 column &amp; 모든 row)에 대해 dropna를 진행</p>
-
-<p>subset을 명시하면 subset에 적힌 column값에 대해서만 dropna를 진행</p>
-
-<h1 id="httpscosmosprojecttistorycom308---참고">https://cosmosproject.tistory.com/308   참고</h1>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">'any'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">ln_A</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">A</span><span class="p">)</span>
+<span class="n">df</span>
 </code></pre></div></div>
 
 <div>
@@ -350,134 +373,132 @@ dropna에 들어갈 수 있는 parameter들은 더 많지만 일단 대표적인
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>D</th>
+      <th>A</th>
+      <th>B</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>0</td>
+      <td>1</td>
+      <td>-2.173554</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1</td>
+      <td>2</td>
+      <td>0.373508</td>
     </tr>
     <tr>
       <th>2</th>
+      <td>3</td>
+      <td>2.305635</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>-0.250364</td>
+    </tr>
+    <tr>
+      <th>4</th>
       <td>5</td>
+      <td>-1.567004</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>-0.937419</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>-0.107459</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>-1.705911</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>-0.957453</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>0.289418</td>
     </tr>
   </tbody>
 </table>
 </div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#NaN 값을 0으로 채운다
+<h1 id="cut-함수--qcut-함수-비교-참고">cut 함수 / qcut 함수 비교 참고</h1>
+<h1 id="httpskimdingko-worldtistorycom209">https://kimdingko-world.tistory.com/209</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">qcut</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">B</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s">"good"</span><span class="p">,</span> <span class="s">"bad"</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    good
+1     bad
+2     bad
+3     bad
+4    good
+5    good
+6     bad
+7    good
+8    good
+9     bad
+Name: B, dtype: category
+Categories (2, object): ['good' &lt; 'bad']
+</code></pre></div></div>
+
+<p>cut 함수와 다르게 qcut 함수는 동일한 갯수로 구간을 나누는 것을 확인할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A    10.000000
+B     2.305635
+dtype: float64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="nb">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># axis=0은 열기준/ axis=1은 행기준 
 </span></code></pre></div></div>
 
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A    1.000000
+B   -2.173554
+dtype: float64
+</code></pre></div></div>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<h1 id="numpyclip-사용법">numpy.clip() 사용법</h1>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>A</th>
-      <th>B</th>
-      <th>C</th>
-      <th>D</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.0</td>
-      <td>2.0</td>
-      <td>0.0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>3.0</td>
-      <td>4.0</td>
-      <td>0.0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>5</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<p>numpy.clip(array, min, max)</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">values</span> <span class="o">=</span> <span class="p">{</span><span class="s">'A'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">'B'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'C'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'D'</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
-<span class="n">df</span><span class="p">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">values</span><span class="p">)</span> <span class="c1"># NaN값을 values 값으로 채운다
-</span></code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array 내의 element들에 대해서
 
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+min 값 보다 작은 값들을 min값으로 바꿔주고
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+max 값 보다 큰 값들을 max값으로 바꿔주는 함수.
+</code></pre></div></div>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>A</th>
-      <th>B</th>
-      <th>C</th>
-      <th>D</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.0</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>3.0</td>
-      <td>4.0</td>
-      <td>2.0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>5</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<p>예시</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import numpy as np
+
+arr1 = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+arr2 = np.clip(arr1, 3, 7)
+
+print(arr2)
+
+ 
+
+# 결과
+
+    [ 3 3 3 3 4 5 6 7 7 7]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">df</span>
 </code></pre></div></div>
 
 <div>
@@ -500,118 +521,124 @@ dropna에 들어갈 수 있는 parameter들은 더 많지만 일단 대표적인
       <th></th>
       <th>A</th>
       <th>B</th>
-      <th>C</th>
-      <th>D</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>NaN</td>
-      <td>2.0</td>
-      <td>NaN</td>
-      <td>0</td>
+      <td>1</td>
+      <td>-2.173554</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>3.0</td>
-      <td>4.0</td>
-      <td>NaN</td>
-      <td>1</td>
+      <td>2</td>
+      <td>0.373508</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>3</td>
+      <td>2.305635</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>-0.250364</td>
+    </tr>
+    <tr>
+      <th>4</th>
       <td>5</td>
+      <td>-1.567004</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>-0.937419</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>-0.107459</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>-1.705911</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>-0.957453</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>0.289418</td>
     </tr>
   </tbody>
 </table>
 </div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fill_na_value</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'D'</span><span class="p">].</span><span class="nb">max</span><span class="p">()</span>
-<span class="n">fill_na_value</span>
-
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">"B"</span><span class="p">].</span><span class="n">clip</span><span class="p">(</span><span class="n">lower</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">upper</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    1.000000
+1    1.000000
+2    2.305635
+3    1.000000
+4    1.000000
+5    1.000000
+6    1.000000
+7    1.000000
+8    1.000000
+9    1.000000
+Name: B, dtype: float64
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">fill_na_value</span><span class="p">)</span>
-
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">"B"</span><span class="p">].</span><span class="nb">abs</span><span class="p">()</span>
 </code></pre></div></div>
 
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>A</th>
-      <th>B</th>
-      <th>C</th>
-      <th>D</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>5.0</td>
-      <td>2.0</td>
-      <td>5.0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>3.0</td>
-      <td>4.0</td>
-      <td>5.0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">isnull</span><span class="p">().</span><span class="nb">sum</span><span class="p">()</span>
-
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    2.173554
+1    0.373508
+2    2.305635
+3    0.250364
+4    1.567004
+5    0.937419
+6    0.107459
+7    1.705911
+8    0.957453
+9    0.289418
+Name: B, dtype: float64
 </code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A    2
-B    1
-C    3
-D    0
-dtype: int64
-</code></pre></div></div>
+<h1 id="-absnumber">»&gt; abs(number)</h1>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">notnull</span><span class="p">().</span><span class="nb">sum</span><span class="p">()</span>
-</code></pre></div></div>
+<p>전달한 숫자의 절대값을 돌려준다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A    1
-B    2
-C    0
-D    3
-dtype: int64
-</code></pre></div></div>
+<p>예제)</p>
+
+<p>정수</p>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <p>abs(-1)</p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<p>1</p>
+
+<p>실수</p>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <p>abs(-1.75)</p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<p>1.75</p>
 
 
             </section>

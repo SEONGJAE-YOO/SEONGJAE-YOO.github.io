@@ -11,7 +11,7 @@
 
 
 
-    <title>pandas_dataframe_and_rows</title>
+    <title>Pandas_Handling_Missing_Data</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Styles'n'Scripts -->
@@ -50,20 +50,20 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="SeongJae Yu 블로그" />
     <link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
-    <link rel="canonical" href="https://SEONGJAE-YOO.github.io/pandas_dataframe_and_rows" />
+    <link rel="canonical" href="https://SEONGJAE-YOO.github.io/PandasHandlingMissingData" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="Big Data" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="pandas_dataframe_and_rows" />
+    <meta property="og:title" content="Pandas_Handling_Missing_Data" />
     <meta property="og:description" content="SeongJae Yu 블로그" />
-    <meta property="og:url" content="https://SEONGJAE-YOO.github.io/pandas_dataframe_and_rows" />
+    <meta property="og:url" content="https://SEONGJAE-YOO.github.io/PandasHandlingMissingData" />
     <meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:tag" content="Python" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="pandas_dataframe_and_rows" />
+    <meta name="twitter:title" content="Pandas_Handling_Missing_Data" />
     <meta name="twitter:description" content="SeongJae Yu 블로그" />
     <meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
     <meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
@@ -85,7 +85,7 @@
         "name": "Big Data",
         "logo": "https://SEONGJAE-YOO.github.io/"
     },
-    "url": "https://SEONGJAE-YOO.github.io/pandas_dataframe_and_rows",
+    "url": "https://SEONGJAE-YOO.github.io/PandasHandlingMissingData",
     "image": {
         "@type": "ImageObject",
         "url": "https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png",
@@ -94,7 +94,7 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://SEONGJAE-YOO.github.io/pandas_dataframe_and_rows"
+        "@id": "https://SEONGJAE-YOO.github.io/PandasHandlingMissingData"
     },
     "description": "SeongJae Yu 블로그"
 }
@@ -109,7 +109,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="pandas_dataframe_and_rows" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Pandas_Handling_Missing_Data" href="/feed.xml" />
 
 
 
@@ -173,7 +173,7 @@ into the {body} of the default.hbs template -->
         <article class="post-full  tag-python post tag-python ">
 
             <header class="post-full-header">
-                <h1 class="post-full-title">pandas_dataframe_and_rows</h1>
+                <h1 class="post-full-title">Pandas_Handling_Missing_Data</h1>
             </header>
 
             
@@ -188,14 +188,294 @@ into the {body} of the default.hbs template -->
 <!--</ul>-->
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span>
-        <span class="p">{</span><span class="s">"a"</span> <span class="p">:</span> <span class="p">[</span><span class="mi">4</span> <span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
-        <span class="s">"b"</span> <span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
-        <span class="s">"c"</span> <span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]},</span>
-        <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                   <span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">5</span><span class="p">]],</span>
+                  <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s">'ABCD'</span><span class="p">))</span>
+<span class="n">df</span>
 </code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">'all'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p><img src="attachment:20210920_164126_1.png" alt="20210920_164126_1.png" /></p>
+
+<p>dropna의 syntax는 다음과 같습니다.</p>
+
+<p>DataFrame.dropna(axis=0/1, how=’any’/’all’, subset=[col1, col2, …], inplace=True/False)
+dropna에 들어갈 수 있는 parameter들은 더 많지만 일단 대표적인 것들만 보겠습니다.</p>
+
+<p>axis = 0/1 or ‘index’/’columns’</p>
+
+<p>0 or ‘index’ -&gt; NaN 값이 포함된 row를 drop (default 값입니다.)</p>
+
+<p>1 or ‘columns’ -&gt; NaN 값이 포함된 column을 drop</p>
+
+<p>how = ‘any’/’all’</p>
+
+<p>any -&gt; row 또는 column에 NaN값이 1개만 있어도 drop (default 값입니다.)</p>
+
+<p>all -&gt; row 또는 column에 있는 모든 값이 NaN이어야 drop</p>
+
+<p>inplace = True/False</p>
+
+<p>True -&gt; dropna가 적용된 DataFrame 자체에 dropna를 적용</p>
+
+<p>False -&gt; dropna가 적용된 DataFrame는 그대로 두고 dropna를 적용한 DataFrame을 return</p>
+
+<p>subset = [col1, col2, …]</p>
+
+<p>subset을 명시하지 않으면 DataFrame 전체(모든 column &amp; 모든 row)에 대해 dropna를 진행</p>
+
+<p>subset을 명시하면 subset에 적힌 column값에 대해서만 dropna를 진행</p>
+
+<h1 id="httpscosmosprojecttistorycom308---참고">https://cosmosproject.tistory.com/308   참고</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">'any'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#NaN 값을 0으로 채운다
+</span></code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">values</span> <span class="o">=</span> <span class="p">{</span><span class="s">'A'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">'B'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'C'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'D'</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">df</span><span class="p">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">values</span><span class="p">)</span> <span class="c1"># NaN값을 values 값으로 채운다
+</span></code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>2.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span>
 </code></pre></div></div>
@@ -218,213 +498,120 @@ into the {body} of the default.hbs template -->
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>a</th>
-      <th>b</th>
-      <th>c</th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>1</th>
-      <td>4</td>
-      <td>7</td>
-      <td>10</td>
+      <th>0</th>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>0</td>
     </tr>
-    <tr>
-      <th>2</th>
-      <td>5</td>
-      <td>8</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>6</td>
-      <td>9</td>
-      <td>12</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s">"a"</span><span class="p">]</span>
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>6
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s">"a"</span><span class="p">,</span> <span class="s">"b"</span><span class="p">]]</span>
-</code></pre></div></div>
-
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>a</th>
-      <th>b</th>
-    </tr>
-  </thead>
-  <tbody>
     <tr>
       <th>1</th>
-      <td>4</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>5</td>
-      <td>8</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span>
-        <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">]],</span>
-        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">"a"</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">])</span>
-<span class="n">df</span>
-</code></pre></div></div>
-
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>a</th>
-      <th>b</th>
-      <th>c</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>4</td>
-      <td>7</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>5</td>
-      <td>8</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>6</td>
-      <td>9</td>
-      <td>12</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span>
-        <span class="p">{</span><span class="s">"a"</span> <span class="p">:</span> <span class="p">[</span><span class="mi">4</span> <span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">],</span>
-        <span class="s">"b"</span> <span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
-        <span class="s">"c"</span> <span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">12</span><span class="p">]},</span>
-        <span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">MultiIndex</span><span class="p">.</span><span class="n">from_tuples</span><span class="p">(</span>
-        <span class="p">[(</span><span class="s">'d'</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="s">'d'</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="s">'e'</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="s">'e'</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="s">'e'</span><span class="p">,</span><span class="mi">4</span><span class="p">)],</span>
-        <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">'n'</span><span class="p">,</span><span class="s">'v'</span><span class="p">]))</span>
-<span class="n">df</span>
-</code></pre></div></div>
-
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>a</th>
-      <th>b</th>
-      <th>c</th>
-    </tr>
-    <tr>
-      <th>n</th>
-      <th>v</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="2" valign="top">d</th>
-      <th>1</th>
+      <td>3.0</td>
       <td>4.0</td>
-      <td>7.0</td>
-      <td>10.0</td>
+      <td>NaN</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fill_na_value</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'D'</span><span class="p">].</span><span class="nb">max</span><span class="p">()</span>
+<span class="n">fill_na_value</span>
+
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">fill_na_value</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>5.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2</th>
       <td>5.0</td>
-      <td>8.0</td>
-      <td>11.0</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">e</th>
-      <th>2</th>
-      <td>6.0</td>
-      <td>NaN</td>
-      <td>12.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>6.0</td>
-      <td>9.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>NaN</td>
-      <td>9.0</td>
-      <td>12.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>5</td>
     </tr>
   </tbody>
 </table>
 </div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">isnull</span><span class="p">().</span><span class="nb">sum</span><span class="p">()</span>
+
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A    2
+B    1
+C    3
+D    0
+dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">notnull</span><span class="p">().</span><span class="nb">sum</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A    1
+B    2
+C    0
+D    3
+dtype: int64
+</code></pre></div></div>
 
 
             </section>
