@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>머신러닝 프로그래밍 5주차-Random number</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- 웹폰트 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="SeongJae Yu 블로그" />
+    <link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
+    <link rel="canonical" href="https://SEONGJAE-YOO.github.io/05" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Big Data" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="머신러닝 프로그래밍 5주차-Random number" />
+    <meta property="og:description" content="SeongJae Yu 블로그" />
+    <meta property="og:url" content="https://SEONGJAE-YOO.github.io/05" />
+    <meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:tag" content="Python" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="머신러닝 프로그래밍 5주차-Random number" />
+    <meta name="twitter:description" content="SeongJae Yu 블로그" />
+    <meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
+    <meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Big Data" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Python" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="2000" />
+    <meta property="og:image:height" content="666" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Big Data",
+        "logo": "https://SEONGJAE-YOO.github.io/"
+    },
+    "url": "https://SEONGJAE-YOO.github.io/05",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://SEONGJAE-YOO.github.io/05"
+    },
+    "description": "SeongJae Yu 블로그"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="머신러닝 프로그래밍 5주차-Random number" href="/feed.xml" />
+
+
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- < default -->
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<!-- The big featured header, it uses blog cover image as a BG if available -->
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://SEONGJAE-YOO.github.io/">Big Data</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-rprogramming" role="menuitem"><a href="/tag/rprogramming/">R</a></li>
+    <li class="nav-processmining" role="menuitem"><a href="/tag/processmining/">Processmining</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag별 Posts</a>
+    </li>
+</ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-python post tag-python ">
+
+            <header class="post-full-header">
+                <h1 class="post-full-title">머신러닝 프로그래밍 5주차-Random number</h1>
+            </header>
+
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/logo-python.png)">
+            </figure>
+            
+
+            <section class="post-full-content">
+                <p><span class="table-of-contents-list"></span>
+<!--<ul class="table-of-contents-list">--></p>
+
+<!--</ul>-->
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#random number
+</span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">math</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">help</span><span class="p">(</span><span class="n">random</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Help on module random:
+
+NAME
+    random - Random variable generators.
+
+DESCRIPTION
+        integers
+        --------
+               uniform within range
+    
+        sequences
+        ---------
+               pick random element
+               pick random sample
+               pick weighted random sample
+               generate random permutation
+    
+        distributions on the real line:
+        ------------------------------
+               uniform
+               triangular
+               normal (Gaussian)
+               lognormal
+               negative exponential
+               gamma
+               beta
+               pareto
+               Weibull
+    
+        distributions on the circle (angles 0 to 2pi)
+        ---------------------------------------------
+               circular uniform
+               von Mises
+    
+    General notes on the underlying Mersenne Twister core generator:
+    
+    * The period is 2**19937-1.
+    * It is one of the most extensively tested generators in existence.
+    * The random() method is implemented in C, executes in a single Python step,
+      and is, therefore, threadsafe.
+
+CLASSES
+    _random.Random(builtins.object)
+        Random
+            SystemRandom
+    
+    class Random(_random.Random)
+     |  Random number generator base class used by bound module functions.
+     |  
+     |  Used to instantiate instances of Random to get generators that don't
+     |  share state.
+     |  
+     |  Class Random can also be subclassed if you want to use a different basic
+     |  generator of your own devising: in that case, override the following
+     |  methods:  random(), seed(), getstate(), and setstate().
+     |  Optionally, implement a getrandbits() method so that randrange()
+     |  can cover arbitrarily large ranges.
+     |  
+     |  Method resolution order:
+     |      Random
+     |      _random.Random
+     |      builtins.object
+     |  
+     |  Methods defined here:
+     |  
+     |  __getstate__(self)
+     |      # Issue 17489: Since __reduce__ was defined to fix #759889 this is no
+     |      # longer called; we leave it here because it has been here since random was
+     |      # rewritten back in 2001 and why risk breaking something.
+     |  
+     |  __init__(self, x=None)
+     |      Initialize an instance.
+     |      
+     |      Optional argument x controls seeding, as for Random.seed().
+     |  
+     |  __reduce__(self)
+     |      helper for pickle
+     |  
+     |  __setstate__(self, state)
+     |  
+     |  betavariate(self, alpha, beta)
+     |      Beta distribution.
+     |      
+     |      Conditions on the parameters are alpha &gt; 0 and beta &gt; 0.
+     |      Returned values range between 0 and 1.
+     |  
+     |  choice(self, seq)
+     |      Choose a random element from a non-empty sequence.
+     |  
+     |  choices(self, population, weights=None, *, cum_weights=None, k=1)
+     |      Return a k sized list of population elements chosen with replacement.
+     |      
+     |      If the relative weights or cumulative weights are not specified,
+     |      the selections are made with equal probability.
+     |  
+     |  expovariate(self, lambd)
+     |      Exponential distribution.
+     |      
+     |      lambd is 1.0 divided by the desired mean.  It should be
+     |      nonzero.  (The parameter would be called "lambda", but that is
+     |      a reserved word in Python.)  Returned values range from 0 to
+     |      positive infinity if lambd is positive, and from negative
+     |      infinity to 0 if lambd is negative.
+     |  
+     |  gammavariate(self, alpha, beta)
+     |      Gamma distribution.  Not the gamma function!
+     |      
+     |      Conditions on the parameters are alpha &gt; 0 and beta &gt; 0.
+     |      
+     |      The probability distribution function is:
+     |      
+     |                  x ** (alpha - 1) * math.exp(-x / beta)
+     |        pdf(x) =  --------------------------------------
+     |                    math.gamma(alpha) * beta ** alpha
+     |  
+     |  gauss(self, mu, sigma)
+     |      Gaussian distribution.
+     |      
+     |      mu is the mean, and sigma is the standard deviation.  This is
+     |      slightly faster than the normalvariate() function.
+     |      
+     |      Not thread-safe without a lock around calls.
+     |  
+     |  getstate(self)
+     |      Return internal state; can be passed to setstate() later.
+     |  
+     |  lognormvariate(self, mu, sigma)
+     |      Log normal distribution.
+     |      
+     |      If you take the natural logarithm of this distribution, you'll get a
+     |      normal distribution with mean mu and standard deviation sigma.
+     |      mu can have any value, and sigma must be greater than zero.
+     |  
+     |  normalvariate(self, mu, sigma)
+     |      Normal distribution.
+     |      
+     |      mu is the mean, and sigma is the standard deviation.
+     |  
+     |  paretovariate(self, alpha)
+     |      Pareto distribution.  alpha is the shape parameter.
+     |  
+     |  randint(self, a, b)
+     |      Return random integer in range [a, b], including both end points.
+     |  
+     |  randrange(self, start, stop=None, step=1, _int=&lt;class 'int'&gt;)
+     |      Choose a random item from range(start, stop[, step]).
+     |      
+     |      This fixes the problem with randint() which includes the
+     |      endpoint; in Python this is usually not what you want.
+     |  
+     |  sample(self, population, k)
+     |      Chooses k unique random elements from a population sequence or set.
+     |      
+     |      Returns a new list containing elements from the population while
+     |      leaving the original population unchanged.  The resulting list is
+     |      in selection order so that all sub-slices will also be valid random
+     |      samples.  This allows raffle winners (the sample) to be partitioned
+     |      into grand prize and second place winners (the subslices).
+     |      
+     |      Members of the population need not be hashable or unique.  If the
+     |      population contains repeats, then each occurrence is a possible
+     |      selection in the sample.
+     |      
+     |      To choose a sample in a range of integers, use range as an argument.
+     |      This is especially fast and space efficient for sampling from a
+     |      large population:   sample(range(10000000), 60)
+     |  
+     |  seed(self, a=None, version=2)
+     |      Initialize internal state from hashable object.
+     |      
+     |      None or no argument seeds from current time or from an operating
+     |      system specific randomness source if available.
+     |      
+     |      If *a* is an int, all bits are used.
+     |      
+     |      For version 2 (the default), all of the bits are used if *a* is a str,
+     |      bytes, or bytearray.  For version 1 (provided for reproducing random
+     |      sequences from older versions of Python), the algorithm for str and
+     |      bytes generates a narrower range of seeds.
+     |  
+     |  setstate(self, state)
+     |      Restore internal state from object returned by getstate().
+     |  
+     |  shuffle(self, x, random=None)
+     |      Shuffle list x in place, and return None.
+     |      
+     |      Optional argument random is a 0-argument function returning a
+     |      random float in [0.0, 1.0); if it is the default None, the
+     |      standard random.random will be used.
+     |  
+     |  triangular(self, low=0.0, high=1.0, mode=None)
+     |      Triangular distribution.
+     |      
+     |      Continuous distribution bounded by given lower and upper limits,
+     |      and having a given mode value in-between.
+     |      
+     |      http://en.wikipedia.org/wiki/Triangular_distribution
+     |  
+     |  uniform(self, a, b)
+     |      Get a random number in the range [a, b) or [a, b] depending on rounding.
+     |  
+     |  vonmisesvariate(self, mu, kappa)
+     |      Circular data distribution.
+     |      
+     |      mu is the mean angle, expressed in radians between 0 and 2*pi, and
+     |      kappa is the concentration parameter, which must be greater than or
+     |      equal to zero.  If kappa is equal to zero, this distribution reduces
+     |      to a uniform random angle over the range 0 to 2*pi.
+     |  
+     |  weibullvariate(self, alpha, beta)
+     |      Weibull distribution.
+     |      
+     |      alpha is the scale parameter and beta is the shape parameter.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  VERSION = 3
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _random.Random:
+     |  
+     |  __getattribute__(self, name, /)
+     |      Return getattr(self, name).
+     |  
+     |  __new__(*args, **kwargs) from builtins.type
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |  
+     |  getrandbits(...)
+     |      getrandbits(k) -&gt; x.  Generates an int with k random bits.
+     |  
+     |  random(...)
+     |      random() -&gt; x in the interval [0, 1).
+    
+    class SystemRandom(Random)
+     |  Alternate random number generator using sources provided
+     |  by the operating system (such as /dev/urandom on Unix or
+     |  CryptGenRandom on Windows).
+     |  
+     |   Not available on all systems (see os.urandom() for details).
+     |  
+     |  Method resolution order:
+     |      SystemRandom
+     |      Random
+     |      _random.Random
+     |      builtins.object
+     |  
+     |  Methods defined here:
+     |  
+     |  getrandbits(self, k)
+     |      getrandbits(k) -&gt; x.  Generates an int with k random bits.
+     |  
+     |  getstate = _notimplemented(self, *args, **kwds)
+     |  
+     |  random(self)
+     |      Get the next random number in the range [0.0, 1.0).
+     |  
+     |  seed(self, *args, **kwds)
+     |      Stub method.  Not used for a system random number generator.
+     |  
+     |  setstate = _notimplemented(self, *args, **kwds)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from Random:
+     |  
+     |  __getstate__(self)
+     |      # Issue 17489: Since __reduce__ was defined to fix #759889 this is no
+     |      # longer called; we leave it here because it has been here since random was
+     |      # rewritten back in 2001 and why risk breaking something.
+     |  
+     |  __init__(self, x=None)
+     |      Initialize an instance.
+     |      
+     |      Optional argument x controls seeding, as for Random.seed().
+     |  
+     |  __reduce__(self)
+     |      helper for pickle
+     |  
+     |  __setstate__(self, state)
+     |  
+     |  betavariate(self, alpha, beta)
+     |      Beta distribution.
+     |      
+     |      Conditions on the parameters are alpha &gt; 0 and beta &gt; 0.
+     |      Returned values range between 0 and 1.
+     |  
+     |  choice(self, seq)
+     |      Choose a random element from a non-empty sequence.
+     |  
+     |  choices(self, population, weights=None, *, cum_weights=None, k=1)
+     |      Return a k sized list of population elements chosen with replacement.
+     |      
+     |      If the relative weights or cumulative weights are not specified,
+     |      the selections are made with equal probability.
+     |  
+     |  expovariate(self, lambd)
+     |      Exponential distribution.
+     |      
+     |      lambd is 1.0 divided by the desired mean.  It should be
+     |      nonzero.  (The parameter would be called "lambda", but that is
+     |      a reserved word in Python.)  Returned values range from 0 to
+     |      positive infinity if lambd is positive, and from negative
+     |      infinity to 0 if lambd is negative.
+     |  
+     |  gammavariate(self, alpha, beta)
+     |      Gamma distribution.  Not the gamma function!
+     |      
+     |      Conditions on the parameters are alpha &gt; 0 and beta &gt; 0.
+     |      
+     |      The probability distribution function is:
+     |      
+     |                  x ** (alpha - 1) * math.exp(-x / beta)
+     |        pdf(x) =  --------------------------------------
+     |                    math.gamma(alpha) * beta ** alpha
+     |  
+     |  gauss(self, mu, sigma)
+     |      Gaussian distribution.
+     |      
+     |      mu is the mean, and sigma is the standard deviation.  This is
+     |      slightly faster than the normalvariate() function.
+     |      
+     |      Not thread-safe without a lock around calls.
+     |  
+     |  lognormvariate(self, mu, sigma)
+     |      Log normal distribution.
+     |      
+     |      If you take the natural logarithm of this distribution, you'll get a
+     |      normal distribution with mean mu and standard deviation sigma.
+     |      mu can have any value, and sigma must be greater than zero.
+     |  
+     |  normalvariate(self, mu, sigma)
+     |      Normal distribution.
+     |      
+     |      mu is the mean, and sigma is the standard deviation.
+     |  
+     |  paretovariate(self, alpha)
+     |      Pareto distribution.  alpha is the shape parameter.
+     |  
+     |  randint(self, a, b)
+     |      Return random integer in range [a, b], including both end points.
+     |  
+     |  randrange(self, start, stop=None, step=1, _int=&lt;class 'int'&gt;)
+     |      Choose a random item from range(start, stop[, step]).
+     |      
+     |      This fixes the problem with randint() which includes the
+     |      endpoint; in Python this is usually not what you want.
+     |  
+     |  sample(self, population, k)
+     |      Chooses k unique random elements from a population sequence or set.
+     |      
+     |      Returns a new list containing elements from the population while
+     |      leaving the original population unchanged.  The resulting list is
+     |      in selection order so that all sub-slices will also be valid random
+     |      samples.  This allows raffle winners (the sample) to be partitioned
+     |      into grand prize and second place winners (the subslices).
+     |      
+     |      Members of the population need not be hashable or unique.  If the
+     |      population contains repeats, then each occurrence is a possible
+     |      selection in the sample.
+     |      
+     |      To choose a sample in a range of integers, use range as an argument.
+     |      This is especially fast and space efficient for sampling from a
+     |      large population:   sample(range(10000000), 60)
+     |  
+     |  shuffle(self, x, random=None)
+     |      Shuffle list x in place, and return None.
+     |      
+     |      Optional argument random is a 0-argument function returning a
+     |      random float in [0.0, 1.0); if it is the default None, the
+     |      standard random.random will be used.
+     |  
+     |  triangular(self, low=0.0, high=1.0, mode=None)
+     |      Triangular distribution.
+     |      
+     |      Continuous distribution bounded by given lower and upper limits,
+     |      and having a given mode value in-between.
+     |      
+     |      http://en.wikipedia.org/wiki/Triangular_distribution
+     |  
+     |  uniform(self, a, b)
+     |      Get a random number in the range [a, b) or [a, b] depending on rounding.
+     |  
+     |  vonmisesvariate(self, mu, kappa)
+     |      Circular data distribution.
+     |      
+     |      mu is the mean angle, expressed in radians between 0 and 2*pi, and
+     |      kappa is the concentration parameter, which must be greater than or
+     |      equal to zero.  If kappa is equal to zero, this distribution reduces
+     |      to a uniform random angle over the range 0 to 2*pi.
+     |  
+     |  weibullvariate(self, alpha, beta)
+     |      Weibull distribution.
+     |      
+     |      alpha is the scale parameter and beta is the shape parameter.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from Random:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from Random:
+     |  
+     |  VERSION = 3
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _random.Random:
+     |  
+     |  __getattribute__(self, name, /)
+     |      Return getattr(self, name).
+     |  
+     |  __new__(*args, **kwargs) from builtins.type
+     |      Create and return a new object.  See help(type) for accurate signature.
+
+FUNCTIONS
+    betavariate(alpha, beta) method of Random instance
+        Beta distribution.
+        
+        Conditions on the parameters are alpha &gt; 0 and beta &gt; 0.
+        Returned values range between 0 and 1.
+    
+    choice(seq) method of Random instance
+        Choose a random element from a non-empty sequence.
+    
+    choices(population, weights=None, *, cum_weights=None, k=1) method of Random instance
+        Return a k sized list of population elements chosen with replacement.
+        
+        If the relative weights or cumulative weights are not specified,
+        the selections are made with equal probability.
+    
+    expovariate(lambd) method of Random instance
+        Exponential distribution.
+        
+        lambd is 1.0 divided by the desired mean.  It should be
+        nonzero.  (The parameter would be called "lambda", but that is
+        a reserved word in Python.)  Returned values range from 0 to
+        positive infinity if lambd is positive, and from negative
+        infinity to 0 if lambd is negative.
+    
+    gammavariate(alpha, beta) method of Random instance
+        Gamma distribution.  Not the gamma function!
+        
+        Conditions on the parameters are alpha &gt; 0 and beta &gt; 0.
+        
+        The probability distribution function is:
+        
+                    x ** (alpha - 1) * math.exp(-x / beta)
+          pdf(x) =  --------------------------------------
+                      math.gamma(alpha) * beta ** alpha
+    
+    gauss(mu, sigma) method of Random instance
+        Gaussian distribution.
+        
+        mu is the mean, and sigma is the standard deviation.  This is
+        slightly faster than the normalvariate() function.
+        
+        Not thread-safe without a lock around calls.
+    
+    getrandbits(...) method of Random instance
+        getrandbits(k) -&gt; x.  Generates an int with k random bits.
+    
+    getstate() method of Random instance
+        Return internal state; can be passed to setstate() later.
+    
+    lognormvariate(mu, sigma) method of Random instance
+        Log normal distribution.
+        
+        If you take the natural logarithm of this distribution, you'll get a
+        normal distribution with mean mu and standard deviation sigma.
+        mu can have any value, and sigma must be greater than zero.
+    
+    normalvariate(mu, sigma) method of Random instance
+        Normal distribution.
+        
+        mu is the mean, and sigma is the standard deviation.
+    
+    paretovariate(alpha) method of Random instance
+        Pareto distribution.  alpha is the shape parameter.
+    
+    randint(a, b) method of Random instance
+        Return random integer in range [a, b], including both end points.
+    
+    random(...) method of Random instance
+        random() -&gt; x in the interval [0, 1).
+    
+    randrange(start, stop=None, step=1, _int=&lt;class 'int'&gt;) method of Random instance
+        Choose a random item from range(start, stop[, step]).
+        
+        This fixes the problem with randint() which includes the
+        endpoint; in Python this is usually not what you want.
+    
+    sample(population, k) method of Random instance
+        Chooses k unique random elements from a population sequence or set.
+        
+        Returns a new list containing elements from the population while
+        leaving the original population unchanged.  The resulting list is
+        in selection order so that all sub-slices will also be valid random
+        samples.  This allows raffle winners (the sample) to be partitioned
+        into grand prize and second place winners (the subslices).
+        
+        Members of the population need not be hashable or unique.  If the
+        population contains repeats, then each occurrence is a possible
+        selection in the sample.
+        
+        To choose a sample in a range of integers, use range as an argument.
+        This is especially fast and space efficient for sampling from a
+        large population:   sample(range(10000000), 60)
+    
+    seed(a=None, version=2) method of Random instance
+        Initialize internal state from hashable object.
+        
+        None or no argument seeds from current time or from an operating
+        system specific randomness source if available.
+        
+        If *a* is an int, all bits are used.
+        
+        For version 2 (the default), all of the bits are used if *a* is a str,
+        bytes, or bytearray.  For version 1 (provided for reproducing random
+        sequences from older versions of Python), the algorithm for str and
+        bytes generates a narrower range of seeds.
+    
+    setstate(state) method of Random instance
+        Restore internal state from object returned by getstate().
+    
+    shuffle(x, random=None) method of Random instance
+        Shuffle list x in place, and return None.
+        
+        Optional argument random is a 0-argument function returning a
+        random float in [0.0, 1.0); if it is the default None, the
+        standard random.random will be used.
+    
+    triangular(low=0.0, high=1.0, mode=None) method of Random instance
+        Triangular distribution.
+        
+        Continuous distribution bounded by given lower and upper limits,
+        and having a given mode value in-between.
+        
+        http://en.wikipedia.org/wiki/Triangular_distribution
+    
+    uniform(a, b) method of Random instance
+        Get a random number in the range [a, b) or [a, b] depending on rounding.
+    
+    vonmisesvariate(mu, kappa) method of Random instance
+        Circular data distribution.
+        
+        mu is the mean angle, expressed in radians between 0 and 2*pi, and
+        kappa is the concentration parameter, which must be greater than or
+        equal to zero.  If kappa is equal to zero, this distribution reduces
+        to a uniform random angle over the range 0 to 2*pi.
+    
+    weibullvariate(alpha, beta) method of Random instance
+        Weibull distribution.
+        
+        alpha is the scale parameter and beta is the shape parameter.
+
+DATA
+    __all__ = ['Random', 'seed', 'random', 'uniform', 'randint', 'choice',...
+
+FILE
+    c:\users\mycom\anaconda3\envs\text_analysis\lib\random.py
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.7670211937195743
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">())</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.17853941074018576
+0.24078551563614214
+0.05803909225913839
+0.21738369488110454
+0.7634644499136808
+0.19601377974947265
+0.27322946755619915
+0.9827421870732083
+0.7984488944866946
+0.3791431427922013
+0.508453111179799
+0.365187832248034
+0.12918543444331299
+0.2128350100900981
+0.1165951494692361
+0.862634853323518
+0.3913387074916431
+0.6195165562346545
+0.9892344008563827
+0.4839026562421024
+0.441262236342017
+0.5174358545107994
+0.6822136241306501
+0.05815967685934498
+0.14410336668954182
+0.22718949244775277
+0.6914258927483586
+0.9124332965803907
+0.37670794447415845
+0.4579689578301217
+0.948983429219519
+0.6397274408616093
+0.4654338016670655
+0.32161831088284976
+0.9968145177557893
+0.5391130285700385
+0.8825666205454724
+0.2369269810441137
+0.7961822675104787
+0.10929231329402067
+0.6642424672402419
+0.6095253447084868
+0.6284214140217939
+0.5015318322870118
+0.4462181176186376
+0.9874620465312184
+0.13203247733587498
+0.04772201313282587
+0.17036229946565218
+0.019542344462530337
+0.8585818810061516
+0.7296694506278822
+0.7247897330496671
+0.7963202060972204
+0.9963833013484522
+0.4626007565157356
+0.23723893388612194
+0.6762904863751602
+0.19076665166195916
+0.4753970243799518
+0.790255877195765
+0.6196246500452763
+0.17449533537511963
+0.5759244346197357
+0.9840910848202006
+0.7820636124146645
+0.4496091730539794
+0.06192788617564082
+0.5361627137714811
+0.6730707388685495
+0.05135000567611747
+0.31372224531237225
+0.591180556391752
+0.316594521350701
+0.8353892444936569
+0.5337755926459049
+0.02627738665422863
+0.12357280570650675
+0.5852069821340897
+0.8309099048760016
+0.7515790795323968
+0.8582720985284803
+0.3685036349130093
+0.20303397801728673
+0.6887229237546298
+0.8906311172350309
+0.9786887925584895
+0.9265772709700697
+0.8392783035693331
+0.31589340259561305
+0.022475283858571005
+0.08402224280190451
+0.65217290537766
+0.6956044317132433
+0.5315094580324417
+0.524738316116775
+0.7235309203553308
+0.23702451035031424
+0.20003340973532968
+0.18074714676755066
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">133</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">())</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.493832650441572
+0.48235391320532917
+0.7689526722996671
+0.808287849811999
+0.3386806464328038
+0.5450011915983036
+0.6209130640487355
+0.7094136094538673
+0.9502045812629195
+0.7440645700760408
+0.8739469668363007
+0.663317836223428
+0.26382876910335307
+0.2858200536562322
+0.006732474093990137
+0.5036056445766783
+0.15830317206862154
+0.2858468209136603
+0.14963243151131322
+0.007159068497511689
+0.7683616832417255
+0.32384850032018264
+0.653139252705783
+0.9051722599654979
+0.29034436546291387
+0.5775551718418203
+0.12843071387346439
+0.11734390246778603
+0.7015265846508781
+0.08505581256166939
+0.9878769317899727
+0.2537944875221303
+0.8782677059503062
+0.9649793942632773
+0.07164749133631476
+0.40000668049294663
+0.4952648794552247
+0.23201762274939308
+0.25220900105584965
+0.3921220190371446
+0.47405490058424216
+0.26861923487038986
+0.6054173177764236
+0.5427522870419532
+0.5491257215192765
+0.035984351749888566
+0.9106278462592844
+0.3957053230816926
+0.4026581611496015
+0.1805927413745666
+0.27879017765246616
+0.5943860515391657
+0.4251590912343378
+0.9257558017747352
+0.4674337871444665
+0.3675714919819112
+0.8385183580811902
+0.8136375095645615
+0.9643070029441349
+0.8526643607484812
+0.5731506812302488
+0.8299413276420528
+0.14410022674059386
+0.1006793169388932
+0.005716212236372531
+0.6681790955082164
+0.7949360380354054
+0.20120442060062216
+0.7538099164613237
+0.24342906097992922
+0.8477155565562989
+0.1625751304094294
+0.28084834165723194
+0.30354107986765155
+0.46451190685632004
+0.7775133226539073
+0.5053764800826573
+0.8252832176418569
+0.07058310251667099
+0.6434720467459422
+0.06765121631971205
+0.07861255146894408
+0.4195391707460846
+0.8691448644453975
+0.6756185895536558
+0.7173037896187963
+0.1798252220639457
+0.9357539913857694
+0.9053864140739503
+0.5706607449118849
+0.8095288269787314
+0.5216948228922499
+0.8189070032500303
+0.4085917676431662
+0.5758280820702302
+0.2610613159483093
+0.6600872443704426
+0.536881723817665
+0.7784742612824026
+0.9582123581907775
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">res</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Face"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Back"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Face
+Face
+Face
+Back
+Back
+Back
+Face
+Back
+Back
+Back
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">xs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">()</span>
+    <span class="n">xs</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="c1">#[conda env:text_analysis] 가상환경에서 실행했음
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(array([ 8., 14., 13., 15., 12., 11., 12.,  4.,  6.,  5.]),
+ array([3.02054188e-05, 9.92267322e-02, 1.98423259e-01, 2.97619786e-01,
+        3.96816313e-01, 4.96012839e-01, 5.95209366e-01, 6.94405893e-01,
+        7.93602420e-01, 8.92798946e-01, 9.91995473e-01]),
+ &lt;BarContainer object of 10 artists&gt;)
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/output_8_1.png" alt="output_8_1" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">matplotlib</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Requirement already satisfied: matplotlib in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (3.3.4)
+Requirement already satisfied: numpy&gt;=1.15 in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from matplotlib) (1.17.0)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&gt;=2.0.3 in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from matplotlib) (2.4.7)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from matplotlib) (1.3.1)
+Requirement already satisfied: pillow&gt;=6.2.0 in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from matplotlib) (8.3.1)
+Requirement already satisfied: python-dateutil&gt;=2.1 in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from matplotlib) (2.8.2)
+Requirement already satisfied: cycler&gt;=0.10 in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from matplotlib) (0.10.0)
+Requirement already satisfied: six in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from cycler&gt;=0.10-&gt;matplotlib) (1.16.0)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">xs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">()</span>
+    <span class="n">xs</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">xs</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/output_12_0.png" alt="output_12_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">xs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">()</span>
+    <span class="n">xs</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">xs</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/output_15_0.png" alt="output_15_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">xs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100000</span><span class="p">):</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">()</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span> <span class="c1"># [0,1] -&gt; [0,2] -&gt; [1,3]
+</span>    <span class="n">y1</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">()</span><span class="o">*</span><span class="mi">7</span>
+    
+    <span class="k">if</span> <span class="n">y1</span> <span class="o">&lt;</span> <span class="n">pdf</span><span class="p">(</span><span class="n">x1</span><span class="p">):</span> <span class="c1">#accept
+</span>        <span class="n">xs</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+        
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/output_18_0.png" alt="output_18_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 2
+</span><span class="k">def</span> <span class="nf">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">xx</span> <span class="o">=</span> <span class="n">x</span><span class="o">-</span><span class="mf">1.5</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">xx</span><span class="o">*</span><span class="n">xx</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">xs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">):</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">()</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span> <span class="c1"># [0,1] -&gt; [0,2] -&gt; [1,3]
+</span>    <span class="n">y1</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">()</span><span class="o">*</span><span class="mi">7</span>
+    
+    <span class="k">if</span> <span class="n">y1</span> <span class="o">&lt;</span> <span class="n">pdf</span><span class="p">(</span><span class="n">x1</span><span class="p">):</span> <span class="c1">#accept
+</span>        <span class="n">xs</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+        
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/output_21_0.png" alt="output_21_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#확률 분포 함수 
+#1. y = ax + b 랜덤 모델 만들기
+# accept 리절트로 짜보기
+</span>
+<span class="c1">#2 적분 0 사이 1 랜덤 넘버(인벌스 트랜지포메이션) 직선 형태 랜덤 모델 만들기
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#1. y = ax+b
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># y=x
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">xi</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">xf</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="mi">6</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span><span class="n">xf</span><span class="p">,</span><span class="n">grid</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.  0.2 0.4 0.6 0.8 1. ]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y</span> <span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'x'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'y'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span><span class="n">xf</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlim</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">'#920016'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x199d8d4ad68&gt;]
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/output_29_1.png" alt="output_29_1" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#2.적분 0 사이 1 직선 형태 랜덤 모델 만들기
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># y =x
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">xi</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">xf</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="mi">6</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span><span class="n">xf</span><span class="p">,</span><span class="n">grid</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.  0.2 0.4 0.6 0.8 1. ]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dx1</span> <span class="o">=</span> <span class="p">(</span><span class="n">xf</span><span class="o">-</span><span class="n">xi</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">grid</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">dx2</span> <span class="o">=</span> <span class="p">(</span><span class="n">xf</span><span class="o">-</span><span class="n">xi</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">grid</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dx</span> <span class="o">=</span> <span class="p">[</span><span class="n">dx1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">dx2</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">grid</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">dx1</span><span class="p">]</span> <span class="c1">#list으로 만들고
+</span><span class="n">dx</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">dx</span><span class="p">)</span> <span class="c1">#array으로 변경하기
+</span><span class="k">print</span><span class="p">(</span><span class="s">'dx'</span><span class="p">,</span><span class="n">dx</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dx [0.1 0.2 0.2 0.2 0.2 0.1]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y</span> <span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'Integration:'</span><span class="p">,</span><span class="nb">sum</span><span class="p">(</span><span class="n">y</span> <span class="o">*</span> <span class="n">dx</span><span class="p">))</span>  <span class="c1">#적분 확인
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Integration: 0.5000000000000001
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'x'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'y'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span><span class="n">xf</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylim</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">'#920016'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x199d6e9ea20&gt;]
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/output_39_1.png" alt="output_39_1" /></p>
+
+
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+<script>
+$(function() {
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+});
+</script>
+
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://SEONGJAE-YOO.github.io/">Big Data</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <h1 class="subscribe-overlay-title">Search Big Data</h1>
+            <p class="subscribe-overlay-description">
+                lunr.js를 이용한 posts 검색 </p>
+            <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+        </div>
+    </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
