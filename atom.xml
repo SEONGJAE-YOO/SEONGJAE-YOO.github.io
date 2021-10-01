@@ -8,6 +8,60 @@
     
       
       <item>
+        <title>pandas_dataframe_and_rows</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+</description>
+        
+        <pubDate>Sat, 02 Oct 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/pandas_dataframe_and_rows</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/pandas_dataframe_and_rows</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>파이썬 판다스 assign 으로 새로운 컬럼 만들기,qcut으로 binning, bucketing 하기</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+</description>
+        
+        <pubDate>Sat, 02 Oct 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/Pandas_Make_New_Columns</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/Pandas_Make_New_Columns</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Pandas_Handling_Missing_Data</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+</description>
+        
+        <pubDate>Sat, 02 Oct 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/Pandas_Handling_Missing_Data</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/Pandas_Handling_Missing_Data</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>빅데이터 시각화 4주차 강의</title>
         
           <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
