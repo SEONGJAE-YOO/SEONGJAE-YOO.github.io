@@ -480,10 +480,11 @@
       <item>
         <title>자전거 수요 예측 (랜덤 포레스트 활용하여 예측) 2</title>
         
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;자전거 수요 예측&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/bike-sharing-demand&quot;&gt;자전거 수요 예측 (캐글 머신러닝 탐색적 데이터 분석) 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/bike-sharing-demand-ensemble-model&quot;&gt;자전거 수요 예측 (랜덤 포레스트 활용하여 예측) 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 </description>
         
@@ -498,10 +499,11 @@
       <item>
         <title>자전거 수요 예측 (캐글 머신러닝 탐색적 데이터 분석) 1</title>
         
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;자전거 수요 예측&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/bike-sharing-demand&quot;&gt;자전거 수요 예측 (캐글 머신러닝 탐색적 데이터 분석) 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/bike-sharing-demand-ensemble-model&quot;&gt;자전거 수요 예측 (랜덤 포레스트 활용하여 예측) 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 </description>
         
