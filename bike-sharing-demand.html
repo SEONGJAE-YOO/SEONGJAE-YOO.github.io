@@ -61,7 +61,7 @@
     <meta property="og:url" content="https://SEONGJAE-YOO.github.io/bike-sharing-demand" />
     <meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
-    <meta property="article:tag" content="Python" />
+    <meta property="article:tag" content="Kaggle" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="자전거 수요 예측 (캐글 머신러닝 탐색적 데이터 분석) 1" />
     <meta name="twitter:description" content="SeongJae Yu 블로그" />
@@ -70,7 +70,7 @@
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Big Data" />
     <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="Python" />
+    <meta name="twitter:data2" content="Kaggle" />
     <meta name="twitter:site" content="@" />
     <meta name="twitter:creator" content="@" />
     <meta property="og:image:width" content="2000" />
@@ -140,6 +140,8 @@ into the {body} of the default.hbs template -->
     <li class="nav-rprogramming" role="menuitem"><a href="/tag/rprogramming/">R</a></li>
     <li class="nav-processmining" role="menuitem"><a href="/tag/processmining/">Processmining</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-kaggle" role="menuitem"><a href="/tag/kaggle">kaggle</a></li>
+
     <li class="nav-archive" role="menuitem">
         <a href="/archive.html">All Posts</a>
     </li>
@@ -170,7 +172,7 @@ into the {body} of the default.hbs template -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full  tag-python post tag-python ">
+        <article class="post-full  tag-kaggle post tag-kaggle ">
 
             <header class="post-full-header">
                 <h1 class="post-full-title">자전거 수요 예측 (캐글 머신러닝 탐색적 데이터 분석) 1</h1>
@@ -451,7 +453,7 @@ Successfully installed missingno-0.5.0
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;AxesSubplot:&gt;
 </code></pre></div></div>
 
-<p><img src="./img/kaggle/bikesharingdemand/output_8_1.png" alt="output_8_1" /></p>
+<p><img src="../../img/kaggle/bikesharingdemand/output_8_1.png" alt="output_8_1" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># datetime 년,달,일.. 초으로 나누기
 </span><span class="n">train</span><span class="p">[</span><span class="s">"year"</span><span class="p">]</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s">"datetime"</span><span class="p">].</span><span class="n">dt</span><span class="p">.</span><span class="n">year</span>
@@ -638,7 +640,7 @@ Successfully installed missingno-0.5.0
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Text(0.5, 0, 'hour'), Text(0.5, 1.0, '시간별 대여량')]
 </code></pre></div></div>
 
-<p><img src="./img/kaggle/bikesharingdemand/output_11_1.png" alt="output_11_1" /></p>
+<p><img src="../../img/kaggle/bikesharingdemand/output_11_1.png" alt="output_11_1" /></p>
 
 <p>연도별 대여량은 2011년 보다 2012년이 더 많다.</p>
 
@@ -668,7 +670,7 @@ Successfully installed missingno-0.5.0
  Text(0.5, 1.0, '근무일 여부에 따른 대여량')]
 </code></pre></div></div>
 
-<p><img src="./img/kaggle/bikesharingdemand/output_13_1.png" alt="output_13_1" /></p>
+<p><img src="../../img/kaggle/bikesharingdemand/output_13_1.png" alt="output_13_1" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train</span><span class="p">[</span><span class="s">"dayofweek"</span><span class="p">]</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s">"datetime"</span><span class="p">].</span><span class="n">dt</span><span class="p">.</span><span class="n">dayofweek</span>    <span class="c1">#https://zephyrus1111.tistory.com/69  참고
 </span><span class="n">train</span><span class="p">.</span><span class="n">shape</span>                 <span class="c1">#월,화,수....,일 로 요일컬럼생성
@@ -707,7 +709,7 @@ Name: dayofweek, dtype: int64
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;AxesSubplot:xlabel='hour', ylabel='count'&gt;
 </code></pre></div></div>
 
-<p><img src="./img/kaggle/bikesharingdemand/output_16_1.png" alt="output_16_1" /></p>
+<p><img src="../../img/kaggle/bikesharingdemand/output_16_1.png" alt="output_16_1" /></p>
 
 <ul>
   <li>season : 봄,여름,가을,겨울 순 / 가을에 가장 많이 자전거를 빌린다</li>
@@ -750,7 +752,7 @@ count       1.000000
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;AxesSubplot:&gt;
 </code></pre></div></div>
 
-<p><img src="./img/kaggle/bikesharingdemand/output_19_1.png" alt="output_19_1" /></p>
+<p><img src="../../img/kaggle/bikesharingdemand/output_19_1.png" alt="output_19_1" /></p>
 
 <p>온도, 습도, 풍속은 거의 연관관계가 없다.</p>
 
@@ -768,7 +770,7 @@ count       1.000000
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;AxesSubplot:xlabel='humidity', ylabel='count'&gt;
 </code></pre></div></div>
 
-<p><img src="./img/kaggle/bikesharingdemand/output_21_1.png" alt="output_21_1" /></p>
+<p><img src="../../img/kaggle/bikesharingdemand/output_21_1.png" alt="output_21_1" /></p>
 
 <ul>
   <li>풍속의 경우 0에 숫자가 몰려 있는 것으로 보인다. 아마도 관측되지 않은 수치에 대해 0으로 기록된 것이 아닐까 추측해 본다.</li>
@@ -908,9 +910,9 @@ count       1.000000
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;AxesSubplot:xlabel='year_month', ylabel='count'&gt;
 </code></pre></div></div>
 
-<p><img src="./img/kaggle/bikesharingdemand/output_25_1.png" alt="output_25_1" /></p>
+<p><img src="../../img/kaggle/bikesharingdemand/output_25_1.png" alt="output_25_1" /></p>
 
-<p><img src="./img/kaggle/bikesharingdemand/output_25_2.png" alt="output_25_2" /></p>
+<p><img src="../../img/kaggle/bikesharingdemand/output_25_2.png" alt="output_25_2" /></p>
 
 <ul>
   <li>2011년보다 2012년의 대여량이 더 많다.</li>
@@ -947,7 +949,7 @@ count       1.000000
  (1.3486990121229778, 4.562423868087808, 0.9581176780909619))
 </code></pre></div></div>
 
-<p><img src="./img/kaggle/bikesharingdemand/output_29_1.png" alt="output_29_1" /></p>
+<p><img src="../../img/kaggle/bikesharingdemand/output_29_1.png" alt="output_29_1" /></p>
 
 <p>count변수가 오른쪽에 치우쳐져 있다. 대부분의 기계학습은 종속변수가 normal 이어야 하기에 정규분포를 갖는 것이 바람직하다. 대안으로 outlier data를 제거하고 “count”변수에 로그를 씌워 변경해 봐도 정규분포를 따르지는 않지만 이전 그래프보다는 좀 더 자세히 표현하고 있다.</p>
 

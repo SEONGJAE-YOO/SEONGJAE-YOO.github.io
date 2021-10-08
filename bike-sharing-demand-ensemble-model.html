@@ -61,7 +61,7 @@
     <meta property="og:url" content="https://SEONGJAE-YOO.github.io/bike-sharing-demand-ensemble-model" />
     <meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
-    <meta property="article:tag" content="Python" />
+    <meta property="article:tag" content="Kaggle" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="자전거 수요 예측 (랜덤 포레스트 활용하여 예측) 2" />
     <meta name="twitter:description" content="SeongJae Yu 블로그" />
@@ -70,7 +70,7 @@
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Big Data" />
     <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="Python" />
+    <meta name="twitter:data2" content="Kaggle" />
     <meta name="twitter:site" content="@" />
     <meta name="twitter:creator" content="@" />
     <meta property="og:image:width" content="2000" />
@@ -140,6 +140,8 @@ into the {body} of the default.hbs template -->
     <li class="nav-rprogramming" role="menuitem"><a href="/tag/rprogramming/">R</a></li>
     <li class="nav-processmining" role="menuitem"><a href="/tag/processmining/">Processmining</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-kaggle" role="menuitem"><a href="/tag/kaggle">kaggle</a></li>
+
     <li class="nav-archive" role="menuitem">
         <a href="/archive.html">All Posts</a>
     </li>
@@ -170,7 +172,7 @@ into the {body} of the default.hbs template -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full  tag-python post tag-python ">
+        <article class="post-full  tag-kaggle post tag-kaggle ">
 
             <header class="post-full-header">
                 <h1 class="post-full-title">자전거 수요 예측 (랜덤 포레스트 활용하여 예측) 2</h1>
@@ -188,7 +190,7 @@ into the {body} of the default.hbs template -->
 <!--</ul>-->
 
 <h1 id="1scikit-learn-algorithm">1.scikit-learn algorithm</h1>
-<p><img src="./img/kaggle/bikesharingdemand/20210924_144528_1.png" alt="20210919_010952_1" /></p>
+<p><img src="../../img/kaggle/bikesharingdemand/20210924_144528_1.png" alt="20210919_010952_1" /></p>
 
 <p>scikit-learn이란 python을 대표하는 머신러닝 라이브러리이다. ‘사이킷런’이라고 부르기도 한다. scikit-learn은 오픈 소스로 공개되어 있으며, 개인, 비즈니스 관계없이 누구나 무료로 사용가능하다. scikit-learn은 현재도 활용하여 개발이 이루어지고 있으며, 인터넷 상에서 정보를 찾기에도 싶다. 많은 머신러닝 알고리즘이 구현되어 있는데, 어떤 알고리즘도 같은 방식으로 이용이 가능하다. 또, 샘플 데이터 셋(토이 데이터 셋)이 부속되어 있으므로, 설치하여 바로 기계 학습을 시험해볼 수 있다. 그러므로 초심자가 기계학습을 배우기 시작할 때 적합한 라이브러리라고 말한다.</p>
 
@@ -207,11 +209,11 @@ into the {body} of the default.hbs template -->
 <p>5) 필요에 따라 정밀도 등을 시각화</p>
 
 <h1 id="2-rmsle">2. RMSLE</h1>
-<p><img src="./img/kaggle/bikesharingdemand/20210924_144528_2.png" alt="20210919_010952_2" /></p>
+<p><img src="../../img/kaggle/bikesharingdemand/20210924_144528_2.png" alt="20210919_010952_2" /></p>
 
 <h1 id="3cross-validation-교차-검증">3.Cross Validation 교차 검증</h1>
 
-<p><img src="./img/kaggle/bikesharingdemand/20210924_144528_3.png" alt="20210919_010952_3" /></p>
+<p><img src="../../img/kaggle/bikesharingdemand/20210924_144528_3.png" alt="20210919_010952_3" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
@@ -670,7 +672,7 @@ into the {body} of the default.hbs template -->
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;AxesSubplot:title={'center':'test windspeed'}, xlabel='windspeed', ylabel='count'&gt;
 </code></pre></div></div>
 
-<p><img src="./img/kaggle/bikesharingdemand/output_12_1.png" alt="output_12_1" /></p>
+<p><img src="../../img/kaggle/bikesharingdemand/output_12_1.png" alt="output_12_1" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 풍속의 0값에 특정 값을 넣어준다.
 # 평균을 구해 일괄적으로 넣어줄 수도 있지만, 예측의 정확도를 높이는 데 도움이 될것 같진 않다.
@@ -769,7 +771,7 @@ into the {body} of the default.hbs template -->
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;AxesSubplot:title={'center':'train windspeed'}, xlabel='windspeed', ylabel='count'&gt;
 </code></pre></div></div>
 
-<p><img src="./img/kaggle/bikesharingdemand/output_17_1.png" alt="output_17_1" /></p>
+<p><img src="../../img/kaggle/bikesharingdemand/output_17_1.png" alt="output_17_1" /></p>
 
 <h1 id="feature-selection">Feature Selection</h1>
 <ul>
@@ -1210,7 +1212,7 @@ array([ 12.74,   5.16,   3.98,   3.68,   3.3 ,   6.42,  38.32, 104.82,
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Text(0.5, 1.0, 'test')]
 </code></pre></div></div>
 
-<p><img src="./img/kaggle/bikesharingdemand/output_36_1.png" alt="output_36_1" /></p>
+<p><img src="../../img/kaggle/bikesharingdemand/output_36_1.png" alt="output_36_1" /></p>
 
 <h1 id="submit">Submit</h1>
 

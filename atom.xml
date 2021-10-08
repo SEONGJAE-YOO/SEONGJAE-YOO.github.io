@@ -8,6 +8,44 @@
     
       
       <item>
+        <title>Airbnb-price-prediction-model을 하기위해서는 KNeighborsRegressor을 제대로 알고 넘어가자~!!</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Airbnb-price-prediction-model&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./_posts/kaggle/2021-10-08-Airbnb-price-prediction-model.md&quot;&gt;Airbnb-price-prediction-model&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./_posts/kaggle/2021-10-08-KNeighborsRegressor.md&quot;&gt;Airbnb-price-prediction-model을 하기위해서는 KNeighborsRegressor을 제대로 알고 넘어가자~!!&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Fri, 08 Oct 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/KNeighborsRegressor</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/KNeighborsRegressor</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Airbnb-price-prediction-model</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Airbnb-price-prediction-model&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./_posts/kaggle/2021-10-08-Airbnb-price-prediction-model.md&quot;&gt;Airbnb-price-prediction-model&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./_posts/kaggle/2021-10-08-KNeighborsRegressor.md&quot;&gt;Airbnb-price-prediction-model을 하기위해서는 KNeighborsRegressor을 제대로 알고 넘어가자~!!&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Fri, 08 Oct 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/Airbnb-price-prediction-model</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/Airbnb-price-prediction-model</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>빅데이터 시각화 5주차 강의</title>
         
           <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
@@ -75,6 +113,24 @@
         <link>
         https://SEONGJAE-YOO.github.io/PandasReshapingData</link>
         <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/PandasReshapingData</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>프로세스마이닝 5주차</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+</description>
+        
+        <pubDate>Tue, 05 Oct 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/processmining1005</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/processmining1005</guid>
       </item>
       
     
@@ -170,24 +226,6 @@
     
       
       <item>
-        <title>Bag of Words Meets Bags of Popcorn 캐글</title>
-        
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-</description>
-        
-        <pubDate>Fri, 01 Oct 2021 00:00:00 +0900</pubDate>
-        <link>
-        https://SEONGJAE-YOO.github.io/Bag_of_Words_Meets_Bags_of_Popcorn</link>
-        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/Bag_of_Words_Meets_Bags_of_Popcorn</guid>
-      </item>
-      
-    
-      
-      <item>
         <title>머신러닝 프로그래밍 5주차 응용하기-통계분석1</title>
         
           <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
@@ -219,6 +257,24 @@
         <link>
         https://SEONGJAE-YOO.github.io/05</link>
         <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/05</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Bag of Words Meets Bags of Popcorn 캐글</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+</description>
+        
+        <pubDate>Fri, 01 Oct 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/Bag_of_Words_Meets_Bags_of_Popcorn</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/Bag_of_Words_Meets_Bags_of_Popcorn</guid>
       </item>
       
     

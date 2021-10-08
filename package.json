@@ -26,6 +26,7 @@
         "posts_per_page": 25
     },
     "dependencies": {
-        "jekyll-infinite-scroll": "^1.0.5"
+        "jekyll-infinite-scroll": "^1.0.5",
+        "package": "^1.0.1"
     }
 }

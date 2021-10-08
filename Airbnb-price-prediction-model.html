@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>Airbnb-price-prediction-model</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- 웹폰트 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="SeongJae Yu 블로그" />
+    <link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
+    <link rel="canonical" href="https://SEONGJAE-YOO.github.io/Airbnb-price-prediction-model" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Big Data" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Airbnb-price-prediction-model" />
+    <meta property="og:description" content="SeongJae Yu 블로그" />
+    <meta property="og:url" content="https://SEONGJAE-YOO.github.io/Airbnb-price-prediction-model" />
+    <meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:tag" content="Kaggle" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Airbnb-price-prediction-model" />
+    <meta name="twitter:description" content="SeongJae Yu 블로그" />
+    <meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
+    <meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Big Data" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Kaggle" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="2000" />
+    <meta property="og:image:height" content="666" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Big Data",
+        "logo": "https://SEONGJAE-YOO.github.io/"
+    },
+    "url": "https://SEONGJAE-YOO.github.io/Airbnb-price-prediction-model",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://SEONGJAE-YOO.github.io/Airbnb-price-prediction-model"
+    },
+    "description": "SeongJae Yu 블로그"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="Airbnb-price-prediction-model" href="/feed.xml" />
+
+
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- < default -->
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<!-- The big featured header, it uses blog cover image as a BG if available -->
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://SEONGJAE-YOO.github.io/">Big Data</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-rprogramming" role="menuitem"><a href="/tag/rprogramming/">R</a></li>
+    <li class="nav-processmining" role="menuitem"><a href="/tag/processmining/">Processmining</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-kaggle" role="menuitem"><a href="/tag/kaggle">kaggle</a></li>
+
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag별 Posts</a>
+    </li>
+</ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-kaggle post tag-kaggle ">
+
+            <header class="post-full-header">
+                <h1 class="post-full-title">Airbnb-price-prediction-model</h1>
+            </header>
+
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/logo-python.png)">
+            </figure>
+            
+
+            <section class="post-full-content">
+                <p><span class="table-of-contents-list">Airbnb-price-prediction-model</span></p>
+<ul class="table-of-contents-list">
+    <li><a href="./_posts/kaggle/2021-10-08-Airbnb-price-prediction-model.md">Airbnb-price-prediction-model</a></li>
+    <li><a href="./_posts/kaggle/2021-10-08-KNeighborsRegressor.md">Airbnb-price-prediction-model을 하기위해서는 KNeighborsRegressor을 제대로 알고 넘어가자~!!</a></li>
+</ul>
+
+<h1 id="주제-선정-이유">주제 선정 이유:</h1>
+<p>에어비앤비 숙소의 가격을 산정하는 과정에서 어떻게 하면 임대 수익을 극대화할 수 있을까 고민을 하던 중, Dynamic Pricing을 위한 알고리즘이 있다는 것을 알게 되었다. 이후 Dynamic Pricing을 제공하는 서비스를 찾았으나 대부분 미국 혹은 유럽의 주요 대도시만 지원이 되고 국내 지원이 되는 서비스가 존재하지 않았다. 그래서 직접 에어비앤비의 숙소 정보를 수집해서 분석하기로 결정했다.</p>
+
+<h1 id="가설">가설:</h1>
+<p>같은 지역에 위치한 숙소들 중 특정 조건이 비슷한 숙소끼리는 숙박료가 비슷할 것이며, 이를 바탕으로 운영 중인 에어 비앤비 숙소의 ‘적정 가격’을 산출할 수 있을 것이다.</p>
+
+<h1 id="데이터-획득">데이터 획득:</h1>
+<p>크롤러를 사용하여 에어 비앤비에 지역, 체크인/체크아웃 날짜를 주고 엑셀 데이터로 저장했다.</p>
+
+<h1 id="데이터-가공">데이터 가공:</h1>
+<p>데이터를 트레이닝 셋과 테스트 셋으로 나눈 뒤 모델을 학습시켰다.</p>
+
+<h1 id="분석-결과">분석 결과:</h1>
+<p>특징이 비슷한 숙소끼리는 가격이 비슷하게 수렴하는 현상이 발생했으나 상대적으로 고가의 숙소 혹은 방이 많은 숙소 등의 가격을 예측하는데는 실패했다.</p>
+
+<p>이는 이런 숙소들이 예외적인 요소이기 때문이며, 충분하게 데이터를 많이 수집한다면 오차 범위를 줄일 수 있을 것이다.</p>
+
+<h1 id="결론">결론:</h1>
+<p>지역의 일반적인 숙소 (침실1, 침대1, 수용인원 4인 내외)의 경우 비교 대상이 많으므로 오차가 가장 적은 결과를 얻을 수 있었다.</p>
+
+<p>다만 유명한 숙소(고급 호텔 등)이나 대형 숙소(수용인원 8인 이상 혹은 침실 4개 이상)의 경우에는 가격 오차가 크게 발생했다.</p>
+
+<p>이는 숙소의 브랜드 가치 혹은 썸네일 등의 평가를 반영하기 어렵기 때문이다.</p>
+
+<p>그리고 또 한 가지 고려해봐야할 점은 계절성(Seasonality)이다.</p>
+
+<p>같은 숙소라 하더라도 일 년 중 특정 이벤트가 몰려있는 시기에 가격이 훨씬 불규칙적으로 움직인다.</p>
+
+<p>다른 개선점으로는 ‘텍스트 데이터’의 카테고라화(Categorization) 이다.</p>
+
+<p>숙소 안내 문구, 후기, 호텔 물품(Ammenities) 등에 대한 자연어 분석을 통해서 숙소 비교에 새로운 기능으로 추가할 수 있다.</p>
+
+<h1 id="the-k-nearest-neighbors-algorithm">The K-nearest neighbors algorithm</h1>
+<p>가장 먼저 비교를 위해 내 숙소와 유사한 숙소들을 선택합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>  <span class="c1"># 주피터 노트북에 이미지 삽입
+</span><span class="n">Image</span><span class="p">(</span><span class="s">"C://Users/MyCom/jupyter-tutorial/kaggle/Airbnb-price-prediction/data/20211008_082900_1.png"</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><img src="./img/kaggle/Airbnb%20price%20prediction%20model/output_2_0.png" alt="output_2_0" /></p>
+
+<p>다음으로 similar metric (주: 두 개의 대상이 얼마나 유사한 가를 거리로 수치화하는 함수)을 이용해 각 숙소가 얼마나 유사한가를 계산합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Image</span><span class="p">(</span><span class="s">"C://Users/MyCom/jupyter-tutorial/kaggle/Airbnb-price-prediction/data/20211008_082900_2.png"</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><img src="./img/kaggle/Airbnb%20price%20prediction%20model/output_4_0.png" alt="output_4_0" /></p>
+
+<p>이제 가장 유사도가 높은 k개의 숙소를 골라냅니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Image</span><span class="p">(</span><span class="s">"C://Users/MyCom/jupyter-tutorial/kaggle/Airbnb-price-prediction/data/20211008_082900_3.png"</span><span class="p">)</span>
+
+
+</code></pre></div></div>
+
+<p><img src="./img/kaggle/Airbnb%20price%20prediction%20model/output_6_0.png" alt="output_6_0" /></p>
+
+<p>마지막으로 선택된 k개 숙소의 평균 숙박료를 계산해서 이 가격을 우리 숙소의 숙박료로 정합니다.</p>
+
+<p>이제 계산에 어떤 similarity metric을 사용할 것인지 알아본 뒤, k-nearest neighbors을 구현하고, 아직 숙박료를 매기지 않은 숙소의 가격을 예측합니다.</p>
+
+<h1 id="euclidean-distance">Euclidean distance</h1>
+<p>가격과 같은 연속적인 값을 예측할 때 주로 사용하는 similarity metric은 Euclidean distance입니다. 아래는 Euclidean distance를 구하는 공식입니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Image</span><span class="p">(</span><span class="s">"C://Users/MyCom/jupyter-tutorial/kaggle/Airbnb-price-prediction/data/20211008_082900_4.png"</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><img src="./img/kaggle/Airbnb%20price%20prediction%20model/output_9_0.png" alt="output_9_0" /></p>
+
+<p>q1에서 qn 그리고 p1에서 pn은 각각 서로 다른 대상의 feature 값을 의미합니다. (침대 수, 침실 수 등)</p>
+
+<h1 id="building-a-simple-knn-model">Building a simple knn model</h1>
+
+<p>만약 하나의 feature만 사용한다면 공식은:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Image</span><span class="p">(</span><span class="s">"C://Users/MyCom/jupyter-tutorial/kaggle/Airbnb-price-prediction/data/20211008_082900_5.png"</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><img src="./img/kaggle/Airbnb%20price%20prediction%20model/output_12_0.png" alt="output_12_0" /></p>
+
+<p>제곱과 제곱근이 서로 상쇄되므로 더 간단하게 나타내면:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Image</span><span class="p">(</span><span class="s">"C://Users/MyCom/jupyter-tutorial/kaggle/Airbnb-price-prediction/data/20211008_082900_6.png"</span><span class="p">)</span>
+
+
+</code></pre></div></div>
+
+<p><img src="./img/kaggle/Airbnb%20price%20prediction%20model/output_14_0.png" alt="output_14_0" /></p>
+
+<p>혹은 각 대상들의 feature값 간 차이의 절대값이라고도 말할 수 있습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"""
+비슷한 성질을 가진 집단을 분류하는 알고리즘 중 하나인 KNN(K-Nearest-Neighbors)를 사용하여 
+특정 지역의 에어비앤비 숙소의 적정 가격을 산정
+"""</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">scale</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">date</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">font_manager</span>
+</code></pre></div></div>
+
+<h1 id="scale-개념">scale 개념</h1>
+<p>데이터를 모델링하기 전에는 반드시 스케일링 과정을 거쳐야 한다. 스케일링을 통해 다차원의 값들을 비교 분석하기 쉽게 만들어주며, 자료의 오버플로우(overflow)나 언더플로우(underflow)를 방지 하고, 독립 변수의 공분산 행렬의 조건수(condition number)를 감소시켜 최적화 과정에서의 안정성 및 수렴 속도를 향상 시킨다.</p>
+
+<h1 id="mean_squared_error">mean_squared_error</h1>
+
+<p>RMSE란?</p>
+
+<p>( Root Mean Squared Error )</p>
+
+<p>표준편차와 동일하다. 특정 수치에 대한 예측의 정확도를 표현할 때, Accuracy로 판단하기에는 정확도를 올바르게 표기할 수 없어, RMSE 수치로 정확도 판단을 하곤 한다. 일반적으로 해당 수치가 낮을수록 정확도가 높다고 판단한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># !pip install xlrd
+# !pip install openpyxl
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">prepare_data</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="n">listings</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">f</span><span class="s">'C://Users/MyCom/jupyter-tutorial/kaggle/Airbnb-price-prediction/data/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">.xlsx'</span><span class="p">,</span><span class="n">engine</span><span class="o">=</span><span class="s">'openpyxl'</span><span class="p">)</span>
+
+    <span class="n">features</span> <span class="o">=</span> <span class="s">"""
+    accomodates bathrooms bedrooms beds nightly_price number_of_reviews id
+    """</span><span class="p">.</span><span class="n">strip</span><span class="p">().</span><span class="n">split</span><span class="p">(</span><span class="s">' '</span><span class="p">)</span>
+
+    <span class="n">listings</span> <span class="o">=</span> <span class="n">listings</span><span class="p">[</span><span class="n">features</span><span class="p">]</span>
+
+    <span class="c1"># shuffle listings
+</span>    <span class="n">listings</span> <span class="o">=</span> <span class="n">listings</span><span class="p">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">listings</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">col</span> <span class="o">==</span> <span class="s">'nightly_price'</span> <span class="ow">or</span> <span class="n">col</span> <span class="o">==</span> <span class="s">'id'</span><span class="p">):</span>
+            <span class="n">listings</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">scale</span><span class="p">(</span><span class="n">listings</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
+    
+    <span class="k">return</span> <span class="n">listings</span>
+
+</code></pre></div></div>
+
+<h1 id="evaluating-our-model">Evaluating our model</h1>
+<p>모델의 정확도를 분석하기 위한 간단한 방법은:</p>
+
+<p>데이터 셋을 두 개로 분리:</p>
+<ul>
+  <li>트레이닝셋: 전체 로우의 75%</li>
+  <li>테스트셋: 전체 로우의 25%
+테스트셋에 속한 숙소의 값을 예측하기 위해서 트레이닝셋에 있는 데이터로 모델을 훈련시킨다.
+예측된 값과 실제 숙박료를 차이를 분석한다.
+이제 전체 로우를 train_df 와 test_df로 나눠줍니다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Image</span><span class="p">(</span><span class="s">"C://Users/MyCom/jupyter-tutorial/kaggle/Airbnb-price-prediction/data/20211008_125206_1.png"</span><span class="p">)</span>
+
+
+</code></pre></div></div>
+
+<p><img src="./img/kaggle/Airbnb%20price%20prediction%20model/output_21_0.png" alt="output_21_0" /></p>
+
+<h1 id="using-rmse-to-evaluate-our-model">Using RMSE to evaluate our model</h1>
+
+<p>예측을 정교화하기 위해서는 예측값과 측정값의 차이가 클수록 페널티를 줄 필요가 있습니다.</p>
+
+<p>이를 위해 root mean squared error (RMSE)라고 하는 에러값(주: 예측값과 측정값의 차이)의 평균의 제곱근을 사용할 수 있습니다.</p>
+
+<p>아래는 RMSE를 구하는 공식입니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Image</span><span class="p">(</span><span class="s">"C://Users/MyCom/jupyter-tutorial/kaggle/Airbnb-price-prediction/data/20211008_125618_2.png"</span><span class="p">)</span>
+
+
+</code></pre></div></div>
+
+<p><img src="./img/kaggle/Airbnb%20price%20prediction%20model/output_23_0.png" alt="output_23_0" /></p>
+
+<p>n은 테스트셋의 전체 로우 개수를 의미합니다.</p>
+
+<p>에러값(예측값과 측정값의 차이)를 구한다
+에러값을 제곱한다
+이렇게 구해진 에러값들을 전부 더한다음 평균낸다
+이 평균값의 제곱근을 구한다
+의 순서로 이루어진 간단한 계산입니다.</p>
+
+<h1 id="introduction-to-scikit-learn">Introduction to scikit-learn</h1>
+
+<p>Scikit-learn은 파이썬으로 구현된 머신러닝 라이브러리 중 가장 유명한 라이브러리입니다. 또한Scikit-learn은 주요 머신러닝 알고리즘을 포함하고 있습니다. 그러므로 데이터 사이언스를 하는 사람이라면 이 라이브러리를 활용할 때 좀 더 빠르게 모델을 구현하고 실험해볼 수 있습니다.</p>
+
+<p>Scikit-learn을 활용하는 workflow는 아래와 같습니다.</p>
+
+<ul>
+  <li>
+    <p>사용하고 싶은 머신러닝 알고리즘을 고른다</p>
+  </li>
+  <li>
+    <p>트레이닝셋을 활용해서 모델을 학습시킨다</p>
+  </li>
+  <li>
+    <p>모델을 사용해 예측을 한다</p>
+  </li>
+  <li>
+    <p>예측값의 정확도를 평가한다</p>
+  </li>
+</ul>
+
+<p>scikit-learn의 각 모델은 각각 클래스의 형태로 구현되어 있습니다. 그러므로 가장 먼저 할 일은 어떤 클래스를 사용할 것인지를 파악하는 일입니다. 여기서는 KNeighborsRegressor 클래스를 사용하도록 하겠습니다.</p>
+
+<p>숙박료와 같은 숫자값을 예측하는데 사용되는 모델을 regression model이라고 합니다. 머신러닝의 또 다른 분야 중 하나는 classification(분류)이며, 이 경우에는 여러 성격을 가진 서로 다른 집단에서 한 집단이 어떤 집단에 가까운 지를 추측합니다. regressor라는 단어에서 알 수 있듯이 KNeighborsRegressor 클래스는 regression model에 속합니다.</p>
+
+<hr />
+
+<ul>
+  <li>
+    <p>n_neighbors: k의 크기, 기본값은 5</p>
+  </li>
+  <li>
+    <p>algorithm: 유사도 분석 알고리즘, 기본값은 auto</p>
+  </li>
+  <li>
+    <p>p: 거리값 계산 방식, 기본값은 Euclidean distance</p>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">size_test</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.25</span><span class="p">)</span>
+    
+    <span class="n">train_df</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">copy</span><span class="p">().</span><span class="n">iloc</span><span class="p">[:</span><span class="n">size_test</span><span class="p">]</span>
+    <span class="n">test_df</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">copy</span><span class="p">().</span><span class="n">iloc</span><span class="p">[</span><span class="n">size_test</span><span class="p">:]</span>
+
+<span class="c1"># algorithm : 가장 가까운 이웃을 계산하는데 사용하는 알고리즘
+#'ball_tree'는 BallTree를 사용 BallTree
+#'kd_tree'는 KDTree를 사용 KDTree
+#'brute'는 무차별 대입 검색을 사용합니다.
+</span>    <span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">(</span><span class="n">algorithm</span><span class="o">=</span><span class="s">'brute'</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="c1">#accommodates: 수용 가능 인원 / bathrooms: 욕실 개수/ bedrooms: 침실 개수/ beds: 침대 개수
+</span>    <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s">'accomodates'</span><span class="p">,</span> <span class="s">'bathrooms'</span><span class="p">,</span> <span class="s">'bedrooms'</span><span class="p">,</span> <span class="s">'beds'</span><span class="p">]</span>
+
+    <span class="n">knn</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="n">cols</span><span class="p">],</span> <span class="n">train_df</span><span class="p">[</span><span class="s">'nightly_price'</span><span class="p">])</span>
+    <span class="n">predictions</span> <span class="o">=</span> <span class="n">knn</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_df</span><span class="p">[</span><span class="n">cols</span><span class="p">])</span>
+    <span class="n">mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">test_df</span><span class="p">[</span><span class="s">'nightly_price'</span><span class="p">],</span> <span class="n">predictions</span><span class="p">)</span>
+    <span class="n">rmse</span> <span class="o">=</span> <span class="n">mse</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="n">test_df</span><span class="p">[</span><span class="s">'expected'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">]</span>
+    <span class="n">test_df</span><span class="p">[</span><span class="s">'diff'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s">'expected'</span><span class="p">]</span> <span class="o">-</span> <span class="n">test_df</span><span class="p">[</span><span class="s">'nightly_price'</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">test_df</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">draw_graph</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">how_many</span><span class="p">):</span>
+    <span class="n">CHART_SIZE_X</span> <span class="o">=</span> <span class="mi">20</span>
+    <span class="n">CHART_SIZE_Y</span> <span class="o">=</span> <span class="mi">20</span>
+    
+    <span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">CHART_SIZE_X</span><span class="p">,</span> <span class="n">CHART_SIZE_Y</span><span class="p">))</span>
+    
+    <span class="n">displayed</span> <span class="o">=</span> <span class="n">result</span><span class="p">[:</span><span class="n">how_many</span><span class="p">]</span>
+    <span class="n">range_displayed</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">[:</span><span class="n">how_many</span><span class="p">]))</span>
+    
+    <span class="n">font_fname</span> <span class="o">=</span> <span class="s">'C://Users/MyCom/jupyter-tutorial/kaggle/Airbnb-price-prediction/data/NanumGothic.ttf'</span>
+    <span class="n">font_family</span> <span class="o">=</span> <span class="n">font_manager</span><span class="p">.</span><span class="n">FontProperties</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="n">font_fname</span><span class="p">).</span><span class="n">get_name</span><span class="p">()</span>
+    
+    <span class="n">plt</span><span class="p">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s">'font.family'</span><span class="p">]</span> <span class="o">=</span> <span class="n">font_family</span>
+    
+    <span class="n">plt</span><span class="p">.</span><span class="n">bar</span><span class="p">(</span><span class="n">range_displayed</span><span class="p">,</span> <span class="n">displayed</span><span class="p">[</span><span class="s">'expected'</span><span class="p">])</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">bar</span><span class="p">(</span><span class="n">range_displayed</span><span class="p">,</span> <span class="n">displayed</span><span class="p">[</span><span class="s">'nightly_price'</span><span class="p">])</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">range_displayed</span><span class="p">,</span> <span class="n">displayed</span><span class="p">[</span><span class="s">'id'</span><span class="p">])</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">displayed</span><span class="p">[</span><span class="s">'expected'</span><span class="p">])):</span>
+        <span class="n">expected</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">displayed</span><span class="p">[</span><span class="s">'expected'</span><span class="p">])[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">actual</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">displayed</span><span class="p">[</span><span class="s">'nightly_price'</span><span class="p">])[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">diff</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">expected</span> <span class="o">-</span> <span class="n">actual</span><span class="p">))</span> <span class="c1">#절대값함수 사용
+</span>        
+        <span class="n">position</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">expected</span><span class="p">,</span> <span class="n">actual</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.01</span>
+        
+        <span class="n">plt</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="sa">f</span><span class="s">'차이: </span><span class="si">{</span><span class="n">diff</span><span class="si">}</span><span class="s">'</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">'black'</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s">'bold'</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s">'center'</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Price'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'숙소'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Airbnb Price Comparison'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">([</span><span class="s">'expected'</span><span class="p">,</span> <span class="s">'actual'</span><span class="p">])</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">autoscale</span><span class="p">(</span><span class="n">enable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s">'x'</span><span class="p">,</span> <span class="n">tight</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>    
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>  
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="n">listing_files</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">'춘천'</span><span class="p">:</span> <span class="s">'춘천2021-10-08'</span><span class="p">,</span> 
+            <span class="s">'포항'</span><span class="p">:</span> <span class="s">'포항2021-10-08'</span><span class="p">,</span>
+            <span class="s">'홍대'</span><span class="p">:</span> <span class="s">'홍대2021-10-08'</span><span class="p">,</span>
+            <span class="s">'수원'</span><span class="p">:</span> <span class="s">'수원2021-10-08'</span><span class="p">,</span>
+            <span class="s">'강남'</span><span class="p">:</span> <span class="s">'강남2021-10-08'</span><span class="p">,</span>
+        <span class="p">}</span>
+            
+        <span class="n">city</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s">'</span><span class="si">{</span><span class="s">", "</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">listing_files</span><span class="p">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">listing_files</span><span class="p">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s"> 지역의 데이터가 있습니다. 어떤 지역을 고르시겠습니까?'</span><span class="p">)</span>
+        <span class="n">how_many</span> <span class="o">=</span> <span class="mi">10</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">how_many</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">'얼마나 많은 숙소의 가격 정보를 비교하시겠습니까?'</span><span class="p">))</span>
+        <span class="k">except</span> <span class="nb">ValueError</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'잘못된 숫자입니다. 기본값인 10개를 보여줍니다.'</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">listing_files</span><span class="p">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">listings</span> <span class="o">=</span> <span class="n">prepare_data</span><span class="p">(</span><span class="n">listing_files</span><span class="p">[</span><span class="n">city</span><span class="p">])</span> 
+            <span class="n">result</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">listings</span><span class="p">)</span> 
+            <span class="n">draw_graph</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">how_many</span><span class="p">)</span>
+            <span class="k">break</span>
+
+<span class="n">main</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>춘천, 포항, 홍대, 수원, 강남 5 지역의 데이터가 있습니다. 어떤 지역을 고르시겠습니까?강남
+얼마나 많은 숙소의 가격 정보를 비교하시겠습니까?15
+</code></pre></div></div>
+
+<p><img src="./img/kaggle/Airbnb%20price%20prediction%20model/output_28_1.png" alt="output_28_1" /></p>
+
+<h1 id="위와-관련된-데이터는-깃허브에서-확인가능합니다">위와 관련된 데이터는 깃허브에서 확인가능합니다!</h1>
+<h1 id="강남2021-10-08xlsx수원2021-10-08xlsx-등-데이터-확인-가능httpsgithubcomseongjae-yookaggletreemainairbnb-price-predictiondata"><a href="https://github.com/SEONGJAE-YOO/Kaggle/tree/main/Airbnb-price-prediction/data">강남2021-10-08.xlsx,수원2021-10-08.xlsx 등 데이터 확인 가능(https://github.com/SEONGJAE-YOO/Kaggle/tree/main/Airbnb-price-prediction/data)</a></h1>
+
+
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+<script>
+$(function() {
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+});
+</script>
+
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://SEONGJAE-YOO.github.io/">Big Data</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <h1 class="subscribe-overlay-title">Search Big Data</h1>
+            <p class="subscribe-overlay-description">
+                lunr.js를 이용한 posts 검색 </p>
+            <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+        </div>
+    </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
