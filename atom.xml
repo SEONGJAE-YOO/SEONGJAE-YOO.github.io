@@ -44,6 +44,42 @@
     
       
       <item>
+        <title>빅데이터 K 평균(K Means) 구현하기</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+</description>
+        
+        <pubDate>Mon, 11 Oct 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/KMeans</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/KMeans</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>movie_review의 corpus data 를 sklearn을 통해 로드</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+</description>
+        
+        <pubDate>Mon, 11 Oct 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/MovieReviewScikitLearn</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/MovieReviewScikitLearn</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Airbnb-price-prediction-model을 하기위해서는 KNeighborsRegressor을 제대로 알고 넘어가자~!!</title>
         
           <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Airbnb-price-prediction-model&lt;/span&gt;&lt;/p&gt;
