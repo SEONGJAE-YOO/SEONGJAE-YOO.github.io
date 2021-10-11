@@ -26,7 +26,9 @@
         "posts_per_page": 25
     },
     "dependencies": {
+        "flexsearch": "^0.7.21",
         "jekyll-infinite-scroll": "^1.0.5",
+        "lunr": "^2.3.9",
         "package": "^1.0.1"
     }
 }

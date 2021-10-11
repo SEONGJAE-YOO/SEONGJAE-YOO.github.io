@@ -8,6 +8,42 @@
     
       
       <item>
+        <title>삼각함수 (trigonometric functions)</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+</description>
+        
+        <pubDate>Mon, 11 Oct 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/trigonometric</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/trigonometric</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>사이파이를 이용한 확률분포 분석</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+</description>
+        
+        <pubDate>Mon, 11 Oct 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/scipy</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/scipy</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Airbnb-price-prediction-model을 하기위해서는 KNeighborsRegressor을 제대로 알고 넘어가자~!!</title>
         
           <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Airbnb-price-prediction-model&lt;/span&gt;&lt;/p&gt;
