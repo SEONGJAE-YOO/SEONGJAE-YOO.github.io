@@ -8,6 +8,37 @@
     
       
       <item>
+        <title>머신러닝 프로그래밍 7주차-</title>
+        
+          <description>&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        
+        <pubDate>Tue, 19 Oct 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/07</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/07</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>머신러닝 프로그래밍 6주차-Basic classification with random variables</title>
+        
+          <description>&lt;h1 id=&quot;basic-classification-with-random-variables&quot;&gt;Basic classification with random variables&lt;/h1&gt;
+
+</description>
+        
+        <pubDate>Tue, 19 Oct 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/06</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/06</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Inverse transformation 구현 (머신러닝 프로그래밍 과제)</title>
         
           <description>&lt;h1 id=&quot;random-number-생성하기&quot;&gt;Random number 생성하기&lt;/h1&gt;

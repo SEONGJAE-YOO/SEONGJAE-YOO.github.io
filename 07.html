@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>머신러닝 프로그래밍 7주차-</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- 웹폰트 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="SeongJae Yu 블로그" />
+<link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
+<link rel="canonical" href="https://SEONGJAE-YOO.github.io/07" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+ <!--title below is coming from _includes/dynamic_title-->
+<meta property="og:site_name" content="Big Data" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="머신러닝 프로그래밍 7주차-" />
+<meta property="og:description" content="SeongJae Yu 블로그" />
+<meta property="og:url" content="https://SEONGJAE-YOO.github.io/07" />
+<meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+<meta property="article:publisher" content="https://www.facebook.com/" />
+<meta property="article:tag" content="Python" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="머신러닝 프로그래밍 7주차-" />
+<meta name="twitter:description" content="SeongJae Yu 블로그" />
+<meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
+<meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Big Data" />
+<meta name="twitter:label2" content="Filed under" />
+<meta name="twitter:data2" content="Python" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta property="og:image:width" content="2000" />
+<meta property="og:image:height" content="666" />
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Website",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Big Data",
+            "logo": "https://SEONGJAE-YOO.github.io/"
+        },
+        "url": "https://SEONGJAE-YOO.github.io/07",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png",
+            "width": 2000,
+            "height": 666
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://SEONGJAE-YOO.github.io/07"
+        },
+        "description": "SeongJae Yu 블로그"
+    }
+</script>
+
+<!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+<script type="text/javascript">
+ghost.init({
+    clientId: "ghost-frontend",
+    clientSecret: "f84a07a72b17"
+});
+</script> -->
+
+<meta name="generator" content="Jekyll 3.6.2" />
+<link rel="alternate" type="application/rss+xml" title="머신러닝 프로그래밍 7주차-" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- < default -->
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<!-- The big featured header, it uses blog cover image as a BG if available -->
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://SEONGJAE-YOO.github.io/">Big Data</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-rprogramming" role="menuitem"><a href="/tag/rprogramming/">R</a></li>
+    <li class="nav-processmining" role="menuitem"><a href="/tag/processmining/">Processmining</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-kaggle" role="menuitem"><a href="/tag/kaggle">kaggle</a></li>
+
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag별 Posts</a>
+    </li>
+</ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-python post tag-python ">
+
+            <header class="post-full-header">
+                <h1 class="post-full-title">머신러닝 프로그래밍 7주차-</h1>
+            </header>
+
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/logo-python.png)">
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">b</span><span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span><span class="c1"># 평균이 1이고 표준편차가 0.1인 정규분포로 부터 난수 100개 생성
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">b</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([0.97777185, 0.98398675, 0.94203985, 0.96656572, 1.00709019,
+       1.0497622 , 0.96236362, 0.94215869, 1.14313934, 1.06626483,
+       1.07222044, 0.96907718, 1.09328525, 1.01428879, 0.99743022,
+       1.05123665, 0.97750048, 1.19943427, 1.04019463, 0.93845923,
+       1.10171774, 0.87025746, 0.96583052, 1.12502477, 0.91861731,
+       1.03612639, 0.95089956, 1.1687044 , 1.0131394 , 1.0454912 ,
+       1.0853099 , 0.83046361, 1.1266614 , 0.87358764, 1.06788066,
+       0.8998934 , 1.12559594, 1.04656097, 0.8632176 , 0.70048947,
+       0.81431239, 1.05997469, 0.9706232 , 0.98432544, 1.11460571,
+       0.91796196, 1.13906552, 0.96105183, 1.09157658, 0.89177187,
+       1.1446978 , 0.77456377, 0.92751414, 1.1670938 , 1.10685298,
+       0.98986861, 1.00165298, 0.98290513, 0.92796829, 0.95037699,
+       1.13012849, 0.96037249, 1.01713011, 0.80452703, 0.97696354,
+       0.88146593, 1.1782316 , 0.9284739 , 1.04709084, 1.11922683,
+       1.09832903, 0.98434657, 0.99634479, 0.85623119, 1.00355355,
+       0.9961457 , 0.87942069, 1.00271762, 1.06216093, 1.10690729,
+       0.97759756, 1.02155774, 0.98558842, 1.05658287, 1.06089831,
+       1.02774696, 0.94782946, 0.97020057, 0.89131065, 0.75332352,
+       1.02233651, 1.03393441, 1.05898539, 0.91805673, 1.1004976 ,
+       1.08372229, 0.94313999, 0.95202034, 1.05565755, 0.98232214])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">b</span><span class="o">&gt;</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([False, False, False, False,  True,  True, False, False,  True,
+        True,  True, False,  True,  True, False,  True, False,  True,
+        True, False,  True, False, False,  True, False,  True, False,
+        True,  True,  True,  True, False,  True, False,  True, False,
+        True,  True, False, False, False,  True, False, False,  True,
+       False,  True, False,  True, False,  True, False, False,  True,
+        True, False,  True, False, False, False,  True, False,  True,
+       False, False, False,  True, False,  True,  True,  True, False,
+       False, False,  True, False, False,  True,  True,  True, False,
+        True, False,  True,  True,  True, False, False, False, False,
+        True,  True,  True, False,  True,  True, False, False,  True,
+       False])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">b</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">).</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(100,)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">b</span><span class="p">[</span><span class="n">b</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">].</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(49,)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">x1</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">(</span><span class="n">x2</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(array([  0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,
+          0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,
+          0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   1.,   1.,   0.,
+          6.,   4.,   9.,  17.,  41.,  56.,  81., 132., 176., 277., 335.,
+        419., 519., 701., 702., 757., 799., 800., 738., 667., 659., 495.,
+        454., 328., 269., 199., 138.,  81.,  55.,  38.,  22.,   9.,   6.,
+          7.,   0.,   1.,   1.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,
+          0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,
+          0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,
+          0.]),
+ array([0.  , 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1 ,
+        0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2 , 0.21,
+        0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3 , 0.31, 0.32,
+        0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4 , 0.41, 0.42, 0.43,
+        0.44, 0.45, 0.46, 0.47, 0.48, 0.49, 0.5 , 0.51, 0.52, 0.53, 0.54,
+        0.55, 0.56, 0.57, 0.58, 0.59, 0.6 , 0.61, 0.62, 0.63, 0.64, 0.65,
+        0.66, 0.67, 0.68, 0.69, 0.7 , 0.71, 0.72, 0.73, 0.74, 0.75, 0.76,
+        0.77, 0.78, 0.79, 0.8 , 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.87,
+        0.88, 0.89, 0.9 , 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98,
+        0.99, 1.  ]),
+ &lt;BarContainer object of 100 artists&gt;)
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/07/output_10_1.png" alt="output_10_1" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(array([  0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,
+          0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,
+          0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,
+          0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,
+          0.,   0.,   0.,   0.,   0.,   1.,   0.,   2.,   3.,   7.,   8.,
+         13.,  20.,  41.,  68.,  97., 144., 188., 266., 361., 436., 552.,
+        587., 688., 756., 795., 748., 782., 686., 639., 515., 397., 363.,
+        268., 203., 140.,  80.,  72.,  32.,  17.,  10.,  10.,   3.,   0.,
+          0.,   1.,   0.,   1.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,
+          0.]),
+ array([0.  , 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1 ,
+        0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2 , 0.21,
+        0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3 , 0.31, 0.32,
+        0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4 , 0.41, 0.42, 0.43,
+        0.44, 0.45, 0.46, 0.47, 0.48, 0.49, 0.5 , 0.51, 0.52, 0.53, 0.54,
+        0.55, 0.56, 0.57, 0.58, 0.59, 0.6 , 0.61, 0.62, 0.63, 0.64, 0.65,
+        0.66, 0.67, 0.68, 0.69, 0.7 , 0.71, 0.72, 0.73, 0.74, 0.75, 0.76,
+        0.77, 0.78, 0.79, 0.8 , 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.87,
+        0.88, 0.89, 0.9 , 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98,
+        0.99, 1.  ]),
+ &lt;BarContainer object of 100 artists&gt;)
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/07/output_11_1.png" alt="output_11_1" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">histtype</span><span class="o">=</span><span class="s">'step'</span><span class="p">);</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">histtype</span><span class="o">=</span><span class="s">'step'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/07/output_12_0.png" alt="output_12_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">])</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">stack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[0.4183939 , 0.        ],
+       [0.4895116 , 0.        ],
+       [0.51567366, 0.        ],
+       ...,
+       [0.70447126, 1.        ],
+       [0.68865738, 1.        ],
+       [0.69542455, 1.        ]])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[0.57605798, 1.        ],
+       [0.77539521, 1.        ],
+       [0.54907111, 0.        ],
+       ...,
+       [0.49509234, 0.        ],
+       [0.7628574 , 1.        ],
+       [0.68707178, 1.        ]])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/07/output_17_0.png" alt="output_17_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sel_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">&gt;</span><span class="mf">0.8</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sel_data</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[0.81165318, 1.        ],
+       [0.80263781, 1.        ],
+       [0.82385545, 1.        ],
+       [0.8214418 , 1.        ],
+       [0.80033043, 1.        ],
+       [0.81568348, 1.        ],
+       [0.80432364, 1.        ],
+       [0.8083785 , 1.        ],
+       [0.84060815, 1.        ],
+       [0.85065641, 1.        ],
+       [0.81233148, 1.        ],
+       [0.8263521 , 1.        ],
+       [0.8133503 , 1.        ],
+       [0.86349671, 1.        ],
+       [0.81340036, 1.        ],
+       [0.80735976, 1.        ],
+       [0.86959636, 1.        ],
+       [0.81226178, 1.        ],
+       [0.84693677, 1.        ],
+       [0.80850068, 1.        ],
+       [0.81627508, 1.        ],
+       [0.81482788, 1.        ],
+       [0.81695395, 1.        ],
+       [0.80526562, 1.        ],
+       [0.83575697, 1.        ],
+       [0.85176691, 1.        ],
+       [0.80455917, 1.        ],
+       [0.81335375, 1.        ],
+       [0.81428494, 1.        ],
+       [0.83362813, 1.        ],
+       [0.83734837, 1.        ],
+       [0.80415421, 1.        ],
+       [0.82875158, 1.        ],
+       [0.8062281 , 1.        ],
+       [0.80382984, 1.        ],
+       [0.81836662, 1.        ],
+       [0.81072679, 1.        ],
+       [0.83973388, 1.        ],
+       [0.81549191, 1.        ],
+       [0.82326061, 1.        ],
+       [0.80066759, 1.        ],
+       [0.81373003, 1.        ],
+       [0.82508685, 1.        ],
+       [0.81494587, 1.        ],
+       [0.81078856, 1.        ],
+       [0.80504681, 1.        ],
+       [0.82098318, 1.        ],
+       [0.83820205, 1.        ],
+       [0.82425738, 1.        ],
+       [0.80487546, 1.        ],
+       [0.80701297, 1.        ],
+       [0.89453327, 1.        ],
+       [0.81991323, 1.        ],
+       [0.8098942 , 1.        ],
+       [0.80413292, 1.        ],
+       [0.85100033, 1.        ],
+       [0.81421128, 1.        ],
+       [0.80676607, 1.        ],
+       [0.80141653, 1.        ],
+       [0.80139114, 1.        ],
+       [0.81511669, 1.        ],
+       [0.83885153, 1.        ],
+       [0.81307102, 1.        ],
+       [0.82241146, 1.        ],
+       [0.83373345, 1.        ],
+       [0.91246089, 1.        ],
+       [0.84664972, 1.        ],
+       [0.80937481, 1.        ],
+       [0.81696979, 1.        ],
+       [0.82983364, 1.        ],
+       [0.82889887, 1.        ],
+       [0.8152268 , 1.        ],
+       [0.80291748, 1.        ],
+       [0.80291059, 1.        ],
+       [0.80115424, 1.        ],
+       [0.80216712, 1.        ],
+       [0.81044013, 1.        ],
+       [0.84058709, 1.        ],
+       [0.82236298, 1.        ],
+       [0.85458728, 1.        ],
+       [0.85618517, 1.        ],
+       [0.80035678, 1.        ],
+       [0.81574262, 1.        ],
+       [0.8449593 , 1.        ],
+       [0.8245717 , 1.        ],
+       [0.83242091, 1.        ],
+       [0.81127278, 1.        ],
+       [0.82155598, 1.        ],
+       [0.81337871, 1.        ],
+       [0.80764822, 1.        ],
+       [0.81464373, 1.        ],
+       [0.8361569 , 1.        ],
+       [0.80607568, 1.        ],
+       [0.80057084, 1.        ],
+       [0.80911594, 1.        ],
+       [0.82344224, 1.        ],
+       [0.82856835, 1.        ],
+       [0.85742125, 1.        ],
+       [0.8196721 , 1.        ],
+       [0.82290079, 1.        ],
+       [0.81969492, 1.        ],
+       [0.81345997, 1.        ],
+       [0.81305835, 1.        ],
+       [0.80737807, 1.        ],
+       [0.8005669 , 1.        ],
+       [0.80315232, 1.        ],
+       [0.80179872, 1.        ],
+       [0.80169282, 1.        ],
+       [0.80001723, 1.        ],
+       [0.80097394, 1.        ],
+       [0.8136235 , 1.        ],
+       [0.80085574, 1.        ],
+       [0.81349148, 1.        ],
+       [0.8065315 , 1.        ],
+       [0.82627532, 1.        ],
+       [0.8140628 , 1.        ],
+       [0.80142591, 1.        ],
+       [0.82758688, 1.        ],
+       [0.84777368, 1.        ],
+       [0.82055656, 1.        ],
+       [0.81928733, 1.        ],
+       [0.81904779, 1.        ],
+       [0.82210618, 1.        ],
+       [0.84364951, 1.        ],
+       [0.80133502, 1.        ],
+       [0.824142  , 1.        ],
+       [0.81116521, 1.        ],
+       [0.81199943, 1.        ],
+       [0.80357964, 1.        ],
+       [0.82875595, 1.        ],
+       [0.8328148 , 1.        ],
+       [0.80145292, 1.        ],
+       [0.81689152, 1.        ],
+       [0.81070281, 1.        ],
+       [0.80339362, 1.        ],
+       [0.8508766 , 1.        ],
+       [0.80369647, 1.        ],
+       [0.8141915 , 1.        ],
+       [0.8055556 , 1.        ],
+       [0.80905277, 1.        ],
+       [0.80396785, 1.        ],
+       [0.80506775, 1.        ],
+       [0.80956595, 1.        ],
+       [0.82891594, 1.        ],
+       [0.81214957, 1.        ],
+       [0.80258541, 1.        ],
+       [0.81400993, 1.        ],
+       [0.81372049, 1.        ],
+       [0.80084081, 1.        ],
+       [0.80859481, 1.        ],
+       [0.81039975, 1.        ],
+       [0.80941424, 1.        ],
+       [0.80834086, 1.        ],
+       [0.82339794, 1.        ],
+       [0.82765484, 1.        ],
+       [0.81115585, 1.        ],
+       [0.8171495 , 1.        ],
+       [0.8198595 , 1.        ],
+       [0.81736972, 1.        ],
+       [0.81664392, 1.        ],
+       [0.80764148, 1.        ],
+       [0.84318007, 1.        ],
+       [0.85302204, 1.        ],
+       [0.81287536, 1.        ],
+       [0.8241014 , 1.        ],
+       [0.80196997, 1.        ],
+       [0.81143291, 1.        ],
+       [0.86045636, 1.        ],
+       [0.80398193, 1.        ],
+       [0.80151311, 1.        ],
+       [0.81838909, 1.        ],
+       [0.80255265, 1.        ],
+       [0.80955001, 1.        ],
+       [0.80454231, 1.        ],
+       [0.85773189, 1.        ],
+       [0.8384785 , 1.        ],
+       [0.81902944, 1.        ],
+       [0.81348711, 1.        ],
+       [0.84635442, 1.        ],
+       [0.81760282, 1.        ],
+       [0.82596631, 1.        ],
+       [0.82995913, 1.        ],
+       [0.83682619, 1.        ],
+       [0.83409501, 1.        ],
+       [0.80047697, 1.        ],
+       [0.80734296, 1.        ],
+       [0.8059881 , 1.        ],
+       [0.82476778, 1.        ],
+       [0.81327218, 1.        ],
+       [0.80860131, 1.        ],
+       [0.81310922, 1.        ],
+       [0.80131171, 1.        ],
+       [0.81567426, 1.        ],
+       [0.80905161, 1.        ],
+       [0.80144976, 1.        ],
+       [0.83103294, 1.        ],
+       [0.81802314, 1.        ],
+       [0.83410648, 1.        ],
+       [0.85541751, 1.        ],
+       [0.81448533, 1.        ],
+       [0.81698358, 1.        ],
+       [0.80039402, 1.        ],
+       [0.81655001, 1.        ],
+       [0.80556376, 1.        ],
+       [0.81141204, 1.        ],
+       [0.82692522, 1.        ],
+       [0.81300262, 1.        ],
+       [0.8256454 , 1.        ],
+       [0.81946536, 1.        ],
+       [0.80059009, 1.        ],
+       [0.83324685, 1.        ],
+       [0.81018158, 1.        ],
+       [0.84461793, 1.        ],
+       [0.81513809, 1.        ],
+       [0.80160006, 1.        ],
+       [0.80589886, 1.        ],
+       [0.80905643, 1.        ],
+       [0.81051081, 1.        ],
+       [0.80133695, 1.        ],
+       [0.83223093, 1.        ],
+       [0.80975691, 1.        ],
+       [0.80923785, 1.        ],
+       [0.81708379, 1.        ],
+       [0.81252704, 1.        ],
+       [0.80881386, 1.        ],
+       [0.80165153, 1.        ]])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sel_data</span><span class="p">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(226, 2)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">sel_data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/07/output_21_0.png" alt="output_21_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">sel_data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/07/output_22_0.png" alt="output_22_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">].</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(10000, 2)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nSigTotal</span><span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">].</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nSigTotal</span><span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nSigSelected</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sel_data</span><span class="p">[</span><span class="n">sel_data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"True Positive Rate(TPR) ="</span><span class="p">,</span> <span class="n">nSigSelected</span><span class="o">/</span><span class="n">nSigTotal</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="s">"%"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True Positive Rate(TPR) = 2.26 %
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nNoiseTotal</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">])</span>
+<span class="c1">#nNegSelected = len(data[(~(data[:,0]&gt;0.6))&amp; (data[:,1]==0)])
+</span><span class="n">nNoiseSelected</span> <span class="o">=</span> <span class="n">nNoiseTotal</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">sel_data</span><span class="p">[</span><span class="n">sel_data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"False Negative Rate(FNR) = "</span><span class="p">,</span> <span class="n">nNoiseSelected</span><span class="o">/</span><span class="n">nNoiseTotal</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="s">"%"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>False Negative Rate(FNR) =  100.0 %
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># nSigTotal = len(data[data[:,1]==1])
+# nNoiseTotal = len(data[data[:,1]==0])
+</span>
+<span class="c1"># for i in range(100):
+#     t = i/100
+#     nSigSelected = len(data[(data[:,1]==1) &amp; (data[:,0]&gt;t)])
+#     nNoiseNegSelected = len(data[(data[:,1]==0) &amp; (data[:,0]&lt;=t)])
+</span>    
+<span class="c1">#     tpr = nSigSelected/nSigTotal
+#     fnr = nNoiseNegSelected/nNoiseTotal
+</span>    
+<span class="c1">#     print(t,tpr,fnr)
+</span>    
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># #2번째 방법
+# nSigTotal = len(data[data[:,1]==1])
+# nNoiseTotal = len(data[data[:,1]==0])
+</span>
+<span class="c1"># for t in np.linspace(0,1,101):
+</span>    
+<span class="c1">#     nSigSelected = len(data[(data[:,1]==1) &amp; (data[:,0]&gt;t)])
+#     nNoiseNegSelected = len(data[(data[:,1]==0) &amp; (data[:,0]&lt;=t)])
+</span>    
+<span class="c1">#     tpr = nSigSelected/nSigTotal
+#     fnr = nNoiseNegSelected/nNoiseTotal
+</span>    
+<span class="c1">#     print(t,tpr,fnr)
+</span>    
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#3번째 방법
+</span><span class="n">nSigTotal</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">nNoiseTotal</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">tprs</span><span class="p">,</span> <span class="n">fnrs</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+<span class="n">accs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+    
+    <span class="n">nSigSelected</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">&gt;</span><span class="n">t</span><span class="p">)])</span>
+    <span class="n">nNoiseNegSelected</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">t</span><span class="p">)])</span>
+    
+    <span class="n">tpr</span> <span class="o">=</span> <span class="n">nSigSelected</span><span class="o">/</span><span class="n">nSigTotal</span>
+    <span class="n">fnr</span> <span class="o">=</span> <span class="n">nNoiseNegSelected</span><span class="o">/</span><span class="n">nNoiseTotal</span>
+    <span class="n">acc</span> <span class="o">=</span> <span class="p">(</span><span class="n">nSigSelected</span><span class="o">+</span><span class="n">nNoiseNegSelected</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">nSigTotal</span><span class="o">+</span><span class="n">nNoiseTotal</span><span class="p">)</span>
+    
+<span class="c1">#     print(t,tpr,fnr)
+</span>    <span class="n">ts</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">tprs</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">tpr</span><span class="p">)</span>
+    <span class="n">fnrs</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">fnr</span><span class="p">)</span>
+    <span class="n">accs</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">acc</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">tprs</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">fnrs</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">accs</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x18687564a90&gt;]
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/07/output_30_1.png" alt="output_30_1" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#3번째 방법
+</span><span class="n">nSigTotal</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">nNoiseTotal</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">tprs</span><span class="p">,</span> <span class="n">fprs</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+<span class="n">accs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+    
+    <span class="n">nSigSelected</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">&gt;</span><span class="n">t</span><span class="p">)])</span>
+    <span class="n">nNoiseSelected</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">&gt;</span><span class="n">t</span><span class="p">)])</span>
+    
+    <span class="n">tpr</span> <span class="o">=</span> <span class="n">nSigSelected</span><span class="o">/</span><span class="n">nSigTotal</span>
+    <span class="n">fpr</span> <span class="o">=</span> <span class="n">nNoiseSelected</span><span class="o">/</span><span class="n">nNoiseTotal</span>
+    <span class="n">acc</span> <span class="o">=</span> <span class="p">(</span><span class="n">nSigSelected</span><span class="o">+</span><span class="n">nNoiseTotal</span><span class="o">-</span><span class="n">nNoiseSelected</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">nSigTotal</span><span class="o">+</span><span class="n">nNoiseTotal</span><span class="p">)</span>
+    
+<span class="c1">#     print(t,tpr,fnr)
+</span>    <span class="n">ts</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">tprs</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">tpr</span><span class="p">)</span>
+    <span class="n">fprs</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">fpr</span><span class="p">)</span>
+    <span class="n">accs</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">acc</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">tprs</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">"TPR"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">fprs</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">"FPR"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">accs</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">"Accuracy"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;matplotlib.legend.Legend at 0x186872a0278&gt;
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/07/output_31_1.png" alt="output_31_1" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fprs</span><span class="p">,</span> <span class="n">tprs</span><span class="p">,</span> <span class="s">'.-'</span><span class="p">)</span> <span class="c1">#ROC CURVE
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x18688709470&gt;]
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/07/output_32_1.png" alt="output_32_1" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span> 
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">help</span><span class="p">(</span><span class="n">roc_curve</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Help on function roc_curve in module sklearn.metrics._ranking:
+
+roc_curve(y_true, y_score, *, pos_label=None, sample_weight=None, drop_intermediate=True)
+    Compute Receiver operating characteristic (ROC).
+    
+    Note: this implementation is restricted to the binary classification task.
+    
+    Read more in the :ref:`User Guide &lt;roc_metrics&gt;`.
+    
+    Parameters
+    ----------
+    y_true : ndarray of shape (n_samples,)
+        True binary labels. If labels are not either {-1, 1} or {0, 1}, then
+        pos_label should be explicitly given.
+    
+    y_score : ndarray of shape (n_samples,)
+        Target scores, can either be probability estimates of the positive
+        class, confidence values, or non-thresholded measure of decisions
+        (as returned by "decision_function" on some classifiers).
+    
+    pos_label : int or str, default=None
+        The label of the positive class.
+        When ``pos_label=None``, if `y_true` is in {-1, 1} or {0, 1},
+        ``pos_label`` is set to 1, otherwise an error will be raised.
+    
+    sample_weight : array-like of shape (n_samples,), default=None
+        Sample weights.
+    
+    drop_intermediate : bool, default=True
+        Whether to drop some suboptimal thresholds which would not appear
+        on a plotted ROC curve. This is useful in order to create lighter
+        ROC curves.
+    
+        .. versionadded:: 0.17
+           parameter *drop_intermediate*.
+    
+    Returns
+    -------
+    fpr : ndarray of shape (&gt;2,)
+        Increasing false positive rates such that element i is the false
+        positive rate of predictions with score &gt;= `thresholds[i]`.
+    
+    tpr : ndarray of shape (&gt;2,)
+        Increasing true positive rates such that element `i` is the true
+        positive rate of predictions with score &gt;= `thresholds[i]`.
+    
+    thresholds : ndarray of shape = (n_thresholds,)
+        Decreasing thresholds on the decision function used to compute
+        fpr and tpr. `thresholds[0]` represents no instances being predicted
+        and is arbitrarily set to `max(y_score) + 1`.
+    
+    See Also
+    --------
+    plot_roc_curve : Plot Receiver operating characteristic (ROC) curve.
+    RocCurveDisplay : ROC Curve visualization.
+    det_curve: Compute error rates for different probability thresholds.
+    roc_auc_score : Compute the area under the ROC curve.
+    
+    Notes
+    -----
+    Since the thresholds are sorted from low to high values, they
+    are reversed upon returning them to ensure they correspond to both ``fpr``
+    and ``tpr``, which are sorted in reversed order during their calculation.
+    
+    References
+    ----------
+    .. [1] `Wikipedia entry for the Receiver operating characteristic
+            &lt;https://en.wikipedia.org/wiki/Receiver_operating_characteristic&gt;`_
+    
+    .. [2] Fawcett T. An introduction to ROC analysis[J]. Pattern Recognition
+           Letters, 2006, 27(8):861-874.
+    
+    Examples
+    --------
+    &gt;&gt;&gt; import numpy as np
+    &gt;&gt;&gt; from sklearn import metrics
+    &gt;&gt;&gt; y = np.array([1, 1, 2, 2])
+    &gt;&gt;&gt; scores = np.array([0.1, 0.4, 0.35, 0.8])
+    &gt;&gt;&gt; fpr, tpr, thresholds = metrics.roc_curve(y, scores, pos_label=2)
+    &gt;&gt;&gt; fpr
+    array([0. , 0. , 0.5, 0.5, 1. ])
+    &gt;&gt;&gt; tpr
+    array([0. , 0.5, 0.5, 1. , 1. ])
+    &gt;&gt;&gt; thresholds
+    array([1.8 , 0.8 , 0.4 , 0.35, 0.1 ])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">roc_curve</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(array([0.000e+00, 0.000e+00, 0.000e+00, 1.000e-04, 1.000e-04, 2.000e-04,
+        2.000e-04, 3.000e-04, 3.000e-04, 4.000e-04, 4.000e-04, 5.000e-04,
+        5.000e-04, 6.000e-04, 6.000e-04, 7.000e-04, 7.000e-04, 8.000e-04,
+        8.000e-04, 9.000e-04, 9.000e-04, 1.000e-03, 1.000e-03, 1.100e-03,
+        1.100e-03, 1.200e-03, 1.200e-03, 1.300e-03, 1.300e-03, 1.400e-03,
+        1.400e-03, 1.500e-03, 1.500e-03, 1.600e-03, 1.600e-03, 1.700e-03,
+        1.700e-03, 1.800e-03, 1.800e-03, 1.900e-03, 1.900e-03, 2.000e-03,
+        2.000e-03, 2.100e-03, 2.100e-03, 2.200e-03, 2.200e-03, 2.300e-03,
+        2.300e-03, 2.400e-03, 2.400e-03, 2.500e-03, 2.500e-03, 2.600e-03,
+        2.600e-03, 2.700e-03, 2.700e-03, 2.800e-03, 2.800e-03, 2.900e-03,
+        2.900e-03, 3.000e-03, 3.000e-03, 3.100e-03, 3.100e-03, 3.200e-03,
+        3.200e-03, 3.300e-03, 3.300e-03, 3.400e-03, 3.400e-03, 3.600e-03,
+        3.600e-03, 3.700e-03, 3.700e-03, 3.800e-03, 3.800e-03, 3.900e-03,
+        3.900e-03, 4.000e-03, 4.000e-03, 4.100e-03, 4.100e-03, 4.200e-03,
+        4.200e-03, 4.300e-03, 4.300e-03, 4.400e-03, 4.400e-03, 4.500e-03,
+        4.500e-03, 4.600e-03, 4.600e-03, 4.700e-03, 4.700e-03, 4.900e-03,
+        4.900e-03, 5.000e-03, 5.000e-03, 5.100e-03, 5.100e-03, 5.200e-03,
+        5.200e-03, 5.300e-03, 5.300e-03, 5.400e-03, 5.400e-03, 5.500e-03,
+        5.500e-03, 5.700e-03, 5.700e-03, 5.800e-03, 5.800e-03, 6.000e-03,
+        6.000e-03, 6.100e-03, 6.100e-03, 6.200e-03, 6.200e-03, 6.300e-03,
+        6.300e-03, 6.400e-03, 6.400e-03, 6.600e-03, 6.600e-03, 6.700e-03,
+        6.700e-03, 6.800e-03, 6.800e-03, 7.000e-03, 7.000e-03, 7.100e-03,
+        7.100e-03, 7.300e-03, 7.300e-03, 7.400e-03, 7.400e-03, 7.500e-03,
+        7.500e-03, 7.600e-03, 7.600e-03, 7.700e-03, 7.700e-03, 7.800e-03,
+        7.800e-03, 7.900e-03, 7.900e-03, 8.100e-03, 8.100e-03, 8.200e-03,
+        8.200e-03, 8.300e-03, 8.300e-03, 8.400e-03, 8.400e-03, 8.500e-03,
+        8.500e-03, 8.600e-03, 8.600e-03, 8.700e-03, 8.700e-03, 8.800e-03,
+        8.800e-03, 8.900e-03, 8.900e-03, 9.000e-03, 9.000e-03, 9.100e-03,
+        9.100e-03, 9.200e-03, 9.200e-03, 9.300e-03, 9.300e-03, 9.400e-03,
+        9.400e-03, 9.500e-03, 9.500e-03, 9.600e-03, 9.600e-03, 9.700e-03,
+        9.700e-03, 9.800e-03, 9.800e-03, 9.900e-03, 9.900e-03, 1.000e-02,
+        1.000e-02, 1.040e-02, 1.040e-02, 1.050e-02, 1.050e-02, 1.060e-02,
+        1.060e-02, 1.070e-02, 1.070e-02, 1.080e-02, 1.080e-02, 1.090e-02,
+        1.090e-02, 1.100e-02, 1.100e-02, 1.110e-02, 1.110e-02, 1.120e-02,
+        1.120e-02, 1.130e-02, 1.130e-02, 1.140e-02, 1.140e-02, 1.200e-02,
+        1.200e-02, 1.220e-02, 1.220e-02, 1.240e-02, 1.240e-02, 1.250e-02,
+        1.250e-02, 1.260e-02, 1.260e-02, 1.270e-02, 1.270e-02, 1.280e-02,
+        1.280e-02, 1.290e-02, 1.290e-02, 1.300e-02, 1.300e-02, 1.310e-02,
+        1.310e-02, 1.320e-02, 1.320e-02, 1.340e-02, 1.340e-02, 1.360e-02,
+        1.360e-02, 1.370e-02, 1.370e-02, 1.380e-02, 1.380e-02, 1.390e-02,
+        1.390e-02, 1.400e-02, 1.400e-02, 1.410e-02, 1.410e-02, 1.420e-02,
+        1.420e-02, 1.430e-02, 1.430e-02, 1.450e-02, 1.450e-02, 1.460e-02,
+        1.460e-02, 1.470e-02, 1.470e-02, 1.480e-02, 1.480e-02, 1.490e-02,
+        1.490e-02, 1.500e-02, 1.500e-02, 1.510e-02, 1.510e-02, 1.520e-02,
+        1.520e-02, 1.530e-02, 1.530e-02, 1.550e-02, 1.550e-02, 1.560e-02,
+        1.560e-02, 1.570e-02, 1.570e-02, 1.590e-02, 1.590e-02, 1.600e-02,
+        1.600e-02, 1.640e-02, 1.640e-02, 1.650e-02, 1.650e-02, 1.660e-02,
+        1.660e-02, 1.680e-02, 1.680e-02, 1.700e-02, 1.700e-02, 1.710e-02,
+        1.710e-02, 1.750e-02, 1.750e-02, 1.760e-02, 1.760e-02, 1.800e-02,
+        1.800e-02, 1.810e-02, 1.810e-02, 1.820e-02, 1.820e-02, 1.840e-02,
+        1.840e-02, 1.850e-02, 1.850e-02, 1.860e-02, 1.860e-02, 1.870e-02,
+        1.870e-02, 1.880e-02, 1.880e-02, 1.890e-02, 1.890e-02, 1.910e-02,
+        1.910e-02, 1.920e-02, 1.920e-02, 1.960e-02, 1.960e-02, 1.970e-02,
+        1.970e-02, 1.980e-02, 1.980e-02, 1.990e-02, 1.990e-02, 2.000e-02,
+        2.000e-02, 2.020e-02, 2.020e-02, 2.030e-02, 2.030e-02, 2.040e-02,
+        2.040e-02, 2.060e-02, 2.060e-02, 2.070e-02, 2.070e-02, 2.080e-02,
+        2.080e-02, 2.090e-02, 2.090e-02, 2.100e-02, 2.100e-02, 2.140e-02,
+        2.140e-02, 2.150e-02, 2.150e-02, 2.170e-02, 2.170e-02, 2.190e-02,
+        2.190e-02, 2.200e-02, 2.200e-02, 2.230e-02, 2.230e-02, 2.240e-02,
+        2.240e-02, 2.250e-02, 2.250e-02, 2.280e-02, 2.280e-02, 2.330e-02,
+        2.330e-02, 2.340e-02, 2.340e-02, 2.350e-02, 2.350e-02, 2.360e-02,
+        2.360e-02, 2.370e-02, 2.370e-02, 2.380e-02, 2.380e-02, 2.410e-02,
+        2.410e-02, 2.440e-02, 2.440e-02, 2.460e-02, 2.460e-02, 2.480e-02,
+        2.480e-02, 2.490e-02, 2.490e-02, 2.500e-02, 2.500e-02, 2.540e-02,
+        2.540e-02, 2.570e-02, 2.570e-02, 2.590e-02, 2.590e-02, 2.610e-02,
+        2.610e-02, 2.630e-02, 2.630e-02, 2.640e-02, 2.640e-02, 2.660e-02,
+        2.660e-02, 2.670e-02, 2.670e-02, 2.710e-02, 2.710e-02, 2.730e-02,
+        2.730e-02, 2.760e-02, 2.760e-02, 2.820e-02, 2.820e-02, 2.860e-02,
+        2.860e-02, 2.890e-02, 2.890e-02, 2.930e-02, 2.930e-02, 2.940e-02,
+        2.940e-02, 2.950e-02, 2.950e-02, 2.990e-02, 2.990e-02, 3.010e-02,
+        3.010e-02, 3.030e-02, 3.030e-02, 3.050e-02, 3.050e-02, 3.070e-02,
+        3.070e-02, 3.090e-02, 3.090e-02, 3.110e-02, 3.110e-02, 3.130e-02,
+        3.130e-02, 3.250e-02, 3.250e-02, 3.270e-02, 3.270e-02, 3.290e-02,
+        3.290e-02, 3.300e-02, 3.300e-02, 3.330e-02, 3.330e-02, 3.360e-02,
+        3.360e-02, 3.440e-02, 3.440e-02, 3.450e-02, 3.450e-02, 3.470e-02,
+        3.470e-02, 3.480e-02, 3.480e-02, 3.500e-02, 3.500e-02, 3.520e-02,
+        3.520e-02, 3.580e-02, 3.580e-02, 3.610e-02, 3.610e-02, 3.640e-02,
+        3.640e-02, 3.650e-02, 3.650e-02, 3.660e-02, 3.660e-02, 3.680e-02,
+        3.680e-02, 3.690e-02, 3.690e-02, 3.700e-02, 3.700e-02, 3.750e-02,
+        3.750e-02, 3.760e-02, 3.760e-02, 3.790e-02, 3.790e-02, 3.800e-02,
+        3.800e-02, 3.810e-02, 3.810e-02, 3.870e-02, 3.870e-02, 3.880e-02,
+        3.880e-02, 3.900e-02, 3.900e-02, 3.950e-02, 3.950e-02, 4.080e-02,
+        4.080e-02, 4.110e-02, 4.110e-02, 4.130e-02, 4.130e-02, 4.140e-02,
+        4.140e-02, 4.160e-02, 4.160e-02, 4.210e-02, 4.210e-02, 4.260e-02,
+        4.260e-02, 4.270e-02, 4.270e-02, 4.280e-02, 4.280e-02, 4.330e-02,
+        4.330e-02, 4.370e-02, 4.370e-02, 4.410e-02, 4.410e-02, 4.570e-02,
+        4.570e-02, 4.580e-02, 4.580e-02, 4.700e-02, 4.700e-02, 4.730e-02,
+        4.730e-02, 4.750e-02, 4.750e-02, 4.820e-02, 4.820e-02, 4.860e-02,
+        4.860e-02, 4.890e-02, 4.890e-02, 4.960e-02, 4.960e-02, 4.970e-02,
+        4.970e-02, 4.990e-02, 4.990e-02, 5.010e-02, 5.010e-02, 5.060e-02,
+        5.060e-02, 5.140e-02, 5.140e-02, 5.170e-02, 5.170e-02, 5.210e-02,
+        5.210e-02, 5.260e-02, 5.260e-02, 5.270e-02, 5.270e-02, 5.290e-02,
+        5.290e-02, 5.310e-02, 5.310e-02, 5.420e-02, 5.420e-02, 5.430e-02,
+        5.430e-02, 5.440e-02, 5.440e-02, 5.460e-02, 5.460e-02, 5.470e-02,
+        5.470e-02, 5.570e-02, 5.570e-02, 5.600e-02, 5.600e-02, 5.610e-02,
+        5.610e-02, 5.630e-02, 5.630e-02, 5.670e-02, 5.670e-02, 5.700e-02,
+        5.700e-02, 5.720e-02, 5.720e-02, 5.740e-02, 5.740e-02, 5.810e-02,
+        5.810e-02, 5.950e-02, 5.950e-02, 5.960e-02, 5.960e-02, 6.010e-02,
+        6.010e-02, 6.140e-02, 6.140e-02, 6.230e-02, 6.230e-02, 6.290e-02,
+        6.290e-02, 6.310e-02, 6.310e-02, 6.500e-02, 6.500e-02, 6.570e-02,
+        6.570e-02, 6.590e-02, 6.590e-02, 6.600e-02, 6.600e-02, 6.670e-02,
+        6.670e-02, 6.680e-02, 6.680e-02, 6.720e-02, 6.720e-02, 6.800e-02,
+        6.800e-02, 6.980e-02, 6.980e-02, 7.100e-02, 7.100e-02, 7.200e-02,
+        7.200e-02, 7.290e-02, 7.290e-02, 7.350e-02, 7.350e-02, 7.390e-02,
+        7.390e-02, 7.440e-02, 7.440e-02, 7.490e-02, 7.490e-02, 7.500e-02,
+        7.500e-02, 7.610e-02, 7.610e-02, 7.770e-02, 7.770e-02, 7.820e-02,
+        7.820e-02, 7.980e-02, 7.980e-02, 8.040e-02, 8.040e-02, 8.240e-02,
+        8.240e-02, 8.260e-02, 8.260e-02, 8.290e-02, 8.290e-02, 8.580e-02,
+        8.580e-02, 8.940e-02, 8.940e-02, 8.970e-02, 8.970e-02, 9.110e-02,
+        9.110e-02, 9.140e-02, 9.140e-02, 9.150e-02, 9.150e-02, 9.200e-02,
+        9.200e-02, 9.260e-02, 9.260e-02, 9.480e-02, 9.480e-02, 1.020e-01,
+        1.020e-01, 1.031e-01, 1.031e-01, 1.054e-01, 1.054e-01, 1.069e-01,
+        1.069e-01, 1.115e-01, 1.115e-01, 1.121e-01, 1.121e-01, 1.122e-01,
+        1.122e-01, 1.137e-01, 1.137e-01, 1.177e-01, 1.177e-01, 1.182e-01,
+        1.182e-01, 1.183e-01, 1.183e-01, 1.206e-01, 1.206e-01, 1.214e-01,
+        1.214e-01, 1.262e-01, 1.262e-01, 1.321e-01, 1.321e-01, 1.346e-01,
+        1.346e-01, 1.412e-01, 1.412e-01, 1.422e-01, 1.422e-01, 1.439e-01,
+        1.439e-01, 1.580e-01, 1.580e-01, 1.586e-01, 1.586e-01, 1.735e-01,
+        1.735e-01, 1.748e-01, 1.748e-01, 1.819e-01, 1.819e-01, 1.845e-01,
+        1.845e-01, 1.897e-01, 1.897e-01, 1.972e-01, 1.972e-01, 1.978e-01,
+        1.978e-01, 2.062e-01, 2.062e-01, 2.246e-01, 2.246e-01, 2.268e-01,
+        2.268e-01, 2.362e-01, 2.362e-01, 2.372e-01, 2.372e-01, 2.500e-01,
+        2.500e-01, 2.694e-01, 2.694e-01, 2.733e-01, 2.733e-01, 3.197e-01,
+        3.197e-01, 3.308e-01, 3.308e-01, 3.407e-01, 3.407e-01, 3.829e-01,
+        3.829e-01, 3.967e-01, 3.967e-01, 5.562e-01, 5.562e-01, 1.000e+00]),
+ array([0.000e+00, 1.000e-04, 5.207e-01, 5.207e-01, 6.289e-01, 6.289e-01,
+        7.325e-01, 7.325e-01, 7.571e-01, 7.571e-01, 7.586e-01, 7.586e-01,
+        7.699e-01, 7.699e-01, 7.702e-01, 7.702e-01, 7.726e-01, 7.726e-01,
+        7.728e-01, 7.728e-01, 7.807e-01, 7.807e-01, 8.033e-01, 8.033e-01,
+        8.070e-01, 8.070e-01, 8.232e-01, 8.232e-01, 8.322e-01, 8.322e-01,
+        8.344e-01, 8.344e-01, 8.366e-01, 8.366e-01, 8.510e-01, 8.510e-01,
+        8.532e-01, 8.532e-01, 8.555e-01, 8.555e-01, 8.581e-01, 8.581e-01,
+        8.602e-01, 8.602e-01, 8.607e-01, 8.607e-01, 8.667e-01, 8.667e-01,
+        8.672e-01, 8.672e-01, 8.800e-01, 8.800e-01, 8.820e-01, 8.820e-01,
+        8.869e-01, 8.869e-01, 8.883e-01, 8.883e-01, 8.907e-01, 8.907e-01,
+        8.979e-01, 8.979e-01, 8.985e-01, 8.985e-01, 8.986e-01, 8.986e-01,
+        8.994e-01, 8.994e-01, 9.012e-01, 9.012e-01, 9.017e-01, 9.017e-01,
+        9.037e-01, 9.037e-01, 9.040e-01, 9.040e-01, 9.047e-01, 9.047e-01,
+        9.060e-01, 9.060e-01, 9.061e-01, 9.061e-01, 9.066e-01, 9.066e-01,
+        9.075e-01, 9.075e-01, 9.103e-01, 9.103e-01, 9.126e-01, 9.126e-01,
+        9.133e-01, 9.133e-01, 9.146e-01, 9.146e-01, 9.153e-01, 9.153e-01,
+        9.160e-01, 9.160e-01, 9.162e-01, 9.162e-01, 9.163e-01, 9.163e-01,
+        9.165e-01, 9.165e-01, 9.184e-01, 9.184e-01, 9.201e-01, 9.201e-01,
+        9.205e-01, 9.205e-01, 9.243e-01, 9.243e-01, 9.251e-01, 9.251e-01,
+        9.261e-01, 9.261e-01, 9.271e-01, 9.271e-01, 9.274e-01, 9.274e-01,
+        9.287e-01, 9.287e-01, 9.306e-01, 9.306e-01, 9.307e-01, 9.307e-01,
+        9.308e-01, 9.308e-01, 9.318e-01, 9.318e-01, 9.320e-01, 9.320e-01,
+        9.322e-01, 9.322e-01, 9.342e-01, 9.342e-01, 9.345e-01, 9.345e-01,
+        9.352e-01, 9.352e-01, 9.354e-01, 9.354e-01, 9.359e-01, 9.359e-01,
+        9.360e-01, 9.360e-01, 9.365e-01, 9.365e-01, 9.372e-01, 9.372e-01,
+        9.393e-01, 9.393e-01, 9.396e-01, 9.396e-01, 9.408e-01, 9.408e-01,
+        9.409e-01, 9.409e-01, 9.410e-01, 9.410e-01, 9.414e-01, 9.414e-01,
+        9.421e-01, 9.421e-01, 9.425e-01, 9.425e-01, 9.426e-01, 9.426e-01,
+        9.441e-01, 9.441e-01, 9.465e-01, 9.465e-01, 9.467e-01, 9.467e-01,
+        9.480e-01, 9.480e-01, 9.484e-01, 9.484e-01, 9.495e-01, 9.495e-01,
+        9.504e-01, 9.504e-01, 9.505e-01, 9.505e-01, 9.507e-01, 9.507e-01,
+        9.511e-01, 9.511e-01, 9.512e-01, 9.512e-01, 9.522e-01, 9.522e-01,
+        9.532e-01, 9.532e-01, 9.533e-01, 9.533e-01, 9.535e-01, 9.535e-01,
+        9.540e-01, 9.540e-01, 9.541e-01, 9.541e-01, 9.544e-01, 9.544e-01,
+        9.545e-01, 9.545e-01, 9.546e-01, 9.546e-01, 9.547e-01, 9.547e-01,
+        9.552e-01, 9.552e-01, 9.558e-01, 9.558e-01, 9.559e-01, 9.559e-01,
+        9.562e-01, 9.562e-01, 9.565e-01, 9.565e-01, 9.568e-01, 9.568e-01,
+        9.570e-01, 9.570e-01, 9.575e-01, 9.575e-01, 9.576e-01, 9.576e-01,
+        9.577e-01, 9.577e-01, 9.579e-01, 9.579e-01, 9.580e-01, 9.580e-01,
+        9.583e-01, 9.583e-01, 9.584e-01, 9.584e-01, 9.593e-01, 9.593e-01,
+        9.597e-01, 9.597e-01, 9.602e-01, 9.602e-01, 9.605e-01, 9.605e-01,
+        9.609e-01, 9.609e-01, 9.611e-01, 9.611e-01, 9.613e-01, 9.613e-01,
+        9.614e-01, 9.614e-01, 9.616e-01, 9.616e-01, 9.620e-01, 9.620e-01,
+        9.626e-01, 9.626e-01, 9.630e-01, 9.630e-01, 9.633e-01, 9.633e-01,
+        9.634e-01, 9.634e-01, 9.636e-01, 9.636e-01, 9.638e-01, 9.638e-01,
+        9.639e-01, 9.639e-01, 9.644e-01, 9.644e-01, 9.646e-01, 9.646e-01,
+        9.648e-01, 9.648e-01, 9.649e-01, 9.649e-01, 9.650e-01, 9.650e-01,
+        9.654e-01, 9.654e-01, 9.657e-01, 9.657e-01, 9.659e-01, 9.659e-01,
+        9.665e-01, 9.665e-01, 9.670e-01, 9.670e-01, 9.674e-01, 9.674e-01,
+        9.675e-01, 9.675e-01, 9.678e-01, 9.678e-01, 9.681e-01, 9.681e-01,
+        9.682e-01, 9.682e-01, 9.683e-01, 9.683e-01, 9.688e-01, 9.688e-01,
+        9.689e-01, 9.689e-01, 9.691e-01, 9.691e-01, 9.692e-01, 9.692e-01,
+        9.696e-01, 9.696e-01, 9.697e-01, 9.697e-01, 9.698e-01, 9.698e-01,
+        9.699e-01, 9.699e-01, 9.704e-01, 9.704e-01, 9.705e-01, 9.705e-01,
+        9.706e-01, 9.706e-01, 9.710e-01, 9.710e-01, 9.711e-01, 9.711e-01,
+        9.718e-01, 9.718e-01, 9.725e-01, 9.725e-01, 9.726e-01, 9.726e-01,
+        9.729e-01, 9.729e-01, 9.730e-01, 9.730e-01, 9.732e-01, 9.732e-01,
+        9.733e-01, 9.733e-01, 9.735e-01, 9.735e-01, 9.737e-01, 9.737e-01,
+        9.740e-01, 9.740e-01, 9.742e-01, 9.742e-01, 9.745e-01, 9.745e-01,
+        9.746e-01, 9.746e-01, 9.748e-01, 9.748e-01, 9.752e-01, 9.752e-01,
+        9.753e-01, 9.753e-01, 9.755e-01, 9.755e-01, 9.756e-01, 9.756e-01,
+        9.759e-01, 9.759e-01, 9.762e-01, 9.762e-01, 9.763e-01, 9.763e-01,
+        9.764e-01, 9.764e-01, 9.765e-01, 9.765e-01, 9.767e-01, 9.767e-01,
+        9.770e-01, 9.770e-01, 9.771e-01, 9.771e-01, 9.775e-01, 9.775e-01,
+        9.776e-01, 9.776e-01, 9.777e-01, 9.777e-01, 9.779e-01, 9.779e-01,
+        9.780e-01, 9.780e-01, 9.781e-01, 9.781e-01, 9.782e-01, 9.782e-01,
+        9.786e-01, 9.786e-01, 9.787e-01, 9.787e-01, 9.791e-01, 9.791e-01,
+        9.792e-01, 9.792e-01, 9.794e-01, 9.794e-01, 9.797e-01, 9.797e-01,
+        9.798e-01, 9.798e-01, 9.799e-01, 9.799e-01, 9.800e-01, 9.800e-01,
+        9.802e-01, 9.802e-01, 9.805e-01, 9.805e-01, 9.806e-01, 9.806e-01,
+        9.808e-01, 9.808e-01, 9.809e-01, 9.809e-01, 9.810e-01, 9.810e-01,
+        9.811e-01, 9.811e-01, 9.812e-01, 9.812e-01, 9.813e-01, 9.813e-01,
+        9.814e-01, 9.814e-01, 9.819e-01, 9.819e-01, 9.823e-01, 9.823e-01,
+        9.824e-01, 9.824e-01, 9.826e-01, 9.826e-01, 9.827e-01, 9.827e-01,
+        9.828e-01, 9.828e-01, 9.831e-01, 9.831e-01, 9.832e-01, 9.832e-01,
+        9.833e-01, 9.833e-01, 9.834e-01, 9.834e-01, 9.836e-01, 9.836e-01,
+        9.837e-01, 9.837e-01, 9.838e-01, 9.838e-01, 9.839e-01, 9.839e-01,
+        9.842e-01, 9.842e-01, 9.843e-01, 9.843e-01, 9.844e-01, 9.844e-01,
+        9.845e-01, 9.845e-01, 9.846e-01, 9.846e-01, 9.847e-01, 9.847e-01,
+        9.848e-01, 9.848e-01, 9.849e-01, 9.849e-01, 9.850e-01, 9.850e-01,
+        9.852e-01, 9.852e-01, 9.853e-01, 9.853e-01, 9.854e-01, 9.854e-01,
+        9.857e-01, 9.857e-01, 9.858e-01, 9.858e-01, 9.860e-01, 9.860e-01,
+        9.861e-01, 9.861e-01, 9.862e-01, 9.862e-01, 9.864e-01, 9.864e-01,
+        9.865e-01, 9.865e-01, 9.867e-01, 9.867e-01, 9.868e-01, 9.868e-01,
+        9.869e-01, 9.869e-01, 9.870e-01, 9.870e-01, 9.871e-01, 9.871e-01,
+        9.872e-01, 9.872e-01, 9.873e-01, 9.873e-01, 9.874e-01, 9.874e-01,
+        9.875e-01, 9.875e-01, 9.876e-01, 9.876e-01, 9.877e-01, 9.877e-01,
+        9.878e-01, 9.878e-01, 9.879e-01, 9.879e-01, 9.880e-01, 9.880e-01,
+        9.881e-01, 9.881e-01, 9.882e-01, 9.882e-01, 9.883e-01, 9.883e-01,
+        9.884e-01, 9.884e-01, 9.888e-01, 9.888e-01, 9.889e-01, 9.889e-01,
+        9.890e-01, 9.890e-01, 9.891e-01, 9.891e-01, 9.894e-01, 9.894e-01,
+        9.895e-01, 9.895e-01, 9.896e-01, 9.896e-01, 9.897e-01, 9.897e-01,
+        9.898e-01, 9.898e-01, 9.899e-01, 9.899e-01, 9.900e-01, 9.900e-01,
+        9.901e-01, 9.901e-01, 9.902e-01, 9.902e-01, 9.904e-01, 9.904e-01,
+        9.905e-01, 9.905e-01, 9.906e-01, 9.906e-01, 9.908e-01, 9.908e-01,
+        9.909e-01, 9.909e-01, 9.910e-01, 9.910e-01, 9.911e-01, 9.911e-01,
+        9.912e-01, 9.912e-01, 9.913e-01, 9.913e-01, 9.914e-01, 9.914e-01,
+        9.915e-01, 9.915e-01, 9.916e-01, 9.916e-01, 9.917e-01, 9.917e-01,
+        9.918e-01, 9.918e-01, 9.919e-01, 9.919e-01, 9.920e-01, 9.920e-01,
+        9.921e-01, 9.921e-01, 9.923e-01, 9.923e-01, 9.924e-01, 9.924e-01,
+        9.925e-01, 9.925e-01, 9.926e-01, 9.926e-01, 9.927e-01, 9.927e-01,
+        9.928e-01, 9.928e-01, 9.929e-01, 9.929e-01, 9.930e-01, 9.930e-01,
+        9.931e-01, 9.931e-01, 9.932e-01, 9.932e-01, 9.933e-01, 9.933e-01,
+        9.934e-01, 9.934e-01, 9.935e-01, 9.935e-01, 9.936e-01, 9.936e-01,
+        9.937e-01, 9.937e-01, 9.938e-01, 9.938e-01, 9.939e-01, 9.939e-01,
+        9.940e-01, 9.940e-01, 9.941e-01, 9.941e-01, 9.942e-01, 9.942e-01,
+        9.943e-01, 9.943e-01, 9.944e-01, 9.944e-01, 9.945e-01, 9.945e-01,
+        9.946e-01, 9.946e-01, 9.947e-01, 9.947e-01, 9.948e-01, 9.948e-01,
+        9.949e-01, 9.949e-01, 9.951e-01, 9.951e-01, 9.952e-01, 9.952e-01,
+        9.953e-01, 9.953e-01, 9.954e-01, 9.954e-01, 9.955e-01, 9.955e-01,
+        9.956e-01, 9.956e-01, 9.957e-01, 9.957e-01, 9.958e-01, 9.958e-01,
+        9.959e-01, 9.959e-01, 9.960e-01, 9.960e-01, 9.961e-01, 9.961e-01,
+        9.962e-01, 9.962e-01, 9.963e-01, 9.963e-01, 9.964e-01, 9.964e-01,
+        9.965e-01, 9.965e-01, 9.966e-01, 9.966e-01, 9.967e-01, 9.967e-01,
+        9.968e-01, 9.968e-01, 9.969e-01, 9.969e-01, 9.970e-01, 9.970e-01,
+        9.971e-01, 9.971e-01, 9.972e-01, 9.972e-01, 9.973e-01, 9.973e-01,
+        9.974e-01, 9.974e-01, 9.975e-01, 9.975e-01, 9.976e-01, 9.976e-01,
+        9.977e-01, 9.977e-01, 9.978e-01, 9.978e-01, 9.979e-01, 9.979e-01,
+        9.980e-01, 9.980e-01, 9.981e-01, 9.981e-01, 9.982e-01, 9.982e-01,
+        9.983e-01, 9.983e-01, 9.984e-01, 9.984e-01, 9.985e-01, 9.985e-01,
+        9.986e-01, 9.986e-01, 9.987e-01, 9.987e-01, 9.988e-01, 9.988e-01,
+        9.989e-01, 9.989e-01, 9.990e-01, 9.990e-01, 9.991e-01, 9.991e-01,
+        9.992e-01, 9.992e-01, 9.993e-01, 9.993e-01, 9.994e-01, 9.994e-01,
+        9.995e-01, 9.995e-01, 9.996e-01, 9.996e-01, 9.997e-01, 9.997e-01,
+        9.998e-01, 9.998e-01, 9.999e-01, 9.999e-01, 1.000e+00, 1.000e+00]),
+ array([1.91246089, 0.91246089, 0.69681863, 0.69680702, 0.68351389,
+        0.68351311, 0.6678158 , 0.66781191, 0.66378144, 0.66375245,
+        0.66343801, 0.66343658, 0.66165891, 0.66164493, 0.6615278 ,
+        0.66149326, 0.66118973, 0.66118844, 0.66117683, 0.66116659,
+        0.65988084, 0.65987891, 0.65562822, 0.65560812, 0.65499514,
+        0.65498953, 0.65228209, 0.65225609, 0.65053277, 0.65051916,
+        0.65004194, 0.65001907, 0.64960059, 0.64959338, 0.64646493,
+        0.64645775, 0.64599451, 0.64597644, 0.64540619, 0.6454049 ,
+        0.64489629, 0.64485791, 0.64438776, 0.64437777, 0.64422611,
+        0.64420229, 0.64277561, 0.64276468, 0.64263509, 0.64261851,
+        0.6397173 , 0.63968183, 0.63908273, 0.63900104, 0.63793407,
+        0.63792853, 0.637649  , 0.63760655, 0.63707252, 0.63704038,
+        0.63536218, 0.63534915, 0.63511854, 0.63505482, 0.63505226,
+        0.63500091, 0.63483332, 0.63481735, 0.63440123, 0.63436142,
+        0.63426217, 0.6342428 , 0.63357904, 0.63356815, 0.6333231 ,
+        0.63331214, 0.63308915, 0.63305308, 0.63272174, 0.63271227,
+        0.63270416, 0.63270406, 0.63255221, 0.63253815, 0.63228163,
+        0.63221918, 0.63133169, 0.63131857, 0.63038235, 0.63037831,
+        0.63020971, 0.63017666, 0.62983114, 0.62979971, 0.62962598,
+        0.62959344, 0.62933059, 0.6293004 , 0.62924538, 0.62921277,
+        0.62920566, 0.62920512, 0.62913303, 0.62911854, 0.62827457,
+        0.62827083, 0.62778224, 0.62773071, 0.6276321 , 0.62761042,
+        0.62645027, 0.62643316, 0.62609127, 0.62604079, 0.6257777 ,
+        0.6257456 , 0.62543319, 0.6253797 , 0.62520767, 0.6251727 ,
+        0.6247108 , 0.62469291, 0.62372447, 0.6236856 , 0.62367379,
+        0.62363102, 0.62361583, 0.62361122, 0.62316357, 0.62313896,
+        0.62310347, 0.62307843, 0.62305455, 0.62305022, 0.62212704,
+        0.62207623, 0.62201494, 0.62199437, 0.62183857, 0.62178452,
+        0.62176438, 0.62176229, 0.62162951, 0.62160089, 0.62159887,
+        0.6215948 , 0.62151521, 0.62150285, 0.62135199, 0.62131432,
+        0.62059399, 0.62055212, 0.62049686, 0.62039799, 0.62002865,
+        0.61997647, 0.61991855, 0.61990399, 0.61986971, 0.61984055,
+        0.61963775, 0.61958693, 0.61946724, 0.61943603, 0.61936795,
+        0.61929873, 0.6191542 , 0.61913125, 0.61883901, 0.61882756,
+        0.61795048, 0.61793343, 0.61792297, 0.61788461, 0.61738664,
+        0.61738335, 0.61713995, 0.61713666, 0.61674221, 0.61673954,
+        0.61643239, 0.61624097, 0.61618673, 0.6161701 , 0.61613384,
+        0.61612681, 0.61594037, 0.61565014, 0.61564862, 0.61554279,
+        0.61519992, 0.61519196, 0.6146888 , 0.61464493, 0.61455693,
+        0.61455169, 0.61442778, 0.6144233 , 0.61420973, 0.61418605,
+        0.61408402, 0.61405129, 0.61395609, 0.61390449, 0.613841  ,
+        0.61371699, 0.61370958, 0.61356156, 0.61354799, 0.61299859,
+        0.61279664, 0.61270741, 0.61238527, 0.61233645, 0.61223553,
+        0.61216603, 0.61208815, 0.61206665, 0.61190119, 0.61186715,
+        0.61179082, 0.61178163, 0.61169491, 0.61167195, 0.61155613,
+        0.61152988, 0.61146941, 0.61146204, 0.61145316, 0.61125749,
+        0.61118403, 0.61110243, 0.61107332, 0.61097922, 0.61090446,
+        0.61083213, 0.61078768, 0.61075281, 0.61019624, 0.61017052,
+        0.60995207, 0.6099055 , 0.60975236, 0.60974285, 0.6096955 ,
+        0.60967344, 0.60958881, 0.60956563, 0.60947774, 0.60932436,
+        0.60927372, 0.60927023, 0.6091664 , 0.60904082, 0.60895059,
+        0.60891262, 0.60874016, 0.60872571, 0.60835975, 0.60812215,
+        0.60804203, 0.60800936, 0.607877  , 0.60787351, 0.60783885,
+        0.60773391, 0.60764106, 0.60758817, 0.60752376, 0.60749535,
+        0.60747671, 0.60745264, 0.60727849, 0.60722442, 0.60721272,
+        0.60714912, 0.60711741, 0.60681314, 0.60673681, 0.6066869 ,
+        0.60658396, 0.60654984, 0.60644214, 0.60623109, 0.60609384,
+        0.60596111, 0.60587399, 0.6056497 , 0.60540856, 0.60529233,
+        0.60507593, 0.6050671 , 0.60488991, 0.60475149, 0.60473896,
+        0.60461891, 0.6045232 , 0.60450269, 0.60436601, 0.60426817,
+        0.60421571, 0.60420516, 0.60418547, 0.60417011, 0.60386439,
+        0.60383995, 0.60382689, 0.60374403, 0.60370505, 0.60365939,
+        0.60361977, 0.60356469, 0.6032096 , 0.60319804, 0.60312165,
+        0.60295805, 0.60294061, 0.60292047, 0.60291057, 0.6028995 ,
+        0.60275071, 0.60264502, 0.60262724, 0.60261522, 0.60261108,
+        0.60260864, 0.60235783, 0.60225967, 0.60221933, 0.60220475,
+        0.60191399, 0.60183585, 0.60161556, 0.60161328, 0.60159614,
+        0.60159529, 0.6013729 , 0.60119796, 0.60116326, 0.60104063,
+        0.60102569, 0.60084042, 0.60071816, 0.60068569, 0.6006672 ,
+        0.60057163, 0.60033784, 0.60019664, 0.60010698, 0.60009302,
+        0.5999308 , 0.59985182, 0.59960186, 0.59959336, 0.59957916,
+        0.59952687, 0.59947599, 0.59937515, 0.59923172, 0.59910025,
+        0.59909594, 0.59898397, 0.59896299, 0.59892353, 0.59891536,
+        0.59889114, 0.59870555, 0.59868475, 0.59847699, 0.59842505,
+        0.59840355, 0.5982268 , 0.59815927, 0.59799334, 0.59775366,
+        0.59770492, 0.59768068, 0.59758565, 0.59742176, 0.59736617,
+        0.59733701, 0.59722573, 0.59705467, 0.5968878 , 0.59684519,
+        0.59677582, 0.59675997, 0.59662822, 0.59653745, 0.59630274,
+        0.596277  , 0.59608639, 0.59602863, 0.59597588, 0.59596641,
+        0.59593564, 0.59583211, 0.5958027 , 0.59578265, 0.59564336,
+        0.59552576, 0.59549317, 0.59548512, 0.59538891, 0.59527688,
+        0.5950666 , 0.5949656 , 0.59464568, 0.59457283, 0.59444983,
+        0.5944196 , 0.59416945, 0.59414767, 0.59412093, 0.59396531,
+        0.59394364, 0.5936851 , 0.59348382, 0.5934486 , 0.59343406,
+        0.5934118 , 0.59337811, 0.59336068, 0.59319003, 0.5931625 ,
+        0.5930948 , 0.59306861, 0.59289293, 0.59289239, 0.59281666,
+        0.59278268, 0.59275987, 0.59264881, 0.5923528 , 0.59223225,
+        0.59215349, 0.5920533 , 0.5919593 , 0.59189327, 0.59188028,
+        0.59172266, 0.59161296, 0.5915554 , 0.5914754 , 0.59146326,
+        0.5911856 , 0.5909216 , 0.59092095, 0.59086492, 0.59069167,
+        0.59060093, 0.59057088, 0.59056537, 0.59054711, 0.59035566,
+        0.59029295, 0.59027526, 0.59004987, 0.58992804, 0.5898392 ,
+        0.58979828, 0.58972742, 0.58965445, 0.58960732, 0.58960562,
+        0.58959356, 0.58956715, 0.58942051, 0.58941116, 0.58937994,
+        0.58937381, 0.58926854, 0.58921082, 0.58898127, 0.58894953,
+        0.58886426, 0.5887637 , 0.58870435, 0.5887028 , 0.58859333,
+        0.58856434, 0.58840899, 0.58838344, 0.58823206, 0.58818414,
+        0.58814745, 0.58799324, 0.58795603, 0.58789786, 0.5877477 ,
+        0.58770981, 0.58724374, 0.58723657, 0.58714581, 0.5871192 ,
+        0.58697606, 0.5869303 , 0.58691013, 0.58678627, 0.58670701,
+        0.58645347, 0.58621709, 0.58614278, 0.58584692, 0.58583854,
+        0.58580895, 0.58580881, 0.58579475, 0.58576452, 0.58547795,
+        0.58546099, 0.5853771 , 0.58534405, 0.58513171, 0.58501454,
+        0.58409817, 0.58407755, 0.58407297, 0.5840466 , 0.58371051,
+        0.58370291, 0.58357296, 0.58351526, 0.58347789, 0.58346096,
+        0.58332794, 0.58332494, 0.58310432, 0.58309985, 0.58302048,
+        0.58299353, 0.58269395, 0.58257313, 0.58257165, 0.58255666,
+        0.5823502 , 0.58221001, 0.58216796, 0.58212611, 0.58200158,
+        0.58198046, 0.5817578 , 0.58171403, 0.58161124, 0.58149007,
+        0.58131248, 0.58131135, 0.58116316, 0.58116088, 0.58115828,
+        0.58112345, 0.58104419, 0.58103776, 0.58102229, 0.58100014,
+        0.58068749, 0.58065847, 0.58064658, 0.5806141 , 0.58061106,
+        0.58060435, 0.58054014, 0.58047772, 0.58045687, 0.58045146,
+        0.5801075 , 0.57999139, 0.57995777, 0.57991538, 0.57987058,
+        0.57986521, 0.5798144 , 0.57974525, 0.57962072, 0.57955743,
+        0.57942032, 0.57939593, 0.57927672, 0.57920288, 0.57917599,
+        0.5791476 , 0.57892303, 0.57890569, 0.57844254, 0.57842076,
+        0.57836271, 0.57835835, 0.57811765, 0.57811375, 0.57764495,
+        0.57763915, 0.5771997 , 0.5771836 , 0.57693794, 0.57691386,
+        0.57682551, 0.57677027, 0.5761342 , 0.57605798, 0.57562614,
+        0.57561976, 0.57554906, 0.57553841, 0.57551417, 0.5754849 ,
+        0.57527427, 0.57526061, 0.57520142, 0.57517677, 0.5749784 ,
+        0.57496244, 0.57469582, 0.57458128, 0.57408399, 0.57406256,
+        0.57376997, 0.57373791, 0.57348267, 0.57347634, 0.57327754,
+        0.57326721, 0.57299522, 0.57299209, 0.57294105, 0.57293693,
+        0.57277666, 0.57275032, 0.57265101, 0.57261529, 0.5726018 ,
+        0.57258254, 0.57235756, 0.57228811, 0.57192825, 0.57191189,
+        0.57166862, 0.57160726, 0.57108055, 0.57094484, 0.57086078,
+        0.57084998, 0.5702555 , 0.57015498, 0.5700167 , 0.56989316,
+        0.56987969, 0.56981919, 0.5688992 , 0.56883559, 0.56777186,
+        0.56770361, 0.56757309, 0.56751088, 0.56711888, 0.56709472,
+        0.56704119, 0.56691041, 0.56685268, 0.56681272, 0.56673081,
+        0.56665221, 0.56649637, 0.56644638, 0.56594464, 0.56593939,
+        0.5638471 , 0.56384365, 0.56354672, 0.5635332 , 0.56309789,
+        0.5630914 , 0.56264388, 0.56264035, 0.56137921, 0.56137803,
+        0.56115447, 0.56114285, 0.56112973, 0.56112282, 0.56063812,
+        0.5605762 , 0.55939359, 0.55939241, 0.55925177, 0.55925093,
+        0.55922614, 0.55920927, 0.5587424 , 0.55870059, 0.55858969,
+        0.55856023, 0.55733003, 0.55732718, 0.55593983, 0.55589878,
+        0.5553892 , 0.55537878, 0.55407901, 0.55406627, 0.55375938,
+        0.5537486 , 0.55342299, 0.55341626, 0.55060152, 0.55059931,
+        0.55046078, 0.55042169, 0.54726394, 0.54726187, 0.54700242,
+        0.54699656, 0.54567792, 0.54566368, 0.5451405 , 0.54511565,
+        0.54415695, 0.54412654, 0.54252761, 0.54251445, 0.54244522,
+        0.54240043, 0.54079565, 0.54079228, 0.53766036, 0.53765297,
+        0.53735306, 0.53734885, 0.53590671, 0.53589149, 0.53567736,
+        0.53567212, 0.53394471, 0.53394417, 0.53093643, 0.53091403,
+        0.53028912, 0.5302855 , 0.52323124, 0.52321114, 0.521713  ,
+        0.52169873, 0.52033302, 0.52032647, 0.51461583, 0.51459536,
+        0.51275255, 0.51274682, 0.49281305, 0.49279693, 0.30362619]))
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fpr</span> <span class="p">,</span><span class="n">tpr</span><span class="p">,</span> <span class="n">thr</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="s">'.-'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x1868b0e92e8&gt;]
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/07/output_37_1.png" alt="output_37_1" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">thr</span><span class="p">,</span> <span class="n">fpr</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x1868b24f0b8&gt;]
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/07/output_38_1.png" alt="output_38_1" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.9972922600000002
+</code></pre></div></div>
+
+
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+<script>
+$(function() {
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+});
+</script>
+
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://SEONGJAE-YOO.github.io/">Big Data</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <h1 class="subscribe-overlay-title">Search Big Data</h1>
+            <p class="subscribe-overlay-description">
+                원하는 검색어를 입력하세요</p>
+            <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+        </div>
+    </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
