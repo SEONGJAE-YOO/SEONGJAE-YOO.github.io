@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>정규 분포 개념 및 차트 만들기</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- 웹폰트 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="SeongJae Yu 블로그" />
+<link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
+<link rel="canonical" href="https://SEONGJAE-YOO.github.io/normalstudy" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+ <!--title below is coming from _includes/dynamic_title-->
+<meta property="og:site_name" content="Big Data" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="정규 분포 개념 및 차트 만들기" />
+<meta property="og:description" content="SeongJae Yu 블로그" />
+<meta property="og:url" content="https://SEONGJAE-YOO.github.io/normalstudy" />
+<meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+<meta property="article:publisher" content="https://www.facebook.com/" />
+<meta property="article:tag" content="Python" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="정규 분포 개념 및 차트 만들기" />
+<meta name="twitter:description" content="SeongJae Yu 블로그" />
+<meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
+<meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Big Data" />
+<meta name="twitter:label2" content="Filed under" />
+<meta name="twitter:data2" content="Python" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta property="og:image:width" content="2000" />
+<meta property="og:image:height" content="666" />
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Website",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Big Data",
+            "logo": "https://SEONGJAE-YOO.github.io/"
+        },
+        "url": "https://SEONGJAE-YOO.github.io/normalstudy",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png",
+            "width": 2000,
+            "height": 666
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://SEONGJAE-YOO.github.io/normalstudy"
+        },
+        "description": "SeongJae Yu 블로그"
+    }
+</script>
+
+<!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+<script type="text/javascript">
+ghost.init({
+    clientId: "ghost-frontend",
+    clientSecret: "f84a07a72b17"
+});
+</script> -->
+
+<meta name="generator" content="Jekyll 3.6.2" />
+<link rel="alternate" type="application/rss+xml" title="정규 분포 개념 및 차트 만들기" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- < default -->
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<!-- The big featured header, it uses blog cover image as a BG if available -->
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://SEONGJAE-YOO.github.io/">Big Data</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-rprogramming" role="menuitem"><a href="/tag/rprogramming/">R</a></li>
+    <li class="nav-processmining" role="menuitem"><a href="/tag/processmining/">Processmining</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-kaggle" role="menuitem"><a href="/tag/kaggle">kaggle</a></li>
+
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag별 Posts</a>
+    </li>
+</ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-python post tag-python ">
+
+            <header class="post-full-header">
+                <h1 class="post-full-title">정규 분포 개념 및 차트 만들기</h1>
+            </header>
+
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/logo-python.png)">
+            </figure>
+            
+
+            <section class="post-full-content">
+                <h1 id="classification-in-python-with-scikit-learn-and-pandas">Classification in Python with Scikit-Learn and Pandas</h1>
+
+<p>Classification is a large domain in the field of statistics and machine learning. Generally, classification can be broken down into two areas:</p>
+
+<p>Binary classification, where we wish to group an outcome into one of two groups.</p>
+
+<p>Multi-class classification, where we wish to group an outcome into one of multiple (more than two) groups</p>
+
+<p>분류는 통계 및 기계 학습 분야에서 큰 영역입니다. 일반적으로 분류는 두 가지 영역으로 나눌 수 있습니다.</p>
+
+<p>결과를 두 그룹 중 하나로 그룹화하려는 이진 분류.</p>
+
+<p>결과를 여러(둘 이상) 그룹 중 하나로 그룹화하려는 다중 클래스 분류입니다.</p>
+
+<h1 id="파이썬으로-정규-분포-데이터와-차트-만들기">파이썬으로 정규 분포 데이터와 차트 만들기</h1>
+
+<p>Numpy의 linspace 함수를 이용해 특정범위의 일정 간격의 랜덤 값을 생성한다</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">x</span><span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[-3.         -2.96984925 -2.93969849 -2.90954774 -2.87939698 -2.84924623
+ -2.81909548 -2.78894472 -2.75879397 -2.72864322 -2.69849246 -2.66834171
+ -2.63819095 -2.6080402  -2.57788945 -2.54773869 -2.51758794 -2.48743719
+ -2.45728643 -2.42713568 -2.39698492 -2.36683417 -2.33668342 -2.30653266
+ -2.27638191 -2.24623116 -2.2160804  -2.18592965 -2.15577889 -2.12562814
+ -2.09547739 -2.06532663 -2.03517588 -2.00502513 -1.97487437 -1.94472362
+ -1.91457286 -1.88442211 -1.85427136 -1.8241206  -1.79396985 -1.7638191
+ -1.73366834 -1.70351759 -1.67336683 -1.64321608 -1.61306533 -1.58291457
+ -1.55276382 -1.52261307 -1.49246231 -1.46231156 -1.4321608  -1.40201005
+ -1.3718593  -1.34170854 -1.31155779 -1.28140704 -1.25125628 -1.22110553
+ -1.19095477 -1.16080402 -1.13065327 -1.10050251 -1.07035176 -1.04020101
+ -1.01005025 -0.9798995  -0.94974874 -0.91959799 -0.88944724 -0.85929648
+ -0.82914573 -0.79899497 -0.76884422 -0.73869347 -0.70854271 -0.67839196
+ -0.64824121 -0.61809045 -0.5879397  -0.55778894 -0.52763819 -0.49748744
+ -0.46733668 -0.43718593 -0.40703518 -0.37688442 -0.34673367 -0.31658291
+ -0.28643216 -0.25628141 -0.22613065 -0.1959799  -0.16582915 -0.13567839
+ -0.10552764 -0.07537688 -0.04522613 -0.01507538  0.01507538  0.04522613
+  0.07537688  0.10552764  0.13567839  0.16582915  0.1959799   0.22613065
+  0.25628141  0.28643216  0.31658291  0.34673367  0.37688442  0.40703518
+  0.43718593  0.46733668  0.49748744  0.52763819  0.55778894  0.5879397
+  0.61809045  0.64824121  0.67839196  0.70854271  0.73869347  0.76884422
+  0.79899497  0.82914573  0.85929648  0.88944724  0.91959799  0.94974874
+  0.9798995   1.01005025  1.04020101  1.07035176  1.10050251  1.13065327
+  1.16080402  1.19095477  1.22110553  1.25125628  1.28140704  1.31155779
+  1.34170854  1.3718593   1.40201005  1.4321608   1.46231156  1.49246231
+  1.52261307  1.55276382  1.58291457  1.61306533  1.64321608  1.67336683
+  1.70351759  1.73366834  1.7638191   1.79396985  1.8241206   1.85427136
+  1.88442211  1.91457286  1.94472362  1.97487437  2.00502513  2.03517588
+  2.06532663  2.09547739  2.12562814  2.15577889  2.18592965  2.2160804
+  2.24623116  2.27638191  2.30653266  2.33668342  2.36683417  2.39698492
+  2.42713568  2.45728643  2.48743719  2.51758794  2.54773869  2.57788945
+  2.6080402   2.63819095  2.66834171  2.69849246  2.72864322  2.75879397
+  2.78894472  2.81909548  2.84924623  2.87939698  2.90954774  2.93969849
+  2.96984925  3.        ]
+</code></pre></div></div>
+
+<p>Scipy 패키지를 이용하여 정규분포의 활률밀도함수를 구할 수 있다.</p>
+
+<p>norm()은 정규분포를 나타내며 pdf()는 확률밀도함수(Probability Density Function, PDF)를 나타낸다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="n">stats</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">stats</span><span class="p">.</span><span class="n">norm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">).</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.00443185 0.0048492  0.00530104 0.00578971 0.00631769 0.00688754
+ 0.00750198 0.00816381 0.00887594 0.00964143 0.01046343 0.01134518
+ 0.01229006 0.01330154 0.01438318 0.01553865 0.01677169 0.01808612
+ 0.01948585 0.02097483 0.02255707 0.02423662 0.02601757 0.02790401
+ 0.02990003 0.03200972 0.03423712 0.03658625 0.03906104 0.04166533
+ 0.04440287 0.04727727 0.05029201 0.05345039 0.05675549 0.0602102
+ 0.06381716 0.06757874 0.07149701 0.07557373 0.07981032 0.08420782
+ 0.0887669  0.09348777 0.09837025 0.10341367 0.10861688 0.11397823
+ 0.11949554 0.12516608 0.13098658 0.13695319 0.14306148 0.14930641
+ 0.15568236 0.16218308 0.16880173 0.17553084 0.18236234 0.18928757
+ 0.19629725 0.20338155 0.21053004 0.21773176 0.22497523 0.23224844
+ 0.23953894 0.2468338  0.2541197  0.26138293 0.26860947 0.27578499
+ 0.28289489 0.28992442 0.29685863 0.30368249 0.31038093 0.31693887
+ 0.3233413  0.32957332 0.33562021 0.3414675  0.34710097 0.35250679
+ 0.3576715  0.36258212 0.36722617 0.37159175 0.37566757 0.379443
+ 0.38290812 0.38605377 0.3888716  0.39135406 0.3934945  0.39528714
+ 0.39672713 0.39781056 0.39853449 0.39889695 0.39889695 0.39853449
+ 0.39781056 0.39672713 0.39528714 0.3934945  0.39135406 0.3888716
+ 0.38605377 0.38290812 0.379443   0.37566757 0.37159175 0.36722617
+ 0.36258212 0.3576715  0.35250679 0.34710097 0.3414675  0.33562021
+ 0.32957332 0.3233413  0.31693887 0.31038093 0.30368249 0.29685863
+ 0.28992442 0.28289489 0.27578499 0.26860947 0.26138293 0.2541197
+ 0.2468338  0.23953894 0.23224844 0.22497523 0.21773176 0.21053004
+ 0.20338155 0.19629725 0.18928757 0.18236234 0.17553084 0.16880173
+ 0.16218308 0.15568236 0.14930641 0.14306148 0.13695319 0.13098658
+ 0.12516608 0.11949554 0.11397823 0.10861688 0.10341367 0.09837025
+ 0.09348777 0.0887669  0.08420782 0.07981032 0.07557373 0.07149701
+ 0.06757874 0.06381716 0.0602102  0.05675549 0.05345039 0.05029201
+ 0.04727727 0.04440287 0.04166533 0.03906104 0.03658625 0.03423712
+ 0.03200972 0.02990003 0.02790401 0.02601757 0.02423662 0.02255707
+ 0.02097483 0.01948585 0.01808612 0.01677169 0.01553865 0.01438318
+ 0.01330154 0.01229006 0.01134518 0.01046343 0.00964143 0.00887594
+ 0.00816381 0.00750198 0.00688754 0.00631769 0.00578971 0.00530104
+ 0.0048492  0.00443185]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="n">stats</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span> 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span> 
+
+<span class="c1"># -3에서 3까지 일정한 간격으로 200개의 데이터를 생성 
+</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span> 
+<span class="c1"># 평균이 0, 표준편차가 1인 random variable을 생성 
+</span><span class="n">y</span> <span class="o">=</span> <span class="n">stats</span><span class="p">.</span><span class="n">norm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">).</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
+
+<span class="c1"># 챠트 생성 
+</span><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> 
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"x"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"y"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/normal/output_6_0.png" alt="output_6_0" /></p>
+
+<h1 id="연속확률분포-정규분포-표준정규분포">연속확률분포, 정규분포, 표준정규분포</h1>
+
+<p>우리가 셀 수 있는 확률변수들의 분포를  이산확률분포라고 불렀습니다. 이러한 이산확률분포 중에는 대표적으로 이항분포와 포아송 분포가 있었습니다.</p>
+
+<p>이산확률분포와는 다르게, 정규분포는 0과 1사이의 임의의 실수처럼 셀 수 없는 연속적인 값을 가지는 연속확률분포입니다. 정규분포는 연속적인 값을 가지는 확률변수의 분포를 나타내는데 가장 많이 적용되고 있는 분포입니다. 정규분포 외에도 데이터에 따라 더 적합한 분포들도 많이 제안되어 왔지만, 여전히 가장 강력하고 일상적으로 적용되고 있는 분포입니다.</p>
+
+<h2 id="연속활률분포">[연속활률분포]</h2>
+
+<p>본격적으로 정규분포에 대해서 알아보기 전에, 연속확률분포에 대해서 알아보겠습니다. 연속확률분포는 이산확률분포처럼 발생가능한 모든 값에 확률을 대응/나열하여 표현하기가 어렵습니다. 발생 가능한 값이 무한대이기 때문입니다.</p>
+
+<p>따라서 연속확률분포는 주어진 구간에서 확률이 어떻게 분포하는지를 판단하게 되고, 어느 구간의 확률이 작은지, 큰지를 나타낼 수 있는 함수를 이용하게 됩니다.</p>
+
+<p>연속확률변수 X의 확률분포는 확률의 밀도를 나타내는 확률밀도함수에 의해 결정되며, 확률밀도함수는 아래와 같은 조건을 만족해야합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>  <span class="c1"># 주피터 노트북에 이미지 삽입
+</span><span class="n">Image</span><span class="p">(</span><span class="s">"C://Users/MyCom/jupyter-tutorial/수업자료/응용/data/normal/20211019_174756_1.png"</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/normal/output_8_0.png" alt="output_8_0" /></p>
+
+<h2 id="정규분포normal-distribution">[정규분포(normal distribution)]</h2>
+
+<p>정규뷴포는 “평균”, “분산”에 의해서 그 분포가 확정됩니다. 그 확률밀도함수의 대략적인 특성은 다음과 같습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Image</span><span class="p">(</span><span class="s">"C://Users/MyCom/jupyter-tutorial/수업자료/응용/data/normal/20211019_174756_2.png"</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/normal/output_10_0.png" alt="output_10_0" /></p>
+
+<p>위의 사진에서 보는 것같이 확률 변수 X가 평균으로부터 1표준편차, 2표준편차, 3표준편차 사이에 있을 확률은 아래와 같습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Image</span><span class="p">(</span><span class="s">"C://Users/MyCom/jupyter-tutorial/수업자료/응용/data/normal/20211019_174756_3.png"</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/normal/output_12_0.png" alt="output_12_0" /></p>
+
+<p>확률변수 X가 평균 μ, 표준편차 σ인 정규분포를 따를 때 주로 N(μ,σ^2)로 표현하게 됩니다. 표준편차 σ가 커질수록 정규분포의 모형은 옆으로 퍼지게 됩니다. 즉 퍼진정도가 커지게 됩니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Image</span><span class="p">(</span><span class="s">"C://Users/MyCom/jupyter-tutorial/수업자료/응용/data/normal/20211019_174756_4.png"</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/normal/output_14_0.png" alt="output_14_0" /></p>
+
+<p>[표준정규분포(Standard normal distribution)]</p>
+
+<p>표준정규분포는 평균이 0이고 표준편차가 1인 정규분포를 나타냅니다. 표준정규분포를 가지는 확률변수를 Z라고 표현했을 때 확률변슈 Z는 0을 중심으로 대칭인 분포를 가지게 됩니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Image</span><span class="p">(</span><span class="s">"C://Users/MyCom/jupyter-tutorial/수업자료/응용/data/normal/20211019_174756_5.png"</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/normal/output_16_0.png" alt="output_16_0" /></p>
+
+<p>표준정규분포에서 확률변수 Z가 임의구간 [a,b]에 있을 확률은 아래와 같습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Image</span><span class="p">(</span><span class="s">"C://Users/MyCom/jupyter-tutorial/수업자료/응용/data/normal/20211019_174756_6.png"</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/normal/output_18_0.png" alt="output_18_0" /></p>
+
+<p>만약 정규분포를 따르는 확률변수 X가 주어졌을 떄, 확률변수 X의 평균값(μ)과 표준편차값(σ)을 이용하여 평균이 0이고 표준편차가 1인 표준정규확률변수 Z로 변환할 수 있습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Image</span><span class="p">(</span><span class="s">"C://Users/MyCom/jupyter-tutorial/수업자료/응용/data/normal/20211019_174756_7.png"</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/normal/output_20_0.png" alt="output_20_0" /></p>
+
+<p>파이썬을 활용하여 정규분포를 Simulation 해보도록 하겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">## 필요 Module Import
+</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="n">mu</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">std</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">norm_</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span><span class="n">std</span><span class="p">)</span> <span class="c1">## 평균 10, 표준편차 1인 정규분포 생성
+</span>
+<span class="c1">## 시각화
+</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">norm_</span><span class="p">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span> <span class="n">norm_</span><span class="p">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.99</span><span class="p">),</span><span class="mi">1000</span><span class="p">)</span> <span class="c1">##  1%일때 x값, 99%일때 x값 사이의 x값 생성 
+</span><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">norm_</span><span class="p">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s">'r-'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'norm pdf'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/normal/output_22_0.png" alt="output_22_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_norm</span> <span class="o">=</span> <span class="n">norm_</span><span class="p">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span> <span class="c1">## 평균 10, 표준편차 1의 정규분포를 따르는 데이터 생성 /rvs	랜덤 샘플 생성 (random variable sampling)
+</span><span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data_norm</span><span class="p">,</span> <span class="n">density</span> <span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">histtype</span> <span class="o">=</span> <span class="s">"stepfilled"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s">"norm_hist"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/normal/output_23_0.png" alt="output_23_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">## 동시에 시각화 표현
+</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">norm_</span><span class="p">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s">'r-'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'norm pdf'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data_norm</span><span class="p">,</span> <span class="n">density</span> <span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">histtype</span> <span class="o">=</span> <span class="s">"stepfilled"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s">"simulation"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">"upper right"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/normal/output_24_0.png" alt="output_24_0" /></p>
+
+
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+<script>
+$(function() {
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+});
+</script>
+
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://SEONGJAE-YOO.github.io/">Big Data</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <h1 class="subscribe-overlay-title">Search Big Data</h1>
+            <p class="subscribe-overlay-description">
+                원하는 검색어를 입력하세요</p>
+            <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+        </div>
+    </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
