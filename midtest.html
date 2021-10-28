@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>2021_Machine_Learning_Programming_Midterm</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- 웹폰트 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="SeongJae Yu 블로그" />
+<link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
+<link rel="canonical" href="https://SEONGJAE-YOO.github.io/midtest" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+ <!--title below is coming from _includes/dynamic_title-->
+<meta property="og:site_name" content="Big Data" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="2021_Machine_Learning_Programming_Midterm" />
+<meta property="og:description" content="SeongJae Yu 블로그" />
+<meta property="og:url" content="https://SEONGJAE-YOO.github.io/midtest" />
+<meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+<meta property="article:publisher" content="https://www.facebook.com/" />
+<meta property="article:tag" content="Python" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="2021_Machine_Learning_Programming_Midterm" />
+<meta name="twitter:description" content="SeongJae Yu 블로그" />
+<meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
+<meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Big Data" />
+<meta name="twitter:label2" content="Filed under" />
+<meta name="twitter:data2" content="Python" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta property="og:image:width" content="2000" />
+<meta property="og:image:height" content="666" />
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Website",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Big Data",
+            "logo": "https://SEONGJAE-YOO.github.io/"
+        },
+        "url": "https://SEONGJAE-YOO.github.io/midtest",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png",
+            "width": 2000,
+            "height": 666
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://SEONGJAE-YOO.github.io/midtest"
+        },
+        "description": "SeongJae Yu 블로그"
+    }
+</script>
+
+<!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+<script type="text/javascript">
+ghost.init({
+    clientId: "ghost-frontend",
+    clientSecret: "f84a07a72b17"
+});
+</script> -->
+
+<meta name="generator" content="Jekyll 3.6.2" />
+<link rel="alternate" type="application/rss+xml" title="2021_Machine_Learning_Programming_Midterm" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- < default -->
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<!-- The big featured header, it uses blog cover image as a BG if available -->
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://SEONGJAE-YOO.github.io/">Big Data</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-rprogramming" role="menuitem"><a href="/tag/rprogramming/">R</a></li>
+    <li class="nav-processmining" role="menuitem"><a href="/tag/processmining/">Processmining</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-kaggle" role="menuitem"><a href="/tag/kaggle">kaggle</a></li>
+
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag별 Posts</a>
+    </li>
+</ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-python post tag-python ">
+
+            <header class="post-full-header">
+                <h1 class="post-full-title">2021_Machine_Learning_Programming_Midterm</h1>
+            </header>
+
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/logo-python.png)">
+            </figure>
+            
+
+            <section class="post-full-content">
+                <h1 id="2021년-2학기-머신러닝-프로그래밍-중간고사">2021년 2학기 머신러닝 프로그래밍 중간고사</h1>
+
+<ul>
+  <li>시작: 2021년 10월 22일</li>
+  <li>마감: 2021년 10월 29일</li>
+</ul>
+
+<p>2021년도 2학기 머신러닝 프로그래밍 과목의 중간고사는 비대면, 비실시간으로 진행됩니다. 이 파일을 본인의 google drive등으로 복사 해 간 다음 google colaboratory에서 실행하거나, 다운로드 받은 다음 각자 사용할 수 있는 컴퓨팅 환경 하에서 내용ᅟ 작성, 코드 작성, 실행한 다음 .ipynb 파일을 ecampus를 통해 제출하시면 됩니다.</p>
+
+<p>중간고사까지는 <strong>파이썬 프로그래밍과 데이터를 다루기 위한 기본적인 단계만</strong> 다루었고, 이 내용과 관련해 아래에서 드리는 질문에 대한 답을 제시 해 주시면 됩니다.</p>
+
+<p>참고로, <strong>아래 문제의 상황은 현실과는 거리가 멀고, 실제 상황에 적용하기에는 무리가 있습니다</strong>.</p>
+
+<hr />
+
+<p>여기에서는 <strong>주어진 상황에 대해 python으로 구현할 수 있는지</strong>를 묻기 위해, 아주 간단한 일종의 시뮬레이션 코드를 작성하면서 프로그램 작성 방법을 연습합니다.</p>
+
+<p>배경: 주식 매매 전략 중 일부에서는, 기업의 가치 분석은 무시하고 주가 변동 상황만을 이용해 매매하기도 합니다. 물론 실제 주가 변동은 각종 외부 요인이나 시장 참여자들의 심리, 기업 가치에 따라 변화하지만, 여기에서는 단순화해서 랜덤하게 등락을 반복하며 평균적으로는 일정 패턴이 유지된다고 합시다.</p>
+
+<hr />
+
+<p><strong>(문제 0)</strong> 현재 공모전 등 참여 상황에 대해 짧게 알려주세요. (단순 설문조사입니다)</p>
+<ul>
+  <li>주제:</li>
+  <li>내용 요약:</li>
+  <li>웹사이트 등 정보:</li>
+  <li>계획, 현재 상태:</li>
+</ul>
+
+<p>…. 내용 정리 …</p>
+
+<p>NLP 텍스트 마이닝, 데이터마이닝</p>
+
+<p>캐글사이트에서 텍스트 마이닝 분야를 공부하고 있습니다.
+현재 진행중인 공모전은 따로 없으나 혼자 사이트에서 공부 하고 있습니다.
+유데미사이트에서 텍스트 마이닝,데이터 마이닝 쪽을 수강하고 공부할 예정입니다.</p>
+
+<p><strong>(문제 1)</strong> 주가가 매 초, 최소 단위 500원씩 변동할 수 있다고 합시다. 아침 9시부터 오후 3시까지 계속해서 주식 매매가 이루어진다고 했을 때 하루동안의 주가 데이터를 list에 담아주세요.(10)</p>
+
+<ul>
+  <li>for loop 이나 while loop을 활용하세요</li>
+  <li>기본 random module을 사용하세요</li>
+  <li>numpy사용하지 않고, 기본 list type을 활용하세요</li>
+  <li>시간 데이터를 담는 list의 변수명은 times, 주가 데이터를 담는 list의 변수명은 prices로 해주세요.</li>
+  <li>초기 자금이나, 장 시작시의 주식 가격은 본인이 원하는대로 임의의 값으로 넣어주세요. (단 최소 단위는 500원)</li>
+  <li>주가 변동폭이 시작 가격 기준으로 상하 20%를 넘지 않아야 합니다.</li>
+  <li>주가 최소값은 500원으로 합니다. (0원이나 음수가 나오면 안됩니다)</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">## 여기에 코드 작성하기
+</span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">open_price</span> <span class="o">=</span> <span class="mi">100000</span> <span class="c1"># 시작 가격
+</span><span class="n">price_range</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="n">open_price</span><span class="p">]</span>  <span class="c1"># 주가
+</span><span class="n">end</span> <span class="o">=</span> <span class="mi">3600</span> <span class="o">*</span> <span class="p">(</span><span class="mi">15</span><span class="o">-</span><span class="mi">9</span><span class="p">)</span> <span class="c1"># 9시부터 15시까지 차이 (초)
+</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">end</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>  <span class="c1"># 3시를 포함해서 반복문을 진행한다
+</span>    <span class="c1"># 주가는 -500 ~ 500원씩 변동이 생기되, 상하한 20%를 넘지않도록 해줌.
+</span>    <span class="n">price</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">random</span><span class="p">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="n">price_range</span><span class="p">,</span> <span class="n">price_range</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">price</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">price</span><span class="p">,</span> <span class="n">open_price</span> <span class="o">*</span> <span class="mf">1.2</span><span class="p">),</span> <span class="n">open_price</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)</span> <span class="c1"># 상 하한 20% 범위 설정
+</span>    <span class="n">prices</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
+    
+<span class="n">prices</span>
+
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[100000,
+ 99791,
+ 100200,
+ 100571,
+ 100335,
+ 99981,
+ 99945,
+ 100031,
+ 100331,
+ 100607,
+ 101000,
+ 101016,
+ 100782,
+ 100473,
+ 100629,
+ 100928,
+ 100655,
+ 100492,
+ 100520,
+ 100076,
+ 99927,
+ 100284,
+ 100203,
+ 99887,
+ 99956,
+ 99671,
+ 99408,
+ 98973,
+ 99136,
+ 99040,
+ 98573,
+ 98620,
+ 99085,
+ 99469,
+ 99325,
+ 99189,
+ 98861,
+ 99330,
+ 99538,
+ 99285,
+ 99230,
+ 99561,
+ 99713,
+ 100041,
+ 100120,
+ 99888,
+ 100072,
+ 99816,
+ 100056,
+ 100493,
+ 100426,
+ 100479,
+ 100342,
+ 99975,
+ 100253,
+ 100274,
+ 100070,
+ 100229,
+ 100028,
+ 99942,
+ 100107,
+ 100353,
+ 99990,
+ 99814,
+ 99701,
+ 99440,
+ 99046,
+ 99159,
+ 99285,
+ 98831,
+ 98543,
+ 98442,
+ 98761,
+ 98455,
+ 98648,
+ 98921,
+ 99341,
+ 99282,
+ 99471,
+ 99381,
+ 99858,
+ 99433,
+ 99192,
+ 99001,
+ 99474,
+ 99696,
+ 99504,
+ 99403,
+ 99009,
+ 99296,
+ 98881,
+ 98460,
+ 98746,
+ 98419,
+ 98686,
+ 98487,
+ 98814,
+ 98539,
+ 98702,
+ 98643,
+ 98617,
+ 98488,
+ 98588,
+ 98557,
+ 98692,
+ 98996,
+ 98556,
+ 98177,
+ 98481,
+ 98636,
+ 98792,
+ 99062,
+ 98592,
+ 98496,
+ 98826,
+ 99175,
+ 99247,
+ 98833,
+ 99151,
+ 99209,
+ 99541,
+ 99666,
+ 99987,
+ 100139,
+ 100015,
+ 100102,
+ 100254,
+ 100165,
+ 100173,
+ 99941,
+ 100118,
+ 99921,
+ 99973,
+ 99473,
+ 99564,
+ 99421,
+ 99473,
+ 99347,
+ 99777,
+ 99959,
+ 99737,
+ 99672,
+ 99560,
+ 99670,
+ 99749,
+ 99337,
+ 99169,
+ 98881,
+ 98915,
+ 98930,
+ 98649,
+ 98548,
+ 98738,
+ 98969,
+ 98789,
+ 98730,
+ 99030,
+ 99486,
+ 99842,
+ 100170,
+ 100522,
+ 100627,
+ 100303,
+ 100147,
+ 100615,
+ 100483,
+ 100399,
+ 100519,
+ 100655,
+ 100263,
+ 100529,
+ 100329,
+ 100047,
+ 99592,
+ 99878,
+ 100364,
+ 99906,
+ 99968,
+ 100334,
+ 100291,
+ 100625,
+ 100840,
+ 100832,
+ 100808,
+ 100842,
+ 100495,
+ 100877,
+ 101135,
+ 100787,
+ 100459,
+ 100573,
+ 101001,
+ 100691,
+ 100271,
+ 100648,
+ 101018,
+ 100947,
+ 100691,
+ 100518,
+ 100629,
+ 100261,
+ 99770,
+ 99482,
+ 99330,
+ 99403,
+ 99873,
+ 99606,
+ 99528,
+ 99739,
+ 99283,
+ 99416,
+ 99298,
+ 98968,
+ 98956,
+ 99093,
+ 99472,
+ 99647,
+ 99941,
+ 99606,
+ 99940,
+ 100425,
+ 100171,
+ 100447,
+ 100735,
+ 100752,
+ 100927,
+ 100616,
+ 100761,
+ 101019,
+ 101456,
+ 101939,
+ 101870,
+ 101738,
+ 101447,
+ 101177,
+ 100770,
+ 100821,
+ 100907,
+ 100916,
+ 101409,
+ 101283,
+ 101138,
+ 101241,
+ 101117,
+ 101596,
+ 101282,
+ 101282,
+ 101532,
+ 101882,
+ 102346,
+ 102387,
+ 101984,
+ 101868,
+ 101518,
+ 101812,
+ 102027,
+ 102498,
+ 102144,
+ 102130,
+ 102556,
+ 102893,
+ 102600,
+ 102648,
+ 102583,
+ 102817,
+ 103196,
+ 103211,
+ 103552,
+ 103619,
+ 103807,
+ 103862,
+ 104267,
+ 104355,
+ 104231,
+ 103938,
+ 103925,
+ 103465,
+ 103226,
+ 102902,
+ 103002,
+ 103045,
+ 103064,
+ 102642,
+ 102245,
+ 101870,
+ 101640,
+ 101202,
+ 101575,
+ 101782,
+ 102189,
+ 101710,
+ 101904,
+ 101500,
+ 101317,
+ 101019,
+ 100781,
+ 101233,
+ 101036,
+ 101266,
+ 101026,
+ 101043,
+ 100943,
+ 100943,
+ 100642,
+ 100952,
+ 101168,
+ 100932,
+ 100639,
+ 100313,
+ 100461,
+ 100798,
+ 100762,
+ 101188,
+ 101575,
+ 101523,
+ 101658,
+ 101908,
+ 101650,
+ 101507,
+ 101905,
+ 101532,
+ 101144,
+ 100738,
+ 100358,
+ 99876,
+ 99519,
+ 99883,
+ 100270,
+ 100442,
+ 100891,
+ 101382,
+ 101352,
+ 100977,
+ 101083,
+ 100798,
+ 101246,
+ 100905,
+ 100879,
+ 100944,
+ 100816,
+ 100729,
+ 101206,
+ 101204,
+ 100705,
+ 100423,
+ 100794,
+ 100449,
+ 100554,
+ 100879,
+ 100413,
+ 100446,
+ 100521,
+ 100690,
+ 100892,
+ 101018,
+ 100613,
+ 100325,
+ 100620,
+ 100456,
+ 100454,
+ 100211,
+ 100609,
+ 100380,
+ 100623,
+ 100536,
+ 100147,
+ 100276,
+ 100483,
+ 100415,
+ 100720,
+ 101166,
+ 100672,
+ 101023,
+ 101455,
+ 100974,
+ 101214,
+ 101105,
+ 100857,
+ 100731,
+ 101016,
+ 101002,
+ 100709,
+ 101138,
+ 101544,
+ 101253,
+ 101600,
+ 101337,
+ 101214,
+ 101676,
+ 101309,
+ 101135,
+ 101167,
+ 101262,
+ 101365,
+ 101635,
+ 101348,
+ 101493,
+ 101383,
+ 101187,
+ 101060,
+ 100763,
+ 101216,
+ 100730,
+ 100793,
+ 101264,
+ 100863,
+ 101181,
+ 100832,
+ 100578,
+ 101009,
+ 100578,
+ 100518,
+ 100452,
+ 100039,
+ 100080,
+ 100193,
+ 99894,
+ 100118,
+ 100536,
+ 100260,
+ 100633,
+ 101115,
+ 100660,
+ 100306,
+ 100525,
+ 100120,
+ 99981,
+ 100011,
+ 100198,
+ 100230,
+ 100586,
+ 100817,
+ 100439,
+ 100375,
+ 100455,
+ 100778,
+ 100689,
+ 100428,
+ 100894,
+ 101022,
+ 101078,
+ 100931,
+ 100760,
+ 100588,
+ 100274,
+ 100329,
+ 100243,
+ 100205,
+ 99942,
+ 99564,
+ 99713,
+ 99878,
+ 100084,
+ 100336,
+ 99926,
+ 100114,
+ 100158,
+ 100500,
+ 100533,
+ 100482,
+ 99990,
+ 99620,
+ 99312,
+ 99716,
+ 99432,
+ 99264,
+ 99273,
+ 99117,
+ 98758,
+ 99000,
+ 98948,
+ 98876,
+ 99127,
+ 99587,
+ 99906,
+ 99816,
+ 99964,
+ 100255,
+ 99940,
+ 99443,
+ 99292,
+ 99571,
+ 99696,
+ 99621,
+ 99121,
+ 98958,
+ 99232,
+ 99476,
+ 99908,
+ 99813,
+ 99732,
+ 99242,
+ 99603,
+ 99569,
+ 99528,
+ 99356,
+ 99179,
+ 99421,
+ 98935,
+ 99232,
+ 99387,
+ 99064,
+ 99261,
+ 99322,
+ 99344,
+ 99524,
+ 99933,
+ 99454,
+ 99480,
+ 99426,
+ 99882,
+ 100360,
+ 100274,
+ 100644,
+ 100347,
+ 100010,
+ 100011,
+ 99901,
+ 100129,
+ 99893,
+ 100104,
+ 100531,
+ 100242,
+ 99964,
+ 99715,
+ 100094,
+ 100418,
+ 100033,
+ 100482,
+ 100342,
+ 100586,
+ 100192,
+ 100165,
+ 100200,
+ 100322,
+ 100785,
+ 100575,
+ 100225,
+ 100652,
+ 100198,
+ 99927,
+ 100039,
+ 100344,
+ 100023,
+ 100292,
+ 100027,
+ 99957,
+ 99943,
+ 100311,
+ 99859,
+ 100261,
+ 100286,
+ 100471,
+ 100010,
+ 99596,
+ 99211,
+ 98715,
+ 98890,
+ 99332,
+ 99330,
+ 99584,
+ 99301,
+ 99067,
+ 99403,
+ 99250,
+ 99381,
+ 99254,
+ 98971,
+ 99163,
+ 99175,
+ 98970,
+ 99289,
+ 99198,
+ 99310,
+ 99377,
+ 99569,
+ 99999,
+ 99888,
+ 100077,
+ 100058,
+ 99667,
+ 99337,
+ 99484,
+ 99725,
+ 99862,
+ 99393,
+ 99249,
+ 98781,
+ 99000,
+ 99133,
+ 99160,
+ 98718,
+ 98847,
+ 98893,
+ 99168,
+ 98677,
+ 99123,
+ 99128,
+ 99447,
+ 99735,
+ 99746,
+ 99707,
+ 100116,
+ 100286,
+ 100050,
+ 99882,
+ 99991,
+ 100037,
+ 100389,
+ 100090,
+ 99772,
+ 99948,
+ 99882,
+ 99792,
+ 100158,
+ 99795,
+ 100209,
+ 100031,
+ 99554,
+ 99996,
+ 99686,
+ 100027,
+ 100125,
+ 100266,
+ 100104,
+ 100005,
+ 100286,
+ 100095,
+ 100452,
+ 100246,
+ 100537,
+ 100628,
+ 100978,
+ 100621,
+ 100479,
+ 100196,
+ 100333,
+ 100615,
+ 100658,
+ 100551,
+ 100907,
+ 101308,
+ 101344,
+ 101143,
+ 101227,
+ 101421,
+ 101548,
+ 101962,
+ 101589,
+ 101585,
+ 101746,
+ 101286,
+ 100891,
+ 101187,
+ 101270,
+ 101103,
+ 101576,
+ 101958,
+ 102159,
+ 102449,
+ 102067,
+ 102160,
+ 101665,
+ 101434,
+ 101129,
+ 101146,
+ 100749,
+ 100390,
+ 100019,
+ 100314,
+ 100595,
+ 100645,
+ 100569,
+ 100419,
+ 100837,
+ 101059,
+ 100952,
+ 101356,
+ 101099,
+ 101115,
+ 101082,
+ 101367,
+ 101583,
+ 101307,
+ 101427,
+ 101586,
+ 101693,
+ 101789,
+ 101885,
+ 101600,
+ 101502,
+ 101412,
+ 101840,
+ 101713,
+ 101628,
+ 101517,
+ 101177,
+ 101299,
+ 100852,
+ 100704,
+ 100640,
+ 100704,
+ 100763,
+ 100500,
+ 100892,
+ 101253,
+ 100922,
+ 101351,
+ 101343,
+ 101742,
+ 102208,
+ 102066,
+ 101815,
+ 101548,
+ 101857,
+ 101381,
+ 101429,
+ 101584,
+ 101702,
+ 101890,
+ 102090,
+ 102117,
+ 101906,
+ 101832,
+ 101967,
+ 102127,
+ 101694,
+ 101767,
+ 102206,
+ 101751,
+ 101423,
+ 101208,
+ 101205,
+ 101389,
+ 101876,
+ 101402,
+ 101734,
+ 102025,
+ 102312,
+ 102453,
+ 102522,
+ 102813,
+ 102451,
+ 102339,
+ 102641,
+ 102945,
+ 103318,
+ 103339,
+ 103814,
+ 104242,
+ 104132,
+ 103650,
+ 103830,
+ 103781,
+ 103325,
+ 103645,
+ 103537,
+ 103064,
+ 102836,
+ 103071,
+ 102600,
+ 102607,
+ 102182,
+ 102587,
+ 102511,
+ 102622,
+ 102826,
+ 103127,
+ 103377,
+ 103797,
+ 103664,
+ 103320,
+ 103198,
+ 103062,
+ 103139,
+ 102770,
+ 102562,
+ 102821,
+ 103072,
+ 102728,
+ 102303,
+ 102788,
+ 102672,
+ 102667,
+ 102367,
+ 101869,
+ 101630,
+ 101424,
+ 101197,
+ 101105,
+ 101421,
+ 101123,
+ 101365,
+ 101576,
+ 101220,
+ 101118,
+ 101174,
+ 101209,
+ 101266,
+ 101671,
+ 102169,
+ 102205,
+ 102057,
+ 101929,
+ 102295,
+ 101912,
+ 101597,
+ 101260,
+ 100859,
+ 101270,
+ 100831,
+ 100849,
+ 101098,
+ 101484,
+ 101811,
+ 101367,
+ 100978,
+ 100986,
+ 100734,
+ 100708,
+ 101076,
+ 100810,
+ 100762,
+ 100805,
+ 100667,
+ 100172,
+ 100482,
+ 100954,
+ 101096,
+ 101400,
+ 101142,
+ 101481,
+ 101616,
+ 101569,
+ 101486,
+ 101027,
+ 100631,
+ 100654,
+ 100836,
+ 100763,
+ 100921,
+ 101078,
+ 101558,
+ 101146,
+ 101463,
+ 101536,
+ 101214,
+ 101308,
+ 101291,
+ 101752,
+ 101614,
+ 101941,
+ 101470,
+ 101532,
+ 101673,
+ 101301,
+ 101587,
+ 101672,
+ 101322,
+ 101339,
+ 101813,
+ 101976,
+ 102003,
+ 101528,
+ 101237,
+ 101366,
+ 101370,
+ 101664,
+ 101701,
+ 101430,
+ 101637,
+ 101568,
+ 101647,
+ 101422,
+ 101749,
+ 101745,
+ 101317,
+ 101666,
+ 101430,
+ 101481,
+ 101540,
+ 101303,
+ 100901,
+ 100661,
+ 100818,
+ 100911,
+ 100515,
+ 100305,
+ 100094,
+ 99759,
+ 99992,
+ 99889,
+ 100344,
+ 100109,
+ 100569,
+ 101024,
+ 101165,
+ 100689,
+ 100718,
+ 100310,
+ 99837,
+ 100012,
+ 99549,
+ 99745,
+ 99739,
+ 99999,
+ 100139,
+ 100065,
+ 100515,
+ 100832,
+ 101037,
+ 101120,
+ 101147,
+ 101342,
+ 101426,
+ 101674,
+ 102051,
+ 101586,
+ 101284,
+ 101621,
+ 101203,
+ 101622,
+ 101956,
+ 101813,
+ 101662,
+ 101408,
+ 101308,
+ 101673,
+ 101671,
+ 101728,
+ 101394,
+ 101763,
+ 102077,
+ 102391,
+ 102823,
+ 102950,
+ 103101,
+ 102873,
+ 103279,
+ 103321,
+ 103661,
+ 103533,
+ 103890,
+ 104146,
+ 104280,
+ 104111,
+ 104583,
+ 104809,
+ 105184,
+ 104787,
+ 104894,
+ 105044,
+ 104654,
+ 104636,
+ 104275,
+ 104282,
+ 104573,
+ 104139,
+ 103879,
+ 104332,
+ 103869,
+ 104314,
+ 103883,
+ 103705,
+ 103413,
+ 103353,
+ 103063,
+ 103267,
+ 103509,
+ 103619,
+ 103508,
+ 103548,
+ 103862,
+ 104279,
+ 104307,
+ 104769,
+ 105020,
+ 105267,
+ 105010,
+ 104783,
+ 104285,
+ 104168,
+ 103961,
+ 104121,
+ 104238,
+ 103762,
+ 103917,
+ 103610,
+ 103677,
+ 103275,
+ 103540,
+ 103145,
+ 102814,
+ 102954,
+ 102535,
+ 102928,
+ 102559,
+ 102223,
+ 101960,
+ 101460,
+ ...]
+</code></pre></div></div>
+
+<p><strong>(문제 2)</strong> 위에서 만든 times와 prices를 이용해 주식 가격을 시간에 대해 그려주세요. (10)</p>
+
+<ul>
+  <li>matplotlib을 이용해 그려주세요.</li>
+  <li>그림을 그릴때 가로축이 시간(초), 세로축이 주가(원)가 되도록 해 주세요.</li>
+  <li>시간축 표기를 시:분:초 에 맞추셔도 좋습니다 (필수 사항은 아님)</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 구글 코랩(colab) 한글 깨짐 현상 해결방법 /나눔 폰트 설치 (Nanum)
+</span><span class="err">!</span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">fonts</span><span class="o">-</span><span class="n">nanum</span>
+<span class="err">!</span><span class="n">sudo</span> <span class="n">fc</span><span class="o">-</span><span class="n">cache</span> <span class="o">-</span><span class="n">fv</span>
+<span class="err">!</span><span class="n">rm</span> <span class="o">~/</span><span class="p">.</span><span class="n">cache</span><span class="o">/</span><span class="n">matplotlib</span> <span class="o">-</span><span class="n">rf</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">## 여기에 코드 작성하기
+</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">rc</span><span class="p">(</span><span class="s">'font'</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">'NanumBarunGothic'</span><span class="p">)</span> <span class="c1"># 한글폰트 적용
+</span>
+<span class="n">times</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">end</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="c1"># X축에 쓰일 시간(초)
+</span><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">prices</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'시간(초)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'주가(원)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/midtest/output_7_0.png" alt="output_7_0" /></p>
+
+<p><strong>(문제 3)</strong> 매 10분마다 주가를 확인해 주가가 오르면 전부 팔고 내리면 전부 사는 (무식한)전략을 따른다고 합시다. 이 때 하루동안 매매한 횟수와, 수익률을 계산하세요.(10)</p>
+
+<ul>
+  <li>함수를 정의해 구현하셔도 됩니다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">## 여기에 코드 작성하기
+## 매수/매도를 1번의 매매라고 보고, 매매횟수는 매수 에서만 체크한다.
+</span><span class="k">def</span> <span class="nf">simple_strategy</span><span class="p">(</span><span class="n">prices</span><span class="p">):</span>
+    <span class="n">INIT_ACCOUNT</span> <span class="o">=</span> <span class="mi">1000000</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">60</span> <span class="c1"># 몇 초 간격으로, 주가를 확인할 것인지 설정.
+</span>    <span class="n">trade_count</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 매매 횟수
+</span>    <span class="n">account</span> <span class="o">=</span> <span class="n">INIT_ACCOUNT</span> <span class="c1"># 초기 자본
+</span>    <span class="n">stock</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 구매한 주식 개수
+</span>    <span class="n">profit_rate</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 수익률
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">prices</span><span class="p">),</span> <span class="n">step</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">step</span><span class="p">]</span> <span class="ow">and</span> <span class="n">stock</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># 주가가 올랐고, 아직 현금보유중이라면, 매수한다.
+</span>            <span class="n">stock</span> <span class="o">=</span> <span class="n">account</span> <span class="o">//</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1"># 계좌 잔액 / 주가 만큼 주식을 매수한다.
+</span>            <span class="n">account</span> <span class="o">=</span> <span class="n">account</span> <span class="o">-</span> <span class="n">stock</span> <span class="o">*</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1"># 남은 계좌 잔액을 업데이트한다.
+</span>            <span class="n">trade_count</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># 매매횟수를 증가시킨다.
+</span>        <span class="k">elif</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">step</span><span class="p">]</span> <span class="ow">and</span> <span class="n">stock</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># 주가가 내렸고, 주식 보유중이라면, 전부 매도한다.
+</span>            <span class="n">account</span> <span class="o">+=</span> <span class="n">stock</span> <span class="o">*</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">stock</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">if</span> <span class="n">stock</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># 아직 주식을 보유중이라면, 마지막 주가로, 계좌 총액을 계산한다.
+</span>        <span class="n">account</span> <span class="o">+=</span> <span class="n">stock</span> <span class="o">*</span> <span class="n">prices</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> 
+    <span class="n">profit_rate</span> <span class="o">=</span> <span class="p">(</span><span class="n">account</span><span class="o">-</span><span class="n">INIT_ACCOUNT</span><span class="p">)</span> <span class="o">/</span> <span class="n">INIT_ACCOUNT</span> <span class="o">*</span> <span class="mi">100</span> <span class="c1"># 수익률 계산
+</span>    <span class="k">return</span> <span class="n">trade_count</span><span class="p">,</span> <span class="n">profit_rate</span>
+            
+
+<span class="n">trade_count</span><span class="p">,</span> <span class="n">profit_rate</span> <span class="o">=</span> <span class="n">simple_strategy</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'매매횟수: </span><span class="si">{</span><span class="n">trade_count</span><span class="si">}</span><span class="s">  수익률 : </span><span class="si">{</span><span class="n">profit_rate</span><span class="si">}</span><span class="s">%%'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>매매횟수: 9  수익률 : -1.143%%
+</code></pre></div></div>
+
+<p><strong>(문제 4)</strong> 위에서 만든 times와 prices를 이용해 10분 윈도우로 이동평균을 구해 times10, prices10에 담아 prices와 함께 그려주세요.(10)</p>
+
+<ul>
+  <li>파이썬 기본 문법만 사용해주세요. 즉 list를 사용하고, for 문이나 while문을 이용해 주세요.</li>
+  <li>matplotlib을 이용하세요</li>
+  <li>함수를 정의해 구현하셔도 됩니다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">## 여기에 코드 작성하기
+</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="k">def</span> <span class="nf">get_ma10</span><span class="p">(</span><span class="n">prices</span><span class="p">):</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">60</span> <span class="c1"># 10분 윈도우
+</span>    <span class="n">end</span> <span class="o">=</span> <span class="mi">3600</span> <span class="o">*</span> <span class="p">(</span><span class="mi">15</span><span class="o">-</span><span class="mi">9</span><span class="p">)</span>
+    <span class="n">prices10</span> <span class="o">=</span> <span class="p">[</span><span class="n">prices</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="c1"># 초기값은 초기 주가로 설정.
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">end</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
+        <span class="n">ma</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">step</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">step</span>  <span class="c1"># ex) 10분의 이동평균선 =&gt; 1초 ~ 600초의 평균. 자신을 포함해야 하므로, i+1로 설정.
+</span>        <span class="n">prices10</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">ma</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">prices10</span>
+
+<span class="n">step</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">60</span> <span class="c1"># 10분 윈도우
+</span><span class="n">times10</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">end</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">step</span><span class="p">)]</span>
+<span class="n">prices10</span> <span class="o">=</span> <span class="n">get_ma10</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
+
+
+
+
+<span class="n">plt</span><span class="p">.</span><span class="n">rc</span><span class="p">(</span><span class="s">'font'</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">'NanumBarunGothic'</span><span class="p">)</span> <span class="c1"># 한글폰트 적용
+</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">prices</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times10</span><span class="p">,</span> <span class="n">prices10</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'시간(초)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'주가(원)'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">([</span><span class="s">'주가'</span><span class="p">,</span><span class="s">'10이동평균'</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/midtest/output_11_0.png" alt="output_11_0" /></p>
+
+<p><strong>(문제 5)</strong> 매 10분마다 현재 주가와 이동평균 값을 비교해 이동평균보다 높으면 주식을 전부 팔고, 낮으면 사는 방식의 매매 전략을 택한다고 합시다. 하루동안 매매를 계속했을 때 매매 횟수와 수익률을 계산하세요(15)</p>
+<ul>
+  <li>함수를 정의해 구현하셔도 됩니다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">## 여기에 코드 작성하기
+</span><span class="k">def</span> <span class="nf">ma10_strategy</span><span class="p">(</span><span class="n">prices</span><span class="p">,</span> <span class="n">ma10</span><span class="p">):</span>
+    <span class="n">INIT_ACCOUNT</span> <span class="o">=</span> <span class="mi">1000000</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">60</span> <span class="c1"># 움직일 시간 간격
+</span>    <span class="n">trade_count</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 매매 횟수
+</span>    <span class="n">account</span> <span class="o">=</span> <span class="n">INIT_ACCOUNT</span> <span class="c1"># 초기 자본
+</span>    <span class="n">stock</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 구매한 주식 개수
+</span>    <span class="n">profit_rate</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 수익률
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ma10</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">ma10</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">step</span><span class="p">]</span> <span class="ow">and</span> <span class="n">stock</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># 주가 &lt; 이동평균, 아직 현금보유중이라면, 매수한다.
+</span>            <span class="n">stock</span> <span class="o">=</span> <span class="n">account</span> <span class="o">//</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">step</span><span class="p">]</span> <span class="c1"># 계좌 잔액 / 주가 만큼 주식을 매수한다.
+</span>            <span class="n">account</span> <span class="o">=</span> <span class="n">account</span> <span class="o">-</span> <span class="n">stock</span> <span class="o">*</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">step</span><span class="p">]</span> <span class="c1"># 남은 계좌 잔액을 업데이트한다.
+</span>            <span class="n">trade_count</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># 매매횟수를 증가시킨다.
+</span>        <span class="k">elif</span> <span class="n">ma10</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">step</span><span class="p">]</span> <span class="ow">and</span> <span class="n">stock</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># 주가 &gt; 이동평균, 주식 보유중이라면, 전부 매도한다.
+</span>            <span class="n">account</span> <span class="o">+=</span> <span class="n">stock</span> <span class="o">*</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">step</span><span class="p">]</span>
+            <span class="n">stock</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">if</span> <span class="n">stock</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># 아직 주식을 보유중이라면, 마지막 주가로, 계좌 총액을 계산한다.
+</span>        <span class="n">account</span> <span class="o">+=</span> <span class="n">stock</span> <span class="o">*</span> <span class="n">prices</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> 
+    <span class="n">profit_rate</span> <span class="o">=</span> <span class="p">(</span><span class="n">account</span><span class="o">-</span><span class="n">INIT_ACCOUNT</span><span class="p">)</span> <span class="o">/</span> <span class="n">INIT_ACCOUNT</span> <span class="o">*</span> <span class="mi">100</span> <span class="c1"># 수익률 계산
+</span>    <span class="k">return</span> <span class="n">trade_count</span><span class="p">,</span> <span class="n">profit_rate</span>
+            
+<span class="n">trade_count</span><span class="p">,</span> <span class="n">profit_rate</span> <span class="o">=</span> <span class="n">ma10_strategy</span><span class="p">(</span><span class="n">prices</span><span class="p">,</span> <span class="n">prices10</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'매매횟수: </span><span class="si">{</span><span class="n">trade_count</span><span class="si">}</span><span class="s">  수익률 : </span><span class="si">{</span><span class="n">profit_rate</span><span class="si">}</span><span class="s">%%'</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>매매횟수: 9  수익률 : 12.4517%%
+</code></pre></div></div>
+
+<p><strong>(문제 6)</strong> 위 상황의 실험을 1000번 반복했을 때 <strong>(문제 3)</strong>과 <strong>(문제 5)</strong>의 과정을 수행한 결과 매매 횟수, 수익률의 histogram을 각각 그리세요.(15)</p>
+<ul>
+  <li>파이썬 기본 문법, for또는 while문을 사용하세요.</li>
+  <li>기본 random 모듈을 사용하세요</li>
+  <li>각 매매 전략별 매매 여부를 돌려주는 함수 decide(current_price, reference_price)를 작성해 구현하세요</li>
+  <li>matplotlib을 이용하세요</li>
+  <li>실험 횟수를 더 늘리셔도 괜찮습니다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">## 여기에 코드 작성하기
+</span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">INIT_ACCOUNT</span> <span class="o">=</span> <span class="mi">1000000</span>
+<span class="k">class</span> <span class="nc">TradeStrategy</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">stock</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">account</span> <span class="o">=</span> <span class="n">INIT_ACCOUNT</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">trade_count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">profit_rate</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="c1"># 매매 신호 생성
+</span>    <span class="k">def</span> <span class="nf">decide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">current_price</span><span class="p">,</span> <span class="n">reference_price</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">current_price</span> <span class="o">&gt;</span> <span class="n">reference_price</span> <span class="ow">and</span> <span class="bp">self</span><span class="p">.</span><span class="n">stock</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">True</span>  <span class="c1"># Buy
+</span>        <span class="k">elif</span> <span class="p">(</span><span class="n">current_price</span> <span class="o">&lt;</span> <span class="n">reference_price</span> <span class="ow">and</span> <span class="bp">self</span><span class="p">.</span><span class="n">stock</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">False</span> <span class="c1"># Sell
+</span>        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">None</span> <span class="c1"># 다음 신호를 기다려라.
+</span>    
+    <span class="c1"># 매수
+</span>    <span class="k">def</span> <span class="nf">buy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">current_price</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">stock</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">account</span> <span class="o">//</span> <span class="n">current_price</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">account</span> <span class="o">-=</span> <span class="bp">self</span><span class="p">.</span><span class="n">stock</span> <span class="o">*</span> <span class="n">current_price</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">trade_count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="c1"># 매도     
+</span>    <span class="k">def</span> <span class="nf">sell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">current_price</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">account</span> <span class="o">+=</span> <span class="bp">self</span><span class="p">.</span><span class="n">stock</span> <span class="o">*</span> <span class="n">current_price</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">profit_rate</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">account</span> <span class="o">-</span> <span class="n">INIT_ACCOUNT</span><span class="p">)</span> <span class="o">/</span> <span class="n">INIT_ACCOUNT</span> <span class="o">*</span> <span class="mi">100</span> <span class="c1"># 수익률 계산
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">stock</span> <span class="o">=</span> <span class="mi">0</span>
+        
+<span class="k">class</span> <span class="nc">SimpleStrategy</span><span class="p">(</span><span class="n">TradeStrategy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">TradeStrategy</span><span class="p">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Moving10Strategy</span><span class="p">(</span><span class="n">TradeStrategy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">TradeStrategy</span><span class="p">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">decide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">current_price</span><span class="p">,</span> <span class="n">reference_price</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">current_price</span> <span class="o">&lt;</span> <span class="n">reference_price</span> <span class="ow">and</span> <span class="bp">self</span><span class="p">.</span><span class="n">stock</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">True</span>  <span class="c1"># Buy
+</span>        <span class="k">elif</span> <span class="p">(</span><span class="n">current_price</span> <span class="o">&gt;</span> <span class="n">reference_price</span> <span class="ow">and</span> <span class="bp">self</span><span class="p">.</span><span class="n">stock</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">False</span> <span class="c1"># Sell
+</span>        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">None</span> <span class="c1"># 다음 신호를 기다려라.
+</span>        
+            
+
+<span class="n">TEST_COUNT</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># 실험 횟수
+</span><span class="n">trade_counts</span> <span class="o">=</span> <span class="p">[[],[]]</span> <span class="c1"># [단순], [이동평균]
+</span><span class="n">profit_rates</span> <span class="o">=</span> <span class="p">[[],[]]</span> <span class="c1"># [단순], [이동평균]
+</span><span class="n">step</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">60</span>
+
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">TEST_COUNT</span><span class="p">):</span>
+    <span class="c1">## 랜덤 주가 생성 ##
+</span>    <span class="n">open_price</span> <span class="o">=</span> <span class="mi">100000</span> <span class="c1"># 시작 가격
+</span>    <span class="n">price_range</span> <span class="o">=</span> <span class="mi">500</span>
+
+    <span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="n">open_price</span><span class="p">]</span>  <span class="c1"># 주가
+</span>    <span class="n">end</span> <span class="o">=</span> <span class="mi">3600</span> <span class="o">*</span> <span class="p">(</span><span class="mi">15</span><span class="o">-</span><span class="mi">9</span><span class="p">)</span> <span class="c1"># 9시부터 15시까지 차이 (초)
+</span>    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">end</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>  <span class="c1"># 3시를 포함해서 반복문을 진행한다
+</span>        <span class="c1"># 주가는 -500 ~ 500원씩 변동이 생기되, 상하한 20%를 넘지않도록 해줌.
+</span>        <span class="n">price</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">random</span><span class="p">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="n">price_range</span><span class="p">,</span> <span class="n">price_range</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">price</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">price</span><span class="p">,</span> <span class="n">open_price</span> <span class="o">*</span> <span class="mf">1.2</span><span class="p">),</span> <span class="n">open_price</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)</span> <span class="c1"># 상 하한 20% 범위 설정
+</span>        <span class="n">prices</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
+    
+    <span class="c1"># 10분단위 주가 계산
+</span>    <span class="n">price10</span> <span class="o">=</span> <span class="p">[</span><span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">step</span><span class="p">)]</span>
+    <span class="n">ma10</span> <span class="o">=</span> <span class="n">get_ma10</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
+                    
+    <span class="c1">## 전략 생성 ##
+</span>    <span class="n">simple_strategy</span> <span class="o">=</span> <span class="n">SimpleStrategy</span><span class="p">()</span>
+    <span class="n">ma10_strategy</span> <span class="o">=</span> <span class="n">Moving10Strategy</span><span class="p">()</span>
+    <span class="n">strategy_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">simple_strategy</span><span class="p">,</span> <span class="n">ma10_strategy</span><span class="p">]</span>
+    
+    <span class="c1">## 전략 적용 ##
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span> <span class="o">//</span> <span class="n">step</span><span class="p">):</span>
+        <span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="n">price10</span><span class="p">,</span> <span class="n">ma10</span><span class="p">]</span>
+        <span class="n">decides</span> <span class="o">=</span> <span class="p">[</span><span class="n">simple_strategy</span><span class="p">.</span><span class="n">decide</span><span class="p">(</span><span class="n">price10</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">price10</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="n">ma10_strategy</span><span class="p">.</span><span class="n">decide</span><span class="p">(</span><span class="n">price10</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">ma10</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span>
+        <span class="k">for</span> <span class="n">strategy</span><span class="p">,</span> <span class="n">decide</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">strategy_list</span><span class="p">,</span> <span class="n">decides</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">decide</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span> <span class="c1"># 신호 X
+</span>                <span class="k">continue</span>
+            <span class="k">elif</span> <span class="n">decide</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span> <span class="c1"># 매수신호
+</span>                <span class="n">strategy</span><span class="p">.</span><span class="n">buy</span><span class="p">(</span><span class="n">price10</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="k">elif</span> <span class="n">decide</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span> <span class="c1">#매도 신호
+</span>                <span class="n">strategy</span><span class="p">.</span><span class="n">sell</span><span class="p">(</span><span class="n">price10</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    
+    <span class="c1"># 수익률 계산을 위해, 남은 주식을 매도처리.
+</span>    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">strategy</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">strategy_list</span><span class="p">):</span>
+        <span class="n">strategy</span><span class="p">.</span><span class="n">sell</span><span class="p">(</span><span class="n">price10</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">trade_counts</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="n">strategy</span><span class="p">.</span><span class="n">trade_count</span><span class="p">)</span>
+        <span class="n">profit_rates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="n">strategy</span><span class="p">.</span><span class="n">profit_rate</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="p">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s">'axes.unicode_minus'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span> <span class="c1"># 마이너스 부호 깨짐 방지
+</span><span class="n">plt</span><span class="p">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">trade_counts</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s">'bar'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'TRADE COUNT'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">([</span><span class="s">'단순'</span><span class="p">,</span> <span class="s">'이동평균'</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">profit_rates</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s">'bar'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'PROFIT RATE'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">([</span><span class="s">'단순'</span><span class="p">,</span> <span class="s">'이동평균'</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+
+
+
+                
+            
+
+
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/midtest/output_15_0.png" alt="output_15_0" /></p>
+
+<p><strong>(문제 7)</strong> 전반적으로 주가가 오르는 경우에 대해 같은 과정을 반복하세요 (두 가지 매매 전략에 대해 실험을 1000번 반복해 매매 빈도와 수익률 보기)(15)</p>
+<ul>
+  <li>주가 상승, 하락 여부가 매 초 random하게 결정되도록 하세요.</li>
+  <li>주가 상승 확률을 지정하는 변수 prob_price_up를 지정해 사용하세요</li>
+  <li>matplotlib을 사용하세요</li>
+  <li>기본 문법, 데이터 형식을 벗어나서 numpy를 사용하실 수 있습니다.</li>
+  <li>추가 외부 패키지 설치가 필요한 경우 패키지 설치 과정을 함께 적어주세요.</li>
+  <li>위 <strong>(문제 6)</strong>까지 과정에서 작성한 함수들이 있다면 활용하실 수 있습니다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">## 여기에 코드 작성하기
+</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">INIT_ACCOUNT</span> <span class="o">=</span> <span class="mi">1000000</span>
+
+<span class="n">prob_price_up</span> <span class="o">=</span> <span class="mf">0.7</span> <span class="c1"># 70%의 확률로 주가 상승
+</span><span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="n">prob_price_up</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">prob_price_up</span><span class="p">]</span>
+
+<span class="n">TEST_COUNT</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">end</span> <span class="o">=</span> <span class="mi">3600</span> <span class="o">*</span> <span class="p">(</span><span class="mi">15</span><span class="o">-</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">trade_counts</span> <span class="o">=</span> <span class="p">[[],[]]</span> <span class="c1"># [단순], [이동평균]
+</span><span class="n">profit_rates</span> <span class="o">=</span> <span class="p">[[],[]]</span> <span class="c1"># [단순], [이동평균]
+</span><span class="n">step</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">60</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">TEST_COUNT</span><span class="p">):</span>
+    <span class="c1">## 주가 랜덤생성 ##
+</span>    <span class="n">open_price</span> <span class="o">=</span> <span class="mi">100000</span> <span class="c1"># 시작 가격
+</span>    <span class="n">price_range</span> <span class="o">=</span> <span class="mi">500</span> <span class="c1"># 주가 변동폭
+</span>
+    <span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="n">open_price</span><span class="p">]</span>  <span class="c1"># 주가
+</span>    <span class="n">up_downs</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">end</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p</span><span class="p">)</span> <span class="c1"># 상승 or 하락
+</span>    <span class="n">up_downs</span> <span class="o">*=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">price_range</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">up_down</span> <span class="ow">in</span> <span class="n">up_downs</span><span class="p">:</span>
+        <span class="n">price</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">up_down</span>
+        <span class="n">price</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">price</span><span class="p">,</span> <span class="n">open_price</span> <span class="o">*</span> <span class="mf">1.2</span><span class="p">),</span> <span class="n">open_price</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)</span> <span class="c1"># 상 하한 20% 범위 설정
+</span>        <span class="n">prices</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
+        
+    <span class="n">prices</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
+    
+    <span class="c1"># 10분단위의 주가 계산
+</span>    <span class="n">prices2</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="mi">1</span><span class="p">:].</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span> <span class="c1"># 각 행은 10분단위로 주가가 나열되어있다.
+</span>    <span class="n">prices2</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">600</span><span class="p">)</span> <span class="o">*</span> <span class="n">prices</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">prices2</span><span class="p">])</span> <span class="c1"># 1행은 시가로 설정한다.
+</span>    <span class="n">ones</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">600</span><span class="p">).</span><span class="n">reshape</span><span class="p">((</span><span class="mi">600</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="c1"># [1,1,1,1,1,1,1,1,....................]
+</span>    <span class="n">ma10</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">prices2</span><span class="p">,</span> <span class="n">ones</span><span class="p">)</span> <span class="o">/</span> <span class="mi">600</span> <span class="c1"># [1행의합, 2행의합, 3행의합, 4행의합, .....]  / 600 =&gt; 평균계산.
+</span>    
+    <span class="n">price10</span> <span class="o">=</span> <span class="n">prices2</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># 각 행의 마지막은 10분간격의 주가가 들어있다.
+</span>    <span class="n">ma10</span> <span class="o">=</span> <span class="n">ma10</span><span class="p">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,))</span> <span class="c1"># 1d로 변경
+</span>    
+    
+    <span class="c1">## 전략 생성 ##
+</span>    <span class="n">simple_strategy</span> <span class="o">=</span> <span class="n">SimpleStrategy</span><span class="p">()</span>
+    <span class="n">ma10_strategy</span> <span class="o">=</span> <span class="n">Moving10Strategy</span><span class="p">()</span>
+    <span class="n">strategy_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">simple_strategy</span><span class="p">,</span> <span class="n">ma10_strategy</span><span class="p">]</span>
+    
+    <span class="c1">## 전략 적용 ##
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">price10</span><span class="p">)):</span>
+        <span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="n">price10</span><span class="p">,</span> <span class="n">ma10</span><span class="p">]</span>
+        <span class="n">decides</span> <span class="o">=</span> <span class="p">[</span><span class="n">simple_strategy</span><span class="p">.</span><span class="n">decide</span><span class="p">(</span><span class="n">price10</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">price10</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="n">ma10_strategy</span><span class="p">.</span><span class="n">decide</span><span class="p">(</span><span class="n">price10</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">ma10</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span>
+        <span class="k">for</span> <span class="n">strategy</span><span class="p">,</span> <span class="n">decide</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">strategy_list</span><span class="p">,</span> <span class="n">decides</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">decide</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span> <span class="c1"># 신호 X
+</span>                <span class="k">continue</span>
+            <span class="k">elif</span> <span class="n">decide</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span> <span class="c1"># 매수신호
+</span>                <span class="n">strategy</span><span class="p">.</span><span class="n">buy</span><span class="p">(</span><span class="n">price10</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="k">elif</span> <span class="n">decide</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span> <span class="c1">#매도 신호
+</span>                <span class="n">strategy</span><span class="p">.</span><span class="n">sell</span><span class="p">(</span><span class="n">price10</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    
+    <span class="c1"># 수익률 계산을 위해, 남은 주식을 매도처리.
+</span>    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">strategy</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">strategy_list</span><span class="p">):</span>
+        <span class="n">strategy</span><span class="p">.</span><span class="n">sell</span><span class="p">(</span><span class="n">price10</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">trade_counts</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="n">strategy</span><span class="p">.</span><span class="n">trade_count</span><span class="p">)</span>
+        <span class="n">profit_rates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="n">strategy</span><span class="p">.</span><span class="n">profit_rate</span><span class="p">)</span>
+    
+    
+<span class="n">plt</span><span class="p">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s">'axes.unicode_minus'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span> <span class="c1"># 마이너스 부호 깨짐 방지
+</span><span class="n">plt</span><span class="p">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">trade_counts</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s">'bar'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'TRADE COUNT'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">([</span><span class="s">'단순'</span><span class="p">,</span> <span class="s">'이동평균'</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">profit_rates</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s">'bar'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'PROFIT RATE'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">([</span><span class="s">'단순'</span><span class="p">,</span> <span class="s">'이동평균'</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+    
+    
+    
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/midtest/output_17_0.png" alt="output_17_0" /></p>
+
+<p><strong>(문제 8)</strong> 전반적으로 주가가 떨어지는 경우에 대해 같은 과정을 반복하세요.(15)</p>
+<ul>
+  <li>추가 상승 확률을 지정하는 변수 prob_price_up의 값을 조정해 사용하세요.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">## 여기에 코드 작성하기
+</span>
+
+<span class="c1">## 여기에 코드 작성하기
+</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">INIT_ACCOUNT</span> <span class="o">=</span> <span class="mi">1000000</span>
+
+<span class="n">prob_price_up</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># 30%의 확률로 주가 상승
+</span><span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="n">prob_price_up</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">prob_price_up</span><span class="p">]</span>
+
+<span class="n">TEST_COUNT</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">end</span> <span class="o">=</span> <span class="mi">3600</span> <span class="o">*</span> <span class="p">(</span><span class="mi">15</span><span class="o">-</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">trade_counts</span> <span class="o">=</span> <span class="p">[[],[]]</span> <span class="c1"># [단순], [이동평균]
+</span><span class="n">profit_rates</span> <span class="o">=</span> <span class="p">[[],[]]</span> <span class="c1"># [단순], [이동평균]
+</span><span class="n">step</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">60</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">TEST_COUNT</span><span class="p">):</span>
+    <span class="c1">## 주가 랜덤생성 ##
+</span>    <span class="n">open_price</span> <span class="o">=</span> <span class="mi">100000</span> <span class="c1"># 시작 가격
+</span>    <span class="n">price_range</span> <span class="o">=</span> <span class="mi">500</span> <span class="c1"># 주가 변동폭
+</span>
+    <span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="n">open_price</span><span class="p">]</span>  <span class="c1"># 주가
+</span>    <span class="n">up_downs</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">end</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p</span><span class="p">)</span> <span class="c1"># 상승 or 하락
+</span>    <span class="n">up_downs</span> <span class="o">*=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">price_range</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">up_down</span> <span class="ow">in</span> <span class="n">up_downs</span><span class="p">:</span>
+        <span class="n">price</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">up_down</span>
+        <span class="n">price</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">price</span><span class="p">,</span> <span class="n">open_price</span> <span class="o">*</span> <span class="mf">1.2</span><span class="p">),</span> <span class="n">open_price</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)</span> <span class="c1"># 상 하한 20% 범위 설정
+</span>        <span class="n">prices</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
+        
+    <span class="n">prices</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
+    
+    <span class="c1"># 10분단위의 주가 계산
+</span>    <span class="n">prices2</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="mi">1</span><span class="p">:].</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span> <span class="c1"># 각 행은 10분단위로 주가가 나열되어있다.
+</span>    <span class="n">prices2</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">600</span><span class="p">)</span> <span class="o">*</span> <span class="n">prices</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">prices2</span><span class="p">])</span> <span class="c1"># 1행은 시가로 설정한다.
+</span>    <span class="n">ones</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">600</span><span class="p">).</span><span class="n">reshape</span><span class="p">((</span><span class="mi">600</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="c1"># [1,1,1,1,1,1,1,1,....................]
+</span>    <span class="n">ma10</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">prices2</span><span class="p">,</span> <span class="n">ones</span><span class="p">)</span> <span class="o">/</span> <span class="mi">600</span> <span class="c1"># [1행의합, 2행의합, 3행의합, 4행의합, .....]  / 600 =&gt; 평균계산.
+</span>    
+    <span class="n">price10</span> <span class="o">=</span> <span class="n">prices2</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># 각 행의 마지막은 10분간격의 주가가 들어있다.
+</span>    <span class="n">ma10</span> <span class="o">=</span> <span class="n">ma10</span><span class="p">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,))</span> <span class="c1"># 1d로 변경
+</span>    
+    
+    <span class="c1">## 전략 생성 ##
+</span>    <span class="n">simple_strategy</span> <span class="o">=</span> <span class="n">SimpleStrategy</span><span class="p">()</span>
+    <span class="n">ma10_strategy</span> <span class="o">=</span> <span class="n">Moving10Strategy</span><span class="p">()</span>
+    <span class="n">strategy_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">simple_strategy</span><span class="p">,</span> <span class="n">ma10_strategy</span><span class="p">]</span>
+    
+    <span class="c1">## 전략 적용 ##
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">price10</span><span class="p">)):</span>
+        <span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="n">price10</span><span class="p">,</span> <span class="n">ma10</span><span class="p">]</span>
+        <span class="n">decides</span> <span class="o">=</span> <span class="p">[</span><span class="n">simple_strategy</span><span class="p">.</span><span class="n">decide</span><span class="p">(</span><span class="n">price10</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">price10</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="n">ma10_strategy</span><span class="p">.</span><span class="n">decide</span><span class="p">(</span><span class="n">price10</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">ma10</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span>
+        <span class="k">for</span> <span class="n">strategy</span><span class="p">,</span> <span class="n">decide</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">strategy_list</span><span class="p">,</span> <span class="n">decides</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">decide</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span> <span class="c1"># 신호 X
+</span>                <span class="k">continue</span>
+            <span class="k">elif</span> <span class="n">decide</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span> <span class="c1"># 매수신호
+</span>                <span class="n">strategy</span><span class="p">.</span><span class="n">buy</span><span class="p">(</span><span class="n">price10</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="k">elif</span> <span class="n">decide</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span> <span class="c1">#매도 신호
+</span>                <span class="n">strategy</span><span class="p">.</span><span class="n">sell</span><span class="p">(</span><span class="n">price10</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    
+    <span class="c1"># 수익률 계산을 위해, 남은 주식을 매도처리.
+</span>    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">strategy</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">strategy_list</span><span class="p">):</span>
+        <span class="n">strategy</span><span class="p">.</span><span class="n">sell</span><span class="p">(</span><span class="n">price10</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">trade_counts</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="n">strategy</span><span class="p">.</span><span class="n">trade_count</span><span class="p">)</span>
+        <span class="n">profit_rates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="n">strategy</span><span class="p">.</span><span class="n">profit_rate</span><span class="p">)</span>
+    
+    
+<span class="n">plt</span><span class="p">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s">'axes.unicode_minus'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span> <span class="c1"># 마이너스 부호 깨짐 방지
+</span><span class="n">plt</span><span class="p">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">trade_counts</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s">'bar'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'TRADE COUNT'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">([</span><span class="s">'단순'</span><span class="p">,</span> <span class="s">'이동평균'</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">profit_rates</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s">'bar'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'PROFIT RATE'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">([</span><span class="s">'단순'</span><span class="p">,</span> <span class="s">'이동평균'</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+    
+    
+    
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/midtest/output_19_0.png" alt="output_19_0" /></p>
+
+<h1 id="2021315615-빅데이터응용학과-유성재">2021315615 (빅데이터응용학과) 유성재</h1>
+
+<h1 id="수고하셨습니다"><strong>수고하셨습니다!</strong></h1>
+
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+<script>
+$(function() {
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+});
+</script>
+
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://SEONGJAE-YOO.github.io/">Big Data</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <h1 class="subscribe-overlay-title">Search Big Data</h1>
+            <p class="subscribe-overlay-description">
+                원하는 검색어를 입력하세요</p>
+            <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+        </div>
+    </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
