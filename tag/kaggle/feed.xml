@@ -8,8 +8,8 @@
         <description>SeongJae Yu 블로그</description>
         <link>https://SEONGJAE-YOO.github.io//</link>
         <atom:link href="https://SEONGJAE-YOO.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Thu, 28 Oct 2021 13:58:54 +0900</pubDate>
-        <lastBuildDate>Thu, 28 Oct 2021 13:58:54 +0900</lastBuildDate>
+        <pubDate>Thu, 28 Oct 2021 17:53:38 +0900</pubDate>
+        <lastBuildDate>Thu, 28 Oct 2021 17:53:38 +0900</lastBuildDate>
         <generator>Jekyll v3.9.0</generator>
         
         <item>
@@ -1553,6 +1553,323 @@
             <guid isPermaLink="true">https://SEONGJAE-YOO.github.io//midtest</guid>
             
             <category>python</category>
+            
+            
+        </item>
+        
+        <item>
+            <title>applied text analysis with python - chapter 1 - Language and Computation</title>
+            <description>&lt;h1 id=&quot;applied-text-analysis-with-python&quot;&gt;applied text analysis with python&lt;/h1&gt;
+
+&lt;h1 id=&quot;chapter-1---language-and-computation&quot;&gt;chapter 1 - Language and Computation&lt;/h1&gt;
+
+&lt;h1 id=&quot;language-features&quot;&gt;Language Features&lt;/h1&gt;
+
+&lt;p&gt;Consider a simple model that uses linguistic features to identify the predominant
+gender in a piece of text. In 2013 Neal Caren, an assistant professor of Sociology at
+the University of North Carolina Chapel Hill, wrote a blog post that investigated the
+7
+role of gender in news to determine if men and women come up in different contexts.
+He applied a gender-based analysis of text to New York Times articles and determined
+that in fact male and female words appeared in starkly different contexts, potentially
+reinforcing gender biases.
+What was particularly interesting about this analysis was the use of gendered words
+to create a frequency-based score of maleness or femaleness. In order to implement a
+similar analysis in Python, we can begin by building sets of words that differentiate
+sentences about men and about women. For simplicity, we’ll say that a sentence can
+have one of four states—it can be about men, about women, about both men and
+women, or unknown (since sentences can be about neither men nor women, and also
+because our MALE_WORDSand FEMALE_WORDSsets are not exhaustive):&lt;/p&gt;
+
+&lt;p&gt;언어적 특징을 사용하여 우세한 것을 식별하는 간단한 모델을 고려하십시오.
+텍스트의 성별. 2013년 닐 카렌(Neal Caren)
+University of North Carolina Chapel Hill은 조사한 블로그 게시물을 작성했습니다.
+7
+남성과 여성이 다른 맥락에서 등장하는지 여부를 결정하기 위해 뉴스에서 성별의 역할.
+그는 텍스트에 대한 성별 기반 분석을 New York Times 기사에 적용하고 다음을 결정했습니다.
+사실 남성과 여성의 단어는 완전히 다른 맥락에서 나타났고, 잠재적으로
+성 편견 강화.
+이 분석에서 특히 흥미로운 점은 성별 단어의 사용이었습니다.
+남성 또는 여성의 빈도 기반 점수를 생성합니다. 구현하기 위해서는
+Python에서 유사한 분석을 통해 차별화되는 단어 세트를 구축할 수 있습니다.
+남성과 여성에 관한 문장. 단순화를 위해 우리는 문장이
+네 가지 상태 중 하나가 있습니다. 남성, 여성, 남성 및
+여성 또는 알 수 없음(문장은 남성이나 여성에 대한 것일 수 없으며 또한
+MALE_WORDS 및 FEMALE_WORDS세트가 완전하지 않기 때문):&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;nltk&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;collections&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Counter&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;MALE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'male'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;FEMALE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'female'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;UNKNOWN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'unknown'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;BOTH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'both'&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;MALE_WORDS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'guy'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'spokesman'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'chairman'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;men's&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'men'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'him'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;he's&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'his'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'boy'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'boyfriend'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'boyfriends'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'boys'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'brother'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'brothers'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'dad'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'dads'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'dude'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'father'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'fathers'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'fiance'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'gentleman'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'gentlemen'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'god'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'grandfather'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'grandpa'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'grandson'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'groom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'he'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'himself'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'husband'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'husbands'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'king'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'male'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'man'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'mr'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'nephew'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'nephews'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'priest'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'prince'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'son'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'sons'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'uncle'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'uncles'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'waiter'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'widower'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'widowers'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;FEMALE_WORDS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'heroine'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'spokeswoman'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'chairwoman'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;women's&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'actress'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'women'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;she's&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'her'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'aunt'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'aunts'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'bride'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'daughter'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'daughters'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'female'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'fiancee'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'girl'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'girlfriend'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'girlfriends'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'girls'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'goddess'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'granddaughter'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'grandma'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'grandmother'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'herself'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ladies'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'lady'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'mom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'moms'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'mother'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'mothers'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'mrs'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ms'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'niece'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'nieces'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'priestess'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'princess'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'queens'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'she'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'sister'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'sisters'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'waitress'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'widow'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'widows'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'wife'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'wives'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'woman'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now that we have gender word sets, we need a method for assigning gender to a sen‐tence;
+we’ll create a genderize function that examines the numbers of words from a
+sentence that appear in our MALE_WORDS list and in our FEMALE_WORDS list.&lt;/p&gt;
+
+&lt;p&gt;이제 성별 단어 세트가 있으므로, 성별을 문장에 할당하는 방법이 필요합니다.
+MALE_WORDS 목록 및 FEMALE_WORDS 목록에서 나타난 문장으로 부터 단어의 수를 검사하는 성별화 함수를 만들 것입니다.&lt;/p&gt;
+
+&lt;p&gt;If a sentence has only MALE_WORDS, we’ll call it a male sentence, and if it has only
+FEMALE_WORDS, we’ll call it a female sentence. If a sentence has nonzero counts for
+both male and female words, we’ll call it both; and if it has zero male and zero female
+words, we’ll call it unknown:&lt;/p&gt;
+
+&lt;p&gt;만약 문장에 MALE_WORDS개만 있으면 남성 문장이라고 하고
+FEMALE_WORDS, 우리는 그것을 여성 문장이라고 부를 것입니다. 문장에 0이 아닌 개수가 있는 경우
+남성과 여성 단어 모두, 우리는 그것을 둘 다 부를 것입니다. 남성이 0이고 여성이 0인 경우
+우리는 그것을 알 수 없다고 부를 것입니다:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;genderize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;words&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;mwlen&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MALE_WORDS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intersection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;words&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;fwlen&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FEMALE_WORDS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intersection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;words&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mwlen&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fwlen&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MALE&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mwlen&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fwlen&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FEMALE&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mwlen&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fwlen&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BOTH&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UNKNOWN&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Python Set intersection()&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A = {2, 3, 5, 4}&lt;/p&gt;
+
+&lt;p&gt;B = {2, 5, 100}&lt;/p&gt;
+
+&lt;p&gt;C = {2, 3, 8, 9, 10}&lt;/p&gt;
+
+&lt;p&gt;print(B.intersection(A))&lt;/p&gt;
+
+&lt;p&gt;print(B.intersection(C))&lt;/p&gt;
+
+&lt;p&gt;print(A.intersection(C))&lt;/p&gt;
+
+&lt;p&gt;print(C.intersection(A, B))&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Output&lt;/p&gt;
+
+&lt;p&gt;{2, 5}
+{2}
+{2, 3}
+{2}&lt;/p&gt;
+
+&lt;p&gt;We need a method for counting the frequency of gendered words and sentences
+within the complete text of an article, which we can do with the collections.Countersclass, a built-in Python class.
+The count_genderfunction takes a list of senten‐ces and applies the genderize function to evaluate the total number of gendered
+words and gendered sentences.
+Each sentence’s gender is counted and all words in the sentence are also considered as belonging to that gender:&lt;/p&gt;
+
+&lt;p&gt;컬렉션으로 할 수 있는 기사의 전체 텍스트 내에서
+젠더화된 단어와 문장의 빈도를 계산하는 방법이 필요합니다.
+내장 파이썬 클래스인 Countersclass. count_genderfunction은 보낸 목록을 취합니다.
+총 젠더화 수를 평가하기 위해 젠더화 기능을 적용하고 적용합니다.
+단어와 성별 문장. 각 문장의 성별이 계산되고 모든 단어가
+문장도 해당 성별에 속하는 것으로 간주됩니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;count_gender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentences&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#성별 수 계산하는 함수
+&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;words&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sentences&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;gender&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;genderize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;sents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;words&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;words&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Finally, in order to engage our gender counters, we require some mechanism for
+parsing the raw text of the articles into component sentences and words, and for this
+we will use the NLTK library (which we’ll discuss further later in this chapter and in
+the next) to break our paragraphs into sentences. With the sentences isolated, we can
+then tokenize them to identify individual words and punctuation and pass the toke‐
+nized text to our gender counters to print a document’s percent male, female, both, or
+unknown&lt;/p&gt;
+
+&lt;p&gt;마지막으로 젠더 카운터를 사용하려면 몇 가지 메커니즘이 필요합니다.
+기사의 원시 텍스트를 구성 문장과 단어로 구문 분석하고 이를 위해
+우리는 NLTK 라이브러리를 사용할 것입니다(이 장의 뒷부분과
+다음) 단락을 문장으로 나눕니다. 문장을 분리하면
+그런 다음 개별 단어와 구두점을 식별하고 토큰을 전달하도록 토큰화합니다.
+문서의 남성, 여성, 둘 다 또는
+알려지지 않은&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;parse_gender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;sentences&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nltk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word_tokenize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nltk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sent_tokenize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;sents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;words&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count_gender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentences&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;words&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;words&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;pcent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;nsents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;s&quot;&gt;&quot;{:0.3f}% {} ({} sentences)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pcent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nsents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Running our parse_gender function on an article from the New York Times entitled “Rehearse, Ice Feet, Repeat: The Life of a New York City Ballet Corps Dancer” yields
+the following, unsurprising results:&lt;/p&gt;
+
+&lt;p&gt;New York Times의 기사에서 parse_gender 함수 실행
+“리허설, 얼음 발, 반복: 뉴욕시 발레단 댄서의 삶” 산출량
+다음과 같은 놀라운 결과:&lt;/p&gt;
+
+&lt;h1 id=&quot;ballettxt-파일-내용&quot;&gt;ballet.txt 파일 내용&lt;/h1&gt;
+
+&lt;p&gt;With apologies to James Brown, the hardest working people in show business may well be ballet dancers. And at New York City Ballet, none work harder than the dancers in its lowest rank, the corps de ballet. During the first week of the company’s winter season, Claire Kretzschmar, 24, a rising corps member, danced in all seven performances, appearing in five ballets, sometimes changing costumes at intermission to dance two roles in a night.&lt;/p&gt;
+
+&lt;p&gt;But her work onstage did not even begin to capture the stamina required to be in the corps. Spending a week shadowing Ms. Kretzschmar was exhausting — she gave new meaning to the idea of being on your feet all day. Twelve-hour days at the David H. Koch Theater, the company’s Lincoln Center home, were hardly unusual: Company class each morning was followed by back-to-back-to-back rehearsals, with occasional breaks for costume fittings or physical therapy, and then by the hair-makeup-costume-dance routine of daily performances.&lt;/p&gt;
+
+&lt;p&gt;Video
+Every day, Claire Kretzschmar of the New York City Ballet goes from class to rehearsal to performance at a breathless pace. Dance alongside her busy day. CREDIT PHOTOGRAPH BY SASHA ARUTYUNOVA FOR THE NEW YORK TIMES. TECHNOLOGY BY SAMSUNG. PUBLISH DATE JANUARY 27, 2017
+This weekend will be even more frenetic. Ms. Kretzschmar will appear in seven ballets from Friday evening to Sunday afternoon, when she faces a new test: taking on the title role of the Sleepwalker in George Balanchine’s eerie, proto-goth ballet “La Sonnambula.” Balanchine, one of ballet’s most important choreographers, was a founder of City Ballet, and remains its guiding spirit more than three decades after his death.&lt;/p&gt;
+
+&lt;p&gt;Being in City Ballet’s corps is not like being a member of a chorus line, or a backup singer. The company promotes almost all of its stars, the principal dancers, from within. So while the corps is expected to be able to move in startling unison, like a school of fish, and to assemble in straight lines and keep all rippling swan arms parallel, its 54 members are also competing for bigger roles and promotions.&lt;/p&gt;
+
+&lt;p&gt;“There is an element of competition, and people get different opportunities, but everybody just wants to do their best onstage, and everyone wants each other to just do their best onstage,” Ms. Kretzschmar said during a break between rehearsals last week. “We have all experienced so many extreme highs and lows that it’s almost that you have to bond with this group of people.”&lt;/p&gt;
+
+&lt;p&gt;Here are scenes from one week in the busy life of a corps member.&lt;/p&gt;
+
+&lt;p&gt;Image
+Ms. Kretzschmar at a morning company dance class, followed by back-to-back-to-back rehearsals. CREDITSASHA ARUTYUNOVA FOR THE NEW YORK TIMES
+Tuesday, Opening Day
+10:09 A.M. COMPANY CLASS, ‘NOTHING FANCY’ Ms. Kretzschmar arrives early in the large studio on the Koch’s fifth floor, stakes out her regular spot at the barre in the back corner, and wraps her toes in paper towels before slipping on her point shoes. Dancers soon fill the room. Unity Phelan and Brittany Pollack bring their dogs.&lt;/p&gt;
+
+&lt;p&gt;Peter Martins, the company’s ballet master in chief, strides in, coffee cup in hand, and puts the whole company through its paces, as the rehearsal pianist plays Gershwin. Later he says: “George Balanchine used to tell me, ‘You know what class is about, dear?’ He said, ‘What we do is we brush teeth, we clean teeth every morning. Nothing fancy: We just keep the essentials pure.’”&lt;/p&gt;
+
+&lt;p&gt;11:30 A.M. REHEARSAL STUDIO After class, Ms. Kretzschmar — who studied ballet while growing up in North Carolina, came to New York to study at the School of American Ballet, the company’s official school, and joined the corps in 2011 — stays in the studio to observe a rehearsal of a dance she is learning, and then watches a new Pontus Lidberg ballet for which she is an understudy. At 1 p.m., she finally gets on her toes for a rehearsal of “Fearful Symmetries,” a demanding, propulsive ballet choreographed by Mr. Martins that she was given a principal role in. She pauses to ask how to time a climactic gesture in which she rests her head on her partner’s palm. “It’s a Hail Mary,” the ballet master, Kathleen Tracey, tells her. “Hope for the best!”&lt;/p&gt;
+
+&lt;p&gt;Image
+Ms. Kretzschmar in a rehearsal at the David H. Koch Theater. “There is an element of competition,” she said, “but everybody just wants to do their best onstage, and everyone wants each other to just do their best onstage.” CREDITSASHA ARUTYUNOVA FOR THE NEW YORK TIMES
+2:20 P.M. SLEEPWALKING ONSTAGE The wig needs combing. Few characters in ballet make as lasting an impression as the Sleepwalker, an enigmatic character with long, flowing hair who makes her unseeing entrance on point, holding a candle. But when Ms. Kretzschmar first steps out onstage in her new wig, the action briefly stops, as the ballet masters confer with Suzy Alvarez, the company’s hair and makeup supervisor, about how they want the wig to look.&lt;/p&gt;
+
+&lt;p&gt;It was the wig that first tipped Ms. Kretzschmar off that she was getting the part; even before the casting was announced she was summoned to a fitting. “I don’t think they would give me a wig if I wasn’t going to do it,” she said.&lt;/p&gt;
+
+&lt;p&gt;The dancers work on one-year contracts. Corps members earn roughly $1,100 to $2,100 a week, depending on seniority, and are typically paid for 37 to 39 weeks a year. Since ballet careers are short, many are in a hurry to make their marks.&lt;/p&gt;
+
+&lt;p&gt;Giving corps members a shot at big roles like this is part of the ethos of City Ballet. “You test them,” Mr. Martins said. “What are they made of? Am I wrong, am I right? You throw little bones to them and see how they react.”&lt;/p&gt;
+
+&lt;p&gt;Image
+Ms. Kretzschmar at a dress rehearsal of “Swan Lake.” CREDITSASHA ARUTYUNOVA FOR THE NEW YORK TIMES
+3:10 P.M. COSTUME FITTING: TUTUS AND HOODIES City Ballet’s costume shop — acres of tulle and tutus — is tucked away on the eighth floor of the Rose Building at Lincoln Center. Fittings here offer a brief respite from the theater and a breath of fresh air. Ms. Kretzschmar tries on the black hoodie, skirt and high-top sneakers she will wear in Justin Peck’s new ballet, “The Times Are Racing.” Then it was back to the theater for one more rehearsal and then opening night, where she danced in Balanchine’s “Firebird,” the last ballet on the evening’s triple bill.&lt;/p&gt;
+
+&lt;p&gt;Image
+A 15-minute physical therapy session. Her left foot, which she injured in the past, “gets tighter quicker than the right one,” Ms. Kretzschmar says. CREDITSASHA ARUTYUNOVA FOR THE NEW YORK TIMES
+Wednesday
+1:30 P.M. PHYSICAL THERAPY Ballet is a physically punishing, sometimes dangerous business: Injuries are all too common and can lead to missed performances and careers cut short. Ms. Kretzschmar signs up for 15-minute physical therapy sessions in a small space resembling a doctor’s office on the fifth floor of the theater. She lies on a table and Taryn Khong, the therapist, manipulates her left foot, which Ms. Kretzschmar has injured in the past. “It gets tighter quicker than the right one,” she said.&lt;/p&gt;
+
+&lt;p&gt;4:18 P.M.: ‘FEARFUL SYMMETRIES’ REHEARSAL Ms. Kretzschmar begins her third stage rehearsal of the day. Mr. Martins, who choreographed the piece, makes a request: At one point, when she thrusts her leg behind her, he wants her to bend it to one side, forming a sort of arabesque-with-a-twist. Ms. Tracey, the ballet master leading the rehearsal, demonstrates. “That, exactly,” Mr. Martins says. Ms. Kretzschmar tries once more to execute the twisting step, which some dancers call “crack your back” because it looks as if it might.&lt;/p&gt;
+
+&lt;p&gt;Image
+A makeup session before dancing “Swan Lake.” CREDITSASHA ARUTYUNOVA FOR THE NEW YORK TIMES
+6:40 P.M. HAIR AND MAKEUP: HEAD, MEET BUN Time to become a swan. “Swan Lake” is one of the most famous ballets of them all, and Balanchine’s unusual one-act take on it has plenty of dancing for the corps members playing swans. Sitting at a light-bulb-ringed mirror in the hair and makeup room, Ms. Kretzschmar applies eyeliner and puts her hair in a neat bun. A hairdresser calls across the room to ask all the swans to make sure that some hair can be seen beneath their matching black headdresses, which come to a point in the center of their foreheads — lest they start to look like a member of “The Munsters” family with widow’s peaks.&lt;/p&gt;
+
+&lt;p&gt;“Good evening everyone, this is your half-hour call,” a voice says over a loudspeaker.&lt;/p&gt;
+
+&lt;p&gt;7 P.M. DRESSING ROOM: LIVING OUT OF A THEATER CASE In the fourth-floor dressing room she shares with other corps women, Ms. Kretzschmar pins on her headdress. This is her corner of the theater. It consists of a mirror, a hanging closet shelf crammed with leotards, tights and clothes, and her theater case — one of the old-fashioned black rectangular cases that dancers live out of and tour with. Hers sits open on a luggage rack; as is traditional, the inside lid is decorated with personal mementos.&lt;/p&gt;
+
+&lt;p&gt;Image
+Claire Kretzschmar of New York City Ballet preparing for a rehearsal of “The Four Temperaments” at the David H. Koch Theater. CREDITPHOTOGRAPH BY SASHA ARUTYUNOVA FOR THE NEW YORK TIMES. TECHNOLOGY BY SAMSUNG.
+7:25 P.M. THE WINGS The space off stage right resembles a mini ballet studio: There is a barre, a small dance floor, and an area for dancers to fix their shoes. Although she is not in the evening’s first ballet, Ms. Kretzschmar arrives before it begins and uses a rasplike tool to scuff the soles of her point shoes so they won’t slip.&lt;/p&gt;
+
+&lt;p&gt;“I don’t like to feel rushed before the show, because that just makes me more stressed,” she explains later. “For me, I take that time so I can kind of calm down.”&lt;/p&gt;
+
+&lt;p&gt;Next to her, Tiler Peck, one of the company’s biggest stars, prepares her own shoes. The company’s music director, Andrew Litton, arrives in his tuxedo before heading down to the pit. “Hey Tiler, merde,” he says, employing the earthy French expression ballet dancers use to wish each other luck. “Any last requests?”&lt;/p&gt;
+
+&lt;p&gt;Then, although she has been dancing much of the day, she warms up again, seemingly oblivious to the performance taking place onstage 30 feet away.&lt;/p&gt;
+
+&lt;p&gt;Image
+Ms. Kretzschmar in “Swan Lake.” CREDITSASHA ARUTYUNOVA FOR THE NEW YORK TIMES
+8:13 P.M. SHOWTIME Now it’s time to use those muscles: first as a swan in “Swan Lake,” the evening’s second ballet, and, after changing into a modern leotard, in Balanchine’s “The Four Temperaments.”&lt;/p&gt;
+
+&lt;p&gt;9:40 P.M. CURTAIN DOWN, HOME LEAVE After the curtain falls, she goes home for a dinner of leftover pulled pork and macaroni and cheese, and a little television — which she watches with her feet in an ice bucket.&lt;/p&gt;
+
+&lt;p&gt;Friday
+12:02 P.M. PECK REHEARSALS: HOODIES ON As Donald J. Trump is being inaugurated in Washington and marchers are preparing for a weekend of mass protests, Ms. Kretzschmar is onstage rehearsing the new Justin Peck ballet — which feels timely, with its dancers clad in shirts and hoodies emblazoned with messages including “Protest,” “Act” and “Unite.” Experimenting, she flips up her hood as she dances. “Try it!” Mr. Peck says encouragingly. “I don’t mind if it comes off.”&lt;/p&gt;
+
+&lt;p&gt;Saturday
+6:30 P.M. SLEEPWALKING BETWEEN SHOWS Although she has just danced in a matinee and has another performance that evening, Ms. Kretzschmar requests another “Sonnambula” rehearsal sandwiched between shows. Glenn Keenan, the ballet master, walks her through it again and again.&lt;/p&gt;
+
+&lt;p&gt;Ms. Keenan asks the pianist, Elaine Chelton, to pick up at the moment the Sleepwalker touches the body of the Poet. “Do you have where she bumps into the body?” she asks. Ms. Chelton scans her piano score, which is annotated with all manner of steps and stage actions. “I have where she steps over,” she replies, and begins playing a little before that.&lt;/p&gt;
+
+&lt;p&gt;Image
+Ms. Kretzschmar, right, during a rehearsal for Justin Peck’s “Scherzo Fantastique” at the David H. Koch Theater. CREDITSASHA ARUTYUNOVA FOR THE NEW YORK TIMES
+Sunday
+5:15 P.M. ONE WEEK DOWN, TWO DEBUTS TO COME After dancing two more roles at the matinee — as a male-eating insect in Jerome Robbins’s “The Cage,” and in the corps of Mr. Peck’s “Scherzo Fantastique” — her week comes to an end. She pauses to reflect on the week ahead: On Monday, the company’s day off, she will start a class at Fordham, where she is close to earning a degree in communications, with a minor in English. Then back to dancing, and the debuts of her two big roles, which she said she would keep honing between all her other roles.&lt;/p&gt;
+
+&lt;p&gt;“I want to feel really prepared,” she said, adding that she would take care not to overdo it. “I try to take a day-by-day, hour-by-hour approach.”&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'__main__'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'C:/Users/MyCom//jupyter-tutorial/applied text analysis with python/data/ballet.txt'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'r'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'UTF8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;parse_gender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;39.269% unknown (48 sentences)
+52.994% female (38 sentences)
+4.393% both (2 sentences)
+3.344% male (3 sentences)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The scoring function here takes into account the length of the sentence in terms of
+the number of words it contains. Therefore even though there are fewer total female
+sentences, over 50% of the article is female. Extensions of this technique can analyze
+words that are in female sentences versus in male sentences to see if there are any
+auxiliary terms that are by default associated with male and female genders. We can
+see that this analysis is relatively easy to implement in Python, and Caren found his
+results very striking:&lt;/p&gt;
+
+&lt;p&gt;여기에서 채점 기능은 다음과 같이 문장의 길이를 고려합니다.
+포함하는 단어의 수입니다. 따라서 전체 여성의 수가 적음에도 불구하고
+문장의 50% 이상이 여성입니다. 이 기술의 확장은 다음을 분석할 수 있습니다.
+여성 문장 대 남성 문장의 단어가 있는지 확인하기 위해
+기본적으로 남성 및 여성 성별과 관련된 보조 용어입니다. 우리는 할 수 있습니다
+이 분석은 Python에서 구현하기가 비교적 쉽고 Caren은 자신의
+매우 놀라운 결과:&lt;/p&gt;
+
+</description>
+            <pubDate>Thu, 28 Oct 2021 00:00:00 +0900</pubDate>
+            <link>https://SEONGJAE-YOO.github.io//chapter1LanguageandComputation</link>
+            <guid isPermaLink="true">https://SEONGJAE-YOO.github.io//chapter1LanguageandComputation</guid>
+            
+            <category>applied text analysis with python</category>
             
             
         </item>
@@ -27201,1049 +27518,6 @@ The following objects are masked from 'package:base':
             <pubDate>Fri, 01 Oct 2021 00:00:00 +0900</pubDate>
             <link>https://SEONGJAE-YOO.github.io//05application1</link>
             <guid isPermaLink="true">https://SEONGJAE-YOO.github.io//05application1</guid>
-            
-            <category>python</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>머신러닝 프로그래밍 5주차-Random number</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#random number
-&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;random&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;math&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;help&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Help on module random:
-
-NAME
-    random - Random variable generators.
-
-DESCRIPTION
-        integers
-        --------
-               uniform within range
-    
-        sequences
-        ---------
-               pick random element
-               pick random sample
-               pick weighted random sample
-               generate random permutation
-    
-        distributions on the real line:
-        ------------------------------
-               uniform
-               triangular
-               normal (Gaussian)
-               lognormal
-               negative exponential
-               gamma
-               beta
-               pareto
-               Weibull
-    
-        distributions on the circle (angles 0 to 2pi)
-        ---------------------------------------------
-               circular uniform
-               von Mises
-    
-    General notes on the underlying Mersenne Twister core generator:
-    
-    * The period is 2**19937-1.
-    * It is one of the most extensively tested generators in existence.
-    * The random() method is implemented in C, executes in a single Python step,
-      and is, therefore, threadsafe.
-
-CLASSES
-    _random.Random(builtins.object)
-        Random
-            SystemRandom
-    
-    class Random(_random.Random)
-     |  Random number generator base class used by bound module functions.
-     |  
-     |  Used to instantiate instances of Random to get generators that don't
-     |  share state.
-     |  
-     |  Class Random can also be subclassed if you want to use a different basic
-     |  generator of your own devising: in that case, override the following
-     |  methods:  random(), seed(), getstate(), and setstate().
-     |  Optionally, implement a getrandbits() method so that randrange()
-     |  can cover arbitrarily large ranges.
-     |  
-     |  Method resolution order:
-     |      Random
-     |      _random.Random
-     |      builtins.object
-     |  
-     |  Methods defined here:
-     |  
-     |  __getstate__(self)
-     |      # Issue 17489: Since __reduce__ was defined to fix #759889 this is no
-     |      # longer called; we leave it here because it has been here since random was
-     |      # rewritten back in 2001 and why risk breaking something.
-     |  
-     |  __init__(self, x=None)
-     |      Initialize an instance.
-     |      
-     |      Optional argument x controls seeding, as for Random.seed().
-     |  
-     |  __reduce__(self)
-     |      helper for pickle
-     |  
-     |  __setstate__(self, state)
-     |  
-     |  betavariate(self, alpha, beta)
-     |      Beta distribution.
-     |      
-     |      Conditions on the parameters are alpha &amp;gt; 0 and beta &amp;gt; 0.
-     |      Returned values range between 0 and 1.
-     |  
-     |  choice(self, seq)
-     |      Choose a random element from a non-empty sequence.
-     |  
-     |  choices(self, population, weights=None, *, cum_weights=None, k=1)
-     |      Return a k sized list of population elements chosen with replacement.
-     |      
-     |      If the relative weights or cumulative weights are not specified,
-     |      the selections are made with equal probability.
-     |  
-     |  expovariate(self, lambd)
-     |      Exponential distribution.
-     |      
-     |      lambd is 1.0 divided by the desired mean.  It should be
-     |      nonzero.  (The parameter would be called &quot;lambda&quot;, but that is
-     |      a reserved word in Python.)  Returned values range from 0 to
-     |      positive infinity if lambd is positive, and from negative
-     |      infinity to 0 if lambd is negative.
-     |  
-     |  gammavariate(self, alpha, beta)
-     |      Gamma distribution.  Not the gamma function!
-     |      
-     |      Conditions on the parameters are alpha &amp;gt; 0 and beta &amp;gt; 0.
-     |      
-     |      The probability distribution function is:
-     |      
-     |                  x ** (alpha - 1) * math.exp(-x / beta)
-     |        pdf(x) =  --------------------------------------
-     |                    math.gamma(alpha) * beta ** alpha
-     |  
-     |  gauss(self, mu, sigma)
-     |      Gaussian distribution.
-     |      
-     |      mu is the mean, and sigma is the standard deviation.  This is
-     |      slightly faster than the normalvariate() function.
-     |      
-     |      Not thread-safe without a lock around calls.
-     |  
-     |  getstate(self)
-     |      Return internal state; can be passed to setstate() later.
-     |  
-     |  lognormvariate(self, mu, sigma)
-     |      Log normal distribution.
-     |      
-     |      If you take the natural logarithm of this distribution, you'll get a
-     |      normal distribution with mean mu and standard deviation sigma.
-     |      mu can have any value, and sigma must be greater than zero.
-     |  
-     |  normalvariate(self, mu, sigma)
-     |      Normal distribution.
-     |      
-     |      mu is the mean, and sigma is the standard deviation.
-     |  
-     |  paretovariate(self, alpha)
-     |      Pareto distribution.  alpha is the shape parameter.
-     |  
-     |  randint(self, a, b)
-     |      Return random integer in range [a, b], including both end points.
-     |  
-     |  randrange(self, start, stop=None, step=1, _int=&amp;lt;class 'int'&amp;gt;)
-     |      Choose a random item from range(start, stop[, step]).
-     |      
-     |      This fixes the problem with randint() which includes the
-     |      endpoint; in Python this is usually not what you want.
-     |  
-     |  sample(self, population, k)
-     |      Chooses k unique random elements from a population sequence or set.
-     |      
-     |      Returns a new list containing elements from the population while
-     |      leaving the original population unchanged.  The resulting list is
-     |      in selection order so that all sub-slices will also be valid random
-     |      samples.  This allows raffle winners (the sample) to be partitioned
-     |      into grand prize and second place winners (the subslices).
-     |      
-     |      Members of the population need not be hashable or unique.  If the
-     |      population contains repeats, then each occurrence is a possible
-     |      selection in the sample.
-     |      
-     |      To choose a sample in a range of integers, use range as an argument.
-     |      This is especially fast and space efficient for sampling from a
-     |      large population:   sample(range(10000000), 60)
-     |  
-     |  seed(self, a=None, version=2)
-     |      Initialize internal state from hashable object.
-     |      
-     |      None or no argument seeds from current time or from an operating
-     |      system specific randomness source if available.
-     |      
-     |      If *a* is an int, all bits are used.
-     |      
-     |      For version 2 (the default), all of the bits are used if *a* is a str,
-     |      bytes, or bytearray.  For version 1 (provided for reproducing random
-     |      sequences from older versions of Python), the algorithm for str and
-     |      bytes generates a narrower range of seeds.
-     |  
-     |  setstate(self, state)
-     |      Restore internal state from object returned by getstate().
-     |  
-     |  shuffle(self, x, random=None)
-     |      Shuffle list x in place, and return None.
-     |      
-     |      Optional argument random is a 0-argument function returning a
-     |      random float in [0.0, 1.0); if it is the default None, the
-     |      standard random.random will be used.
-     |  
-     |  triangular(self, low=0.0, high=1.0, mode=None)
-     |      Triangular distribution.
-     |      
-     |      Continuous distribution bounded by given lower and upper limits,
-     |      and having a given mode value in-between.
-     |      
-     |      http://en.wikipedia.org/wiki/Triangular_distribution
-     |  
-     |  uniform(self, a, b)
-     |      Get a random number in the range [a, b) or [a, b] depending on rounding.
-     |  
-     |  vonmisesvariate(self, mu, kappa)
-     |      Circular data distribution.
-     |      
-     |      mu is the mean angle, expressed in radians between 0 and 2*pi, and
-     |      kappa is the concentration parameter, which must be greater than or
-     |      equal to zero.  If kappa is equal to zero, this distribution reduces
-     |      to a uniform random angle over the range 0 to 2*pi.
-     |  
-     |  weibullvariate(self, alpha, beta)
-     |      Weibull distribution.
-     |      
-     |      alpha is the scale parameter and beta is the shape parameter.
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data descriptors defined here:
-     |  
-     |  __dict__
-     |      dictionary for instance variables (if defined)
-     |  
-     |  __weakref__
-     |      list of weak references to the object (if defined)
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data and other attributes defined here:
-     |  
-     |  VERSION = 3
-     |  
-     |  ----------------------------------------------------------------------
-     |  Methods inherited from _random.Random:
-     |  
-     |  __getattribute__(self, name, /)
-     |      Return getattr(self, name).
-     |  
-     |  __new__(*args, **kwargs) from builtins.type
-     |      Create and return a new object.  See help(type) for accurate signature.
-     |  
-     |  getrandbits(...)
-     |      getrandbits(k) -&amp;gt; x.  Generates an int with k random bits.
-     |  
-     |  random(...)
-     |      random() -&amp;gt; x in the interval [0, 1).
-    
-    class SystemRandom(Random)
-     |  Alternate random number generator using sources provided
-     |  by the operating system (such as /dev/urandom on Unix or
-     |  CryptGenRandom on Windows).
-     |  
-     |   Not available on all systems (see os.urandom() for details).
-     |  
-     |  Method resolution order:
-     |      SystemRandom
-     |      Random
-     |      _random.Random
-     |      builtins.object
-     |  
-     |  Methods defined here:
-     |  
-     |  getrandbits(self, k)
-     |      getrandbits(k) -&amp;gt; x.  Generates an int with k random bits.
-     |  
-     |  getstate = _notimplemented(self, *args, **kwds)
-     |  
-     |  random(self)
-     |      Get the next random number in the range [0.0, 1.0).
-     |  
-     |  seed(self, *args, **kwds)
-     |      Stub method.  Not used for a system random number generator.
-     |  
-     |  setstate = _notimplemented(self, *args, **kwds)
-     |  
-     |  ----------------------------------------------------------------------
-     |  Methods inherited from Random:
-     |  
-     |  __getstate__(self)
-     |      # Issue 17489: Since __reduce__ was defined to fix #759889 this is no
-     |      # longer called; we leave it here because it has been here since random was
-     |      # rewritten back in 2001 and why risk breaking something.
-     |  
-     |  __init__(self, x=None)
-     |      Initialize an instance.
-     |      
-     |      Optional argument x controls seeding, as for Random.seed().
-     |  
-     |  __reduce__(self)
-     |      helper for pickle
-     |  
-     |  __setstate__(self, state)
-     |  
-     |  betavariate(self, alpha, beta)
-     |      Beta distribution.
-     |      
-     |      Conditions on the parameters are alpha &amp;gt; 0 and beta &amp;gt; 0.
-     |      Returned values range between 0 and 1.
-     |  
-     |  choice(self, seq)
-     |      Choose a random element from a non-empty sequence.
-     |  
-     |  choices(self, population, weights=None, *, cum_weights=None, k=1)
-     |      Return a k sized list of population elements chosen with replacement.
-     |      
-     |      If the relative weights or cumulative weights are not specified,
-     |      the selections are made with equal probability.
-     |  
-     |  expovariate(self, lambd)
-     |      Exponential distribution.
-     |      
-     |      lambd is 1.0 divided by the desired mean.  It should be
-     |      nonzero.  (The parameter would be called &quot;lambda&quot;, but that is
-     |      a reserved word in Python.)  Returned values range from 0 to
-     |      positive infinity if lambd is positive, and from negative
-     |      infinity to 0 if lambd is negative.
-     |  
-     |  gammavariate(self, alpha, beta)
-     |      Gamma distribution.  Not the gamma function!
-     |      
-     |      Conditions on the parameters are alpha &amp;gt; 0 and beta &amp;gt; 0.
-     |      
-     |      The probability distribution function is:
-     |      
-     |                  x ** (alpha - 1) * math.exp(-x / beta)
-     |        pdf(x) =  --------------------------------------
-     |                    math.gamma(alpha) * beta ** alpha
-     |  
-     |  gauss(self, mu, sigma)
-     |      Gaussian distribution.
-     |      
-     |      mu is the mean, and sigma is the standard deviation.  This is
-     |      slightly faster than the normalvariate() function.
-     |      
-     |      Not thread-safe without a lock around calls.
-     |  
-     |  lognormvariate(self, mu, sigma)
-     |      Log normal distribution.
-     |      
-     |      If you take the natural logarithm of this distribution, you'll get a
-     |      normal distribution with mean mu and standard deviation sigma.
-     |      mu can have any value, and sigma must be greater than zero.
-     |  
-     |  normalvariate(self, mu, sigma)
-     |      Normal distribution.
-     |      
-     |      mu is the mean, and sigma is the standard deviation.
-     |  
-     |  paretovariate(self, alpha)
-     |      Pareto distribution.  alpha is the shape parameter.
-     |  
-     |  randint(self, a, b)
-     |      Return random integer in range [a, b], including both end points.
-     |  
-     |  randrange(self, start, stop=None, step=1, _int=&amp;lt;class 'int'&amp;gt;)
-     |      Choose a random item from range(start, stop[, step]).
-     |      
-     |      This fixes the problem with randint() which includes the
-     |      endpoint; in Python this is usually not what you want.
-     |  
-     |  sample(self, population, k)
-     |      Chooses k unique random elements from a population sequence or set.
-     |      
-     |      Returns a new list containing elements from the population while
-     |      leaving the original population unchanged.  The resulting list is
-     |      in selection order so that all sub-slices will also be valid random
-     |      samples.  This allows raffle winners (the sample) to be partitioned
-     |      into grand prize and second place winners (the subslices).
-     |      
-     |      Members of the population need not be hashable or unique.  If the
-     |      population contains repeats, then each occurrence is a possible
-     |      selection in the sample.
-     |      
-     |      To choose a sample in a range of integers, use range as an argument.
-     |      This is especially fast and space efficient for sampling from a
-     |      large population:   sample(range(10000000), 60)
-     |  
-     |  shuffle(self, x, random=None)
-     |      Shuffle list x in place, and return None.
-     |      
-     |      Optional argument random is a 0-argument function returning a
-     |      random float in [0.0, 1.0); if it is the default None, the
-     |      standard random.random will be used.
-     |  
-     |  triangular(self, low=0.0, high=1.0, mode=None)
-     |      Triangular distribution.
-     |      
-     |      Continuous distribution bounded by given lower and upper limits,
-     |      and having a given mode value in-between.
-     |      
-     |      http://en.wikipedia.org/wiki/Triangular_distribution
-     |  
-     |  uniform(self, a, b)
-     |      Get a random number in the range [a, b) or [a, b] depending on rounding.
-     |  
-     |  vonmisesvariate(self, mu, kappa)
-     |      Circular data distribution.
-     |      
-     |      mu is the mean angle, expressed in radians between 0 and 2*pi, and
-     |      kappa is the concentration parameter, which must be greater than or
-     |      equal to zero.  If kappa is equal to zero, this distribution reduces
-     |      to a uniform random angle over the range 0 to 2*pi.
-     |  
-     |  weibullvariate(self, alpha, beta)
-     |      Weibull distribution.
-     |      
-     |      alpha is the scale parameter and beta is the shape parameter.
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data descriptors inherited from Random:
-     |  
-     |  __dict__
-     |      dictionary for instance variables (if defined)
-     |  
-     |  __weakref__
-     |      list of weak references to the object (if defined)
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data and other attributes inherited from Random:
-     |  
-     |  VERSION = 3
-     |  
-     |  ----------------------------------------------------------------------
-     |  Methods inherited from _random.Random:
-     |  
-     |  __getattribute__(self, name, /)
-     |      Return getattr(self, name).
-     |  
-     |  __new__(*args, **kwargs) from builtins.type
-     |      Create and return a new object.  See help(type) for accurate signature.
-
-FUNCTIONS
-    betavariate(alpha, beta) method of Random instance
-        Beta distribution.
-        
-        Conditions on the parameters are alpha &amp;gt; 0 and beta &amp;gt; 0.
-        Returned values range between 0 and 1.
-    
-    choice(seq) method of Random instance
-        Choose a random element from a non-empty sequence.
-    
-    choices(population, weights=None, *, cum_weights=None, k=1) method of Random instance
-        Return a k sized list of population elements chosen with replacement.
-        
-        If the relative weights or cumulative weights are not specified,
-        the selections are made with equal probability.
-    
-    expovariate(lambd) method of Random instance
-        Exponential distribution.
-        
-        lambd is 1.0 divided by the desired mean.  It should be
-        nonzero.  (The parameter would be called &quot;lambda&quot;, but that is
-        a reserved word in Python.)  Returned values range from 0 to
-        positive infinity if lambd is positive, and from negative
-        infinity to 0 if lambd is negative.
-    
-    gammavariate(alpha, beta) method of Random instance
-        Gamma distribution.  Not the gamma function!
-        
-        Conditions on the parameters are alpha &amp;gt; 0 and beta &amp;gt; 0.
-        
-        The probability distribution function is:
-        
-                    x ** (alpha - 1) * math.exp(-x / beta)
-          pdf(x) =  --------------------------------------
-                      math.gamma(alpha) * beta ** alpha
-    
-    gauss(mu, sigma) method of Random instance
-        Gaussian distribution.
-        
-        mu is the mean, and sigma is the standard deviation.  This is
-        slightly faster than the normalvariate() function.
-        
-        Not thread-safe without a lock around calls.
-    
-    getrandbits(...) method of Random instance
-        getrandbits(k) -&amp;gt; x.  Generates an int with k random bits.
-    
-    getstate() method of Random instance
-        Return internal state; can be passed to setstate() later.
-    
-    lognormvariate(mu, sigma) method of Random instance
-        Log normal distribution.
-        
-        If you take the natural logarithm of this distribution, you'll get a
-        normal distribution with mean mu and standard deviation sigma.
-        mu can have any value, and sigma must be greater than zero.
-    
-    normalvariate(mu, sigma) method of Random instance
-        Normal distribution.
-        
-        mu is the mean, and sigma is the standard deviation.
-    
-    paretovariate(alpha) method of Random instance
-        Pareto distribution.  alpha is the shape parameter.
-    
-    randint(a, b) method of Random instance
-        Return random integer in range [a, b], including both end points.
-    
-    random(...) method of Random instance
-        random() -&amp;gt; x in the interval [0, 1).
-    
-    randrange(start, stop=None, step=1, _int=&amp;lt;class 'int'&amp;gt;) method of Random instance
-        Choose a random item from range(start, stop[, step]).
-        
-        This fixes the problem with randint() which includes the
-        endpoint; in Python this is usually not what you want.
-    
-    sample(population, k) method of Random instance
-        Chooses k unique random elements from a population sequence or set.
-        
-        Returns a new list containing elements from the population while
-        leaving the original population unchanged.  The resulting list is
-        in selection order so that all sub-slices will also be valid random
-        samples.  This allows raffle winners (the sample) to be partitioned
-        into grand prize and second place winners (the subslices).
-        
-        Members of the population need not be hashable or unique.  If the
-        population contains repeats, then each occurrence is a possible
-        selection in the sample.
-        
-        To choose a sample in a range of integers, use range as an argument.
-        This is especially fast and space efficient for sampling from a
-        large population:   sample(range(10000000), 60)
-    
-    seed(a=None, version=2) method of Random instance
-        Initialize internal state from hashable object.
-        
-        None or no argument seeds from current time or from an operating
-        system specific randomness source if available.
-        
-        If *a* is an int, all bits are used.
-        
-        For version 2 (the default), all of the bits are used if *a* is a str,
-        bytes, or bytearray.  For version 1 (provided for reproducing random
-        sequences from older versions of Python), the algorithm for str and
-        bytes generates a narrower range of seeds.
-    
-    setstate(state) method of Random instance
-        Restore internal state from object returned by getstate().
-    
-    shuffle(x, random=None) method of Random instance
-        Shuffle list x in place, and return None.
-        
-        Optional argument random is a 0-argument function returning a
-        random float in [0.0, 1.0); if it is the default None, the
-        standard random.random will be used.
-    
-    triangular(low=0.0, high=1.0, mode=None) method of Random instance
-        Triangular distribution.
-        
-        Continuous distribution bounded by given lower and upper limits,
-        and having a given mode value in-between.
-        
-        http://en.wikipedia.org/wiki/Triangular_distribution
-    
-    uniform(a, b) method of Random instance
-        Get a random number in the range [a, b) or [a, b] depending on rounding.
-    
-    vonmisesvariate(mu, kappa) method of Random instance
-        Circular data distribution.
-        
-        mu is the mean angle, expressed in radians between 0 and 2*pi, and
-        kappa is the concentration parameter, which must be greater than or
-        equal to zero.  If kappa is equal to zero, this distribution reduces
-        to a uniform random angle over the range 0 to 2*pi.
-    
-    weibullvariate(alpha, beta) method of Random instance
-        Weibull distribution.
-        
-        alpha is the scale parameter and beta is the shape parameter.
-
-DATA
-    __all__ = ['Random', 'seed', 'random', 'uniform', 'randint', 'choice',...
-
-FILE
-    c:\users\mycom\anaconda3\envs\text_analysis\lib\random.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0.7670211937195743
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0.17853941074018576
-0.24078551563614214
-0.05803909225913839
-0.21738369488110454
-0.7634644499136808
-0.19601377974947265
-0.27322946755619915
-0.9827421870732083
-0.7984488944866946
-0.3791431427922013
-0.508453111179799
-0.365187832248034
-0.12918543444331299
-0.2128350100900981
-0.1165951494692361
-0.862634853323518
-0.3913387074916431
-0.6195165562346545
-0.9892344008563827
-0.4839026562421024
-0.441262236342017
-0.5174358545107994
-0.6822136241306501
-0.05815967685934498
-0.14410336668954182
-0.22718949244775277
-0.6914258927483586
-0.9124332965803907
-0.37670794447415845
-0.4579689578301217
-0.948983429219519
-0.6397274408616093
-0.4654338016670655
-0.32161831088284976
-0.9968145177557893
-0.5391130285700385
-0.8825666205454724
-0.2369269810441137
-0.7961822675104787
-0.10929231329402067
-0.6642424672402419
-0.6095253447084868
-0.6284214140217939
-0.5015318322870118
-0.4462181176186376
-0.9874620465312184
-0.13203247733587498
-0.04772201313282587
-0.17036229946565218
-0.019542344462530337
-0.8585818810061516
-0.7296694506278822
-0.7247897330496671
-0.7963202060972204
-0.9963833013484522
-0.4626007565157356
-0.23723893388612194
-0.6762904863751602
-0.19076665166195916
-0.4753970243799518
-0.790255877195765
-0.6196246500452763
-0.17449533537511963
-0.5759244346197357
-0.9840910848202006
-0.7820636124146645
-0.4496091730539794
-0.06192788617564082
-0.5361627137714811
-0.6730707388685495
-0.05135000567611747
-0.31372224531237225
-0.591180556391752
-0.316594521350701
-0.8353892444936569
-0.5337755926459049
-0.02627738665422863
-0.12357280570650675
-0.5852069821340897
-0.8309099048760016
-0.7515790795323968
-0.8582720985284803
-0.3685036349130093
-0.20303397801728673
-0.6887229237546298
-0.8906311172350309
-0.9786887925584895
-0.9265772709700697
-0.8392783035693331
-0.31589340259561305
-0.022475283858571005
-0.08402224280190451
-0.65217290537766
-0.6956044317132433
-0.5315094580324417
-0.524738316116775
-0.7235309203553308
-0.23702451035031424
-0.20003340973532968
-0.18074714676755066
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;133&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0.493832650441572
-0.48235391320532917
-0.7689526722996671
-0.808287849811999
-0.3386806464328038
-0.5450011915983036
-0.6209130640487355
-0.7094136094538673
-0.9502045812629195
-0.7440645700760408
-0.8739469668363007
-0.663317836223428
-0.26382876910335307
-0.2858200536562322
-0.006732474093990137
-0.5036056445766783
-0.15830317206862154
-0.2858468209136603
-0.14963243151131322
-0.007159068497511689
-0.7683616832417255
-0.32384850032018264
-0.653139252705783
-0.9051722599654979
-0.29034436546291387
-0.5775551718418203
-0.12843071387346439
-0.11734390246778603
-0.7015265846508781
-0.08505581256166939
-0.9878769317899727
-0.2537944875221303
-0.8782677059503062
-0.9649793942632773
-0.07164749133631476
-0.40000668049294663
-0.4952648794552247
-0.23201762274939308
-0.25220900105584965
-0.3921220190371446
-0.47405490058424216
-0.26861923487038986
-0.6054173177764236
-0.5427522870419532
-0.5491257215192765
-0.035984351749888566
-0.9106278462592844
-0.3957053230816926
-0.4026581611496015
-0.1805927413745666
-0.27879017765246616
-0.5943860515391657
-0.4251590912343378
-0.9257558017747352
-0.4674337871444665
-0.3675714919819112
-0.8385183580811902
-0.8136375095645615
-0.9643070029441349
-0.8526643607484812
-0.5731506812302488
-0.8299413276420528
-0.14410022674059386
-0.1006793169388932
-0.005716212236372531
-0.6681790955082164
-0.7949360380354054
-0.20120442060062216
-0.7538099164613237
-0.24342906097992922
-0.8477155565562989
-0.1625751304094294
-0.28084834165723194
-0.30354107986765155
-0.46451190685632004
-0.7775133226539073
-0.5053764800826573
-0.8252832176418569
-0.07058310251667099
-0.6434720467459422
-0.06765121631971205
-0.07861255146894408
-0.4195391707460846
-0.8691448644453975
-0.6756185895536558
-0.7173037896187963
-0.1798252220639457
-0.9357539913857694
-0.9053864140739503
-0.5706607449118849
-0.8095288269787314
-0.5216948228922499
-0.8189070032500303
-0.4085917676431662
-0.5758280820702302
-0.2610613159483093
-0.6600872443704426
-0.536881723817665
-0.7784742612824026
-0.9582123581907775
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Face&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Back&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Face
-Face
-Face
-Back
-Back
-Back
-Face
-Back
-Back
-Back
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;xs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;xs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#[conda env:text_analysis] 가상환경에서 실행했음
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(array([ 8., 14., 13., 15., 12., 11., 12.,  4.,  6.,  5.]),
- array([3.02054188e-05, 9.92267322e-02, 1.98423259e-01, 2.97619786e-01,
-        3.96816313e-01, 4.96012839e-01, 5.95209366e-01, 6.94405893e-01,
-        7.93602420e-01, 8.92798946e-01, 9.91995473e-01]),
- &amp;lt;BarContainer object of 10 artists&amp;gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;./img/machinelearning/output_8_1.png&quot; alt=&quot;output_8_1&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;matplotlib&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Requirement already satisfied: matplotlib in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (3.3.4)
-Requirement already satisfied: numpy&amp;gt;=1.15 in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from matplotlib) (1.17.0)
-Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&amp;gt;=2.0.3 in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from matplotlib) (2.4.7)
-Requirement already satisfied: kiwisolver&amp;gt;=1.0.1 in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from matplotlib) (1.3.1)
-Requirement already satisfied: pillow&amp;gt;=6.2.0 in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from matplotlib) (8.3.1)
-Requirement already satisfied: python-dateutil&amp;gt;=2.1 in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from matplotlib) (2.8.2)
-Requirement already satisfied: cycler&amp;gt;=0.10 in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from matplotlib) (0.10.0)
-Requirement already satisfied: six in c:\users\mycom\anaconda3\envs\text_analysis\lib\site-packages (from cycler&amp;gt;=0.10-&amp;gt;matplotlib) (1.16.0)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;xs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;xs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;./img/machinelearning/output_12_0.png&quot; alt=&quot;output_12_0&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;xs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;xs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;./img/machinelearning/output_15_0.png&quot; alt=&quot;output_15_0&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;pdf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;xs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;x1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# [0,1] -&amp;gt; [0,2] -&amp;gt; [1,3]
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;y1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pdf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#accept
-&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;xs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bins&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;./img/machinelearning/output_18_0.png&quot; alt=&quot;output_18_0&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# 2
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;pdf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;xx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.5&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;xs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;x1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# [0,1] -&amp;gt; [0,2] -&amp;gt; [1,3]
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;y1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pdf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#accept
-&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;xs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bins&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;./img/machinelearning/output_21_0.png&quot; alt=&quot;output_21_0&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#확률 분포 함수 
-#1. y = ax + b 랜덤 모델 만들기
-# accept 리절트로 짜보기
-&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#2 적분 0 사이 1 랜덤 넘버(인벌스 트랜지포메이션) 직선 형태 랜덤 모델 만들기
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#1. y = ax+b
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# y=x
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;xi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;xf&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linspace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[0.  0.2 0.4 0.6 0.8 1. ]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xlabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'x'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ylabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'y'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xlim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xlim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'#920016'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;matplotlib.lines.Line2D at 0x199d8d4ad68&amp;gt;]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;./img/machinelearning/output_29_1.png&quot; alt=&quot;output_29_1&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#2.적분 0 사이 1 직선 형태 랜덤 모델 만들기
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# y =x
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;xi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;xf&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linspace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[0.  0.2 0.4 0.6 0.8 1. ]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dx1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;dx2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dx1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dx2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dx1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#list으로 만들고
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;asarray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#array으로 변경하기
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'dx'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dx [0.1 0.2 0.2 0.2 0.2 0.1]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Integration:'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;#적분 확인
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Integration: 0.5000000000000001
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ylabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'x'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ylabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'y'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xlim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ylim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'#920016'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;matplotlib.lines.Line2D at 0x199d6e9ea20&amp;gt;]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;./img/machinelearning/output_39_1.png&quot; alt=&quot;output_39_1&quot; /&gt;&lt;/p&gt;
-
-</description>
-            <pubDate>Fri, 01 Oct 2021 00:00:00 +0900</pubDate>
-            <link>https://SEONGJAE-YOO.github.io//05</link>
-            <guid isPermaLink="true">https://SEONGJAE-YOO.github.io//05</guid>
             
             <category>python</category>
             
