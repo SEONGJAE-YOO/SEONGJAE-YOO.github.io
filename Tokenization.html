@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>Tokenization Basics</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- 웹폰트 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="SeongJae Yu 블로그" />
+<link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
+<link rel="canonical" href="https://SEONGJAE-YOO.github.io/Tokenization" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+ <!--title below is coming from _includes/dynamic_title-->
+<meta property="og:site_name" content="Big Data" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tokenization Basics" />
+<meta property="og:description" content="SeongJae Yu 블로그" />
+<meta property="og:url" content="https://SEONGJAE-YOO.github.io/Tokenization" />
+<meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/udemy.png" />
+<meta property="article:publisher" content="https://www.facebook.com/" />
+<meta property="article:tag" content="Udemy" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Tokenization Basics" />
+<meta name="twitter:description" content="SeongJae Yu 블로그" />
+<meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
+<meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/udemy.png" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Big Data" />
+<meta name="twitter:label2" content="Filed under" />
+<meta name="twitter:data2" content="Udemy" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta property="og:image:width" content="2000" />
+<meta property="og:image:height" content="666" />
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Website",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Big Data",
+            "logo": "https://SEONGJAE-YOO.github.io/"
+        },
+        "url": "https://SEONGJAE-YOO.github.io/Tokenization",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://SEONGJAE-YOO.github.io/assets/built/images/udemy.png",
+            "width": 2000,
+            "height": 666
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://SEONGJAE-YOO.github.io/Tokenization"
+        },
+        "description": "SeongJae Yu 블로그"
+    }
+</script>
+
+<!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+<script type="text/javascript">
+ghost.init({
+    clientId: "ghost-frontend",
+    clientSecret: "f84a07a72b17"
+});
+</script> -->
+
+<meta name="generator" content="Jekyll 3.6.2" />
+<link rel="alternate" type="application/rss+xml" title="Tokenization Basics" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- < default -->
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<!-- The big featured header, it uses blog cover image as a BG if available -->
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://SEONGJAE-YOO.github.io/">Big Data</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-rprogramming" role="menuitem"><a href="/tag/rprogramming/">R</a></li>
+    <li class="nav-processmining" role="menuitem"><a href="/tag/processmining/">Processmining</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-kaggle" role="menuitem"><a href="/tag/kaggle">kaggle</a></li>
+    <li class="nav-book" role="menuitem"><a href="/tag/book">book</a></li>
+    <li class="nav-Udemy" role="menuitem"><a href="/tag/Udemy">Udemy</a></li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag별 Posts</a>
+    </li>
+</ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-udemy post tag-Udemy ">
+
+            <header class="post-full-header">
+                <h1 class="post-full-title">Tokenization Basics</h1>
+            </header>
+
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/udemy.png)">
+            </figure>
+            
+
+            <section class="post-full-content">
+                <h2 id="1-tokenization-basics">1) Tokenization Basics</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s1</span> <span class="o">=</span> <span class="s">'Apple is looking at buying U.K. startup for $1 billion !'</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s">'Hello all, We are here to help you! email support@udemy.com or visit us at http://www.udemy.com!'</span>
+<span class="n">s3</span> <span class="o">=</span> <span class="s">'10km cab ride almost costs $20 in NYC'</span>
+<span class="n">s4</span> <span class="o">=</span> <span class="s">"Let's watch a movie together."</span>
+</code></pre></div></div>
+
+<h1 id="spacy">spacy</h1>
+
+<p>spaCy는 파이썬의 자연어처리를 위한 오픈 소스 기반 라이브러리다.</p>
+
+<p>spaCy에서 지원하는 기능들이다. Tokenization과 품사 태깅, 개체 인식 등 기본적인 전처리 기능을 지원하고 있다.
+Linguistic Features
+Part-of-speech tagging
+spacy에서 문장을 tokenize한 뒤, token객체의 유용한 메서드들을 사용할 수 있다.</p>
+
+<p>import spacy</p>
+
+<p>(pip install spacy로 설치)</p>
+
+<p>nlp = spacy.load(‘en_core_web_sm’)</p>
+
+<p>doc = nlp(u’Apple is looking at buying U.K. startup for $1 billion’)</p>
+
+<p>for token in doc:</p>
+
+<p>print(token.text, token.lemma_, token.pos_, token.tag_, token.dep_, token.shape_, token.is_alpha, token.is_stop)</p>
+
+<ul>
+  <li>각 메서드들의 기능은 다음을 의미한다.</li>
+</ul>
+
+<p>Text: The original word text.</p>
+
+<p>Lemma: The base form of the word.</p>
+
+<p>POS: The simple part-of-speech tag.</p>
+
+<p>Tag: The detailed part-of-speech tag.</p>
+
+<p>Dep: Syntactic dependency, i.e. the relation between tokens.</p>
+
+<p>Shape: The word shape — capitalization, punctuation, digits.</p>
+
+<p>is alpha: Is the token an alpha character?</p>
+
+<p>is stop: Is the token part of a stop list, i.e. the most common words of the language?</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># !pip install spacy
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># #https://spacy.io/models  참고
+# ! python -m spacy download en_core_web_sm
+# ! python -m spacy download en_core_web_md
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">spacy</span>
+
+<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">'en_core_web_sm'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h1 id="en_core_web_sm">en_core_web_sm</h1>
+
+<p>English pipeline optimized for CPU. Components: tok2vec, tagger, parser, senter, ner, attribute_ruler, lemmatizer.</p>
+
+<p>SIZE
+12 MB</p>
+
+<h1 id="en_core_web_md">en_core_web_md</h1>
+
+<p>English pipeline optimized for CPU. Components: tok2vec, tagger, parser, senter, ner, attribute_ruler, lemmatizer.</p>
+
+<p>SIZE
+43 MB</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nlp_1</span> <span class="o">=</span> <span class="n">spacy</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">'en_core_web_md'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">en_core_web_md</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nlp_1</span> <span class="o">=</span> <span class="n">en_core_web_md</span><span class="p">.</span><span class="n">load</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">doc1</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc1</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Apple is looking at buying U.K. startup for $1 billion !
+Apple
+is
+looking
+at
+buying
+U.K.
+startup
+for
+$
+1
+billion
+!
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">doc2</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc2</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello all, We are here to help you! email support@udemy.com or visit us at http://www.udemy.com!
+Hello
+all
+,
+We
+are
+here
+to
+help
+you
+!
+email
+support@udemy.com
+or
+visit
+us
+at
+http://www.udemy.com
+!
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">doc3</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc3</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>10km cab ride almost costs $20 in NYC
+10
+km
+cab
+ride
+almost
+costs
+$
+20
+in
+NYC
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">doc4</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">s4</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s4</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc4</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Let's watch a movie together.
+Let
+'s
+watch
+a
+movie
+together
+.
+</code></pre></div></div>
+
+<h1 id="httpsspacyioapitokenizer_title-참고">https://spacy.io/api/tokenizer#_title 참고</h1>
+<h1 id="tokenizer">Tokenizer</h1>
+
+<p>간단하게 말하면 Tokenization이란 Text를 여러개의 Token으로 나누는 것을 말합니다.</p>
+
+<p>보통 공백, 구두점, 특수문자 등으로 이를 나누는데요. 그 방법에 따라 다양한 Tokenizer가 있습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">type</span><span class="p">(</span><span class="n">doc4</span><span class="p">)</span> <span class="c1">#A Doc is a sequence of Token
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spacy.tokens.doc.Doc
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">len</span><span class="p">(</span><span class="n">doc4</span><span class="p">)</span> <span class="c1"># token 7개로 나누었음
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>7
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">doc4</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#token 첫번째 반환
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Let
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">doc4</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>watch a movie
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">doc4</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">doc4</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span><span class="s">'New'</span> <span class="c1">#오류 처리
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-18-c77d23fee774&gt; in &lt;module&gt;
+----&gt; 1 doc4[0] ='New'
+
+
+TypeError: 'spacy.tokens.doc.Doc' object does not support item assignment
+</code></pre></div></div>
+
+
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+<script>
+$(function() {
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+});
+</script>
+
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://SEONGJAE-YOO.github.io/">Big Data</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <h1 class="subscribe-overlay-title">Search Big Data</h1>
+            <p class="subscribe-overlay-description">
+                원하는 검색어를 입력하세요</p>
+            <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+        </div>
+    </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
