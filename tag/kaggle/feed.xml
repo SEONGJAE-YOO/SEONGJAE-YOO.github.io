@@ -8,8 +8,8 @@
         <description>SeongJae Yu 블로그</description>
         <link>https://SEONGJAE-YOO.github.io//</link>
         <atom:link href="https://SEONGJAE-YOO.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Fri, 29 Oct 2021 17:42:55 +0900</pubDate>
-        <lastBuildDate>Fri, 29 Oct 2021 17:42:55 +0900</lastBuildDate>
+        <pubDate>Fri, 29 Oct 2021 17:51:34 +0900</pubDate>
+        <lastBuildDate>Fri, 29 Oct 2021 17:51:34 +0900</lastBuildDate>
         <generator>Jekyll v3.9.0</generator>
         
         <item>
@@ -250,7 +250,7 @@
             <link>https://SEONGJAE-YOO.github.io//VocabularyandMatching</link>
             <guid isPermaLink="true">https://SEONGJAE-YOO.github.io//VocabularyandMatching</guid>
             
-            <category>Udemy</category>
+            <category>udemy</category>
             
             
         </item>
@@ -492,7 +492,7 @@ TypeError: 'spacy.tokens.doc.Doc' object does not support item assignment
             <link>https://SEONGJAE-YOO.github.io//Tokenization</link>
             <guid isPermaLink="true">https://SEONGJAE-YOO.github.io//Tokenization</guid>
             
-            <category>Udemy</category>
+            <category>udemy</category>
             
             
         </item>
@@ -655,7 +655,7 @@ TypeError: 'spacy.tokens.doc.Doc' object does not support item assignment
             <link>https://SEONGJAE-YOO.github.io//StopWords</link>
             <guid isPermaLink="true">https://SEONGJAE-YOO.github.io//StopWords</guid>
             
-            <category>Udemy</category>
+            <category>udemy</category>
             
             
         </item>
@@ -903,7 +903,7 @@ WordNetLemmatizer는 입력으로 단어의 품사를 지정해줄 수 있다. �
             <link>https://SEONGJAE-YOO.github.io//Stemming</link>
             <guid isPermaLink="true">https://SEONGJAE-YOO.github.io//Stemming</guid>
             
-            <category>Udemy</category>
+            <category>udemy</category>
             
             
         </item>
