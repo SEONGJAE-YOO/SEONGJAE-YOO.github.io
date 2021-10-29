@@ -8,7 +8,7 @@
     
       
       <item>
-        <title>Tokenization Basics</title>
+        <title>Natural Language Processing (NLP) in Python with 8 Projects - Tokenization Basics</title>
         
           <description>&lt;h2 id=&quot;1-tokenization-basics&quot;&gt;1) Tokenization Basics&lt;/h2&gt;
 
@@ -18,6 +18,21 @@
         <link>
         https://SEONGJAE-YOO.github.io/Tokenization</link>
         <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/Tokenization</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Natural Language Processing (NLP) in Python with 8 Projects - Stemming and Lemmatization</title>
+        
+          <description>&lt;h2 id=&quot;stemming-and-lemmatization&quot;&gt;Stemming and Lemmatization&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 29 Oct 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/Stemming</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/Stemming</guid>
       </item>
       
     
