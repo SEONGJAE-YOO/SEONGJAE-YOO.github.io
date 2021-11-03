@@ -8,8 +8,8 @@
         <description>SeongJae Yu 블로그</description>
         <link>https://SEONGJAE-YOO.github.io//</link>
         <atom:link href="https://SEONGJAE-YOO.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 03 Nov 2021 15:04:13 +0900</pubDate>
-        <lastBuildDate>Wed, 03 Nov 2021 15:04:13 +0900</lastBuildDate>
+        <pubDate>Wed, 03 Nov 2021 15:26:05 +0900</pubDate>
+        <lastBuildDate>Wed, 03 Nov 2021 15:26:05 +0900</lastBuildDate>
         <generator>Jekyll v3.9.0</generator>
         
         <item>
@@ -20,6 +20,7 @@
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Stemming&quot;&gt;Stemming and Lemmatization&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/StopWords&quot;&gt;Stop Words&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/VocabularyandMatching&quot;&gt;Vocabulary_and_Matching&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/PartofSpeechTagging&quot;&gt;POS Tagging&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -125,143 +126,7 @@ CD
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;displacy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;docs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;doc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'dep'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'distance'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jupyter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;span class=&quot;tex2jax_ignore&quot;&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xml:lang=&quot;en&quot; id=&quot;c3571305bb8a4f679b1a32ecc1af7a3e-0&quot; class=&quot;displacy&quot; width=&quot;930&quot; height=&quot;257.0&quot; direction=&quot;ltr&quot; style=&quot;max-width: none; height: 257.0px; color: #000000; background: #ffffff; font-family: Arial; direction: ltr&quot;&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;text class=&quot;displacy-token&quot; fill=&quot;currentColor&quot; text-anchor=&quot;middle&quot; y=&quot;167.0&quot;&gt;
-&lt;tspan class=&quot;displacy-word&quot; fill=&quot;currentColor&quot; x=&quot;50&quot;&gt;Apple&lt;/tspan&gt;
-&lt;tspan class=&quot;displacy-tag&quot; dy=&quot;2em&quot; fill=&quot;currentColor&quot; x=&quot;50&quot;&gt;PROPN&lt;/tspan&gt;
-&lt;/text&gt;
-
-&lt;text class=&quot;displacy-token&quot; fill=&quot;currentColor&quot; text-anchor=&quot;middle&quot; y=&quot;167.0&quot;&gt;
-    &lt;tspan class=&quot;displacy-word&quot; fill=&quot;currentColor&quot; x=&quot;130&quot;&gt;is&lt;/tspan&gt;
-    &lt;tspan class=&quot;displacy-tag&quot; dy=&quot;2em&quot; fill=&quot;currentColor&quot; x=&quot;130&quot;&gt;AUX&lt;/tspan&gt;
-&lt;/text&gt;
-
-&lt;text class=&quot;displacy-token&quot; fill=&quot;currentColor&quot; text-anchor=&quot;middle&quot; y=&quot;167.0&quot;&gt;
-    &lt;tspan class=&quot;displacy-word&quot; fill=&quot;currentColor&quot; x=&quot;210&quot;&gt;looking&lt;/tspan&gt;
-    &lt;tspan class=&quot;displacy-tag&quot; dy=&quot;2em&quot; fill=&quot;currentColor&quot; x=&quot;210&quot;&gt;VERB&lt;/tspan&gt;
-&lt;/text&gt;
-
-&lt;text class=&quot;displacy-token&quot; fill=&quot;currentColor&quot; text-anchor=&quot;middle&quot; y=&quot;167.0&quot;&gt;
-    &lt;tspan class=&quot;displacy-word&quot; fill=&quot;currentColor&quot; x=&quot;290&quot;&gt;at&lt;/tspan&gt;
-    &lt;tspan class=&quot;displacy-tag&quot; dy=&quot;2em&quot; fill=&quot;currentColor&quot; x=&quot;290&quot;&gt;ADP&lt;/tspan&gt;
-&lt;/text&gt;
-
-&lt;text class=&quot;displacy-token&quot; fill=&quot;currentColor&quot; text-anchor=&quot;middle&quot; y=&quot;167.0&quot;&gt;
-    &lt;tspan class=&quot;displacy-word&quot; fill=&quot;currentColor&quot; x=&quot;370&quot;&gt;buying&lt;/tspan&gt;
-    &lt;tspan class=&quot;displacy-tag&quot; dy=&quot;2em&quot; fill=&quot;currentColor&quot; x=&quot;370&quot;&gt;VERB&lt;/tspan&gt;
-&lt;/text&gt;
-
-&lt;text class=&quot;displacy-token&quot; fill=&quot;currentColor&quot; text-anchor=&quot;middle&quot; y=&quot;167.0&quot;&gt;
-    &lt;tspan class=&quot;displacy-word&quot; fill=&quot;currentColor&quot; x=&quot;450&quot;&gt;U.K.&lt;/tspan&gt;
-    &lt;tspan class=&quot;displacy-tag&quot; dy=&quot;2em&quot; fill=&quot;currentColor&quot; x=&quot;450&quot;&gt;PROPN&lt;/tspan&gt;
-&lt;/text&gt;
-
-&lt;text class=&quot;displacy-token&quot; fill=&quot;currentColor&quot; text-anchor=&quot;middle&quot; y=&quot;167.0&quot;&gt;
-    &lt;tspan class=&quot;displacy-word&quot; fill=&quot;currentColor&quot; x=&quot;530&quot;&gt;startup&lt;/tspan&gt;
-    &lt;tspan class=&quot;displacy-tag&quot; dy=&quot;2em&quot; fill=&quot;currentColor&quot; x=&quot;530&quot;&gt;NOUN&lt;/tspan&gt;
-&lt;/text&gt;
-
-&lt;text class=&quot;displacy-token&quot; fill=&quot;currentColor&quot; text-anchor=&quot;middle&quot; y=&quot;167.0&quot;&gt;
-    &lt;tspan class=&quot;displacy-word&quot; fill=&quot;currentColor&quot; x=&quot;610&quot;&gt;for&lt;/tspan&gt;
-    &lt;tspan class=&quot;displacy-tag&quot; dy=&quot;2em&quot; fill=&quot;currentColor&quot; x=&quot;610&quot;&gt;ADP&lt;/tspan&gt;
-&lt;/text&gt;
-
-&lt;text class=&quot;displacy-token&quot; fill=&quot;currentColor&quot; text-anchor=&quot;middle&quot; y=&quot;167.0&quot;&gt;
-    &lt;tspan class=&quot;displacy-word&quot; fill=&quot;currentColor&quot; x=&quot;690&quot;&gt;$&lt;/tspan&gt;
-    &lt;tspan class=&quot;displacy-tag&quot; dy=&quot;2em&quot; fill=&quot;currentColor&quot; x=&quot;690&quot;&gt;SYM&lt;/tspan&gt;
-&lt;/text&gt;
-
-&lt;text class=&quot;displacy-token&quot; fill=&quot;currentColor&quot; text-anchor=&quot;middle&quot; y=&quot;167.0&quot;&gt;
-    &lt;tspan class=&quot;displacy-word&quot; fill=&quot;currentColor&quot; x=&quot;770&quot;&gt;1&lt;/tspan&gt;
-    &lt;tspan class=&quot;displacy-tag&quot; dy=&quot;2em&quot; fill=&quot;currentColor&quot; x=&quot;770&quot;&gt;NUM&lt;/tspan&gt;
-&lt;/text&gt;
-
-&lt;text class=&quot;displacy-token&quot; fill=&quot;currentColor&quot; text-anchor=&quot;middle&quot; y=&quot;167.0&quot;&gt;
-    &lt;tspan class=&quot;displacy-word&quot; fill=&quot;currentColor&quot; x=&quot;850&quot;&gt;billion&lt;/tspan&gt;
-    &lt;tspan class=&quot;displacy-tag&quot; dy=&quot;2em&quot; fill=&quot;currentColor&quot; x=&quot;850&quot;&gt;NUM&lt;/tspan&gt;
-&lt;/text&gt;
-
-&lt;g class=&quot;displacy-arrow&quot;&gt;
-    &lt;path class=&quot;displacy-arc&quot; id=&quot;arrow-c3571305bb8a4f679b1a32ecc1af7a3e-0-0&quot; stroke-width=&quot;2px&quot; d=&quot;M70,122.0 C70,42.0 205.0,42.0 205.0,122.0&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; /&gt;
-    &lt;text dy=&quot;1.25em&quot; style=&quot;font-size: 0.8em; letter-spacing: 1px&quot;&gt;
-        &lt;textPath xlink:href=&quot;#arrow-c3571305bb8a4f679b1a32ecc1af7a3e-0-0&quot; class=&quot;displacy-label&quot; startOffset=&quot;50%&quot; side=&quot;left&quot; fill=&quot;currentColor&quot; text-anchor=&quot;middle&quot;&gt;nsubj&lt;/textPath&gt;
-    &lt;/text&gt;
-    &lt;path class=&quot;displacy-arrowhead&quot; d=&quot;M70,124.0 L62,112.0 78,112.0&quot; fill=&quot;currentColor&quot; /&gt;
-&lt;/g&gt;
-
-&lt;g class=&quot;displacy-arrow&quot;&gt;
-    &lt;path class=&quot;displacy-arc&quot; id=&quot;arrow-c3571305bb8a4f679b1a32ecc1af7a3e-0-1&quot; stroke-width=&quot;2px&quot; d=&quot;M150,122.0 C150,82.0 200.0,82.0 200.0,122.0&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; /&gt;
-    &lt;text dy=&quot;1.25em&quot; style=&quot;font-size: 0.8em; letter-spacing: 1px&quot;&gt;
-        &lt;textPath xlink:href=&quot;#arrow-c3571305bb8a4f679b1a32ecc1af7a3e-0-1&quot; class=&quot;displacy-label&quot; startOffset=&quot;50%&quot; side=&quot;left&quot; fill=&quot;currentColor&quot; text-anchor=&quot;middle&quot;&gt;aux&lt;/textPath&gt;
-    &lt;/text&gt;
-    &lt;path class=&quot;displacy-arrowhead&quot; d=&quot;M150,124.0 L142,112.0 158,112.0&quot; fill=&quot;currentColor&quot; /&gt;
-&lt;/g&gt;
-
-&lt;g class=&quot;displacy-arrow&quot;&gt;
-    &lt;path class=&quot;displacy-arc&quot; id=&quot;arrow-c3571305bb8a4f679b1a32ecc1af7a3e-0-2&quot; stroke-width=&quot;2px&quot; d=&quot;M230,122.0 C230,82.0 280.0,82.0 280.0,122.0&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; /&gt;
-    &lt;text dy=&quot;1.25em&quot; style=&quot;font-size: 0.8em; letter-spacing: 1px&quot;&gt;
-        &lt;textPath xlink:href=&quot;#arrow-c3571305bb8a4f679b1a32ecc1af7a3e-0-2&quot; class=&quot;displacy-label&quot; startOffset=&quot;50%&quot; side=&quot;left&quot; fill=&quot;currentColor&quot; text-anchor=&quot;middle&quot;&gt;prep&lt;/textPath&gt;
-    &lt;/text&gt;
-    &lt;path class=&quot;displacy-arrowhead&quot; d=&quot;M280.0,124.0 L288.0,112.0 272.0,112.0&quot; fill=&quot;currentColor&quot; /&gt;
-&lt;/g&gt;
-
-&lt;g class=&quot;displacy-arrow&quot;&gt;
-    &lt;path class=&quot;displacy-arc&quot; id=&quot;arrow-c3571305bb8a4f679b1a32ecc1af7a3e-0-3&quot; stroke-width=&quot;2px&quot; d=&quot;M310,122.0 C310,82.0 360.0,82.0 360.0,122.0&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; /&gt;
-    &lt;text dy=&quot;1.25em&quot; style=&quot;font-size: 0.8em; letter-spacing: 1px&quot;&gt;
-        &lt;textPath xlink:href=&quot;#arrow-c3571305bb8a4f679b1a32ecc1af7a3e-0-3&quot; class=&quot;displacy-label&quot; startOffset=&quot;50%&quot; side=&quot;left&quot; fill=&quot;currentColor&quot; text-anchor=&quot;middle&quot;&gt;pcomp&lt;/textPath&gt;
-    &lt;/text&gt;
-    &lt;path class=&quot;displacy-arrowhead&quot; d=&quot;M360.0,124.0 L368.0,112.0 352.0,112.0&quot; fill=&quot;currentColor&quot; /&gt;
-&lt;/g&gt;
-
-&lt;g class=&quot;displacy-arrow&quot;&gt;
-    &lt;path class=&quot;displacy-arc&quot; id=&quot;arrow-c3571305bb8a4f679b1a32ecc1af7a3e-0-4&quot; stroke-width=&quot;2px&quot; d=&quot;M470,122.0 C470,82.0 520.0,82.0 520.0,122.0&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; /&gt;
-    &lt;text dy=&quot;1.25em&quot; style=&quot;font-size: 0.8em; letter-spacing: 1px&quot;&gt;
-        &lt;textPath xlink:href=&quot;#arrow-c3571305bb8a4f679b1a32ecc1af7a3e-0-4&quot; class=&quot;displacy-label&quot; startOffset=&quot;50%&quot; side=&quot;left&quot; fill=&quot;currentColor&quot; text-anchor=&quot;middle&quot;&gt;compound&lt;/textPath&gt;
-    &lt;/text&gt;
-    &lt;path class=&quot;displacy-arrowhead&quot; d=&quot;M470,124.0 L462,112.0 478,112.0&quot; fill=&quot;currentColor&quot; /&gt;
-&lt;/g&gt;
-
-&lt;g class=&quot;displacy-arrow&quot;&gt;
-    &lt;path class=&quot;displacy-arc&quot; id=&quot;arrow-c3571305bb8a4f679b1a32ecc1af7a3e-0-5&quot; stroke-width=&quot;2px&quot; d=&quot;M390,122.0 C390,42.0 525.0,42.0 525.0,122.0&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; /&gt;
-    &lt;text dy=&quot;1.25em&quot; style=&quot;font-size: 0.8em; letter-spacing: 1px&quot;&gt;
-        &lt;textPath xlink:href=&quot;#arrow-c3571305bb8a4f679b1a32ecc1af7a3e-0-5&quot; class=&quot;displacy-label&quot; startOffset=&quot;50%&quot; side=&quot;left&quot; fill=&quot;currentColor&quot; text-anchor=&quot;middle&quot;&gt;dobj&lt;/textPath&gt;
-    &lt;/text&gt;
-    &lt;path class=&quot;displacy-arrowhead&quot; d=&quot;M525.0,124.0 L533.0,112.0 517.0,112.0&quot; fill=&quot;currentColor&quot; /&gt;
-&lt;/g&gt;
-
-&lt;g class=&quot;displacy-arrow&quot;&gt;
-    &lt;path class=&quot;displacy-arc&quot; id=&quot;arrow-c3571305bb8a4f679b1a32ecc1af7a3e-0-6&quot; stroke-width=&quot;2px&quot; d=&quot;M390,122.0 C390,2.0 610.0,2.0 610.0,122.0&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; /&gt;
-    &lt;text dy=&quot;1.25em&quot; style=&quot;font-size: 0.8em; letter-spacing: 1px&quot;&gt;
-        &lt;textPath xlink:href=&quot;#arrow-c3571305bb8a4f679b1a32ecc1af7a3e-0-6&quot; class=&quot;displacy-label&quot; startOffset=&quot;50%&quot; side=&quot;left&quot; fill=&quot;currentColor&quot; text-anchor=&quot;middle&quot;&gt;prep&lt;/textPath&gt;
-    &lt;/text&gt;
-    &lt;path class=&quot;displacy-arrowhead&quot; d=&quot;M610.0,124.0 L618.0,112.0 602.0,112.0&quot; fill=&quot;currentColor&quot; /&gt;
-&lt;/g&gt;
-
-&lt;g class=&quot;displacy-arrow&quot;&gt;
-    &lt;path class=&quot;displacy-arc&quot; id=&quot;arrow-c3571305bb8a4f679b1a32ecc1af7a3e-0-7&quot; stroke-width=&quot;2px&quot; d=&quot;M710,122.0 C710,42.0 845.0,42.0 845.0,122.0&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; /&gt;
-    &lt;text dy=&quot;1.25em&quot; style=&quot;font-size: 0.8em; letter-spacing: 1px&quot;&gt;
-        &lt;textPath xlink:href=&quot;#arrow-c3571305bb8a4f679b1a32ecc1af7a3e-0-7&quot; class=&quot;displacy-label&quot; startOffset=&quot;50%&quot; side=&quot;left&quot; fill=&quot;currentColor&quot; text-anchor=&quot;middle&quot;&gt;quantmod&lt;/textPath&gt;
-    &lt;/text&gt;
-    &lt;path class=&quot;displacy-arrowhead&quot; d=&quot;M710,124.0 L702,112.0 718,112.0&quot; fill=&quot;currentColor&quot; /&gt;
-&lt;/g&gt;
-
-&lt;g class=&quot;displacy-arrow&quot;&gt;
-    &lt;path class=&quot;displacy-arc&quot; id=&quot;arrow-c3571305bb8a4f679b1a32ecc1af7a3e-0-8&quot; stroke-width=&quot;2px&quot; d=&quot;M790,122.0 C790,82.0 840.0,82.0 840.0,122.0&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; /&gt;
-    &lt;text dy=&quot;1.25em&quot; style=&quot;font-size: 0.8em; letter-spacing: 1px&quot;&gt;
-        &lt;textPath xlink:href=&quot;#arrow-c3571305bb8a4f679b1a32ecc1af7a3e-0-8&quot; class=&quot;displacy-label&quot; startOffset=&quot;50%&quot; side=&quot;left&quot; fill=&quot;currentColor&quot; text-anchor=&quot;middle&quot;&gt;compound&lt;/textPath&gt;
-    &lt;/text&gt;
-    &lt;path class=&quot;displacy-arrowhead&quot; d=&quot;M790,124.0 L782,112.0 798,112.0&quot; fill=&quot;currentColor&quot; /&gt;
-&lt;/g&gt;
-
-&lt;g class=&quot;displacy-arrow&quot;&gt;
-    &lt;path class=&quot;displacy-arc&quot; id=&quot;arrow-c3571305bb8a4f679b1a32ecc1af7a3e-0-9&quot; stroke-width=&quot;2px&quot; d=&quot;M630,122.0 C630,2.0 850.0,2.0 850.0,122.0&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; /&gt;
-    &lt;text dy=&quot;1.25em&quot; style=&quot;font-size: 0.8em; letter-spacing: 1px&quot;&gt;
-        &lt;textPath xlink:href=&quot;#arrow-c3571305bb8a4f679b1a32ecc1af7a3e-0-9&quot; class=&quot;displacy-label&quot; startOffset=&quot;50%&quot; side=&quot;left&quot; fill=&quot;currentColor&quot; text-anchor=&quot;middle&quot;&gt;pobj&lt;/textPath&gt;
-    &lt;/text&gt;
-    &lt;path class=&quot;displacy-arrowhead&quot; d=&quot;M850.0,124.0 L858.0,112.0 842.0,112.0&quot; fill=&quot;currentColor&quot; /&gt;
-&lt;/g&gt;
-&lt;p&gt;&amp;lt;/svg&amp;gt;&amp;lt;/span&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/udemy/20211103_152133_1.png&quot; alt=&quot;output_19_0&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -346,6 +211,7 @@ dying    VERB   VBG    xcomp  verb                 verb, gerund or present parti
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Stemming&quot;&gt;Stemming and Lemmatization&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/StopWords&quot;&gt;Stop Words&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/VocabularyandMatching&quot;&gt;Vocabulary_and_Matching&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/PartofSpeechTagging&quot;&gt;POS Tagging&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -589,6 +455,7 @@ dying    VERB   VBG    xcomp  verb                 verb, gerund or present parti
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Stemming&quot;&gt;Stemming and Lemmatization&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/StopWords&quot;&gt;Stop Words&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/VocabularyandMatching&quot;&gt;Vocabulary_and_Matching&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/PartofSpeechTagging&quot;&gt;POS Tagging&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -831,6 +698,7 @@ TypeError: 'spacy.tokens.doc.Doc' object does not support item assignment
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Stemming&quot;&gt;Stemming and Lemmatization&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/StopWords&quot;&gt;Stop Words&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/VocabularyandMatching&quot;&gt;Vocabulary_and_Matching&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/PartofSpeechTagging&quot;&gt;POS Tagging&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -994,6 +862,7 @@ TypeError: 'spacy.tokens.doc.Doc' object does not support item assignment
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Stemming&quot;&gt;Stemming and Lemmatization&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/StopWords&quot;&gt;Stop Words&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/VocabularyandMatching&quot;&gt;Vocabulary_and_Matching&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/PartofSpeechTagging&quot;&gt;POS Tagging&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
