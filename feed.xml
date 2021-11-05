@@ -5,8 +5,8 @@
         <description>SeongJae Yu 블로그</description>
         <link>https://SEONGJAE-YOO.github.io//</link>
         <atom:link href="https://SEONGJAE-YOO.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Fri, 05 Nov 2021 15:47:21 +0900</pubDate>
-        <lastBuildDate>Fri, 05 Nov 2021 15:47:21 +0900</lastBuildDate>
+        <pubDate>Fri, 05 Nov 2021 15:51:53 +0900</pubDate>
+        <lastBuildDate>Fri, 05 Nov 2021 15:51:53 +0900</lastBuildDate>
         <generator>Jekyll v3.9.0</generator>
         
         <item>
@@ -21,7 +21,7 @@
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/NamedEntityRecognition&quot;&gt;Named Entity Recognition&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SentenceSegmentation&quot;&gt;Sentence Segmentation&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;TfidfVectorizer&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;TfidfVectorizer&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -101,7 +101,7 @@
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/NamedEntityRecognition&quot;&gt;Named Entity Recognition&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SentenceSegmentation&quot;&gt;Sentence Segmentation&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;TfidfVectorizer&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;TfidfVectorizer&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -351,7 +351,7 @@
       &lt;td&gt;False&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;th&gt;4&lt;/th&gt;
+      &lt;th&gt;4&lt;/th&gt;  
       &lt;td&gt;False&lt;/td&gt;
       &lt;td&gt;False&lt;/td&gt;
       &lt;td&gt;False&lt;/td&gt;
@@ -855,6 +855,8 @@ Name: label, dtype: int64
 
 &lt;h1 id=&quot;참고사이트---httpschan-labtistorycom27&quot;&gt;참고사이트 - &lt;a href=&quot;https://chan-lab.tistory.com/27&quot;&gt;https://chan-lab.tistory.com/27&lt;/a&gt;&lt;/h1&gt;
 
+&lt;h1 id=&quot;내-블로그에서-참고-페이지---httpsseongjae-yoogithubiotfidfvectorizer&quot;&gt;내 블로그에서 참고 페이지 - &lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;https://seongjae-yoo.github.io/TfidfVectorizer&lt;/a&gt;&lt;/h1&gt;
+
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sklearn.feature_extraction.text&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TfidfVectorizer&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sklearn.ensemble&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RandomForestClassifier&lt;/span&gt;
 
@@ -1163,7 +1165,7 @@ weighted avg       0.96      0.96      0.96       449
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/NamedEntityRecognition&quot;&gt;Named Entity Recognition&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SentenceSegmentation&quot;&gt;Sentence Segmentation&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;TfidfVectorizer&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;TfidfVectorizer&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -1333,7 +1335,7 @@ This is last sentence.
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/NamedEntityRecognition&quot;&gt;Named Entity Recognition&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SentenceSegmentation&quot;&gt;Sentence Segmentation&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;TfidfVectorizer&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;TfidfVectorizer&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -1528,7 +1530,7 @@ dying    VERB   VBG    xcomp  verb                 verb, gerund or present parti
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/NamedEntityRecognition&quot;&gt;Named Entity Recognition&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SentenceSegmentation&quot;&gt;Sentence Segmentation&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;TfidfVectorizer&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;TfidfVectorizer&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -1693,7 +1695,7 @@ is looking at buying U.K. startup for $1 billion&amp;lt;/div&amp;gt;&lt;/span&gt
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/NamedEntityRecognition&quot;&gt;Named Entity Recognition&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SentenceSegmentation&quot;&gt;Sentence Segmentation&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;TfidfVectorizer&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;TfidfVectorizer&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -1941,7 +1943,7 @@ is looking at buying U.K. startup for $1 billion&amp;lt;/div&amp;gt;&lt;/span&gt
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/NamedEntityRecognition&quot;&gt;Named Entity Recognition&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SentenceSegmentation&quot;&gt;Sentence Segmentation&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;TfidfVectorizer&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;TfidfVectorizer&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -2188,7 +2190,7 @@ TypeError: 'spacy.tokens.doc.Doc' object does not support item assignment
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/NamedEntityRecognition&quot;&gt;Named Entity Recognition&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SentenceSegmentation&quot;&gt;Sentence Segmentation&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;TfidfVectorizer&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;TfidfVectorizer&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -2356,7 +2358,7 @@ TypeError: 'spacy.tokens.doc.Doc' object does not support item assignment
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/NamedEntityRecognition&quot;&gt;Named Entity Recognition&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SentenceSegmentation&quot;&gt;Sentence Segmentation&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;TfidfVectorizer&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;TfidfVectorizer&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
