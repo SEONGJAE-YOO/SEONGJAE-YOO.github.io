@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>Natural Language Processing (NLP) in Python with 8 Projects - Spam Message Classification</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- 웹폰트 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="SeongJae Yu 블로그" />
+<link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
+<link rel="canonical" href="https://SEONGJAE-YOO.github.io/Spam-Message-Classification" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+ <!--title below is coming from _includes/dynamic_title-->
+<meta property="og:site_name" content="Big Data" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Natural Language Processing (NLP) in Python with 8 Projects - Spam Message Classification" />
+<meta property="og:description" content="SeongJae Yu 블로그" />
+<meta property="og:url" content="https://SEONGJAE-YOO.github.io/Spam-Message-Classification" />
+<meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/udemy.png" />
+<meta property="article:publisher" content="https://www.facebook.com/" />
+<meta property="article:tag" content="Udemy" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Natural Language Processing (NLP) in Python with 8 Projects - Spam Message Classification" />
+<meta name="twitter:description" content="SeongJae Yu 블로그" />
+<meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
+<meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/udemy.png" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Big Data" />
+<meta name="twitter:label2" content="Filed under" />
+<meta name="twitter:data2" content="Udemy" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta property="og:image:width" content="2000" />
+<meta property="og:image:height" content="666" />
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Website",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Big Data",
+            "logo": "https://SEONGJAE-YOO.github.io/"
+        },
+        "url": "https://SEONGJAE-YOO.github.io/Spam-Message-Classification",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://SEONGJAE-YOO.github.io/assets/built/images/udemy.png",
+            "width": 2000,
+            "height": 666
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://SEONGJAE-YOO.github.io/Spam-Message-Classification"
+        },
+        "description": "SeongJae Yu 블로그"
+    }
+</script>
+
+<!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+<script type="text/javascript">
+ghost.init({
+    clientId: "ghost-frontend",
+    clientSecret: "f84a07a72b17"
+});
+</script> -->
+
+<meta name="generator" content="Jekyll 3.6.2" />
+<link rel="alternate" type="application/rss+xml" title="Natural Language Processing (NLP) in Python with 8 Projects - Spam Message Classification" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- < default -->
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<!-- The big featured header, it uses blog cover image as a BG if available -->
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://SEONGJAE-YOO.github.io/">Big Data</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-rprogramming" role="menuitem"><a href="/tag/rprogramming/">R</a></li>
+    <li class="nav-processmining" role="menuitem"><a href="/tag/processmining/">Processmining</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-kaggle" role="menuitem"><a href="/tag/kaggle">kaggle</a></li>
+    <li class="nav-book" role="menuitem"><a href="/tag/book">book</a></li>
+    <li class="nav-udemy" role="menuitem"><a href="/tag/udemy">udemy</a></li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag별 Posts</a>
+    </li>
+</ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-udemy post tag-udemy ">
+
+            <header class="post-full-header">
+                <h1 class="post-full-title">Natural Language Processing (NLP) in Python with 8 Projects - Spam Message Classification</h1>
+            </header>
+
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/udemy.png)">
+            </figure>
+            
+
+            <section class="post-full-content">
+                <p><span class="table-of-contents-list">Natural Language Processing (NLP) in Python with 8 Projects</span></p>
+<ul class="table-of-contents-list">
+    <li><a href="https://seongjae-yoo.github.io/Tokenization">Tokenization Basics</a></li>
+    <li><a href="https://seongjae-yoo.github.io/Stemming">Stemming and Lemmatization</a></li>
+    <li><a href="https://seongjae-yoo.github.io/StopWords">Stop Words</a></li>
+    <li><a href="https://seongjae-yoo.github.io/VocabularyandMatching">Vocabulary_and_Matching</a></li>
+    <li><a href="https://seongjae-yoo.github.io/PartofSpeechTagging">POS Tagging</a></li>
+    <li><a href="https://seongjae-yoo.github.io/NamedEntityRecognition">Named Entity Recognition</a></li>
+    <li><a href="https://seongjae-yoo.github.io/SentenceSegmentation">Sentence Segmentation</a></li>
+    <li><a href="https://seongjae-yoo.github.io/SentenceSegmentation">Spam Message Classification</a></li>
+
+</ul>
+
+<h1 id="spam-message-classification">Spam Message Classification</h1>
+
+<h1 id="1-data-preprocessing">1) Data Preprocessing</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'./data/spam.tsv'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">'</span><span class="se">\t</span><span class="s">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>label</th>
+      <th>message</th>
+      <th>length</th>
+      <th>punct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ham</td>
+      <td>Go until jurong point, crazy.. Available only ...</td>
+      <td>111</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ham</td>
+      <td>Ok lar... Joking wif u oni...</td>
+      <td>29</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>spam</td>
+      <td>Free entry in 2 a wkly comp to win FA Cup fina...</td>
+      <td>155</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ham</td>
+      <td>U dun say so early hor... U c already then say...</td>
+      <td>49</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ham</td>
+      <td>Nah I don't think he goes to usf, he lives aro...</td>
+      <td>61</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5567</th>
+      <td>spam</td>
+      <td>This is the 2nd time we have tried 2 contact u...</td>
+      <td>160</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>5568</th>
+      <td>ham</td>
+      <td>Will ü b going to esplanade fr home?</td>
+      <td>36</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5569</th>
+      <td>ham</td>
+      <td>Pity, * was in mood for that. So...any other s...</td>
+      <td>57</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>5570</th>
+      <td>ham</td>
+      <td>The guy did some bitching but I acted like i'd...</td>
+      <td>125</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5571</th>
+      <td>ham</td>
+      <td>Rofl. Its true to its name</td>
+      <td>26</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>5572 rows × 4 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>label</th>
+      <th>message</th>
+      <th>length</th>
+      <th>punct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ham</td>
+      <td>Go until jurong point, crazy.. Available only ...</td>
+      <td>111</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ham</td>
+      <td>Ok lar... Joking wif u oni...</td>
+      <td>29</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>spam</td>
+      <td>Free entry in 2 a wkly comp to win FA Cup fina...</td>
+      <td>155</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ham</td>
+      <td>U dun say so early hor... U c already then say...</td>
+      <td>49</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ham</td>
+      <td>Nah I don't think he goes to usf, he lives aro...</td>
+      <td>61</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">isna</span><span class="p">()</span> <span class="c1"># missing value 값 확인 하기(널값 확인)
+</span></code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>label</th>
+      <th>message</th>
+      <th>length</th>
+      <th>punct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5567</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>5568</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>5569</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>5570</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>5571</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<p>5572 rows × 4 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">isna</span><span class="p">().</span><span class="nb">sum</span><span class="p">()</span> <span class="c1"># our data is complete in the sense that there is no missing value existing of it.
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>label      0
+message    0
+length     0
+punct      0
+dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">tail</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>label</th>
+      <th>message</th>
+      <th>length</th>
+      <th>punct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5567</th>
+      <td>spam</td>
+      <td>This is the 2nd time we have tried 2 contact u...</td>
+      <td>160</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>5568</th>
+      <td>ham</td>
+      <td>Will ü b going to esplanade fr home?</td>
+      <td>36</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5569</th>
+      <td>ham</td>
+      <td>Pity, * was in mood for that. So...any other s...</td>
+      <td>57</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>5570</th>
+      <td>ham</td>
+      <td>The guy did some bitching but I acted like i'd...</td>
+      <td>125</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5571</th>
+      <td>ham</td>
+      <td>Rofl. Its true to its name</td>
+      <td>26</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>punct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>5572.000000</td>
+      <td>5572.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>80.489950</td>
+      <td>4.177495</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>59.942907</td>
+      <td>4.623919</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>2.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>36.000000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>62.000000</td>
+      <td>3.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>122.000000</td>
+      <td>6.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>910.000000</td>
+      <td>133.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'label'</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()</span><span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ham     0.865937
+spam    0.134063
+Name: label, dtype: float64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'label'</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ham     4825
+spam     747
+Name: label, dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ham</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'label'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'ham'</span><span class="p">]</span>
+<span class="n">spam</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'label'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'spam'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ham</span><span class="p">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">spam</span><span class="p">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>((4825, 4), (747, 4))
+</code></pre></div></div>
+
+<h1 id="무작위-샘플-추출을-위한-sample-메서드">무작위 샘플 추출을 위한 sample 메서드</h1>
+
+<h1 id="참고사이트-httpskongdols-roomtistorycom125">참고사이트-<a href="https://kongdols-room.tistory.com/125">https://kongdols-room.tistory.com/125</a></h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ham</span> <span class="o">=</span> <span class="n">ham</span><span class="p">.</span><span class="n">sample</span><span class="p">(</span><span class="n">spam</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">#747행 랜덤으로 추출함
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ham</span><span class="p">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">spam</span><span class="p">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>((747, 4), (747, 4))
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span> <span class="o">=</span> <span class="n">ham</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">spam</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1"># ham 데이터 + spam 데이터 
+#ignore_index=False,  # False: 기존 index 유지, True: 기존 index 무시
+</span>
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(1494, 4)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[</span><span class="s">'label'</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ham     747
+spam    747
+Name: label, dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>label</th>
+      <th>message</th>
+      <th>length</th>
+      <th>punct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ham</td>
+      <td>Yo im right by yo work</td>
+      <td>22</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ham</td>
+      <td>Yes..but they said its IT.,</td>
+      <td>27</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ham</td>
+      <td>First has she gained more than  &amp;lt;#&amp;gt; kg s...</td>
+      <td>191</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ham</td>
+      <td>Best line said in Love: . "I will wait till th...</td>
+      <td>119</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ham</td>
+      <td>Which is weird because I know I had it at one ...</td>
+      <td>51</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h1 id="hist">hist()</h1>
+<p>bins 은 막대의 갯수 /클수록 더 정확한 그래프 볼수 있다</p>
+
+<h1 id="참고사이트---httpsseong6496tistorycom128">참고사이트 - <a href="https://seong6496.tistory.com/128">https://seong6496.tistory.com/128</a></h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ham 레이블에서 length 와 spam 레이블에서 length를 보여줌
+</span><span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s">'label'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'ham'</span><span class="p">][</span><span class="s">'length'</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s">'label'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'spam'</span><span class="p">][</span><span class="s">'length'</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/udemy/spam/output_22_0.png" alt="output_22_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s">'label'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'ham'</span><span class="p">][</span><span class="s">'punct'</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s">'label'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'spam'</span><span class="p">][</span><span class="s">'punct'</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/udemy/spam/output_23_0.png" alt="output_23_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>label</th>
+      <th>message</th>
+      <th>length</th>
+      <th>punct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ham</td>
+      <td>Yo im right by yo work</td>
+      <td>22</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ham</td>
+      <td>Yes..but they said its IT.,</td>
+      <td>27</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ham</td>
+      <td>First has she gained more than  &amp;lt;#&amp;gt; kg s...</td>
+      <td>191</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ham</td>
+      <td>Best line said in Love: . "I will wait till th...</td>
+      <td>119</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ham</td>
+      <td>Which is weird because I know I had it at one ...</td>
+      <td>51</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1489</th>
+      <td>spam</td>
+      <td>Want explicit SEX in 30 secs? Ring 02073162414...</td>
+      <td>90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1490</th>
+      <td>spam</td>
+      <td>ASKED 3MOBILE IF 0870 CHATLINES INCLU IN FREE ...</td>
+      <td>158</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1491</th>
+      <td>spam</td>
+      <td>Had your contract mobile 11 Mnths? Latest Moto...</td>
+      <td>160</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>1492</th>
+      <td>spam</td>
+      <td>REMINDER FROM O2: To get 2.50 pounds free call...</td>
+      <td>147</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1493</th>
+      <td>spam</td>
+      <td>This is the 2nd time we have tried 2 contact u...</td>
+      <td>160</td>
+      <td>8</td>
+    </tr>
+  </tbody>
+</table>
+<p>1494 rows × 4 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span>  <span class="n">train_test_split</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">'message'</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s">'label'</span><span class="p">],</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">shuffle</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>옵션 값 설명</li>
+</ul>
+
+<p>test_size: 테스트 셋 구성의 비율을 나타냅니다. train_size의 옵션과 반대 관계에 있는 옵션 값이며, 주로 test_size를 지정해 줍니다. 0.2는 전체 데이터 셋의 20%를 test (validation) 셋으로 지정하겠다는 의미입니다. default 값은 0.25 입니다.</p>
+
+<p>shuffle: default=True 입니다. split을 해주기 이전에 섞을건지 여부입니다. 보통은 default 값으로 놔둡니다.</p>
+
+<p>stratify: default=None 입니다. classification을 다룰 때 매우 중요한 옵션값입니다. stratify 값을 target으로 지정해주면 각각의 class 비율(ratio)을 train / validation에 유지해 줍니다. (한 쪽에 쏠려서 분배되는 것을 방지합니다) 만약 이 옵션을 지정해 주지 않고 classification 문제를 다룬다면, 성능의 차이가 많이 날 수 있습니다.</p>
+
+<p>random_state: 세트를 섞을 때 해당 int 값을 보고 섞으며, 하이퍼 파라미터를 튜닝시 이 값을 고정해두고 튜닝해야 매번 데이터셋이 변경되는 것을 방지할 수 있습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1494</span> <span class="o">*</span> <span class="mf">0.3</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>448.2
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X_train</span><span class="p">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(1045,)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X_test</span><span class="p">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(449,)
+</code></pre></div></div>
+
+<h1 id="2-building-the-model-random-forest">2) Building the Model (Random Forest)</h1>
+
+<h1 id="random-forest랜덤-포레스트-이란">Random Forest(랜덤 포레스트) 이란?</h1>
+
+<h1 id="참고사이트---httpseunsukimmegithubioml20191126random-forest">참고사이트 - <a href="https://eunsukimme.github.io/ml/2019/11/26/Random-Forest/">https://eunsukimme.github.io/ml/2019/11/26/Random-Forest/</a></h1>
+
+<p>Decision Tree는 overfitting될 가능성이 높다는 약점을 가지고 있습니다. 가지치기를 통해 트리의 최대 높이를 설정해 줄 수 있지만 이로써는 overfitting을 충분히 해결할 수 없습니다. 그러므로 좀더 일반화된 트리를 만드는 방법을 생각해야합니다. 이는 Random Forest(랜덤 포레스트)의 기원이 되는 아이디어입니다. Random forest는 ensemble(앙상블) machine learning 모델입니다. 여러개의 decision tree를 형성하고 새로운 데이터 포인트를 각 트리에 동시에 통과시키며, 각 트리가 분류한 결과에서 투표를 실시하여 가장 많이 득표한 결과를 최종 분류 결과로 선택합니다. 랜덤 포레스트가 생성한 일부 트리는 overfitting될 수 있지만, 많은 수의 트리를 생성함으로써 overfitting이 예측하는데 있어 큰 영향을 미치지 못 하도록 예방합니다.</p>
+
+<h1 id="tfidfvectorizer은-무엇일까">TfidfVectorizer은 무엇일까?</h1>
+
+<h1 id="참고사이트---httpschan-labtistorycom27">참고사이트 - <a href="https://chan-lab.tistory.com/27">https://chan-lab.tistory.com/27</a></h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">classifier</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([(</span><span class="s">"tfidf"</span><span class="p">,</span> <span class="n">TfidfVectorizer</span><span class="p">())</span> <span class="p">,</span> <span class="p">(</span><span class="s">"classifier"</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">))])</span>
+</code></pre></div></div>
+
+<h1 id="pipeline을-왜-사용하는-것일까">Pipeline을 왜 사용하는 것일까?</h1>
+
+<p>파이프라인을 사용하면 데이터 사전 처리 및 분류의 모든 단계를 포함하는 단일 개체를 만들 수 있다.</p>
+
+<ul>
+  <li>
+    <p>train과 test 데이터 손실을 피할 수 있다.</p>
+  </li>
+  <li>
+    <p>교차 검증 및 기타 모델 선택 유형을 쉽게 만든다.</p>
+  </li>
+  <li>
+    <p>재현성 증가</p>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">classifier</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pipeline(steps=[('tfidf', TfidfVectorizer()),
+                ('classifier', RandomForestClassifier())])
+</code></pre></div></div>
+
+<h1 id="3-predicting-the-results-random-forest">3) Predicting the results (Random Forest)</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y_pred</span> <span class="o">=</span> <span class="n">classifier</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(799     spam
+ 1047    spam
+ 1436    spam
+ 54       ham
+ 793     spam
+         ... 
+ 824     spam
+ 822     spam
+ 644      ham
+ 1034    spam
+ 1356    spam
+ Name: label, Length: 449, dtype: object,
+ array(['spam', 'spam', 'spam', 'ham', 'spam', 'spam', 'ham', 'ham', 'ham',
+        'ham', 'spam', 'ham', 'ham', 'spam', 'spam', 'spam', 'spam', 'ham',
+        'spam', 'spam', 'spam', 'ham', 'ham', 'spam', 'ham', 'spam', 'ham',
+        'ham', 'spam', 'ham', 'ham', 'spam', 'spam', 'spam', 'spam',
+        'spam', 'ham', 'ham', 'ham', 'ham', 'ham', 'ham', 'spam', 'ham',
+        'ham', 'spam', 'ham', 'ham', 'spam', 'spam', 'ham', 'ham', 'ham',
+        'spam', 'spam', 'spam', 'ham', 'ham', 'spam', 'ham', 'ham', 'ham',
+        'ham', 'spam', 'spam', 'ham', 'ham', 'ham', 'spam', 'spam', 'spam',
+        'spam', 'spam', 'ham', 'ham', 'spam', 'spam', 'ham', 'ham', 'ham',
+        'ham', 'ham', 'ham', 'ham', 'ham', 'spam', 'spam', 'ham', 'ham',
+        'ham', 'ham', 'spam', 'ham', 'ham', 'spam', 'spam', 'spam', 'ham',
+        'ham', 'ham', 'spam', 'ham', 'ham', 'spam', 'ham', 'ham', 'ham',
+        'ham', 'spam', 'spam', 'spam', 'ham', 'ham', 'ham', 'ham', 'spam',
+        'spam', 'ham', 'spam', 'ham', 'ham', 'ham', 'ham', 'ham', 'ham',
+        'ham', 'ham', 'ham', 'ham', 'spam', 'ham', 'spam', 'spam', 'ham',
+        'spam', 'spam', 'spam', 'spam', 'spam', 'spam', 'ham', 'ham',
+        'ham', 'ham', 'ham', 'spam', 'spam', 'spam', 'ham', 'spam', 'ham',
+        'spam', 'ham', 'spam', 'ham', 'ham', 'spam', 'ham', 'ham', 'ham',
+        'ham', 'ham', 'ham', 'spam', 'spam', 'ham', 'ham', 'ham', 'ham',
+        'ham', 'ham', 'spam', 'spam', 'ham', 'spam', 'ham', 'spam', 'ham',
+        'ham', 'ham', 'spam', 'ham', 'spam', 'spam', 'spam', 'spam',
+        'spam', 'ham', 'ham', 'ham', 'ham', 'ham', 'ham', 'ham', 'ham',
+        'spam', 'ham', 'spam', 'spam', 'spam', 'ham', 'spam', 'ham', 'ham',
+        'spam', 'ham', 'spam', 'spam', 'spam', 'spam', 'ham', 'ham', 'ham',
+        'ham', 'ham', 'ham', 'ham', 'spam', 'spam', 'spam', 'ham', 'ham',
+        'spam', 'spam', 'ham', 'ham', 'spam', 'ham', 'spam', 'spam', 'ham',
+        'ham', 'ham', 'ham', 'spam', 'spam', 'spam', 'spam', 'ham', 'spam',
+        'spam', 'spam', 'ham', 'ham', 'spam', 'spam', 'ham', 'ham', 'ham',
+        'spam', 'spam', 'ham', 'ham', 'ham', 'ham', 'spam', 'spam', 'ham',
+        'ham', 'spam', 'ham', 'spam', 'spam', 'ham', 'ham', 'ham', 'ham',
+        'spam', 'ham', 'spam', 'ham', 'ham', 'spam', 'ham', 'spam', 'spam',
+        'spam', 'ham', 'spam', 'ham', 'spam', 'spam', 'ham', 'spam', 'ham',
+        'spam', 'spam', 'ham', 'spam', 'spam', 'spam', 'ham', 'spam',
+        'spam', 'ham', 'ham', 'spam', 'ham', 'ham', 'ham', 'spam', 'spam',
+        'spam', 'ham', 'ham', 'ham', 'ham', 'ham', 'spam', 'spam', 'ham',
+        'ham', 'spam', 'spam', 'spam', 'spam', 'ham', 'spam', 'spam',
+        'spam', 'ham', 'ham', 'ham', 'ham', 'spam', 'ham', 'ham', 'spam',
+        'spam', 'ham', 'ham', 'ham', 'spam', 'ham', 'ham', 'ham', 'spam',
+        'ham', 'spam', 'ham', 'ham', 'ham', 'spam', 'spam', 'spam', 'ham',
+        'ham', 'spam', 'spam', 'ham', 'ham', 'spam', 'spam', 'ham', 'ham',
+        'ham', 'ham', 'spam', 'ham', 'ham', 'ham', 'spam', 'ham', 'ham',
+        'spam', 'spam', 'spam', 'ham', 'ham', 'ham', 'ham', 'ham', 'ham',
+        'spam', 'ham', 'ham', 'ham', 'spam', 'ham', 'ham', 'ham', 'spam',
+        'spam', 'spam', 'ham', 'spam', 'spam', 'spam', 'ham', 'ham',
+        'spam', 'ham', 'ham', 'spam', 'ham', 'spam', 'ham', 'ham', 'spam',
+        'ham', 'ham', 'spam', 'ham', 'ham', 'spam', 'ham', 'ham', 'spam',
+        'spam', 'ham', 'ham', 'spam', 'spam', 'spam', 'ham', 'ham', 'spam',
+        'spam', 'ham', 'ham', 'ham', 'spam', 'spam', 'ham', 'spam', 'ham',
+        'ham', 'ham', 'ham', 'spam', 'ham', 'ham', 'spam', 'ham', 'spam',
+        'ham', 'ham', 'spam', 'ham', 'spam', 'spam', 'spam', 'ham', 'spam',
+        'ham', 'spam', 'ham', 'ham', 'spam'], dtype=object))
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.9376391982182628
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">0.9465478841870824</span> <span class="o">*</span> <span class="mi">449</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>425.0
+</code></pre></div></div>
+
+<h1 id="confusion-matrix은-무엇일까">confusion matrix은 무엇일까?</h1>
+
+<h1 id="참고사이트---httpwwwgisdevelopercokrp9932">참고사이트 - <a href="http://www.gisdeveloper.co.kr/?p=9932">http://www.gisdeveloper.co.kr/?p=9932</a></h1>
+
+<h1 id="예시-그림">예시 그림</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>  <span class="c1"># 주피터 노트북에 이미지 삽입
+</span><span class="n">Image</span><span class="p">(</span><span class="s">"C://Users/MyCom/jupyter-tutorial/Natural Language Processing (NLP) in Python with 8 Projects/data/20211105_140442_1.png"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="./img/udemy/spam/output_45_0.png" alt="output_45_0" /></p>
+
+<ul>
+  <li>
+    <p>위의 그림에서 표에 담긴 4개의 값은 발생횟수입니다. TN과 TP의 값은 옳바르게 예측한 횟수이고 FN과 FP는 잘못 예측한 횟수입니다. 즉, FN과 FP가 0일때 모델은 완벽하다는 의미입니다.</p>
+  </li>
+  <li>
+    <p>이제 위의 혼돈행렬에서 정밀도(Precision)와 재현률(Recall), F1점수에 대한 수식은 다음과 같습니다.</p>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>  <span class="c1"># 주피터 노트북에 이미지 삽입
+</span><span class="n">Image</span><span class="p">(</span><span class="s">"C://Users/MyCom/jupyter-tutorial/Natural Language Processing (NLP) in Python with 8 Projects/data/20211105_140442_2.png"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="./img/udemy/spam/output_47_0.png" alt="output_47_0" /></p>
+
+<ul>
+  <li>정밀도와 재현률이 서로 상반관계에 있습니다. 즉, 정밀도가 높으면 재현률이 떨어지며 재현률이 높아지면 정밀도가 떨어지는 경향이 있습니다. F1은 이런 상반관계에 있는 정밀도와 재현률을 묶어 평가하고자 하는 지표입니다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[226,   1],
+       [ 27, 195]], dtype=int64)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>              precision    recall  f1-score   support
+
+         ham       0.89      1.00      0.94       227
+        spam       0.99      0.88      0.93       222
+
+    accuracy                           0.94       449
+   macro avg       0.94      0.94      0.94       449
+weighted avg       0.94      0.94      0.94       449
+</code></pre></div></div>
+
+<h1 id="4-building-the-model-svm">4) Building the Model (SVM)</h1>
+
+<p>C-서포트 벡터 분류.</p>
+
+<p>서포트 벡터 머신(이하 SVM)은 결정 경계(Decision Boundary), 즉 분류를 위한 기준 선을 정의하는 모델이다. 그래서 분류되지 않은 새로운 점이 나타나면 경계의 어느 쪽에 속하는지 확인해서 분류 과제를 수행할 수 있게 된다.</p>
+
+<p>결국 이 결정 경계라는 걸 어떻게 정의하고 계산하는지 이해하는 게 중요하다는 뜻이다.</p>
+
+<p>일단 예시를 보자.</p>
+
+<p>만약 데이터에 2개 속성(feature)만 있다면 결정 경계는 이렇게 간단한 선 형태가 될 거다.</p>
+
+<h1 id="참고사이트--httpshleecastercomml-svm-concept">참고사이트 -<a href="https://hleecaster.com/ml-svm-concept/">https://hleecaster.com/ml-svm-concept/</a></h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>  <span class="c1"># 주피터 노트북에 이미지 삽입
+</span><span class="n">Image</span><span class="p">(</span><span class="s">"C://Users/MyCom/jupyter-tutorial/Natural Language Processing (NLP) in Python with 8 Projects/data/20211105_142414_1.png"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="./img/udemy/spam/output_53_0.png" alt="output_53_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">svm</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([(</span><span class="s">"tfidf"</span><span class="p">,</span> <span class="n">TfidfVectorizer</span><span class="p">())</span> <span class="p">,</span> <span class="p">(</span><span class="s">"classifier"</span><span class="p">,</span> <span class="n">SVC</span><span class="p">(</span><span class="n">C</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="s">'auto'</span><span class="p">))])</span>
+</code></pre></div></div>
+
+<p>gamma{‘scale’, ‘auto’} or float, default=’scale’</p>
+
+<p>Kernel coefficient for ‘rbf’, ‘poly’ and ‘sigmoid’.</p>
+
+<ul>
+  <li>
+    <p>if gamma=’scale’ (default) is passed then it uses 1 / (n_features * X.var()) as value of gamma,</p>
+  </li>
+  <li>
+    <p>if ‘auto’, uses 1 / n_features.</p>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">svm</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pipeline(steps=[('tfidf', TfidfVectorizer()),
+                ('classifier', SVC(C=100, gamma='auto'))])
+</code></pre></div></div>
+
+<h1 id="5-predicting-the-results-svm">5) Predicting the results (SVM)</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y_pred</span> <span class="o">=</span> <span class="n">svm</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.9599109131403119
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[225,   2],
+       [ 16, 206]], dtype=int64)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>              precision    recall  f1-score   support
+
+         ham       0.93      0.99      0.96       227
+        spam       0.99      0.93      0.96       222
+
+    accuracy                           0.96       449
+   macro avg       0.96      0.96      0.96       449
+weighted avg       0.96      0.96      0.96       449
+</code></pre></div></div>
+
+<h1 id="텍스트-데이터으로-spam인지-아닌지-구별하기">텍스트 데이터으로 spam인지 아닌지 구별하기</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">test1</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Hello, You are learning natural Language Processing'</span><span class="p">]</span>
+<span class="n">test2</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Hope you are doing good and learning new things !'</span><span class="p">]</span>
+<span class="n">test3</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Congratulations, You won a lottery ticket worth $1 Million ! To claim call on 446677'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">classifier</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">classifier</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test2</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">classifier</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test3</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['ham']
+['ham']
+['spam']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">svm</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">svm</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test2</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">svm</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test3</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['ham']
+['ham']
+['spam']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text4</span> <span class="o">=</span> <span class="p">[</span><span class="s">'No-one wants their mobile phone bombarded with spam texts'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">classifier</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">text4</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['ham']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+<script>
+$(function() {
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+});
+</script>
+
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://SEONGJAE-YOO.github.io/">Big Data</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <h1 class="subscribe-overlay-title">Search Big Data</h1>
+            <p class="subscribe-overlay-description">
+                원하는 검색어를 입력하세요</p>
+            <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+        </div>
+    </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
