@@ -11,7 +11,7 @@
 
 
 
-    <title>Natural Language Processing (NLP) in Python with 8 Projects - Tokenization Basics</title>
+    <title>Natural Language Processing (NLP) in Python with 8 Projects - TfidfVectorizer</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Styles'n'Scripts -->
@@ -50,20 +50,20 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="SeongJae Yu 블로그" />
 <link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
-<link rel="canonical" href="https://SEONGJAE-YOO.github.io/Tokenization" />
+<link rel="canonical" href="https://SEONGJAE-YOO.github.io/TfidfVectorizer" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
  <!--title below is coming from _includes/dynamic_title-->
 <meta property="og:site_name" content="Big Data" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Natural Language Processing (NLP) in Python with 8 Projects - Tokenization Basics" />
+<meta property="og:title" content="Natural Language Processing (NLP) in Python with 8 Projects - TfidfVectorizer" />
 <meta property="og:description" content="SeongJae Yu 블로그" />
-<meta property="og:url" content="https://SEONGJAE-YOO.github.io/Tokenization" />
+<meta property="og:url" content="https://SEONGJAE-YOO.github.io/TfidfVectorizer" />
 <meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/udemy.png" />
 <meta property="article:publisher" content="https://www.facebook.com/" />
 <meta property="article:tag" content="Udemy" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Natural Language Processing (NLP) in Python with 8 Projects - Tokenization Basics" />
+<meta name="twitter:title" content="Natural Language Processing (NLP) in Python with 8 Projects - TfidfVectorizer" />
 <meta name="twitter:description" content="SeongJae Yu 블로그" />
 <meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
 <meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/udemy.png" />
@@ -85,7 +85,7 @@
             "name": "Big Data",
             "logo": "https://SEONGJAE-YOO.github.io/"
         },
-        "url": "https://SEONGJAE-YOO.github.io/Tokenization",
+        "url": "https://SEONGJAE-YOO.github.io/TfidfVectorizer",
         "image": {
             "@type": "ImageObject",
             "url": "https://SEONGJAE-YOO.github.io/assets/built/images/udemy.png",
@@ -94,7 +94,7 @@
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://SEONGJAE-YOO.github.io/Tokenization"
+            "@id": "https://SEONGJAE-YOO.github.io/TfidfVectorizer"
         },
         "description": "SeongJae Yu 블로그"
     }
@@ -109,7 +109,7 @@ ghost.init({
 </script> -->
 
 <meta name="generator" content="Jekyll 3.6.2" />
-<link rel="alternate" type="application/rss+xml" title="Natural Language Processing (NLP) in Python with 8 Projects - Tokenization Basics" href="/feed.xml" />
+<link rel="alternate" type="application/rss+xml" title="Natural Language Processing (NLP) in Python with 8 Projects - TfidfVectorizer" href="/feed.xml" />
 
 
 </head>
@@ -174,7 +174,7 @@ into the {body} of the default.hbs template -->
         <article class="post-full  tag-udemy post tag-udemy ">
 
             <header class="post-full-header">
-                <h1 class="post-full-title">Natural Language Processing (NLP) in Python with 8 Projects - Tokenization Basics</h1>
+                <h1 class="post-full-title">Natural Language Processing (NLP) in Python with 8 Projects - TfidfVectorizer</h1>
             </header>
 
             
@@ -197,226 +197,59 @@ into the {body} of the default.hbs template -->
 
 </ul>
 
-<h2 id="1-tokenization-basics">1) Tokenization Basics</h2>
+<h1 id="tfidfvectorizer은-무엇일까">TfidfVectorizer은 무엇일까?</h1>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s1</span> <span class="o">=</span> <span class="s">'Apple is looking at buying U.K. startup for $1 billion !'</span>
-<span class="n">s2</span> <span class="o">=</span> <span class="s">'Hello all, We are here to help you! email support@udemy.com or visit us at http://www.udemy.com!'</span>
-<span class="n">s3</span> <span class="o">=</span> <span class="s">'10km cab ride almost costs $20 in NYC'</span>
-<span class="n">s4</span> <span class="o">=</span> <span class="s">"Let's watch a movie together."</span>
+<h1 id="참고사이트---httpschan-labtistorycom27">참고사이트 - <a href="https://chan-lab.tistory.com/27">https://chan-lab.tistory.com/27</a></h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span> 
+
+<span class="n">text</span> <span class="o">=</span> <span class="p">[</span><span class="s">'I go to my home my home is very large'</span><span class="p">,</span> <span class="s">'I went out my home I go to the market'</span><span class="p">,</span> <span class="s">'I bought a yellow lemon I go back to home'</span><span class="p">]</span> 
+
+<span class="n">tfidf_vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+
 </code></pre></div></div>
 
-<h1 id="spacy">spacy</h1>
-
-<p>spaCy는 파이썬의 자연어처리를 위한 오픈 소스 기반 라이브러리다.</p>
-
-<p>spaCy에서 지원하는 기능들이다. Tokenization과 품사 태깅, 개체 인식 등 기본적인 전처리 기능을 지원하고 있다.
-Linguistic Features
-Part-of-speech tagging
-spacy에서 문장을 tokenize한 뒤, token객체의 유용한 메서드들을 사용할 수 있다.</p>
-
-<p>import spacy</p>
-
-<p>(pip install spacy로 설치)</p>
-
-<p>nlp = spacy.load(‘en_core_web_sm’)</p>
-
-<p>doc = nlp(u’Apple is looking at buying U.K. startup for $1 billion’)</p>
-
-<p>for token in doc:</p>
-
-<p>print(token.text, token.lemma_, token.pos_, token.tag_, token.dep_, token.shape_, token.is_alpha, token.is_stop)</p>
-
-<ul>
-  <li>각 메서드들의 기능은 다음을 의미한다.</li>
-</ul>
-
-<p>Text: The original word text.</p>
-
-<p>Lemma: The base form of the word.</p>
-
-<p>POS: The simple part-of-speech tag.</p>
-
-<p>Tag: The detailed part-of-speech tag.</p>
-
-<p>Dep: Syntactic dependency, i.e. the relation between tokens.</p>
-
-<p>Shape: The word shape — capitalization, punctuation, digits.</p>
-
-<p>is alpha: Is the token an alpha character?</p>
-
-<p>is stop: Is the token part of a stop list, i.e. the most common words of the language?</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># !pip install spacy
-</span></code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># #https://spacy.io/models  참고
-# ! python -m spacy download en_core_web_sm
-# ! python -m spacy download en_core_web_md
-</span></code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">spacy</span>
-
-<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">'en_core_web_sm'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tfidf_vectorizer</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="c1"># 벡터라이저가 단어들을 학습합니다. 
+</span><span class="n">tfidf_vectorizer</span><span class="p">.</span><span class="n">vocabulary_</span> <span class="c1"># 벡터라이저가 학습한 단어사전을 출력합니다. 
+</span><span class="nb">sorted</span><span class="p">(</span><span class="n">tfidf_vectorizer</span><span class="p">.</span><span class="n">vocabulary_</span><span class="p">.</span><span class="n">items</span><span class="p">())</span> <span class="c1"># 단어사전을 정렬합니다.
+</span>
 </code></pre></div></div>
 
-<h1 id="en_core_web_sm">en_core_web_sm</h1>
-
-<p>English pipeline optimized for CPU. Components: tok2vec, tagger, parser, senter, ner, attribute_ruler, lemmatizer.</p>
-
-<p>SIZE
-12 MB</p>
-
-<h1 id="en_core_web_md">en_core_web_md</h1>
-
-<p>English pipeline optimized for CPU. Components: tok2vec, tagger, parser, senter, ner, attribute_ruler, lemmatizer.</p>
-
-<p>SIZE
-43 MB</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nlp_1</span> <span class="o">=</span> <span class="n">spacy</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">'en_core_web_md'</span><span class="p">)</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[('back', 0),
+ ('bought', 1),
+ ('go', 2),
+ ('home', 3),
+ ('is', 4),
+ ('large', 5),
+ ('lemon', 6),
+ ('market', 7),
+ ('my', 8),
+ ('out', 9),
+ ('the', 10),
+ ('to', 11),
+ ('very', 12),
+ ('went', 13),
+ ('yellow', 14)]
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">en_core_web_md</span>
+<p>min-df는 DF(document-frequency)의 최소 빈도값을 설정해주는 파라미터입니다.</p>
+
+<p>DF는 특정 단어가 나타나는 ‘문서의 수’를 의미합니다.</p>
+
+<p>‘home’이라는 단어가 포함된 문서의 수는 3개이기 때문에 DF = 3 입니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">min_df_vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">min_df</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> 
+<span class="n">min_df_vectorizer</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> 
+<span class="nb">sorted</span><span class="p">(</span><span class="n">min_df_vectorizer</span><span class="p">.</span><span class="n">vocabulary_</span><span class="p">.</span><span class="n">items</span><span class="p">())</span>
+
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nlp_1</span> <span class="o">=</span> <span class="n">en_core_web_md</span><span class="p">.</span><span class="n">load</span><span class="p">()</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[('go', 0), ('home', 1), ('my', 2), ('to', 3)]
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">doc1</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc1</span><span class="p">:</span>
-  <span class="k">print</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Apple is looking at buying U.K. startup for $1 billion !
-Apple
-is
-looking
-at
-buying
-U.K.
-startup
-for
-$
-1
-billion
-!
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">doc2</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc2</span><span class="p">:</span>
-  <span class="k">print</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello all, We are here to help you! email support@udemy.com or visit us at http://www.udemy.com!
-Hello
-all
-,
-We
-are
-here
-to
-help
-you
-!
-email
-support@udemy.com
-or
-visit
-us
-at
-http://www.udemy.com
-!
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">doc3</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc3</span><span class="p">:</span>
-  <span class="k">print</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>10km cab ride almost costs $20 in NYC
-10
-km
-cab
-ride
-almost
-costs
-$
-20
-in
-NYC
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">doc4</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">s4</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">s4</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc4</span><span class="p">:</span>
-  <span class="k">print</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Let's watch a movie together.
-Let
-'s
-watch
-a
-movie
-together
-.
-</code></pre></div></div>
-
-<h1 id="httpsspacyioapitokenizer_title-참고">https://spacy.io/api/tokenizer#_title 참고</h1>
-<h1 id="tokenizer">Tokenizer</h1>
-
-<p>간단하게 말하면 Tokenization이란 Text를 여러개의 Token으로 나누는 것을 말합니다.</p>
-
-<p>보통 공백, 구두점, 특수문자 등으로 이를 나누는데요. 그 방법에 따라 다양한 Tokenizer가 있습니다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">type</span><span class="p">(</span><span class="n">doc4</span><span class="p">)</span> <span class="c1">#A Doc is a sequence of Token
-</span></code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spacy.tokens.doc.Doc
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">len</span><span class="p">(</span><span class="n">doc4</span><span class="p">)</span> <span class="c1"># token 7개로 나누었음
-</span></code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>7
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">doc4</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#token 첫번째 반환
-</span></code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Let
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">doc4</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>watch a movie
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">doc4</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">doc4</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span><span class="s">'New'</span> <span class="c1">#오류 처리
-</span></code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---------------------------------------------------------------------------
-
-TypeError                                 Traceback (most recent call last)
-
-&lt;ipython-input-18-c77d23fee774&gt; in &lt;module&gt;
-----&gt; 1 doc4[0] ='New'
-
-
-TypeError: 'spacy.tokens.doc.Doc' object does not support item assignment
-</code></pre></div></div>
+<p>TfidfVectorizer 객체를 생성할 때, 위와 같이 min-df 파라미터를 설정하였습니다.
+최소 DF가 2로 설정되었으니, 1인 것들은 모두 탈락하게 됩니다.
+(PPT 설명화면에서 회색박스 글자들은 모두 DF가 1인 것들입니다.)</p>
 
 
             </section>
