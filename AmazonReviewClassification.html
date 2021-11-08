@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>Natural Language Processing (NLP) in Python with 8 Projects - IMDB and Amazon Review Classification with SpaCy</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- 웹폰트 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="SeongJae Yu 블로그" />
+<link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
+<link rel="canonical" href="https://SEONGJAE-YOO.github.io/AmazonReviewClassification" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+ <!--title below is coming from _includes/dynamic_title-->
+<meta property="og:site_name" content="Big Data" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Natural Language Processing (NLP) in Python with 8 Projects - IMDB and Amazon Review Classification with SpaCy" />
+<meta property="og:description" content="SeongJae Yu 블로그" />
+<meta property="og:url" content="https://SEONGJAE-YOO.github.io/AmazonReviewClassification" />
+<meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/udemy.png" />
+<meta property="article:publisher" content="https://www.facebook.com/" />
+<meta property="article:tag" content="Udemy" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Natural Language Processing (NLP) in Python with 8 Projects - IMDB and Amazon Review Classification with SpaCy" />
+<meta name="twitter:description" content="SeongJae Yu 블로그" />
+<meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
+<meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/udemy.png" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Big Data" />
+<meta name="twitter:label2" content="Filed under" />
+<meta name="twitter:data2" content="Udemy" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta property="og:image:width" content="2000" />
+<meta property="og:image:height" content="666" />
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Website",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Big Data",
+            "logo": "https://SEONGJAE-YOO.github.io/"
+        },
+        "url": "https://SEONGJAE-YOO.github.io/AmazonReviewClassification",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://SEONGJAE-YOO.github.io/assets/built/images/udemy.png",
+            "width": 2000,
+            "height": 666
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://SEONGJAE-YOO.github.io/AmazonReviewClassification"
+        },
+        "description": "SeongJae Yu 블로그"
+    }
+</script>
+
+<!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+<script type="text/javascript">
+ghost.init({
+    clientId: "ghost-frontend",
+    clientSecret: "f84a07a72b17"
+});
+</script> -->
+
+<meta name="generator" content="Jekyll 3.6.2" />
+<link rel="alternate" type="application/rss+xml" title="Natural Language Processing (NLP) in Python with 8 Projects - IMDB and Amazon Review Classification with SpaCy" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- < default -->
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<!-- The big featured header, it uses blog cover image as a BG if available -->
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://SEONGJAE-YOO.github.io/">Big Data</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-rprogramming" role="menuitem"><a href="/tag/rprogramming/">R</a></li>
+    <li class="nav-processmining" role="menuitem"><a href="/tag/processmining/">Processmining</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-kaggle" role="menuitem"><a href="/tag/kaggle">kaggle</a></li>
+    <li class="nav-book" role="menuitem"><a href="/tag/book">book</a></li>
+    <li class="nav-udemy" role="menuitem"><a href="/tag/udemy">udemy</a></li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag별 Posts</a>
+    </li>
+</ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-udemy post tag-udemy ">
+
+            <header class="post-full-header">
+                <h1 class="post-full-title">Natural Language Processing (NLP) in Python with 8 Projects - IMDB and Amazon Review Classification with SpaCy</h1>
+            </header>
+
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/udemy.png)">
+            </figure>
+            
+
+            <section class="post-full-content">
+                <p><span class="table-of-contents-list">Natural Language Processing (NLP) in Python with 8 Projects</span></p>
+<ul class="table-of-contents-list">
+    <li><a href="https://seongjae-yoo.github.io/Tokenization">Tokenization Basics</a></li>
+    <li><a href="https://seongjae-yoo.github.io/Stemming">Stemming and Lemmatization</a></li>
+    <li><a href="https://seongjae-yoo.github.io/StopWords">Stop Words</a></li>
+    <li><a href="https://seongjae-yoo.github.io/VocabularyandMatching">Vocabulary_and_Matching</a></li>
+    <li><a href="https://seongjae-yoo.github.io/PartofSpeechTagging">POS Tagging</a></li>
+    <li><a href="https://seongjae-yoo.github.io/NamedEntityRecognition">Named Entity Recognition</a></li>
+    <li><a href="https://seongjae-yoo.github.io/SentenceSegmentation">Sentence Segmentation</a></li>
+    <li><a href="https://seongjae-yoo.github.io/Spam-Message-Classification">Spam Message Classification</a></li>
+    <li><a href="https://seongjae-yoo.github.io/TfidfVectorizer">Tfidf Vectorizer</a></li>
+    <li><a href="">Restaurant Reviews Classification with NLTK</a></li>
+    <li><a href="">IMDB and Amazon Review Classification with SpaCy</a></li>
+
+</ul>
+
+<h1 id="1-importing-the-datasets">1) Importing the datasets</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_yelp</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/yelp_labelled.txt'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">'</span><span class="se">\t</span><span class="s">'</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h1 id="yelp_labelledtxt-데이터는-아래-링크를-클릭하면-보실-수-있습니다">yelp_labelled.txt 데이터는 아래 링크를 클릭하면 보실 수 있습니다.</h1>
+<h1 id="링크--httpsgithubcomseongjae-yoonatural-language-processing-nlp-in-python-with-8-projectsblobmaindatayelp_labelledtxt">링크 -<a href="https://github.com/SEONGJAE-YOO/Natural-Language-Processing-NLP-in-Python-with-8-Projects/blob/main/data/yelp_labelled.txt">https://github.com/SEONGJAE-YOO/Natural-Language-Processing-NLP-in-Python-with-8-Projects/blob/main/data/yelp_labelled.txt</a></h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_yelp</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+<span class="c1"># review and sentiment
+# 0-Negative, 1-Positive for positive review
+</span></code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Wow... Loved this place.</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Crust is not good.</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Not tasty and the texture was just nasty.</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Stopped by during the late May bank holiday of...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>The selection on the menu was great and so wer...</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Assign column names
+</span><span class="n">columan_name</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Review'</span><span class="p">,</span> <span class="s">'Sentiment'</span><span class="p">]</span>
+<span class="n">data_yelp</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columan_name</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_yelp</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Review</th>
+      <th>Sentiment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Wow... Loved this place.</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Crust is not good.</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Not tasty and the texture was just nasty.</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Stopped by during the late May bank holiday of...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>The selection on the menu was great and so wer...</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_yelp</span><span class="p">.</span><span class="n">shape</span>
+<span class="c1"># 1000 rows (reviews), 2 columns (Sentiments)
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(1000, 2)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_amazon</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/amazon_cells_labelled.txt'</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">'</span><span class="se">\t</span><span class="s">'</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<span class="n">data_amazon</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+<span class="c1"># review and sentiment
+# 0-Negative, 1-Positive for positive review
+</span></code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>So there is no way for me to plug it in here i...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Good case, Excellent value.</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Great for the jawbone.</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Tied to charger for conversations lasting more...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>The mic is great.</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h1 id="amazon_cells_labelledtxt-데이터는-아래-링크를-클릭하면-보실-수-있습니다">amazon_cells_labelled.txt 데이터는 아래 링크를 클릭하면 보실 수 있습니다.</h1>
+<h1 id="링크-httpsgithubcomseongjae-yoonatural-language-processing-nlp-in-python-with-8-projectsblobmaindataamazon_cells_labelledtxt">링크-<a href="https://github.com/SEONGJAE-YOO/Natural-Language-Processing-NLP-in-Python-with-8-Projects/blob/main/data/amazon_cells_labelled.txt">https://github.com/SEONGJAE-YOO/Natural-Language-Processing-NLP-in-Python-with-8-Projects/blob/main/data/amazon_cells_labelled.txt</a></h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_amazon</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columan_name</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_amazon</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Review</th>
+      <th>Sentiment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>So there is no way for me to plug it in here i...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Good case, Excellent value.</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Great for the jawbone.</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Tied to charger for conversations lasting more...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>The mic is great.</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_amazon</span><span class="p">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(1000, 2)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_imdb</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/imdb_labelled.txt'</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">'</span><span class="se">\t</span><span class="s">'</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<span class="n">data_imdb</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A very, very, very slow-moving, aimless movie ...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Not sure who was more lost - the flat characte...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Attempting artiness with black &amp; white and cle...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Very little music or anything to speak of.</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>The best scene in the movie was when Gerardo i...</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h1 id="imdb_labelledtxt-데이터는-아래-링크를-클릭-하면-보실-수-있습니다">imdb_labelled.txt 데이터는 아래 링크를 클릭 하면 보실 수 있습니다.</h1>
+<h1 id="링크---httpsgithubcomseongjae-yoonatural-language-processing-nlp-in-python-with-8-projectsblobmaindataimdb_labelledtxt">링크 - <a href="https://github.com/SEONGJAE-YOO/Natural-Language-Processing-NLP-in-Python-with-8-Projects/blob/main/data/imdb_labelled.txt">https://github.com/SEONGJAE-YOO/Natural-Language-Processing-NLP-in-Python-with-8-Projects/blob/main/data/imdb_labelled.txt</a></h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_imdb</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columan_name</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_imdb</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Review</th>
+      <th>Sentiment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A very, very, very slow-moving, aimless movie ...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Not sure who was more lost - the flat characte...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Attempting artiness with black &amp; white and cle...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Very little music or anything to speak of.</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>The best scene in the movie was when Gerardo i...</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_imdb</span><span class="p">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(748, 2)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Append all the data in a single dataframe
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span> <span class="o">=</span> <span class="n">data_yelp</span><span class="p">.</span><span class="n">append</span><span class="p">([</span><span class="n">data_amazon</span><span class="p">,</span> <span class="n">data_imdb</span><span class="p">],</span><span class="n">ignore_index</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(2748, 2)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Review</th>
+      <th>Sentiment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Wow... Loved this place.</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Crust is not good.</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Not tasty and the texture was just nasty.</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Stopped by during the late May bank holiday of...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>The selection on the menu was great and so wer...</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># check distribution of sentiments
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[</span><span class="s">'Sentiment'</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()</span>
+
+<span class="c1"># 1386 positive reviews
+# 1362 Negative reviews
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1    1386
+0    1362
+Name: Sentiment, dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># check for null values
+</span><span class="n">data</span><span class="p">.</span><span class="n">isnull</span><span class="p">().</span><span class="nb">sum</span><span class="p">()</span>
+
+<span class="c1"># no null values in the data
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Review       0
+Sentiment    0
+dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'Review'</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'Sentiment'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h1 id="2-data-cleaning">2) Data Cleaning</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># here we will remove stopwords, punctuations
+# as well as we will apply lemmatization
+</span></code></pre></div></div>
+
+<h2 id="create-a-function-to-clean-the-data">Create a function to clean the data</h2>
+
+<h1 id="stringpunctuation-은-무엇일까">string.punctuation 은 무엇일까?</h1>
+
+<h1 id="참고사이트---httpswwwdelftstackcomkohowtopythonhow-to-strip-punctuation-from-a-string-in-python">참고사이트 - <a href="https://www.delftstack.com/ko/howto/python/how-to-strip-punctuation-from-a-string-in-python/">https://www.delftstack.com/ko/howto/python/how-to-strip-punctuation-from-a-string-in-python/</a></h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">string</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">punct</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="n">punctuation</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">punct</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'!"#$%&amp;\'()*+,-./:;&lt;=&gt;?@[\\]^_`{|}~'
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">spacy.lang.en.stop_words</span> <span class="kn">import</span> <span class="n">STOP_WORDS</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">stopwords</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">STOP_WORDS</span><span class="p">)</span> <span class="c1"># list of stopwords
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">stopwords</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['most',
+ "'s",
+ 'doing',
+ 'but',
+ 'after',
+ 'ten',
+ 'seems',
+ 'them',
+ 'several',
+ 'hereby',
+ 'beside',
+ 'behind',
+ 'hers',
+ 'seem',
+ 'four',
+ 'none',
+ 'for',
+ '‘m',
+ 'those',
+ 'down',
+ 'former',
+ 'each',
+ 'less',
+ 'its',
+ 'two',
+ 'top',
+ 'third',
+ 'across',
+ 'hereupon',
+ '’d',
+ 'themselves',
+ 'my',
+ 'latter',
+ 'how',
+ 'used',
+ 'hence',
+ 'twenty',
+ 'take',
+ 'amount',
+ 'every',
+ 'same',
+ 'everyone',
+ 'thereby',
+ 'show',
+ "'d",
+ 'ever',
+ 'therein',
+ 'whether',
+ 'of',
+ 'our',
+ 'thence',
+ 'some',
+ 'bottom',
+ 'ca',
+ 'except',
+ 'nobody',
+ 'whole',
+ 'has',
+ 'his',
+ 'although',
+ '’ve',
+ 'may',
+ 'otherwise',
+ 'twelve',
+ 'seeming',
+ 'n‘t',
+ 'also',
+ 'to',
+ 'next',
+ 'nor',
+ 'more',
+ 'with',
+ 'enough',
+ 'whereafter',
+ 'hereafter',
+ 'whereas',
+ 'others',
+ 'fifteen',
+ '’m',
+ 'ours',
+ 'onto',
+ 'becomes',
+ 'anything',
+ 'sometimes',
+ 'formerly',
+ 'above',
+ 'whom',
+ "'ve",
+ 'first',
+ 'indeed',
+ 'get',
+ '’s',
+ 'an',
+ 'eight',
+ 'nowhere',
+ 'the',
+ 'wherein',
+ 'still',
+ 'anyone',
+ 'amongst',
+ 'sometime',
+ 'up',
+ 'further',
+ 'nevertheless',
+ 'rather',
+ 'against',
+ '‘d',
+ 'ourselves',
+ 'made',
+ 'must',
+ 'under',
+ 'could',
+ 'thus',
+ 'not',
+ 'had',
+ 'out',
+ 'least',
+ 'either',
+ 'do',
+ 'beyond',
+ 'nine',
+ 'alone',
+ 'please',
+ "'ll",
+ 'she',
+ '‘ll',
+ 'everything',
+ '‘re',
+ '’ll',
+ 'last',
+ 'via',
+ 'unless',
+ 'name',
+ 'so',
+ 'anyhow',
+ 'other',
+ 'one',
+ 'quite',
+ 'mostly',
+ 'really',
+ 'yet',
+ 'both',
+ 'too',
+ 'just',
+ 'whence',
+ 'their',
+ 'becoming',
+ 'than',
+ 'during',
+ 'these',
+ 'empty',
+ 'herself',
+ 'call',
+ 'whose',
+ 'now',
+ 'besides',
+ 'here',
+ 'any',
+ 'her',
+ 'am',
+ 'would',
+ 'have',
+ 'he',
+ 'whoever',
+ 'yourself',
+ 'until',
+ 'be',
+ 'always',
+ 'put',
+ 'elsewhere',
+ 'from',
+ 'been',
+ 'latterly',
+ 'it',
+ 'itself',
+ 'such',
+ 'if',
+ 'at',
+ 'namely',
+ 'being',
+ 'thereupon',
+ 'were',
+ 'a',
+ 'me',
+ 'five',
+ 'hundred',
+ 'whenever',
+ 'they',
+ 'afterwards',
+ 'front',
+ 'various',
+ 'did',
+ 'who',
+ 'in',
+ 'within',
+ "'re",
+ 'over',
+ 'give',
+ 'many',
+ 'as',
+ 'thereafter',
+ 'into',
+ "'m",
+ 'perhaps',
+ 'using',
+ 'move',
+ 'are',
+ 'well',
+ 'another',
+ 'whatever',
+ 'own',
+ 'i',
+ 'became',
+ 'while',
+ '‘s',
+ 'before',
+ "n't",
+ 'what',
+ 'never',
+ 'something',
+ 'can',
+ 'mine',
+ 'though',
+ 'full',
+ 'once',
+ 'anyway',
+ 'someone',
+ 'neither',
+ 'us',
+ 'since',
+ 're',
+ 'without',
+ 'will',
+ 'almost',
+ 'therefore',
+ 'somewhere',
+ 'was',
+ 'n’t',
+ 'whither',
+ 'off',
+ 'often',
+ 'six',
+ 'because',
+ 'does',
+ 'about',
+ 'beforehand',
+ 'might',
+ 'herein',
+ 'below',
+ 'then',
+ 'on',
+ 'that',
+ 'or',
+ 'very',
+ 'fifty',
+ 'see',
+ 'whereby',
+ 'nothing',
+ 'even',
+ 'make',
+ 'much',
+ 'together',
+ 'myself',
+ 'which',
+ 'due',
+ 'again',
+ 'few',
+ 'upon',
+ 'anywhere',
+ 'else',
+ 'per',
+ 'when',
+ 'where',
+ 'only',
+ 'moreover',
+ 'everywhere',
+ 'say',
+ 'cannot',
+ 'him',
+ 'three',
+ '’re',
+ 'throughout',
+ 'your',
+ 'along',
+ 'side',
+ 'should',
+ 'done',
+ 'no',
+ 'all',
+ 'this',
+ 'toward',
+ '‘ve',
+ 'there',
+ 'we',
+ 'towards',
+ 'sixty',
+ 'through',
+ 'you',
+ 'serious',
+ 'and',
+ 'already',
+ 'back',
+ 'wherever',
+ 'between',
+ 'around',
+ 'is',
+ 'however',
+ 'noone',
+ 'by',
+ 'become',
+ 'meanwhile',
+ 'whereupon',
+ 'among',
+ 'thru',
+ 'yours',
+ 'go',
+ 'yourselves',
+ 'seemed',
+ 'himself',
+ 'regarding',
+ 'somehow',
+ 'part',
+ 'why',
+ 'forty',
+ 'keep',
+ 'eleven']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># creating a function for data cleaning
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">spacy</span> 
+
+<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">'en_core_web_sm'</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">text_data_cleaning</span><span class="p">(</span><span class="n">sentence</span><span class="p">):</span>
+  <span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+
+  <span class="n">tokens</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># list of tokens
+</span>  <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">token</span><span class="p">.</span><span class="n">lemma_</span> <span class="o">!=</span> <span class="s">"-PRON-"</span><span class="p">:</span>
+      <span class="n">temp</span> <span class="o">=</span> <span class="n">token</span><span class="p">.</span><span class="n">lemma_</span><span class="p">.</span><span class="n">lower</span><span class="p">().</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">temp</span> <span class="o">=</span> <span class="n">token</span><span class="p">.</span><span class="n">lower_</span>
+    <span class="n">tokens</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+  
+  <span class="n">cleaned_tokens</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">tokens</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">token</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stopwords</span> <span class="ow">and</span> <span class="n">token</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">punct</span><span class="p">:</span>
+      <span class="n">cleaned_tokens</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">cleaned_tokens</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># if root form of that word is not pronoun then it is going to convert that into lower form
+# and if that word is a proper noun, then we are directly taking lower form, because there is no lemma for proper noun
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text_data_cleaning</span><span class="p">(</span><span class="s">"Hello all, It's a beautiful day outside there!"</span><span class="p">)</span>
+<span class="c1"># stopwords and punctuations removed
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['hello', 'beautiful', 'day', 'outside']
+</code></pre></div></div>
+
+<h2 id="vectorization-feature-engineering-tf-idf">Vectorization Feature Engineering (TF-IDF)</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">LinearSVC</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tfidf</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">=</span><span class="n">text_data_cleaning</span><span class="p">)</span>
+<span class="c1"># tokenizer=text_data_cleaning, tokenization will be done according to this function
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">classifier</span> <span class="o">=</span> <span class="n">LinearSVC</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h1 id="3-train-the-model">3) Train the model</h1>
+
+<h2 id="splitting-the-dataset-into-the-train-and-test-set">Splitting the dataset into the Train and Test set</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x_train</span><span class="p">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">x_test</span><span class="p">.</span><span class="n">shape</span>
+<span class="c1"># 2198 samples in training dataset and 550 in test dataset
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>((2198,), (550,))
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x_train</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2572    An Italian reviewer called this "a small, grea...
+526                          And it was way to expensive.
+1509    As an earlier review noted, plug in this charg...
+144     Nice blanket of moz over top but i feel like t...
+2483    The film gives meaning to the phrase, "Never i...
+Name: Review, dtype: object
+</code></pre></div></div>
+
+<h2 id="fit-the-x_train-and-y_train">Fit the x_train and y_train</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">clf</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([(</span><span class="s">'tfidf'</span><span class="p">,</span><span class="n">tfidf</span><span class="p">),</span> <span class="p">(</span><span class="s">'clf'</span><span class="p">,</span><span class="n">classifier</span><span class="p">)])</span>
+<span class="c1"># it will first do vectorization and then it will do classification
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">clf</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pipeline(steps=[('tfidf',
+                 TfidfVectorizer(tokenizer=&lt;function text_data_cleaning at 0x0000015BB7D451F0&gt;)),
+                ('clf', LinearSVC())])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># in this we don't need to prepare the dataset for testing(x_test)
+</span></code></pre></div></div>
+
+<h1 id="4-predict-the-test-set-results">4) Predict the Test set results</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># confusion_matrix
+</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[203,  76],
+       [ 49, 222]], dtype=int64)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># classification_report
+</span><span class="k">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+<span class="c1"># we are getting almost 77% accuracy
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>              precision    recall  f1-score   support
+
+           0       0.81      0.73      0.76       279
+           1       0.74      0.82      0.78       271
+
+    accuracy                           0.77       550
+   macro avg       0.78      0.77      0.77       550
+weighted avg       0.78      0.77      0.77       550
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="c1"># 77% accuracy
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.7727272727272727
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">clf</span><span class="p">.</span><span class="n">predict</span><span class="p">([</span><span class="s">"Wow, I am learning Natural Language Processing in fun fashion!"</span><span class="p">])</span>
+<span class="c1"># output is 1, that means review is positive
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([1], dtype=int64)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">clf</span><span class="p">.</span><span class="n">predict</span><span class="p">([</span><span class="s">"It's hard to learn new things!"</span><span class="p">])</span>
+<span class="c1"># output is 0, that means review is Negative
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([0], dtype=int64)
+</code></pre></div></div>
+
+
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+<script>
+$(function() {
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+});
+</script>
+
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://SEONGJAE-YOO.github.io/">Big Data</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <h1 class="subscribe-overlay-title">Search Big Data</h1>
+            <p class="subscribe-overlay-description">
+                원하는 검색어를 입력하세요</p>
+            <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+        </div>
+    </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
