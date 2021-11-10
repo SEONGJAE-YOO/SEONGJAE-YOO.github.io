@@ -22,7 +22,9 @@
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;Tfidf Vectorizer&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK&quot;&gt;Restaurant Reviews Classification with NLTK&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -32,6 +34,37 @@
         <link>
         https://SEONGJAE-YOO.github.io/TextSummarization</link>
         <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/TextSummarization</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Natural Language Processing (NLP) in Python with 8 Projects - Restaurant Reviews Classification with NLTK 응용해보기</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Tokenization&quot;&gt;Tokenization Basics&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Stemming&quot;&gt;Stemming and Lemmatization&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/StopWords&quot;&gt;Stop Words&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/VocabularyandMatching&quot;&gt;Vocabulary_and_Matching&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/PartofSpeechTagging&quot;&gt;POS Tagging&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/NamedEntityRecognition&quot;&gt;Named Entity Recognition&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SentenceSegmentation&quot;&gt;Sentence Segmentation&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;Tfidf Vectorizer&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK&quot;&gt;Restaurant Reviews Classification with NLTK&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Wed, 10 Nov 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://SEONGJAE-YOO.github.io/RestaurantReviewsClassificationwithNLTK2</link>
+        <guid isPermaLink="true">https://SEONGJAE-YOO.github.io/RestaurantReviewsClassificationwithNLTK2</guid>
       </item>
       
     
@@ -51,7 +84,9 @@
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;Tfidf Vectorizer&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK&quot;&gt;Restaurant Reviews Classification with NLTK&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -80,7 +115,9 @@
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;Tfidf Vectorizer&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK&quot;&gt;Restaurant Reviews Classification with NLTK&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -109,7 +146,9 @@
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;Tfidf Vectorizer&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK&quot;&gt;Restaurant Reviews Classification with NLTK&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -138,7 +177,9 @@
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;Tfidf Vectorizer&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK&quot;&gt;Restaurant Reviews Classification with NLTK&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -167,7 +208,9 @@
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;Tfidf Vectorizer&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK&quot;&gt;Restaurant Reviews Classification with NLTK&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -196,7 +239,9 @@
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;Tfidf Vectorizer&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK&quot;&gt;Restaurant Reviews Classification with NLTK&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -225,7 +270,9 @@
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;Tfidf Vectorizer&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK&quot;&gt;Restaurant Reviews Classification with NLTK&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -254,7 +301,9 @@
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;Tfidf Vectorizer&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK&quot;&gt;Restaurant Reviews Classification with NLTK&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -283,7 +332,9 @@
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;Tfidf Vectorizer&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK&quot;&gt;Restaurant Reviews Classification with NLTK&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -312,7 +363,9 @@
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;Tfidf Vectorizer&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK&quot;&gt;Restaurant Reviews Classification with NLTK&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -341,7 +394,9 @@
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Spam-Message-Classification&quot;&gt;Spam Message Classification&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TfidfVectorizer&quot;&gt;Tfidf Vectorizer&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK&quot;&gt;Restaurant Reviews Classification with NLTK&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
