@@ -5,8 +5,8 @@
         <description>SeongJae Yu 블로그</description>
         <link>https://SEONGJAE-YOO.github.io//</link>
         <atom:link href="https://SEONGJAE-YOO.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Thu, 11 Nov 2021 14:35:50 +0900</pubDate>
-        <lastBuildDate>Thu, 11 Nov 2021 14:35:50 +0900</lastBuildDate>
+        <pubDate>Thu, 11 Nov 2021 14:58:54 +0900</pubDate>
+        <lastBuildDate>Thu, 11 Nov 2021 14:58:54 +0900</lastBuildDate>
         <generator>Jekyll v3.9.0</generator>
         
         <item>
@@ -26,6 +26,7 @@
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK2&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -990,6 +991,7 @@ Epoch 5/5
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK2&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -1582,6 +1584,7 @@ I think everyone just thinks because we’re tennis players we should be the gre
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK2&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -1983,6 +1986,7 @@ weighted avg       0.76      0.76      0.76       200
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK2&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -3000,6 +3004,7 @@ weighted avg       0.78      0.77      0.77       550
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK2&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -3084,6 +3089,7 @@ weighted avg       0.78      0.77      0.77       550
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK2&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -4155,6 +4161,7 @@ weighted avg       0.96      0.96      0.96       449
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK2&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -4740,6 +4747,7 @@ True
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK2&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -4914,6 +4922,7 @@ This is last sentence.
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK2&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -5113,6 +5122,7 @@ dying    VERB   VBG    xcomp  verb                 verb, gerund or present parti
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK2&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -5282,6 +5292,7 @@ is looking at buying U.K. startup for $1 billion&amp;lt;/div&amp;gt;&lt;/span&gt
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK2&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -5534,6 +5545,7 @@ is looking at buying U.K. startup for $1 billion&amp;lt;/div&amp;gt;&lt;/span&gt
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK2&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -5785,6 +5797,7 @@ TypeError: 'spacy.tokens.doc.Doc' object does not support item assignment
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK2&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -5957,6 +5970,7 @@ TypeError: 'spacy.tokens.doc.Doc' object does not support item assignment
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK2&quot;&gt;Restaurant Reviews Classification with NLTK 응용하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
