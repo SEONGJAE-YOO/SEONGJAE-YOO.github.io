@@ -5,13 +5,529 @@
         <description>SeongJae Yu 블로그</description>
         <link>https://SEONGJAE-YOO.github.io//</link>
         <atom:link href="https://SEONGJAE-YOO.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 17 Nov 2021 22:43:33 +0900</pubDate>
-        <lastBuildDate>Wed, 17 Nov 2021 22:43:33 +0900</lastBuildDate>
+        <pubDate>Thu, 18 Nov 2021 14:36:54 +0900</pubDate>
+        <lastBuildDate>Thu, 18 Nov 2021 14:36:54 +0900</lastBuildDate>
         <generator>Jekyll v3.9.0</generator>
         
         <item>
+            <title>JSON Support for the XES Event Log Standard - SUPPORTING XES USING JSON</title>
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;JSON Support for the XES Event Log Standard 목차&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;JSON Support for the XES Event Log Standard - INTRODUCTION&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;JSON Support for the XES Event Log Standard - SUPPORTING XES USING JSON&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;json-support-for-the-xes-event-log-standard----supporting-xes-using-json&quot;&gt;JSON Support for the XES Event Log Standard -  SUPPORTING XES USING JSON&lt;/h1&gt;
+
+&lt;p&gt;The XES standard defines a grammar for a tag-based language whose aim is to provide designers of information systems with a unified and extensible methodology for capturing systems behaviors by means of event logs and event streams.&lt;/p&gt;
+
+&lt;p&gt;But, not all information systems support XES format and would be beneficial to extend the XES semantic to JSON format.&lt;/p&gt;
+
+&lt;p&gt;An XML schema shown in Figure 1 describes the structure of an event log.&lt;/p&gt;
+
+&lt;p&gt;XES 표준은 이벤트 로그들 및 이벤트 스트림들을 통해 시스템 동작들을 차지하기 위한 통합되고 확장 가능한 방법론을 정보 시스템 설계자들에게 제공하는 것을 목표로 하는 태그 기반 언어의 문법을 정의합니다.&lt;/p&gt;
+
+&lt;p&gt;그러나 모든 정보 시스템이 XES 형식을 지원하는 것은 아니며 XES 의미론적인 형식을 JSON 형식으로 확장하는 것이 좋습니다.&lt;/p&gt;
+
+&lt;p&gt;그림 1에 표시된 XML 스키마는 이벤트 로그의 구조를 설명합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;methodology : 방법론&lt;/li&gt;
+  &lt;li&gt;semantic : 의미론적인&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;IPython.display&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# 주피터 노트북에 이미지 삽입
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C://Users/MyCom/jupyter-tutorial/논문/data/20211117_182932_1.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/thesis/JSONSupportfortheXESEventLogStandard/output_2_0.png&quot; alt=&quot;output_2_0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;OpenXES is a standard implementation of XES.&lt;/p&gt;
+
+&lt;p&gt;OpenXES stores the event log in main memory using the standard classes provided by the Java collections framework.&lt;/p&gt;
+
+&lt;p&gt;This simplifies the development and works well with small event logs typically used as examples for research purposes.&lt;/p&gt;
+
+&lt;p&gt;However, when using OpenXES for large and complex real-life event logs (e.g., 10 million events with 3 attributes each), the
+available main memory on a typical workstation (e.g., 4 GB) is insufficient to load the event log.&lt;/p&gt;
+
+&lt;p&gt;XESLite can handle large event logs and overcome the drawback of memory issue.&lt;/p&gt;
+
+&lt;p&gt;DB-XES is a database schema which resembles the standard XES structure.&lt;/p&gt;
+
+&lt;p&gt;OpenXES는 XES의 일반적인 구현입니다.&lt;/p&gt;
+
+&lt;p&gt;OpenXES는 Java 컬렉션 프레임워크에서 제공하는 표준 클래스를 사용하여 메인 메모리에 이벤트 로그를 저장합니다.&lt;/p&gt;
+
+&lt;p&gt;이것은 개발을 단순화하고 일반적으로 연구 목적의 예로 사용되는 작은 이벤트 로그들와 잘 작동합니다.&lt;/p&gt;
+
+&lt;p&gt;그러나 크고 복잡한 실제 이벤트 로그들(예: 각각 3개의 속성이 있는 천만 개의 이벤트)에 OpenXES를 사용할 때,
+일반적인 워크스테이션에서 사용 가능한 주 메모리(예: 4GB)는 이벤트 로그를 로딩하기에 충분하지 않습니다.&lt;/p&gt;
+
+&lt;p&gt;XESLite는 대용량 이벤트 로그들을 처리하고 메모리 문제의 단점을 극복합니다.&lt;/p&gt;
+
+&lt;p&gt;DB-XES는 일반적인 XES 구조와 유사한 데이터베이스 스키마입니다.&lt;/p&gt;
+
+&lt;p&gt;JSON is an open standard lightweight file format commonly used for data interchange.&lt;/p&gt;
+
+&lt;p&gt;It uses human-readable text to store and transmit data objects.&lt;/p&gt;
+
+&lt;p&gt;Hence, the motivation to define a JSON event log format and create a plugin lies in the fact that we can easily use the JSON logs.&lt;/p&gt;
+
+&lt;p&gt;We have used the 4 design principles defined for the XES format, namely, (i) Simplicity, (ii) Flexibility, (iii) Extensibility and (iv) Expressivity.&lt;/p&gt;
+
+&lt;p&gt;This helped us to make design decisions with respect to defining the JXES standard format as well as evaluate the implementations
+and make suggestions on the optimal parser&lt;/p&gt;
+
+&lt;p&gt;JSON은 데이터 교환에 일반적으로 사용되는 개방형 표준 경량 파일 형식입니다.&lt;/p&gt;
+
+&lt;p&gt;데이터 객체들을 저장하고 전송하기 위해서 사람이 읽을 수 있는 텍스트를 사용합니다.&lt;/p&gt;
+
+&lt;p&gt;따라서 JSON 이벤트 로그 형식을 정의하고 플러그인을 생성하게 된 동기는 JSON 로그를 쉽게 사용할 수 있다는 사실에 있습니다.&lt;/p&gt;
+
+&lt;p&gt;XES 형식에 대해 정의된 4가지 디자인 원칙, 즉 (i) 단순성, (ii) 유연성, (iii) 확장성 및 (iv) 표현성을 사용했습니다.&lt;/p&gt;
+
+&lt;p&gt;이는 JXES 표준 형식 정의와 관련하여 설계 결정을 내리고 구현방법을 평가하고 최적의 파서에 대해 제안을 하는데 도움이 되었습니다.&lt;/p&gt;
+
+&lt;p&gt;For defining the JSON standard format, we have taken into account the XES meta-model shown in Figure 1 which is represented by the basic structure (log, trace and event), Attributes, Nested Attributes, Global Attributes, Event classifiers and Extensions.&lt;/p&gt;
+
+&lt;p&gt;There are different types of primitive attributes.&lt;/p&gt;
+
+&lt;p&gt;The String and Date attributes are stored as JSON strings.&lt;/p&gt;
+
+&lt;p&gt;JSON numbers represent floats and integers.&lt;/p&gt;
+
+&lt;p&gt;Boolean values are stored as JSON Boolean.&lt;/p&gt;
+
+&lt;p&gt;The List values is represented as an array of JSON Objects.&lt;/p&gt;
+
+&lt;p&gt;Lastly, the Container is stored as JSON object.&lt;/p&gt;
+
+&lt;p&gt;A log object contains 0 or more trace objects, which are stored in the traces array of JSON objects.&lt;/p&gt;
+
+&lt;p&gt;Each trace describes the execution of one specific instance, or case, of the logged process.&lt;/p&gt;
+
+&lt;p&gt;Every trace contains an arbitrary number of events objects.&lt;/p&gt;
+
+&lt;p&gt;In addition every trace has its own attributes stored in the attrs object.&lt;/p&gt;
+
+&lt;p&gt;Below is an example representation of the basic structure&lt;/p&gt;
+
+&lt;p&gt;JSON 일반적인 형식을 정의하기 위해, 기본 구조(로그, trace 및 이벤트), 속성, 중첩 속성, 전역 속성, 이벤트 분류자 및 확장으로 표현되는 그림 1에서 보여진 XES 메타 모델을 고려하였습니다.&lt;/p&gt;
+
+&lt;p&gt;다양한 유형들의 기본 속성이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;String 및 Date 속성은 JSON 문자열로 저장됩니다.&lt;/p&gt;
+
+&lt;p&gt;JSON 숫자는 부동 소수점과 정수를 나타냅니다.&lt;/p&gt;
+
+&lt;p&gt;부울 값은 JSON 부울로 저장됩니다.&lt;/p&gt;
+
+&lt;p&gt;목록 값은 JSON 개체의 배열로 표현됩니다.&lt;/p&gt;
+
+&lt;p&gt;마지막으로 Container는 JSON 객체로 저장됩니다.&lt;/p&gt;
+
+&lt;p&gt;로그 개체에는 JSON 개체의 trace 배열에 저장되는 0개 이상의 trace 개체가 포함됩니다.&lt;/p&gt;
+
+&lt;p&gt;각 trace는 기록된 프로세스의 case 또는 하나의 특정 인스턴스의 실행을 설명합니다.&lt;/p&gt;
+
+&lt;p&gt;모든 trace에는 임의의 수의 이벤트 개체가 포함됩니다.&lt;/p&gt;
+
+&lt;p&gt;또한 모든 trace에는 attrs 개체에 저장된 고유한 속성이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;아래는 기본 구조의 예시 표현입니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C://Users/MyCom/jupyter-tutorial/논문/data/20211117_212833_1.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/thesis/JSONSupportfortheXESEventLogStandard/output_6_0.png&quot; alt=&quot;output_6_0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Because the string has the same power as the ID, the ID data type is not supported in JXES.&lt;/p&gt;
+
+&lt;p&gt;Below is an example for the representation of every attribute-type.&lt;/p&gt;
+
+&lt;p&gt;문자열은 ID와 동일한 권한을 갖기 때문에, ID 데이터 유형은 JXES에서 지원되지 않습니다.&lt;/p&gt;
+
+&lt;p&gt;아래는 모든 속성 유형의 표현에 대한 예입니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C://Users/MyCom/jupyter-tutorial/논문/data/20211118_111144_1.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/thesis/JSONSupportfortheXESEventLogStandard/output_8_0.png&quot; alt=&quot;output_8_0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To represent nested attributes in JXES the container with two keys with the names value and nested-attrs is reserved.&lt;/p&gt;
+
+&lt;p&gt;Which means that every container with any of the keys value or nested-attrs is reserved by JXES and can not be used by the user.&lt;/p&gt;
+
+&lt;p&gt;Every other container is allowed.&lt;/p&gt;
+
+&lt;p&gt;Below is an example for a nested attribute container.&lt;/p&gt;
+
+&lt;p&gt;JXES에서 중첩된 속성을 나타내기 위해 이름 값과 nested-attrs가 있는 두 개의 키가 있는 컨테이너가 자리잡고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;즉, 키 값 또는 중첩 속성이 있는 모든 컨테이너는 JXES의해 자리잡고 있고 사용자에 의해 사용될 수 없습니다.&lt;/p&gt;
+
+&lt;p&gt;다른 모든 컨테이너는 허용됩니다.&lt;/p&gt;
+
+&lt;p&gt;아래는 중첩된 속성 컨테이너의 예입니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C://Users/MyCom/jupyter-tutorial/논문/data/20211118_112303_1.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/thesis/JSONSupportfortheXESEventLogStandard/output_10_0.png&quot; alt=&quot;output_10_0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Global attributes are attributes that are understood to be available and properly defined for each element on their respective level throughout the document.&lt;/p&gt;
+
+&lt;p&gt;The log object holds two lists of global attributes for the trace level and for the event level.&lt;/p&gt;
+
+&lt;p&gt;This means, a global attribute on the event level must be available for every event in every trace.&lt;/p&gt;
+
+&lt;p&gt;In JXES, we have defined elements for the trace level and the event level.&lt;/p&gt;
+
+&lt;p&gt;They are both stored in under the element global-attrs as nested elements.&lt;/p&gt;
+
+&lt;p&gt;Below is an example for a global attribute.&lt;/p&gt;
+
+&lt;p&gt;전역 속성은 문서 전체에서 해당 수준의 각 요소에 대해 적절하게 정의되었고 사용 가능하도록 이해되는 속성입니다.&lt;/p&gt;
+
+&lt;p&gt;로그 개체에는 trace level 및 이벤트 level에 대한 두 개의 전역 속성 목록이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;즉, 이벤트 level의 전역 속성은 모든 trace의 모든 이벤트에 사용될 수 있어야 합니다.&lt;/p&gt;
+
+&lt;p&gt;JXES에서는 trace level 및 이벤트 level에 대한 요소들을 정의하였습니다.&lt;/p&gt;
+
+&lt;p&gt;둘 다 전역 속성 요소 아래에 중첩 요소로 저장됩니다.&lt;/p&gt;
+
+&lt;p&gt;아래는 전역 속성의 예입니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C://Users/MyCom/jupyter-tutorial/논문/data/20211118_115000_1.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/thesis/JSONSupportfortheXESEventLogStandard/output_12_0.png&quot; alt=&quot;output_12_0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Event Classifiers assigns to each event an identity, which makes it comparable to other events (via their assigned identity).&lt;/p&gt;
+
+&lt;p&gt;The JXES format makes event classification configurable and flexible, by introducing the concept of event classifiers.&lt;/p&gt;
+
+&lt;p&gt;The classifier name is stored in the key and the classifier keys are stored as an array of strings.&lt;/p&gt;
+
+&lt;p&gt;An example of event classifiers can be found below.&lt;/p&gt;
+
+&lt;p&gt;이벤트 분류자는 각 이벤트에 ID를 할당하여 다른 이벤트와 비교할 수 있도록 합니다(할당된 ID를 통해).&lt;/p&gt;
+
+&lt;p&gt;JXES 형식은 이벤트 분류기의 개념을 도입하여 이벤트 분류를 설정 가능하고 유연하게 만듭니다.&lt;/p&gt;
+
+&lt;p&gt;분류자 이름은 키에 저장되고 분류자 키는 문자열 배열로 저장됩니다.&lt;/p&gt;
+
+&lt;p&gt;이벤트 분류기의 예는 아래에서 찾을 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C://Users/MyCom/jupyter-tutorial/논문/data/20211118_120251_1.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/thesis/JSONSupportfortheXESEventLogStandard/output_14_0.png&quot; alt=&quot;output_14_0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Extensions is a set of attributes on any levels of the XES log hierarchy (log, trace, event, and meta for nested attributes).&lt;/p&gt;
+
+&lt;p&gt;Extensions have many possible uses. One important use is to introduce a set of commonly understood attributes which are vital for a specific perspective or dimension of event log analysis (and which may even not have been foreseen at the time of designing the XES standard).&lt;/p&gt;
+
+&lt;p&gt;They are stored in an array.&lt;/p&gt;
+
+&lt;p&gt;Every object in this array represents an extension.&lt;/p&gt;
+
+&lt;p&gt;The name, concept and uri are stored as key value pairs.&lt;/p&gt;
+
+&lt;p&gt;See the following example of extension definitions.&lt;/p&gt;
+
+&lt;p&gt;확장은 XES 로그 체계의 모든 수준에 있는 속성 집합입니다(중첩 속성의 경우 로그, trace, 이벤트 및 메타).&lt;/p&gt;
+
+&lt;p&gt;확장에는 많은 용도가 있습니다. 한 가지 중요한 용도는 이벤트 로그 분석의 특정 관점이나 차원에 필수적인 일반적으로 이해되는 속성 세트를 도입하는 것입니다(XES 표준을 설계할 때 예측하지 못했을 수도 있음).&lt;/p&gt;
+
+&lt;p&gt;그것들은 배열에 저장됩니다.&lt;/p&gt;
+
+&lt;p&gt;이 배열의 모든 개체는 확장을 나타냅니다.&lt;/p&gt;
+
+&lt;p&gt;이름, 개념 및 uri는 키 값 쌍으로 저장됩니다.&lt;/p&gt;
+
+&lt;p&gt;확장 정의의 다음 예를 참조하십시오.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C://Users/MyCom/jupyter-tutorial/논문/data/20211118_125648_1.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/thesis/JSONSupportfortheXESEventLogStandard/output_16_0.png&quot; alt=&quot;output_16_0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;III. IMPLEMENTATION&lt;/p&gt;
+
+&lt;p&gt;The basic idea is to enable usage of JSON format of event logs in the ProM tool.&lt;/p&gt;
+
+&lt;p&gt;To achieve this we did a market research of the top and best performing Java JSON parsers.&lt;/p&gt;
+
+&lt;p&gt;III. 구현&lt;/p&gt;
+
+&lt;p&gt;기본 아이디어는 ProM 도구에서 이벤트 로그의 JSON 형식 사용을 활성화하는 것입니다.&lt;/p&gt;
+
+&lt;p&gt;이를 달성하기 위해 우리는 최고 성능의 Java JSON 파서에 대한 시장 조사를 수행했습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C://Users/MyCom/jupyter-tutorial/논문/data/20211118_130123_1.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/thesis/JSONSupportfortheXESEventLogStandard/output_18_0.png&quot; alt=&quot;output_18_0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The plugin to import and export the JSON file consists of 4 different parser implementations of import as well as export.&lt;/p&gt;
+
+&lt;p&gt;The parsers that have been implemented are Jackson, Jsoninter, GSON and simple JSON.&lt;/p&gt;
+
+&lt;p&gt;When the user clicks on ”Import”in ProM tool and chooses a JSON file, the import options related to JXES are displayed where the user can choose from one of the parsers to import as shown in Figure 3.&lt;/p&gt;
+
+&lt;p&gt;When the user clicks on ”Export to disk” option, the console to save is displayed with Export parser options as shown in Figure 4.&lt;/p&gt;
+
+&lt;p&gt;JSON 파일을 가져오고 내보내는 플러그인은 가져오기 및 내보내기의 4가지 다른 파서 구현으로 구성됩니다.&lt;/p&gt;
+
+&lt;p&gt;구현된 파서들은 Jackson, Jsoninter, GSON 및 단순 JSON입니다.&lt;/p&gt;
+
+&lt;p&gt;사용자가 ProM 도구에서 “가져오기”를 클릭하고 JSON 파일을 선택하면, 그림 3과 같이 사용자가 가져올 파서 중 하나를 선택할 수 있는 JXES와 관련된 가져오기 옵션이 표시됩니다.&lt;/p&gt;
+
+&lt;p&gt;사용자가 “디스크로 내보내기” 옵션을 클릭하면, 그림 4와 같이 파서 내보내기 옵션과 함께 저장할 콘솔이 표시됩니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C://Users/MyCom/jupyter-tutorial/논문/data/20211118_130948_1.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/thesis/JSONSupportfortheXESEventLogStandard/output_20_0.png&quot; alt=&quot;output_20_0&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C://Users/MyCom/jupyter-tutorial/논문/data/20211118_131108_1.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/thesis/JSONSupportfortheXESEventLogStandard/output_21_0.png&quot; alt=&quot;output_21_0&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C://Users/MyCom/jupyter-tutorial/논문/data/20211118_131155_1.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/thesis/JSONSupportfortheXESEventLogStandard/output_22_0.png&quot; alt=&quot;output_22_0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;IV. EVALUATION&lt;/p&gt;
+
+&lt;p&gt;We used 2 real-life event logs and 2 artificial event logs for our analysis.&lt;/p&gt;
+
+&lt;p&gt;Table I highlights some of the key characteristics of the real-life event logs.&lt;/p&gt;
+
+&lt;p&gt;The Level D2 log contains all standard attribute extensions like lifecycle, cost, concept and time extensions of an event log.&lt;/p&gt;
+
+&lt;p&gt;The Flag X2 log is a Level D2 extended with attributes from non-standard XES extensions and/or attributes without an extension.&lt;/p&gt;
+
+&lt;p&gt;IV. 평가&lt;/p&gt;
+
+&lt;p&gt;우리는 분석을 위해 2개의 실제 이벤트 로그와 2개의 인공 이벤트 로그를 사용했습니다.&lt;/p&gt;
+
+&lt;p&gt;표 I은 실제 이벤트 로그의 몇 가지 주요 특성들을 강조합니다.&lt;/p&gt;
+
+&lt;p&gt;레벨 D2 로그에는 이벤트 로그의 수명 주기, 비용, 개념 및 시간 확장과 같은 모든 표준 속성 확장이 포함됩니다.&lt;/p&gt;
+
+&lt;p&gt;플래그 X2 로그는 비표준 XES 확장의 속성 및/또는 확장이 없는 속성으로 확장된 레벨 D2입니다.&lt;/p&gt;
+
+&lt;p&gt;The evaluation of parsers was done alongside to the existing XES Naive and XES zipped implementations in ProM.&lt;/p&gt;
+
+&lt;p&gt;The machine used to run the evaluation is equipped with a 4-core Intel i7 processor and 8 GB of RAM.&lt;/p&gt;
+
+&lt;p&gt;파서 평가는 ProM에서 기존 XES Naive 및 XES 압축 구현과 함께 수행되었습니다.&lt;/p&gt;
+
+&lt;p&gt;평가를 실행하는 데 사용된 컴퓨터에는 4코어 Intel i7 프로세서와 8GB RAM이 장착되어 있습니다.&lt;/p&gt;
+
+&lt;p&gt;The criteria considered for evaluation are (1) speed (2)memory usage and (3) size.&lt;/p&gt;
+
+&lt;p&gt;To test the speed and memory of the different parsers, the file is imported/exported thrice and the average of the 3 runs is recorded in the tables.&lt;/p&gt;
+
+&lt;p&gt;1) Speed: The best result for JSON parsers is highlighted in green.&lt;/p&gt;
+
+&lt;p&gt;The unit of time specified in Table II and Table III is in milliseconds&lt;/p&gt;
+
+&lt;p&gt;평가 기준은 (1) 속도 (2) 메모리 사용량 (3) 크기입니다.&lt;/p&gt;
+
+&lt;p&gt;다른 파서의 속도와 메모리를 테스트하기 위해서, 파일을 세 번 가져오거나 내보내고 3회 실행의 평균을 테이블에 기록합니다.&lt;/p&gt;
+
+&lt;p&gt;1) 속도: JSON 파서에 대한 최상의 결과는 녹색으로 강조 표시됩니다.&lt;/p&gt;
+
+&lt;p&gt;표 II 및 표 III에 지정된 시간 단위는 밀리초입니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C://Users/MyCom/jupyter-tutorial/논문/data/20211118_132642_1.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/thesis/JSONSupportfortheXESEventLogStandard/output_26_0.png&quot; alt=&quot;output_26_0&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C://Users/MyCom/jupyter-tutorial/논문/data/20211118_132723_1.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/thesis/JSONSupportfortheXESEventLogStandard/output_27_0.png&quot; alt=&quot;output_27_0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2) Memory: The memory consumption for different parsers and the XES implementation is computed using difference of the JAVA Runtime memory methods totalMemory and freeMemory.&lt;/p&gt;
+
+&lt;p&gt;It is noticeable that the Jackson JSON parser uses significantly less memory than the other parsers.&lt;/p&gt;
+
+&lt;p&gt;And also that Simple JSON uses little less memory when it comes to average sized files.&lt;/p&gt;
+
+&lt;p&gt;The unit of memory given in Table IV and Table V is MBs.&lt;/p&gt;
+
+&lt;p&gt;2) 메모리: 다른 파서 및 XES 구현에 대한 메모리 소비는 JAVA 런타임 메모리 메서드 totalMemory 및 freeMemory의 차이를 사용하여 계산됩니다.&lt;/p&gt;
+
+&lt;p&gt;Jackson JSON 파서는 다른 파서보다 훨씬 적은 메모리를 사용합니다.&lt;/p&gt;
+
+&lt;p&gt;또한 Simple JSON은 평균 크기의 파일과 관련하여 메모리를 거의 사용하지 않습니다.&lt;/p&gt;
+
+&lt;p&gt;표 IV 및 표 V에 제공된 메모리 단위는 MB(메가바이트)입니다.&lt;/p&gt;
+
+&lt;p&gt;It is clear from the results of the export plugin that JXES is up to 4x faster than XES.&lt;/p&gt;
+
+&lt;p&gt;One reason is the reduced syntax that gets written when exporting JSON as compared to XML.&lt;/p&gt;
+
+&lt;p&gt;내보내기 플러그인의 결과를 보면 JXES가 XES보다 최대 4배 빠릅니다.&lt;/p&gt;
+
+&lt;p&gt;한 가지 이유는 XML과 비교하여 JSON을 내보낼 때 작성되는 축소된 구문 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;It is also clear that the Jsoninter parser achieves better results than all others in terms of exporting speed.&lt;/p&gt;
+
+&lt;p&gt;The speed improvement in Jsoninter can be attributed to its Dynamic Class Shadowing tri-tree feature.&lt;/p&gt;
+
+&lt;p&gt;It is noticeable that the Jackson JSON Parser uses significantly less memory than the other parsers.&lt;/p&gt;
+
+&lt;p&gt;This performance can be attributed to the incremental parsing/generation feature which reads and writes JSON content as discrete events.&lt;/p&gt;
+
+&lt;p&gt;And also that Simple JSON uses little less Memory when it comes to average sized files.&lt;/p&gt;
+
+&lt;p&gt;In addition the Jsoninter JSON parsers uses the most memory in all cases.&lt;/p&gt;
+
+&lt;p&gt;또한 Jsoninter 파서가 내보내기 속도 면에서 다른 모든 파서보다 더 나은 결과를 달성한다는 것도 분명합니다.&lt;/p&gt;
+
+&lt;p&gt;Jsoninter의 속도 향상은 Dynamic Class Shadowing tri-tree 특징의 결과로 볼 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;Jackson JSON 파서는 다른 파서보다 훨씬 적은 메모리를 사용합니다.&lt;/p&gt;
+
+&lt;p&gt;이 성능은 JSON 콘텐츠를 개별 이벤트로 읽고 쓰는 증분 구문 분석/생성 특징의 결과로 볼 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;또한 Simple JSON은 평균 크기의 파일과 관련하여 메모리를 거의 사용하지 않습니다.&lt;/p&gt;
+
+&lt;p&gt;또한 Jsoninter JSON 파서는 모든 경우에 가장 많은 메모리를 사용합니다.&lt;/p&gt;
+
+&lt;p&gt;3) Size: Table VI provides the size in MBs for the files stored.&lt;/p&gt;
+
+&lt;p&gt;The size improvement in JXES is obvious because the type is not specified and tag names are not written twice and the markup is not repeated.&lt;/p&gt;
+
+&lt;p&gt;We noted that there was no loss of information during the conversion from XES to JXES and vice versa.&lt;/p&gt;
+
+&lt;p&gt;The only difference noted was the log version information in the header of XES file.&lt;/p&gt;
+
+&lt;p&gt;We observed that the performance of the XES Naive importer is surprisingly good when compared with the JSON format.&lt;/p&gt;
+
+&lt;p&gt;This can be attributed to the fact that XES format has the datatype specified in the tag whereas in JSON we need to parse it completely to determine the datatype.&lt;/p&gt;
+
+&lt;p&gt;3) 크기: 테이블 VI는 저장된 파일의 크기(MB:메가바이트)를 제공합니다.&lt;/p&gt;
+
+&lt;p&gt;JXES의 크기 개선은 유형이 지정되지 않고 태그 이름이 두 번 작성되지 않고 마크업이 반복되지 않기 때문에 명백합니다.&lt;/p&gt;
+
+&lt;p&gt;우리는 XES에서 JXES로 또는 그 반대로 변환하는 동안 정보 손실이 없다는 점에 주목했습니다.&lt;/p&gt;
+
+&lt;p&gt;기록된 유일한 차이점은 XES 파일의 헤더에 있는 로그 버전 정보였습니다.&lt;/p&gt;
+
+&lt;p&gt;XES Naive 임포터의 성능이 JSON 형식과 비교할 때 놀라울 정도로 좋다는 것을 목격했습니다.&lt;/p&gt;
+
+&lt;p&gt;이는 XES 형식이 태그에 명시된 데이터 유형을 갖는 반면 JSON에서는 데이터 유형을 결정하기 위해 완전히 구문 분석해야 한다는 사실에 기인할 수 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;parser란 compiler의 일부로 컴파일러나 인터프리터에서 원시 프로그램을 읽어 들여 그 문장의 구조를 알아내는 parsing(구문 분석)을 행하는 프로그램&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;V. ACCESS AND DEMONSTRATION&lt;/p&gt;
+
+&lt;p&gt;The JXES import and export plugins have been implemented with 4 different JSON parsers.&lt;/p&gt;
+
+&lt;p&gt;The code is available in the SVN repository.&lt;/p&gt;
+
+&lt;p&gt;The sample logs for JXES format can be found under the tests/testfiles/ directory.&lt;/p&gt;
+
+&lt;p&gt;The tutorial video of the parsers implemented as a ProM plugin is available at https://youtu.be/sZ6UnTfSsFI.&lt;/p&gt;
+
+&lt;p&gt;Figure 3 and Figure 4 show the different parser options to import and export JSON event logs respectively.&lt;/p&gt;
+
+&lt;p&gt;To run the import plugin, we will require the event log in JSON format shown in Figure 2.&lt;/p&gt;
+
+&lt;p&gt;The application can also be run by importing any of the event log in CSV or XES format and then converting it into the JSON format&lt;/p&gt;
+
+&lt;p&gt;V. 접근 및 시연&lt;/p&gt;
+
+&lt;p&gt;JXES 가져오기 및 내보내기 플러그인은 4개의 다른 JSON 구문 분석기로 구현되었습니다.&lt;/p&gt;
+
+&lt;p&gt;코드는 SVN 저장소에서 사용할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;JXES 형식에 대한 샘플 로그는 tests/testfiles/디렉토리에서 찾을 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;ProM 플러그인으로 구현된 파서의 튜토리얼 비디오는 https://youtu.be/sZ6UnTfSsFI 에서 볼 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;그림 3과 그림 4는 각각 JSON 이벤트 로그를 가져오고 내보내는 다양한 파서 옵션을 보여줍니다.&lt;/p&gt;
+
+&lt;p&gt;가져오기 플러그인을 실행하려면, 그림 2와 같은 JSON 형식의 이벤트 로그가 필요합니다.&lt;/p&gt;
+
+&lt;p&gt;CSV 또는 XES 형식의 이벤트 로그를 가져온 다음 JSON 형식으로 변환하여 애플리케이션을 실행할 수도 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C://Users/MyCom/jupyter-tutorial/논문/data/20211118_140217_1.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/thesis/JSONSupportfortheXESEventLogStandard/output_33_0.png&quot; alt=&quot;output_33_0&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C://Users/MyCom/jupyter-tutorial/논문/data/20211118_140217_2.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/thesis/JSONSupportfortheXESEventLogStandard/output_34_0.png&quot; alt=&quot;output_34_0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;VI. CONCLUSION&lt;/p&gt;
+
+&lt;p&gt;We have introduced JXES, which is a JSON format of event log which adheres to the XES principles.&lt;/p&gt;
+
+&lt;p&gt;In this paper, we defined the JSON format of event log as defined by the IEEE XES standard.&lt;/p&gt;
+
+&lt;p&gt;After defining the standard, we have provided 4 different implementations of import and export options for JSON event logs with different parsers.&lt;/p&gt;
+
+&lt;p&gt;VI. 결론&lt;/p&gt;
+
+&lt;p&gt;XES 원칙을 준수하는 JSON 형식의 이벤트 로그인 JXES를 소개하였습니다.&lt;/p&gt;
+
+&lt;p&gt;본 논문에서는 IEEE XES 표준에서 정의한 JSON 형식의 이벤트 로그를 정의하였다.&lt;/p&gt;
+
+&lt;p&gt;표준을 정의한 후 다양한 파서를 사용하여 JSON 이벤트 로그에 대한 가져오기 및 내보내기 옵션의 4가지 구현을 제공했습니다.&lt;/p&gt;
+
+&lt;p&gt;Table VII shows the authors recommendation for parser choice in case of import and export considering speed and memory criteria.&lt;/p&gt;
+
+&lt;p&gt;It would be interesting to evaluate more parsers (e.g.,JSONP, fastJSON and ProtoBuf)&lt;/p&gt;
+
+&lt;p&gt;We hope that the JXES standard defined by this paper will be helpful and serve as a guideline for generating event logs in JSON format.&lt;/p&gt;
+
+&lt;p&gt;We also hope that the JXES standard defined in this paper will be useful for many tools like Disco, Celonis, PM4Py, etc., to enable support for JSON event logs.&lt;/p&gt;
+
+&lt;p&gt;We also hope that the plugin implemented in ProM will be useful for many with JSON event logs.&lt;/p&gt;
+
+&lt;p&gt;표 VII는 속도 및 메모리 기준을 고려하여 가져오기 및 내보내기의 경우 파서 선택에 대한 작성자 권장 사항을 보여줍니다.&lt;/p&gt;
+
+&lt;p&gt;더 많은 파서를 평가하는 것은 흥미로울 것입니다(예: JSONP, fastJSON 및 ProtoBuf)&lt;/p&gt;
+
+&lt;p&gt;본 논문에서 정의한 JXES 표준이 JSON 형식의 이벤트 로그를 생성하는 데 도움이 되고 지침이 되기를 바랍니다.&lt;/p&gt;
+
+&lt;p&gt;또한 이 문서에서 정의한 JXES 표준이 Disco, Celonis, PM4Py 등과 같은 많은 도구에서 JSON 이벤트 로그를 지원하는 데 유용하기를 바랍니다.&lt;/p&gt;
+
+&lt;p&gt;또한 ProM에 구현된 플러그인이 JSON 이벤트 로그를 사용하는 많은 사람들에게 유용하기를 바랍니다.&lt;/p&gt;
+</description>
+            <pubDate>Thu, 18 Nov 2021 00:00:00 +0900</pubDate>
+            <link>https://SEONGJAE-YOO.github.io//JSONSupportfortheXESEventLogStandard-SUPPORTINGXESUSINGJSON</link>
+            <guid isPermaLink="true">https://SEONGJAE-YOO.github.io//JSONSupportfortheXESEventLogStandard-SUPPORTINGXESUSINGJSON</guid>
+            
+            <category>thesis</category>
+            
+            
+        </item>
+        
+        <item>
             <title>JSON Support for the XES Event Log Standard - INTRODUCTION</title>
-            <description>
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;JSON Support for the XES Event Log Standard 목차&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;JSON Support for the XES Event Log Standard - INTRODUCTION&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;JSON Support for the XES Event Log Standard - SUPPORTING XES USING JSON&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h1 id=&quot;jxes-json-support-for-the-xes-event-log-standard&quot;&gt;JXES: JSON Support for the XES Event Log Standard&lt;/h1&gt;
 
 &lt;h2 id=&quot;madhavi-bangalore-shankara-narayana-hossameldin-khalifa-wil-van-der-aalst&quot;&gt;Madhavi Bangalore Shankara Narayana, Hossameldin Khalifa, Wil van der Aalst&lt;/h2&gt;
@@ -16536,632 +17052,6 @@ https://m.blog.naver.com/choi_s_h/221730568009&lt;/p&gt;
             <pubDate>Mon, 11 Oct 2021 00:00:00 +0900</pubDate>
             <link>https://SEONGJAE-YOO.github.io//scipy</link>
             <guid isPermaLink="true">https://SEONGJAE-YOO.github.io//scipy</guid>
-            
-            <category>python</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>빅데이터 K 평균(K Means) 구현하기</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;&lt;/span&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;&lt;/p&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-&lt;h1 id=&quot;1-빅-데이터-k-평균k-means-구현하기&quot;&gt;1. 빅 데이터 K 평균(K Means) 구현하기&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;클러스트 중심 또는 평균 기반 클러스터링 k-means&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sklearn.cluster&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;KMeans&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# 연산처리를 용이하게 하기 위해 사용함
-&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pandas&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 데이터 포인트를 만들기 위해 사용함
-&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;seaborn&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sb&lt;/span&gt; 
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 데이터 시각화를 위해 사용함
-&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matplotlib&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inline&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;데이터-설정하기&quot;&gt;데이터 설정하기&lt;/h1&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DataFrame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;columns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'x'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'y'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;14&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;17&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;19&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;21&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;26&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;27&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;28&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;29&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div&gt;
-&lt;style scoped=&quot;&quot;&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&quot;text-align: right;&quot;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;x&lt;/th&gt;
-      &lt;th&gt;y&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;0&lt;/th&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;1&lt;/th&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;11&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;3&lt;/th&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;18&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;4&lt;/th&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;5&lt;/th&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;6&lt;/th&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;5&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;7&lt;/th&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;8&lt;/th&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;9&lt;/th&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;10&lt;/th&gt;
-      &lt;td&gt;8&lt;/td&gt;
-      &lt;td&gt;5&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;11&lt;/th&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;12&lt;/th&gt;
-      &lt;td&gt;5&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;13&lt;/th&gt;
-      &lt;td&gt;8&lt;/td&gt;
-      &lt;td&gt;9&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;14&lt;/th&gt;
-      &lt;td&gt;5&lt;/td&gt;
-      &lt;td&gt;6&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;15&lt;/th&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;16&lt;/th&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;17&lt;/th&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;18&lt;/th&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;19&lt;/th&gt;
-      &lt;td&gt;7&lt;/td&gt;
-      &lt;td&gt;8&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;20&lt;/th&gt;
-      &lt;td&gt;8&lt;/td&gt;
-      &lt;td&gt;7&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;21&lt;/th&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;22&lt;/th&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;23&lt;/th&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;24&lt;/th&gt;
-      &lt;td&gt;12&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;25&lt;/th&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;26&lt;/th&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;27&lt;/th&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;28&lt;/th&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;29&lt;/th&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;h1 id=&quot;데이터-시각화&quot;&gt;데이터 시각화&lt;/h1&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# seaborn 라이브러리를 이용
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lmplot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'x'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'y'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit_reg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scatter_kws&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;s&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;C:\Users\MyCom\anaconda3\envs\tfgpu\lib\site-packages\seaborn\_decorators.py:43: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
-  FutureWarning
-
-
-
-
-
-&amp;lt;seaborn.axisgrid.FacetGrid at 0x28a0897c438&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;./img/math/kmeans/output_9_2.png&quot; alt=&quot;output_9_2&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;2-k-means-clustering&quot;&gt;2. k-means clustering&lt;/h1&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sklearn.datasets&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;make_blobs&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pandas&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;math&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scipy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sp&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;seaborn&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sns&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;sns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_palette&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Set2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Scikit-Learn은 머신러닝을 위한 파이썬 패키지이며, clustering을 할 수 있는 가상의 데이터셋을 만들어주는 함수들을 제공한다. 오늘은 그 중 하나인 make_blobs()를 사용해서 데이터셋을 만들어보자.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;make_blobs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_samples&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;centers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_features&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random_state&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;points&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DataFrame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reset_index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;drop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;points&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;columns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;x&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;y&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;points&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div&gt;
-&lt;style scoped=&quot;&quot;&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&quot;text-align: right;&quot;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;x&lt;/th&gt;
-      &lt;th&gt;y&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;0&lt;/th&gt;
-      &lt;td&gt;0.276181&lt;/td&gt;
-      &lt;td&gt;-2.217047&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;1&lt;/th&gt;
-      &lt;td&gt;7.927368&lt;/td&gt;
-      &lt;td&gt;-9.761527&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;2&lt;/th&gt;
-      &lt;td&gt;8.491428&lt;/td&gt;
-      &lt;td&gt;-2.549749&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;3&lt;/th&gt;
-      &lt;td&gt;-11.537102&lt;/td&gt;
-      &lt;td&gt;2.434883&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;4&lt;/th&gt;
-      &lt;td&gt;4.292259&lt;/td&gt;
-      &lt;td&gt;-8.992204&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;h1 id=&quot;step-1-k값-정하기&quot;&gt;Step 1. k값 정하기&lt;/h1&gt;
-
-&lt;p&gt;k-means clustering이란 이름에서 알 수 있듯이 주어진 데이터셋을 k개의 중심점을 기준으로 하여 그룹짓는 방법이다. 따라서, 중심점을 몇 개로 할 것인지를 미리 정해줘야 한다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scatterplot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;x&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;y&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;points&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;palette&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Set2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;./img/math/kmeans/output_15_0.png&quot; alt=&quot;output_15_0&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;위 그래프는 우리가 만든 데이터셋을 scatter plot으로 그려본 것이다. 데이터의 분포를 보니 k값이 4 정도면 적당한 cluster들을 얻을 수 있을 것 같다. 따라서, k=4로 해보자.&lt;/p&gt;
-
-&lt;h1 id=&quot;step-2-중심점centroid-구하기&quot;&gt;Step 2. 중심점(Centroid) 구하기&lt;/h1&gt;
-
-&lt;p&gt;k값을 정했으니 이제 중심점을 구해야 한다. 중심점이란 말 그대로 각 cluster의 중심 좌표를 말한다. 2차원 데이터를 예로 들면 각 cluster의 중심점은 각 cluster의 x좌표의 평균과 y좌표의 평균이 된다. 단, clustering을 시작할 때는 아직 cluster가 생성되지 않았고 따라서 cluster의 중심점을 구할 수 없기 때문에 전체 데이터 중에서 랜덤한 k개의 데이터를 중심점으로 사용한다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;centroids&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;points&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random_state&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;centroids&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div&gt;
-&lt;style scoped=&quot;&quot;&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&quot;text-align: right;&quot;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;x&lt;/th&gt;
-      &lt;th&gt;y&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;80&lt;/th&gt;
-      &lt;td&gt;-8.842286&lt;/td&gt;
-      &lt;td&gt;1.786914&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;84&lt;/th&gt;
-      &lt;td&gt;4.510561&lt;/td&gt;
-      &lt;td&gt;-9.305970&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;33&lt;/th&gt;
-      &lt;td&gt;5.883975&lt;/td&gt;
-      &lt;td&gt;-8.372845&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;81&lt;/th&gt;
-      &lt;td&gt;-8.831594&lt;/td&gt;
-      &lt;td&gt;1.690414&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;위와 같이 전체 데이터 중에서 4개를 랜덤하게 골라 첫번째 중심점으로 삼았다.&lt;/p&gt;
-
-&lt;h1 id=&quot;step3-각-중심점으로부터의-거리를-구하여-가까운-중심점의-cluster로-할당하기&quot;&gt;Step3. 각 중심점으로부터의 거리를 구하여 가까운 중심점의 cluster로 할당하기&lt;/h1&gt;
-
-&lt;p&gt;각 데이터에 대해서 4개의 중심점과의 거리를 계산한다. 그 후 값을 비교하여 가장 가까운 중심점의 cluster로 해당 데이터를 할당한다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# 각 데이터에 대하여, 각 중심점과의 유클리드 거리 계산
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spatial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cdist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;points&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;centroids&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;euclidean&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# 가장 거리가 짧은 중심점의 cluster로 할당
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cluster_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argmin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# 결과 확인
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;points&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cluster&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cluster_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div&gt;
-&lt;style scoped=&quot;&quot;&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&quot;text-align: right;&quot;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;x&lt;/th&gt;
-      &lt;th&gt;y&lt;/th&gt;
-      &lt;th&gt;cluster&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;0&lt;/th&gt;
-      &lt;td&gt;0.276181&lt;/td&gt;
-      &lt;td&gt;-2.217047&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;1&lt;/th&gt;
-      &lt;td&gt;7.927368&lt;/td&gt;
-      &lt;td&gt;-9.761527&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;2&lt;/th&gt;
-      &lt;td&gt;8.491428&lt;/td&gt;
-      &lt;td&gt;-2.549749&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;3&lt;/th&gt;
-      &lt;td&gt;-11.537102&lt;/td&gt;
-      &lt;td&gt;2.434883&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;4&lt;/th&gt;
-      &lt;td&gt;4.292259&lt;/td&gt;
-      &lt;td&gt;-8.992204&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;위와 같이 각 데이터에 대하여 해당하는 cluster 번호를 구했다. 이를 cluster 별로 색을 다르게 해서 scatter plot으로 그려보면 아래와 같다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scatterplot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;x&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;y&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cluster&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;palette&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Set2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;./img/math/kmeans/output_23_0.png&quot; alt=&quot;output_23_0&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;step-4-변경된-cluster에-대해서-중심점-구하기&quot;&gt;Step 4. 변경된 cluster에 대해서 중심점 구하기&lt;/h1&gt;
-&lt;p&gt;각 cluster에 대해서 중심점을 구해보자. 위에서 언급했듯이, 2차원 데이터셋일 때 cluster의 중심점은 x좌표의 평균과 y좌표의 평균이다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# cluster별로 묶어서 평균 계산
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;centroids_2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;groupby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cluster&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;centroids_2&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div&gt;
-&lt;style scoped=&quot;&quot;&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&quot;text-align: right;&quot;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;x&lt;/th&gt;
-      &lt;th&gt;y&lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;cluster&lt;/th&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;0&lt;/th&gt;
-      &lt;td&gt;-8.211603&lt;/td&gt;
-      &lt;td&gt;2.420481&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;1&lt;/th&gt;
-      &lt;td&gt;1.913263&lt;/td&gt;
-      &lt;td&gt;-5.034035&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;2&lt;/th&gt;
-      &lt;td&gt;6.180105&lt;/td&gt;
-      &lt;td&gt;-5.007395&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;3&lt;/th&gt;
-      &lt;td&gt;-5.728498&lt;/td&gt;
-      &lt;td&gt;0.878158&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;h1 id=&quot;scikit-learn을-이용해보자&quot;&gt;Scikit-Learn을 이용해보자&lt;/h1&gt;
-&lt;p&gt;Scikit-Learn은 k-means clustering을 보다 편하게 수행할 수 있도록 관련 함수를 제공한다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sklearn.cluster&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;KMeans&lt;/span&gt; 
-
-&lt;span class=&quot;c1&quot;&gt;# k-means clustering 실행
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kmeans&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;KMeans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_clusters&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;kmeans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;points&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# 결과 확인
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result_by_sklearn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;points&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;result_by_sklearn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cluster&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kmeans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;labels_&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;result_by_sklearn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div&gt;
-&lt;style scoped=&quot;&quot;&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&quot;text-align: right;&quot;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;x&lt;/th&gt;
-      &lt;th&gt;y&lt;/th&gt;
-      &lt;th&gt;cluster&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;0&lt;/th&gt;
-      &lt;td&gt;0.276181&lt;/td&gt;
-      &lt;td&gt;-2.217047&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;1&lt;/th&gt;
-      &lt;td&gt;7.927368&lt;/td&gt;
-      &lt;td&gt;-9.761527&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;2&lt;/th&gt;
-      &lt;td&gt;8.491428&lt;/td&gt;
-      &lt;td&gt;-2.549749&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;3&lt;/th&gt;
-      &lt;td&gt;-11.537102&lt;/td&gt;
-      &lt;td&gt;2.434883&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;4&lt;/th&gt;
-      &lt;td&gt;4.292259&lt;/td&gt;
-      &lt;td&gt;-8.992204&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scatterplot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;x&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;y&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cluster&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result_by_sklearn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;palette&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Set2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;./img/math/kmeans/output_28_0.png&quot; alt=&quot;output_28_0&quot; /&gt;&lt;/p&gt;
-
-</description>
-            <pubDate>Mon, 11 Oct 2021 00:00:00 +0900</pubDate>
-            <link>https://SEONGJAE-YOO.github.io//KMeans</link>
-            <guid isPermaLink="true">https://SEONGJAE-YOO.github.io//KMeans</guid>
             
             <category>python</category>
             
