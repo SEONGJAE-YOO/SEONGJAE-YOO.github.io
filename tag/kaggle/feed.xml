@@ -8,16 +8,16 @@
         <description>SeongJae Yu 블로그</description>
         <link>https://SEONGJAE-YOO.github.io//</link>
         <atom:link href="https://SEONGJAE-YOO.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Thu, 18 Nov 2021 14:36:54 +0900</pubDate>
-        <lastBuildDate>Thu, 18 Nov 2021 14:36:54 +0900</lastBuildDate>
+        <pubDate>Thu, 18 Nov 2021 14:53:53 +0900</pubDate>
+        <lastBuildDate>Thu, 18 Nov 2021 14:53:53 +0900</lastBuildDate>
         <generator>Jekyll v3.9.0</generator>
         
         <item>
             <title>JSON Support for the XES Event Log Standard - SUPPORTING XES USING JSON</title>
             <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;JSON Support for the XES Event Log Standard 목차&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;&quot;&gt;JSON Support for the XES Event Log Standard - INTRODUCTION&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;&quot;&gt;JSON Support for the XES Event Log Standard - SUPPORTING XES USING JSON&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/JSONSupportfortheXESEventLogStandard-INTRODUCTION&quot;&gt;JSON Support for the XES Event Log Standard - INTRODUCTION&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/JSONSupportfortheXESEventLogStandard-SUPPORTINGXESUSINGJSON&quot;&gt;JSON Support for the XES Event Log Standard - SUPPORTING XES USING JSON&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;json-support-for-the-xes-event-log-standard----supporting-xes-using-json&quot;&gt;JSON Support for the XES Event Log Standard -  SUPPORTING XES USING JSON&lt;/h1&gt;
@@ -527,8 +527,8 @@ and make suggestions on the optimal parser&lt;/p&gt;
             <title>JSON Support for the XES Event Log Standard - INTRODUCTION</title>
             <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;JSON Support for the XES Event Log Standard 목차&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;&quot;&gt;JSON Support for the XES Event Log Standard - INTRODUCTION&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;&quot;&gt;JSON Support for the XES Event Log Standard - SUPPORTING XES USING JSON&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/JSONSupportfortheXESEventLogStandard-INTRODUCTION&quot;&gt;JSON Support for the XES Event Log Standard - INTRODUCTION&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/JSONSupportfortheXESEventLogStandard-SUPPORTINGXESUSINGJSON&quot;&gt;JSON Support for the XES Event Log Standard - SUPPORTING XES USING JSON&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;jxes-json-support-for-the-xes-event-log-standard&quot;&gt;JXES: JSON Support for the XES Event Log Standard&lt;/h1&gt;
