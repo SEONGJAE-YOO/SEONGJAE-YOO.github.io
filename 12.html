@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>머신러닝 프로그래밍 12주차 - Binary classification with data Logistic regrsssion</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- 웹폰트 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="SeongJae Yu 블로그" />
+<link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
+<link rel="canonical" href="https://SEONGJAE-YOO.github.io/12" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+ <!--title below is coming from _includes/dynamic_title-->
+<meta property="og:site_name" content="Big Data" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="머신러닝 프로그래밍 12주차 - Binary classification with data Logistic regrsssion" />
+<meta property="og:description" content="SeongJae Yu 블로그" />
+<meta property="og:url" content="https://SEONGJAE-YOO.github.io/12" />
+<meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+<meta property="article:publisher" content="https://www.facebook.com/" />
+<meta property="article:tag" content="Python" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="머신러닝 프로그래밍 12주차 - Binary classification with data Logistic regrsssion" />
+<meta name="twitter:description" content="SeongJae Yu 블로그" />
+<meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
+<meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Big Data" />
+<meta name="twitter:label2" content="Filed under" />
+<meta name="twitter:data2" content="Python" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta property="og:image:width" content="2000" />
+<meta property="og:image:height" content="666" />
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Website",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Big Data",
+            "logo": "https://SEONGJAE-YOO.github.io/"
+        },
+        "url": "https://SEONGJAE-YOO.github.io/12",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://SEONGJAE-YOO.github.io/assets/built/images/logo-python.png",
+            "width": 2000,
+            "height": 666
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://SEONGJAE-YOO.github.io/12"
+        },
+        "description": "SeongJae Yu 블로그"
+    }
+</script>
+
+<!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+<script type="text/javascript">
+ghost.init({
+    clientId: "ghost-frontend",
+    clientSecret: "f84a07a72b17"
+});
+</script> -->
+
+<meta name="generator" content="Jekyll 3.6.2" />
+<link rel="alternate" type="application/rss+xml" title="머신러닝 프로그래밍 12주차 - Binary classification with data Logistic regrsssion" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- < default -->
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<!-- The big featured header, it uses blog cover image as a BG if available -->
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://SEONGJAE-YOO.github.io/">Big Data</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-rprogramming" role="menuitem"><a href="/tag/rprogramming/">R</a></li>
+    <li class="nav-processmining" role="menuitem"><a href="/tag/processmining/">Processmining</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-kaggle" role="menuitem"><a href="/tag/kaggle">kaggle</a></li>
+    <li class="nav-book" role="menuitem"><a href="/tag/book">book</a></li>
+    <li class="nav-udemy" role="menuitem"><a href="/tag/udemy">udemy</a></li>
+    <li class="nav-thesis" role="menuitem"><a href="/tag/thesis">thesis</a></li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag별 Posts</a>
+    </li>
+</ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-python post tag-python ">
+
+            <header class="post-full-header">
+                <h1 class="post-full-title">머신러닝 프로그래밍 12주차 - Binary classification with data Logistic regrsssion</h1>
+            </header>
+
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/logo-python.png)">
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"cat1.csv"</span><span class="p">)</span>
+<span class="n">df0</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"cat0.csv"</span><span class="p">)</span>
+<span class="n">df1</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>entry</th>
+      <th>event</th>
+      <th>En1</th>
+      <th>En2</th>
+      <th>dt</th>
+      <th>dr</th>
+      <th>x1</th>
+      <th>y1</th>
+      <th>z1</th>
+      <th>x2</th>
+      <th>y2</th>
+      <th>z2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1.315638</td>
+      <td>1.804403</td>
+      <td>151.967212</td>
+      <td>42.143105</td>
+      <td>-1304.894054</td>
+      <td>478.462799</td>
+      <td>1544.333537</td>
+      <td>-1157.361908</td>
+      <td>606.067041</td>
+      <td>1766.707850</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>13</td>
+      <td>4.827913</td>
+      <td>2.283814</td>
+      <td>161.020364</td>
+      <td>1309.103187</td>
+      <td>-117.835790</td>
+      <td>-1464.457077</td>
+      <td>69.425318</td>
+      <td>-70.148754</td>
+      <td>-383.723470</td>
+      <td>-475.833903</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>16</td>
+      <td>3.011821</td>
+      <td>2.606455</td>
+      <td>72.997202</td>
+      <td>903.456139</td>
+      <td>1593.153637</td>
+      <td>-1100.580348</td>
+      <td>805.977081</td>
+      <td>1092.321506</td>
+      <td>-1257.393260</td>
+      <td>215.991954</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>22</td>
+      <td>3.109662</td>
+      <td>1.619302</td>
+      <td>95.681674</td>
+      <td>246.310774</td>
+      <td>1414.147550</td>
+      <td>300.466078</td>
+      <td>2036.144245</td>
+      <td>1510.664013</td>
+      <td>317.401116</td>
+      <td>2038.324112</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>37</td>
+      <td>2.795250</td>
+      <td>1.665277</td>
+      <td>85.430204</td>
+      <td>452.633419</td>
+      <td>-1185.771203</td>
+      <td>-1586.241286</td>
+      <td>-921.906685</td>
+      <td>-1048.390809</td>
+      <td>-1585.937883</td>
+      <td>-1129.581104</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>9949</th>
+      <td>9949</td>
+      <td>99956</td>
+      <td>1.499017</td>
+      <td>2.253849</td>
+      <td>174.517405</td>
+      <td>938.596974</td>
+      <td>-1091.980671</td>
+      <td>1203.741862</td>
+      <td>-840.761911</td>
+      <td>-1055.791096</td>
+      <td>574.858610</td>
+      <td>-1024.616952</td>
+    </tr>
+    <tr>
+      <th>9950</th>
+      <td>9950</td>
+      <td>99957</td>
+      <td>2.705410</td>
+      <td>2.874333</td>
+      <td>715.772076</td>
+      <td>175.621626</td>
+      <td>950.171373</td>
+      <td>898.111879</td>
+      <td>-1897.760471</td>
+      <td>962.544864</td>
+      <td>677.295582</td>
+      <td>-1880.154811</td>
+    </tr>
+    <tr>
+      <th>9951</th>
+      <td>9951</td>
+      <td>99983</td>
+      <td>2.943438</td>
+      <td>2.512821</td>
+      <td>1179.579896</td>
+      <td>60.482252</td>
+      <td>-1437.391692</td>
+      <td>807.265834</td>
+      <td>1213.002043</td>
+      <td>-1571.892213</td>
+      <td>721.972273</td>
+      <td>1238.615481</td>
+    </tr>
+    <tr>
+      <th>9952</th>
+      <td>9952</td>
+      <td>99987</td>
+      <td>3.082408</td>
+      <td>2.868833</td>
+      <td>145.649583</td>
+      <td>494.576245</td>
+      <td>-1658.602340</td>
+      <td>-479.454709</td>
+      <td>-1472.514450</td>
+      <td>-1619.486255</td>
+      <td>-669.457050</td>
+      <td>-931.362227</td>
+    </tr>
+    <tr>
+      <th>9953</th>
+      <td>9953</td>
+      <td>99993</td>
+      <td>3.196240</td>
+      <td>1.490613</td>
+      <td>43.678549</td>
+      <td>213.871359</td>
+      <td>1165.018820</td>
+      <td>1386.749830</td>
+      <td>-722.045299</td>
+      <td>1158.905657</td>
+      <td>1062.491877</td>
+      <td>-889.901928</td>
+    </tr>
+  </tbody>
+</table>
+<p>9954 rows × 12 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df0</span><span class="p">[</span><span class="s">"dt"</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s">"step"</span><span class="p">);</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df1</span><span class="p">[</span><span class="s">"dt"</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s">"step"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/12/output_2_0.png" alt="output_2_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#density - 확률 밀도를 설정하기 위해 가중치 데이터를 정규화한다
+</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df0</span><span class="p">[</span><span class="s">"y1"</span><span class="p">]</span><span class="o">-</span><span class="n">df0</span><span class="p">[</span><span class="s">"y2"</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">2000</span><span class="p">,</span><span class="mi">2000</span><span class="p">),</span> <span class="n">density</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s">"step"</span><span class="p">);</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df1</span><span class="p">[</span><span class="s">"y1"</span><span class="p">]</span><span class="o">-</span><span class="n">df1</span><span class="p">[</span><span class="s">"y2"</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">2000</span><span class="p">,</span><span class="mi">2000</span><span class="p">),</span> <span class="n">density</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s">"step"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/12/output_3_0.png" alt="output_3_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">hist2d</span><span class="p">(</span><span class="n">df0</span><span class="p">[</span><span class="s">"dt"</span><span class="p">],</span> <span class="n">df0</span><span class="p">[</span><span class="s">"y1"</span><span class="p">]</span><span class="o">-</span><span class="n">df0</span><span class="p">[</span><span class="s">"y2"</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/12/output_4_0.png" alt="output_4_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">hist2d</span><span class="p">(</span><span class="n">df1</span><span class="p">[</span><span class="s">"dt"</span><span class="p">],</span> <span class="n">df1</span><span class="p">[</span><span class="s">"y1"</span><span class="p">]</span><span class="o">-</span><span class="n">df1</span><span class="p">[</span><span class="s">"y2"</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/12/output_5_0.png" alt="output_5_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df0</span> <span class="o">=</span> <span class="n">df0</span><span class="p">[:</span><span class="mi">9000</span><span class="p">]</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[:</span><span class="mi">9000</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># plt.plot 옵션 - https://namyoungkim.github.io/matplotlib/visualization/2017/10/06/visualization/
+</span>
+<span class="c1">#markersize	(ms)-&gt;마커 크기
+</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df0</span><span class="p">[</span><span class="s">"dt"</span><span class="p">],</span> <span class="n">df0</span><span class="p">[</span><span class="s">"dr"</span><span class="p">],</span> <span class="s">'.'</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df1</span><span class="p">[</span><span class="s">"dt"</span><span class="p">],</span> <span class="n">df1</span><span class="p">[</span><span class="s">"dr"</span><span class="p">],</span> <span class="s">'.'</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x7f4cafacce10&gt;]
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/12/output_7_1.png" alt="output_7_1" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">df0</span><span class="p">[</span><span class="s">"dt"</span><span class="p">]</span><span class="o">+</span><span class="n">df0</span><span class="p">[</span><span class="s">"dr"</span><span class="p">],</span> <span class="n">histtype</span><span class="o">=</span><span class="s">"step"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">df1</span><span class="p">[</span><span class="s">"dt"</span><span class="p">]</span><span class="o">+</span><span class="n">df1</span><span class="p">[</span><span class="s">"dr"</span><span class="p">],</span> <span class="n">histtype</span><span class="o">=</span><span class="s">"step"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(array([3.766e+03, 3.191e+03, 1.252e+03, 4.780e+02, 1.930e+02, 7.500e+01,
+        3.300e+01, 6.000e+00, 4.000e+00, 2.000e+00]),
+ array([  15.20712953,  810.57056653, 1605.93400353, 2401.29744052,
+        3196.66087752, 3992.02431452, 4787.38775152, 5582.75118852,
+        6378.11462551, 7173.47806251, 7968.84149951]),
+ &lt;a list of 1 Patch objects&gt;)
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/12/output_8_1.png" alt="output_8_1" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#시그 모이 드 함수는 수학적 로지스틱 함수입니다. 통계, 오디오 신호 처리, 생화학 및 인공 뉴런의 활성화 기능에 일반적으로 사용됩니다. 시그 모이 드 함수의 공식은F(x) = 1/(1 + e^(-x))입니다.
+</span><span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+  <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">c</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dts1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">df1</span><span class="p">[</span><span class="s">'dt'</span><span class="p">])</span><span class="o">/</span><span class="mi">1000</span>
+<span class="n">dts0</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">df0</span><span class="p">[</span><span class="s">'dt'</span><span class="p">])</span><span class="o">/</span><span class="mi">1000</span>
+<span class="n">drs1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">df1</span><span class="p">[</span><span class="s">'dr'</span><span class="p">])</span><span class="o">/</span><span class="mi">1000</span>
+<span class="n">drs0</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">df0</span><span class="p">[</span><span class="s">'dr'</span><span class="p">])</span><span class="o">/</span><span class="mi">1000</span>
+<span class="n">label1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">(</span><span class="n">dts1</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">label0</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">dts0</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dts</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">dts1</span><span class="p">,</span> <span class="n">dts0</span><span class="p">])</span>
+<span class="n">drs</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">drs1</span><span class="p">,</span> <span class="n">dts0</span><span class="p">])</span>
+<span class="n">label</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">label1</span><span class="p">,</span> <span class="n">label0</span><span class="p">])</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">stack</span><span class="p">([</span><span class="n">dts</span><span class="p">,</span> <span class="n">drs</span><span class="p">,</span> <span class="n">label</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#가로축으로 합쳐진다
+</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[0.38524939, 0.06985145, 1.        ],
+       [0.03403795, 0.31482386, 1.        ],
+       [0.01535261, 0.25602788, 1.        ],
+       ...,
+       [0.56028966, 0.56028966, 0.        ],
+       [0.3714466 , 0.3714466 , 0.        ],
+       [0.28964576, 0.28964576, 0.        ]])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">gradF</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+  <span class="c1"># 1/(1+np.exp(-z))
+</span>  <span class="n">z</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+  <span class="n">yy</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+  <span class="c1"># a*x + b*y + c
+</span>  <span class="n">da</span> <span class="o">=</span> <span class="n">yy</span><span class="o">*</span><span class="n">x</span>
+  <span class="n">db</span> <span class="o">=</span> <span class="n">yy</span><span class="o">*</span><span class="n">y</span>
+  <span class="n">dc</span> <span class="o">=</span> <span class="n">yy</span><span class="o">*</span><span class="mi">1</span>
+
+  <span class="k">return</span> <span class="n">da</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">dc</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">losses</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">fitA</span><span class="p">,</span> <span class="n">fitB</span><span class="p">,</span> <span class="n">fitC</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
+<span class="n">batchSize</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">eta</span> <span class="o">=</span> <span class="mf">1e-3</span>
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+  <span class="n">sumLoss</span> <span class="o">=</span> <span class="mf">0.</span>
+  <span class="n">nBatch</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">batchSize</span><span class="p">):</span>
+    <span class="c1">### Compute loss
+</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">batch</span><span class="p">:</span><span class="n">batch</span><span class="o">+</span><span class="n">batchSize</span><span class="o">+</span><span class="mi">1</span><span class="p">].</span><span class="n">T</span>  <span class="c1">#DataFrame.transform()는DataFrame에 함수를 적용하고 DataFrame을 변환합니다.
+</span>    <span class="n">dt</span><span class="p">,</span> <span class="n">dr</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">dr</span><span class="p">,</span> <span class="n">fitA</span><span class="p">,</span> <span class="n">fitB</span><span class="p">,</span> <span class="n">fitC</span><span class="p">)</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">label</span> <span class="o">-</span> <span class="n">z</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">**</span><span class="mi">2</span><span class="p">).</span><span class="n">mean</span><span class="p">()</span>
+
+    <span class="c1">### Gradient
+</span>    <span class="c1">#grad = -2*df*gradF(dt, dr, fitA, fitB, fitC)
+</span>    <span class="n">gradA</span><span class="p">,</span> <span class="n">gradB</span><span class="p">,</span> <span class="n">gradC</span> <span class="o">=</span> <span class="n">gradF</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">dr</span><span class="p">,</span> <span class="n">fitA</span><span class="p">,</span> <span class="n">fitB</span><span class="p">,</span> <span class="n">fitC</span><span class="p">)</span>
+    <span class="n">gradA</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">*</span><span class="n">gradA</span><span class="p">).</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">gradB</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">*</span><span class="n">gradB</span><span class="p">).</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">gradC</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">*</span><span class="n">gradC</span><span class="p">).</span><span class="n">mean</span><span class="p">()</span>
+
+    <span class="c1">### parameter update
+</span>    <span class="n">fitA</span> <span class="o">=</span> <span class="n">fitA</span> <span class="o">+</span> <span class="n">gradA</span><span class="o">*</span><span class="n">eta</span>
+    <span class="n">fitB</span> <span class="o">=</span> <span class="n">fitB</span> <span class="o">+</span> <span class="n">gradB</span><span class="o">*</span><span class="n">eta</span>
+    <span class="n">fitC</span> <span class="o">=</span> <span class="n">fitC</span> <span class="o">+</span> <span class="n">gradC</span><span class="o">*</span><span class="n">eta</span>
+
+    <span class="c1">### loss monitor
+</span>    <span class="c1">#losses.append(loss)
+</span>    <span class="n">sumLoss</span> <span class="o">+=</span> <span class="n">loss</span>
+    <span class="n">nBatch</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="n">losses</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">sumLoss</span><span class="o">/</span><span class="n">nBatch</span><span class="p">)</span>  
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">losses</span><span class="p">,</span> <span class="s">'.-'</span><span class="p">);</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">yscale</span><span class="p">(</span><span class="s">'log'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xscale</span><span class="p">(</span><span class="s">'log'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/12/output_16_0.png" alt="output_16_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data0</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">data0</span><span class="p">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">data0</span><span class="p">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">fitA</span><span class="p">,</span> <span class="n">fitB</span><span class="p">,</span> <span class="n">fitC</span><span class="p">)),</span> <span class="n">histtype</span><span class="o">=</span><span class="s">'step'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">data1</span><span class="p">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">data1</span><span class="p">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">fitA</span><span class="p">,</span> <span class="n">fitB</span><span class="p">,</span> <span class="n">fitC</span><span class="p">)),</span> <span class="n">histtype</span><span class="o">=</span><span class="s">'step'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(array([ 101.,  133.,  146.,  177.,  260.,  320.,  527.,  900., 1776.,
+        4660.]),
+ array([8.41085958e-04, 9.27254960e-02, 1.84609906e-01, 2.76494316e-01,
+        3.68378726e-01, 4.60263136e-01, 5.52147546e-01, 6.44031956e-01,
+        7.35916366e-01, 8.27800777e-01, 9.19685187e-01]),
+ &lt;a list of 1 Patch objects&gt;)
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/12/output_18_1.png" alt="output_18_1" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">fitA</span><span class="p">,</span> <span class="n">fitB</span><span class="p">,</span> <span class="n">fitC</span><span class="p">),</span> <span class="n">data</span><span class="p">.</span><span class="n">T</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s">'.'</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="c1">#plt.hist(f(data1.T[0], data1.T[1], fitA, fitB, fitC)), histtype='step')
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x7f4cac627850&gt;]
+</code></pre></div></div>
+
+<p><img src="./img/machinelearning/12/output_19_1.png" alt="output_19_1" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+<script>
+$(function() {
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+});
+</script>
+
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://SEONGJAE-YOO.github.io/">Big Data</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://seongjae-yoo.github.io/" target="_blank" rel="noopener">SeongJae Yu 블로그</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <h1 class="subscribe-overlay-title">Search Big Data</h1>
+            <p class="subscribe-overlay-description">
+                원하는 검색어를 입력하세요</p>
+            <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+        </div>
+    </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
