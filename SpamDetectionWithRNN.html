@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>Natural Language Processing (NLP) in Python with 8 Projects - Spam Detection with RNN</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- 웹폰트 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="SeongJae Yu 블로그" />
+<link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
+<link rel="canonical" href="https://SEONGJAE-YOO.github.io/SpamDetectionWithRNN" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+ <!--title below is coming from _includes/dynamic_title-->
+<meta property="og:site_name" content="Big Data" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Natural Language Processing (NLP) in Python with 8 Projects - Spam Detection with RNN" />
+<meta property="og:description" content="SeongJae Yu 블로그" />
+<meta property="og:url" content="https://SEONGJAE-YOO.github.io/SpamDetectionWithRNN" />
+<meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/udemy.png" />
+<meta property="article:publisher" content="https://www.facebook.com/" />
+<meta property="article:tag" content="Udemy" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Natural Language Processing (NLP) in Python with 8 Projects - Spam Detection with RNN" />
+<meta name="twitter:description" content="SeongJae Yu 블로그" />
+<meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
+<meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/udemy.png" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Big Data" />
+<meta name="twitter:label2" content="Filed under" />
+<meta name="twitter:data2" content="Udemy" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta property="og:image:width" content="2000" />
+<meta property="og:image:height" content="666" />
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Website",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Big Data",
+            "logo": "https://SEONGJAE-YOO.github.io/"
+        },
+        "url": "https://SEONGJAE-YOO.github.io/SpamDetectionWithRNN",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://SEONGJAE-YOO.github.io/assets/built/images/udemy.png",
+            "width": 2000,
+            "height": 666
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://SEONGJAE-YOO.github.io/SpamDetectionWithRNN"
+        },
+        "description": "SeongJae Yu 블로그"
+    }
+</script>
+
+<!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+<script type="text/javascript">
+ghost.init({
+    clientId: "ghost-frontend",
+    clientSecret: "f84a07a72b17"
+});
+</script> -->
+
+<meta name="generator" content="Jekyll 3.6.2" />
+<link rel="alternate" type="application/rss+xml" title="Natural Language Processing (NLP) in Python with 8 Projects - Spam Detection with RNN" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- < default -->
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<!-- The big featured header, it uses blog cover image as a BG if available -->
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://SEONGJAE-YOO.github.io/">Big Data</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="https://codingstorylove.github.io/about/#page-title">About blog</a></li>
+    <li class="nav-rprogramming" role="menuitem"><a href="/tag/rprogramming/">R</a></li>
+    <li class="nav-processmining" role="menuitem"><a href="/tag/processmining/">Processmining</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-Algorithm" role="menuitem"><a href="https://codingstorylove.github.io/">Algorithm</a></li>
+    <li class="nav-kaggle" role="menuitem"><a href="/tag/kaggle">kaggle</a></li>
+    <li class="nav-book" role="menuitem"><a href="/tag/book">book</a></li>
+    <li class="nav-udemy" role="menuitem"><a href="/tag/udemy">udemy</a></li>
+    <li class="nav-thesis" role="menuitem"><a href="/tag/thesis">thesis</a></li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag별 Posts</a>
+    </li>
+</ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-udemy post tag-udemy ">
+
+            <header class="post-full-header">
+                <h1 class="post-full-title">Natural Language Processing (NLP) in Python with 8 Projects - Spam Detection with RNN</h1>
+            </header>
+
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/udemy.png)">
+            </figure>
+            
+
+            <section class="post-full-content">
+                <p><span class="table-of-contents-list">Natural Language Processing (NLP) in Python with 8 Projects</span></p>
+<ul class="table-of-contents-list">
+    <li><a href="https://seongjae-yoo.github.io/Tokenization">Tokenization Basics</a></li>
+    <li><a href="https://seongjae-yoo.github.io/Stemming">Stemming and Lemmatization</a></li>
+    <li><a href="https://seongjae-yoo.github.io/StopWords">Stop Words</a></li>
+    <li><a href="https://seongjae-yoo.github.io/VocabularyandMatching">Vocabulary_and_Matching</a></li>
+    <li><a href="https://seongjae-yoo.github.io/PartofSpeechTagging">POS Tagging</a></li>
+    <li><a href="https://seongjae-yoo.github.io/NamedEntityRecognition">Named Entity Recognition</a></li>
+    <li><a href="https://seongjae-yoo.github.io/SentenceSegmentation">Sentence Segmentation</a></li>
+    <li><a href="https://seongjae-yoo.github.io/Spam-Message-Classification">Spam Message Classification</a></li>
+    <li><a href="https://seongjae-yoo.github.io/TfidfVectorizer">Tfidf Vectorizer</a></li>
+    <li><a href="https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK">Restaurant Reviews Classification with NLTK</a></li>
+    <li><a href="https://seongjae-yoo.github.io/RestaurantReviewsClassificationwithNLTK2">Restaurant Reviews Classification with NLTK 응용하기</a></li>
+    <li><a href="https://seongjae-yoo.github.io/AmazonReviewClassification">IMDB and Amazon Review Classification with SpaCy</a></li>
+    <li><a href="https://seongjae-yoo.github.io/TextSummarization">Text summarization</a></li>
+    <li><a href="https://seongjae-yoo.github.io/SpamDetectionwithCNN">Spam Detection with CNN</a></li>
+
+</ul>
+
+<h1 id="rnn-기법을-사용">RNN 기법을 사용</h1>
+
+<h2 id="rnn-이란">RNN 이란?</h2>
+
+<ol>
+  <li>순환 신경망(Recurrent Neural Network, RNN)</li>
+</ol>
+
+<p>RNN(Recurrent Neural Network)은 시퀀스(Sequence) 모델입니다. 입력과 출력을 시퀀스 단위로 처리하는 모델입니다. 번역기를 생각해보면 입력은 번역하고자 하는 문장. 즉, 단어 시퀀스입니다. 출력에 해당되는 번역된 문장 또한 단어 시퀀스입니다. 이러한 시퀀스들을 처리하기 위해 고안된 모델들을 시퀀스 모델이라고 합니다. 그 중에서도 RNN은 딥 러닝에 있어 가장 기본적인 시퀀스 모델입니다.LSTM이나 GRU 또한 근본적으로 RNN에 속합니다.</p>
+
+<p>RNN은 은닉층의 노드에서 활성화 함수를 통해 나온 결과값을 출력층 방향으로도 보내면서, 다시 은닉층 노드의 다음 계산의 입력으로 보내는 특징을 갖고있습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>  <span class="c1"># 주피터 노트북에 이미지 삽입
+</span><span class="n">Image</span><span class="p">(</span><span class="s">"C://Users/MyCom/jupyter-tutorial/Natural Language Processing (NLP) in Python with 8 Projects/data/20211130_154949_1.png"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="./img/udemy/spamdetectionRNN/output_1_0.png" alt="output_1_0" /></p>
+
+<p>이를 그림으로 표현하면 위와 같습니다. x 는 입력층의 입력 벡터, y 는 출력층의 출력 벡터입니다.
+RNN에서 은닉층에서 활성화 함수를 통해 결과를 내보내는 역할을 하는 노드를 셀(cell)이라고 합니다. 이 셀은 이전의 값을 기억하려고 하는 일종의 메모리 역할을 수행하므로 이를 메모리 셀 또는 RNN 셀이라고 표현합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Image</span><span class="p">(</span><span class="s">"C://Users/MyCom/jupyter-tutorial/Natural Language Processing (NLP) in Python with 8 Projects/data/20211130_155233_1.png"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="./img/udemy/spamdetectionRNN/output_3_0.png" alt="output_3_0" /></p>
+
+<p>단어 시퀀스에 대해서 하나의 출력(many-to-one)을 하는 모델은 입력 문서가 긍정적인지 부정적인지를 판별하는 감성 분류(sentiment classification), 또는 메일이 정상 메일인지 스팸 메일인지 판별하는 스팸 메일 분류(spam detection)에 사용할 수 있습니다. 위 그림은 RNN으로 스팸 메일을 분류할 때의 아키텍처를 보여줍니다.</p>
+
+<ul>
+  <li>출처 : <a href="https://wikidocs.net/22886">https://wikidocs.net/22886</a></li>
+</ul>
+
+<h1 id="keras를-사용한-반복적-인-신경망-rnn">Keras를 사용한 반복적 인 신경망 (RNN)</h1>
+
+<p>RNN (Recurrent Neural Network)은 시계열 또는 자연어와 같은 시퀀스 데이터를 모델링하는 데 강력한 신경망 클래스입니다.</p>
+
+<p>Keras RNN API는 다음에 중점을두고 설계되었습니다.</p>
+
+<ul>
+  <li>
+    <p>사용 편리성: 내장 keras.layers.RNN, keras.layers.LSTM, keras.layers.GRU 레이어를 사용하여 어려운 구성 선택 없이도 반복 모델을 빠르게 구축할 수 있습니다.</p>
+  </li>
+  <li>
+    <p>사용자 정의 용이성 : 사용자 정의 동작으로 자체 RNN 셀 계층 ( for 루프의 내부 부분)을 정의하고 일반 keras.layers.RNN 계층 ( for 루프 자체)과 함께 사용할 수 있습니다. 이를 통해 최소한의 코드로 다양한 연구 아이디어를 유연한 방식으로 신속하게 프로토 타이핑 할 수 있습니다.</p>
+  </li>
+  <li>
+    <p>출처 : <a href="https://www.tensorflow.org/guide/keras/rnn?hl=ko">https://www.tensorflow.org/guide/keras/rnn?hl=ko</a></p>
+  </li>
+</ul>
+
+<h1 id="1-data-preprocessing">1) Data Preprocessing</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="k">print</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">__version__</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2.4.1
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="kn">from</span> <span class="nn">tensorflow.keras.preprocessing.text</span> <span class="kn">import</span> <span class="n">Tokenizer</span>
+<span class="c1"># 문장을 시퀀스 자료형으로 바꾸기 위한 라이브러리
+</span><span class="kn">from</span> <span class="nn">tensorflow.keras.preprocessing.sequence</span> <span class="kn">import</span> <span class="n">pad_sequences</span>
+<span class="c1"># pad_sequences 이란? - https://seongjae-yoo.github.io/SpamDetectionwithCNN
+</span><span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Input</span><span class="p">,</span> <span class="n">GlobalMaxPooling1D</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">LSTM</span><span class="p">,</span> <span class="n">Embedding</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Model</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'./data/spam2.csv'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">'ISO-8859-1'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>v1</th>
+      <th>v2</th>
+      <th>Unnamed: 2</th>
+      <th>Unnamed: 3</th>
+      <th>Unnamed: 4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ham</td>
+      <td>Go until jurong point, crazy.. Available only ...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ham</td>
+      <td>Ok lar... Joking wif u oni...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>spam</td>
+      <td>Free entry in 2 a wkly comp to win FA Cup fina...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ham</td>
+      <td>U dun say so early hor... U c already then say...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ham</td>
+      <td>Nah I don't think he goes to usf, he lives aro...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># drop garbage columns
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">drop</span><span class="p">([</span><span class="s">"Unnamed: 2"</span><span class="p">,</span> <span class="s">"Unnamed: 3"</span><span class="p">,</span> <span class="s">"Unnamed: 4"</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>v1</th>
+      <th>v2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ham</td>
+      <td>Go until jurong point, crazy.. Available only ...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ham</td>
+      <td>Ok lar... Joking wif u oni...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>spam</td>
+      <td>Free entry in 2 a wkly comp to win FA Cup fina...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ham</td>
+      <td>U dun say so early hor... U c already then say...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ham</td>
+      <td>Nah I don't think he goes to usf, he lives aro...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># rename columns
+</span><span class="n">df</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">'labels'</span><span class="p">,</span> <span class="s">'data'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>labels</th>
+      <th>data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ham</td>
+      <td>Go until jurong point, crazy.. Available only ...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ham</td>
+      <td>Ok lar... Joking wif u oni...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>spam</td>
+      <td>Free entry in 2 a wkly comp to win FA Cup fina...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ham</td>
+      <td>U dun say so early hor... U c already then say...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ham</td>
+      <td>Nah I don't think he goes to usf, he lives aro...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># create binary labels (0 and 1)
+</span><span class="n">df</span><span class="p">[</span><span class="s">'b_labels'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'labels'</span><span class="p">].</span><span class="nb">map</span><span class="p">({</span><span class="s">'ham'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">'spam'</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span> <span class="c1"># create new column as 'b_labels'
+</span><span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'b_labels'</span><span class="p">].</span><span class="n">values</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># split the data
+</span><span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s">'data'</span><span class="p">],</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.33</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Convert sentences to sequences
+</span><span class="n">max_vocab_size</span> <span class="o">=</span> <span class="mi">20000</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">(</span><span class="n">num_words</span><span class="o">=</span><span class="n">max_vocab_size</span><span class="p">)</span>
+<span class="n">tokenizer</span><span class="p">.</span><span class="n">fit_on_texts</span><span class="p">(</span><span class="n">x_train</span><span class="p">)</span>
+<span class="n">sequences_train</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">.</span><span class="n">texts_to_sequences</span><span class="p">(</span><span class="n">x_train</span><span class="p">)</span>
+<span class="n">sequences_test</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">.</span><span class="n">texts_to_sequences</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Check word index mapping (to check the number of words in vocabulary)
+</span><span class="n">word2idx</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">.</span><span class="n">word_index</span>
+<span class="n">V</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">word2idx</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Total number of unique tokens are: %s'</span> <span class="o">%</span> <span class="n">V</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Total number of unique tokens are: 7267
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># pad sequences (to get  N x T matrix)
+</span><span class="n">data_train</span> <span class="o">=</span> <span class="n">pad_sequences</span><span class="p">(</span><span class="n">sequences_train</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Shape of data train tensor:'</span><span class="p">,</span> <span class="n">data_train</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># N: number of samples and T: Number of time steps
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Shape of data train tensor: (3733, 189)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># set the value of T to get sequence length
+</span><span class="n">T</span> <span class="o">=</span> <span class="n">data_train</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>189
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># pad the test set
+</span><span class="n">data_test</span> <span class="o">=</span> <span class="n">pad_sequences</span><span class="p">(</span><span class="n">sequences_test</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="n">T</span><span class="p">)</span>
+<span class="c1"># maxlen = T, to truncate longer sentences in test set
+</span><span class="k">print</span><span class="p">(</span><span class="s">'Shape of data test tensor:'</span><span class="p">,</span> <span class="n">data_test</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Shape of data test tensor: (1839, 189)
+</code></pre></div></div>
+
+<h1 id="2-building-the-model">2) Building the Model</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 워드 임베딩을 해주기 위해 단어 벡터화 사이즈 크기 설정 하기
+# Choose embedding dimensionality
+</span><span class="n">D</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># this is a hyper parameter, we can choose any word vector size that we want
+</span>
+<span class="c1"># Hidden state vectorsize (dimensionality)
+</span><span class="n">M</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="c1"># Input layer
+</span><span class="n">i</span> <span class="o">=</span> <span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">T</span><span class="p">,))</span>  <span class="c1"># input layer takes in sequences of integers, so shape is T
+</span>
+<span class="c1"># Embedding layer
+</span><span class="n">x</span> <span class="o">=</span> <span class="n">Embedding</span><span class="p">(</span><span class="n">V</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">D</span><span class="p">)(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># This takes in sequences of integers and returns sequences of word vectors
+# This will be an N * T * D array
+# we want size of embedding to (V + 1) x D, because first word index starts from 1 and not 0
+</span>
+<span class="c1"># LSTM layer - 전통적인 RNN의 이러한 단점을 보완한 RNN의 일종을 장단기 메모리(Long Short-Term Memory)라고 하며, 줄여서 LSTM이라고 합니다. LSTM은 은닉층의 메모리 셀에 입력 게이트, 망각 게이트, 출력 게이트를 추가하여 불필요한 기억을 지우고, 기억해야할 것들을 정합니다. 요약하면 LSTM은 은닉 상태(hidden state)를 계산하는 식이 전통적인 RNN보다 조금 더 복잡해졌으며 셀 상태(cell state)라는 값을 추가하였습니다. 위의 그림에서는 t시점의 셀 상태를 로 표현하고 있습니다. LSTM은 RNN과 비교하여 긴 시퀀스의 입력을 처리하는데 탁월한 성능을 보입니다
+</span><span class="n">x</span> <span class="o">=</span> <span class="n">LSTM</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">return_sequences</span><span class="o">=</span><span class="bp">True</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">GlobalMaxPooling1D</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span> <span class="c1">#여러 개의 벡터 정보 중 가장 큰 벡터를 골라서 반환합니다.
+</span>
+<span class="c1"># Dense layer에 sigmoid: 로지스틱 함수 적용
+</span><span class="n">x</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'sigmoid'</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1"># it is an binary classification problem, so we are using activation function ='sigmoid'
+</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Compile the model / 모델학습과정 수행시킴
+</span><span class="n">model</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s">'adam'</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s">'binary_crossentropy'</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s">'accuracy'</span><span class="p">])</span>
+
+<span class="c1"># optimizer='adam' : Adam 알고리즘을 구현하는 Optimizer
+#                    : Instantiate an optimizer.
+</span> 
+<span class="c1"># optimizers - usage with compile() and fit()
+# 참고사이트 - https://keras.io/api/optimizers/
+</span>
+<span class="c1">#  loss : 최적화 과정에서 최소화될 손실함수를 설정하는 것으로, MSE(평균 제곱 오차)와 binary_crossentropy가 자주 사용된다
+</span>
+<span class="c1"># MSE - MSE가 크다는 것은 데이터와 평균 사이에 차이가 크다는 것 
+#     - MSE가 작다는 것은 데이터와 평균 사이의 차이가 작다는 것 
+</span>
+<span class="c1"># - 평균 제곱 오차 구하는 방법 - 
+# 1. 평균을 구한다. 
+# 2. 각 데이터에서 평균을 뺀 값에 제곱을 한다.
+# 3. 2번에서 구한 값을 모두 더한다. 
+# 4. 3번에서 구한 값에 총 데이터 숫자만큼 나눈다. 
+</span>
+<span class="c1">#binary_crossentropy - 손실 함수의 종류로 Binary classification 즉 클래스가 두개 인 이진 분류 문제에서 사용
+#                    - 시그모이드 (sigmoid) 함수 (마지막 레이어 활성화 함수)
+</span>
+<span class="c1">#metrics - 평가 기준을 말한다. 평가 기준에는 모델의 학습에는 영향을 미치지 않지만, 학습 과정 중에 제대로 학습되고 있는 지 살펴볼 수 있다.
+#        - 일반적으로 평가 기준을 accuracy으로 설정한다.
+# 참고사이트 - https://tykimos.github.io/2017/09/24/Custom_Metric/
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Train the model
+# epochs = 10이라면 전체 데이터를 10번 사용해서 학습을 거치는 것이다.
+# ▶ 우리는 모델을 만들 때 적절한 epoch 값을 설정해야만 underfitting과 overfitting을 방지할 수 있습니다.
+# epoch 값이 너무 작다면 underfitting이 너무 크다면 overfitting이 발생할 확률이 높은 것이죠.
+</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data_train</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">data_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Epoch 1/10
+117/117 [==============================] - 11s 71ms/step - loss: 0.5690 - accuracy: 0.8046 - val_loss: 0.3826 - val_accuracy: 0.8706
+Epoch 2/10
+117/117 [==============================] - 5s 47ms/step - loss: 0.3957 - accuracy: 0.8561 - val_loss: 0.3277 - val_accuracy: 0.8706
+Epoch 3/10
+117/117 [==============================] - 5s 43ms/step - loss: 0.3187 - accuracy: 0.8705 - val_loss: 0.2955 - val_accuracy: 0.8706
+Epoch 4/10
+117/117 [==============================] - 5s 44ms/step - loss: 0.3010 - accuracy: 0.8586 - val_loss: 0.2525 - val_accuracy: 0.8706
+Epoch 5/10
+117/117 [==============================] - 5s 46ms/step - loss: 0.2581 - accuracy: 0.8520 - val_loss: 0.2096 - val_accuracy: 0.8706
+Epoch 6/10
+117/117 [==============================] - 6s 48ms/step - loss: 0.1941 - accuracy: 0.8720 - val_loss: 0.1803 - val_accuracy: 0.9375
+Epoch 7/10
+117/117 [==============================] - 5s 41ms/step - loss: 0.1642 - accuracy: 0.9369 - val_loss: 0.1574 - val_accuracy: 0.9782
+Epoch 8/10
+117/117 [==============================] - 5s 44ms/step - loss: 0.1392 - accuracy: 0.9886 - val_loss: 0.1409 - val_accuracy: 0.9853
+Epoch 9/10
+117/117 [==============================] - 5s 43ms/step - loss: 0.1244 - accuracy: 0.9926 - val_loss: 0.1251 - val_accuracy: 0.9815
+Epoch 10/10
+117/117 [==============================] - 5s 43ms/step - loss: 0.1104 - accuracy: 0.9953 - val_loss: 0.1120 - val_accuracy: 0.9864
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Loss per iteration
+</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">history</span><span class="p">[</span><span class="s">'loss'</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s">'Loss'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">history</span><span class="p">[</span><span class="s">'val_loss'</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s">'Validation Loss'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/udemy/spamdetectionRNN/output_29_0.png" alt="output_29_0" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Accuracy per iteration
+</span><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">history</span><span class="p">[</span><span class="s">'accuracy'</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s">'Accuracy'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">history</span><span class="p">[</span><span class="s">'val_accuracy'</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s">'Validation accuracy'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./img/udemy/spamdetectionRNN/output_30_0.png" alt="output_30_0" /></p>
+
+
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+<script>
+$(function() {
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+});
+</script>
+
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://SEONGJAE-YOO.github.io/">Big Data</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://seongjae-yoo.github.io/" target="_blank" rel="noopener">SeongJae Yu 블로그</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <h1 class="subscribe-overlay-title">Search Big Data</h1>
+            <p class="subscribe-overlay-description">
+                원하는 검색어를 입력하세요</p>
+            <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+        </div>
+    </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
