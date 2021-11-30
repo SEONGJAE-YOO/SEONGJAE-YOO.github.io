@@ -5,13 +5,13 @@
         <description>SeongJae Yu 블로그</description>
         <link>https://SEONGJAE-YOO.github.io//</link>
         <atom:link href="https://SEONGJAE-YOO.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Tue, 30 Nov 2021 16:34:18 +0900</pubDate>
-        <lastBuildDate>Tue, 30 Nov 2021 16:34:18 +0900</lastBuildDate>
+        <pubDate>Tue, 30 Nov 2021 16:51:13 +0900</pubDate>
+        <lastBuildDate>Tue, 30 Nov 2021 16:51:13 +0900</lastBuildDate>
         <generator>Jekyll v3.9.0</generator>
         
         <item>
             <title>Natural Language Processing (NLP) in Python with 8 Projects - Spam Detection with RNN</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects&lt;/span&gt;&lt;/p&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects 목차&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Tokenization&quot;&gt;Tokenization Basics&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Stemming&quot;&gt;Stemming and Lemmatization&lt;/a&gt;&lt;/li&gt;
@@ -27,6 +27,8 @@
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionWithRNN&quot;&gt;Spam Detection with RNN&lt;/a&gt;&lt;/li&gt;
+
 
 &lt;/ul&gt;
 
@@ -459,6 +461,8 @@ Epoch 10/10
 
 &lt;p&gt;&lt;img src=&quot;./img/udemy/spamdetectionRNN/output_30_0.png&quot; alt=&quot;output_30_0&quot; /&gt;&lt;/p&gt;
 
+&lt;h1 id=&quot;위코드에서-사용한-spam2csv-파일은-아래-링크를-클릭하시면-보실-수-있습니다&quot;&gt;위코드에서 사용한 spam2.csv 파일은 아래 링크를 클릭하시면 보실 수 있습니다&lt;/h1&gt;
+&lt;h1 id=&quot;httpsgithubcomseongjae-yoonatural-language-processing-nlp-in-python-with-8-projectsblobmaindataspam2csv&quot;&gt;&lt;a href=&quot;https://github.com/SEONGJAE-YOO/Natural-Language-Processing-NLP-in-Python-with-8-Projects/blob/main/data/spam2.csv&quot;&gt;https://github.com/SEONGJAE-YOO/Natural-Language-Processing-NLP-in-Python-with-8-Projects/blob/main/data/spam2.csv&lt;/a&gt;&lt;/h1&gt;
 </description>
             <pubDate>Tue, 30 Nov 2021 00:00:00 +0900</pubDate>
             <link>https://SEONGJAE-YOO.github.io//SpamDetectionWithRNN</link>
@@ -2997,7 +3001,7 @@ each system group has developed their own logging mechanism for their logging sy
         
         <item>
             <title>Natural Language Processing (NLP) in Python with 8 Projects - Spam Detection with CNN</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects&lt;/span&gt;&lt;/p&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects 목차&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Tokenization&quot;&gt;Tokenization Basics&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Stemming&quot;&gt;Stemming and Lemmatization&lt;/a&gt;&lt;/li&gt;
@@ -3013,6 +3017,8 @@ each system group has developed their own logging mechanism for their logging sy
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionWithRNN&quot;&gt;Spam Detection with RNN&lt;/a&gt;&lt;/li&gt;
+
 
 &lt;/ul&gt;
 
@@ -3962,7 +3968,7 @@ Epoch 5/5
         
         <item>
             <title>Natural Language Processing (NLP) in Python with 8 Projects - Text summarization</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects&lt;/span&gt;&lt;/p&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects 목차&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Tokenization&quot;&gt;Tokenization Basics&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Stemming&quot;&gt;Stemming and Lemmatization&lt;/a&gt;&lt;/li&gt;
@@ -3978,6 +3984,8 @@ Epoch 5/5
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionWithRNN&quot;&gt;Spam Detection with RNN&lt;/a&gt;&lt;/li&gt;
+
 
 &lt;/ul&gt;
 
@@ -4555,7 +4563,7 @@ I think everyone just thinks because we’re tennis players we should be the gre
         
         <item>
             <title>Natural Language Processing (NLP) in Python with 8 Projects - Restaurant Reviews Classification with NLTK 응용해보기</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects&lt;/span&gt;&lt;/p&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects 목차&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Tokenization&quot;&gt;Tokenization Basics&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Stemming&quot;&gt;Stemming and Lemmatization&lt;/a&gt;&lt;/li&gt;
@@ -4571,6 +4579,8 @@ I think everyone just thinks because we’re tennis players we should be the gre
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionWithRNN&quot;&gt;Spam Detection with RNN&lt;/a&gt;&lt;/li&gt;
+
 
 &lt;/ul&gt;
 
@@ -4957,7 +4967,7 @@ weighted avg       0.76      0.76      0.76       200
         
         <item>
             <title>Natural Language Processing (NLP) in Python with 8 Projects - IMDB and Amazon Review Classification with SpaCy</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects&lt;/span&gt;&lt;/p&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects 목차&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Tokenization&quot;&gt;Tokenization Basics&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Stemming&quot;&gt;Stemming and Lemmatization&lt;/a&gt;&lt;/li&gt;
@@ -4973,6 +4983,8 @@ weighted avg       0.76      0.76      0.76       200
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionWithRNN&quot;&gt;Spam Detection with RNN&lt;/a&gt;&lt;/li&gt;
+
 
 &lt;/ul&gt;
 
@@ -5975,7 +5987,7 @@ weighted avg       0.78      0.77      0.77       550
         
         <item>
             <title>Natural Language Processing (NLP) in Python with 8 Projects - TfidfVectorizer</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects&lt;/span&gt;&lt;/p&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects 목차&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Tokenization&quot;&gt;Tokenization Basics&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Stemming&quot;&gt;Stemming and Lemmatization&lt;/a&gt;&lt;/li&gt;
@@ -5991,6 +6003,8 @@ weighted avg       0.78      0.77      0.77       550
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionWithRNN&quot;&gt;Spam Detection with RNN&lt;/a&gt;&lt;/li&gt;
+
 
 &lt;/ul&gt;
 
@@ -6060,7 +6074,7 @@ weighted avg       0.78      0.77      0.77       550
         
         <item>
             <title>Natural Language Processing (NLP) in Python with 8 Projects - Spam Message Classification</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects&lt;/span&gt;&lt;/p&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects 목차&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Tokenization&quot;&gt;Tokenization Basics&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Stemming&quot;&gt;Stemming and Lemmatization&lt;/a&gt;&lt;/li&gt;
@@ -6076,6 +6090,8 @@ weighted avg       0.78      0.77      0.77       550
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionWithRNN&quot;&gt;Spam Detection with RNN&lt;/a&gt;&lt;/li&gt;
+
 
 &lt;/ul&gt;
 
@@ -7132,7 +7148,7 @@ weighted avg       0.96      0.96      0.96       449
         
         <item>
             <title>Natural Language Processing (NLP) in Python with 8 Projects - Restaurant Reviews Classification with NLTK</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects&lt;/span&gt;&lt;/p&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects 목차&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Tokenization&quot;&gt;Tokenization Basics&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Stemming&quot;&gt;Stemming and Lemmatization&lt;/a&gt;&lt;/li&gt;
@@ -7148,6 +7164,8 @@ weighted avg       0.96      0.96      0.96       449
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionWithRNN&quot;&gt;Spam Detection with RNN&lt;/a&gt;&lt;/li&gt;
+
 
 &lt;/ul&gt;
 
@@ -7718,7 +7736,7 @@ True
         
         <item>
             <title>Natural Language Processing (NLP) in Python with 8 Projects - Sentence Segmentation</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects&lt;/span&gt;&lt;/p&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects 목차&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Tokenization&quot;&gt;Tokenization Basics&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Stemming&quot;&gt;Stemming and Lemmatization&lt;/a&gt;&lt;/li&gt;
@@ -7734,6 +7752,8 @@ True
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionWithRNN&quot;&gt;Spam Detection with RNN&lt;/a&gt;&lt;/li&gt;
+
 
 &lt;/ul&gt;
 
@@ -7893,7 +7913,7 @@ This is last sentence.
         
         <item>
             <title>Natural Language Processing (NLP) in Python with 8 Projects - POS Tagging</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects&lt;/span&gt;&lt;/p&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects 목차&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Tokenization&quot;&gt;Tokenization Basics&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Stemming&quot;&gt;Stemming and Lemmatization&lt;/a&gt;&lt;/li&gt;
@@ -7909,6 +7929,8 @@ This is last sentence.
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionWithRNN&quot;&gt;Spam Detection with RNN&lt;/a&gt;&lt;/li&gt;
+
 
 &lt;/ul&gt;
 
@@ -8093,7 +8115,7 @@ dying    VERB   VBG    xcomp  verb                 verb, gerund or present parti
         
         <item>
             <title>Natural Language Processing (NLP) in Python with 8 Projects - Named Entity Recognition</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects&lt;/span&gt;&lt;/p&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects 목차&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Tokenization&quot;&gt;Tokenization Basics&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Stemming&quot;&gt;Stemming and Lemmatization&lt;/a&gt;&lt;/li&gt;
@@ -8109,6 +8131,8 @@ dying    VERB   VBG    xcomp  verb                 verb, gerund or present parti
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionWithRNN&quot;&gt;Spam Detection with RNN&lt;/a&gt;&lt;/li&gt;
+
 
 &lt;/ul&gt;
 
@@ -8263,7 +8287,7 @@ is looking at buying U.K. startup for $1 billion&amp;lt;/div&amp;gt;&lt;/span&gt
         
         <item>
             <title>Natural Language Processing (NLP) in Python with 8 Projects - Vocabulary_and_Matching</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects&lt;/span&gt;&lt;/p&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects 목차&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Tokenization&quot;&gt;Tokenization Basics&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Stemming&quot;&gt;Stemming and Lemmatization&lt;/a&gt;&lt;/li&gt;
@@ -8279,6 +8303,8 @@ is looking at buying U.K. startup for $1 billion&amp;lt;/div&amp;gt;&lt;/span&gt
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionWithRNN&quot;&gt;Spam Detection with RNN&lt;/a&gt;&lt;/li&gt;
+
 
 &lt;/ul&gt;
 
@@ -8516,7 +8542,7 @@ is looking at buying U.K. startup for $1 billion&amp;lt;/div&amp;gt;&lt;/span&gt
         
         <item>
             <title>Natural Language Processing (NLP) in Python with 8 Projects - Tokenization Basics</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects&lt;/span&gt;&lt;/p&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects 목차&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Tokenization&quot;&gt;Tokenization Basics&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Stemming&quot;&gt;Stemming and Lemmatization&lt;/a&gt;&lt;/li&gt;
@@ -8532,6 +8558,8 @@ is looking at buying U.K. startup for $1 billion&amp;lt;/div&amp;gt;&lt;/span&gt
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionWithRNN&quot;&gt;Spam Detection with RNN&lt;/a&gt;&lt;/li&gt;
+
 
 &lt;/ul&gt;
 
@@ -8768,7 +8796,7 @@ TypeError: 'spacy.tokens.doc.Doc' object does not support item assignment
         
         <item>
             <title>Natural Language Processing (NLP) in Python with 8 Projects - Stop Words</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects&lt;/span&gt;&lt;/p&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects 목차&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Tokenization&quot;&gt;Tokenization Basics&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Stemming&quot;&gt;Stemming and Lemmatization&lt;/a&gt;&lt;/li&gt;
@@ -8784,6 +8812,8 @@ TypeError: 'spacy.tokens.doc.Doc' object does not support item assignment
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionWithRNN&quot;&gt;Spam Detection with RNN&lt;/a&gt;&lt;/li&gt;
+
 
 &lt;/ul&gt;
 
@@ -8941,7 +8971,7 @@ TypeError: 'spacy.tokens.doc.Doc' object does not support item assignment
         
         <item>
             <title>Natural Language Processing (NLP) in Python with 8 Projects - Stemming and Lemmatization</title>
-            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects&lt;/span&gt;&lt;/p&gt;
+            <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Natural Language Processing (NLP) in Python with 8 Projects 목차&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Tokenization&quot;&gt;Tokenization Basics&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/Stemming&quot;&gt;Stemming and Lemmatization&lt;/a&gt;&lt;/li&gt;
@@ -8957,6 +8987,8 @@ TypeError: 'spacy.tokens.doc.Doc' object does not support item assignment
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/AmazonReviewClassification&quot;&gt;IMDB and Amazon Review Classification with SpaCy&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/TextSummarization&quot;&gt;Text summarization&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionwithCNN&quot;&gt;Spam Detection with CNN&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://seongjae-yoo.github.io/SpamDetectionWithRNN&quot;&gt;Spam Detection with RNN&lt;/a&gt;&lt;/li&gt;
+
 
 &lt;/ul&gt;
 
