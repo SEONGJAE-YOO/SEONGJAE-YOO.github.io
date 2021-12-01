@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>PM4Py Web Services - Process Mining Features in any Application Stack</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- 웹폰트 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="SeongJae Yu 블로그" />
+<link rel="shortcut icon" href="https://SEONGJAE-YOO.github.io/assets/built/images/favicon.jpg" type="image/png" />
+<link rel="canonical" href="https://SEONGJAE-YOO.github.io/PM4PYWEB" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+ <!--title below is coming from _includes/dynamic_title-->
+<meta property="og:site_name" content="Big Data" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="PM4Py Web Services - Process Mining Features in any Application Stack" />
+<meta property="og:description" content="SeongJae Yu 블로그" />
+<meta property="og:url" content="https://SEONGJAE-YOO.github.io/PM4PYWEB" />
+<meta property="og:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/book.png" />
+<meta property="article:publisher" content="https://www.facebook.com/" />
+<meta property="article:tag" content="Thesis" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="PM4Py Web Services - Process Mining Features in any Application Stack" />
+<meta name="twitter:description" content="SeongJae Yu 블로그" />
+<meta name="twitter:url" content="https://SEONGJAE-YOO.github.io/" />
+<meta name="twitter:image" content="https://SEONGJAE-YOO.github.io/assets/built/images/book.png" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Big Data" />
+<meta name="twitter:label2" content="Filed under" />
+<meta name="twitter:data2" content="Thesis" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta property="og:image:width" content="2000" />
+<meta property="og:image:height" content="666" />
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Website",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Big Data",
+            "logo": "https://SEONGJAE-YOO.github.io/"
+        },
+        "url": "https://SEONGJAE-YOO.github.io/PM4PYWEB",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://SEONGJAE-YOO.github.io/assets/built/images/book.png",
+            "width": 2000,
+            "height": 666
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://SEONGJAE-YOO.github.io/PM4PYWEB"
+        },
+        "description": "SeongJae Yu 블로그"
+    }
+</script>
+
+<!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+<script type="text/javascript">
+ghost.init({
+    clientId: "ghost-frontend",
+    clientSecret: "f84a07a72b17"
+});
+</script> -->
+
+<meta name="generator" content="Jekyll 3.6.2" />
+<link rel="alternate" type="application/rss+xml" title="PM4Py Web Services - Process Mining Features in any Application Stack" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- < default -->
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<!-- The big featured header, it uses blog cover image as a BG if available -->
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://SEONGJAE-YOO.github.io/">Big Data</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="https://codingstorylove.github.io/about/#page-title">About blog</a></li>
+    <li class="nav-rprogramming" role="menuitem"><a href="/tag/rprogramming/">R</a></li>
+    <li class="nav-processmining" role="menuitem"><a href="/tag/processmining/">Processmining</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-Algorithm" role="menuitem"><a href="https://codingstorylove.github.io/">Algorithm</a></li>
+    <li class="nav-kaggle" role="menuitem"><a href="/tag/kaggle">kaggle</a></li>
+    <li class="nav-book" role="menuitem"><a href="/tag/book">book</a></li>
+    <li class="nav-udemy" role="menuitem"><a href="/tag/udemy">udemy</a></li>
+    <li class="nav-thesis" role="menuitem"><a href="/tag/thesis">thesis</a></li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag별 Posts</a>
+    </li>
+</ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-thesis post tag-thesis ">
+
+            <header class="post-full-header">
+                <h1 class="post-full-title">PM4Py Web Services - Process Mining Features in any Application Stack</h1>
+            </header>
+
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/book.png)">
+            </figure>
+            
+
+            <section class="post-full-content">
+                <h1 id="pm4py-web-services-easy-development-integration-and-deployment-of-process-mining-features-in-any-application-stack">PM4Py Web Services: Easy Development, Integration and Deployment of Process Mining Features in any Application Stack</h1>
+
+<ul>
+  <li>출처 : <a href="http://ceur-ws.org/Vol-2420/papeDT12.pdf">http://ceur-ws.org/Vol-2420/papeDT12.pdf</a></li>
+</ul>
+
+<p>Alessandro Berti1
+, Sebastiaan J. van Zelst1,2
+, and Wil van der Aalst</p>
+
+<p>1 Process and Data Science Chair, Lehrstuhl f¨ur Informatik 9 52074 Aachen, RWTH
+Aachen University, Germany</p>
+
+<p>2 Fraunhofer Gesellschaft, Institute for Applied Information Technology (FIT),
+Sankt Augustin, Germany</p>
+
+<p>Keywords: Process Mining · PM4Py · Web Services · Process Discovery
+· Case Management · Seamless Integration.</p>
+
+<h1 id="abstract">Abstract</h1>
+
+<p>In recent years, process mining emerged as a set of techniques to analyze process data, supported by different open-source and
+commercial solutions.</p>
+
+<p>Process mining tools aim to discover process models from the data, perform conformance checking, predict the future behavior of the process and/or provide other analyses that enhance the overall process knowledge. Additionally, commercial vendors provide integration with external software solutions, facilitating the external use of their process mining algorithms.</p>
+
+<p>This integration is usually established by means of a set of web services that are accessible from an external software stack.</p>
+
+<p>In open-source process mining stacks, only a few solutions provide a corresponding web service.</p>
+
+<p>However, extensive documentation is often missing and/or tight integration with the front-end of the tool hampers the integration of the services with other software. Therefore,</p>
+
+<p>in this paper, a new open-source Python process mining service stack, PM4Py-WS, is presented.</p>
+
+<p>The proposed software supports easy integration with any software stack, provides an extensive documentation of the API and a clear separation between the business logic, (graphical) interface and the services. The aim is to increase the integration of processmining techniques in business intelligence tools.</p>
+
+<h1 id="개요">개요</h1>
+
+<p>최근 몇 년 동안 프로세스 마이닝은 다양한 오픈 소스 및 상업적 솔루션,프로세스 마이닝 도구는 데이터에서 프로세스 모델을 발견하고, 적합성 검사를 수행하고, 프로세스의 미래 동작을 예측하고, 향상시키는 기타 분석을 제공하는 것을 목표로 합니다.</p>
+
+<p>전반적인 프로세스 지식. 또한 상용 공급업체는 외부 소프트웨어 솔루션과의 통합을 제공합니다.</p>
+
+<p>이 통합은 일반적으로 외부 소프트웨어 스택에서 접근할 수 있는 일련의 웹 서비스를 통해 설정됩니다.</p>
+
+<p>오픈 소스 프로세스 마이닝 스택에서는 소수의 솔루션만이 해당 웹 서비스를 제공합니다.</p>
+
+<p>그러나 광범위한 문서가 누락되거나 도구의 프론트 엔드와의 긴밀한 통합으로 인해 서비스를 다른 소프트웨어와 통합하는 데 방해가 되는 경우가 많습니다. 그러므로,</p>
+
+<p>이 논문에서는 새로운 오픈 소스 Python 프로세스 마이닝 서비스 스택, PM4Py-WS가 제공됩니다.</p>
+
+<p>제안된 소프트웨어는 모든 소프트웨어 스택과의 쉬운 통합을 지원하고 API에 대한 광범위한 문서를 제공하며 비즈니스 로직, (그래픽) 인터페이스 및 서비스 간의 명확한 분리를 제공합니다. 목표는 비즈니스 인텔리전스 도구에서 프로세스마이닝 기술의 통합을 높이는 것입니다.</p>
+
+<h1 id="1-introduction">1 Introduction</h1>
+
+<p>Process mining [1] is a growing branch of data science which, starting from data
+stored and processed in information systems, aims to infer information about
+the underlying processes, i.e. as captured in the data. Several techniques, e.g.,
+process discovery (automated discovery of a process model from the event data),
+conformance checking (comparison between an event log and a process model),
+prediction (given the current state of a process, predict the remaining time or
+the value of some attribute in a future event), etc., have been developed.
+Process mining is supported by several open-source (ProM [5], RapidProM
+[9,2], Apromore [7], bupaR [6], PM4Py [3], PMLAB [4]) and commercial (Disco,
+Celonis, ProcessGold, QPR ProcessAnalyzer, etc.) software. Apart from RapidProM (an extension of the data science framework RapidMiner) and Apromore,
+the majority of the open-source projects provide a standalone tool that only
+allows to import an event log and to perform process mining analyses on it.
+PM4Py and bupaR provide a set of process mining features as a library, and
+this provides integration with the corresponding Python and R ecosystem. At
+the same time, some commercial tools, e.g., Celonis and ProcessGold, as well as
+the Apromore open-source tool, offer a web-based interface supported by web
+services. This leads to some advantages:</p>
+
+<p>프로세스 마이닝[1]은 데이터에서 시작하여 성장하는 데이터 과학의 한 분야입니다.
+정보 시스템에 저장 및 처리되는 정보를 추론하는 것을 목표로 합니다.</p>
+
+<p>프로세스 도출(이벤트 데이터에서 프로세스 모델의 자동 도출),
+적합성 검사(이벤트 로그와 프로세스 모델 간의 비교),
+예측(프로세스의 현재 상태가 주어지면 남은 시간과
+미래 이벤트에서 일부 속성의 값을 예측) 등이 개발되었습니다.</p>
+
+<p>프로세스 마이닝은 여러 오픈 소스(ProM [5], RapidProM
+[9,2], Apromore [7], bupaR [6], PM4Py [3], PMLAB [4]) 및 상업용(Disco,
+Celonis, ProcessGold, QPR ProcessAnalyzer 등) 소프트웨어. RapidProM(데이터 과학 프레임워크 RapidMiner의 확장) 및 Apromore 외에도
+대부분의 오픈 소스 프로젝트는 독립 실행형 도구를 제공합니다.</p>
+
+<p>이벤트 로그를 가져오고 이에 대한 프로세스 마이닝 분석을 수행할 수 있습니다.
+PM4Py 및 bupaR은 일련의 프로세스 마이닝 기능을 라이브러리로 제공하며,
+이는 해당 Python 및 R 시스템과의 통합을 제공합니다.
+동시에 Celonis 및 ProcessGold와 같은 일부 상용 도구와
+Apromore 오픈 소스 도구, 웹에서 지원하는 웹 기반 인터페이스 제공.</p>
+
+<p>이는 다음과 같은 몇 가지 이점을 제공합니다.</p>
+
+<p>– The possibility to access the information related to the process everywhere,
+from different devices.</p>
+
+<p>– Identity and access management (typically unsupported by standalone tools).</p>
+
+<p>– The possibility for multiple users to collaborate in the same workspace.</p>
+
+<p>A systematic introduction of web services in the process mining field is offered
+by [8].</p>
+
+<p>Process mining analyses offered through web services ideally permit an
+easy integration with other software solutions.</p>
+
+<p>In the case of Apromore, the
+business logic is offered to the web application mainly through servlets-based
+web services.</p>
+
+<p>This offers the possibility for external tools to use the algorithms
+integrated in Apromore by querying its web services.</p>
+
+<p>However, due to the high
+customization on the client-side, required to provide a higher number of features
+as application, Apromore does not allow easy embedding of the visual elements
+in external applications.</p>
+
+<p>–다른 장치에서 모든 곳에서 프로세스와 관련된 정보에 접근할 수 있는 가능성,</p>
+
+<p>– ID 및 접근 관리(일반적으로 독립 실행형 도구에서는 지원되지 않음).</p>
+
+<p>– 여러 사용자가 동일한 작업 공간에서 협업할 수 있는 가능성.</p>
+
+<p>프로세스 마이닝 분야의 웹 서비스를 체계적으로 [8]에 의해 소개합니다.</p>
+
+<p>웹 서비스를 통해 제공되는 프로세스 마이닝 분석은 이상적으로 다른 소프트웨어 솔루션과 쉽게 통합을 허용됩니다.</p>
+
+<p>에이프로모어의 경우,
+비즈니스 로직은 주로 서블릿 기반 웹 서비스를 통해 웹 애플리케이션에 제공됩니다.</p>
+
+<p>이것은 외부 도구가 웹 서비스를 쿼리함으로써 Apromore에 통합된 알고리즘을 사용할 가능성을 제공합니다.</p>
+
+<p>그러나 높은 수치로 인해 더 많은 기능을 제공하는 데 필요한 클라이언트 측 사용자 정의
+응용 프로그램으로 Apromore는 외부 애플리케이션에 시각적 요소를 쉽게 삽입할 수 없습니다.</p>
+
+<p>In this paper, the PM4Py Web Services (PM4Py-WS), that are built on top of the recent process mining library PM4Py [3], are presented. The high-levelgoals of the web services are (1) to provide an easy entrypoint for the integration of process mining techniques in external (business intelligence) tools, and,(2) to provide an extensible platform built on top of modern software engineering principles and guidelines (testing, documentation, clear separation betweenstacks, separation from the front-end). A prototypal process mining web application, supported by the services, is provided along with the services, in order to demonstrate that the services work as intended, and to provide some evidence that PM4Py-WS is easily integrated in any external application stack</p>
+
+<p>이 문서에서는 최근 프로세스 마이닝 라이브러리 PM4Py[3]를 기반으로 구축된 PM4Py 웹 서비스(PM4Py-WS)를 제시합니다. 웹 서비스의 상위 수준 목표는 (1) 프로세스 마이닝 기술을 외부(비즈니스 인텔리전스) 도구에 통합하기 위한 쉬운 진입점을 제공하고, (2) 최신 소프트웨어 엔지니어링 원칙 위에 구축된 확장 가능한 플랫폼을 제공하는 것입니다. (테스트, 문서화, 스택 간의 명확한 분리, 프론트 엔드로부터의 분리). 서비스가 지원하는 프로토타입 프로세스 마이닝 웹 애플리케이션이 서비스와 함께 제공되어 서비스가 의도한 대로 작동하는지 보여주고 PM4Py-WS가 모든 외부 애플리케이션 스택에 쉽게 통합된다는 증거를 제공합니다.</p>
+
+<p>While in Python other ways to build non-trivial data visualization web interfaces are available, for example Dash by Plot.ly3 that could offer an even simple rprototyping of process mining visuals based on PM4Py, they do not offer the same possibility of integration with external applications as exposing a set of web services, since the interface is more tightly coupled with the backend part.</p>
+
+<p>The remainder of this paper is structured as follows.
+In Section 2, the architecture of the web services is explained. Section 3 provides information regarding the repository hosting the tool, the maturity of the tool and a reference to the video demo. Section 4 concludes this paper.</p>
+
+<p>Python에서 중요한 데이터 시각화 웹 인터페이스를 구축하는 다른 방법을 사용할 수 있지만 예를 들어, Plot의 Dash는 PM4Py를 기반으로 하는 프로세스 마이닝 시각화의 훨씬 더 간단한 프로토타이핑을 제공할 수 있지만 외부 애플리케이션과의 통합 가능성을 동일하게 제공하지 않습니다. 그 이유는 인터페이스가 백엔드 부분과 더 밀접하게 결합되어 있기 때문입니다.</p>
+
+<p>이 문서의 구성 부분은 다음과 같이 구성됩니다. 섹션 2에서는 웹 서비스의 아키텍처에 대해 설명합니다. 섹션 3에서는 도구를 호스팅하는 저장소, 도구의 완성도 및 비디오에 대한 언급과 정보를 제공합니다. 4장에서 이 논문을 마무리합니다.</p>
+
+<h1 id="2-architecture-of-the-web-services">2 Architecture of the Web Services</h1>
+
+<p>PM4Py-WS is written in Python, i.e., a programming language popular among data scientists and developers for its simplicity and the vast set of high-performing data science libraries. The web-services are exposed as asynchronous REST GET/POST services using the Flask framework4, which supports:</p>
+
+<p>– Possibility to deploy the services using HTTP/HTTPS.</p>
+
+<p>– Possibility to use an enterprise-grade server (e.g. IIS, UWSGI).</p>
+
+<p>– Possibility to manage the Cross-Origin Resource Sharing (CORS5).</p>
+
+<p>2 웹 서비스의 아키텍처 PM4Py-WS는 단순성과 방대한 고성능 데이터 과학 라이브러리 세트로 인해 데이터 과학자와 개발자 사이에서 인기 있는 프로그래밍 언어인 Python으로 작성되었습니다. 웹 서비스는 다음을 지원하는 Flask 프레임워크4를 사용하여 비동기 REST GET/POST 서비스로 노출됩니다.</p>
+
+<p>– HTTP/HTTPS를 사용하여 서비스를 배포할 수 있습니다.</p>
+
+<p>– 엔터프라이즈급 서버(예: IIS, UWSGI)를 사용할 수 있습니다.</p>
+
+<p>– CORS5(Cross-Origin Resource Sharing)를 관리할 수 있습니다.</p>
+
+<p>PM4Py Web Services are supported by the algorithms available in the PM4Py process mining library. The exposed services accept a session identifier (used to identify the user, and verify the general permissions of the user), and a processID (used to identify the process, and verify the permissions of the user on the given log). Moreover, each service has access to a single on object hosting all the software components needed for authentication, session management, user-log visibility and permissions, log management, and exception handling. Each different component is provided as a factory method, that means several different implementations are possible. Currently, the following components are provided:</p>
+
+<p>PM4Py 웹 서비스는 PM4Py 프로세스 마이닝 라이브러리에서 사용 가능한 알고리즘에 의해 지원됩니다. 노출된 서비스는 세션 식별자(사용자를 식별하고 사용자의 일반 권한을 확인하는 데 사용)와 processID(프로세스를 식별하고 지정된 로그에서 사용자의 권한을 확인하는 데 사용)를 허용합니다. 또한 각 서비스는 인증, 세션 관리, 사용자 로그 가시성 및 권한, 로그 관리, 예외 처리에 필요한 모든 소프트웨어 구성 요소를 호스팅하는 단일 개체에 접근할 수 있습니다. 각각의 다른 구성 요소는 팩토리 메서드로 제공되므로 여러 가지 다른 구현이 가능합니다. 현재 다음 구성 요소가 제공됩니다.</p>
+
+<p>– Session manager: Responsible for user authentication and verification of the validity of a session. Two different session managers are available:</p>
+
+<p>• Basic session manager : Supported by a relational database with user/-password information and a separate logs database table.</p>
+
+<p>• Keycloak IAM Session manager 6: Users and sessions are verified through the Keycloak identity and user access control management solution, that is the most popular enterprise solution in the field. Thanks to Keycloak,several applications can share the same credentials and sessions. The configuration of user/password data, and the settings related to the session duration, are done in Keycloak.</p>
+
+<p>– 세션 관리자: 사용자 인증 및 세션 유효성 검증을 담당합니다. 두 가지 다른 세션 관리자를 사용할 수 있습니다.</p>
+
+<p>• 기본 세션 관리자 : 사용자/비밀번호 정보가 있는 관계형 데이터베이스와 별도의 로그 데이터베이스 테이블에서 지원합니다.</p>
+
+<p>• Keycloak IAM Session Manager 6: 이 분야에서 가장 많이 인기있는 기업용 솔루션인 Keycloak ID 및 사용자 접근 제어 관리 솔루션을 통해 사용자 및 세션을 확인합니다. Keycloak 덕분에, 여러 애플리케이션이 동일한 자격 증명과 세션을 공유할 수 있습니다. 사용자/비밀번호 데이터 구성 및 세션 기간과 관련된 설정은 Keycloak에서 수행됩니다.</p>
+
+<p>– Log management: responsible to manage individual event logs, the visibility/permissions of the users w.r.t. the logs, and the analysis/filtering operations on the log. Each process is managed by a handler that controls the following operations on the log:</p>
+
+<p>• Loading: depending on the log handler, the log is either persistently loaded in memory, or loaded in memory when required. In the current version, two in-memory handlers are provided: a XES handler (that loads an event log in the XES format, and uses the PM4Py Event Log structure to store events and cases), and a CSV handler (that loads an event log in the CSV/Parquet7 format, and uses Pandas dataframes8). These handlers both load event logs stored as files, however when the PM4Py library will be more mature, the file dependency might be gradually dropped.</p>
+
+<p>– 로그 관리: 개별 이벤트 로그, 사용자의 가시성/권한을 관리하는 책임이 있습니다. 로그 및 로그에 대한 분석/필터링 작업. 각 프로세스는 로그에서 다음 작업을 제어하는 처리기에 의해 관리됩니다 :</p>
+
+<p>• 로딩: 로그 처리기에 따라, 로그는 지속적으로 메모리에 로드되거나 필요할 때 메모리에 로드됩니다. 현재 버전에서는 XES 처리기(XES 형식으로 이벤트 로그를 로드하고 PM4Py Event Log 구조를 사용하여 이벤트와 케이스를 저장)와 CSV 처리기(이벤트 로그를 CSV/Parquet7 형식, Pandas 데이터 프레임 사용8). 이러한 처리기는 둘다 파일로 저장된 이벤트 로그를 로드하지만 PM4Py 라이브러리가 더 좋아지면 파일 종속성이 점차적으로 삭제될 수 있습니다.</p>
+
+<p>• Filtering: The filtering algorithms implemented in the PM4Py library are applied to the log when the filtering services (add filter, remove filter)are called.</p>
+
+<p>• Analysis: the algorithms implemented in the PM4Py library are applied to the log, in order to get the process schema, get the social network,perform conformance checking, etc.</p>
+
+<p>– Exception handler: Triggered when debug warnings/error messages need to be logged. The default setting is using the logging utility in Python.</p>
+
+<p>• 필터링: PM4Py 라이브러리에 구현된 필터링 알고리즘은 필터링 서비스(필터 추가, 필터 제거)가 호출될 때 로그에 적용됩니다.</p>
+
+<p>• 분석: PM4Py 라이브러리에 구현된 알고리즘을 로그에 적용하여 프로세스 스키마 가져오기, 소셜 네트워크 가져오기, 적합성 확인 등을 수행합니다.</p>
+
+<p>– 예외 처리기: 디버그 경고/오류 메시지가 로그될때 트리거됩니다. 기본 설정은 Python에서 로깅 유틸리티를 사용하는 것입니다.</p>
+
+<h1 id="3-repository-of-the-tool-video-demo-and-maturity">3 Repository of the Tool, Video Demo and Maturity</h1>
+
+<p>PM4Py-WS, along with the prototypal interface in AngularJS, is available at https://github.com/pm4py/pm4py-ws.</p>
+
+<p>The web services can be installed following the instructions contained in the INSTALL.txt file provided in the repository.</p>
+
+<p>A Docker image9 is also made available with the name javert899/pm4pywsand could be run through the command docker run -d -p 5000:5000 javert899/pm4pyws.</p>
+
+<p>The docker image uses port 5000, i.e., the web services are exposed at the URL http://localhost:5000 and the prototypal Angular web interfaceis made available at the URL http://localhost:5000/index.html.</p>
+
+<p>The documentation of the web services is available at the site http://pm4py.pads.rwth-aachen.de/pm4py-web-services/.</p>
+
+<p>A demo of the web services is made available at http://212.237.8.106:5000/ (for example, the loginService and the getEndActivities GET services can be tested according to the documentation).</p>
+
+<p>A demo of the prototypal Angular web interface (representedin Figure 1) is made available at http://212.237.8.106:5000/index.html.</p>
+
+<p>A video demo, that shows how the web services can be easily queried through a browser, and shows the prototypal Angular web interface in action, is available at http://pm4py.pads.rwth-aachen.de/pm4py-ws-demo-video/.</p>
+
+<h1 id="3-도구의-저장소-비디오">3 도구의 저장소, 비디오</h1>
+
+<p>PM4Py-WS는 AngularJS의 프로토타입 인터페이스와 함께 https://github.com/pm4py/pm4py-ws 에서 사용할 수 있습니다.</p>
+
+<p>웹 서비스는 저장소에 제공된 INSTALL.txt 파일에 포함된 지침에 따라 설치할 수 있습니다.</p>
+
+<p>Docker image9도 javert899/pm4pyws라는 이름으로 제공되며 docker run -d -p 5000:5000 javert899/pm4pyws 명령을 통해 실행할 수 있습니다.</p>
+
+<p>도커 이미지는 포트 5000을 사용합니다. 즉, 웹 서비스는 URL http://localhost:5000에 노출되고 프로토타입 Angular 웹 인터페이스는 URL http://localhost:5000/index.html 에서 사용할 수 있습니다.</p>
+
+<p>웹 서비스 설명서는 http://pm4py.pads.rwth-aachen.de/pm4py-web-services/ 사이트에서 보실 수 있습니다.</p>
+
+<p>웹 서비스의 데모는 http://212.237.8.106:5000/ 에서 사용할 수 있습니다(예: loginService 및 getEndActivities GET 서비스는 설명서에 따라 테스트할 수 있음).</p>
+
+<p>프로토타입 Angular 웹 인터페이스의 데모(그림 1 참조)는 http://212.237.8.106:5000/index.html 에서 사용할 수 있습니다.</p>
+
+<p>브라우저를 통해 웹 서비스를 쉽게 쿼리할 수 있는 방법과 작동 중인 프로토타입 Angular 웹 인터페이스를 보여주는 비디오는 http://pm4py.pads.rwth-aachen.de/pm4py-ws-demo-video/ 에서 볼 수 있습니다.</p>
+
+<p>The web services have just been released and no real-life use case is available yet.</p>
+
+<p>The web interface is in a prototypal status.</p>
+
+<h1 id="4-conclusion">4 Conclusion</h1>
+
+<p>In this paper, we presented PM4Py-WS, a stack of web services developed on top of the existing process mining python framework PM4Py. PM4Py-WS is open-source and extendible, and allows to integrate process mining technology in any external software stack.When an algorithm is implemented in the PM4Py library, it is not immediately available in the PM4Py web services:</p>
+
+<p>a service exposing the algorithm should also be implemented. This does not hamper the scalability of the web services (in terms of number of available features), but requires an extra effort by the developer, that should work on both the PM4Py library and the PM4Py-WS projects.In terms of scalability on big amounts of data, the current PM4Py-WS handlers are limited to a single core, and the performance suffers from the fact that not all the CPU cores are used.</p>
+
+<p>Some future work will consider to implement distributed handlers for logs, that would be able to manage bigger amount of data. We aim to actively develop PM4Py-WS, allowing faster integration and adoption of cutting-edge research into virtually any external tool.</p>
+
+<p>웹 서비스가 방금 출시되었으며 실제 사용 사례는 아직 없습니다.</p>
+
+<p>웹 인터페이스는 프로토타입 상태입니다.</p>
+
+<h1 id="4-결론">4 결론</h1>
+
+<p>이 논문에서는 기존 프로세스 마이닝 파이썬 프레임워크 PM4Py를 기반으로 개발된 웹 서비스 스택인 PM4Py-WS를 제시했습니다. PM4Py-WS는 오픈 소스이며 확장 가능하며 모든 외부 소프트웨어 스택에 프로세스 마이닝 기술을 통합할 수 있습니다. PM4Py 라이브러리에서 알고리즘을 구현하면, PM4Py 웹 서비스에서 즉시 사용할 수 없습니다.</p>
+
+<p>알고리즘을 노출하는 서비스도 구현됩니다. 이것은 웹 서비스의 확장성을 방해하지 않지만(사용 가능한 기능의 수 측면에서) PM4Py 라이브러리와 PM4Py-WS 프로젝트 모두에서 작동해야 하는 개발자의 추가 노력이 필요합니다. 큰 데이터의 확장성 면에서, 현재 PM4Py-WS 처리기는 단일 코어로 제한되고 성능은 모든 CPU 코어가 사용되지 않는다는 사실로 인해 어려움을 겪습니다.</p>
+
+<p>일부 향후 작업에서는 더 많은 양의 데이터를 관리할 수 있는 로그용 분산 처리기를 구현하는 것을 고려할 것입니다. 우리는 PM4Py-WS를 적극적으로 개발하여 거의 모든 외부 도구에 최첨단 연구를 더 빠르게 할수 있게 채택할 수 있도록 하는 것을 목표로 합니다.</p>
+
+<h1 id="references">References</h1>
+
+<ol>
+  <li>van der Aalst, W.: Process Mining - Data Science in Action, Second Edition.
+Springer (2016)</li>
+  <li>van der Aalst, W., Bolt, A., van Zelst, S.J.: RapidProM: Mine Your Processes and
+Not Just Your Data. CoRR abs/1703.03740 (2017)</li>
+  <li>Berti, A., van Zelst, S.J., van der Aalst, W.: Process Mining for Python (PM4Py):
+Bridging the Gap Between Process-and Data Science pp. 13–16 (2019)</li>
+  <li>Carmona, J., Sol´e, M.: PMLAB: an scripting environment for process mining. In:
+Proceedings of the BPM Demo Sessions 2014 Co-located with the 12th International Conference on Business Process Management (BPM 2014), Eindhoven, The
+Netherlands, September 10, 2014. p. 16 (2014)</li>
+  <li>van Dongen, B., de Medeiros, A.K., Verbeek, H., Weijters, A., van der Aalst, W.:
+The ProM Framework: A New Era in Process Mining Tool Support. In: International
+conference on application and theory of petri nets. pp. 444–454. Springer (2005)</li>
+  <li>Janssenswillen, G., Depaire, B., Swennen, M., Jans, M., Vanhoof, K.: bupaR: Enabling Reproducible Business Process Analysis. Knowl.-Based Syst. 163, 927–930
+(2019)</li>
+  <li>La Rosa, M., Reijers, H.A., van der Aalst, W., Dijkman, R.M., Mendling, J., Dumas,
+M., Garc´ıa-Ba˜nuelos, L.: APROMORE: An advanced process model repository.
+Expert Systems with Applications 38(6), 7029–7040 (2011)</li>
+  <li>Lambrechts, S., van der Aalst, W., Weijters, A.: Scenario-based process mining:
+Web servicing and automated scenario generation (2009)</li>
+  <li>Mans, R., van der Aalst, W., Verbeek, H.: Supporting Process Mining Workflows
+with RapidProM. In: BPM (Demos). p. 56 (2014</li>
+</ol>
+
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+<script>
+$(function() {
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+});
+</script>
+
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://SEONGJAE-YOO.github.io/">Big Data</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://seongjae-yoo.github.io/" target="_blank" rel="noopener">SeongJae Yu 블로그</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <h1 class="subscribe-overlay-title">Search Big Data</h1>
+            <p class="subscribe-overlay-description">
+                원하는 검색어를 입력하세요</p>
+            <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+        </div>
+    </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
